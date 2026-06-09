@@ -68,6 +68,9 @@ export default function Index() {
                 >
                   <span className="col-span-12 md:col-span-5 font-editorial text-[28px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style] flex items-baseline gap-3">
                     {e.title}
+                    <span className="inline-block text-[0.55em] text-[hsl(var(--meta-ink))] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-4px] group-hover:translate-x-0">
+                      →
+                    </span>
                   </span>
                   <span className="col-span-12 md:col-span-7 text-[15px] md:text-[17px] leading-[1.5] text-[hsl(var(--muted-ink))]">
                     {e.note}
