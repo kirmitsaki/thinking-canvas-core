@@ -40,7 +40,7 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       { type: "h2", text: "How it gets made" },
       {
         type: "p",
-        text: "Direction is not produced in a workshop. It is produced in the long, unglamorous conversations between the people closest to the customer and the people closest to the architecture. The role of design, in my experience, is to make those conversations legible — to write them down in a form the rest of the company can use.",
+        text: "Direction is not produced in a workshop. It is produced in the long, unglamorous conversations between the people closest to the customer and the people closest to the architecture. The role of design, in my experience, is to make those conversations legible, to write them down in a form the rest of the company can use.",
       },
       {
         type: "p",
@@ -62,7 +62,7 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       { type: "h2", text: "Start with the seams" },
       {
         type: "p",
-        text: "I look first at the seams between functions. Where does product meet engineering badly? Where does sales describe the product in a way the team would not recognise? These seams are where a design practice earns its place — not by claiming territory, but by translating.",
+        text: "I look first at the seams between functions. Where does product meet engineering badly? Where does sales describe the product in a way the team would not recognise? These seams are where a design practice earns its place, not by claiming territory, but by translating.",
       },
       { type: "pull", text: "A design function is, in its first year, mostly translation." },
       {
@@ -72,7 +72,7 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       { type: "h2", text: "Hire late, write early" },
       {
         type: "p",
-        text: "It is tempting to hire quickly. I have learned to write first — to put the practice on paper before putting people in seats. Hires inherit the culture they arrive into. Writing it down, however incompletely, gives the second and third designer something to push against.",
+        text: "It is tempting to hire quickly. I have learned to write first, to put the practice on paper before putting people in seats. Hires inherit the culture they arrive into. Writing it down, however incompletely, gives the second and third designer something to push against.",
       },
     ],
   },
@@ -85,7 +85,7 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       },
       {
         type: "p",
-        text: "Every product I have worked on long enough has reached the same point. The original mental model — the one that made the first version coherent — stops describing the thing the product has become. The team feels it before they can name it. Decisions take longer. Edge cases multiply. New hires take six months to be useful.",
+        text: "Every product I have worked on long enough has reached the same point. The original mental model, the one that made the first version coherent, stops describing the thing the product has become. The team feels it before they can name it. Decisions take longer. Edge cases multiply. New hires take six months to be useful.",
       },
       { type: "h2", text: "Models, not screens" },
       {
