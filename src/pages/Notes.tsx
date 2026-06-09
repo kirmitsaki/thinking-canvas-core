@@ -55,10 +55,7 @@ export default function Notes() {
                   to={`/essays/${e.slug}`}
                   className="group grid grid-cols-12 gap-4 py-8 md:py-10 items-baseline"
                 >
-                  <span className="col-span-2 md:col-span-1 text-[12px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="col-span-9 md:col-span-10 font-editorial text-[28px] md:text-[44px] leading-[1.05] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                  <span className="col-span-11 font-editorial text-[28px] md:text-[44px] leading-[1.05] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
                     {e.title}
                   </span>
                   <span className="col-span-1 text-right text-[hsl(var(--meta-ink))] opacity-30 group-hover:opacity-100 transition-all translate-x-0 group-hover:translate-x-1">
