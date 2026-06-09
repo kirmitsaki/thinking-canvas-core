@@ -47,10 +47,7 @@ export default function Index() {
 
         {/* Index of sections */}
         <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
-            Inside
-          </div>
-          <ol className="col-span-12 md:col-span-10 divide-y divide-[hsl(var(--hairline))]">
+          <ol className="col-span-12 md:col-start-3 md:col-span-10 divide-y divide-[hsl(var(--hairline))]">
             {[
               { to: "/work", num: "I", label: "Work", note: "Four essays on building product." },
               { to: "/notes", num: "II", label: "Notes", note: "Shorter observations from practice." },
