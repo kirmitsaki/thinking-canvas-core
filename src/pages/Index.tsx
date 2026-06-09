@@ -1,119 +1,115 @@
-import { Link, NavLink } from "react-router-dom";
-import { Linkedin } from "lucide-react";
-import { RuleLabel, Display, MetaMono } from "@/components/editorial";
+import { Link } from "react-router-dom";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
-const navLinks = [
-  { to: "/", label: "Home", end: true },
-  { to: "/work", label: "Work" },
-  { to: "/about", label: "About" },
+const interests = [
+  "Product direction",
+  "Design systems",
+  "Organisational alignment",
+  "Operational workflows",
+  "AI-assisted product development",
 ];
 
-const Index = () => {
+export default function Index() {
   return (
-    <main className="min-h-screen bg-ink-strong text-background flex flex-col relative overflow-hidden">
-      {/* Environmental vertical word along right edge */}
-      <p
-        aria-hidden
-        className="pointer-events-none hidden md:block absolute right-6 top-1/2 -translate-y-1/2 [writing-mode:vertical-rl] rotate-180 text-[11px] tracking-[0.6em] uppercase text-background/15 font-mono select-none"
-      >
-        Portfolio
-      </p>
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteNav />
 
-      {/* Architectural hairline frame — anchored inset */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-6 md:inset-10 border border-background/12"
-      />
+      <main className="mx-auto max-w-[1320px] px-6 md:px-12">
+        {/* Masthead */}
+        <section className="pt-24 md:pt-40 pb-24 md:pb-40 grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))] md:pt-3">
+            Vol. 01
+            <br />
+            MMXXVI
+          </div>
+          <div className="col-span-12 md:col-span-10">
+            <h1 className="font-editorial text-[56px] sm:text-[84px] md:text-[128px] leading-[0.92] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
+              Rachel
+              <br />
+              Kirmitsaki
+            </h1>
+            <p className="mt-10 md:mt-14 text-[14px] uppercase tracking-[0.22em] text-[hsl(var(--ink-body))]">
+              Head of Product Design
+            </p>
+          </div>
+        </section>
 
-      {/* Nav */}
-      <header className="w-full sticky top-0 z-50 bg-ink-strong/70 backdrop-blur">
-        <nav className="mx-auto max-w-[1200px] px-8 md:px-12 flex items-center justify-between h-20">
-          <ul className="flex items-center gap-10 md:gap-14">
-            {navLinks.map((l) => (
-              <li key={l.to}>
-                <NavLink
-                  to={l.to}
-                  end={l.end}
-                  className={({ isActive }) =>
-                    `text-[12px] font-medium tracking-[0.04em] pb-[6px] border-b transition-colors ${
-                      isActive
-                        ? "text-background border-background"
-                        : "text-background/55 border-transparent hover:text-background"
-                    }`
-                  }
+        <hr className="border-[hsl(var(--hairline))]" />
+
+        {/* Lede */}
+        <section className="py-20 md:py-32 grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
+            Editor’s note
+          </div>
+          <div className="col-span-12 md:col-span-8 md:col-start-4">
+            <p className="font-editorial text-[26px] sm:text-[34px] md:text-[44px] leading-[1.18] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
+              Over the last decade I’ve worked across research, fintech, cybersecurity, and AI.
+              Most of those products had one thing in common: they became more complex as they grew.
+              My work has largely been about helping products and teams navigate that complexity.
+            </p>
+          </div>
+        </section>
+
+        <hr className="border-[hsl(var(--hairline))]" />
+
+        {/* Index of sections */}
+        <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
+            Inside
+          </div>
+          <ol className="col-span-12 md:col-span-10 divide-y divide-[hsl(var(--hairline))]">
+            {[
+              { to: "/work", num: "I", label: "Work", note: "Four essays on building product." },
+              { to: "/notes", num: "II", label: "Notes", note: "Shorter observations from practice." },
+              { to: "/about", num: "III", label: "About", note: "A brief, factual account." },
+            ].map((s) => (
+              <li key={s.to}>
+                <Link
+                  to={s.to}
+                  className="group grid grid-cols-12 gap-6 py-6 md:py-8 items-baseline"
                 >
-                  {l.label}
-                </NavLink>
+                  <span className="col-span-2 md:col-span-1 font-mono text-[12px] tracking-[0.1em] text-[hsl(var(--meta-ink))]">
+                    {s.num}
+                  </span>
+                  <span className="col-span-10 md:col-span-6 font-editorial text-[32px] md:text-[52px] leading-[1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                    {s.label}
+                  </span>
+                  <span className="col-span-12 md:col-span-5 text-[14px] md:text-[15px] text-[hsl(var(--muted-ink))] md:text-right">
+                    {s.note}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <hr className="border-[hsl(var(--hairline))]" />
+
+        {/* Current interests */}
+        <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
+            Currently
+          </div>
+          <ul className="col-span-12 md:col-span-10">
+            {interests.map((t, i) => (
+              <li
+                key={t}
+                className="flex items-baseline gap-6 py-3 border-b border-[hsl(var(--hairline))] last:border-b-0"
+              >
+                <span className="font-mono text-[11px] tracking-[0.1em] text-[hsl(var(--meta-ink))] w-10">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-editorial text-[22px] md:text-[30px] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
+                  {t}
+                </span>
               </li>
             ))}
           </ul>
+        </section>
+      </main>
 
-          <a
-            href="https://linkedin.com/in/rachelkirmitsaki"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-background/55 hover:text-background transition-colors"
-          >
-            <Linkedin size={17} strokeWidth={1.5} />
-          </a>
-        </nav>
-      </header>
-
-      {/* Cover plate */}
-      <div className="flex-1 mx-auto max-w-[1200px] px-8 md:px-12 w-full pt-[60px] pb-[60px] relative flex flex-col">
-        {/* Top row: cover marker (left) / issue mark (right) */}
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10">
-          <div className="col-span-6 md:col-span-5 md:col-start-2">
-            <RuleLabel tone="inverse">Head of Product Design</RuleLabel>
-            <p className="mt-4 text-[13px] md:text-[14px] leading-[1.7] tracking-[-0.005em] text-background/60 max-w-[36ch]">
-              B2B SaaS · Fintech · AI &amp; Platform Products
-            </p>
-          </div>
-        </div>
-
-        {/* Name — centered composition with serif italic surname */}
-        <div className="flex-1 grid grid-cols-12 gap-x-6 md:gap-x-10 items-center">
-          <div className="col-span-12 md:col-span-10 md:col-start-2">
-            <Display className="animate-[fadeIn_900ms_ease-out_both]">
-              Rachel
-              <span className="block text-background/75 font-editorial italic tracking-[-0.02em] md:pl-[28%]">
-                Kirmitsaki
-              </span>
-            </Display>
-          </div>
-        </div>
-
-        {/* Bottom row: positioning (left) / entry link (right) */}
-        <div className="grid grid-cols-12 gap-x-6 md:gap-x-10 items-end">
-          <div className="col-span-12 md:col-span-5 md:col-start-2">
-            <p className="text-[13px] md:text-[14px] leading-[1.7] tracking-[-0.005em] text-background/60 max-w-[36ch]">
-              Defining product direction across complex digital products.
-            </p>
-          </div>
-          <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0 md:flex md:justify-end">
-            <Link
-              to="/work"
-              className="group inline-flex flex-col gap-3 text-right"
-            >
-              <span className="inline-flex items-baseline gap-3 text-[12px] tracking-[0.18em] uppercase text-background/85 hover:text-background transition-colors font-mono">
-                <span className="border-b border-background/25 group-hover:border-background/70 pb-1 transition-colors">
-                  Explore the Work
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 ease-out group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-    </main>
+      <SiteFooter />
+    </div>
   );
-};
-
-export default Index;
+}
