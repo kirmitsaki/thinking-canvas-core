@@ -19,9 +19,6 @@ export default function Notes() {
           <h1 className="font-editorial text-[56px] md:text-[112px] leading-[0.95] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
             Notes
           </h1>
-          <p className="mt-8 text-[16px] md:text-[18px] leading-[1.5] text-[hsl(var(--muted-ink))]">
-            Short observations from practice.
-          </p>
         </section>
 
         <hr className="border-[hsl(var(--hairline))]" />
