@@ -30,8 +30,35 @@ export default function About() {
               The products were different. The challenge was often the same: helping teams navigate
               complexity as products evolved.
             </p>
+            <p>
+              Much of my work now focuses on product direction, operational design, organisational
+              alignment, and the role of AI in product development.
+            </p>
           </div>
+        </section>
 
+        <hr className="border-[hsl(var(--hairline))]" />
+
+        <section className="py-16 md:py-24">
+          <p className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--meta-ink))] mb-8">
+            Contact
+          </p>
+          <div className="flex flex-col gap-4 text-[14px] uppercase tracking-[0.18em] text-[hsl(var(--ink-body))]">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-[hsl(var(--ink-strong))] w-fit"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:hello@rachelkirmitsaki.com"
+              className="transition-colors hover:text-[hsl(var(--ink-strong))] w-fit"
+            >
+              Email
+            </a>
+          </div>
         </section>
       </main>
       <SiteFooter />
