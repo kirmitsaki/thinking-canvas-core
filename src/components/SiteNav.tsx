@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const items = [
   { to: "/work", label: "Work" },
