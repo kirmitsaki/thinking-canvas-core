@@ -77,10 +77,7 @@ export default function Index() {
 
         {/* Current interests */}
         <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
-            Currently
-          </div>
-          <ul className="col-span-12 md:col-span-10">
+          <ul className="col-span-12 md:col-start-3 md:col-span-10">
             {interests.map((t, i) => (
               <li
                 key={t}
