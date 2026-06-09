@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { Linkedin } from "lucide-react";
 
 export default function About() {
   return (
@@ -50,9 +51,10 @@ export default function About() {
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
               className="underline decoration-[hsl(var(--hairline))] underline-offset-[6px] hover:decoration-[hsl(var(--ink-strong))]"
             >
-              LinkedIn
+              <Linkedin size={18} strokeWidth={1.5} />
             </a>
             <a
               href="mailto:hello@example.com"
