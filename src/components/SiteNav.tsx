@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Linkedin } from "lucide-react";
 
 const items = [
   { to: "/notes", label: "Notes" },
@@ -37,10 +36,9 @@ export default function SiteNav() {
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn"
             className="transition-colors hover:text-[hsl(var(--ink-strong))]"
           >
-            <Linkedin size={18} strokeWidth={1.5} />
+            LinkedIn
           </a>
         </nav>
       </div>
