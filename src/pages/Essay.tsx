@@ -232,6 +232,75 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       },
     ],
   },
+  "operational-workflows-and-product-evolution": {
+    title: "Operational Workflows and Product Evolution",
+    blocks: [
+      {
+        type: "lede",
+        text: "Products evolve in the direction of the workflows they are used inside, not the workflows they were designed for.",
+      },
+      {
+        type: "p",
+        text: "The teams that buy software rarely use it the way it was demoed. They use it the way their week is already shaped. Over time, the product bends toward those shapes, or it loses them.",
+      },
+      {
+        type: "p",
+        text: "The most useful work I have done has often been mapping the operational reality of a customer's week and asking which parts of the product earn their place in it.",
+      },
+    ],
+  },
+  "speed-only-matters-if-people-move-together": {
+    title: "Speed Only Matters If People Move Together",
+    blocks: [
+      {
+        type: "lede",
+        text: "A team that ships quickly in different directions is not fast. It is fragmented.",
+      },
+      {
+        type: "p",
+        text: "Speed is usually measured per function. Design moved fast. Engineering moved fast. The company moved sideways. Real velocity is a property of the whole, not the parts.",
+      },
+    ],
+  },
+  "products-rarely-become-simpler-as-they-grow": {
+    title: "Products Rarely Become Simpler As They Grow",
+    blocks: [
+      {
+        type: "lede",
+        text: "Simplification is an act of will. Without it, every product accumulates.",
+      },
+      {
+        type: "p",
+        text: "Features are added in response to specific moments: a deal, a complaint, a competitor. They are almost never removed in response to anything. The result, given enough time, is a product that no single person can hold in their head.",
+      },
+    ],
+  },
+  "the-difference-between-alignment-and-agreement": {
+    title: "The Difference Between Alignment and Agreement",
+    blocks: [
+      {
+        type: "lede",
+        text: "Alignment is the willingness to move in the same direction. Agreement is the belief that the direction is correct. They are not the same thing.",
+      },
+      {
+        type: "p",
+        text: "Teams often confuse the two and spend months trying to manufacture agreement when alignment is what the work actually requires. A mature team can commit to a direction it does not fully agree with, and revisit the question later, with evidence.",
+      },
+    ],
+  },
+  "discovery-is-often-an-organisational-problem": {
+    title: "Discovery Is Often an Organisational Problem",
+    blocks: [
+      {
+        type: "lede",
+        text: "When discovery is slow, the cause is rarely the method. It is usually the organisation around the method.",
+      },
+      {
+        type: "p",
+        text: "Discovery requires access: to customers, to data, to the people who hold context. When those are gated by other functions, discovery becomes a negotiation. Improving the method does not improve the negotiation.",
+      },
+    ],
+  },
 };
 
 export default function Essay() {
