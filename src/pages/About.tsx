@@ -36,30 +36,6 @@ export default function About() {
             </p>
           </div>
         </section>
-
-        <hr className="border-[hsl(var(--hairline))]" />
-
-        <section className="py-16 md:py-24">
-          <p className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--meta-ink))] mb-8">
-            Contact
-          </p>
-          <div className="flex flex-col gap-4 text-[14px] uppercase tracking-[0.18em] text-[hsl(var(--ink-body))]">
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-[hsl(var(--ink-strong))] w-fit"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:hello@rachelkirmitsaki.com"
-              className="transition-colors hover:text-[hsl(var(--ink-strong))] w-fit"
-            >
-              Email
-            </a>
-          </div>
-        </section>
       </main>
       <SiteFooter />
     </div>
