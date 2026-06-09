@@ -130,6 +130,108 @@ const essayContent: Record<string, { title: string; blocks: Block[] }> = {
       },
     ],
   },
+  "most-product-problems-are-not-design-problems": {
+    title: "Most product problems are not design problems",
+    blocks: [
+      {
+        type: "lede",
+        text: "The interface is rarely where the product breaks. It is where the breakdown becomes visible.",
+      },
+      {
+        type: "p",
+        text: "Teams often bring design problems that are really product problems in disguise. The symptom is a confusing screen. The cause is usually upstream: unclear ownership, competing objectives, or a model that no longer describes the product.",
+      },
+      {
+        type: "p",
+        text: "When I am asked to fix an interface, I look first at what decision it is being asked to carry. If the decision is muddy, no amount of clarity in the UI will help.",
+      },
+    ],
+  },
+  "research-systems-rarely-reset": {
+    title: "Research systems rarely reset",
+    blocks: [
+      {
+        type: "lede",
+        text: "Research accumulates. It almost never starts over, and that is where the trouble begins.",
+      },
+      {
+        type: "p",
+        text: "Most teams add research to a growing pile. The pile contains insights from three years ago, gathered when the product was different, the users were different, and the market was different.",
+      },
+      {
+        type: "p",
+        text: "The result is a kind of research debt: old assumptions embedded in new decisions, presented as evidence. A healthy research practice periodically asks whether the foundation still holds.",
+      },
+    ],
+  },
+  "design-systems-as-organisational-memory": {
+    title: "Design systems as organisational memory",
+    blocks: [
+      {
+        type: "lede",
+        text: "A design system is not a library of components. It is a record of what the organisation has decided it believes.",
+      },
+      {
+        type: "p",
+        text: "Components are the visible part. The invisible part is the reasoning: why this button, why this spacing, why this pattern and not another. That reasoning is organisational memory.",
+      },
+      {
+        type: "p",
+        text: "When the people who made the decisions leave, the system is what remains. If the reasoning is not written down, the system becomes a set of rules that no one can explain. That is when teams abandon it.",
+      },
+    ],
+  },
+  "the-cost-of-prototyping-is-collapsing": {
+    title: "The cost of prototyping is collapsing",
+    blocks: [
+      {
+        type: "lede",
+        text: "What once took a sprint now takes an afternoon. The discipline that mattered was never building quickly. It was choosing what to build.",
+      },
+      {
+        type: "p",
+        text: "Cheaper prototyping does not mean more prototypes. It means the prototype arrives earlier in the conversation, before the team has fully agreed on what they are looking at.",
+      },
+      {
+        type: "p",
+        text: "The risk is that a convincing prototype becomes the plan. The opportunity is that a cheap prototype lets you test the plan before you commit to it.",
+      },
+    ],
+  },
+  "why-product-direction-matters-before-roadmaps": {
+    title: "Why product direction matters before roadmaps",
+    blocks: [
+      {
+        type: "lede",
+        text: "A roadmap without direction is a list of things to build. It cannot tell you whether those things add up to anything.",
+      },
+      {
+        type: "p",
+        text: "Direction is the shape you are trying to become. Roadmaps are the sequence of steps. When the shape is clear, the steps can be questioned. When the shape is missing, every step is defended on its own terms.",
+      },
+      {
+        type: "p",
+        text: "I have seen teams spend months arguing about priorities when the real argument was about identity. Direction resolves the argument first. Everything after that is easier.",
+      },
+    ],
+  },
+  "what-ai-changes-and-what-it-doesnt": {
+    title: "What AI changes and what it doesn't",
+    blocks: [
+      {
+        type: "lede",
+        text: "AI compresses the distance between a clear description and a working product. It does not compress the distance between a vague idea and a clear description.",
+      },
+      {
+        type: "p",
+        text: "The work that remains is the work that was always hardest: understanding the problem, holding a point of view, knowing when to stop. AI changes the speed of execution. It does not change the quality of the thinking that precedes it.",
+      },
+      {
+        type: "p",
+        text: "Teams that gain the most treat AI as a way to ask better questions earlier. Teams that gain the least treat it as a way to skip the questions.",
+      },
+    ],
+  },
 };
 
 export default function Essay() {
