@@ -437,7 +437,7 @@ const OriginMarkets = () => {
               </div>
             </div>
           </div>
-          <DarkSpread fig="Fig. 01" caption="Operational landscape — debt issuance">
+          <DarkSpread fig="Fig. 01" caption="Operational landscape: debt issuance">
             <Figure01 />
           </DarkSpread>
         </section>
@@ -501,7 +501,7 @@ const OriginMarkets = () => {
               </div>
             </div>
           </div>
-          <DarkSpread fig="Fig. 03" caption="Operational architecture — one field, four lenses">
+          <DarkSpread fig="Fig. 03" caption="Operational architecture: one field, four lenses">
             <Figure03 />
           </DarkSpread>
         </section>

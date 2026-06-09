@@ -12,8 +12,8 @@ const SCWProductIdentity = () => (
       title="Product Identity Foundations"
       subtitle="Visual language developed for a platform spanning governance, learning, observability, and risk."
       intro="As Secure Code Warrior expanded into a broader enterprise platform, the product identity needed to evolve beyond individual interfaces into a clearer operational brand language."
-      context="The work focused on shaping the overall visual direction of the platform — typography, hierarchy, motion, colour behaviour, layout rhythm, and interface tone — creating a product experience that could feel coherent across governance tooling, learning environments, observability workflows, and operational surfaces."
-      imageLabel="Platform identity language — typography system, colour behaviour, interface rhythm, motion direction"
+      context="The work focused on shaping the overall visual direction of the platform: typography, hierarchy, motion, colour behaviour, layout rhythm, and interface tone, creating a product experience that could feel coherent across governance tooling, learning environments, observability workflows, and operational surfaces."
+      imageLabel="Platform identity language: typography system, colour behaviour, interface rhythm, motion direction"
       outcomes={[
         "Unified visual direction across platform surfaces.",
         "Stronger product recognition and coherence.",

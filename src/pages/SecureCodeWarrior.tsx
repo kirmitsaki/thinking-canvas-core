@@ -723,7 +723,7 @@ const SecureCodeWarrior = () => {
           <DarkFigSpread
             tone={tones.scope}
             fig="Fig. 01"
-            caption="Shared platform model — governance, observability, learning, risk."
+            caption="Shared platform model: governance, observability, learning, risk."
           >
             <PlatformLandscape />
           </DarkFigSpread>
@@ -774,7 +774,7 @@ const SecureCodeWarrior = () => {
           <DarkFigSpread
             tone={tones.convergence}
             fig="Fig. 02"
-            caption="Operating model — nine contributing systems shaping product outcomes."
+            caption="Operating model: nine contributing systems shaping product outcomes."
           >
             <OperatingModel />
           </DarkFigSpread>
@@ -832,7 +832,7 @@ const SecureCodeWarrior = () => {
           <DarkFigSpread
             tone={tones.upstream}
             fig="Fig. 03"
-            caption="From insight to direction — a product decision framework."
+            caption="From insight to direction: a product decision framework."
           >
             <ConvergenceFlow />
           </DarkFigSpread>
@@ -885,7 +885,7 @@ const SecureCodeWarrior = () => {
           <DarkFigSpread
             tone={tones.velocity}
             fig="Fig. 04"
-            caption="Decision flow — from signals to direction."
+            caption="Decision flow: from signals to direction."
           >
             <SharedUnderstandingFlow />
           </DarkFigSpread>
@@ -946,7 +946,7 @@ const SecureCodeWarrior = () => {
           <DarkFigSpread
             tone={tones.distributed}
             fig="Fig. 05"
-            caption="Distributed leadership model — shared principles, shared direction, local autonomy."
+            caption="Distributed leadership model: shared principles, shared direction, local autonomy."
           >
             <LeverageModel />
           </DarkFigSpread>

@@ -11,7 +11,7 @@ const PawSquad = () => (
       eyebrow="Brand & Consumer"
       title="PawSquad"
       subtitle="Consumer brand and product experience exploring trust, accessibility, and service clarity within veterinary care."
-      intro="PawSquad operated at the intersection of healthcare, logistics, and consumer trust — where product clarity directly affected how confident people felt accessing veterinary care."
+      intro="PawSquad operated at the intersection of healthcare, logistics, and consumer trust, where product clarity directly affected how confident people felt accessing veterinary care."
       context="The work focused on improving customer journeys across acquisition, booking, and communication while supporting go-to-market initiatives through campaign and landing page experiences."
       imageLabel="Booking flows, campaign pages, service experience, responsive product surfaces"
       outcomes={[
