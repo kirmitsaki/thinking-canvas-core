@@ -18,12 +18,7 @@ export default function Index() {
       <main className="mx-auto max-w-[1320px] px-6 md:px-12">
         {/* Masthead */}
         <section className="pt-24 md:pt-40 pb-24 md:pb-40 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))] md:pt-3">
-            Vol. 01
-            <br />
-            MMXXVI
-          </div>
-          <div className="col-span-12 md:col-span-10">
+          <div className="col-span-12 md:col-start-3 md:col-span-10">
             <h1 className="font-editorial text-[56px] sm:text-[84px] md:text-[128px] leading-[0.92] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
               Rachel
               <br />
