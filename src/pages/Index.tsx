@@ -34,10 +34,7 @@ export default function Index() {
 
         {/* Lede */}
         <section className="py-20 md:py-32 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-2 text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))]">
-            Editor’s note
-          </div>
-          <div className="col-span-12 md:col-span-8 md:col-start-4">
+          <div className="col-span-12 md:col-span-8 md:col-start-3">
             <p className="font-editorial text-[26px] sm:text-[34px] md:text-[44px] leading-[1.18] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
               Over the last decade I’ve worked across research, fintech, cybersecurity, and AI.
               Most of those products had one thing in common: they became more complex as they grew.
