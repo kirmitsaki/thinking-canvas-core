@@ -66,7 +66,7 @@ export default function Index() {
                   to={`/essays/${e.slug}`}
                   className="group grid grid-cols-12 gap-6 py-8 md:py-10 items-baseline"
                 >
-                  <span className="col-span-12 md:col-span-5 font-editorial text-[28px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                  <span className="col-span-12 md:col-span-5 font-editorial text-[28px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style] flex items-baseline gap-3">
                     {e.title}
                   </span>
                   <span className="col-span-12 md:col-span-7 text-[15px] md:text-[17px] leading-[1.5] text-[hsl(var(--muted-ink))]">
