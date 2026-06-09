@@ -2,12 +2,27 @@ import { Link } from "react-router-dom";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 
-const interests = [
-  "Product direction",
-  "Design systems",
-  "Organisational alignment",
-  "Operational workflows",
-  "AI-assisted product development",
+const entries = [
+  {
+    slug: "product-direction",
+    title: "Product Direction",
+    note: "Helping teams create clarity around product structure, priorities, and long-term evolution.",
+  },
+  {
+    slug: "building-design-functions",
+    title: "Building Design Functions",
+    note: "Establishing the practices, systems, and operating models that allow design to scale.",
+  },
+  {
+    slug: "designing-complex-systems",
+    title: "Designing Complex Systems",
+    note: "Working on products where workflows and organisational context matter more than individual screens.",
+  },
+  {
+    slug: "ai-and-product-development",
+    title: "AI and Product Development",
+    note: "Exploring how AI changes discovery, validation, and the process of building products.",
+  },
 ];
 
 export default function Index() {
@@ -17,78 +32,47 @@ export default function Index() {
 
       <main className="mx-auto max-w-[1320px] px-6 md:px-12">
         {/* Masthead */}
-        <section className="pt-24 md:pt-40 pb-24 md:pb-40 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-start-3 md:col-span-10">
-            <h1 className="font-editorial text-[56px] sm:text-[84px] md:text-[128px] leading-[0.92] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
-              Rachel
-              <br />
-              Kirmitsaki
-            </h1>
-            <p className="mt-10 md:mt-14 text-[14px] uppercase tracking-[0.22em] text-[hsl(var(--ink-body))]">
-              Head of Product Design
-            </p>
-          </div>
+        <section className="pt-24 md:pt-40 pb-16 md:pb-24">
+          <h1 className="font-editorial text-[56px] sm:text-[84px] md:text-[128px] leading-[0.92] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
+            Rachel
+            <br />
+            Kirmitsaki
+          </h1>
+          <p className="mt-10 md:mt-14 text-[14px] uppercase tracking-[0.22em] text-[hsl(var(--ink-body))]">
+            Head of Product Design
+          </p>
         </section>
-
-        <hr className="border-[hsl(var(--hairline))]" />
 
         {/* Lede */}
-        <section className="py-20 md:py-32 grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-8 md:col-start-3">
-            <p className="font-editorial text-[26px] sm:text-[34px] md:text-[44px] leading-[1.18] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-              Over the last decade I’ve worked across research, fintech, cybersecurity, and AI.
-              Most of those products had one thing in common: they became more complex as they grew.
-              My work has largely been about helping products and teams navigate that complexity.
-            </p>
-          </div>
+        <section className="pb-24 md:pb-40 max-w-4xl">
+          <p className="font-editorial text-[24px] sm:text-[30px] md:text-[40px] leading-[1.2] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
+            Over the last decade I’ve worked across research, fintech, cybersecurity, and AI.
+            Most of those products had one thing in common: they became more complex as they grew.
+            My work has largely been about helping products and teams navigate that complexity.
+          </p>
         </section>
 
         <hr className="border-[hsl(var(--hairline))]" />
 
-        {/* Index of sections */}
-        <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
-          <ol className="col-span-12 md:col-start-3 md:col-span-10 divide-y divide-[hsl(var(--hairline))]">
-            {[
-              { to: "/work", num: "I", label: "Work", note: "Four essays on building product." },
-              { to: "/notes", num: "II", label: "Notes", note: "Shorter observations from practice." },
-              { to: "/about", num: "III", label: "About", note: "A brief, factual account." },
-            ].map((s) => (
-              <li key={s.to}>
+        {/* What I Do */}
+        <section className="pt-16 md:pt-24 pb-16 md:pb-24">
+          <h2 className="text-[12px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))] mb-10 md:mb-16">
+            What I Do
+          </h2>
+          <ul className="divide-y divide-[hsl(var(--hairline))] border-t border-b border-[hsl(var(--hairline))]">
+            {entries.map((e) => (
+              <li key={e.slug}>
                 <Link
-                  to={s.to}
-                  className="group grid grid-cols-12 gap-6 py-6 md:py-8 items-baseline"
+                  to={`/essays/${e.slug}`}
+                  className="group grid grid-cols-12 gap-6 py-8 md:py-10 items-baseline"
                 >
-                  <span className="col-span-2 md:col-span-1 font-mono text-[12px] tracking-[0.1em] text-[hsl(var(--meta-ink))]">
-                    {s.num}
+                  <span className="col-span-12 md:col-span-5 font-editorial text-[28px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                    {e.title}
                   </span>
-                  <span className="col-span-10 md:col-span-6 font-editorial text-[32px] md:text-[52px] leading-[1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
-                    {s.label}
-                  </span>
-                  <span className="col-span-12 md:col-span-5 text-[14px] md:text-[15px] text-[hsl(var(--muted-ink))] md:text-right">
-                    {s.note}
+                  <span className="col-span-12 md:col-span-7 text-[15px] md:text-[17px] leading-[1.5] text-[hsl(var(--muted-ink))]">
+                    {e.note}
                   </span>
                 </Link>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <hr className="border-[hsl(var(--hairline))]" />
-
-        {/* Current interests */}
-        <section className="py-20 md:py-28 grid grid-cols-12 gap-6">
-          <ul className="col-span-12 md:col-start-3 md:col-span-10">
-            {interests.map((t, i) => (
-              <li
-                key={t}
-                className="flex items-baseline gap-6 py-3 border-b border-[hsl(var(--hairline))] last:border-b-0"
-              >
-                <span className="font-mono text-[11px] tracking-[0.1em] text-[hsl(var(--meta-ink))] w-10">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-editorial text-[22px] md:text-[30px] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-                  {t}
-                </span>
               </li>
             ))}
           </ul>
