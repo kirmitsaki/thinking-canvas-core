@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { Linkedin } from "lucide-react";
 
 export default function About() {
   return (
