@@ -50,14 +50,17 @@ export function PageHeader({
   lede,
   size = "section",
   children,
+  preTitle,
 }: {
   title: ReactNode;
   lede?: ReactNode;
   size?: HeaderSize;
   children?: ReactNode;
+  preTitle?: ReactNode;
 }) {
   return (
     <section className="pt-24 md:pt-40 pb-12 md:pb-16">
+      {preTitle}
       <h1
         className={
           "font-editorial text-[hsl(var(--ink-strong))] " + titleSizes[size]
