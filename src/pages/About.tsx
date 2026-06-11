@@ -78,7 +78,7 @@ export default function About() {
 
           {/* Coda — current role, body-sized */}
           <h2 className="font-editorial italic text-[20px] md:text-[24px] leading-[1.4] text-[hsl(var(--ink-strong))] mb-8">
-            Current role
+            These days I lead product design across EMEA and APAC at Secure Code Warrior.
           </h2>
           <div className="space-y-8">
             {coda.map((p, i) => (
