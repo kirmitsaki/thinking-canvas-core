@@ -33,7 +33,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="hook mb-12 font-editorial italic text-[24px] md:text-[28px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
+          className="hook mb-12 font-editorial italic text-[20px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
         >
           {p.text}
         </p>
