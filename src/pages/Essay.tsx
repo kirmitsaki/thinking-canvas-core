@@ -1,7 +1,7 @@
 import type React from "react";
 import { Link, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
-import { essays, type EssayParagraph } from "@/content/essays";
+import { essays, essayOrder, type EssayParagraph } from "@/content/essays";
 
 const BackToWriting = ({ className = "" }: { className?: string }) => (
   <Link
@@ -119,6 +119,8 @@ function renderParagraph(p: EssayParagraph, i: number) {
   }
 }
 
+const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
+
 export default function Essay() {
   const { slug } = useParams();
   const essay = slug ? essays[slug] : undefined;
@@ -136,6 +138,14 @@ export default function Essay() {
     );
   }
 
+  const currentIndex = essayOrder.indexOf(slug);
+  const prevIndex = (currentIndex - 1 + essayOrder.length) % essayOrder.length;
+  const nextIndex = (currentIndex + 1) % essayOrder.length;
+  const prevSlug = essayOrder[prevIndex];
+  const nextSlug = essayOrder[nextIndex];
+  const prevEssay = essays[prevSlug];
+  const nextEssay = essays[nextSlug];
+
   return (
     <PageShell>
       <div className="pt-10 md:pt-14">
@@ -150,6 +160,28 @@ export default function Essay() {
         {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
 
         <BackToWriting className="mt-20" />
+
+        <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
+          <Link to={`/essays/${prevSlug}`} className="group">
+            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-20 group-hover:opacity-60 transition-opacity duration-300">
+              {romans[prevIndex]}
+            </span>
+            <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
+              <span className="mr-2 text-[hsl(var(--meta-ink))]">←</span>
+              {prevEssay.title}
+            </span>
+          </Link>
+
+          <Link to={`/essays/${nextSlug}`} className="group md:text-right">
+            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-20 group-hover:opacity-60 transition-opacity duration-300">
+              {romans[nextIndex]}
+            </span>
+            <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
+              {nextEssay.title}
+              <span className="ml-2 text-[hsl(var(--meta-ink))]">→</span>
+            </span>
+          </Link>
+        </nav>
       </article>
     </PageShell>
   );
