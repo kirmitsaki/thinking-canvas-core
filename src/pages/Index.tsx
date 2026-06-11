@@ -7,41 +7,44 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteNav />
 
-      <main className="flex-1 mx-auto w-full max-w-[1320px] px-6 md:px-12">
-        {/* Cover */}
-        <section className="pt-24 md:pt-40 pb-20 md:pb-32">
+      <main className="flex-1 mx-auto w-full max-w-[1320px] px-6 md:px-12 flex items-center">
+        <section className="py-24 md:py-40 max-w-4xl">
           <p className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--meta-ink))]">
             Head of Product Design
           </p>
 
-          <h1 className="mt-10 md:mt-16 font-editorial text-[64px] sm:text-[104px] md:text-[168px] leading-[0.9] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
-            Rachel
-            <br />
-            Kirmitsaki
+          <h1 className="mt-10 md:mt-14 font-editorial text-[56px] sm:text-[88px] md:text-[128px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
+            Rachel Kirmitsaki
           </h1>
 
-          <p className="mt-10 md:mt-16 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
-            B2B SaaS <span className="opacity-40 mx-2">·</span> Fintech{" "}
-            <span className="opacity-40 mx-2">·</span> Cybersecurity{" "}
-            <span className="opacity-40 mx-2">·</span> AI
-          </p>
-        </section>
-
-        {/* Supporting statement */}
-        <section className="pb-24 md:pb-40 max-w-3xl">
-          <p className="font-editorial text-[22px] sm:text-[26px] md:text-[32px] leading-[1.3] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-            Over the last decade I've worked across research, fintech, cybersecurity, and AI.
-            Most of those products had one thing in common: they became more complex as they grew.
-            My work has largely been about helping products and teams navigate that complexity.
+          <p className="mt-10 md:mt-14 font-editorial text-[22px] sm:text-[26px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
+            I build and scale design functions in complex B2B environments,
+            using systems thinking to transform fragmented products, workflows,
+            and organisations into coherent, strategically aligned platforms.
           </p>
 
-          <Link
-            to="/notes"
-            className="group mt-12 md:mt-16 inline-flex items-baseline gap-3 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-strong))]"
-          >
-            <span className="border-b border-[hsl(var(--ink-strong))] pb-1">View Notes</span>
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
+          <p className="mt-10 md:mt-14 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
+            B2B SaaS <span className="opacity-40 mx-2">·</span> Cybersecurity{" "}
+            <span className="opacity-40 mx-2">·</span> Fintech{" "}
+            <span className="opacity-40 mx-2">·</span> Developer Platforms
+          </p>
+
+          <div className="mt-14 md:mt-20 flex flex-wrap gap-8 md:gap-12 text-[12px] uppercase tracking-[0.28em]">
+            <Link
+              to="/writing"
+              className="group inline-flex items-baseline gap-3 text-[hsl(var(--ink-strong))]"
+            >
+              <span className="border-b border-[hsl(var(--ink-strong))] pb-1">Read my thinking</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+            <Link
+              to="/about"
+              className="group inline-flex items-baseline gap-3 text-[hsl(var(--ink-strong))]"
+            >
+              <span className="border-b border-[hsl(var(--ink-strong))] pb-1">About me</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
         </section>
       </main>
 

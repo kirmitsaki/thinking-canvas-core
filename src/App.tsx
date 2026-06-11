@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Notes from "./pages/Notes.tsx";
+import Writing from "./pages/Writing.tsx";
 import About from "./pages/About.tsx";
 import Essay from "./pages/Essay.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -22,7 +22,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/essays/:slug" element={<Essay />} />
-          <Route path="/notes" element={<Notes />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/notes" element={<Writing />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
