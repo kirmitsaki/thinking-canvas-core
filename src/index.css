@@ -142,7 +142,7 @@ All colors MUST be HSL.
   .prose-body {
     max-width: 660px;
   }
-  .prose-body p {
+  :where(.prose-body) p {
     font-size: 17px;
   }
 
