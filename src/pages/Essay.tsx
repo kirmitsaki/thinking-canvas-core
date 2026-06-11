@@ -1,3 +1,4 @@
+import type React from "react";
 import { Link, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 import { essays, type EssayParagraph } from "@/content/essays";
@@ -14,14 +15,21 @@ const BackToWriting = ({ className = "" }: { className?: string }) => (
   </Link>
 );
 
-const ACCENT = "hsl(var(--accent-stone))";
+const ACCENT = "#8B2500";
+
+const bodyParagraphStyle: React.CSSProperties = {
+  fontSize: "1rem",
+  lineHeight: 1.8,
+  marginBottom: "1.6rem",
+};
 
 function renderParagraph(p: EssayParagraph, i: number) {
   if (typeof p === "string") {
     return (
       <p
         key={i}
-        className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+        className="text-[hsl(var(--ink-body))]"
+        style={bodyParagraphStyle}
       >
         {p}
       </p>
@@ -32,26 +40,13 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="font-serif italic leading-[1.4]"
+          className="font-serif italic"
           style={{
             fontSize: "1.6rem",
+            lineHeight: 1.4,
             color: ACCENT,
             marginBottom: "3rem",
-          }}
-        >
-          {p.text}
-        </p>
-      );
-    case "example":
-      return (
-        <p
-          key={i}
-          className="text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-          style={{
-            borderLeft: `3px solid ${ACCENT}`,
-            paddingLeft: "20px",
-            marginTop: "1.8rem",
-            marginBottom: "1.8rem",
+            textAlign: "left",
           }}
         >
           {p.text}
@@ -61,15 +56,14 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+          className="text-[hsl(var(--ink-body))]"
+          style={bodyParagraphStyle}
         >
           <span
             style={{
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              fontSize: "0.82em",
-              fontWeight: 600,
-              color: "hsl(var(--ink-strong))",
+              textTransform: "lowercase",
+              fontVariant: "small-caps",
+              letterSpacing: "0.06em",
             }}
           >
             {p.prefix}
@@ -84,10 +78,12 @@ function renderParagraph(p: EssayParagraph, i: number) {
           className="font-serif italic"
           style={{
             fontSize: "1.45rem",
+            lineHeight: 1.5,
             color: ACCENT,
             marginTop: "3.5rem",
             marginBottom: "3.5rem",
-            lineHeight: 1.5,
+            maxWidth: "540px",
+            textAlign: "left",
           }}
         >
           {p.text}
@@ -102,6 +98,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
             fontSize: "1.1rem",
             marginTop: "3.5rem",
             marginBottom: "2rem",
+            textAlign: "left",
           }}
         >
           {p.text}
@@ -112,7 +109,8 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+          className="text-[hsl(var(--ink-body))]"
+          style={bodyParagraphStyle}
         >
           {p.text}
         </p>
@@ -137,13 +135,6 @@ export default function Essay() {
     );
   }
 
-  // If first paragraph is a plain string, treat it as a large lede (legacy style).
-  // If it's a typed object (e.g. hook), render via renderParagraph.
-  const first = essay.paragraphs[0];
-  const firstIsLegacyLede = typeof first === "string";
-  const lede = firstIsLegacyLede ? (first as string) : null;
-  const body = firstIsLegacyLede ? essay.paragraphs.slice(1) : essay.paragraphs;
-
   return (
     <PageShell>
       <div className="pt-10 md:pt-14">
@@ -154,13 +145,8 @@ export default function Essay() {
 
       <PageRule />
 
-      <article className="py-14 md:py-20 max-w-[680px]">
-        {lede && (
-          <p className="font-editorial text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.005em] text-[hsl(var(--ink-strong))] mb-12">
-            {lede}
-          </p>
-        )}
-        {body.map((p, i) => renderParagraph(p, i))}
+      <article className="py-14 md:py-20" style={{ maxWidth: "640px" }}>
+        {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
 
         <BackToWriting className="mt-20" />
       </article>
