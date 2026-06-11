@@ -71,11 +71,6 @@ export default function About() {
             {punchline}
           </p>
 
-          <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
-
-          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))]">
-            {coda}
-          </p>
         </article>
       </section>
     </PageShell>
