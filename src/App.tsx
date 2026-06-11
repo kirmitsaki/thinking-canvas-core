@@ -9,7 +9,6 @@ import Writing from "./pages/Writing.tsx";
 import About from "./pages/About.tsx";
 import Essay from "./pages/Essay.tsx";
 import Work from "./pages/Work.tsx";
-import CaseStudy from "./pages/CaseStudy.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -27,7 +26,6 @@ const App = () => (
           <Route path="/writing" element={<Writing />} />
           <Route path="/notes" element={<Writing />} />
           <Route path="/work" element={<Work />} />
-          <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
