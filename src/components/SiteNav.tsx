@@ -10,7 +10,7 @@ export default function SiteNav() {
   const { pathname } = useLocation();
   return (
     <header className="w-full">
-      <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-6 flex items-baseline justify-between">
+      <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-6 flex items-baseline">
         {pathname !== "/" && (
           <Link
             to="/"
