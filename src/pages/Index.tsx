@@ -8,7 +8,7 @@ export default function Index() {
           Rachel Kirmitsaki
         </h1>
 
-        <p className="mt-10 md:mt-14 font-editorial text-[22px] sm:text-[26px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
+        <p className="lede mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
           Defining product direction across complex digital products.
         </p>
 
