@@ -32,10 +32,10 @@ export default function SiteNav() {
                 key={i.to}
                 to={i.to}
                 className={
-                  "transition-colors hover:text-[hsl(var(--ink-strong))] " +
+                  "font-normal transition-colors hover:text-[hsl(var(--ink-strong))] " +
                   (active
-                    ? "text-[hsl(var(--ink-strong))] [text-decoration:underline] [text-decoration-color:hsl(var(--accent-stone))] [text-decoration-thickness:2px] [text-underline-offset:4px]"
-                    : "")
+                    ? "text-[hsl(var(--ink-strong))] underline decoration-[#8B2500] decoration-2 underline-offset-4"
+                    : "no-underline")
                 }
               >
                 {i.label}
