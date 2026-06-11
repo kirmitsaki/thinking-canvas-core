@@ -90,7 +90,8 @@ export default function Writing() {
 
       <ul className="pt-10 md:pt-16 pb-20 md:pb-28">
         {essays.map((item, idx) => {
-          const n = String(idx + 1).padStart(2, "0");
+          const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
+          const n = romans[idx];
           return (
             <li
               key={item.slug}
@@ -98,12 +99,12 @@ export default function Writing() {
             >
               <Link
                 to={`/essays/${item.slug}`}
-                className="group grid grid-cols-12 gap-4 md:gap-8 items-baseline py-10 md:py-14"
+                className="group grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14"
               >
                 <div className="col-span-2 md:col-span-2">
                   <span
                     aria-hidden
-                    className="font-editorial font-light tabular-nums text-[40px] sm:text-[56px] md:text-[76px] leading-none text-[hsl(var(--ink-strong))] opacity-15 md:opacity-20"
+                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-25 md:opacity-30"
                   >
                     {n}
                   </span>

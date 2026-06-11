@@ -76,12 +76,15 @@ export default function About() {
 
           <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
 
-          {/* Coda — biographical, quieter */}
-          <div className="space-y-6">
+          {/* Coda — current role, body-sized */}
+          <h2 className="font-editorial italic text-[20px] md:text-[24px] leading-[1.4] text-[hsl(var(--ink-strong))] mb-8">
+            Current role
+          </h2>
+          <div className="space-y-8">
             {coda.map((p, i) => (
               <p
                 key={i}
-                className="text-[14px] md:text-[15px] leading-[1.75] font-light text-[hsl(var(--meta-ink))]"
+                className="text-[17px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
               >
                 {p}
               </p>

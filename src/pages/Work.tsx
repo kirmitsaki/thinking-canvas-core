@@ -60,7 +60,7 @@ export default function Work() {
 
       <div className="pt-8 md:pt-16 pb-24 md:pb-40">
         {caseStudies.map((c, idx) => {
-          const n = String(idx + 1).padStart(2, "0");
+          const n = ["I", "II", "III"][idx];
           return (
             <article
               key={c.company}
