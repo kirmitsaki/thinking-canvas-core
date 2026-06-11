@@ -99,7 +99,6 @@ function renderParagraph(p: EssayParagraph, i: number) {
           key={i}
           className="font-serif italic text-[hsl(var(--ink-body))]"
           style={{
-            textAlign: "center",
             fontSize: "1.1rem",
             marginTop: "3.5rem",
             marginBottom: "2rem",
