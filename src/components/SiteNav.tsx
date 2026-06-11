@@ -11,12 +11,14 @@ export default function SiteNav() {
   return (
     <header className="w-full">
       <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-6 flex items-baseline justify-between">
-        <Link
-          to="/"
-          className="font-editorial text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))]"
-        >
-          Rachel Kirmitsaki
-        </Link>
+        {pathname !== "/" && (
+          <Link
+            to="/"
+            className="font-editorial text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))]"
+          >
+            Rachel Kirmitsaki
+          </Link>
+        )}
         <nav className="flex items-center gap-6 md:gap-10 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--ink-body))]">
           {items.map((i) => {
             const active =
