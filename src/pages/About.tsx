@@ -73,20 +73,9 @@ export default function About() {
 
           <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
 
-          {/* Coda — current role, body-sized */}
-          <h2 className="font-editorial italic text-[20px] md:text-[24px] leading-[1.4] text-[hsl(var(--ink-strong))] mb-8">
-            These days I lead product design across EMEA and APAC at Secure Code Warrior.
-          </h2>
-          <div className="space-y-8">
-            {coda.map((p, i) => (
-              <p
-                key={i}
-                className="text-[17px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
-              >
-                {p}
-              </p>
-            ))}
-          </div>
+          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))]">
+            {coda}
+          </p>
         </article>
       </section>
     </PageShell>
