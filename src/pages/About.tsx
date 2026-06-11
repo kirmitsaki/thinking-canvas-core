@@ -18,9 +18,9 @@ const story: string[] = [
 ];
 
 const coda: string[] = [
-  "Today I lead product design across EMEA and APAC at Secure Code Warrior, an AI-driven developer risk platform. Before that I was the first in-house designer at Origin Markets, a fintech platform used by global financial institutions, and Senior UX/UI Designer at Mendeley (Elsevier), supporting over 120,000 researchers worldwide.",
-  "I have a BSc in Computer Science from Aristotle University of Thessaloniki, an MSc in Management from the University of Liverpool, and I started my career as a UX Engineer, which means I've been translating between design and engineering for longer than either side probably realises.",
-  "I'm based in London.",
+  "These days I lead product design across EMEA and APAC at Secure Code Warrior. Before that I was the first in-house designer at Origin Markets, a fintech platform used by global financial institutions, and a Senior Designer at Mendeley, part of Elsevier, where the product was used by over 120,000 researchers.",
+  "I have a degree in Computer Science and started my career as a UX Engineer, which means I've been translating between design and engineering for longer than either side probably realises.",
+  "I'm based in London. I think in systems, work in B2B, and occasionally find the whole thing genuinely funny.",
 ];
 
 export default function About() {

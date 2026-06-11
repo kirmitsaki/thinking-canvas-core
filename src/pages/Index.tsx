@@ -18,9 +18,10 @@ export default function Index() {
           </h1>
 
           <p className="mt-10 md:mt-14 font-editorial text-[22px] sm:text-[26px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-            I build and scale design functions in complex B2B environments,
-            using systems thinking to transform fragmented products, workflows,
-            and organisations into coherent, strategically aligned platforms.
+            I've spent the last decade building design functions inside complex
+            B2B companies. The kind where the interface is never really the
+            problem, and the interesting work happens well before anyone opens
+            a design tool.
           </p>
 
           <p className="mt-10 md:mt-14 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
