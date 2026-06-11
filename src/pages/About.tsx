@@ -39,6 +39,11 @@ export default function About() {
 
       <section className="pt-14 md:pt-20 pb-20 md:pb-28">
         <article className="max-w-[680px]">
+          {/* Pull quote — small, warm, quiet caption above the opener */}
+          <p className="font-editorial italic text-[15px] md:text-[16px] leading-[1.6] text-[hsl(var(--accent-stone))] mb-10 md:mb-14">
+            {coda}
+          </p>
+
           {/* Editorial opener: ~1.8–2x body */}
           <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
             {opener}
@@ -71,11 +76,6 @@ export default function About() {
             {punchline}
           </p>
 
-          <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
-
-          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))]">
-            {coda}
-          </p>
         </article>
       </section>
     </PageShell>
