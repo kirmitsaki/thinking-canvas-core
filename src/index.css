@@ -19,7 +19,7 @@ All colors MUST be HSL.
     --muted-ink: 30 7% 40%;
     --meta-ink: 30 6% 52%;
     --hairline: 32 14% 86%;
-    --accent-stone: 28 22% 52%;
+    --accent-stone: 16 100% 27%;
 
     --card: 38 30% 96%;
     --card-foreground: 30 10% 10%;
@@ -36,7 +36,7 @@ All colors MUST be HSL.
     --muted: 34 18% 92%;
     --muted-foreground: 30 7% 40%;
 
-    --accent: 28 22% 52%;
+    --accent: 16 100% 27%;
     --accent-foreground: 38 30% 96%;
 
     --destructive: 0 60% 45%;
