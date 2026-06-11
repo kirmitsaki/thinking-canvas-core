@@ -43,22 +43,32 @@ export default function Essay() {
 
       <PageRule />
 
-      <article className="py-14 md:py-20 max-w-[680px]">
+      <article className="py-14 md:py-20 max-w-[640px]">
         {lede && (
-          <p className="font-editorial text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.005em] text-[hsl(var(--ink-strong))] mb-12">
+          <p className="font-editorial text-[20px] md:text-[22px] leading-[1.85] text-[hsl(var(--ink-strong))] mb-12">
             {lede}
           </p>
         )}
-        {body.map((p, i) => (
-          <p
-            key={i}
-            className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-          >
-            {p}
-          </p>
-        ))}
+        {body.map((p, i) => {
+          const isPullQuote = p.length <= 160;
+          const isSectionBreak = /^(The first move|The harder work|The moment design becomes)/i.test(
+            p
+          );
+          const classes = [
+            "text-[17px] md:text-[18px] leading-[1.85] text-[hsl(var(--ink-body))]",
+            isPullQuote ? "my-24" : "mb-12",
+            !isPullQuote && isSectionBreak ? "mt-[4.5rem]" : "",
+          ]
+            .filter(Boolean)
+            .join(" ");
+          return (
+            <p key={i} className={classes}>
+              {p}
+            </p>
+          );
+        })}
 
-        <BackToWriting className="mt-20" />
+        <BackToWriting className="mt-20 block" />
       </article>
     </PageShell>
   );
