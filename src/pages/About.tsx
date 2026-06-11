@@ -22,32 +22,71 @@ const coda: string[] = [
   "I'm based in London. I think in systems, work in B2B, and occasionally find the whole thing genuinely funny.",
 ];
 
-const Paragraph = ({ children }: { children: React.ReactNode }) => (
-  <p className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]">
-    {children}
-  </p>
-);
+// Lines that should land with extra breathing room
+const beats = new Set<string>([
+  "And then, like all good origin stories, one followed us home.",
+  "Naturally, I took it personally.",
+  "It felt infinite. It felt powerful. It felt like cheating, somehow.",
+]);
 
 export default function About() {
-  const [lede, ...rest] = story;
+  const [opener, ...rest] = story;
+  const punchline = rest[rest.length - 1];
+  const middle = rest.slice(0, -1);
 
   return (
     <PageShell>
-      <PageHeader title="About" lede={lede} />
+      <PageHeader title="About" />
 
       <PageRule />
 
       <section className="pt-14 md:pt-20 pb-20 md:pb-28">
         <article className="max-w-[680px]">
-          {rest.map((p, i) => (
-            <Paragraph key={i}>{p}</Paragraph>
-          ))}
+          {/* Editorial opener: ~1.8–2x body */}
+          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
+            {opener}
+          </p>
 
-          <hr className="my-12 border-[hsl(var(--hairline))]" />
+          {middle.map((p, i) => {
+            const isBeat = beats.has(p);
+            if (isBeat) {
+              return (
+                <p
+                  key={i}
+                  className="font-editorial italic text-[22px] md:text-[26px] leading-[1.35] text-[hsl(var(--ink-strong))] my-14 md:my-20"
+                >
+                  {p}
+                </p>
+              );
+            }
+            return (
+              <p
+                key={i}
+                className="mb-8 text-[17px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
+              >
+                {p}
+              </p>
+            );
+          })}
 
-          {coda.map((p, i) => (
-            <Paragraph key={i}>{p}</Paragraph>
-          ))}
+          {/* Punchline — warmer tone, more space above */}
+          <p className="mt-14 md:mt-20 font-editorial italic text-[20px] md:text-[24px] leading-[1.4] text-[hsl(var(--accent-stone))]">
+            {punchline}
+          </p>
+
+          <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
+
+          {/* Coda — biographical, quieter */}
+          <div className="space-y-6">
+            {coda.map((p, i) => (
+              <p
+                key={i}
+                className="text-[14px] md:text-[15px] leading-[1.75] font-light text-[hsl(var(--meta-ink))]"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
         </article>
       </section>
     </PageShell>
