@@ -85,13 +85,9 @@ function renderParagraph(p: EssayParagraph, i: number) {
           style={{
             fontSize: "1.45rem",
             color: ACCENT,
-            textAlign: "center",
             marginTop: "3.5rem",
             marginBottom: "3.5rem",
             lineHeight: 1.5,
-            maxWidth: "500px",
-            marginLeft: "auto",
-            marginRight: "auto",
           }}
         >
           {p.text}
