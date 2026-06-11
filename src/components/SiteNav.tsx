@@ -25,8 +25,7 @@ export default function SiteNav() {
           {items.map((i) => {
             const active =
               pathname === i.to ||
-              (i.to === "/writing" && pathname.startsWith("/essays")) ||
-              (i.to === "/work" && pathname.startsWith("/work"));
+              (i.to === "/writing" && pathname.startsWith("/essays"));
             return (
               <Link
                 key={i.to}

@@ -73,6 +73,8 @@ const essays: EssayItem[] = [
   },
 ];
 
+const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
+
 export default function Writing() {
   return (
     <PageShell>
@@ -82,7 +84,6 @@ export default function Writing() {
 
       <ul className="pt-10 md:pt-16 pb-20 md:pb-28">
         {essays.map((item, idx) => {
-          const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
           const n = romans[idx];
           return (
             <li
