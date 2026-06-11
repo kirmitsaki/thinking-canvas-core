@@ -32,7 +32,9 @@ export default function SiteNav() {
                 to={i.to}
                 className={
                   "transition-colors hover:text-[hsl(var(--ink-strong))] " +
-                  (active ? "text-[hsl(var(--ink-strong))]" : "")
+                  (active
+                    ? "text-[hsl(var(--ink-strong))] border-b border-[hsl(var(--ink-strong))] pb-0.5"
+                    : "")
                 }
               >
                 {i.label}
