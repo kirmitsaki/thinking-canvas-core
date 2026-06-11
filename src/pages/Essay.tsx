@@ -1,3 +1,4 @@
+import type React from "react";
 import { Link, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 import { essays, type EssayParagraph } from "@/content/essays";
