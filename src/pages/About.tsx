@@ -33,15 +33,13 @@ export default function About() {
           </h1>
         </section>
 
-        <hr className="border-[hsl(var(--hairline))]" />
-
         <article className="py-16 md:py-24 max-w-[680px]">
           {story.map((p, i) => (
             <p
               key={i}
               className={
                 i === 0
-                  ? "font-editorial text-[24px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))] mb-10"
+                  ? "max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))] mb-10"
                   : "mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
               }
             >
