@@ -16,11 +16,8 @@ const story: string[] = [
   "Which, in hindsight, is a very reasonable way to end up making tech products.",
 ];
 
-const coda: string[] = [
-  "These days I lead product design across EMEA and APAC at Secure Code Warrior. Before that I was the first in-house designer at Origin Markets, a fintech platform used by global financial institutions, and a Senior Designer at Mendeley, part of Elsevier, where the product was used by over 120,000 researchers.",
-  "I have a degree in Computer Science and started my career as a UX Engineer, which means I've been translating between design and engineering for longer than either side probably realises.",
-  "I'm based in London. I think in systems, work in B2B, and occasionally find the whole thing genuinely funny.",
-];
+const coda =
+  "Currently leading Product Design across EMEA and APAC at Secure Code Warrior, shaping product direction across governance, observability, learning, and risk.";
 
 // Lines that should land with extra breathing room
 const beats = new Set<string>([
