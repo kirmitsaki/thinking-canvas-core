@@ -76,15 +76,7 @@ const essays: EssayItem[] = [
 export default function Writing() {
   return (
     <PageShell>
-      <PageHeader
-        title="Writing"
-        lede="I've been doing this for a while now. Long enough to have opinions, make mistakes, and occasionally be right for the wrong reasons. These essays are my attempt to write down the things I keep thinking about, the patterns I keep seeing, the moments that changed how I work."
-      >
-        <p className="mt-6 max-w-2xl font-editorial text-[19px] md:text-[22px] leading-[1.5] text-[hsl(var(--ink-body))]">
-          No frameworks. No five-step models. Just what I've actually observed,
-          from inside companies that were figuring things out in real time.
-        </p>
-      </PageHeader>
+      <PageHeader title="Writing" />
 
       <PageRule />
 
