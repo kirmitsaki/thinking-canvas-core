@@ -16,11 +16,8 @@ const story: string[] = [
   "Which, in hindsight, is a very reasonable way to end up making tech products.",
 ];
 
-const coda: string[] = [
-  "These days I lead product design across EMEA and APAC at Secure Code Warrior. Before that I was the first in-house designer at Origin Markets, a fintech platform used by global financial institutions, and a Senior Designer at Mendeley, part of Elsevier, where the product was used by over 120,000 researchers.",
-  "I have a degree in Computer Science and started my career as a UX Engineer, which means I've been translating between design and engineering for longer than either side probably realises.",
-  "I'm based in London. I think in systems, work in B2B, and occasionally find the whole thing genuinely funny.",
-];
+const coda =
+  "Currently leading Product Design across EMEA and APAC at Secure Code Warrior, shaping product direction across governance, observability, learning, and risk.";
 
 // Lines that should land with extra breathing room
 const beats = new Set<string>([
@@ -76,20 +73,9 @@ export default function About() {
 
           <hr className="my-16 md:my-20 border-[hsl(var(--hairline))]" />
 
-          {/* Coda — current role, body-sized */}
-          <h2 className="font-editorial italic text-[20px] md:text-[24px] leading-[1.4] text-[hsl(var(--ink-strong))] mb-8">
-            These days I lead product design across EMEA and APAC at Secure Code Warrior.
-          </h2>
-          <div className="space-y-8">
-            {coda.map((p, i) => (
-              <p
-                key={i}
-                className="text-[17px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
-              >
-                {p}
-              </p>
-            ))}
-          </div>
+          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))]">
+            {coda}
+          </p>
         </article>
       </section>
     </PageShell>
