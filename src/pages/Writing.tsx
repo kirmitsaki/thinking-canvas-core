@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 type Item = { slug: string; title: string; blurb: string };
 
@@ -150,7 +149,6 @@ export default function Writing() {
 
         <div className="h-24" />
       </main>
-      <SiteFooter />
     </div>
   );
 }

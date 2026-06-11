@@ -1,5 +1,4 @@
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 export default function Index() {
   return (
@@ -26,8 +25,6 @@ export default function Index() {
           </p>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

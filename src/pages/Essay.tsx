@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 type Essay = { title: string; paragraphs: string[] };
 
@@ -183,7 +182,6 @@ export default function Essay() {
             ← Writing
           </Link>
         </main>
-        <SiteFooter />
       </div>
     );
   }
@@ -233,7 +231,6 @@ export default function Essay() {
           </div>
         </article>
       </main>
-      <SiteFooter />
     </div>
   );
 }
