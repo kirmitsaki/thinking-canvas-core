@@ -1,4 +1,4 @@
-import SiteNav from "@/components/SiteNav";
+import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 const story: string[] = [
   "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",
@@ -22,46 +22,34 @@ const coda: string[] = [
   "I'm based in London. I think in systems, work in B2B, and occasionally find the whole thing genuinely funny.",
 ];
 
+const Paragraph = ({ children }: { children: React.ReactNode }) => (
+  <p className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]">
+    {children}
+  </p>
+);
+
 export default function About() {
+  const [lede, ...rest] = story;
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteNav />
-      <main className="mx-auto max-w-[1320px] px-6 md:px-12">
-        <section className="pt-24 md:pt-40 pb-12 md:pb-16">
-          <h1 className="font-editorial text-[56px] md:text-[112px] leading-[0.95] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
-            About
-          </h1>
-          <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-            {story[0]}
-          </p>
-        </section>
+    <PageShell>
+      <PageHeader title="About" lede={lede} />
 
-        <hr className="border-[hsl(var(--hairline))]" />
+      <PageRule />
 
-        <section className="pt-14 md:pt-20 pb-20 md:pb-28">
-          <article className="max-w-[680px]">
-            {story.slice(1).map((p, i) => (
-              <p
-                key={i}
-                className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-              >
-                {p}
-              </p>
-            ))}
+      <section className="pt-14 md:pt-20 pb-20 md:pb-28">
+        <article className="max-w-[680px]">
+          {rest.map((p, i) => (
+            <Paragraph key={i}>{p}</Paragraph>
+          ))}
 
-            <hr className="my-12 border-[hsl(var(--hairline))]" />
+          <hr className="my-12 border-[hsl(var(--hairline))]" />
 
-            {coda.map((p, i) => (
-              <p
-                key={i}
-                className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-              >
-                {p}
-              </p>
-            ))}
-          </article>
-        </section>
-      </main>
-    </div>
+          {coda.map((p, i) => (
+            <Paragraph key={i}>{p}</Paragraph>
+          ))}
+        </article>
+      </section>
+    </PageShell>
   );
 }

@@ -1,4 +1,4 @@
-import SiteNav from "@/components/SiteNav";
+import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 type CaseStudy = {
   context: string;
@@ -44,37 +44,36 @@ const caseStudies: CaseStudy[] = [
   },
 ];
 
+const ContextLabel = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--accent-stone))]">
+    {children}
+  </h2>
+);
+
 export default function Work() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteNav />
-      <main className="mx-auto max-w-[1320px] px-6 md:px-12">
-        <section className="pt-24 md:pt-40 pb-12 md:pb-16">
-          <h1 className="font-editorial text-[64px] md:text-[136px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
-            Work
-          </h1>
-          <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-            Three companies. All B2B. All complex. All situations where design
-            either had to earn its place or build it from scratch.
-          </p>
-        </section>
+    <PageShell>
+      <PageHeader
+        title="Work"
+        lede="Three companies. All B2B. All complex. All situations where design either had to earn its place or build it from scratch."
+      />
 
-        <hr className="border-[hsl(var(--hairline))]" />
+      <PageRule />
 
-        <section className="pb-20 md:pb-28">
-          {caseStudies.map((c, idx) => (
+      <section className="pb-20 md:pb-28">
+        {caseStudies.map((c, idx) => {
+          const isLast = idx === caseStudies.length - 1;
+          return (
             <article
               key={c.context}
               className={
                 "pt-14 md:pt-20 " +
-                (idx < caseStudies.length - 1 ? "pb-14 md:pb-20 border-b border-[hsl(var(--hairline))]" : "")
+                (isLast ? "" : "pb-14 md:pb-20 border-b border-[hsl(var(--hairline))]")
               }
             >
               <div className="grid grid-cols-12 gap-6 md:gap-10">
                 <div className="col-span-12 md:col-span-3">
-                  <h2 className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--accent-stone))]">
-                    {c.context}
-                  </h2>
+                  <ContextLabel>{c.context}</ContextLabel>
                 </div>
                 <div className="col-span-12 md:col-span-9">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -101,9 +100,9 @@ export default function Work() {
                 </div>
               </div>
             </article>
-          ))}
-        </section>
-      </main>
-    </div>
+          );
+        })}
+      </section>
+    </PageShell>
   );
 }

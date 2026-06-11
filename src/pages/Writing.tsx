@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import SiteNav from "@/components/SiteNav";
+import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
-type Item = { slug: string; title: string; blurb: string };
+type EssayItem = { slug: string; title: string; blurb: string };
+type EssayGroup = { label: string; items: EssayItem[] };
 
-const groups: { label: string; items: Item[] }[] = [
+const groups: EssayGroup[] = [
   {
     label: "Core Identity",
     items: [
@@ -87,68 +88,58 @@ const groups: { label: string; items: Item[] }[] = [
   },
 ];
 
+const EssayLink = ({ item }: { item: EssayItem }) => (
+  <li>
+    <Link to={`/essays/${item.slug}`} className="group block py-7 md:py-9">
+      <div className="flex items-baseline justify-between gap-6">
+        <h3 className="font-editorial text-[26px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+          {item.title}
+        </h3>
+        <span className="text-[hsl(var(--meta-ink))] opacity-30 group-hover:opacity-100 transition-all translate-x-0 group-hover:translate-x-1">
+          →
+        </span>
+      </div>
+      <p className="mt-3 max-w-2xl text-[15px] md:text-[16px] leading-[1.55] text-[hsl(var(--ink-body))]">
+        {item.blurb}
+      </p>
+    </Link>
+  </li>
+);
+
 export default function Writing() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteNav />
-      <main className="mx-auto max-w-[1320px] px-6 md:px-12">
-        <section className="pt-24 md:pt-40 pb-12 md:pb-16">
-          <h1 className="font-editorial text-[64px] md:text-[136px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
-            Writing
-          </h1>
-          <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-            I've been doing this for a while now. Long enough to have opinions,
-            make mistakes, and occasionally be right for the wrong reasons.
-            These essays are my attempt to write down the things I keep
-            thinking about, the patterns I keep seeing, the moments that
-            changed how I work.
-          </p>
-          <p className="mt-6 max-w-2xl text-[15px] md:text-[17px] leading-[1.6] text-[hsl(var(--ink-body))]">
-            No frameworks. No five-step models. Just what I've actually
-            observed, from inside companies that were figuring things out in
-            real time.
-          </p>
+    <PageShell>
+      <PageHeader
+        title="Writing"
+        lede="I've been doing this for a while now. Long enough to have opinions, make mistakes, and occasionally be right for the wrong reasons. These essays are my attempt to write down the things I keep thinking about, the patterns I keep seeing, the moments that changed how I work."
+      >
+        <p className="mt-6 max-w-2xl text-[15px] md:text-[17px] leading-[1.6] text-[hsl(var(--ink-body))]">
+          No frameworks. No five-step models. Just what I've actually observed,
+          from inside companies that were figuring things out in real time.
+        </p>
+      </PageHeader>
+
+      <PageRule />
+
+      {groups.map((g) => (
+        <section
+          key={g.label}
+          className="pt-14 md:pt-20 pb-14 md:pb-20 grid grid-cols-12 gap-6 border-b border-[hsl(var(--hairline))]"
+        >
+          <div className="col-span-12 md:col-span-3">
+            <h2 className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--accent-stone))]">
+              {g.label}
+            </h2>
+          </div>
+          <ul className="col-span-12 md:col-span-9 divide-y divide-[hsl(var(--hairline))]">
+            {g.items.map((item) => (
+              <EssayLink key={item.slug} item={item} />
+            ))}
+          </ul>
         </section>
+      ))}
 
-        <hr className="border-[hsl(var(--hairline))]" />
-
-        {groups.map((g) => (
-          <section
-            key={g.label}
-            className="pt-14 md:pt-20 pb-14 md:pb-20 grid grid-cols-12 gap-6 border-b border-[hsl(var(--hairline))]"
-          >
-            <div className="col-span-12 md:col-span-3">
-              <h2 className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--accent-stone))]">
-                {g.label}
-              </h2>
-            </div>
-            <ul className="col-span-12 md:col-span-9 divide-y divide-[hsl(var(--hairline))]">
-              {g.items.map((e) => (
-                <li key={e.slug}>
-                  <Link
-                    to={`/essays/${e.slug}`}
-                    className="group block py-7 md:py-9"
-                  >
-                    <div className="flex items-baseline justify-between gap-6">
-                      <h3 className="font-editorial text-[26px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
-                        {e.title}
-                      </h3>
-                      <span className="text-[hsl(var(--meta-ink))] opacity-30 group-hover:opacity-100 transition-all translate-x-0 group-hover:translate-x-1">
-                        →
-                      </span>
-                    </div>
-                    <p className="mt-3 max-w-2xl text-[15px] md:text-[16px] leading-[1.55] text-[hsl(var(--ink-body))]">
-                      {e.blurb}
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-
-        <div className="h-24" />
-      </main>
-    </div>
+      <div className="h-24" />
+    </PageShell>
   );
 }
