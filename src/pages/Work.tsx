@@ -11,25 +11,25 @@ type CaseStudy = {
 
 const caseStudies: CaseStudy[] = [
   {
-    slug: "secure-code-warrior-vision",
-    title: "Rebuilding a platform from its foundations",
+    slug: "secure-code-warrior",
+    title: "Building a design function from the ground up",
     context: "Secure Code Warrior",
     blurb:
-      "A platform that had been built outward without being built coherently. The work was less about redesigning interfaces and more about giving the company a shared picture of where it was going.",
+      "Design was present but peripheral, plugged in for delivery but not shaping direction. The work was to change that, and to reposition the company from a learning platform to a holistic developer risk solution.",
   },
   {
     slug: "origin-markets",
     title: "Designing trust into institutional finance",
     context: "Origin Markets",
     blurb:
-      "An ambitious idea translated into a product that institutions handling hundreds of millions in debt issuance could actually use. The documents weren't really the product. The confidence between the parties was.",
+      "First in-house designer on a platform global banks and borrowers use to manage debt issuance. An ambitious vision translated into a structured digital product that real institutions could use and trust.",
   },
   {
     slug: "mendeley",
-    title: "Calibrating a product inside a larger ecosystem",
+    title: "Coherence at scale, for expert users",
     context: "Mendeley · Elsevier",
     blurb:
-      "One product among many under a single parent company. The challenge wasn't fragmentation but calibration: how to hold shared principles across very different products without flattening what made each one distinct.",
+      "Design lead across Library, Reader, and Citation inside one of the world's largest academic networks. Where systems thinking stopped being an instinct and started becoming a practice.",
   },
 ];
 
