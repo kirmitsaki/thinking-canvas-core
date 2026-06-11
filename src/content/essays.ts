@@ -69,3 +69,4 @@ export const essays: Record<string, Essay> = {
       "The best B2B products feel inevitable. Not because they're simple, but because they reflect how the world actually works. The user doesn't have to translate their job into the language of the software. The software understands the shape of the work and supports it naturally. When that happens, people stop thinking about the product and start focusing on what they're trying to achieve. That's the goal. Not a beautiful interface. A product that disappears into the work.",
     ],
   },
+};
