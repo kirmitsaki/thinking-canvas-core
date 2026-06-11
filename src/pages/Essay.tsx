@@ -65,8 +65,11 @@ function renderParagraph(p: EssayParagraph, i: number) {
         >
           <span
             style={{
-              fontVariant: "small-caps",
-              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              fontSize: "0.82em",
+              fontWeight: 600,
+              color: "hsl(var(--ink-strong))",
             }}
           >
             {p.prefix}
