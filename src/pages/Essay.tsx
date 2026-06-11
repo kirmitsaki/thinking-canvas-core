@@ -161,7 +161,7 @@ export default function Essay() {
           </p>
         )}
 
-        <BackToWriting className="mt-20 block text-center" />
+        <BackToWriting className="mt-20" />
       </article>
     </PageShell>
   );
