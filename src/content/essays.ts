@@ -1,7 +1,6 @@
 export type Essay = { title: string; paragraphs: string[] };
 
 export const essays: Record<string, Essay> = {
-const essays: Record<string, Essay> = {
   "building-and-leading-design-organisations": {
     title: "Building and leading design organisations",
     paragraphs: [
@@ -160,7 +159,6 @@ const essays: Record<string, Essay> = {
       "Responsible AI use in a design team is mostly discipline. We use AI to accelerate exploration, not to replace evaluation. Every output still has to be tested against real system constraints: technical feasibility, user behaviour, governance requirements, and long-term maintainability. We avoid treating AI-generated solutions as decisions. They are inputs to thinking, not conclusions. Responsible use means maintaining the same standard of rigour, even when the cost of skipping it drops.",
       "AI hasn't replaced design thinking. It has moved the moment it matters to earlier in the process, when direction is still cheap to change and systems are still flexible.",
     ],
-  },
 };
 
 export const essaySlugs = Object.keys(essays);
