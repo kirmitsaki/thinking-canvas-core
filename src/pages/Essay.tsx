@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
-import { essays } from "@/content/essays";
+import { essays, type EssayParagraph } from "@/content/essays";
 
 const BackToWriting = ({ className = "" }: { className?: string }) => (
   <Link
@@ -13,6 +13,114 @@ const BackToWriting = ({ className = "" }: { className?: string }) => (
     ← Writing
   </Link>
 );
+
+const ACCENT = "hsl(var(--accent-stone))";
+
+function renderParagraph(p: EssayParagraph, i: number) {
+  if (typeof p === "string") {
+    return (
+      <p
+        key={i}
+        className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+      >
+        {p}
+      </p>
+    );
+  }
+  switch (p.type) {
+    case "hook":
+      return (
+        <p
+          key={i}
+          className="font-serif italic leading-[1.4]"
+          style={{
+            fontSize: "1.6rem",
+            color: ACCENT,
+            marginBottom: "3rem",
+          }}
+        >
+          {p.text}
+        </p>
+      );
+    case "example":
+      return (
+        <p
+          key={i}
+          className="text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+          style={{
+            borderLeft: `3px solid ${ACCENT}`,
+            paddingLeft: "20px",
+            marginTop: "1.8rem",
+            marginBottom: "1.8rem",
+          }}
+        >
+          {p.text}
+        </p>
+      );
+    case "smallcaps":
+      return (
+        <p
+          key={i}
+          className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+        >
+          <span
+            style={{
+              fontVariant: "small-caps",
+              letterSpacing: "0.06em",
+            }}
+          >
+            {p.prefix}
+          </span>
+          {p.text}
+        </p>
+      );
+    case "pull":
+      return (
+        <p
+          key={i}
+          className="font-serif italic"
+          style={{
+            fontSize: "1.45rem",
+            color: ACCENT,
+            textAlign: "center",
+            marginTop: "3.5rem",
+            marginBottom: "3.5rem",
+            lineHeight: 1.5,
+            maxWidth: "500px",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          {p.text}
+        </p>
+      );
+    case "closing":
+      return (
+        <p
+          key={i}
+          className="font-serif italic text-[hsl(var(--ink-body))]"
+          style={{
+            textAlign: "center",
+            fontSize: "1.1rem",
+            marginTop: "3.5rem",
+            marginBottom: "2rem",
+          }}
+        >
+          {p.text}
+        </p>
+      );
+    case "body":
+    default:
+      return (
+        <p
+          key={i}
+          className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+        >
+          {p.text}
+        </p>
+      );
+  }
+}
 
 export default function Essay() {
   const { slug } = useParams();
@@ -31,7 +139,12 @@ export default function Essay() {
     );
   }
 
-  const [lede, ...body] = essay.paragraphs;
+  // If first paragraph is a plain string, treat it as a large lede (legacy style).
+  // If it's a typed object (e.g. hook), render via renderParagraph.
+  const first = essay.paragraphs[0];
+  const firstIsLegacyLede = typeof first === "string";
+  const lede = firstIsLegacyLede ? (first as string) : null;
+  const body = firstIsLegacyLede ? essay.paragraphs.slice(1) : essay.paragraphs;
 
   return (
     <PageShell>
@@ -49,14 +162,7 @@ export default function Essay() {
             {lede}
           </p>
         )}
-        {body.map((p, i) => (
-          <p
-            key={i}
-            className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-          >
-            {p}
-          </p>
-        ))}
+        {body.map((p, i) => renderParagraph(p, i))}
 
         <BackToWriting className="mt-20" />
       </article>
