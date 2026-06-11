@@ -31,33 +31,36 @@ export default function About() {
           <h1 className="font-editorial text-[56px] md:text-[112px] leading-[0.95] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
             About
           </h1>
+          <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
+            {story[0]}
+          </p>
         </section>
 
-        <article className="py-16 md:py-24 max-w-[680px]">
-          {story.map((p, i) => (
-            <p
-              key={i}
-              className={
-                i === 0
-                  ? "max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))] mb-10"
-                  : "mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-              }
-            >
-              {p}
-            </p>
-          ))}
+        <hr className="border-[hsl(var(--hairline))]" />
 
-          <hr className="my-12 border-[hsl(var(--hairline))]" />
+        <section className="pt-14 md:pt-20 pb-20 md:pb-28">
+          <article className="max-w-[680px]">
+            {story.slice(1).map((p, i) => (
+              <p
+                key={i}
+                className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+              >
+                {p}
+              </p>
+            ))}
 
-          {coda.map((p, i) => (
-            <p
-              key={i}
-              className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
-            >
-              {p}
-            </p>
-          ))}
-        </article>
+            <hr className="my-12 border-[hsl(var(--hairline))]" />
+
+            {coda.map((p, i) => (
+              <p
+                key={i}
+                className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+              >
+                {p}
+              </p>
+            ))}
+          </article>
+        </section>
       </main>
     </div>
   );
