@@ -9,8 +9,8 @@ const items = [
 export default function SiteNav() {
   const { pathname } = useLocation();
   return (
-    <header className="w-full">
-      <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-6 flex items-baseline">
+    <header className="fixed top-0 left-0 z-50 w-full bg-[hsl(var(--background))]/60 backdrop-blur-[12px] border-b border-[hsl(var(--hairline))]/50">
+      <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-5 flex items-baseline">
         <Link
           to="/"
           className={
