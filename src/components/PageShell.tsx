@@ -1,9 +1,8 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 /**
- * Page shell — site nav + centered editorial container + persistent footer.
+ * Page shell — site nav + centered editorial container.
  * Use `centered` for hero pages (Index) where the main column
  * vertically centers its single section.
  */
@@ -25,7 +24,6 @@ export function PageShell({
       >
         {children}
       </main>
-      <SiteFooter />
     </div>
   );
 }
