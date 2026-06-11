@@ -8,6 +8,20 @@ export type EssayParagraph =
 
 export type Essay = { title: string; paragraphs: EssayParagraph[] };
 
+export const essayOrder = [
+  "building-and-leading-design-organisations",
+  "strategic-design-leadership",
+  "systems-thinking",
+  "complex-b2b-platforms",
+  "workflow-transformation",
+  "research-led-decision-making",
+  "design-systems",
+  "technical-fluency",
+  "distributed-leadership",
+  "commercial-and-business-impact",
+  "ai-enabled-ways-of-working",
+];
+
 export const essays: Record<string, Essay> = {
   "building-and-leading-design-organisations": {
     title: "Building and leading design organisations",
