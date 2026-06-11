@@ -96,7 +96,7 @@ export default function Writing() {
                 <div className="col-span-2 md:col-span-2">
                   <span
                     aria-hidden
-                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] transition-colors duration-300"
+                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300"
                   >
                     {n}
                   </span>
@@ -106,7 +106,7 @@ export default function Writing() {
                     {item.title}
                     <span
                       aria-hidden
-                      className="inline-block text-[0.6em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] group-hover:translate-x-1 transition-all duration-300"
+                      className="inline-block text-[0.6em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] group-hover:translate-x-1 transition-all duration-300"
                     >
                       →
                     </span>

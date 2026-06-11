@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 const NotFound = () => {
@@ -22,12 +22,12 @@ const NotFound = () => {
       <PageRule />
 
       <section className="py-14 md:py-20">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="inline-block text-[12px] uppercase tracking-[0.22em] text-[hsl(var(--meta-ink))] hover:text-[hsl(var(--ink-strong))] transition-colors"
         >
           ← Return home
-        </a>
+        </Link>
       </section>
     </PageShell>
   );

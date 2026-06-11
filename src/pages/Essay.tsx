@@ -15,21 +15,14 @@ const BackToWriting = ({ className = "" }: { className?: string }) => (
   </Link>
 );
 
-const ACCENT = "#8B2500";
-
-const bodyParagraphStyle: React.CSSProperties = {
-  fontSize: "1rem",
-  lineHeight: 1.8,
-  marginBottom: "1.6rem",
-};
+const romans = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"];
 
 function renderParagraph(p: EssayParagraph, i: number) {
   if (typeof p === "string") {
     return (
       <p
         key={i}
-        className="text-[hsl(var(--ink-body))]"
-        style={bodyParagraphStyle}
+        className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
       >
         {p}
       </p>
@@ -40,14 +33,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="font-serif italic"
-          style={{
-            fontSize: "1.6rem",
-            lineHeight: 1.4,
-            color: ACCENT,
-            marginBottom: "3rem",
-            textAlign: "left",
-          }}
+          className="mb-12 font-editorial italic text-[24px] md:text-[28px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
         >
           {p.text}
         </p>
@@ -56,17 +42,9 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="text-[hsl(var(--ink-body))]"
-          style={bodyParagraphStyle}
+          className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
         >
-          <span
-            style={{
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              fontSize: "0.82em",
-              fontWeight: 600,
-            }}
-          >
+          <span className="text-[0.82em] font-semibold uppercase tracking-[0.12em]">
             {p.prefix}
           </span>
           {p.text}
@@ -76,16 +54,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="font-serif italic"
-          style={{
-            fontSize: "1.45rem",
-            lineHeight: 1.5,
-            color: ACCENT,
-            marginTop: "3.5rem",
-            marginBottom: "3.5rem",
-            maxWidth: "540px",
-            textAlign: "left",
-          }}
+          className="my-14 max-w-[540px] font-editorial italic text-[22px] md:text-[26px] leading-[1.45] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
         >
           {p.text}
         </p>
@@ -94,13 +63,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="font-serif italic text-[hsl(var(--ink-body))]"
-          style={{
-            fontSize: "1.1rem",
-            marginTop: "3.5rem",
-            marginBottom: "2rem",
-            textAlign: "left",
-          }}
+          className="mt-14 mb-8 font-editorial italic text-[18px] md:text-[20px] leading-[1.5] text-[hsl(var(--ink-body))]"
         >
           {p.text}
         </p>
@@ -110,16 +73,13 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="text-[hsl(var(--ink-body))]"
-          style={bodyParagraphStyle}
+          className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
         >
           {p.text}
         </p>
       );
   }
 }
-
-const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
 
 export default function Essay() {
   const { slug } = useParams();
@@ -128,17 +88,16 @@ export default function Essay() {
   if (!essay) {
     return (
       <PageShell>
-        <section className="py-32 max-w-[900px]">
-          <p className="font-editorial text-3xl text-[hsl(var(--ink-strong))]">
-            Not found.
-          </p>
-          <BackToWriting className="mt-6" />
-        </section>
+        <PageHeader
+          title="Not found"
+          size="essay"
+          preTitle={<BackToWriting className="mb-4" />}
+        />
       </PageShell>
     );
   }
 
-  const currentIndex = essayOrder.indexOf(slug);
+  const currentIndex = essayOrder.indexOf(slug!);
   const prevIndex = (currentIndex - 1 + essayOrder.length) % essayOrder.length;
   const nextIndex = (currentIndex + 1) % essayOrder.length;
   const prevSlug = essayOrder[prevIndex];
@@ -148,31 +107,39 @@ export default function Essay() {
 
   return (
     <PageShell>
-      <PageHeader title={essay.title} size="essay" preTitle={<BackToWriting className="mb-4" />} />
+      <PageHeader
+        title={essay.title}
+        size="essay"
+        preTitle={<BackToWriting className="mb-4" />}
+      />
 
       <PageRule />
 
-      <article className="py-14 md:py-20" style={{ maxWidth: "640px" }}>
+      <article className="py-14 md:py-20 max-w-[640px]">
         {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
 
         <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Link to={`/essays/${prevSlug}`} className="group">
-            <span className="block font-editorial font-light text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] transition-colors duration-300">
+            <span className="block font-editorial font-light text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300">
               {romans[prevIndex]}
             </span>
             <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
-              <span className="mr-2 text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] inline-block group-hover:-translate-x-1 transition-all duration-300">←</span>
+              <span className="mr-2 text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] inline-block group-hover:-translate-x-1 transition-all duration-300">
+                ←
+              </span>
               {prevEssay.title}
             </span>
           </Link>
 
           <Link to={`/essays/${nextSlug}`} className="group md:text-right">
-            <span className="block font-editorial font-light text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] transition-colors duration-300">
+            <span className="block font-editorial font-light text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300">
               {romans[nextIndex]}
             </span>
             <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
               {nextEssay.title}
-              <span className="ml-2 text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] inline-block group-hover:translate-x-1 transition-all duration-300">→</span>
+              <span className="ml-2 text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] inline-block group-hover:translate-x-1 transition-all duration-300">
+                →
+              </span>
             </span>
           </Link>
         </nav>
