@@ -2,7 +2,7 @@ import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 const story: string[] = [
   "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",
-  "In Greece, they had already infiltrated offices, quietly humming away in corners like oversized calculators, but at home they were just making their grand debut. Families didn't have computers yet; they hosted them, like slightly intimidating guests.",
+  "They had already infiltrated offices, quietly humming away in corners like oversized calculators, but at home they were just making their grand debut. Families didn't have computers yet; they hosted them, like slightly intimidating guests.",
   "My father, sensing destiny (or at least a fun Saturday afternoon), took me to one of the first tech expos in our city. It was chaos in the best way: blinking lights, clunky hardware, and software demos that felt like peeking into the future, if the future ran on floppy disks and optimism.",
   "I wandered around pressing buttons with the confidence of someone who has absolutely no idea what they're doing but is determined to do it anyway. Screens lit up. Things happened. I didn't understand any of it, but I was having the time of my life interacting with what I firmly believed were unusually talented televisions.",
   "And then, like all good origin stories, one followed us home.",
