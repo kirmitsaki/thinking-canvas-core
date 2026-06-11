@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const items = [
   { to: "/about", label: "About" },
+  { to: "/work", label: "Work" },
   { to: "/writing", label: "Writing" },
 ];
 
@@ -18,7 +19,10 @@ export default function SiteNav() {
         </Link>
         <nav className="flex items-center gap-6 md:gap-10 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--ink-body))]">
           {items.map((i) => {
-            const active = pathname === i.to || (i.to === "/writing" && pathname.startsWith("/essays"));
+            const active =
+              pathname === i.to ||
+              (i.to === "/writing" && pathname.startsWith("/essays")) ||
+              (i.to === "/work" && pathname.startsWith("/work"));
             return (
               <Link
                 key={i.to}
