@@ -1,5 +1,4 @@
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 type CaseStudy = {
   context: string;
@@ -105,7 +104,6 @@ export default function Work() {
           ))}
         </section>
       </main>
-      <SiteFooter />
     </div>
   );
 }

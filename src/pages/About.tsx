@@ -1,5 +1,4 @@
 import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
 
 const story: string[] = [
   "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",
@@ -62,7 +61,6 @@ export default function About() {
           ))}
         </article>
       </main>
-      <SiteFooter />
     </div>
   );
 }
