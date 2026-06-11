@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import LinkedInIcon from "@/components/LinkedInIcon";
 
 const items = [
   { to: "/about", label: "About" },
@@ -14,7 +15,7 @@ export default function SiteNav() {
         <Link
           to="/"
           className={
-            "font-editorial text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))] " +
+            "font-editorial text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))] transition-colors hover:[text-decoration:underline] hover:[text-decoration-color:hsl(var(--accent-stone))] hover:[text-decoration-thickness:1px] hover:[text-underline-offset:4px] " +
             (pathname === "/" ? "invisible pointer-events-none" : "")
           }
         >
@@ -33,7 +34,7 @@ export default function SiteNav() {
                 className={
                   "transition-colors hover:text-[hsl(var(--ink-strong))] " +
                   (active
-                    ? "text-[hsl(var(--ink-strong))] font-bold"
+                    ? "text-[hsl(var(--ink-strong))] [text-decoration:underline] [text-decoration-color:hsl(var(--accent-stone))] [text-decoration-thickness:2px] [text-underline-offset:4px]"
                     : "")
                 }
               >
@@ -48,13 +49,7 @@ export default function SiteNav() {
             aria-label="LinkedIn"
             className="transition-colors text-[hsl(var(--ink-body))] hover:text-[hsl(var(--ink-strong))]"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="3" />
-              <path d="M8 10.5v6" />
-              <circle cx="8" cy="7.5" r="0.6" />
-              <path d="M12 16.5v-6" />
-              <path d="M12 13c0-1.5 1-2.5 2.25-2.5S16.5 11.5 16.5 13v3.5" />
-            </svg>
+            <LinkedInIcon size={20} />
           </a>
         </nav>
       </div>
