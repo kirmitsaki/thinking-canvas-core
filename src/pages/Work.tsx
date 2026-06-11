@@ -43,10 +43,10 @@ export default function Work() {
             Work
           </h1>
           <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-            Not a portfolio of interfaces. A record of the organisations I've
-            shaped, the problems I've worked through, and the outcomes that
-            followed. Three case studies, written in the same voice as the
-            essays.
+            Three companies. Different domains, different problems, different
+            stages of growth. The through line is the same: design walking in
+            when the function didn't exist or wasn't working, and walking out
+            having built something that lasted.
           </p>
         </section>
 
