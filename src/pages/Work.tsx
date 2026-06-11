@@ -14,12 +14,11 @@ const caseStudies: CaseStudy[] = [
     context: "Secure Code Warrior",
     title: "Head of Product Design",
     meta: "2023 – Present",
-    descriptor: "AI-driven developer risk platform · London (EMEA/APAC)",
+    descriptor: "AI-driven developer risk platform · London, EMEA/APAC",
     paragraphs: [
-      "Secure Code Warrior helps organisations reduce software risk by changing how developers think about security. When I joined, design was present but peripheral, plugged in for delivery but not shaping direction. I was asked to change that.",
-      "I built and scaled a distributed design team across EMEA and APAC, establishing the operating model, hiring standards, and team culture from the ground up. The function moved from UI execution to product design, from delivery support to strategic contributor to roadmap and product direction.",
-      "The most significant product contribution was the vision work that repositioned the company from a learning platform to a holistic developer risk solution, a shift now visible in how the company presents itself to the market. That vision unified internal teams around a common direction for the first time. The foundational work from that project continues to shape the product today, with this year's vision extending it further into AI.",
-      "Along the way: the platform's first design system, built incrementally from a simple shared file into a living system now used by every engineering team across regions. The platform's first accessibility audit, guidelines, and engineering tickets, addressing a hard requirement from enterprise clients that had never been properly tackled. And AI-enabled prototyping workflows that reduced idea-to-validated-concept cycles to under four weeks.",
+      "When I joined, design was present but peripheral. There was a team, technically, but it was operating like a contractor pool, plugged in for delivery and not much else. After an internal restructure I was asked to build the function properly, across two regions, from the ground up.",
+      "I built the team, established how we worked, and moved design from a delivery function to something that actually contributed to where the product was going. The most significant moment was when the CPTO asked me to rethink the product from scratch. Not iterate. Start over. We ran workshops, built a vision that unified the company around a common direction for the first time, and that work has been the foundation of everything since. This year it extended into AI and a full repositioning of the company in the market.",
+      "Along the way: the platform's first design system, built from a simple shared file into something every engineering team now uses without thinking about it. The first accessibility audit the platform had ever had. And AI-enabled workflows that cut idea-to-validated-concept time to under four weeks.",
     ],
   },
   {
@@ -28,10 +27,9 @@ const caseStudies: CaseStudy[] = [
     meta: "2020 – 2023",
     descriptor: "Fintech platform for debt capital markets · London",
     paragraphs: [
-      "Origin Markets is a market-leading platform used by global banks and borrowers to manage debt issuance. I joined as the first in-house designer. No existing design function, no design system, a product that had grown faster than its foundations.",
-      "I partnered with the founders to define product strategy and position design as a core contributor to product and business decisions. Working closely with the founding team, I helped translate an ambitious vision for the debt capital markets into a structured digital product that real institutions could use and trust.",
-      "The Morpho design system, which I created, brought consistency and scalability to a product handling high-density, high-stakes financial workflows. It became the foundation for everything the product team built from that point forward.",
-      "The work was recognised with consecutive GlobalCapital Bond Awards for Best Fintech, an acknowledgement of what the product had become and the role design played in getting it there.",
+      "I was the first designer. No function, no system, no foundation. Just a product that had been growing faster than its structure and founders who needed someone to help them figure out what it should become.",
+      "I worked closely with the founding team to define product strategy and translate a genuinely ambitious vision into something real institutions could use and trust. I built Morpho, the design system that became the foundation for everything the team built after. The product won consecutive GlobalCapital Bond Awards for Best Fintech, which was a nice acknowledgement that the work had landed.",
+      "The thing I learned most at Origin Markets was that the interface is rarely the interesting problem. The interesting problem is usually what the product is actually for, and who it's really serving.",
     ],
   },
   {
@@ -40,9 +38,9 @@ const caseStudies: CaseStudy[] = [
     meta: "2019 – 2020",
     descriptor: "Academic reference management platform · London",
     paragraphs: [
-      "Mendeley is one of the world's largest academic networks, with over 120,000 researchers managing more than a million references. I joined as design lead across the core product areas, Library, Reader, and Citation, working within a large cross-functional team at Elsevier.",
-      "The work was about coherence at scale. I contributed to a cross-platform design system that brought consistency across web and desktop experiences, and led design across the product areas where researchers spent most of their time. I also embedded continuous research and usability testing into the product development process, making evidence-based decision making a regular part of how the team worked rather than an occasional exercise.",
-      "Mendeley sharpened how I think about designing for expert users doing genuinely complex work, inside a large organisation with multiple products and teams. It is where systems thinking stopped being an instinct and started becoming a practice.",
+      "Mendeley is where I learned what it means to design for expert users doing genuinely complex work. Over 120,000 researchers, more than a million references, a product that had to work across web and desktop without falling apart.",
+      "I led design across the core product areas, Library, Reader, and Citation, contributed to the cross-platform design system, and embedded continuous research into how the team worked. Not as an occasional exercise but as a regular part of how decisions got made.",
+      "It was also my first experience inside a large organisation with multiple products and teams pulling in different directions. That's where systems thinking stopped being an instinct and started becoming something I could actually articulate.",
     ],
   },
 ];
@@ -57,10 +55,8 @@ export default function Work() {
             Work
           </h1>
           <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-            Three companies. Different domains, different problems, different
-            stages of growth. The through line is the same: design walking in
-            when the function didn't exist or wasn't working, and walking out
-            having built something that lasted.
+            Three companies. All B2B. All complex. All situations where design
+            either had to earn its place or build it from scratch.
           </p>
         </section>
 
