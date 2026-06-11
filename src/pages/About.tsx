@@ -1,12 +1,34 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 
+const story: string[] = [
+  "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",
+  "In Greece, they had already infiltrated offices, quietly humming away in corners like oversized calculators, but at home they were just making their grand debut. Families didn't have computers yet; they hosted them, like slightly intimidating guests.",
+  "My father, sensing destiny (or at least a fun Saturday afternoon), took me to one of the first tech expos in our city. It was chaos in the best way: blinking lights, clunky hardware, and software demos that felt like peeking into the future, if the future ran on floppy disks and optimism.",
+  "I wandered around pressing buttons with the confidence of someone who has absolutely no idea what they're doing but is determined to do it anyway. Screens lit up. Things happened. I didn't understand any of it, but I was having the time of my life interacting with what I firmly believed were unusually talented televisions.",
+  "And then, like all good origin stories, one followed us home.",
+  "The computer was given its own sacred territory: the computer desk. This wasn't just furniture; it was an ecosystem. There was a designated shelf for the keyboard, a throne for the bulky monitor (a cube with ambitions), and a carefully arranged sprawl of cables and components that looked important enough to never question.",
+  "It was off-white in that very specific way that suggested it had already lived a full life before meeting us. It made sounds: whirs, clicks, occasional existential sighs. The keyboard was enormous, a sprawling landscape my small hands could barely navigate. I typed using my two index fingers, like a very determined woodpecker.",
+  "And the layout, oh, the layout. The letters were scattered in what felt like a personal attack against the alphabet I had so recently mastered. I had just learned that A comes before B, B before C: order, logic, beauty. And now here was this machine insisting, no, chaos is the system.",
+  "Naturally, I took it personally.",
+  "One of the first pieces of software my father installed was an encyclopaedia. It quickly became my second favourite game. With a single click, well, several slow, deliberate, slightly inaccurate clicks, I could access everything. Information about the world, neatly packaged into digital pages. I would scroll, click, open, and wander through topics with no real plan, just curiosity and the occasional accidental discovery.",
+  "It felt infinite. It felt powerful. It felt like cheating, somehow.",
+  "Looking back, I think that was the moment. Not a grand revelation, no dramatic lightning strike. Just a child, a clunky computer, and the intoxicating realisation that you could build little worlds inside a box and invite others to explore them.",
+  "Which, in hindsight, is a very reasonable way to end up making tech products.",
+];
+
+const coda: string[] = [
+  "Today I lead product design across EMEA and APAC at Secure Code Warrior, an AI-driven developer risk platform. Before that I was the first in-house designer at Origin Markets, a fintech platform used by global financial institutions, and Senior UX/UI Designer at Mendeley (Elsevier), supporting over 120,000 researchers worldwide.",
+  "I have a BSc in Computer Science from Aristotle University of Thessaloniki, an MSc in Management from the University of Liverpool, and I started my career as a UX Engineer, which means I've been translating between design and engineering for longer than either side probably realises.",
+  "I'm based in London.",
+];
+
 export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main className="mx-auto max-w-[1320px] px-6 md:px-12">
-        <section className="pt-24 md:pt-40 pb-16 md:pb-24">
+        <section className="pt-24 md:pt-40 pb-12 md:pb-16">
           <h1 className="font-editorial text-[56px] md:text-[112px] leading-[0.95] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
             About
           </h1>
@@ -14,28 +36,31 @@ export default function About() {
 
         <hr className="border-[hsl(var(--hairline))]" />
 
-        <section className="py-16 md:py-24 max-w-3xl">
-          <div className="space-y-7 font-editorial text-[22px] md:text-[28px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-            <p>I started my career designing and building interfaces.</p>
-            <p>
-              Over time I became less interested in individual features and more interested in how
-              products evolve through the people building them.
+        <article className="py-16 md:py-24 max-w-[680px]">
+          {story.map((p, i) => (
+            <p
+              key={i}
+              className={
+                i === 0
+                  ? "font-editorial text-[24px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))] mb-10"
+                  : "mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+              }
+            >
+              {p}
             </p>
-            <p>Today I lead Product Design at Secure Code Warrior.</p>
-            <p>
-              My background includes research platforms, financial infrastructure, cybersecurity
-              products, and AI-enabled systems.
+          ))}
+
+          <hr className="my-12 border-[hsl(var(--hairline))]" />
+
+          {coda.map((p, i) => (
+            <p
+              key={i}
+              className="mb-6 text-[17px] md:text-[18px] leading-[1.7] text-[hsl(var(--ink-body))]"
+            >
+              {p}
             </p>
-            <p>
-              The products were different. The challenge was often the same: helping teams navigate
-              complexity as products evolved.
-            </p>
-            <p>
-              Much of my work now focuses on product direction, operational design, organisational
-              alignment, and the role of AI in product development.
-            </p>
-          </div>
-        </section>
+          ))}
+        </article>
       </main>
       <SiteFooter />
     </div>
