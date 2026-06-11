@@ -127,9 +127,36 @@ All colors MUST be HSL.
     font-feature-settings: 'tnum', 'zero';
   }
 
+  /* Heading line-break polish */
+  h1, h2 {
+    text-wrap: balance;
+  }
+
+  /* Lede / hook / standfirst polish */
+  .lede,
+  .hook {
+    text-wrap: pretty;
+  }
+
+  /* Shared reading measure + body size for prose pages */
+  .prose-body {
+    max-width: 660px;
+  }
+  .prose-body p {
+    font-size: 17px;
+  }
+
+  /* True OpenType small caps */
+  .smallcaps {
+    font-feature-settings: 'smcp' 1;
+    font-variant-caps: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
   ::selection {
-    background: hsl(var(--ink-strong));
-    color: hsl(var(--background));
+    background: hsl(var(--accent-stone) / 0.3);
+    color: hsl(var(--ink-strong));
   }
 
   @keyframes fadeIn {

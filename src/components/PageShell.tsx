@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 /**
- * Page shell — site nav + centered editorial container.
+ * Page shell — site nav + centered editorial container + persistent footer.
  * Use `centered` for hero pages (Index) where the main column
  * vertically centers its single section.
  */
@@ -14,21 +15,17 @@ export function PageShell({
   centered?: boolean;
 }) {
   return (
-    <div
-      className={
-        "min-h-screen bg-background text-foreground" +
-        (centered ? " flex flex-col" : "")
-      }
-    >
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SiteNav />
       <main
         className={
-          "mx-auto w-full max-w-[1320px] px-6 md:px-12" +
-          (centered ? " flex-1 flex items-center" : "")
+          "mx-auto w-full max-w-[1320px] px-6 md:px-12 flex-1" +
+          (centered ? " flex items-center" : "")
         }
       >
         {children}
       </main>
+      <SiteFooter />
     </div>
   );
 }
@@ -43,7 +40,6 @@ const titleSizes: Record<HeaderSize, string> = {
 
 /**
  * Editorial page header — display heading + optional lede.
- * Used on Index (hero), Work / Writing / About (section), and Essay.
  */
 export function PageHeader({
   title,
@@ -69,7 +65,7 @@ export function PageHeader({
         {title}
       </h1>
       {lede && (
-        <p className="mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
+        <p className="lede mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
           {lede}
         </p>
       )}
