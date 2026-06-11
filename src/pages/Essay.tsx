@@ -148,18 +148,12 @@ export default function Essay() {
 
   return (
     <PageShell>
-      <div className="pt-10 md:pt-14">
-        <BackToWriting />
-      </div>
-
-      <PageHeader title={essay.title} size="essay" />
+      <PageHeader title={essay.title} size="essay" preTitle={<BackToWriting className="mb-4" />} />
 
       <PageRule />
 
       <article className="py-14 md:py-20" style={{ maxWidth: "640px" }}>
         {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
-
-        <BackToWriting className="mt-20" />
 
         <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Link to={`/essays/${prevSlug}`} className="group">
