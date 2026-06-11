@@ -104,14 +104,20 @@ export default function Writing() {
                 <div className="col-span-2 md:col-span-2">
                   <span
                     aria-hidden
-                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-25 md:opacity-30"
+                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-25 md:opacity-30 group-hover:opacity-60 transition-opacity duration-300"
                   >
                     {n}
                   </span>
                 </div>
                 <div className="col-span-10 md:col-span-10">
-                  <h2 className="font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                  <h2 className="flex items-center gap-3 font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
                     {item.title}
+                    <span
+                      aria-hidden
+                      className="inline-block text-[0.6em] text-[hsl(var(--meta-ink))] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                    >
+                      →
+                    </span>
                   </h2>
                   <p className="mt-4 max-w-2xl text-[15px] md:text-[16px] leading-[1.65] text-[hsl(var(--ink-body))]">
                     {item.blurb}
