@@ -53,7 +53,7 @@ export default function Work() {
     <PageShell>
       <PageHeader
         title="Work"
-        lede="Three companies. All B2B. All complex. All situations where design either had to earn its place or build it from scratch."
+        lede="Three companies. All complex. All situations where design either had to earn its place or build it from scratch."
       />
 
       <PageRule />
