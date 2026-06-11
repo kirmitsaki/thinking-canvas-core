@@ -1,19 +1,21 @@
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 type CaseStudy = {
-  context: string;
-  title: string;
-  meta: string;
-  descriptor: string;
+  company: string;
+  role: string;
+  dates: string;
+  location: string;
+  domain: string;
   paragraphs: string[];
 };
 
 const caseStudies: CaseStudy[] = [
   {
-    context: "Secure Code Warrior",
-    title: "Head of Product Design",
-    meta: "2023 – Present",
-    descriptor: "AI-driven developer risk platform · London, EMEA/APAC",
+    company: "Secure Code Warrior",
+    role: "Head of Product Design",
+    dates: "2023 – Present",
+    location: "London, EMEA/APAC",
+    domain: "AI-driven developer risk platform",
     paragraphs: [
       "When I joined, design was present but peripheral. There was a team, technically, but it was operating like a contractor pool, plugged in for delivery and not much else. After an internal restructure I was asked to build the function properly, across two regions, from the ground up.",
       "I built the team, established how we worked, and moved design from a delivery function to something that actually contributed to where the product was going. The most significant moment was when the CPTO asked me to rethink the product from scratch. Not iterate. Start over. We ran workshops, built a vision that unified the company around a common direction for the first time, and that work has been the foundation of everything since. This year it extended into AI and a full repositioning of the company in the market.",
@@ -21,10 +23,11 @@ const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    context: "Origin Markets",
-    title: "Lead Product Designer",
-    meta: "2020 – 2023",
-    descriptor: "Fintech platform for debt capital markets · London",
+    company: "Origin Markets",
+    role: "Lead Product Designer",
+    dates: "2020 – 2023",
+    location: "London",
+    domain: "Fintech platform for debt capital markets",
     paragraphs: [
       "I was the first designer. No function, no system, no foundation. Just a product that had been growing faster than its structure and founders who needed someone to help them figure out what it should become.",
       "I worked closely with the founding team to define product strategy and translate a genuinely ambitious vision into something real institutions could use and trust. I built Morpho, the design system that became the foundation for everything the team built after. The product won consecutive GlobalCapital Bond Awards for Best Fintech, which was a nice acknowledgement that the work had landed.",
@@ -32,10 +35,11 @@ const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    context: "Mendeley (Elsevier)",
-    title: "Senior UX/UI Designer",
-    meta: "2019 – 2020",
-    descriptor: "Academic reference management platform · London",
+    company: "Mendeley (Elsevier)",
+    role: "Senior UX/UI Designer",
+    dates: "2019 – 2020",
+    location: "London",
+    domain: "Academic reference management platform",
     paragraphs: [
       "Mendeley is where I learned what it means to design for expert users doing genuinely complex work. Over 120,000 researchers, more than a million references, a product that had to work across web and desktop without falling apart.",
       "I led design across the core product areas, Library, Reader, and Citation, contributed to the cross-platform design system, and embedded continuous research into how the team worked. Not as an occasional exercise but as a regular part of how decisions got made.",
@@ -43,12 +47,6 @@ const caseStudies: CaseStudy[] = [
     ],
   },
 ];
-
-const ContextLabel = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--accent-stone))]">
-    {children}
-  </h2>
-);
 
 export default function Work() {
   return (
@@ -60,49 +58,48 @@ export default function Work() {
 
       <PageRule />
 
-      <section className="pb-20 md:pb-28">
+      <div className="pt-8 md:pt-16 pb-24 md:pb-40">
         {caseStudies.map((c, idx) => {
-          const isLast = idx === caseStudies.length - 1;
+          const n = String(idx + 1).padStart(2, "0");
           return (
             <article
-              key={c.context}
-              className={
-                "pt-14 md:pt-20 " +
-                (isLast ? "" : "pb-14 md:pb-20 border-b border-[hsl(var(--hairline))]")
-              }
+              key={c.company}
+              className="relative py-20 md:py-32 first:pt-12 md:first:pt-20"
             >
-              <div className="grid grid-cols-12 gap-6 md:gap-10">
-                <div className="col-span-12 md:col-span-3">
-                  <ContextLabel>{c.context}</ContextLabel>
-                </div>
-                <div className="col-span-12 md:col-span-9">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="font-editorial text-[30px] md:text-[44px] leading-[1.05] tracking-[-0.015em] text-[hsl(var(--ink-strong))]">
-                      {c.title}
-                    </h3>
-                    <span className="text-[15px] md:text-[17px] text-[hsl(var(--meta-ink))]">
-                      · {c.meta}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-[14px] md:text-[15px] leading-[1.5] text-[hsl(var(--meta-ink))]">
-                    {c.descriptor}
+              {/* Large, very light background numeral */}
+              <span
+                aria-hidden
+                className="pointer-events-none select-none absolute -top-4 md:-top-8 right-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] text-[140px] sm:text-[220px] md:text-[320px]"
+              >
+                {n}
+              </span>
+
+              <header className="relative">
+                <h2 className="font-editorial text-[40px] sm:text-[56px] md:text-[88px] leading-[0.98] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
+                  {c.company}
+                </h2>
+                <p className="mt-5 md:mt-6 text-[15px] md:text-[17px] text-[hsl(var(--ink-body))]">
+                  {c.role} · {c.dates}
+                </p>
+                <p className="mt-1 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
+                  {c.location} · {c.domain}
+                </p>
+              </header>
+
+              <div className="relative mt-12 md:mt-16 max-w-[680px]">
+                {c.paragraphs.map((p, pIdx) => (
+                  <p
+                    key={pIdx}
+                    className="mb-10 md:mb-12 last:mb-0 text-[16px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                  >
+                    {p}
                   </p>
-                  <div className="mt-8 md:mt-10 space-y-6">
-                    {c.paragraphs.map((p, pIdx) => (
-                      <p
-                        key={pIdx}
-                        className="text-[15px] md:text-[17px] leading-[1.55] text-[hsl(var(--ink-body))]"
-                      >
-                        {p}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </article>
           );
         })}
-      </section>
+      </div>
     </PageShell>
   );
 }
