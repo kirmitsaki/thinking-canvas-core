@@ -22,7 +22,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
     return (
       <p
         key={i}
-        className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+        className="mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
       >
         {p}
       </p>
@@ -33,7 +33,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="mb-12 font-editorial italic text-[24px] md:text-[28px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
+          className="hook mb-12 font-editorial italic text-[24px] md:text-[28px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
         >
           {p.text}
         </p>
@@ -42,11 +42,9 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+          className="mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
         >
-          <span className="text-[0.82em] font-semibold uppercase tracking-[0.12em]">
-            {p.prefix}
-          </span>
+          <span className="smallcaps">{p.prefix}</span>
           {p.text}
         </p>
       );
@@ -73,7 +71,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="mb-7 text-[16px] md:text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+          className="mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
         >
           {p.text}
         </p>
@@ -115,7 +113,7 @@ export default function Essay() {
 
       <PageRule />
 
-      <article className="py-14 md:py-20 max-w-[640px]">
+      <article className="py-14 md:py-20 prose-body">
         {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
 
         <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">

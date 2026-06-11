@@ -111,7 +111,7 @@ export default function Writing() {
                       →
                     </span>
                   </h2>
-                  <p className="mt-4 max-w-2xl text-[15px] md:text-[16px] leading-[1.65] text-[hsl(var(--ink-body))]">
+                  <p className="mt-4 max-w-[660px] text-[17px] leading-[1.65] text-[hsl(var(--ink-body))]">
                     {item.blurb}
                   </p>
                 </div>

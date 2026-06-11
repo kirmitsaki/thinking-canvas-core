@@ -38,11 +38,11 @@ export default function About() {
       <PageRule />
 
       <section className="pt-14 md:pt-20 pb-20 md:pb-28">
-        <article className="max-w-[680px]">
+        <article className="prose-body">
 
 
           {/* Editorial opener: ~1.8–2x body */}
-          <p className="font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
+          <p className="hook font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
             {opener}
           </p>
 
@@ -61,7 +61,7 @@ export default function About() {
             return (
               <p
                 key={i}
-                className="mb-8 text-[17px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                className="mb-8 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
               >
                 {p}
               </p>

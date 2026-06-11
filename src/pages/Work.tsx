@@ -64,12 +64,12 @@ export default function Work() {
           return (
             <article
               key={c.company}
-              className="relative py-20 md:py-32 first:pt-12 md:first:pt-20"
+              className="group/case relative py-20 md:py-32 first:pt-12 md:first:pt-20"
             >
               {/* Large, very light background numeral */}
               <span
                 aria-hidden
-                className="pointer-events-none select-none absolute -top-4 md:-top-8 right-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] text-[140px] sm:text-[220px] md:text-[320px]"
+                className="pointer-events-none select-none absolute -top-4 md:-top-8 right-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] group-hover/case:text-[hsl(var(--accent-stone))] group-hover/case:opacity-[0.18] transition-colors duration-500 text-[140px] sm:text-[220px] md:text-[320px]"
               >
                 {n}
               </span>
@@ -86,11 +86,11 @@ export default function Work() {
                 </p>
               </header>
 
-              <div className="relative mt-12 md:mt-16 max-w-[680px]">
+              <div className="relative mt-12 md:mt-16 prose-body">
                 {c.paragraphs.map((p, pIdx) => (
                   <p
                     key={pIdx}
-                    className="mb-10 md:mb-12 last:mb-0 text-[16px] md:text-[18px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                    className="mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
                   >
                     {p}
                   </p>
