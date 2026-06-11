@@ -1,12 +1,5 @@
 import { PageShell } from "@/components/PageShell";
 
-const tags = [
-  "B2B SaaS",
-  "Cybersecurity",
-  "Fintech",
-  "Developer Platforms",
-];
-
 export default function Index() {
   return (
     <PageShell centered>
@@ -16,16 +9,11 @@ export default function Index() {
         </h1>
 
         <p className="mt-10 md:mt-14 font-editorial text-[22px] sm:text-[26px] md:text-[30px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-strong))]">
-          Head of Product Design
+          Defining product direction across complex digital products.
         </p>
 
         <p className="mt-10 md:mt-14 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
-          {tags.map((tag, i) => (
-            <span key={tag}>
-              {i > 0 && <span className="opacity-40 mx-2">·</span>}
-              {tag}
-            </span>
-          ))}
+          B2B SaaS<span className="opacity-40 mx-2">·</span>Fintech<span className="opacity-40 mx-2">·</span>AI & Platform Products
         </p>
       </section>
     </PageShell>
