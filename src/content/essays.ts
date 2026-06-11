@@ -1,7 +1,6 @@
 export type EssayParagraph =
   | string
   | { type: "hook"; text: string }
-  | { type: "example"; text: string }
   | { type: "smallcaps"; prefix: string; text: string }
   | { type: "body"; text: string }
   | { type: "pull"; text: string }
