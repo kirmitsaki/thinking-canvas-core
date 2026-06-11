@@ -85,13 +85,9 @@ function renderParagraph(p: EssayParagraph, i: number) {
           style={{
             fontSize: "1.45rem",
             color: ACCENT,
-            textAlign: "center",
             marginTop: "3.5rem",
             marginBottom: "3.5rem",
             lineHeight: 1.5,
-            maxWidth: "500px",
-            marginLeft: "auto",
-            marginRight: "auto",
           }}
         >
           {p.text}
@@ -103,7 +99,6 @@ function renderParagraph(p: EssayParagraph, i: number) {
           key={i}
           className="font-serif italic text-[hsl(var(--ink-body))]"
           style={{
-            textAlign: "center",
             fontSize: "1.1rem",
             marginTop: "3.5rem",
             marginBottom: "2rem",
