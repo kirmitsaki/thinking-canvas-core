@@ -52,7 +52,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       return (
         <p
           key={i}
-          className="my-14 max-w-[540px] font-editorial italic text-[22px] md:text-[26px] leading-[1.45] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
+          className="my-14 max-w-[540px] font-editorial italic text-[20px] leading-[1.45] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
         >
           {p.text}
         </p>
