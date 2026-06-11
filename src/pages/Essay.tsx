@@ -157,22 +157,22 @@ export default function Essay() {
 
         <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Link to={`/essays/${prevSlug}`} className="group">
-            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-20 group-hover:opacity-60 transition-opacity duration-300">
+            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] transition-colors duration-300">
               {romans[prevIndex]}
             </span>
             <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
-              <span className="mr-2 text-[hsl(var(--meta-ink))]">←</span>
+              <span className="mr-2 text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] inline-block group-hover:-translate-x-1 transition-all duration-300">←</span>
               {prevEssay.title}
             </span>
           </Link>
 
           <Link to={`/essays/${nextSlug}`} className="group md:text-right">
-            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--ink-strong))] opacity-20 group-hover:opacity-60 transition-opacity duration-300">
+            <span className="block font-editorial font-light text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] transition-colors duration-300">
               {romans[nextIndex]}
             </span>
             <span className="block mt-2 font-editorial text-[17px] md:text-[19px] leading-[1.35] text-[hsl(var(--ink-body))] group-hover:italic transition-[font-style]">
               {nextEssay.title}
-              <span className="ml-2 text-[hsl(var(--meta-ink))]">→</span>
+              <span className="ml-2 text-[hsl(var(--meta-ink))] group-hover:text-[#8B2500] inline-block group-hover:translate-x-1 transition-all duration-300">→</span>
             </span>
           </Link>
         </nav>
