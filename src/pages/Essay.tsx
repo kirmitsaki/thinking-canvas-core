@@ -180,8 +180,8 @@ export default function Essay() {
 
       <PageRule />
 
-      <article className="py-14 md:py-20 prose-body">
-        {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
+      <article className={"py-14 md:py-20" + (slug === "building-and-leading-design-organisations" ? "" : " prose-body") }>
+        {essay.paragraphs.map((p, i) => renderParagraph(p, i, slug === "building-and-leading-design-organisations"))}
 
         <nav className="border-t border-[hsl(var(--hairline))] mt-20 pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           <Link to={`/essays/${prevSlug}`} className="group">
