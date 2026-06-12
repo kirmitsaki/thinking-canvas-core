@@ -117,11 +117,7 @@ export default function EssayModal({ essay, onClose }: Props) {
             <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[40px] sm:text-[52px] md:text-[64px] leading-[1.05] tracking-[-0.02em]">
               {essay.title}
             </h1>
-            <p className="mt-4 text-[13px] font-light text-[hsl(var(--ink-strong))]/50">
-              Rachel Kirmitsaki
-            </p>
-
-            <div className="mt-2">
+            <div className="mt-12">
               {essay.paragraphs.map((p, i) =>
                 renderParagraph(p, i, essay.paragraphs[i - 1])
               )}
