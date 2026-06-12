@@ -12,8 +12,12 @@ export default function Index() {
           Defining product direction across complex digital products.
         </p>
 
+        <p className="mt-6 md:mt-8 max-w-2xl text-[17px] md:text-[18px] leading-[1.5] font-light text-[hsl(var(--ink-body))]">
+          I've spent over a decade building design functions inside B2B companies. I started my career writing code. I think in systems, work closely with engineering, and spend most of my time on the problems that exist before anyone opens a design tool.
+        </p>
+
         <p className="mt-10 md:mt-14 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
-          B2B SaaS<span className="opacity-40 mx-2">·</span>Fintech<span className="opacity-40 mx-2">·</span>AI & Platform Products
+          CYBERSECURITY<span className="opacity-40 mx-2">·</span>FINTECH<span className="opacity-40 mx-2">·</span>ACADEMIC RESEARCH<span className="opacity-40 mx-2">·</span>DEVELOPER TOOLING
         </p>
       </section>
     </PageShell>
