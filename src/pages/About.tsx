@@ -16,8 +16,8 @@ const story: string[] = [
   "Which, in hindsight, is a very reasonable way to end up making tech products.",
 ];
 
-const coda =
-  "Currently leading Product Design across EMEA and APAC at Secure Code Warrior, shaping product direction across governance, observability, learning, and risk.";
+const currentRole =
+  "I'm currently leading product design at Secure Code Warrior, an AI-driven platform helping organisations reduce software risk. I'm also deep into how AI is changing the way design teams work, not the hype version but the practical one.\n\nFor most of my career I've worked on complex B2B products across cybersecurity, fintech, and academic research. I started as a UX Engineer, writing code before I started designing, which still shapes how I approach problems.\n\nI love creating things, thinking in systems, and talking about design over a pint rather than a slide deck.\n\nI also occasionally use the skills I picked up in product design to create digital and tangible things for wineries, honey makers, museums, and dinosaurs.";
 
 // Lines that should land with extra breathing room
 const beats = new Set<string>([
@@ -33,13 +33,23 @@ export default function About() {
 
   return (
     <PageShell>
-      <PageHeader title="About" lede={coda} />
+      <PageHeader title="About" />
+
+      <section className="pb-12 md:pb-16">
+        <div className="prose-body">
+          <p className="font-editorial text-[18px] md:text-[22px] leading-[1.45] text-[hsl(var(--ink-body))]">
+            {currentRole}
+          </p>
+        </div>
+      </section>
 
       <PageRule />
 
       <section className="pt-14 md:pt-20 pb-20 md:pb-28">
         <article className="prose-body">
-
+          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))] mb-10 md:mb-14">
+            Where it all started
+          </p>
 
           {/* Editorial opener: ~1.8–2x body */}
           <p className="hook font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
