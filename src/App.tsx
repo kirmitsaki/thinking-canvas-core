@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import About from "@/pages/About";
-import Essay from "@/pages/Essay";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import Work from "@/pages/Work";
@@ -25,7 +24,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/writing" element={<Writing />} />
-          <Route path="/essays/:slug" element={<Essay />} />
+          <Route path="/essays/:slug" element={<Writing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
