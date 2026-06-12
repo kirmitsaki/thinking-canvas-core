@@ -167,6 +167,39 @@ All colors MUST be HSL.
     margin-bottom: 2.5rem;
   }
 
+  /* Medium-style essay blocks */
+  .essay-body {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+    max-width: 640px;
+    color: hsl(var(--ink-body));
+  }
+  .essay-hook {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #8B2500;
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 640px;
+  }
+  .essay-pull {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #8B2500;
+    max-width: 640px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+  }
+  .essay-closing {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: hsl(var(--ink-body));
+    margin-top: 3.5rem;
+  }
+
   ::selection {
     background: hsl(var(--accent-stone) / 0.3);
     color: hsl(var(--ink-strong));
