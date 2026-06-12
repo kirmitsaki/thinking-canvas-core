@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import { X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import type { Essay, EssayParagraph } from "@/content/essays";
+import { essays, essayOrder } from "@/content/essays";
 
 type Props = {
   essay: Essay;
+  slug: string;
   onClose: () => void;
 };
 
@@ -13,7 +15,7 @@ function Dinkus() {
   );
 }
 
-function renderParagraph(p: EssayParagraph, i: number, prev?: EssayParagraph) {
+function renderParagraph(p: EssayParagraph, i: number) {
   const isSmallcaps = typeof p !== "string" && p.type === "smallcaps";
   const showDinkus = isSmallcaps && i > 0;
 
@@ -26,12 +28,7 @@ function renderParagraph(p: EssayParagraph, i: number, prev?: EssayParagraph) {
     switch (p.type) {
       case "hook":
         return (
-          <p
-            key={i}
-            className="essay-hook font-editorial"
-          >
-            {p.text}
-          </p>
+          <p key={i} className="essay-hook font-editorial">{p.text}</p>
         );
       case "smallcaps":
         return (
@@ -42,21 +39,11 @@ function renderParagraph(p: EssayParagraph, i: number, prev?: EssayParagraph) {
         );
       case "pull":
         return (
-          <p
-            key={i}
-            className="essay-pull font-editorial"
-          >
-            {p.text}
-          </p>
+          <p key={i} className="essay-pull font-editorial">{p.text}</p>
         );
       case "closing":
         return (
-          <p
-            key={i}
-            className="essay-closing font-editorial"
-          >
-            {p.text}
-          </p>
+          <p key={i} className="essay-closing font-editorial">{p.text}</p>
         );
       case "body":
       default:
@@ -75,7 +62,9 @@ function renderParagraph(p: EssayParagraph, i: number, prev?: EssayParagraph) {
   return body;
 }
 
-export default function EssayModal({ essay, onClose }: Props) {
+export default function EssayModal({ essay, slug, onClose }: Props) {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -89,6 +78,10 @@ export default function EssayModal({ essay, onClose }: Props) {
     };
   }, [onClose]);
 
+  const currentIdx = essayOrder.indexOf(slug);
+  const nextSlug = essayOrder[(currentIdx + 1) % essayOrder.length];
+  const nextEssay = essays[nextSlug];
+
   return (
     <div
       className="fixed inset-0 z-50 animate-in fade-in duration-200"
@@ -101,8 +94,16 @@ export default function EssayModal({ essay, onClose }: Props) {
         className="absolute inset-0 bg-black/60"
         onClick={onClose}
       />
-      {/* Modal surface */}
-      <div className="absolute inset-3 md:top-6 md:right-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:w-[80%] md:max-w-[900px] bg-background overflow-y-auto rounded-xl shadow-2xl pb-20">
+      {/* Modal surface — equal padding on all sides from viewport edge */}
+      <div
+        className="absolute bg-background overflow-y-auto rounded-xl shadow-2xl"
+        style={{
+          top: "var(--modal-inset)",
+          left: "var(--modal-inset)",
+          width: "calc(100vw - (var(--modal-inset) * 2))",
+          height: "calc(100vh - (var(--modal-inset) * 2))",
+        }}
+      >
         <button
           type="button"
           onClick={onClose}
@@ -118,13 +119,31 @@ export default function EssayModal({ essay, onClose }: Props) {
               {essay.title}
             </h1>
             <div className="mt-12">
-              {essay.paragraphs.map((p, i) =>
-                renderParagraph(p, i, essay.paragraphs[i - 1])
-              )}
+              {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
+            </div>
+
+            {/* Next reading */}
+            <div className="mt-16 pb-[60px]">
+              <hr className="border-0 border-t border-[hsl(var(--hairline))]" />
+              <p className="mt-8 text-[11px] uppercase tracking-[0.08em] text-[hsl(var(--meta-ink))]">
+                Next read
+              </p>
+              <button
+                type="button"
+                onClick={() => navigate(`/essays/${nextSlug}`)}
+                className="mt-3 font-editorial text-[1rem] font-normal text-[hsl(var(--ink-body))] hover:underline text-left"
+              >
+                {nextEssay.title}
+              </button>
             </div>
           </article>
         </div>
       </div>
+
+      <style>{`
+        :root { --modal-inset: 16px; }
+        @media (min-width: 768px) { :root { --modal-inset: 40px; } }
+      `}</style>
     </div>
   );
 }
