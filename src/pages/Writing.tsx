@@ -78,6 +78,13 @@ const essays: EssayItem[] = [
 const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
 
 export default function Writing() {
+  const navigate = useNavigate();
+  const { slug } = useParams();
+  const openEssay = slug ? essayContent[slug] : undefined;
+
+  const openModal = (s: string) => navigate(`/essays/${s}`);
+  const closeModal = () => navigate("/writing");
+
   return (
     <PageShell>
       <PageHeader title="Writing" />
@@ -92,9 +99,10 @@ export default function Writing() {
               key={item.slug}
               className="border-b border-[hsl(var(--hairline))]"
             >
-              <Link
-                to={`/essays/${item.slug}`}
-                className="group grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14"
+              <button
+                type="button"
+                onClick={() => openModal(item.slug)}
+                className="group w-full text-left grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14"
               >
                 <div className="col-span-2 md:col-span-2">
                   <span
@@ -118,11 +126,13 @@ export default function Writing() {
                     {item.blurb}
                   </p>
                 </div>
-              </Link>
+              </button>
             </li>
           );
         })}
       </ul>
+
+      {openEssay && <EssayModal essay={openEssay} onClose={closeModal} />}
     </PageShell>
   );
 }
