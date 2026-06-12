@@ -41,9 +41,14 @@ export default function About() {
 
       <section className="pb-12 md:pb-16">
         <div className="prose-body">
-          <p className="font-editorial text-[18px] md:text-[22px] leading-[1.45] text-[hsl(var(--ink-body))]">
-            {currentRole}
-          </p>
+          {currentRole.map((p, i) => (
+            <p
+              key={i}
+              className="font-editorial text-[18px] md:text-[22px] leading-[1.45] text-[hsl(var(--ink-body))] mb-6 last:mb-0"
+            >
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
