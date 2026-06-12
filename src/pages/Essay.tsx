@@ -207,10 +207,10 @@ function renderEssay1(paragraphs: EssayParagraph[]) {
 
       {/* Closing */}
       <p
+        className="font-editorial"
         style={{
           fontStyle: "italic",
           fontSize: "1.15rem",
-          fontFamily: "var(--font-editorial, Georgia, serif)",
           textAlign: "left",
           marginTop: "4rem",
           marginBottom: "2rem",
@@ -220,6 +220,7 @@ function renderEssay1(paragraphs: EssayParagraph[]) {
       >
         {closing}
       </p>
+
     </div>
   );
 }
