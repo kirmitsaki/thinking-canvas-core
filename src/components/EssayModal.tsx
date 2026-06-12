@@ -102,12 +102,12 @@ export default function EssayModal({ essay, onClose }: Props) {
         onClick={onClose}
       />
       {/* Modal surface */}
-      <div className="absolute inset-0 bg-background overflow-y-auto">
+      <div className="absolute inset-3 md:inset-6 bg-background overflow-y-auto rounded-xl shadow-2xl">
         <button
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="fixed top-5 right-6 md:top-7 md:right-10 z-10 text-[hsl(var(--meta-ink))] hover:text-[hsl(var(--ink-strong))] transition-colors text-3xl leading-none"
+          className="absolute top-5 right-5 md:top-7 md:right-8 z-10 text-[hsl(var(--meta-ink))] hover:text-[hsl(var(--ink-strong))] transition-colors text-3xl leading-none"
         >
           ×
         </button>
