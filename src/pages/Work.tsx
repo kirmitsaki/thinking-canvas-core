@@ -66,7 +66,7 @@ export default function Work() {
               {c.ghostDates}
             </span>
 
-            <header className="relative pt-16 md:pt-28">
+            <header className="relative">
               <h2 className="font-editorial text-[40px] sm:text-[56px] md:text-[88px] leading-[0.98] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
                 {c.title}
               </h2>
