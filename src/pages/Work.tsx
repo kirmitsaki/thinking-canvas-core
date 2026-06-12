@@ -64,10 +64,10 @@ export default function Work() {
                   aria-hidden
                   className="block font-editorial font-light tabular-nums text-[18px] sm:text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
                 >
-                  {c.ghostDates.split(" – ").map((part, i) => (
+                  {c.ghostDates.split(" – ").map((part, i, arr) => (
                     <span key={i}>
-                      {i > 0 && <br />}
                       {part}
+                      {i < arr.length - 1 && <><br />– </>}
                     </span>
                   ))}
                 </span>
