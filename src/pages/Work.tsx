@@ -64,7 +64,12 @@ export default function Work() {
                   aria-hidden
                   className="block font-editorial font-light tabular-nums text-[18px] sm:text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
                 >
-                  {c.ghostDates}
+                  {c.ghostDates.split(" – ").map((part, i) => (
+                    <span key={i}>
+                      {i > 0 && <br />}
+                      {part}
+                    </span>
+                  ))}
                 </span>
               </div>
               <div className="col-span-9 md:col-span-10">
