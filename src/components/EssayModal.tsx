@@ -13,24 +13,23 @@ const Dinkus = () => (
   <p aria-hidden className="dinkus font-editorial">· · ·</p>
 );
 
-const PARAGRAPH_CLASS: Record<Exclude<Extract<EssayParagraph, object>["type"], undefined>, string> = {
+const PARAGRAPH_CLASS = {
   hook: "essay-hook font-editorial",
   pull: "essay-pull font-editorial",
   closing: "essay-closing font-editorial",
   smallcaps: "essay-body",
   body: "essay-body",
-};
+} as const;
 
 function renderParagraph(p: EssayParagraph, i: number) {
   if (typeof p === "string") {
     return <p key={i} className="essay-body">{p}</p>;
   }
 
-  const type = p.type ?? "body";
-  const className = PARAGRAPH_CLASS[type] ?? "essay-body";
+  const className = PARAGRAPH_CLASS[p.type];
 
   const body =
-    type === "smallcaps" ? (
+    p.type === "smallcaps" ? (
       <p key={i} className={className}>
         <span className="smallcaps">{p.prefix}</span>
         {p.text}
@@ -39,7 +38,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
       <p key={i} className={className}>{p.text}</p>
     );
 
-  if (type === "smallcaps" && i > 0) {
+  if (p.type === "smallcaps" && i > 0) {
     return (
       <div key={i}>
         <Dinkus />
