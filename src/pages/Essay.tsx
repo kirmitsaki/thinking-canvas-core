@@ -17,7 +17,74 @@ const BackToWriting = ({ className = "" }: { className?: string }) => (
 
 const romans = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"];
 
-function renderParagraph(p: EssayParagraph, i: number) {
+const trueSmallCapsStyle: React.CSSProperties = {
+  fontVariant: "small-caps",
+  fontVariantCaps: "small-caps",
+  fontFeatureSettings: '"smcp" 1',
+  fontSize: "0.9em",
+  letterSpacing: "0.05em",
+  fontWeight: 400,
+  textTransform: "none",
+};
+
+function renderParagraph(p: EssayParagraph, i: number, isFirst = false) {
+  // Essay 1 — magazine layout overrides
+  if (isFirst) {
+    if (typeof p === "string") {
+      return (
+        <p key={i} className="mx-auto max-w-[660px] mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]">
+          {p}
+        </p>
+      );
+    }
+    switch (p.type) {
+      case "hook":
+        return (
+          <p
+            key={i}
+            className="hook mb-14 font-editorial italic text-[1.6rem] md:text-[2rem] leading-[1.25] tracking-[-0.005em] text-[hsl(var(--accent-stone))]"
+          >
+            {p.text}
+          </p>
+        );
+      case "smallcaps":
+        return (
+          <p
+            key={i}
+            className="mx-auto max-w-[660px] mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+          >
+            <span style={trueSmallCapsStyle}>{p.prefix}</span>
+            {p.text}
+          </p>
+        );
+      case "pull":
+        return (
+          <p
+            key={i}
+            className="my-16 mx-auto max-w-[800px] font-editorial italic text-[24px] md:text-[28px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--accent-stone))] text-center"
+          >
+            {p.text}
+          </p>
+        );
+      case "closing":
+        return (
+          <p
+            key={i}
+            className="mx-auto max-w-[660px] mt-16 mb-8 font-editorial italic text-[1.5rem] leading-[1.4] text-[hsl(var(--ink-body))]"
+          >
+            {p.text}
+          </p>
+        );
+      case "body":
+      default:
+        return (
+          <p key={i} className="mx-auto max-w-[660px] mb-7 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]">
+            {p.text}
+          </p>
+        );
+    }
+  }
+
   if (typeof p === "string") {
     return (
       <p
