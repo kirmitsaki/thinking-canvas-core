@@ -16,8 +16,12 @@ const story: string[] = [
   "Which, in hindsight, is a very reasonable way to end up making tech products.",
 ];
 
-const currentRole =
-  "I'm currently leading product design at Secure Code Warrior, an AI-driven platform helping organisations reduce software risk. I'm also deep into how AI is changing the way design teams work, not the hype version but the practical one.\n\nFor most of my career I've worked on complex B2B products across cybersecurity, fintech, and academic research. I started as a UX Engineer, writing code before I started designing, which still shapes how I approach problems.\n\nI love creating things, thinking in systems, and talking about design over a pint rather than a slide deck.\n\nI also occasionally use the skills I picked up in product design to create digital and tangible things for wineries, honey makers, museums, and dinosaurs.";
+const currentRole = [
+  "I'm currently leading product design at Secure Code Warrior, an AI-driven platform helping organisations reduce software risk. I'm also deep into how AI is changing the way design teams work, not the hype version but the practical one.",
+  "For most of my career I've worked on complex B2B products across cybersecurity, fintech, and academic research. I started as a UX Engineer, writing code before I started designing, which still shapes how I approach problems.",
+  "I love creating things, thinking in systems, and talking about design over a pint rather than a slide deck.",
+  "I also occasionally use the skills I picked up in product design to create digital and tangible things for wineries, honey makers, museums, and dinosaurs.",
+];
 
 // Lines that should land with extra breathing room
 const beats = new Set<string>([
