@@ -9,14 +9,10 @@ export default function Index() {
         </h1>
 
         <p className="lede mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
-          Defining product direction across complex digital products.
+          Head of Product Design at Secure Code Warrior, building products that help engineering teams write more secure code at scale.
         </p>
 
-        <p className="mt-6 md:mt-8 max-w-2xl text-[17px] md:text-[18px] leading-[1.5] font-light text-[hsl(var(--ink-body))]">
-          I've spent over a decade building design functions inside B2B companies. I started my career writing code. I think in systems, work closely with engineering, and spend most of my time on the problems that exist before anyone opens a design tool.
-        </p>
-
-        <p className="mt-10 md:mt-14 text-[12px] uppercase tracking-[0.28em] text-[hsl(var(--ink-body))]">
+        <p className="smallcaps mt-10 md:mt-14 text-[hsl(var(--ink-body))]">
           CYBERSECURITY<span className="opacity-40 mx-2">·</span>FINTECH<span className="opacity-40 mx-2">·</span>ACADEMIC RESEARCH<span className="opacity-40 mx-2">·</span>DEVELOPER TOOLING
         </p>
       </section>
