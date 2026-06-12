@@ -148,12 +148,56 @@ All colors MUST be HSL.
 
   /* True OpenType small caps */
   .smallcaps {
-    font-feature-settings: 'smcp' 1, 'c2sc' 1;
-    font-variant-caps: all-small-caps;
+    font-variant: small-caps;
+    font-variant-caps: small-caps;
+    font-feature-settings: 'smcp' 1;
     font-synthesis: small-caps;
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
     font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
+    color: inherit;
+  }
+
+  .dinkus {
+    text-align: left;
+    color: hsl(var(--ink-body) / 0.4);
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Medium-style essay blocks */
+  .essay-body {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+    max-width: 640px;
+    color: hsl(var(--ink-body));
+  }
+  .essay-hook {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #8B2500;
+    line-height: 1.4;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 640px;
+  }
+  .essay-pull {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #8B2500;
+    max-width: 640px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+  }
+  .essay-closing {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: hsl(var(--ink-body));
+    margin-top: 3.5rem;
   }
 
   ::selection {
