@@ -67,7 +67,7 @@ export default function Work() {
             </span>
 
             <header className="relative">
-              <h2 className="font-editorial text-[40px] sm:text-[56px] md:text-[88px] leading-[0.98] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
+              <h2 className="font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))]">
                 {c.title}
               </h2>
               <p className="mt-5 md:mt-6 text-[20px] md:text-[22px] text-[hsl(var(--ink-strong))]">
