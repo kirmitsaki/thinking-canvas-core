@@ -58,7 +58,7 @@ export default function Work() {
             key={c.company}
             className="border-b border-[hsl(var(--hairline))]"
           >
-            <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-14 md:py-24">
+            <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14">
               <div className="col-span-3 md:col-span-2">
                 <span
                   aria-hidden
