@@ -2,9 +2,12 @@ import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 
 type CaseStudy = {
   title: string;
+  company: string;
+  domain: string;
   ghostDates: string;
   paragraphs: string[];
 };
+
 
 const caseStudies: CaseStudy[] = [
   {
