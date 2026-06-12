@@ -58,24 +58,24 @@ export default function Work() {
             key={c.company}
             className="border-b border-[hsl(var(--hairline))]"
           >
-            <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14">
+            <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-14 md:py-24">
               <div className="col-span-3 md:col-span-2">
                 <span
                   aria-hidden
-                  className="block font-editorial font-light tabular-nums text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
+                  className="block text-right pr-2 md:pr-4 pt-3 font-editorial font-light tabular-nums text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
                 >
                   {c.ghostDates}
                 </span>
               </div>
               <div className="col-span-9 md:col-span-10">
                 <header>
-                  <h2 className="font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))]">
+                  <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))]">
                     {c.title}
-                  </h2>
-                  <p className="mt-5 md:mt-6 text-[20px] md:text-[22px] text-[hsl(var(--ink-strong))]">
-                    {c.company}
                   </p>
-                  <p className="mt-2 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
+                  <h2 className="mt-3 font-editorial italic text-[32px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
+                    {c.company}
+                  </h2>
+                  <p className="mt-4 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
                     {c.domain}
                   </p>
                 </header>
@@ -84,7 +84,11 @@ export default function Work() {
                   {c.paragraphs.map((p, pIdx) => (
                     <p
                       key={pIdx}
-                      className="mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                      className={
+                        pIdx === 0
+                          ? "mb-10 md:mb-12 font-editorial text-[22px] md:text-[26px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--ink-strong))]"
+                          : "mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                      }
                     >
                       {p}
                     </p>
