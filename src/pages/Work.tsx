@@ -52,58 +52,61 @@ export default function Work() {
 
       <PageRule />
 
-      <div className="pt-8 md:pt-16 pb-24 md:pb-40">
+      <ul className="pt-10 md:pt-16">
         {caseStudies.map((c) => (
-          <article
+          <li
             key={c.company}
-            className="relative py-20 md:py-32 first:pt-12 md:first:pt-20"
+            className="border-b border-[hsl(var(--hairline))]"
           >
-            {/* Ghost date range */}
-            <span
-              aria-hidden
-              className="pointer-events-none select-none absolute right-0 top-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] text-[28px] sm:text-[36px] md:text-[44px]"
-            >
-              {c.ghostDates}
-            </span>
-
-            <header className="relative">
-              <h2 className="font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))]">
-                {c.title}
-              </h2>
-              <p className="mt-5 md:mt-6 text-[20px] md:text-[22px] text-[hsl(var(--ink-strong))]">
-                {c.company}
-              </p>
-              <p className="mt-2 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
-                {c.domain}
-              </p>
-            </header>
-
-
-            <div className="relative mt-12 md:mt-16 prose-body">
-              {c.paragraphs.map((p, pIdx) => (
-                <p
-                  key={pIdx}
-                  className="mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+            <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14">
+              <div className="col-span-3 md:col-span-2">
+                <span
+                  aria-hidden
+                  className="block font-editorial font-light tabular-nums text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
                 >
-                  {p}
-                </p>
-              ))}
-            </div>
-          </article>
-        ))}
+                  {c.ghostDates}
+                </span>
+              </div>
+              <div className="col-span-9 md:col-span-10">
+                <header>
+                  <h2 className="font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))]">
+                    {c.title}
+                  </h2>
+                  <p className="mt-5 md:mt-6 text-[20px] md:text-[22px] text-[hsl(var(--ink-strong))]">
+                    {c.company}
+                  </p>
+                  <p className="mt-2 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
+                    {c.domain}
+                  </p>
+                </header>
 
-        {/* Earlier section */}
-        <section className="relative pt-16 md:pt-24 mt-8 md:mt-12 border-t border-[hsl(var(--hairline))]">
-          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))]">
-            Earlier
+                <div className="mt-12 md:mt-16 prose-body">
+                  {c.paragraphs.map((p, pIdx) => (
+                    <p
+                      key={pIdx}
+                      className="mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </li>
+        ))}
+      </ul>
+
+      {/* Earlier section */}
+      <section className="relative pt-16 md:pt-24 pb-24 md:pb-40">
+        <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))]">
+          Earlier
+        </p>
+        <div className="mt-12 md:mt-16 prose-body">
+          <p className="mb-10 md:mb-12 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]">
+            Before these roles, I worked as a <strong>UX/UI Designer</strong> at Elemental Concept (2017–2018), <strong>Web Designer</strong> at PawSquad (2015–2017), and <strong>UX Engineer</strong> at Migreat (2014–2015), where I designed and built interfaces from concept to coded prototypes. That last role is where the habit of thinking in systems before thinking in screens started.
           </p>
-          <div className="mt-12 md:mt-16 prose-body">
-            <p className="mb-10 md:mb-12 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]">
-              Before these roles, I worked as a <strong>UX/UI Designer</strong> at Elemental Concept (2017–2018), <strong>Web Designer</strong> at PawSquad (2015–2017), and <strong>UX Engineer</strong> at Migreat (2014–2015), where I designed and built interfaces from concept to coded prototypes. That last role is where the habit of thinking in systems before thinking in screens started.
-            </p>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </PageShell>
   );
 }
