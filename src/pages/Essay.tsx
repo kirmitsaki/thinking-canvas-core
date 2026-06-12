@@ -182,10 +182,10 @@ function renderEssay1(paragraphs: EssayParagraph[]) {
 
       {/* Pull quote */}
       <p
+        className="font-editorial"
         style={{
           fontSize: "1.5rem",
           fontStyle: "italic",
-          fontFamily: "var(--font-editorial, Georgia, serif)",
           color: BRICK,
           maxWidth: 640,
           marginTop: "3.5rem",
@@ -196,6 +196,7 @@ function renderEssay1(paragraphs: EssayParagraph[]) {
       >
         {pull}
       </p>
+
 
       {/* The moment design */}
       <p style={{ ...bodyStyle, marginTop: "3rem" }}>
