@@ -62,7 +62,7 @@ export default function Work() {
               <div className="col-span-3 md:col-span-2">
                 <span
                   aria-hidden
-                  className="block text-right pr-2 md:pr-4 pt-3 font-editorial font-light tabular-nums text-[24px] sm:text-[30px] md:text-[38px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
+                  className="block text-right pr-2 md:pr-4 pt-3 font-editorial font-light tabular-nums text-[18px] sm:text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
                 >
                   {c.ghostDates}
                 </span>
