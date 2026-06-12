@@ -60,17 +60,18 @@ export default function Work() {
           >
             <article className="grid grid-cols-12 gap-4 md:gap-8 items-start py-10 md:py-14">
               <div className="col-span-3 md:col-span-2">
-                <span
-                  aria-hidden
-                  className="block font-editorial font-light tabular-nums text-[18px] sm:text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
-                >
-                  {c.ghostDates.split(" – ").map((part, i, arr) => (
-                    <span key={i}>
-                      {part}
-                      {i < arr.length - 1 && <><br />– </>}
+                {(() => {
+                  const [start, end] = c.ghostDates.split(" – ");
+                  return (
+                    <span
+                      aria-hidden
+                      className="block font-editorial font-light tabular-nums text-[18px] sm:text-[22px] md:text-[28px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))]"
+                    >
+                      {start}
+                      {end && (<><br />– {end}</>)}
                     </span>
-                  ))}
-                </span>
+                  );
+                })()}
               </div>
               <div className="col-span-9 md:col-span-10">
                 <header>

@@ -16,7 +16,7 @@ const story: string[] = [
   "Which, in hindsight, is a very reasonable way to end up making tech products.",
 ];
 
-const currentRole = [
+const [currentRoleIntro, ...currentRoleSupporting] = [
   "I'm currently leading product design at Secure Code Warrior, an AI-driven platform helping organisations reduce software risk. I'm also deep into how AI is changing the way design teams work, not the hype version but the practical one.",
   "For most of my career I've worked on complex B2B products across cybersecurity, fintech, and academic research. I started as a UX Engineer, writing code before I started designing, which still shapes how I approach problems.",
   "I love creating things, thinking in systems, and talking about design over a pint rather than a slide deck.",
@@ -42,9 +42,9 @@ export default function About() {
       <section className="pb-12 md:pb-16">
         <div className="prose-body">
           <p className="hook font-editorial italic text-[22px] md:text-[26px] leading-[1.35] text-[hsl(var(--ink-strong))] mb-8">
-            {currentRole[0]}
+            {currentRoleIntro}
           </p>
-          {currentRole.slice(1).map((p, i) => (
+          {currentRoleSupporting.map((p, i) => (
             <p
               key={i}
               className="mb-8 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))] last:mb-0"
