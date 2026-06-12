@@ -9,9 +9,6 @@ type Props = {
   onClose: () => void;
 };
 
-const Dinkus = () => (
-  <p aria-hidden className="dinkus font-editorial">· · ·</p>
-);
 
 const PARAGRAPH_CLASS = {
   hook: "essay-hook font-editorial",
@@ -41,7 +38,7 @@ function renderParagraph(p: EssayParagraph, i: number) {
   if (p.type === "smallcaps" && i > 0) {
     return (
       <div key={i}>
-        <Dinkus />
+        <p aria-hidden className="dinkus font-editorial">· · ·</p>
         {body}
       </div>
     );

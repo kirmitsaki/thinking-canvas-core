@@ -1,4 +1,7 @@
+import { Fragment } from "react";
 import { PageShell } from "@/components/PageShell";
+
+const TAGS = ["CYBERSECURITY", "FINTECH", "ACADEMIC RESEARCH", "DEVELOPER TOOLING"];
 
 export default function Index() {
   return (
@@ -13,7 +16,12 @@ export default function Index() {
         </p>
 
         <p className="smallcaps mt-10 md:mt-14 text-[hsl(var(--ink-body))]">
-          CYBERSECURITY<span className="opacity-40 mx-2">·</span>FINTECH<span className="opacity-40 mx-2">·</span>ACADEMIC RESEARCH<span className="opacity-40 mx-2">·</span>DEVELOPER TOOLING
+          {TAGS.map((tag, i) => (
+            <Fragment key={tag}>
+              {i > 0 && <span className="opacity-40 mx-2">·</span>}
+              {tag}
+            </Fragment>
+          ))}
         </p>
       </section>
     </PageShell>
