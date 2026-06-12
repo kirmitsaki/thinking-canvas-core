@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Essay, EssayParagraph } from "@/content/essays";
 import { essays, essayOrder } from "@/content/essays";
@@ -9,49 +9,36 @@ type Props = {
   onClose: () => void;
 };
 
-function Dinkus() {
-  return (
-    <p aria-hidden className="dinkus font-editorial">· · ·</p>
-  );
-}
+const Dinkus = () => (
+  <p aria-hidden className="dinkus font-editorial">· · ·</p>
+);
+
+const PARAGRAPH_CLASS = {
+  hook: "essay-hook font-editorial",
+  pull: "essay-pull font-editorial",
+  closing: "essay-closing font-editorial",
+  smallcaps: "essay-body",
+  body: "essay-body",
+} as const;
 
 function renderParagraph(p: EssayParagraph, i: number) {
-  const isSmallcaps = typeof p !== "string" && p.type === "smallcaps";
-  const showDinkus = isSmallcaps && i > 0;
+  if (typeof p === "string") {
+    return <p key={i} className="essay-body">{p}</p>;
+  }
 
-  const body = (() => {
-    if (typeof p === "string") {
-      return (
-        <p key={i} className="essay-body">{p}</p>
-      );
-    }
-    switch (p.type) {
-      case "hook":
-        return (
-          <p key={i} className="essay-hook font-editorial">{p.text}</p>
-        );
-      case "smallcaps":
-        return (
-          <p key={i} className="essay-body">
-            <span className="smallcaps">{p.prefix}</span>
-            {p.text}
-          </p>
-        );
-      case "pull":
-        return (
-          <p key={i} className="essay-pull font-editorial">{p.text}</p>
-        );
-      case "closing":
-        return (
-          <p key={i} className="essay-closing font-editorial">{p.text}</p>
-        );
-      case "body":
-      default:
-        return <p key={i} className="essay-body">{p.text}</p>;
-    }
-  })();
+  const className = PARAGRAPH_CLASS[p.type];
 
-  if (showDinkus) {
+  const body =
+    p.type === "smallcaps" ? (
+      <p key={i} className={className}>
+        <span className="smallcaps">{p.prefix}</span>
+        {p.text}
+      </p>
+    ) : (
+      <p key={i} className={className}>{p.text}</p>
+    );
+
+  if (p.type === "smallcaps" && i > 0) {
     return (
       <div key={i}>
         <Dinkus />
@@ -78,9 +65,16 @@ export default function EssayModal({ essay, slug, onClose }: Props) {
     };
   }, [onClose]);
 
-  const currentIdx = essayOrder.indexOf(slug);
-  const nextSlug = essayOrder[(currentIdx + 1) % essayOrder.length];
-  const nextEssay = essays[nextSlug];
+  const { nextSlug, nextEssay } = useMemo(() => {
+    const idx = essayOrder.indexOf(slug);
+    const next = essayOrder[(idx + 1) % essayOrder.length];
+    return { nextSlug: next, nextEssay: essays[next] };
+  }, [slug]);
+
+  const goToNext = useCallback(
+    () => navigate(`/essays/${nextSlug}`),
+    [navigate, nextSlug],
+  );
 
   return (
     <div
@@ -90,11 +84,9 @@ export default function EssayModal({ essay, slug, onClose }: Props) {
       aria-label={essay.title}
     >
       {/* Dim layer */}
-      <div
-        className="absolute inset-0 bg-black/60"
-        onClick={onClose}
-      />
-      {/* Modal surface — equal padding on all sides from viewport edge */}
+      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+
+      {/* Modal surface — equal inset on all sides from viewport edge */}
       <div
         className="absolute bg-background overflow-y-auto rounded-xl shadow-2xl"
         style={{
@@ -113,37 +105,30 @@ export default function EssayModal({ essay, slug, onClose }: Props) {
           ×
         </button>
 
-        <div className="w-full">
-          <article className="max-w-[640px] mx-auto px-8 pt-20 md:pt-28 pb-24 md:pb-32">
-            <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[40px] sm:text-[52px] md:text-[64px] leading-[1.05] tracking-[-0.02em]">
-              {essay.title}
-            </h1>
-            <div className="mt-12">
-              {essay.paragraphs.map((p, i) => renderParagraph(p, i))}
-            </div>
+        <article className="max-w-[640px] mx-auto px-8 pt-20 md:pt-28 pb-24 md:pb-32">
+          <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[40px] sm:text-[52px] md:text-[64px] leading-[1.05] tracking-[-0.02em]">
+            {essay.title}
+          </h1>
+          <div className="mt-12">
+            {essay.paragraphs.map(renderParagraph)}
+          </div>
 
-            {/* Next reading */}
-            <div className="mt-16 pb-[60px]">
-              <hr className="border-0 border-t border-[hsl(var(--hairline))]" />
-              <p className="mt-8 text-[11px] uppercase tracking-[0.08em] text-[hsl(var(--meta-ink))]">
-                Next read
-              </p>
-              <button
-                type="button"
-                onClick={() => navigate(`/essays/${nextSlug}`)}
-                className="mt-3 font-editorial text-[1rem] font-normal text-[hsl(var(--ink-body))] hover:underline text-left"
-              >
-                {nextEssay.title}
-              </button>
-            </div>
-          </article>
-        </div>
+          {/* Next reading */}
+          <div className="mt-16 pb-[60px]">
+            <hr className="border-0 border-t border-[hsl(var(--hairline))]" />
+            <p className="mt-8 text-[11px] uppercase tracking-[0.08em] text-[hsl(var(--meta-ink))]">
+              Next read
+            </p>
+            <button
+              type="button"
+              onClick={goToNext}
+              className="mt-3 font-editorial text-[1rem] font-normal text-[hsl(var(--ink-body))] hover:underline text-left"
+            >
+              {nextEssay.title}
+            </button>
+          </div>
+        </article>
       </div>
-
-      <style>{`
-        :root { --modal-inset: 16px; }
-        @media (min-width: 768px) { :root { --modal-inset: 40px; } }
-      `}</style>
     </div>
   );
 }
