@@ -102,7 +102,7 @@ export default function EssayModal({ essay, onClose }: Props) {
         onClick={onClose}
       />
       {/* Modal surface */}
-      <div className="absolute inset-3 md:inset-6 bg-background overflow-y-auto rounded-xl shadow-2xl">
+      <div className="absolute inset-3 md:top-6 md:right-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:w-[80%] md:max-w-[900px] bg-background overflow-y-auto rounded-xl shadow-2xl pb-20">
         <button
           type="button"
           onClick={onClose}
@@ -112,8 +112,8 @@ export default function EssayModal({ essay, onClose }: Props) {
           ×
         </button>
 
-        <div className="mx-auto w-full max-w-[1320px] px-6 md:px-12">
-          <article className="max-w-[680px] pt-20 md:pt-28 pb-24 md:pb-32">
+        <div className="w-full">
+          <article className="max-w-[640px] mx-auto px-8 pt-20 md:pt-28 pb-24 md:pb-32">
             <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[40px] sm:text-[52px] md:text-[64px] leading-[1.05] tracking-[-0.02em]">
               {essay.title}
             </h1>
