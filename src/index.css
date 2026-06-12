@@ -158,6 +158,9 @@ All colors MUST be HSL.
     color: inherit;
   }
 
+  :root { --modal-inset: 16px; }
+  @media (min-width: 768px) { :root { --modal-inset: 40px; } }
+
   .dinkus {
     text-align: left;
     color: hsl(var(--ink-body) / 0.4);
