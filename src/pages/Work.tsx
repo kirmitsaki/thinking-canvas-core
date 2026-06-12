@@ -97,9 +97,9 @@ export default function Work() {
           <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))]">
             Earlier
           </p>
-          <div className="mt-6 md:mt-8 prose-body">
-            <p className="text-[15px] md:text-[16px] leading-[1.75] font-light text-[hsl(var(--muted-ink))]">
-              Before these roles, I worked as a UX/UI Designer at Elemental Concept (2017–2018), Web Designer at PawSquad (2015–2017), and UX Engineer at Migreat (2014–2015), where I designed and built interfaces from concept to coded prototypes. That last role is where the habit of thinking in systems before thinking in screens started.
+          <div className="mt-12 md:mt-16 prose-body">
+            <p className="mb-10 md:mb-12 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]">
+              Before these roles, I worked as a <strong>UX/UI Designer</strong> at Elemental Concept (2017–2018), <strong>Web Designer</strong> at PawSquad (2015–2017), and <strong>UX Engineer</strong> at Migreat (2014–2015), where I designed and built interfaces from concept to coded prototypes. That last role is where the habit of thinking in systems before thinking in screens started.
             </p>
           </div>
         </section>
