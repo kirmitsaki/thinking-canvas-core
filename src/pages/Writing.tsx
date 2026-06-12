@@ -132,7 +132,7 @@ export default function Writing() {
         })}
       </ul>
 
-      {openEssay && <EssayModal essay={openEssay} onClose={closeModal} />}
+      {openEssay && slug && <EssayModal essay={openEssay} slug={slug} onClose={closeModal} />}
     </PageShell>
   );
 }
