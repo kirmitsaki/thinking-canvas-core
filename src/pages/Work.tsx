@@ -58,25 +58,26 @@ export default function Work() {
             key={c.company}
             className="group/case relative py-20 md:py-32 first:pt-12 md:first:pt-20"
           >
-            {/* Year marker — quieter, ~half size of previous numerals */}
+            {/* Ghost date range */}
             <span
               aria-hidden
-              className="pointer-events-none select-none absolute -top-4 md:-top-8 right-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] group-hover/case:text-[hsl(var(--accent-stone))] group-hover/case:opacity-[0.18] transition-colors duration-500 text-[70px] sm:text-[110px] md:text-[160px]"
+              className="pointer-events-none select-none absolute right-0 top-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] group-hover/case:text-[hsl(var(--accent-stone))] group-hover/case:opacity-[0.18] transition-colors duration-500 text-[36px] sm:text-[56px] md:text-[80px]"
             >
-              {c.year}
+              {c.ghostDates}
             </span>
 
-            <header className="relative">
+            <header className="relative pt-16 md:pt-28">
               <h2 className="font-editorial text-[40px] sm:text-[56px] md:text-[88px] leading-[0.98] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
                 {c.title}
               </h2>
-              <p className="mt-5 md:mt-6 text-[15px] md:text-[17px] text-[hsl(var(--ink-body))]">
-                {c.dates}
+              <p className="mt-5 md:mt-6 text-[20px] md:text-[22px] text-[hsl(var(--ink-strong))]">
+                {c.company}
               </p>
-              <p className="mt-1 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
-                {c.company} · {c.domain} · {c.location}
+              <p className="mt-2 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
+                {c.domain}
               </p>
             </header>
+
 
             <div className="relative mt-12 md:mt-16 prose-body">
               {c.paragraphs.map((p, pIdx) => (
