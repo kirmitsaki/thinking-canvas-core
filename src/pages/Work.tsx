@@ -61,7 +61,7 @@ export default function Work() {
             {/* Ghost date range */}
             <span
               aria-hidden
-              className="pointer-events-none select-none absolute right-0 top-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] group-hover/case:text-[hsl(var(--accent-stone))] group-hover/case:opacity-[0.18] transition-colors duration-500 text-[36px] sm:text-[56px] md:text-[80px]"
+              className="pointer-events-none select-none absolute right-0 top-0 font-editorial font-light tabular-nums leading-none text-[hsl(var(--ink-strong))] opacity-[0.06] md:opacity-[0.08] group-hover/case:text-[hsl(var(--accent-stone))] group-hover/case:opacity-[0.18] transition-colors duration-500 text-[28px] sm:text-[36px] md:text-[44px]"
             >
               {c.ghostDates}
             </span>
