@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/thinking-canvas-core/"
+  base: "/thinking-canvas-core/",
   server: {
     host: "::",
     port: 8080,
