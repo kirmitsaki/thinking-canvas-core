@@ -18,12 +18,13 @@ export function PageShell({
       <SiteNav />
       <main
         className={
-          "mx-auto w-full max-w-[1320px] px-6 md:px-12 flex-1" +
+          "mx-auto w-full max-w-[1320px] px-5 sm:px-6 md:px-12 flex-1" +
           (centered ? " flex items-center" : "")
         }
       >
         {children}
       </main>
+
     </div>
   );
 }
