@@ -52,7 +52,9 @@ export default function About() {
         title="About — Rachel Kirmitsaki"
         description="Rachel Kirmitsaki on building product design teams, leading across B2B SaaS, AI, fintech and developer platforms, and how a childhood encyclopaedia started it all."
         path="/about"
+        jsonLd={breadcrumbSchema}
       />
+
       <PageHeader title="About" />
 
       <section className="pb-12 md:pb-16">
