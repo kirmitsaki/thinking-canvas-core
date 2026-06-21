@@ -73,12 +73,6 @@ const essays: EssayItem[] = [
     blurb:
       "Design either shapes commercial outcomes or it doesn't. There's very little middle ground. This is how I think about making sure it's the former.",
   },
-  {
-    slug: "ai-enabled-ways-of-working",
-    title: "AI-enabled ways of working",
-    blurb:
-      "The biggest change AI made to how I work isn't speed. It's that weak ideas fail earlier and strong ideas surface sooner. One of my designers recently went a week without opening Figma. That felt significant.",
-  },
 ];
 
 const romans = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI"];
