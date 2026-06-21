@@ -108,13 +108,13 @@ export default function Writing() {
                 <div className="col-span-2 md:col-span-2">
                   <span
                     aria-hidden
-                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300"
+                    className="block font-editorial font-light text-[22px] sm:text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300"
                   >
                     {n}
                   </span>
                 </div>
-                <div className="col-span-10 md:col-span-10">
-                  <h2 className="flex items-center gap-3 font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                <div className="col-span-10 md:col-span-10 min-w-0">
+                  <h2 className="flex items-center gap-2 sm:gap-3 font-editorial text-[20px] sm:text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style] break-words">
                     {item.title}
                     <span
                       aria-hidden
@@ -123,10 +123,11 @@ export default function Writing() {
                       →
                     </span>
                   </h2>
-                  <p className="mt-4 max-w-[660px] text-[17px] leading-[1.65] text-[hsl(var(--ink-body))]">
+                  <p className="mt-3 sm:mt-4 max-w-[660px] text-[15px] sm:text-[17px] leading-[1.65] text-[hsl(var(--ink-body))]">
                     {item.blurb}
                   </p>
                 </div>
+
               </button>
             </li>
           );
