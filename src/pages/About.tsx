@@ -1,4 +1,5 @@
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
+import Seo from "@/components/Seo";
 
 const story: string[] = [
   "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",
@@ -37,6 +38,11 @@ export default function About() {
 
   return (
     <PageShell>
+      <Seo
+        title="About — Rachel Kirmitsaki"
+        description="Rachel Kirmitsaki on building product design teams, leading across B2B SaaS, AI, fintech and developer platforms, and how a childhood encyclopaedia started it all."
+        path="/about"
+      />
       <PageHeader title="About" />
 
       <section className="pb-12 md:pb-16">

@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 import EssayModal from "@/components/EssayModal";
+import Seo from "@/components/Seo";
 import { essays as essayContent } from "@/content/essays";
 
 type EssayItem = { slug: string; title: string; blurb: string };
@@ -88,6 +89,11 @@ export default function Writing() {
 
   return (
     <PageShell>
+      <Seo
+        title="Writing — Rachel Kirmitsaki"
+        description="Essays by Rachel Kirmitsaki on design leadership, systems thinking, AI-enabled workflows, design systems and shaping complex B2B products."
+        path={slug ? `/essays/${slug}` : "/writing"}
+      />
       <PageHeader title="Writing" />
 
       <PageRule />
