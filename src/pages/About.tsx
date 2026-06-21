@@ -1,4 +1,5 @@
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
+import Seo from "@/components/Seo";
 
 const story: string[] = [
   "I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you.",

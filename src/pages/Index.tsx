@@ -1,11 +1,17 @@
 import { Fragment } from "react";
 import { PageShell } from "@/components/PageShell";
+import Seo from "@/components/Seo";
 
 const TAGS = ["CYBERSECURITY", "FINTECH", "ACADEMIC RESEARCH", "DEVELOPER TOOLING"];
 
 export default function Index() {
   return (
     <PageShell centered>
+      <Seo
+        title="Rachel Kirmitsaki — Head of Product Design"
+        description="Head of Product Design at Secure Code Warrior. Shaping product systems and organisations that scale across B2B SaaS, AI, fintech and developer platforms."
+        path="/"
+      />
       <section className="py-24 md:py-40 max-w-4xl w-full">
         <h1 className="font-editorial text-[44px] sm:text-[72px] md:text-[128px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))] break-words">
           Rachel Kirmitsaki

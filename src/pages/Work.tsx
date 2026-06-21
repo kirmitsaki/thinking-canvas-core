@@ -1,4 +1,5 @@
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
+import Seo from "@/components/Seo";
 
 type CaseStudy = {
   title: string;

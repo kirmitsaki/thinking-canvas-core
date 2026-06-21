@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { PageHeader, PageRule, PageShell } from "@/components/PageShell";
 import EssayModal from "@/components/EssayModal";
+import Seo from "@/components/Seo";
 import { essays as essayContent } from "@/content/essays";
 
 type EssayItem = { slug: string; title: string; blurb: string };
