@@ -16,9 +16,9 @@ const caseStudies: CaseStudy[] = [
     domain: "AI-driven developer risk platform · London, EMEA/APAC",
     ghostDates: "MMXXIII – Present",
     paragraphs: [
-      "When I joined, design was present but peripheral. There was a team, technically, but it operated like a contractor pool. After an internal restructure I was asked to build the function properly across two regions from the ground up.",
-      "I built the team, established how we worked, and moved design from delivery support to something that actually shaped where the product was going. The most significant moment was when the CPTO asked me to rethink the product from scratch. Not iterate. Start over. We ran workshops, built a vision that unified the company around a common direction for the first time, and that work repositioned the company from a learning platform to a holistic developer risk solution.",
-      "Along the way: the platform's first design system, the first accessibility audit it had ever had, and AI-enabled workflows that cut idea-to-validated-concept time to under four weeks.",
+      "When I joined, design had a seat but not a role. After a restructure that reset the product organisation, I was asked to build a product design function from the ground up across two regions, embedded in strategy rather than execution.",
+      "That meant redefining how the team worked, including around AI, and moving design from delivery support to shaping where the product was going. The most significant moment was when the CPTO asked me to rethink the product from scratch. Not iterate. Start over. We ran workshops, built a vision that unified the company around a common direction for the first time, and that work repositioned the company from a learning platform to a holistic developer risk solution.",
+      "Along the way: the platform's first design system, a visual identity that helped define what the new platform looked and felt like, an accessibility programme that finally connected audits to action, and AI-enabled workflows that cut idea-to-validated-concept time to under four weeks.",
     ],
   },
   {
@@ -27,9 +27,9 @@ const caseStudies: CaseStudy[] = [
     domain: "Fintech platform for debt capital markets · London",
     ghostDates: "MMXX – MMXXIII",
     paragraphs: [
-      "I was the first designer. No function, no system, no foundation. Just a product that had been growing faster than its structure and founders who needed someone to help figure out what it should become.",
-      "I worked with the founding team to define product strategy and translate an ambitious vision for debt capital markets into something real institutions could use and trust. I built Morpho, the design system that became the foundation for everything the team built after. The product won consecutive GlobalCapital Bond Awards for Best Fintech.",
-      "The thing I learned most at Origin Markets was that the interface is rarely the interesting problem. The interesting problem is usually what the product is actually for.",
+      "I was the first designer. No function, no system, no foundation. But an intelligent product that had been growing faster than its structure, and founders aiming to change how debt capital markets traditionally worked.",
+      "I worked with the founding team to define product strategy and translate that vision into a solution financial institutions could use and trust. The core challenge wasn't the interface. Debt capital markets run on trust between all sides involved, and trust has to be produced. A phone call before confirmation isn't about the information, as both sides already have it. It's the moment the deal becomes real. A workflow that removes that step to save time ends up removing the confidence with it. So the aim was to digitise the bond issuance lifecycle in a way that kept the human moments in.",
+      "The output: features that digitised and automated the entire bond issuance lifecycle, Morpho, the design system that became the foundation for everything the team built after, and consecutive GlobalCapital Bond Awards for Best Fintech.",
     ],
   },
   {
@@ -38,7 +38,7 @@ const caseStudies: CaseStudy[] = [
     domain: "Academic reference management platform · London",
     ghostDates: "MMXIX – MMXX",
     paragraphs: [
-      "Mendeley is where I learned what it means to design for expert users doing genuinely complex work. Over 120,000 researchers, more than a million references, a product that had to work across web and desktop without falling apart.",
+      "At Mendeley, the product team was focused on experts doing complex work. Over 120,000 researchers, more than a million references, a product that had to work across web and desktop without falling apart.",
       "I led design across Library, Reader, and Citation, contributed to the cross-platform design system, and embedded continuous research into how the team worked. It was also my first experience inside a large organisation with multiple products pulling in different directions. That's where systems thinking stopped being an instinct and started becoming something I could actually articulate.",
     ],
   },
