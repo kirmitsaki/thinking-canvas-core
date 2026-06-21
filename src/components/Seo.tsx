@@ -5,11 +5,12 @@ type SeoProps = {
   description: string;
   path: string;
   jsonLd?: object | object[];
+  ogType?: "website" | "article" | "profile";
 };
 
 const SITE_URL = "https://rachel.kirmitsaki.com";
 
-export default function Seo({ title, description, path, jsonLd }: SeoProps) {
+export default function Seo({ title, description, path, jsonLd, ogType = "website" }: SeoProps) {
   const url = `${SITE_URL}${path}`;
   const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
@@ -17,6 +18,7 @@ export default function Seo({ title, description, path, jsonLd }: SeoProps) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
+      <meta property="og:type" content={ogType} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
@@ -30,3 +32,4 @@ export default function Seo({ title, description, path, jsonLd }: SeoProps) {
     </Helmet>
   );
 }
+
