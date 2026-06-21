@@ -4,12 +4,14 @@ type SeoProps = {
   title: string;
   description: string;
   path: string;
+  jsonLd?: object | object[];
 };
 
 const SITE_URL = "https://rachel.kirmitsaki.com";
 
-export default function Seo({ title, description, path }: SeoProps) {
+export default function Seo({ title, description, path, jsonLd }: SeoProps) {
   const url = `${SITE_URL}${path}`;
+  const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
     <Helmet>
       <title>{title}</title>
@@ -20,6 +22,11 @@ export default function Seo({ title, description, path }: SeoProps) {
       <meta property="og:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      {ldArray.map((data, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(data)}
+        </script>
+      ))}
     </Helmet>
   );
 }

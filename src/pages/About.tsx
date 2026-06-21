@@ -31,6 +31,15 @@ const beats = new Set<string>([
   "It felt infinite. It felt powerful. It felt like cheating, somehow.",
 ]);
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://rachel.kirmitsaki.com/" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://rachel.kirmitsaki.com/about" },
+  ],
+};
+
 export default function About() {
   const [opener, ...rest] = story;
   const punchline = rest[rest.length - 1];
@@ -38,6 +47,7 @@ export default function About() {
 
   return (
     <PageShell>
+
       <Seo
         title="About — Rachel Kirmitsaki"
         description="Rachel Kirmitsaki on building product design teams, leading across B2B SaaS, AI, fintech and developer platforms, and how a childhood encyclopaedia started it all."

@@ -4,6 +4,33 @@ import Seo from "@/components/Seo";
 
 const TAGS = ["CYBERSECURITY", "FINTECH", "ACADEMIC RESEARCH", "DEVELOPER TOOLING"];
 
+const SITE_URL = "https://rachel.kirmitsaki.com";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rachel Kirmitsaki",
+  jobTitle: "Head of Product Design",
+  url: SITE_URL,
+  worksFor: {
+    "@type": "Organization",
+    name: "Secure Code Warrior",
+  },
+  description:
+    "Head of Product Design at Secure Code Warrior, building products that help engineering teams write more secure code at scale.",
+  sameAs: [
+    "https://www.linkedin.com/in/rachelkirmitsaki/",
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+  ],
+};
+
 export default function Index() {
   return (
     <PageShell centered>
@@ -11,7 +38,9 @@ export default function Index() {
         title="Rachel Kirmitsaki — Head of Product Design"
         description="Head of Product Design at Secure Code Warrior. Shaping product systems and organisations that scale across B2B SaaS, AI, fintech and developer platforms."
         path="/"
+        jsonLd={[personSchema, breadcrumbSchema]}
       />
+
       <section className="py-24 md:py-40 max-w-4xl w-full">
         <h1 className="font-editorial text-[44px] sm:text-[72px] md:text-[128px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))] break-words">
           Rachel Kirmitsaki
