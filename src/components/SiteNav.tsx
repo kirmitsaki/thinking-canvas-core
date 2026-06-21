@@ -27,10 +27,11 @@ export default function SiteNav() {
             to="/"
             className={
               "font-editorial text-[18px] sm:text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))] truncate transition-colors hover:[text-decoration:underline] hover:[text-decoration-color:hsl(var(--accent-stone))] hover:[text-decoration-thickness:1px] hover:[text-underline-offset:4px] " +
-              (pathname === "/" ? "invisible pointer-events-none hidden sm:inline" : "hidden sm:inline")
+              (pathname === "/" ? "invisible pointer-events-none" : "")
             }
           >
-            Rachel Kirmitsaki
+            <span className="inline sm:hidden">RK</span>
+            <span className="hidden sm:inline">Rachel Kirmitsaki</span>
           </Link>
           <nav className="ml-auto flex items-center gap-5 sm:gap-6 md:gap-10 text-[11px] sm:text-[12px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[hsl(var(--ink-body))]">
 
