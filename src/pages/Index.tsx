@@ -6,14 +6,15 @@ const TAGS = ["CYBERSECURITY", "FINTECH", "ACADEMIC RESEARCH", "DEVELOPER TOOLIN
 export default function Index() {
   return (
     <PageShell centered>
-      <section className="py-24 md:py-40 max-w-4xl">
-        <h1 className="font-editorial text-[56px] sm:text-[88px] md:text-[128px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))]">
+      <section className="py-24 md:py-40 max-w-4xl w-full">
+        <h1 className="font-editorial text-[44px] sm:text-[72px] md:text-[128px] leading-[0.95] tracking-[-0.025em] text-[hsl(var(--ink-strong))] break-words">
           Rachel Kirmitsaki
         </h1>
 
-        <p className="lede mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
+        <p className="lede mt-8 md:mt-14 max-w-2xl font-editorial text-[18px] sm:text-[22px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
           Head of Product Design at Secure Code Warrior, building products that help engineering teams write more secure code at scale.
         </p>
+
 
         <p className="smallcaps mt-10 md:mt-14 text-[hsl(var(--ink-body))]">
           {TAGS.map((tag, i) => (
