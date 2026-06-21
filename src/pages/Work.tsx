@@ -46,6 +46,15 @@ const caseStudies: CaseStudy[] = [
 ];
 
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://rachel.kirmitsaki.com/" },
+    { "@type": "ListItem", position: 2, name: "Work", item: "https://rachel.kirmitsaki.com/work" },
+  ],
+};
+
 export default function Work() {
   return (
     <PageShell>
@@ -53,7 +62,9 @@ export default function Work() {
         title="Work — Rachel Kirmitsaki"
         description="Selected work from Rachel Kirmitsaki across Secure Code Warrior, Origin Markets and Mendeley — building design functions, systems and products for complex B2B platforms."
         path="/work"
+        jsonLd={breadcrumbSchema}
       />
+
       <PageHeader title="Work" />
 
       <PageRule />
