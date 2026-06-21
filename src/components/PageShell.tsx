@@ -31,10 +31,11 @@ export function PageShell({
 type HeaderSize = "hero" | "section" | "essay";
 
 const titleSizes: Record<HeaderSize, string> = {
-  hero: "text-[56px] sm:text-[88px] md:text-[128px] leading-[0.95] tracking-[-0.025em]",
-  section: "text-[64px] md:text-[136px] leading-[0.95] tracking-[-0.025em]",
-  essay: "text-[40px] sm:text-[56px] md:text-[80px] leading-[1.02] tracking-[-0.02em]",
+  hero: "text-[44px] sm:text-[72px] md:text-[128px] leading-[0.95] tracking-[-0.025em]",
+  section: "text-[52px] sm:text-[80px] md:text-[136px] leading-[0.95] tracking-[-0.025em]",
+  essay: "text-[34px] sm:text-[52px] md:text-[80px] leading-[1.04] tracking-[-0.02em]",
 };
+
 
 /**
  * Editorial page header — display heading + optional lede.
