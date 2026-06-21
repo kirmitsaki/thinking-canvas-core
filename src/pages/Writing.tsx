@@ -8,6 +8,12 @@ type EssayItem = { slug: string; title: string; blurb: string };
 // Flat list, no categories. Ordered 01 → 11.
 const essays: EssayItem[] = [
   {
+    slug: "ai-enabled-ways-of-working",
+    title: "AI-enabled ways of working",
+    blurb:
+      "The biggest change AI made to how I work isn't speed. It's that weak ideas fail earlier and strong ideas surface sooner. One of my designers recently went a week without opening Figma. That felt significant.",
+  },
+  {
     slug: "building-and-leading-design-organisations",
     title: "Building and leading design organisations",
     blurb:
@@ -20,17 +26,12 @@ const essays: EssayItem[] = [
       "Getting a seat at the table is one thing. Keeping it when everyone else in the room has a very strong opinion about next Friday's deadline is another.",
   },
   {
-    slug: "ai-enabled-ways-of-working",
-    title: "AI-enabled ways of working",
-    blurb:
-      "The biggest change AI made to how I work isn't speed. It's that weak ideas fail earlier and strong ideas surface sooner. One of my designers recently went a week without opening Figma. That felt significant.",
-  },
-  {
     slug: "systems-thinking",
     title: "Systems thinking",
     blurb:
       "Most problems that look like design problems aren't design problems. They're symptoms of something upstream. A button in the wrong place is rarely about the button.",
   },
+
   {
     slug: "complex-b2b-platforms",
     title: "Complex B2B platforms",
@@ -107,13 +108,13 @@ export default function Writing() {
                 <div className="col-span-2 md:col-span-2">
                   <span
                     aria-hidden
-                    className="block font-editorial font-light text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300"
+                    className="block font-editorial font-light text-[22px] sm:text-[32px] md:text-[44px] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--meta-ink))] group-hover:text-[hsl(var(--accent-stone))] transition-colors duration-300"
                   >
                     {n}
                   </span>
                 </div>
-                <div className="col-span-10 md:col-span-10">
-                  <h2 className="flex items-center gap-3 font-editorial text-[24px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style]">
+                <div className="col-span-10 md:col-span-10 min-w-0">
+                  <h2 className="flex items-center gap-2 sm:gap-3 font-editorial text-[20px] sm:text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.015em] text-[hsl(var(--ink-strong))] group-hover:italic transition-[font-style] break-words">
                     {item.title}
                     <span
                       aria-hidden
@@ -122,10 +123,11 @@ export default function Writing() {
                       →
                     </span>
                   </h2>
-                  <p className="mt-4 max-w-[660px] text-[17px] leading-[1.65] text-[hsl(var(--ink-body))]">
+                  <p className="mt-3 sm:mt-4 max-w-[660px] text-[15px] sm:text-[17px] leading-[1.65] text-[hsl(var(--ink-body))]">
                     {item.blurb}
                   </p>
                 </div>
+
               </button>
             </li>
           );

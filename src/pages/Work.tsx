@@ -73,12 +73,12 @@ export default function Work() {
                   );
                 })()}
               </div>
-              <div className="col-span-9 md:col-span-10">
+              <div className="col-span-9 md:col-span-10 min-w-0">
                 <header>
                   <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))]">
                     {c.title}
                   </p>
-                  <h2 className="mt-3 font-editorial italic text-[32px] md:text-[52px] leading-[1.02] tracking-[-0.02em] text-[hsl(var(--ink-strong))]">
+                  <h2 className="mt-3 font-editorial italic text-[26px] sm:text-[36px] md:text-[52px] leading-[1.05] tracking-[-0.02em] text-[hsl(var(--ink-strong))] break-words">
                     {c.company}
                   </h2>
                   <p className="mt-4 text-[13px] md:text-[14px] font-light text-[hsl(var(--meta-ink))]">
@@ -86,14 +86,14 @@ export default function Work() {
                   </p>
                 </header>
 
-                <div className="mt-12 md:mt-16 prose-body">
+                <div className="mt-10 md:mt-16 prose-body">
                   {c.paragraphs.map((p, pIdx) => (
                     <p
                       key={pIdx}
                       className={
                         pIdx === 0
-                          ? "mb-10 md:mb-12 font-editorial text-[22px] md:text-[26px] leading-[1.4] tracking-[-0.005em] text-[hsl(var(--ink-strong))]"
-                          : "mb-10 md:mb-12 last:mb-0 text-[17px] leading-[1.8] text-[hsl(var(--ink-body))]"
+                          ? "mb-8 md:mb-12 font-editorial text-[19px] sm:text-[22px] md:text-[26px] leading-[1.45] tracking-[-0.005em] text-[hsl(var(--ink-strong))]"
+                          : "mb-8 md:mb-12 last:mb-0 text-[16px] sm:text-[17px] leading-[1.75] text-[hsl(var(--ink-body))]"
                       }
                     >
                       {p}
@@ -101,6 +101,7 @@ export default function Work() {
                   ))}
                 </div>
               </div>
+
             </article>
           </li>
         ))}

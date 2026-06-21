@@ -22,17 +22,18 @@ export default function SiteNav() {
   return (
     <>
       <header className="fixed top-0 left-0 z-50 w-full bg-[hsl(var(--background))]/60 backdrop-blur-[12px] border-b border-[hsl(var(--hairline))]/50">
-        <div className="mx-auto max-w-[1320px] px-6 md:px-12 py-5 flex items-baseline">
+        <div className="mx-auto max-w-[1320px] px-5 sm:px-6 md:px-12 py-5 flex items-baseline gap-4">
           <Link
             to="/"
             className={
-              "font-editorial text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))] transition-colors hover:[text-decoration:underline] hover:[text-decoration-color:hsl(var(--accent-stone))] hover:[text-decoration-thickness:1px] hover:[text-underline-offset:4px] " +
-              (pathname === "/" ? "invisible pointer-events-none" : "")
+              "font-editorial text-[18px] sm:text-[20px] md:text-[22px] leading-none tracking-tight text-[hsl(var(--ink-strong))] truncate transition-colors hover:[text-decoration:underline] hover:[text-decoration-color:hsl(var(--accent-stone))] hover:[text-decoration-thickness:1px] hover:[text-underline-offset:4px] " +
+              (pathname === "/" ? "invisible pointer-events-none hidden sm:inline" : "hidden sm:inline")
             }
           >
             Rachel Kirmitsaki
           </Link>
-          <nav className="ml-auto flex items-center gap-6 md:gap-10 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--ink-body))]">
+          <nav className="ml-auto flex items-center gap-5 sm:gap-6 md:gap-10 text-[11px] sm:text-[12px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[hsl(var(--ink-body))]">
+
             {items.map((i) => {
               const active =
                 pathname === i.to ||

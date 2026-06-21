@@ -102,10 +102,11 @@ export default function EssayModal({ essay, slug, onClose }: Props) {
           ×
         </button>
 
-        <article className="max-w-[640px] mx-auto px-8 pt-20 md:pt-28 pb-24 md:pb-32">
-          <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[40px] sm:text-[52px] md:text-[64px] leading-[1.05] tracking-[-0.02em]">
+        <article className="max-w-[640px] mx-auto px-5 sm:px-8 pt-16 sm:pt-20 md:pt-28 pb-20 md:pb-32">
+          <h1 className="font-editorial text-[hsl(var(--ink-strong))] text-[32px] sm:text-[48px] md:text-[64px] leading-[1.06] tracking-[-0.02em] break-words">
             {essay.title}
           </h1>
+
           <div className="mt-12">
             {essay.paragraphs.map(renderParagraph)}
           </div>
