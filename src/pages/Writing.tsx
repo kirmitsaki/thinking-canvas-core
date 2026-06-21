@@ -20,6 +20,12 @@ const essays: EssayItem[] = [
       "Getting a seat at the table is one thing. Keeping it when everyone else in the room has a very strong opinion about next Friday's deadline is another.",
   },
   {
+    slug: "ai-enabled-ways-of-working",
+    title: "AI-enabled ways of working",
+    blurb:
+      "The biggest change AI made to how I work isn't speed. It's that weak ideas fail earlier and strong ideas surface sooner. One of my designers recently went a week without opening Figma. That felt significant.",
+  },
+  {
     slug: "systems-thinking",
     title: "Systems thinking",
     blurb:
@@ -66,12 +72,6 @@ const essays: EssayItem[] = [
     title: "Commercial and business impact",
     blurb:
       "Design either shapes commercial outcomes or it doesn't. There's very little middle ground. This is how I think about making sure it's the former.",
-  },
-  {
-    slug: "ai-enabled-ways-of-working",
-    title: "AI-enabled ways of working",
-    blurb:
-      "The biggest change AI made to how I work isn't speed. It's that weak ideas fail earlier and strong ideas surface sooner. One of my designers recently went a week without opening Figma. That felt significant.",
   },
 ];
 
