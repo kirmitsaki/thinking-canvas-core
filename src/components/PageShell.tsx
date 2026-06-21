@@ -59,11 +59,12 @@ export function PageHeader({
       {preTitle}
       <h1
         className={
-          "font-editorial text-[hsl(var(--ink-strong))] " + titleSizes[size]
+          "font-editorial text-[hsl(var(--ink-strong))] break-words " + titleSizes[size]
         }
       >
         {title}
       </h1>
+
       {lede && (
         <p className="lede mt-10 md:mt-14 max-w-2xl font-editorial text-[20px] md:text-[26px] leading-[1.35] tracking-[-0.005em] text-[hsl(var(--ink-body))]">
           {lede}
