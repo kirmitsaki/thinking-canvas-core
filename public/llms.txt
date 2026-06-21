@@ -1,0 +1,24 @@
+# Rachel Kirmitsaki
+
+> Portfolio and essays by Rachel Kirmitsaki, Head of Product Design at Secure Code Warrior, on design leadership, systems thinking, and shaping complex B2B products.
+
+## Pages
+
+- [Home](/): Introduction to Rachel Kirmitsaki, Head of Product Design at Secure Code Warrior, with focus areas in cybersecurity, fintech, academic research, and developer tooling.
+- [About](/about): Personal story and professional background on building product design teams and leading across B2B SaaS, AI, fintech, and developer platforms.
+- [Work](/work): Selected case studies from Secure Code Warrior, Origin Markets, and Mendeley — building design functions, systems, and products for complex B2B platforms.
+- [Writing](/writing): Essays on design leadership, systems thinking, AI-enabled workflows, design systems, and shaping complex B2B products.
+
+## Optional
+
+- [AI-enabled ways of working](/essays/ai-enabled-ways-of-working): How AI changes design work by surfacing strong ideas faster and letting weak ones fail earlier.
+- [Building and leading design organisations](/essays/building-and-leading-design-organisations): Lessons from building design functions in companies where design was present but undefined.
+- [Strategic design leadership](/essays/strategic-design-leadership): On earning and keeping a seat at the strategy table.
+- [Systems thinking](/essays/systems-thinking): Why most design problems are symptoms of upstream issues.
+- [Complex B2B platforms](/essays/complex-b2b-platforms): Why B2B is where the most interesting design problems live.
+- [Workflow transformation](/essays/workflow-transformation): Transforming how people work by understanding what the "broken" parts are actually doing.
+- [Research-led decision making](/essays/research-led-decision-making): Building the habit of being wrong less often through research.
+- [Design systems](/essays/design-systems): A design system as a decision-making system, not just a component library.
+- [Technical fluency](/essays/technical-fluency): How a background in writing code still shapes design decisions every day.
+- [Distributed leadership](/essays/distributed-leadership): Leading teams across EMEA and APAC as a clarity problem, not a logistics one.
+- [Commercial and business impact](/essays/commercial-and-business-impact): Ensuring design shapes commercial outcomes rather than sitting outside them.
