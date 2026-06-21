@@ -132,6 +132,8 @@ export default function Writing() {
         }
         path={slug ? `/essays/${slug}` : "/writing"}
         jsonLd={jsonLd}
+        ogType={slug && openEssay ? "article" : "website"}
+
       />
 
       <PageHeader title="Writing" />
