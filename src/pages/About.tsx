@@ -59,9 +59,9 @@ export default function About() {
 
       <section className="pt-14 md:pt-20 pb-20 md:pb-28">
         <article className="prose-body">
-          <p className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))] mb-10 md:mb-14">
+          <h2 className="text-[11px] md:text-[12px] uppercase tracking-[0.2em] font-light text-[hsl(var(--meta-ink))] mb-10 md:mb-14">
             Where it all started
-          </p>
+          </h2>
 
           {/* Editorial opener: ~1.8–2x body */}
           <p className="hook font-editorial text-[28px] md:text-[36px] leading-[1.25] tracking-[-0.01em] text-[hsl(var(--ink-strong))] mb-14 md:mb-20">
