@@ -49,6 +49,11 @@ const caseStudies: CaseStudy[] = [
 export default function Work() {
   return (
     <PageShell>
+      <Seo
+        title="Work — Rachel Kirmitsaki"
+        description="Selected work from Rachel Kirmitsaki across Secure Code Warrior, Origin Markets and Mendeley — building design functions, systems and products for complex B2B platforms."
+        path="/work"
+      />
       <PageHeader title="Work" />
 
       <PageRule />

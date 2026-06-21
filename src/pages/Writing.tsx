@@ -89,6 +89,11 @@ export default function Writing() {
 
   return (
     <PageShell>
+      <Seo
+        title="Writing — Rachel Kirmitsaki"
+        description="Essays by Rachel Kirmitsaki on design leadership, systems thinking, AI-enabled workflows, design systems and shaping complex B2B products."
+        path={slug ? `/essays/${slug}` : "/writing"}
+      />
       <PageHeader title="Writing" />
 
       <PageRule />
