@@ -87,13 +87,53 @@ export default function Writing() {
   const openModal = (s: string) => navigate(`/essays/${s}`);
   const closeModal = () => navigate("/writing");
 
+  const SITE_URL = "https://rachel.kirmitsaki.com";
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Writing", item: `${SITE_URL}/writing` },
+      ...(slug && openEssay
+        ? [{ "@type": "ListItem", position: 3, name: openEssay.title, item: `${SITE_URL}/essays/${slug}` }]
+        : []),
+    ],
+  };
+
+  const essayMeta = slug ? essays.find((e) => e.slug === slug) : undefined;
+  const articleSchema =
+    slug && openEssay && essayMeta
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: openEssay.title,
+          description: essayMeta.blurb,
+          url: `${SITE_URL}/essays/${slug}`,
+          author: {
+            "@type": "Person",
+            name: "Rachel Kirmitsaki",
+            url: SITE_URL,
+          },
+          mainEntityOfPage: `${SITE_URL}/essays/${slug}`,
+        }
+      : null;
+
+  const jsonLd = articleSchema ? [articleSchema, breadcrumb] : [breadcrumb];
+
   return (
     <PageShell>
       <Seo
-        title="Writing — Rachel Kirmitsaki"
-        description="Essays by Rachel Kirmitsaki on design leadership, systems thinking, AI-enabled workflows, design systems and shaping complex B2B products."
+        title={slug && openEssay ? `${openEssay.title} — Rachel Kirmitsaki` : "Writing — Rachel Kirmitsaki"}
+        description={
+          slug && essayMeta
+            ? essayMeta.blurb
+            : "Essays by Rachel Kirmitsaki on design leadership, systems thinking, AI-enabled workflows, design systems and shaping complex B2B products."
+        }
         path={slug ? `/essays/${slug}` : "/writing"}
+        jsonLd={jsonLd}
       />
+
       <PageHeader title="Writing" />
 
       <PageRule />
