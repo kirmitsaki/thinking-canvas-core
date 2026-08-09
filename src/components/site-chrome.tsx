@@ -44,41 +44,8 @@ export function SiteHeader() {
                 </NavLink>
               ))}
             </nav>
-
-            <div className="flex items-center gap-1" aria-label="Links">
-              <a
-                href="https://www.linkedin.com/in/rachelkirmitsaki/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Rachel Kirmitsaki on LinkedIn"
-                title="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center text-foreground/65 transition-colors hover:text-accent"
-              >
-                <Linkedin className="h-[18px] w-[18px]" strokeWidth={1.7} />
-              </a>
-
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button
-                    type="button"
-                    className="inline-flex h-9 w-9 items-center justify-center text-foreground/65 transition-colors hover:text-accent"
-                    aria-label="Request the Figma portfolio link"
-                  >
-                    <Figma className="h-[18px] w-[18px]" strokeWidth={1.7} />
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="border-0 bg-warm-ivory text-foreground sm:rounded-none">
-                  <DialogTitle className="sr-only">Figma portfolio</DialogTitle>
-                  <div className="flex flex-col items-center gap-5 text-center">
-                    <Figma className="h-8 w-8 text-accent" strokeWidth={1.4} aria-hidden="true" />
-                    <DialogDescription className="max-w-[34ch] font-serif text-lg leading-relaxed text-muted-foreground">
-                      Link to Figma portfolio available on request only.
-                    </DialogDescription>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </div>
           </div>
+
         </div>
       </div>
     </header>
