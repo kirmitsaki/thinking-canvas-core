@@ -1,6 +1,6 @@
 import { Figma, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
