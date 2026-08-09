@@ -25,7 +25,7 @@ export const PIECES: Piece[] = [
     eyebrow: "Strategy before execution",
     blocks: [
       { type: "p", text: "The further I moved into leadership, the less time I spent deciding what a screen should look like and the more time I spent trying to understand what we should be building in the first place." },
-      { type: "p", text: "I did not make that transition deliberately. It happened because the questions kept getting larger." },
+      { type: "p", text: "The shift was gradual. As my responsibilities grew, the questions did too." },
       { type: "p", text: "Early in my career, a problem would usually arrive with some boundaries around it. There was a workflow to improve, an interface to design, something people were struggling to use. I could get close to the problem, understand it and make it better." },
       { type: "p", text: "Later, the boundaries became less useful." },
       { type: "statement", text: "The questions became larger" },
