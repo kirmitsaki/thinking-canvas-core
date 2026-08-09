@@ -2,77 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rachel.kirmitsaki.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/the-work</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/systems-and-people</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/field-notes</loc>
   </url>
   <url>
     <loc>https://rachel.kirmitsaki.com/about</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/work</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/knowing-what-to-build</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/writing</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/building-the-team-around-the-work</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/ai-enabled-ways-of-working</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/seeing-the-whole-thing</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/building-and-leading-design-organisations</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/learning-complicated-worlds</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/strategic-design-leadership</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/working-through-other-people</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/systems-thinking</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/getting-closer-to-reality</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/complex-b2b-platforms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/what-ai-has-changed-in-my-work</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/workflow-transformation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/piece/why-i-still-think-like-an-engineer</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/research-led-decision-making</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-01</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/design-systems</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-02</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/technical-fluency</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-03</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/distributed-leadership</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-04</loc>
   </url>
   <url>
-    <loc>https://rachel.kirmitsaki.com/essays/commercial-and-business-impact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-05</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-06</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-07</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-08</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-09</loc>
+  </url>
+  <url>
+    <loc>https://rachel.kirmitsaki.com/note/field-note-10</loc>
   </url>
 </urlset>

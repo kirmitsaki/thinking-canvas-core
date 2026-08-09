@@ -1,34 +1,44 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
+import { SiteHeader } from "@/components/site-chrome";
 import About from "@/pages/About";
-import Index from "@/pages/Index";
+import AcrossProduct from "@/pages/AcrossProduct";
+import FieldNotes from "@/pages/FieldNotes";
+import Home from "@/pages/Home";
+import NotePage from "@/pages/Note";
 import NotFound from "@/pages/NotFound";
-import Work from "@/pages/Work";
-import Writing from "@/pages/Writing";
+import PiecePage from "@/pages/Piece";
+import TheWork from "@/pages/TheWork";
 
 const queryClient = new QueryClient();
 
+const Layout = () => (
+  <div className="paper-grain flex min-h-screen flex-col">
+    <SiteHeader />
+    <div className="flex-1">
+      <Outlet />
+    </div>
+  </div>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/the-work" element={<TheWork />} />
+          <Route path="/systems-and-people" element={<AcrossProduct />} />
+          <Route path="/field-notes" element={<FieldNotes />} />
+          <Route path="/piece/:slug" element={<PiecePage />} />
+          <Route path="/note/:slug" element={<NotePage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/writing" element={<Writing />} />
-          <Route path="/essays/:slug" element={<Writing />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
