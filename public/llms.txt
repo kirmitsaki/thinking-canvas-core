@@ -1,24 +1,35 @@
 # Rachel Kirmitsaki
 
-> Portfolio and essays by Rachel Kirmitsaki, Head of Product Design at Secure Code Warrior, on design leadership, systems thinking, and shaping complex B2B products.
+> A working notebook from Rachel Kirmitsaki on product, people, technology and the questions that shape the work.
 
 ## Pages
 
-- [Home](/): Introduction to Rachel Kirmitsaki, Head of Product Design at Secure Code Warrior, with focus areas in cybersecurity, fintech, academic research, and developer tooling.
-- [About](/about): Personal story and professional background on building product design teams and leading across B2B SaaS, AI, fintech, and developer platforms.
-- [Work](/work): Selected case studies from Secure Code Warrior, Origin Markets, and Mendeley — building design functions, systems, and products for complex B2B platforms.
-- [Writing](/writing): Essays on design leadership, systems thinking, AI-enabled workflows, design systems, and shaping complex B2B products.
+- [Home](/): Field notes, longer pieces on product and people, and the places the observations came from.
+- [The Work](/the-work): Chapters from a career across cybersecurity, financial markets and academic research.
+- [Across Product](/systems-and-people): Longer pieces on product direction, teams, systems, customers and technology.
+- [Field Notes](/field-notes): Short notes from meetings, tools, decisions and the odd thing that keeps happening.
+- [About](/about): How a beige box on a designated desk turned into a career spent building little worlds inside a screen.
 
-## Optional
+## Across Product
 
-- [AI-enabled ways of working](/essays/ai-enabled-ways-of-working): How AI changes design work by surfacing strong ideas faster and letting weak ones fail earlier.
-- [Building and leading design organisations](/essays/building-and-leading-design-organisations): Lessons from building design functions in companies where design was present but undefined.
-- [Strategic design leadership](/essays/strategic-design-leadership): On earning and keeping a seat at the strategy table.
-- [Systems thinking](/essays/systems-thinking): Why most design problems are symptoms of upstream issues.
-- [Complex B2B platforms](/essays/complex-b2b-platforms): Why B2B is where the most interesting design problems live.
-- [Workflow transformation](/essays/workflow-transformation): Transforming how people work by understanding what the "broken" parts are actually doing.
-- [Research-led decision making](/essays/research-led-decision-making): Building the habit of being wrong less often through research.
-- [Design systems](/essays/design-systems): A design system as a decision-making system, not just a component library.
-- [Technical fluency](/essays/technical-fluency): How a background in writing code still shapes design decisions every day.
-- [Distributed leadership](/essays/distributed-leadership): Leading teams across EMEA and APAC as a clarity problem, not a logistics one.
-- [Commercial and business impact](/essays/commercial-and-business-impact): Ensuring design shapes commercial outcomes rather than sitting outside them.
+- [Knowing what to build](/piece/knowing-what-to-build)
+- [Building the team around the work](/piece/building-the-team-around-the-work)
+- [Seeing the whole thing](/piece/seeing-the-whole-thing)
+- [Learning complicated worlds](/piece/learning-complicated-worlds)
+- [Working through other people](/piece/working-through-other-people)
+- [Getting closer to reality](/piece/getting-closer-to-reality)
+- [What AI has changed in my work](/piece/what-ai-has-changed-in-my-work)
+- [Why I still think like an engineer](/piece/why-i-still-think-like-an-engineer)
+
+## Field Notes
+
+- [We said temporary](/note/field-note-01)
+- [The meeting after the meeting](/note/field-note-02)
+- [Why are they still using the spreadsheet?](/note/field-note-03)
+- [Everyone agreed](/note/field-note-04)
+- [The prototype knows too much](/note/field-note-05)
+- [Figma stayed closed this week](/note/field-note-06)
+- [Three number-one priorities](/note/field-note-07)
+- [The button was innocent](/note/field-note-08)
+- [It works](/note/field-note-09)
+- [The acronym](/note/field-note-10)
