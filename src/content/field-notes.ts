@@ -121,7 +121,7 @@ export const FIELD_NOTES: FieldNote[] = [
       "There was a user profile, a help centre and something that looked suspiciously like the beginning of an enterprise administration area.",
       "At one point I found billing.",
       "I had not asked for billing.",
-      "There is something extremely funny about AI's interpretation of “quick prototype”. It has absorbed enough software to know that apparently no digital product can exist peacefully without a sidebar, a settings page and at least one chart.",
+      "There is something extremely funny about AI’s interpretation of “quick prototype”. It has absorbed enough software to know that apparently no digital product can exist peacefully without a sidebar, a settings page and at least one chart.",
       "I clicked around for a while.",
       "Everything looked very plausible.",
       "The empty states had friendly copy.",

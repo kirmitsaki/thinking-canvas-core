@@ -6,7 +6,7 @@ export default function NotFound() {
     <div>
       <Seo
         title="Not found · Rachel Kirmitsaki"
-        description="This page hasn't been filed."
+        description="This page hasn’t been filed."
         path="/404"
       />
       <div className="mx-auto max-w-[1200px] px-6 pt-10">
@@ -20,7 +20,7 @@ export default function NotFound() {
       <main className="mx-auto max-w-[720px] px-6 pt-24 pb-16 text-center">
         <p className="label text-muted-foreground">404</p>
         <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight md:text-6xl">
-          This page hasn't been filed.
+          This page hasn’t been filed.
         </h1>
         <p className="mx-auto mt-6 max-w-[52ch] font-serif text-xl italic text-muted-foreground">
           The link may have moved, or perhaps it never quite existed.

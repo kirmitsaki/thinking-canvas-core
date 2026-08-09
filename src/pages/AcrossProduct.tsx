@@ -107,8 +107,7 @@ export default function AcrossProduct() {
       <header className="page-header">
         <p className="label">Across Product</p>
         <h1 className="mt-4 font-serif text-[42px] leading-[1.04] tracking-tight md:text-[60px]">
-          Different companies and products, but I kept finding myself dealing with the same kinds of
-          problems.
+          Different companies and products, but I kept running into the same kinds of problems.
         </h1>
         <p className="mt-6 max-w-[58ch] font-serif text-[20px] leading-[1.7] text-muted-foreground">
           What to build, how to grow a team, why a product had become so complicated, what customers

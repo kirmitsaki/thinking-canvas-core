@@ -7,7 +7,7 @@ export default function About() {
     <main className="page-shell pt-10 pb-28">
       <Seo
         title="The first computer · Rachel Kirmitsaki"
-        description="I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren't judging you."
+        description="I grew up in the 90s, back when computers were still mysterious enough to feel like magic, but not yet friendly enough to pretend they weren’t judging you."
         path="/about"
         ogType="article"
       />
@@ -36,11 +36,11 @@ export default function About() {
         <div className="article-prose article-body mt-12">
           <p className="drop-cap">
             I grew up in the 90s, back when computers were still mysterious enough to feel like
-            magic, but not yet friendly enough to pretend they weren't judging you.
+            magic, but not yet friendly enough to pretend they weren’t judging you.
           </p>
           <p className="mt-6">
             They had already infiltrated offices, quietly humming away in corners like oversized
-            calculators, but at home they were just making their grand debut. Families didn't have
+            calculators, but at home they were just making their grand debut. Families didn’t have
             computers yet; they hosted them, like slightly intimidating guests.
           </p>
           <p className="mt-6">
@@ -51,8 +51,8 @@ export default function About() {
           </p>
           <p className="mt-6">
             I wandered around pressing buttons with the confidence of someone who has absolutely no
-            idea what they're doing but is determined to do it anyway. Screens lit up. Things
-            happened. I didn't understand any of it, but I was having the time of my life interacting
+            idea what they’re doing but is determined to do it anyway. Screens lit up. Things
+            happened. I didn’t understand any of it, but I was having the time of my life interacting
             with what I firmly believed were unusually talented televisions.
           </p>
           <p className="mt-6">And then, like all good origin stories, one followed us home.</p>
@@ -65,7 +65,7 @@ export default function About() {
             The desk had its own ecosystem
           </h2>
           <p className="mt-6">
-            The computer was given its own sacred territory: the computer desk. This wasn't just
+            The computer was given its own sacred territory: the computer desk. This wasn’t just
             furniture; it was an ecosystem. There was a designated shelf for the keyboard, a throne
             for the bulky monitor (a cube with ambitions), and a carefully arranged sprawl of cables
             and components that looked important enough to never question.
