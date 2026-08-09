@@ -2,91 +2,70 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "1.5rem",
+      screens: { "2xl": "1200px" },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', '"Times New Roman"', "serif"],
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       colors: {
-        "ink-strong": "hsl(var(--ink-strong))",
-        "ink-body": "hsl(var(--ink-body))",
-        "muted-ink": "hsl(var(--muted-ink))",
-        "meta-ink": "hsl(var(--meta-ink))",
-        hairline: "hsl(var(--hairline))",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        /* Editorial palette */
+        ivory: "#F8F5F1",
+        "warm-ivory": "#F7F4EF",
+        "warm-white": "#F5F2ED",
+        camel: "#C6A37A",
+        caramel: "#A9692F",
+        charcoal: "#2F2F2F",
+        espresso: "#1A1512",
+        rust: "#A8471F",
+        gold: "#D9A75C",
+        burgundy: "#6A3134",
+        "forest-green": "#3E5743",
+        chocolate: "#4A372D",
+
+        /* Semantic tokens */
+        background: "#F8F5F1",
+        foreground: "#2F2F2F",
+        border: "rgb(198 163 122 / 0.35)",
+        hairline: "rgb(198 163 122 / 0.35)",
+        input: "rgb(198 163 122 / 0.4)",
+        ring: "#A8471F",
+        card: { DEFAULT: "#F5F2ED", foreground: "#2F2F2F" },
+        popover: { DEFAULT: "#F8F5F1", foreground: "#2F2F2F" },
+        primary: { DEFAULT: "#2F2F2F", foreground: "#F8F5F1" },
+        secondary: { DEFAULT: "#F5F2ED", foreground: "#2F2F2F" },
+        muted: { DEFAULT: "#EFEBE4", foreground: "#5C5854" },
+        accent: { DEFAULT: "#A8471F", foreground: "#F8F5F1" },
+        destructive: { DEFAULT: "#A8471F", foreground: "#F8F5F1" },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.625rem",
+        md: "0.5rem",
+        sm: "0.375rem",
       },
       keyframes: {
+        "rk-fade-in": {
+          from: { opacity: "0", transform: "translateY(6px)" },
+          to: { opacity: "1", transform: "none" },
+        },
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
+        "rk-fade-in": "rk-fade-in 700ms ease both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
