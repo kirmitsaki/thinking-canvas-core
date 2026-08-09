@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
-import { SiteHeader } from "@/components/site-chrome";
+import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import About from "@/pages/About";
 import AcrossProduct from "@/pages/AcrossProduct";
 import FieldNotes from "@/pages/FieldNotes";
