@@ -23,7 +23,7 @@ const CHAPTERS: Chapter[] = [
     period: "MMXXIII – Present",
     label: "Head of Product Design",
     company: "Secure Code Warrior",
-    descriptor: "AI-driven developer risk platform · London, EMEA/APAC",
+    descriptor: "AI-driven developer-risk platform · London, EMEA/APAC",
     image: chapterScw,
     imageAlt: "Abstract editorial illustration of layered security shields and a network graph",
     paragraphs: [
@@ -151,7 +151,7 @@ export default function TheWork() {
     <main className="page-shell pt-10 pb-14">
       <Seo
         title="The Work · Rachel Kirmitsaki"
-        description="Selected chapters from Rachel Kirmitsaki's work across cybersecurity, financial markets and academic research."
+        description="Selected chapters from Rachel Kirmitsaki’s work across cybersecurity, financial markets and academic research."
         path="/the-work"
       />
 
