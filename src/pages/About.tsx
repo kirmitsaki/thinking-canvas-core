@@ -1,5 +1,7 @@
 import Seo from "@/components/Seo";
-import computerStoryImage from "@/assets/90s-computer.jpg";
+import computerStoryAsset from "@/assets/90s-computer.png.asset.json";
+
+const computerStoryImage = computerStoryAsset.url;
 
 export default function About() {
   return (
