@@ -19,7 +19,9 @@ const Layout = () => (
     <div className="flex-1">
       <Outlet />
     </div>
+    <SiteFooter />
   </div>
+
 );
 
 const App = () => (
