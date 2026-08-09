@@ -84,3 +84,49 @@ export function SiteHeader() {
     </header>
   );
 }
+
+export function SiteFooter() {
+  const { pathname } = useLocation();
+
+  return (
+    <footer
+      className={`border-t bg-warm-white text-foreground/75 ${pathname === "/" ? "" : "mt-24"}`}
+    >
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
+        <p className="font-serif text-sm tracking-wide">RK · written in London</p>
+        <div className="flex items-center gap-3" aria-label="Links">
+          <a
+            href="https://www.linkedin.com/in/rachelkirmitsaki/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Rachel Kirmitsaki on LinkedIn"
+            title="LinkedIn"
+            className="inline-flex h-10 w-10 items-center justify-center text-foreground/65 transition-colors hover:text-accent"
+          >
+            <Linkedin className="h-5 w-5" strokeWidth={1.7} />
+          </a>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                type="button"
+                className="inline-flex h-10 w-10 items-center justify-center text-foreground/65 transition-colors hover:text-accent"
+                aria-label="Request the Figma portfolio link"
+              >
+                <Figma className="h-5 w-5" strokeWidth={1.7} />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="border-0 bg-warm-ivory text-foreground sm:rounded-none">
+              <DialogTitle className="sr-only">Figma portfolio</DialogTitle>
+              <div className="flex flex-col items-center gap-5 text-center">
+                <Figma className="h-8 w-8 text-accent" strokeWidth={1.4} aria-hidden="true" />
+                <DialogDescription className="max-w-[34ch] font-serif text-lg leading-relaxed text-muted-foreground">
+                  Link to Figma portfolio available on request only.
+                </DialogDescription>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+      </div>
+    </footer>
+  );
+}
