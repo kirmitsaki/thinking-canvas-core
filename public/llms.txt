@@ -1,35 +1,35 @@
 # Rachel Kirmitsaki
 
-> A working notebook from Rachel Kirmitsaki on product, people, technology and the questions that shape the work.
+> Independent Product Design Consultant for complex B2B products, fintech and enterprise platforms. London, working remotely.
 
 ## Pages
 
-- [Home](/): Field notes, longer pieces on product and people, and the places the observations came from.
-- [The Work](/the-work): Chapters from a career across cybersecurity, financial markets and academic research.
-- [Across Product](/systems-and-people): Longer pieces on product direction, teams, systems, customers and technology.
-- [Field Notes](/field-notes): Short notes from meetings, tools, decisions and the odd thing that keeps happening.
-- [About](/about): How a beige box on a designated desk turned into a career spent building little worlds inside a screen.
+- [Home](/): Product design consultant — discovery, UX/UI, design systems and prototyping.
+- [Portfolio](/work): Product design, websites and brand design case studies.
+- [Field Notes](/field-notes): Longer pieces on product direction, teams, systems, customers and technology.
+- [About](/about): Background across cybersecurity, financial markets and academic research.
+- [Contact](/contact): Availability for contract engagements.
 
-## Across Product
+## Case studies
 
-- [Knowing what to build](/piece/knowing-what-to-build)
-- [Building the team around the work](/piece/building-the-team-around-the-work)
-- [Seeing the whole thing](/piece/seeing-the-whole-thing)
-- [Learning complicated worlds](/piece/learning-complicated-worlds)
-- [Working through other people](/piece/working-through-other-people)
-- [Getting closer to reality](/piece/getting-closer-to-reality)
-- [What AI has changed in my work](/piece/what-ai-has-changed-in-my-work)
-- [Why I still think like an engineer](/piece/why-i-still-think-like-an-engineer)
+- [Secure Code Warrior](/work/secure-code-warrior) (coming soon)
+- [Origin Markets](/work/origin-markets)
+- [Mendeley](/work/mendeley) — with deep dives on the [Library](/work/mendeley/library), [Reader](/work/mendeley/reader) and [Citation](/work/mendeley/citation) interfaces
+- [Aladdin](/work/aladdin)
+- [CorResilience](/work/corresilience)
+- [PawSquad](/work/pawsquad)
+- [MDS Quostar](/work/mds-quostar)
+- [MiGreat](/work/migreat)
+- [Meliniki](/work/meliniki)
+- [JobMe](/work/jobme)
 
 ## Field Notes
 
-- [We said temporary](/note/field-note-01)
-- [The meeting after the meeting](/note/field-note-02)
-- [Why are they still using the spreadsheet?](/note/field-note-03)
-- [Everyone agreed](/note/field-note-04)
-- [The prototype knows too much](/note/field-note-05)
-- [Figma stayed closed this week](/note/field-note-06)
-- [Three number-one priorities](/note/field-note-07)
-- [The button was innocent](/note/field-note-08)
-- [It works](/note/field-note-09)
-- [The acronym](/note/field-note-10)
+- [Knowing what to build](/field-notes/knowing-what-to-build)
+- [Building the team around the work](/field-notes/building-the-team-around-the-work)
+- [Seeing the whole thing](/field-notes/seeing-the-whole-thing)
+- [Learning complicated worlds](/field-notes/learning-complicated-worlds)
+- [Working through other people](/field-notes/working-through-other-people)
+- [Getting closer to reality](/field-notes/getting-closer-to-reality)
+- [Modern, AI-enabled product leadership](/field-notes/what-ai-has-changed-in-my-work)
+- [Why I still think like an engineer](/field-notes/why-i-still-think-like-an-engineer)
