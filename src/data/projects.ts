@@ -516,8 +516,8 @@ export const projectFilters = [...new Set(projectsByYear.flatMap(projectWorkArea
 export function projectMatchesFilter(project: Project, filter: string) {
   return projectFilters.includes(filter) && (project.slug === 'secure-code-warrior' || projectWorkAreas(project).includes(filter));
 }
-export function pageMeta(title: string, description: string, type = 'website') {
-  return { meta: [{ title: `${title} · Rachel Kirmitsaki` }, { name: 'description', content: description }, { property: 'og:title', content: `${title} · Rachel Kirmitsaki` }, { property: 'og:description', content: description }, { property: 'og:type', content: type }, { name: 'twitter:card', content: 'summary_large_image' }] };
+export function pageMeta(title: string, description: string, type: 'website' | 'article' = 'website') {
+  return { title: `${title} · Rachel Kirmitsaki`, description, ogType: type } as const;
 }
 
 export function getProject(slug: Project['slug']): Project {
@@ -527,9 +527,5 @@ export function getProject(slug: Project['slug']): Project {
 }
 
 export function caseStudyMeta(project: Project) {
-  const meta = pageMeta(`${project.name} · Case Study`, project.summary, 'article').meta;
-  const image = project.heroImage ? projectImage(project.heroImage).url : undefined;
-  return { meta: image && /^https:\/\//.test(image)
-    ? [...meta, { property: 'og:image', content: image }, { name: 'twitter:image', content: image }]
-    : meta };
+  return pageMeta(`${project.name} · Case Study`, project.summary, 'article');
 }
