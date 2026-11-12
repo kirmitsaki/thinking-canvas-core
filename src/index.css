@@ -588,7 +588,6 @@ button:focus-visible,
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0% 1px;
-  padding-bottom: 4px;
   transition: color 240ms ease, background-size 300ms ease;
 }
 .nav-link:hover,

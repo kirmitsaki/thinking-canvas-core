@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, useLocation, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
 const About = lazy(() => import("@/pages/About"));
@@ -18,12 +18,21 @@ const WorkPage = lazy(() => import("@/pages/Work"));
 
 const queryClient = new QueryClient();
 
+const PageEnter = () => {
+  const { pathname } = useLocation();
+  return (
+    <div key={pathname} className="page-enter">
+      <Outlet />
+    </div>
+  );
+};
+
 const Layout = () => (
   <div className="paper-grain flex min-h-screen flex-col">
     <PortfolioHeader />
     <div className="flex-1">
       <Suspense fallback={null}>
-        <Outlet />
+        <PageEnter />
       </Suspense>
     </div>
     <PortfolioFooter />
