@@ -1,13 +1,13 @@
-import access from '@/assets/mrm-citation-accessing_the_plugin.png.asset.json';
-import browse from '@/assets/mrm-citation-browsing_by.png.asset.json';
-import collection from '@/assets/mrm-citation-browsing_by_2.png.asset.json';
-import insert from '@/assets/mrm-citation-inserting_citation.png.asset.json';
-import edit from '@/assets/mrm-citation-editing_a_ref.png.asset.json';
-import bibliography from '@/assets/mrm-citation-creating_bibliography.png.asset.json';
-import styles from '@/assets/mrm-citation-choosing_style.png.asset.json';
-import custom from '@/assets/mrm-citation-using_custom_style.png.asset.json';
-import refresh from '@/assets/mrm-citation-refreshing_ref.png.asset.json';
-import override from '@/assets/mrm-citation-manually_override.png.asset.json';
+import access from '@/assets/mrm-citation-accessing_the_plugin.png';
+import browse from '@/assets/mrm-citation-browsing_by.png';
+import collection from '@/assets/mrm-citation-browsing_by_2.png';
+import insert from '@/assets/mrm-citation-inserting_citation.png';
+import edit from '@/assets/mrm-citation-editing_a_ref.png';
+import bibliography from '@/assets/mrm-citation-creating_bibliography.png';
+import styles from '@/assets/mrm-citation-choosing_style.png';
+import custom from '@/assets/mrm-citation-using_custom_style.png';
+import refresh from '@/assets/mrm-citation-refreshing_ref.png';
+import override from '@/assets/mrm-citation-manually_override.png';
 
 export const citationSections = [
   { id: 'goals', title: 'The design goals', paragraphs: [], points: ['Search for references in the Mendeley library and insert them into the document being written.', 'Select and insert individual or multiple references at once.', 'Create a bibliography of all cited references.', 'Change to a preferred citation style in just a few clicks.', 'Cite without having Mendeley Reference Manager open or installed. After sign-in, Mendeley Cite downloads the library from the cloud.', 'Keep the Word document in sight. Mendeley Cite opens in a separate panel alongside the document, rather than over it.'], images: [] },

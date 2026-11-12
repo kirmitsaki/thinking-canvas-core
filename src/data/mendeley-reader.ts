@@ -1,10 +1,10 @@
-import annotations from '@/assets/mrm-reader-annotations.png.asset.json';
-import notebook from '@/assets/mrm-reader-notebook.png.asset.json';
-import highlights from '@/assets/mrm-reader-highlights-notes-1.png.asset.json';
-import interactions from '@/assets/mrm-reader-highlights-notes-2.png.asset.json';
-import structure from '@/assets/mrm-reader-note-structure-1.png.asset.json';
-import pages from '@/assets/mrm-reader-note-structure-2.png.asset.json';
-import highlightStates from '@/assets/mrm-reader-note-structure-3.png.asset.json';
+import annotations from '@/assets/mrm-reader-annotations.png';
+import notebook from '@/assets/mrm-reader-notebook.png';
+import highlights from '@/assets/mrm-reader-highlights-notes-1.png';
+import interactions from '@/assets/mrm-reader-highlights-notes-2.png';
+import structure from '@/assets/mrm-reader-note-structure-1.png';
+import pages from '@/assets/mrm-reader-note-structure-2.png';
+import highlightStates from '@/assets/mrm-reader-note-structure-3.png';
 
 export const readerSections = [
   { id: 'goals', title: 'The design goals', paragraphs: ['Managing notes across multiple PDFs while doing research can be challenging. Students and researchers often find their notes scattered and disorganised, making it difficult to connect ideas from different sources.', 'The enhanced Reader provides a single, organised workspace. Users can add notes and highlights to documents, with everything stored in one place. This makes it simpler to link ideas between sources and keep track of research materials, with the aim of saving time and improving productivity.'], points: [], images: [] },

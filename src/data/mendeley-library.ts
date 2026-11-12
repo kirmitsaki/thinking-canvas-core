@@ -1,15 +1,15 @@
-import dragDrop from '@/assets/mrm-library-drag-drop.png.asset.json';
-import browse from '@/assets/mrm-library-browse-files.png.asset.json';
-import manual from '@/assets/mrm-library-manually-create.png.asset.json';
-import importing from '@/assets/mrm-library-importing-existing-ref.png.asset.json';
-import exporting from '@/assets/mrm-library-exporting-ref.png.asset.json';
-import smart from '@/assets/mrm-library-smart-collections.png.asset.json';
-import custom from '@/assets/mrm-library-custom-collections.png.asset.json';
-import search from '@/assets/mrm-library-search-filters.png.asset.json';
-import bulk from '@/assets/mrm-library-bulk-actions.png.asset.json';
-import details from '@/assets/mrm-library-RHS-panel.png.asset.json';
-import sync from '@/assets/mrm-library-sync.png.asset.json';
-import uploading from '@/assets/mrm-library-uploading-ref.png.asset.json';
+import dragDrop from '@/assets/mrm-library-drag-drop.png';
+import browse from '@/assets/mrm-library-browse-files.png';
+import manual from '@/assets/mrm-library-manually-create.png';
+import importing from '@/assets/mrm-library-importing-existing-ref.png';
+import exporting from '@/assets/mrm-library-exporting-ref.png';
+import smart from '@/assets/mrm-library-smart-collections.png';
+import custom from '@/assets/mrm-library-custom-collections.png';
+import search from '@/assets/mrm-library-search-filters.png';
+import bulk from '@/assets/mrm-library-bulk-actions.png';
+import details from '@/assets/mrm-library-RHS-panel.png';
+import sync from '@/assets/mrm-library-sync.png';
+import uploading from '@/assets/mrm-library-uploading-ref.png';
 
 export const librarySections = [
   { id: 'goals', title: 'The design goals', paragraphs: ['User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality.', 'Collections, tags, search and filtering made reference organisation straightforward. The notebook supported topic-based pages and PDF annotations. Private groups let researchers share resources and annotations, while automatic synchronisation kept work accessible across computers.'] },
