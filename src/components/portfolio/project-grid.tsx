@@ -15,7 +15,7 @@ function CardBody({ project, index, link }: { project: Project; index: number; l
       <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
       {!project.comingSoon && <ProjectLabels labels={projectWorkAreas(project)} className="mt-3" />}
       <p className="mt-4 max-w-lg body-copy text-muted-foreground">{project.summary}</p>
-      {link ? <p className="accent-link mt-6">Read case study →</p> : null}
+      {link ? <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p> : null}
     </div>
   );
 }

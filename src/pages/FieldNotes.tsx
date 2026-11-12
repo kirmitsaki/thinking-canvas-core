@@ -95,7 +95,7 @@ export default function FieldNotes() {
           <p className="mt-7 max-w-[58ch] note-article-body text-foreground">
             {PIECE_COPY[featured.slug]?.description}
           </p>
-          <p className="mt-6 accent-link">READ MORE →</p>
+          <p className="mt-6 accent-link">READ MORE <span className="arrow-nudge">→</span></p>
         </Link>
       )}
 
