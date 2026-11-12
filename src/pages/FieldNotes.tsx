@@ -79,7 +79,7 @@ export default function FieldNotes() {
         ogType={meta.ogType}
       />
       <header className="fade-in pb-10 pt-12 md:pb-14 md:pt-16">
-        <h1 className="page-title">Field Notes</h1>
+        <h1 className="page-title">Notes</h1>
         <p className="standfirst mt-6 max-w-[720px]">
           Different companies, similar challenges: what to build, how to grow teams, simplify
           products, understand customers and make better decisions.
