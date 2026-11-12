@@ -120,7 +120,7 @@ export default function Home() {
                     {project.summary}
                   </p>
                   <ProjectLabels labels={projectWorkAreas(project)} className="mt-4" />
-                  <p className="accent-link mt-6">Read case study →</p>
+                  <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
                 </div>
               </Link>
             );

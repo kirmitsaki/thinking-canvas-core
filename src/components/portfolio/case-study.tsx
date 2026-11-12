@@ -242,7 +242,7 @@ export function CaseStudy({ project }: { project: Project }) {
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-8">
             <Link to="/work" className="accent-link">
-              View all work →
+              View all work <span className="arrow-nudge">→</span>
             </Link>
             <ContactLink />
           </div>
