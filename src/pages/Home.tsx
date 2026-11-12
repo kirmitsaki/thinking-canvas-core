@@ -3,7 +3,7 @@ import { ArrowUpRight, MapPin, Laptop, Handshake } from "lucide-react";
 import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
-import { ComingSoonMedia } from "@/components/portfolio/coming-soon-media";
+import { ComingSoonHint } from "@/components/portfolio/coming-soon-media";
 import { ProjectLabels } from "@/components/portfolio/project-labels";
 import { ProjectContext } from "@/components/portfolio/project-context";
 import { ContactLink } from "@/components/portfolio/shell";
@@ -84,9 +84,7 @@ export default function Home() {
           {projects.slice(0, 3).map((project, index) => {
             const comingSoon = Boolean(project.comingSoon);
             const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
-            const media = comingSoon ? (
-              <ComingSoonMedia topics={project.tags} className="aspect-[2/1] md:aspect-[3/1]" />
-            ) : (
+            const media = (
               <div
                 className={
                   index === 0 ? "aspect-[2/1] md:aspect-[3/1]" : "aspect-[2/1] overflow-hidden bg-muted"
@@ -109,16 +107,7 @@ export default function Home() {
             );
             if (comingSoon) {
               return (
-                <div key={project.slug} className={cardClass}>
-                  {media}
-                  <div className="p-6 md:p-8">
-                    <ProjectContext industry={project.industry} field={project.field} />
-                    <h3 className="mt-3 card-title">{project.name}</h3>
-                    <p className="mt-4 max-w-[680px] body-copy text-muted-foreground">
-                      {project.summary}
-                    </p>
-                  </div>
-                </div>
+                <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
               );
             }
             return (

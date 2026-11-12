@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { projectImage, projectWorkAreas, type Project } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
-import { ComingSoonMedia } from "./coming-soon-media";
+import { ComingSoonHint } from "./coming-soon-media";
 import { ProjectLabels } from "./project-labels";
 import { ProjectContext } from "./project-context";
 
@@ -26,13 +26,7 @@ export function ProjectGrid({ items }: { items: Project[] }) {
       {items.map((project, index) => {
         if (project.comingSoon) {
           return (
-            <div
-              key={project.slug}
-              className="block min-w-0 overflow-hidden rounded-[10px] border border-hairline bg-card"
-            >
-              <ComingSoonMedia topics={project.tags} className="aspect-[16/10]" />
-              <CardBody project={project} index={index} link={false} />
-            </div>
+            <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
           );
         }
         const image = project.heroImage ? projectImage(project.heroImage) : undefined;
