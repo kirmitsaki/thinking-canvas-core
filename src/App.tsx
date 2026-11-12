@@ -1,19 +1,20 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
-import About from "@/pages/About";
-import CaseStudyPage from "@/pages/CaseStudyPage";
-import Contact from "@/pages/Contact";
-import FieldNotePage from "@/pages/FieldNote";
-import FieldNotes from "@/pages/FieldNotes";
+const About = lazy(() => import("@/pages/About"));
+const CaseStudyPage = lazy(() => import("@/pages/CaseStudyPage"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const FieldNotePage = lazy(() => import("@/pages/FieldNote"));
+const FieldNotes = lazy(() => import("@/pages/FieldNotes"));
 import Home from "@/pages/Home";
-import MendeleyCitation from "@/pages/MendeleyCitation";
-import MendeleyLibrary from "@/pages/MendeleyLibrary";
-import MendeleyReader from "@/pages/MendeleyReader";
-import NotFound from "@/pages/NotFound";
-import ProductDesignIdentity from "@/pages/ProductDesignIdentity";
-import WorkPage from "@/pages/Work";
+const MendeleyCitation = lazy(() => import("@/pages/MendeleyCitation"));
+const MendeleyLibrary = lazy(() => import("@/pages/MendeleyLibrary"));
+const MendeleyReader = lazy(() => import("@/pages/MendeleyReader"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
+const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
+const WorkPage = lazy(() => import("@/pages/Work"));
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,9 @@ const Layout = () => (
   <div className="paper-grain flex min-h-screen flex-col">
     <PortfolioHeader />
     <div className="flex-1">
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </div>
     <PortfolioFooter />
   </div>
