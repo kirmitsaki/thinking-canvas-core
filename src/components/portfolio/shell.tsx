@@ -77,7 +77,7 @@ export function PortfolioHeader() {
             className="nav-link"
             active={pathname.startsWith("/field-notes")}
           >
-            Field Notes
+            NOTES
           </PortfolioNavLink>
           <PortfolioNavLink to="/about" className="nav-link" active={pathname === "/about"}>
             About
