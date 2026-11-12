@@ -1,4 +1,4 @@
-import { describe, it } from 'node:test';
+import { describe, it } from 'vitest';
 import { strict as assert } from 'node:assert';
 import { projects, projectsByYear, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject } from './projects';
 

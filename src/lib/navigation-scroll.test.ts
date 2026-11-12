@@ -1,4 +1,4 @@
-import { describe, it as test } from 'node:test';
+import { describe, it as test } from 'vitest';
 import { strict as assert } from 'node:assert';
 import { navigationScrollBehavior } from './navigation-scroll';
 
