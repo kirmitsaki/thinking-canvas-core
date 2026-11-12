@@ -13,10 +13,11 @@ export default {
     extend: {
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Times New Roman"', "serif"],
+        display: ['"Cormorant Garamond"', '"Times New Roman"', "serif"],
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
-        /* Editorial palette */
+        /* Journal palette */
         ivory: "#F8F5F1",
         "warm-ivory": "#F7F4EF",
         "warm-white": "#F5F2ED",
@@ -24,11 +25,16 @@ export default {
         caramel: "#A9692F",
         charcoal: "#2F2F2F",
         espresso: "#1A1512",
+        chocolate: "#4A372D",
         rust: "#A8471F",
         gold: "#D9A75C",
-        burgundy: "#6A3134",
-        "forest-green": "#3E5743",
-        chocolate: "#4A372D",
+        burgundy: "#4A1F22",
+        forest: "#3E5743",
+        indigo: "#23324A",
+        taupe: "#8B7F72",
+        mushroom: "#A99C8D",
+        olive: "#4F5138",
+        ink: "#111111",
 
         /* Semantic tokens */
         background: "#F8F5F1",
@@ -36,14 +42,14 @@ export default {
         border: "rgb(198 163 122 / 0.35)",
         hairline: "rgb(198 163 122 / 0.35)",
         input: "rgb(198 163 122 / 0.4)",
-        ring: "#A8471F",
+        ring: "#A9692F",
         card: { DEFAULT: "#F5F2ED", foreground: "#2F2F2F" },
         popover: { DEFAULT: "#F8F5F1", foreground: "#2F2F2F" },
-        primary: { DEFAULT: "#2F2F2F", foreground: "#F8F5F1" },
+        primary: { DEFAULT: "#A8471F", foreground: "#F7F4EF" },
         secondary: { DEFAULT: "#F5F2ED", foreground: "#2F2F2F" },
-        muted: { DEFAULT: "#EFEBE4", foreground: "#5C5854" },
-        accent: { DEFAULT: "#A8471F", foreground: "#F8F5F1" },
-        destructive: { DEFAULT: "#A8471F", foreground: "#F8F5F1" },
+        muted: { DEFAULT: "#F5F2ED", foreground: "#5C5854" },
+        accent: { DEFAULT: "#A8471F", foreground: "#F7F4EF" },
+        destructive: { DEFAULT: "#A8471F", foreground: "#F7F4EF" },
       },
       borderRadius: {
         lg: "0.625rem",
@@ -51,10 +57,6 @@ export default {
         sm: "0.375rem",
       },
       keyframes: {
-        "rk-fade-in": {
-          from: { opacity: "0", transform: "translateY(6px)" },
-          to: { opacity: "1", transform: "none" },
-        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -65,7 +67,6 @@ export default {
         },
       },
       animation: {
-        "rk-fade-in": "rk-fade-in 700ms ease both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
