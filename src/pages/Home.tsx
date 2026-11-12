@@ -1,143 +1,167 @@
 import { Link } from "react-router-dom";
+import { ArrowUpRight, MapPin, Laptop, Handshake } from "lucide-react";
 import Seo from "@/components/Seo";
-import featuredImage from "@/assets/featured-golden-ratio.jpg";
+import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
+import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
+import { ComingSoonMedia } from "@/components/portfolio/coming-soon-media";
+import { ProjectLabels } from "@/components/portfolio/project-labels";
+import { ProjectContext } from "@/components/portfolio/project-context";
+import { ContactLink } from "@/components/portfolio/shell";
 
-const FEATURED_SLUG = "knowing-what-to-build";
-const FEATURED_TITLE = "Knowing what to build";
-const FEATURED_BODY =
-  "Early in my career, the problem was usually already defined. Later, I found myself spending much more time working out what we should be building in the first place.";
-const HOME_QUOTE =
-  "Once we agreed what the product was becoming, a lot of smaller decisions got easier.";
+const meta = pageMeta(
+  "Product Design Consultant",
+  "Rachel Kirmitsaki helps teams make complex products simpler, clearer and more useful. Available for contract engagements in London, working remotely."
+);
 
-function ReadingMode({
-  number,
-  title,
-  description,
-  to,
-  action,
-}: {
-  number: string;
-  title: string;
-  description: string;
-  to: string;
-  action: string;
-}) {
-  return (
-    <Link to={to} className="group flex h-full flex-col">
-      <span className="label-quiet mb-6">SECTION {number}</span>
-      <h2 className="font-serif text-4xl leading-[1.08] lg:text-5xl">{title}</h2>
-      <p className="mt-6 max-w-[28ch] font-serif text-[16px] leading-[1.75] text-muted-foreground">
-        {description}
-      </p>
-      <span className="accent-link mt-auto inline-flex items-center gap-2 pt-8">
-        <span className="h-px w-8 bg-foreground/20 transition-all duration-300 group-hover:w-12 group-hover:bg-accent" />
-        {action}
-      </span>
-    </Link>
-  );
-}
+const expertise = [
+  "Product discovery and research",
+  "UX and UI design",
+  "Complex B2B workflows",
+  "Design systems",
+  "Accessibility",
+  "AI-assisted prototyping",
+  "Product strategy and collaboration",
+];
 
 export default function Home() {
   return (
-    <main>
-      <Seo
-        title="Rachel Kirmitsaki — Notes from inside product teams"
-        description="A working notebook: field notes, longer pieces on product and people, and the places the observations came from."
-        path="/"
-      />
+    <main className="relative z-10 mx-auto max-w-[1200px] px-6">
+      <Seo title={meta.title} description={meta.description} path="/" ogType={meta.ogType} />
 
-      {/* 1 — Opening statement */}
-      <section className="mx-auto max-w-[1200px] px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <h1 className="max-w-[32ch] animate-rk-fade-in font-serif text-[30px] italic leading-[1.3] text-foreground md:text-[46px] md:leading-[1.25]">
-          I have always liked making things. I started with <span className="text-accent">code</span>,
-          moved into <span className="text-accent">design</span>, and eventually into{" "}
-          <span className="text-accent">product</span> leadership so I could be more involved in
-          deciding what we build and why.
-        </h1>
-      </section>
-
-      {/* 2 — Featured piece */}
-      <section className="bg-card">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <Link
-            to={`/piece/${FEATURED_SLUG}`}
-            className="group grid grid-cols-1 items-start gap-10 md:grid-cols-[1.618fr_1fr] md:gap-14"
-          >
-            <div>
-              <p className="label">ACROSS PRODUCT</p>
-              <h2 className="mt-5 font-serif text-[34px] leading-[1.05] tracking-tight decoration-1 underline-offset-[6px] group-hover:underline md:text-[54px]">
-                {FEATURED_TITLE}
-              </h2>
-              <p className="mt-7 max-w-[58ch] font-serif text-lg leading-[1.7] text-muted-foreground md:text-xl">
-                {FEATURED_BODY}
-              </p>
-              <span className="accent-link mt-8 inline-block">READ MORE →</span>
-            </div>
-            <div>
-              <img
-                src={featuredImage}
-                alt="Golden ratio construction diagram accompanying the lead piece"
-                loading="lazy"
-                className="h-auto w-full rounded-[10px] object-contain"
-              />
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* 3 — Pull quote */}
-      <section className="camel-wash">
-        <div className="mx-auto max-w-[900px] px-6 py-20 text-center md:py-28">
-          <blockquote className="font-serif text-[26px] italic leading-[1.3] text-foreground md:text-[38px]">
-            &ldquo;{HOME_QUOTE}&rdquo;
-          </blockquote>
-        </div>
-      </section>
-
-      {/* 4 — Three reading modes */}
-      <section className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 gap-12 border-t border-border pt-10 md:grid-cols-3 md:gap-16 lg:gap-24 lg:pt-12">
-          <ReadingMode
-            number="01"
-            title="The Work"
-            description="The products, teams and companies behind most of the writing here."
-            to="/the-work"
-            action="READ →"
-          />
-          <ReadingMode
-            number="02"
-            title="Across Product"
-            description="Longer pieces about strategy, teams, systems, customers and technology."
-            to="/systems-and-people"
-            action="ALL →"
-          />
-          <ReadingMode
-            number="03"
-            title="Field Notes"
-            description="Short notes from meetings, tools, decisions and the odd thing that keeps happening."
-            to="/field-notes"
-            action="ALL →"
-          />
-        </div>
-      </section>
-
-      {/* 5 — Closing block */}
-      <section className="bg-chocolate">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <Link to="/about" className="group block max-w-[62ch]">
-            <p className="dark-card-label">ABOUT</p>
-            <div className="mt-6 space-y-6 font-serif text-2xl leading-[1.3] text-warm-ivory md:text-[34px]">
-              <p>I grew up in the 90s, when computers still felt slightly mysterious.</p>
-              <p>
-                One came home after a tech expo, took over a corner of the house, and became the
-                thing I wanted to understand.
-              </p>
-            </div>
-            <span className="dark-card-label mt-8 inline-block decoration-1 underline-offset-4 group-hover:underline">
-              READ THE STORY →
+      <section className="fade-in pb-12 pt-12 md:pb-14 md:pt-16">
+        <h1 className="page-title max-w-[900px]">Product Design Consultant</h1>
+        <p className="standfirst mt-6 max-w-[800px]">
+          I work across product discovery, UX/UI, design systems and prototyping, helping teams
+          turn complex problems into thoughtful, well-crafted digital products.
+        </p>
+        <ul
+          aria-label="Location and working arrangement"
+          className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"
+        >
+          <li className="flex items-center gap-2.5 caption text-foreground">
+            <span className="flex size-9 items-center justify-center rounded-full border border-dashed border-camel text-accent">
+              <MapPin size={17} aria-hidden="true" />
             </span>
+            London
+          </li>
+          <li className="flex items-center gap-2.5 caption text-foreground">
+            <span className="flex size-9 items-center justify-center rounded-full border border-dashed border-camel text-forest">
+              <Laptop size={17} aria-hidden="true" />
+            </span>
+            Remote
+          </li>
+          <li className="flex items-center gap-2.5 caption text-foreground">
+            <span className="flex size-9 items-center justify-center rounded-full border border-dashed border-camel text-indigo">
+              <Handshake size={17} aria-hidden="true" />
+            </span>
+            Contract
+          </li>
+        </ul>
+      </section>
+
+      <section className="hairline-top py-10 md:py-12">
+        <div className="grid gap-5 md:grid-cols-[1fr_3fr]">
+          <p className="label">Areas of expertise</p>
+          <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+            {expertise.map((item) => (
+              <li key={item} className="body-copy">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="selected-work" className="hairline-top scroll-mt-28 py-10 md:py-14">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <h2 className="section-title">Latest work</h2>
+          <Link to="/work" className="accent-link inline-flex items-center gap-2 pb-2">
+            All work
+            <ArrowUpRight size={16} />
           </Link>
         </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.slice(0, 3).map((project, index) => {
+            const comingSoon = Boolean(project.comingSoon);
+            const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
+            const media = comingSoon ? (
+              <ComingSoonMedia topics={project.tags} className="aspect-[2/1] md:aspect-[3/1]" />
+            ) : (
+              <div
+                className={
+                  index === 0 ? "aspect-[2/1] md:aspect-[3/1]" : "aspect-[2/1] overflow-hidden bg-muted"
+                }
+              >
+                {project.heroImage ? (
+                  <img
+                    src={projectImage(project.heroImage).url}
+                    alt={projectImage(project.heroImage).alt}
+                    className="block h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <VisualPlaceholder
+                    title={`${project.name} · product screens`}
+                    className="h-full w-full"
+                  />
+                )}
+              </div>
+            );
+            if (comingSoon) {
+              return (
+                <div key={project.slug} className={cardClass}>
+                  {media}
+                  <div className="p-6 md:p-8">
+                    <ProjectContext industry={project.industry} field={project.field} />
+                    <h3 className="mt-3 card-title">{project.name}</h3>
+                    <p className="mt-4 max-w-[680px] body-copy text-muted-foreground">
+                      {project.summary}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link key={project.slug} to={`/work/${project.slug}`} className={cardClass}>
+                {media}
+                <div className="p-6 md:p-8">
+                  <ProjectContext industry={project.industry} field={project.field} />
+                  <h3 className="mt-3 card-title">{project.name}</h3>
+                  <p className="mt-4 max-w-[680px] body-copy text-muted-foreground">
+                    {project.summary}
+                  </p>
+                  <ProjectLabels labels={projectWorkAreas(project)} className="mt-4" />
+                  <p className="accent-link mt-6">Read case study →</p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="hairline-top py-10 md:py-12">
+        <Link to="/about" className="chocolate-card group relative block p-8 md:p-12">
+          <span
+            className="dark-card-label absolute bottom-8 right-8 text-2xl transition-transform duration-200 ease-out group-hover:translate-x-2 md:bottom-12 md:right-12"
+            aria-hidden="true"
+          >
+            →
+          </span>
+          <p className="label dark-card-label">A little about me</p>
+          <h2 className="mt-4 max-w-[600px] section-title">A designer with a technical foundation.</h2>
+          <p className="mt-6 max-w-[660px] body-copy text-warm-ivory/80">
+            Over a decade in digital product design, with a background in UX engineering and
+            coding. My work spans fintech, cybersecurity and research platforms, alongside product
+            teams, engineers, leadership and customers.
+          </p>
+        </Link>
+      </section>
+
+      <section className="hairline-top flex flex-wrap items-center justify-between gap-6 py-10 md:py-14">
+        <div>
+          <h2 className="card-title">Have a complex product in mind?</h2>
+        </div>
+        <ContactLink />
       </section>
     </main>
   );
