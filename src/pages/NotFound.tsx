@@ -3,35 +3,24 @@ import Seo from "@/components/Seo";
 
 export default function NotFound() {
   return (
-    <div>
+    <div className="flex min-h-[60vh] items-center justify-center px-4">
       <Seo
-        title="Not found · Rachel Kirmitsaki"
-        description="This page hasn’t been filed."
+        title="Page not found · Rachel Kirmitsaki"
+        description="The page you're looking for doesn't exist."
         path="/404"
       />
-      <div className="mx-auto max-w-[1200px] px-6 pt-10">
-        <div className="masthead-bar">
-          <Link to="/" className="label underline-offset-4 hover:underline">
-            ← Front page
+      <div className="max-w-md text-center">
+        <p className="label">404</p>
+        <h1 className="mt-6 page-title">Page not found</h1>
+        <p className="mt-3 body-copy text-muted-foreground">
+          The page you're looking for doesn't exist.
+        </p>
+        <div className="mt-8">
+          <Link to="/" className="accent-link">
+            Return home
           </Link>
-          <p className="label text-muted-foreground">Not found</p>
         </div>
       </div>
-      <main className="mx-auto max-w-[720px] px-6 pt-24 pb-16 text-center">
-        <p className="label text-muted-foreground">404</p>
-        <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-tight md:text-6xl">
-          This page hasn’t been filed.
-        </h1>
-        <p className="mx-auto mt-6 max-w-[52ch] font-serif text-xl italic text-muted-foreground">
-          The link may have moved, or perhaps it never quite existed.
-        </p>
-        <Link
-          to="/"
-          className="mt-10 inline-block border-b border-foreground pb-0.5 font-serif italic"
-        >
-          Return to the front page
-        </Link>
-      </main>
     </div>
   );
 }
