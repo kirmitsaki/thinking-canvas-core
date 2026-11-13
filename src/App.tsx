@@ -6,8 +6,9 @@ import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
 const About = lazy(() => import("@/pages/About"));
 const CaseStudyPage = lazy(() => import("@/pages/CaseStudyPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
-const FieldNotePage = lazy(() => import("@/pages/FieldNote"));
-const FieldNotes = lazy(() => import("@/pages/FieldNotes"));
+// Notes section hidden for now — restore by uncommenting these two lines and the routes below.
+// const FieldNotePage = lazy(() => import("@/pages/FieldNote"));
+// const FieldNotes = lazy(() => import("@/pages/FieldNotes"));
 import Home from "@/pages/Home";
 const MendeleyCitation = lazy(() => import("@/pages/MendeleyCitation"));
 const MendeleyLibrary = lazy(() => import("@/pages/MendeleyLibrary"));
@@ -55,8 +56,10 @@ const App = () => (
           <Route path="/work/mendeley/library" element={<MendeleyLibrary />} />
           <Route path="/work/mendeley/reader" element={<MendeleyReader />} />
           <Route path="/work/mendeley/citation" element={<MendeleyCitation />} />
+          {/* Notes section hidden for now — restore by uncommenting these two routes.
           <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/field-notes/:slug" element={<FieldNotePage />} />
+          */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
