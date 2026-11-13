@@ -72,6 +72,7 @@ export function PortfolioHeader() {
           <PortfolioNavLink to="/work" className="nav-link" active={pathname.startsWith("/work")}>
             PORTFOLIO
           </PortfolioNavLink>
+          {/* Notes section hidden for now — restore by uncommenting this block.
           <PortfolioNavLink
             to="/field-notes"
             className="nav-link"
@@ -79,6 +80,7 @@ export function PortfolioHeader() {
           >
             NOTES
           </PortfolioNavLink>
+          */}
           <PortfolioNavLink to="/about" className="nav-link" active={pathname === "/about"}>
             About
           </PortfolioNavLink>
