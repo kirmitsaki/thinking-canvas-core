@@ -6,7 +6,9 @@
 
 - [Home](/): Product design consultant — discovery, UX/UI, design systems and prototyping.
 - [Portfolio](/work): Product design, websites and brand design case studies.
+<!-- Notes section hidden for now — restore by uncommenting this line.
 - [Field Notes](/field-notes): Longer pieces on product direction, teams, systems, customers and technology.
+-->
 - [About](/about): Background across cybersecurity, financial markets and academic research.
 - [Contact](/contact): Availability for contract engagements.
 
@@ -23,6 +25,7 @@
 - [Meliniki](/work/meliniki)
 - [JobMe](/work/jobme)
 
+<!-- Notes section hidden for now — restore by uncommenting this block.
 ## Field Notes
 
 - [Knowing what to build](/field-notes/knowing-what-to-build)
@@ -33,3 +36,4 @@
 - [Getting closer to reality](/field-notes/getting-closer-to-reality)
 - [Modern, AI-enabled product leadership](/field-notes/what-ai-has-changed-in-my-work)
 - [Why I still think like an engineer](/field-notes/why-i-still-think-like-an-engineer)
+-->

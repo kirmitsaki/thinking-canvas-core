@@ -56,8 +56,10 @@ const App = () => (
           <Route path="/work/mendeley/library" element={<MendeleyLibrary />} />
           <Route path="/work/mendeley/reader" element={<MendeleyReader />} />
           <Route path="/work/mendeley/citation" element={<MendeleyCitation />} />
+          {/* Notes section hidden for now — restore by uncommenting these two routes.
           <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/field-notes/:slug" element={<FieldNotePage />} />
+          */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

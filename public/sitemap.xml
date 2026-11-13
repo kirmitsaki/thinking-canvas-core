@@ -48,6 +48,7 @@
   <url>
     <loc>https://rachel.kirmitsaki.com/work/jobme</loc>
   </url>
+  <!-- Notes section hidden for now — restore by uncommenting this block.
   <url>
     <loc>https://rachel.kirmitsaki.com/field-notes</loc>
   </url>
@@ -75,6 +76,7 @@
   <url>
     <loc>https://rachel.kirmitsaki.com/field-notes/why-i-still-think-like-an-engineer</loc>
   </url>
+  -->
   <url>
     <loc>https://rachel.kirmitsaki.com/about</loc>
   </url>
