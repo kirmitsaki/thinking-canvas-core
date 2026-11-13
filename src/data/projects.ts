@@ -240,6 +240,16 @@ export const projects: Project[] = [
     heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
     sections: [
       {
+            "id": "process", "navigationLabel": "Process",
+            "title": "A design process built around customers",
+            "paragraphs": [
+                  "Design was treated as foundational to the business, not a finishing step. Every product, from the pre-trade Marketplace to Documentation and Post-Trade, came out of collaboration with a group of early customers who cared about the problem we were trying to solve.",
+                  "Once we understood a problem, we made sure we saw it from every angle. Company-wide workshops brought together capital markets, product, tech and design, aligning the team behind one goal and letting us find a solution quicker.",
+                  "From there we experimented with possible solutions using a Lean approach: rapid sketching, prototyping and customer feedback, early and often. We explored several design solutions for each feature before committing, so we could solve the customer problem without wasting resources on bad ideas or unnecessary code.",
+                  "The final design step was validation. We showed the finished prototypes to customers and asked for critical feedback. Only when the solution proved valuable did we build it. All code was peer-reviewed and manually tested by a Quality Assurance team for a week before any customer saw it."
+            ]
+      },
+      {
             "id": "research", "navigationLabel": "Research",
             "title": "Starting with the people behind the transaction",
             "paragraphs": [
