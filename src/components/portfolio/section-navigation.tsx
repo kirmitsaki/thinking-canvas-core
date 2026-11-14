@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navigationScrollBehavior } from "@/lib/navigation-scroll";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 import type { Project } from "@/data/projects";
@@ -22,8 +22,10 @@ export function SectionNavigation({
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
   }, []);
+  const lockRef = useRef<string | null>(null);
   useEffect(() => {
     const update = () => {
+      if (lockRef.current) return;
       const height =
         document.querySelector<HTMLElement>(".portfolio-header")?.getBoundingClientRect().height ?? 80;
       let current = items[0]?.id;
@@ -58,10 +60,28 @@ export function SectionNavigation({
               event.preventDefault();
               const target = document.getElementById(item.id);
               if (target) {
+                document
+                  .querySelectorAll<HTMLImageElement>('main img[loading="lazy"]')
+                  .forEach((img) => (img.loading = "eager"));
+                lockRef.current = item.id;
+                setActiveId(item.id);
                 target.scrollIntoView({
                   behavior: navigationScrollBehavior(pathname, to, reducedMotion),
                   block: "start",
                 });
+                let timer = 0;
+                const settle = () => {
+                  window.clearTimeout(timer);
+                  timer = window.setTimeout(() => {
+                    window.removeEventListener("scroll", settle);
+                    target.scrollIntoView({ behavior: "auto", block: "start" });
+                    window.setTimeout(() => {
+                      lockRef.current = null;
+                    }, 50);
+                  }, 150);
+                };
+                window.addEventListener("scroll", settle, { passive: true });
+                settle();
                 window.history.replaceState(null, "", `#${item.id}`);
               }
             }}
