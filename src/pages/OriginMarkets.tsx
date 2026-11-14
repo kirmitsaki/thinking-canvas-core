@@ -8,7 +8,10 @@ const project = getProject('origin-markets');
 
 /* Header standfirst; the challenge and role sentences below are the same
    paragraphs, reused as the opening line of their own sections. */
-const intro = ['The first front-to-back digital platform aiming to simplify the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.'];
+const intro = [
+  'The first front-to-back digital platform aiming to simplify the global debt capital markets.',
+  'The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
+];
 const challengeCopy = 'The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and legacy software. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.';
 const roleCopy = 'I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.';
 const researchCopy = 'Good design decisions needed a strong understanding of the people using the platform, built over two years through ongoing conversations with more than 20 dealers and nearly 90 issuers globally.';
