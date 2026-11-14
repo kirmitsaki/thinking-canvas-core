@@ -39,5 +39,5 @@ export function getOriginStudy(slug: string) {
     return section;
   });
   const reflection = slug === 'design-process' ? project.reflection : slug === 'funding-matrix-redesign' ? fundingMatrixReflection : slug === 'design-system' ? designSystemReflection : undefined;
-  return { ...study, sections, reflection, displayTitle: slug === 'design-system' ? 'Morpho' : study.name, subtitle: slug === 'design-system' ? "Building Origin's first design system" : undefined, disciplines: slug === 'design-system' ? 'Design system · Product design · Fintech' : undefined };
+  return { ...study, sections, reflection, displayTitle: slug === 'design-system' ? 'Morpho' : study.name, subtitle: slug === 'design-system' ? "Building Origin's first design system" : undefined, disciplines: undefined };
 }
