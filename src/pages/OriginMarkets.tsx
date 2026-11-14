@@ -39,7 +39,18 @@ export default function OriginMarkets() {
     <Section id="products" title="Four products, one institutional workflow">
       <p>As we learned more about our users, we focused on delivering polished, high-quality designs and interactions across the platform. Each product evolved through continuous iteration and careful evaluation.</p>
       {products.map(item => <div key={item.name} className={`grid gap-5 pt-4 md:items-start md:gap-7 ${item.image ? 'md:grid-cols-[220px_minmax(0,1fr)]' : ''}`}>{item.image && <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full max-w-[220px] rounded-[10px]" />}<div><h3 className="label">{item.name}</h3><p className="mt-3">{item.text}</p></div></div>)}
-      <Sample to="/work/origin-markets/gallery" label="SEE SAMPLE WORK" />
+      <Link to="/work/origin-markets/gallery" className="editorial-card group block min-w-0 overflow-hidden">
+        <div className="aspect-[16/10] overflow-hidden bg-muted">
+          <img loading="lazy" src={projectImage('origin-header').url} alt={projectImage('origin-header').alt} className="block h-full w-full object-cover object-top" />
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="caption">01 / 2019 – 2022</p>
+          <h3 className="mt-3 card-title">Sample work</h3>
+          <ProjectContext industry="Fintech" field="Product Design" className="mt-4" />
+          <p className="mt-4 max-w-lg body-copy text-muted-foreground">A selection of screens and flows from across the Origin product family.</p>
+          <p className="accent-link mt-6">View gallery <span className="arrow-nudge">→</span></p>
+        </div>
+      </Link>
     </Section>
     <Section id="design-process-overview" title="A design process for an agile team">
       <p>The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
