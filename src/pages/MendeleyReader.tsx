@@ -28,11 +28,8 @@ export default function MendeleyReader() {
             { label: "Mendeley", to: "/work/mendeley" },
             { label: "The Reader" },
           ]}
+          trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
         />
-        <div className="hairline-bottom mt-10 flex flex-wrap justify-between gap-4 pb-5">
-          <p className="label">Mendeley · Interface design</p>
-          <p className="label-quiet">{getProject("mendeley").dates}</p>
-        </div>
         <h1 className="mt-8 page-title">The Reader</h1>
         <p className="standfirst mt-6 max-w-[720px]">
           Reading, highlighting and annotating PDFs, with notes across multiple documents kept in

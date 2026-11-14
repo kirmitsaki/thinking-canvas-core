@@ -27,11 +27,8 @@ export default function ProductDesignIdentity() {
             { label: "Secure Code Warrior", to: "/work/secure-code-warrior" },
             { label: "Product design identity" },
           ]}
+          trailing={<p className="label-quiet">{getProject("secure-code-warrior").dates}</p>}
         />
-        <div className="hairline-bottom mt-10 flex flex-wrap justify-between gap-4 pb-5">
-          <p className="label">Secure Code Warrior · Design identity</p>
-          <p className="label-quiet">{getProject("secure-code-warrior").dates}</p>
-        </div>
         <h1 className="mt-8 page-title">Product design identity</h1>
       </header>
       <figure className="w-full">
