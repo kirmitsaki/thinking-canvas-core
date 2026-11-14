@@ -76,6 +76,12 @@ export default function CaseStudyPage() {
                   { label: "Tasks", value: "Web design, Front end development, Client project" },
                   { label: "Industry", value: `${project.industry} · ${project.field}` },
                 ]
+              : project.slug === "meliniki"
+              ? [
+                  { label: "Role", value: project.role },
+                  { label: "Tasks", value: "Label design, Client handover" },
+                  { label: "Industry", value: `${project.industry} · ${project.field}` },
+                ]
               : undefined
         }
       />
