@@ -102,19 +102,42 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     <div className="origin-research-block">
                       <h3 className="subsection-title">{group.label}</h3>
                       <div className="space-y-5">
-                        {group.text.split("\n").map((paragraph) => (
-                          <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
-                        ))}
+                        {group.numbered ? (
+                          <ol className="design-goals-list">
+                            {group.text.split("\n").filter(Boolean).map((goal, index) => (
+                              <li key={goal}>
+                                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                                <p className="body-copy text-muted-foreground">{editorialEmphasis(goal)}</p>
+                              </li>
+                            ))}
+                          </ol>
+                        ) : (
+                          group.text.split("\n").filter(Boolean).map((paragraph) => (
+                            <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
+                          ))
+                        )}
                       </div>
                     </div>
-                    {group.image && (
+                    {group.images ? (
+                      <div className="grid gap-6 sm:grid-cols-2">
+                        {group.images.map((image) => (
+                          <img
+                            key={image}
+                            src={projectImage(image).url}
+                            alt={projectImage(image).alt}
+                            className="h-auto w-full rounded-[10px]"
+                            loading="lazy"
+                          />
+                        ))}
+                      </div>
+                    ) : group.image ? (
                       <img
                         src={projectImage(group.image).url}
                         alt={projectImage(group.image).alt}
                         className="h-auto w-full rounded-[10px]"
                         loading="lazy"
                       />
-                    )}
+                    ) : null}
                   </div>
                 ))}
               </div>
