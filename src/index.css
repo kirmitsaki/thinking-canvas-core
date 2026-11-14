@@ -556,8 +556,6 @@
   .origin-editorial .case-study > header dl {
     display: grid;
     gap: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
     max-width: 900px;
   }
   .origin-editorial .case-study > header dt,
