@@ -538,7 +538,7 @@ export const projects: Project[] = [
     outcomes: ['Average Funding Matrix loading time reduced by over 70% after the development team rebuilt the grid.', 'Voted Best Fintech in the field for three consecutive years by GlobalCapital, recognising the wider product rather than an individual design award.', 'The first fully digitally issued bond, a transaction between Vasakronan and Citi, was executed on the platform.', 'Four further digitally issued transactions followed across Europe and Asia.', 'The platform served nearly 700 professionals across 70 cities.', 'Over 100 borrowers and 20 major investment banks relied on it as part of their core workflow.'],
   },
   {
-    slug: 'mendeley', name: 'Mendeley', sector: 'Research · Reference management', industry: 'Academic research', field: 'Reference management', dates: '1 year', tags: ['Research', 'Product Design', 'Design Systems', 'Accessibility'],
+    slug: 'mendeley', name: 'Mendeley', sector: 'Research · Reference management', industry: 'Academic research', field: 'Reference management', dates: 'Jan 2019 – Jan 2020', tags: ['Research', 'Product Design', 'Design Systems', 'Accessibility'],
     title: 'Making complex research workflows easier to navigate.',
     summary: 'Improving research workflows across a large-scale academic reference management product.',
     role: 'Senior UX/UI Designer',
