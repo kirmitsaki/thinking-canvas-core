@@ -60,7 +60,7 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-cover object-top" />
         </div>
         <div className="p-6 md:p-8">
-          <p className="caption">02 / 2019 – 2022</p>
+          <p className="caption">01 / 2019 – 2022</p>
           <h3 className="mt-3 card-title">Design process</h3>
           <ProjectContext industry="Fintech" field="Design Process" className="mt-4" />
           <ProjectLabels labels={['Workshops', 'Research', 'Prototyping']} className="mt-3" />
@@ -75,7 +75,7 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
         </div>
         <div className="p-6 md:p-8">
-          <p className="caption">01 / 2021 – 2022</p>
+          <p className="caption">02 / 2021 – 2022</p>
           <h3 className="mt-3 card-title">Morpho</h3>
           <ProjectContext industry="Fintech" field="Design System" className="mt-4" />
           <ProjectLabels labels={['Design system', 'Product design', 'UI components']} className="mt-3" />
