@@ -44,7 +44,7 @@ export default function OriginMarkets() {
     <Section id="design-process-overview" title="A design process for an agile team">
       <p>The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
       <Link to="/work/origin-markets/design-process" className="editorial-card group block min-w-0 overflow-hidden">
-        <div className="aspect-[16/10] overflow-hidden bg-muted">
+        <div className="aspect-[16/10] overflow-hidden bg-[#FAF6F3]">
           <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-contain" />
         </div>
         <div className="p-6 md:p-8">
