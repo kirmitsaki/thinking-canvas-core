@@ -21,7 +21,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
   const compact = project.presentation === "compact";
   const imageClass = "mx-auto w-full max-w-[720px] rounded-[10px]";
   const heroImageClass =
-    compact || project.slug === "origin-markets" ? imageClass : "w-full rounded-[10px]";
+    compact ? imageClass : "w-full rounded-[10px]";
   return (
     <main className="case-study relative z-10">
       <header
