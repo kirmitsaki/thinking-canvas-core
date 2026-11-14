@@ -1,3 +1,11 @@
+import originAudience2 from '@/assets/origin-audience-2.webp';
+import originDealers from '@/assets/origin-dealers.webp';
+import originDesignProcessDiagram from '@/assets/origin-design-process-diagram.webp';
+import originDevelopmentProcessDiagram from '@/assets/origin-development-process-diagram.webp';
+import originEcosystem from '@/assets/origin-ecosystem.webp';
+import originIssuers from '@/assets/origin-issuers.webp';
+import originLawyers from '@/assets/origin-lawyers.webp';
+import originMarketInfrastructure from '@/assets/origin-market-infrastructure.webp';
 import scwIdentity from '@/assets/scw-product-design-identity.webp';
 import scwWanda from '@/assets/scw-wanda-cover.webp';
 import scwButtons from '@/assets/scw-button-guidelines.webp';
@@ -95,6 +103,14 @@ import corVision from '@/assets/corresilience-work_7-Vision.webp';
 import corBadges from '@/assets/corresilience-work_8-Badges.webp';
 
 const projectImages: Record<string, { url: string; alt: string }> = {
+  'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
+  'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
+  'origin-design-process-diagram': { url: originDesignProcessDiagram, alt: 'Diagram of Origin’s two-track design process: continuous improvements and exploring complex workflows' },
+  'origin-development-process-diagram': { url: originDevelopmentProcessDiagram, alt: 'Diagram of Origin’s agile development cycle: plan increments, design, develop, peer review, QA testing, release and gather feedback' },
+  'origin-ecosystem': { url: originEcosystem, alt: 'Illustration of the Origin network connecting market participants and integrations' },
+  'origin-issuers': { url: originIssuers, alt: 'Issuers building icon' },
+  'origin-lawyers': { url: originLawyers, alt: 'Lawyers scales icon' },
+  'origin-market-infrastructure': { url: originMarketInfrastructure, alt: 'Market infrastructure participants icon' },
   'scw-identity': { url: scwIdentity, alt: 'Secure Code Warrior product design identity infographic, from visual foundations and interface examples to character artwork' },
   'scw-wanda': { url: scwWanda, alt: 'Wanda design library cover in Figma, with foundations, core components and typography styles' },
   'scw-buttons': { url: scwButtons, alt: 'Wanda button components with variants, interaction states, design notes and warning-button guidance' },
@@ -206,7 +222,8 @@ export type Project = {
   evidencePending?: boolean;
   comingSoon?: boolean;
   reflection?: { title: string; paragraphs: string[] };
-  sections: { id?: string; navigationLabel?: string; title: string; paragraphs: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  sections: { subheading?: boolean; groups?: { label: string; text: string; image?: string; images?: string[] }[]; quote?: { text: string; attribution: string }; id?: string; navigationLabel?: string; title: string; paragraphs: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
   contribution: string; outcomes: string[];
 };
 export const projects: Project[] = [
@@ -232,29 +249,64 @@ export const projects: Project[] = [
     outcomes: ['A first design system and a shared foundation for product teams.', 'Accessibility work aligned to WCAG 2.2 AA.', 'A reported idea-to-validated-concept cycle of under four weeks; supporting evidence to be added.'],
   },
   {
-    slug: 'origin-markets', name: 'Origin Markets', sector: 'Fintech · Debt capital markets', industry: 'Fintech', field: 'Debt capital markets', dates: 'Jan 2020 – Jan 2023', tags: ['Research', 'Product Design', 'Design Systems', 'Vision', 'Accessibility'],
-    title: 'From document exchange to confidence infrastructure.',
+    slug: 'origin-markets', name: 'Origin Markets', sector: 'Fintech · Debt capital markets', industry: 'Financial Technologies', field: 'Debt capital markets', dates: 'Jan 2020 – Jan 2023', tags: ['Research', 'Product Design', 'Design Systems', 'Vision', 'Accessibility'],
+    title: 'Designing a connected fintech platform for debt capital markets',
     summary: 'Making complex financial workflows work for global banks and borrowers.',
-    role: 'First in-house designer · Discovery · Strategy · Delivery',
-    intro: 'Understanding the trust behind the transaction, and designing for the people making high-stakes financial decisions.',
+    role: 'First in-house designer · Research · Product design · Design system · Product revamp',
+    intro: 'Origin’s vision was to become the data and communication layer at the centre of global debt capital markets. The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and legacy software. I worked across product design, design systems and the wider design process to help shape a more connected and intuitive platform.',
     heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
     sections: [
       {
-            "id": "process", "navigationLabel": "Process",
-            "title": "A design process built around customers",
-            "paragraphs": [
-                  "Design was treated as foundational to the business, not a finishing step. Every product, from the pre-trade Marketplace to Documentation and Post-Trade, came out of collaboration with a group of early customers who cared about the problem we were trying to solve.",
-                  "Once we understood a problem, we made sure we saw it from every angle. Company-wide workshops brought together capital markets, product, tech and design, aligning the team behind one goal and letting us find a solution quicker.",
-                  "From there we experimented with possible solutions using a Lean approach: rapid sketching, prototyping and customer feedback, early and often. We explored several design solutions for each feature before committing, so we could solve the customer problem without wasting resources on bad ideas or unnecessary code.",
-                  "The final design step was validation. We showed the finished prototypes to customers and asked for critical feedback. Only when the solution proved valuable did we build it. All code was peer-reviewed and manually tested by a Quality Assurance team for a week before any customer saw it."
-            ]
+        id: 'process-purpose', title: 'The challenge',
+        paragraphs: [
+          'Origin’s vision was to become the data and communication layer at the centre of the global debt capital markets. The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and clunky software.',
+          'Rather than treating design as a finishing touch, we made it a cornerstone of the product. The aim was to understand how people worked, identify where technology could help and build tools that made complex financial workflows easier to navigate.'
+        ]
+      },
+      {
+        id: 'audience', title: 'Understanding the audience',
+        paragraphs: [
+          'Origin connects the different participants involved in bond issuance. Each group has distinct needs, responsibilities and pressures.'
+        ],
+        groups: [
+          { label: 'Issuers', image: 'origin-issuers', text: 'Access new sources of funding by connecting with dealers and investors globally, with greater flexibility over when and how they issue.' },
+          { label: 'Dealers', image: 'origin-dealers', text: 'Discover opportunities, connect with borrowers and manage transactions. Search tools, documentation and workflow automation help reduce manual work and support more business.' },
+          { label: 'Lawyers', image: 'origin-lawyers', text: 'Draft and collaborate on transaction documents across different types of bond issuance, from private placements to syndicated benchmark bonds.' },
+          { label: 'Market infrastructure', image: 'origin-market-infrastructure', text: 'Capture transaction details at source, creating a reliable source of truth for new securities issuance.' }
+        ]
+      },
+      {
+        id: 'design-process', title: 'A two-track design process',
+        paragraphs: [
+          'I introduced an agile design process with two paths: quick improvements to existing workflows and deeper exploration for more complex features. Both started with the same question: How can we make the platform more useful to the people using it?'
+        ],
+        groups: [
+          { label: 'Continuous improvements', text: 'Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.' },
+          { label: 'Exploring complex workflows', text: 'Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.' }
+        ],
+        image: 'origin-design-process-diagram', caption: 'The two-track design process: continuous improvements alongside deeper exploration of complex workflows.'
+      },
+      {
+        id: 'development-process', title: 'From design to development',
+        paragraphs: [
+          'Development was broken into manageable increments, allowing us to deliver value to customers sooner and learn as we went. Quality remained important: code was peer-reviewed, and QA carried out a week of manual testing before release.',
+          'The team was also beginning to adopt test-driven development, defining requirements and repeatable test cases earlier in the process. I advocated for bringing design into this stage, using user stories and edge cases to make sure testing reflected real customer workflows.',
+          'After each release, we gathered feedback, reviewed what worked and adjusted where necessary. The process was iterative, not fixed.'
+        ],
+        image: 'origin-development-process-diagram', caption: 'The agile development cycle: small increments, peer review and QA, with feedback shaping the next iteration.'
       },
       {
             "id": "research", "navigationLabel": "Research",
-            "title": "Starting with the people behind the transaction",
+            "title": "Starting with the people behind the transactions",
             "paragraphs": [
-                  "We started with the people already using the product and the manual processes it was replacing. Understanding how dealers, borrowers and investment banks actually worked, not how they described their work in meetings, was the foundation for every design decision that followed.",
-                  "Early customer collaboration gave us direct insight into daily workflows and real pain points. All new features were shared with customers immediately on release to gather feedback. Over two years of platform development, we accumulated customer insight from over 20 dealers and nearly 90 issuers globally."
+                  "Good design decisions needed a strong understanding of the people using the platform. Over two years, we built up insight through ongoing conversations with more than 20 dealers and nearly 90 issuers globally."
+            ],
+            "groups": [
+                  { "label": "Everyday feedback", "text": "Regular client conversations through support and product teams, with insights shared across Monday and Slack." },
+                  { "label": "Product analytics", "text": "Tableau data helped us understand platform usage and identify potential areas of friction." },
+                  { "label": "Customer interviews", "text": "Product-led interviews for Profiles and Marketplace explored the different needs of each user group." },
+                  { "label": "Live scenarios", "text": "Documentation was tested through regular demos and client dry-runs simulating real transactions. This exposed issues in core workflows and edge cases that were difficult to anticipate." },
+                  { "label": "Organising what we learned", "text": "Research notes lived in Google Docs, while other feedback was spread across different tools. I advocated for a shared, consistently tagged repository that would make qualitative insights easier to maintain and use in future design decisions." }
             ],
             "visual": "The institutional ecosystem",
             "image": "origin-audience",
@@ -264,19 +316,20 @@ export const projects: Project[] = [
             "id": "challenge", "navigationLabel": "Challenge",
             "title": "The real problem was confidence",
             "paragraphs": [
-                  "The most important research finding was not what we expected. We had assumed the primary problem was efficiency, spending months trying to remove steps, cut email chains and reduce manual overhead.",
-                  "Time with customers revealed that many of those steps were doing important work. The phone call before a major transaction was not redundant. It confirmed that the other party had seen the document, understood what it meant and was ready to proceed.",
-                  "The design problem was not simply to eliminate steps. It was to preserve the confidence those steps created while making the workflow clearer."
+                  "One of the biggest lessons came from challenging our initial assumptions. We had assumed the main problem was efficiency, and spent months looking for ways to remove steps, reduce email chains and automate communication.",
+                  "But conversations with customers revealed something unexpected: many of those steps served an important purpose. A phone call before a major transaction wasn't simply another task to eliminate. It gave participants confidence that the other party had received the document, understood it and was ready to proceed.",
+                  "The challenge wasn't simply to remove friction. It was to preserve the confidence behind existing workflows while making the experience clearer and more efficient. That changed how I approached the design problem."
             ]
       },
       {
             "id": "products", "navigationLabel": "Products",
-            "title": "Three products, one institutional workflow",
+            "title": "Four products, one institutional workflow",
             "paragraphs": [
-                  "As we learned more about our users, we focused on polished, high-quality designs and interactions across three main products. Iteration and careful evaluation informed each version.",
-                  "Origin Marketplace identified issuance opportunities through a database of 1,000+ issuers with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. The Funding Matrix redesign was part of this product.",
-                  "Origin Documentation supported drafting and collaboration on transaction documents for vanilla and structured notes, structuring data at execution to enable listing, instant ISINs and further steps.",
-                  "Origin Structured Notes provided a fully automated, API-driven workflow from termsheet generation to post-trade operations, eliminating manual processes and reducing operational risk."
+                  "As we learned more about our users, we focused on delivering polished, high-quality designs and interactions across the product family. Each product evolved through continuous iteration and careful evaluation.",
+                  "Origin Marketplace: identifying issuance opportunities through a database of 1,000+ issuers, with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. This included a redesign of the Funding Matrix.",
+                  "Origin Documentation: simplifying the drafting and collaboration of transaction documents for vanilla and structured notes. Structuring data at execution enabled downstream processes including listing and instant ISIN generation.",
+                  "Origin Structured Notes: automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.",
+                  "Origin Intelligence: introducing structured data extraction for fixed income through a highly accurate LLM-based extractor, turning unstructured documents into usable data."
             ],
             "visual": "The product family",
             "imageLayout": "side-by-side",
@@ -288,42 +341,103 @@ export const projects: Project[] = [
             "caption": "Marketplace, Documentation and Structured Notes, in that order."
       },
       {
-            "id": "interface", "navigationLabel": "Interface",
-            "title": "Funding Matrix: making density navigable",
+            "id": "ecosystem", "navigationLabel": "Ecosystem",
+            "title": "Connected to the whole ecosystem",
             "paragraphs": [
-                  "Every new feature added to the Funding Matrix made sense to someone in the moment. Nobody had stepped back to ask whether the whole still made sense. The interface had become complex, slow on anything below a high-spec machine, and difficult to use without guidance.",
-                  "Three constraints shaped the redesign. Performance: the tool had to be fast across the wide range of machines customers used. Intuitiveness: a daily tool for experienced professionals should not require training. Data visibility: dealers needed to see as many funding levels as possible simultaneously. Showing less would have made the product less useful.",
-                  "We examined accumulated feedback and usage data, then watched customers use the tool. Their behaviour revealed workarounds, search parameters that were set and never changed, and cognitive load that slowed decisions. Travel search tools such as Skyscanner offered a useful reference for complex, multi-parameter searches.",
-                  "Accessibility was essential to the interface so financial professionals with different access needs could navigate dense information and high-stakes workflows."
+                  "Origin connected the entire ecosystem onto a single platform. Dealers and issuers sat alongside agents and custodians, with integrations into CSDs, clearing houses and exchanges.",
+                  "By automating the issuance process from front to back, Origin reduced the cost of issuance and gave issuers the agility to access capital markets when conditions were right."
             ],
-            "visual": "Funding Matrix before and after",
-            "image": "origin-funding-matrix",
-            "caption": "The old and redesigned Funding Matrix, retaining the information density professionals needed."
+            "groups": [
+                  { "label": "15+", "text": "Active dealers" },
+                  { "label": "90+", "text": "Active issuers" },
+                  { "label": "8", "text": "Post-trade integrations" },
+                  { "label": "600+", "text": "Transactions executed" }
+            ],
+            "visual": "The ecosystem",
+            "images": [
+                  "origin-audience-2",
+                  "origin-ecosystem"
+            ],
+            "caption": "The Origin ecosystem: market participants, infrastructure and integrations on one platform."
       },
       {
-            "title": "A familiar starting point, a clearer search",
+            "id": "interface", "navigationLabel": "Interface",
+            "title": "The challenge",
             "paragraphs": [
-                  "Search was the entry point for every journey, so we started there. We kept the page structure familiar, with search at the top and recent activity below, to preserve existing muscle memory. Material Design helped improve visual clarity, while saved searches moved to the foreground.",
-                  "The collapsed search panel displayed active parameters at a glance. Users could modify a search without starting again, with saved-search actions grouped in one dropdown menu."
+                  "The Funding Matrix was the most used feature in Origin's Marketplace product. It allowed dealers across DCM, Syndicate and Sales to search the issuer database and find funding matches based on yield, spread and rating criteria. During a period of reduced deal activity we took the opportunity to step back and redesign it properly.",
+                  "Every new feature added to the Funding Matrix over time made sense to someone in the moment. Rarely did we step back to ask whether the whole thing made sense. By the time we started this project, the interface was complex, slow on anything below a high-spec machine, and required significant guidance before new users could use it independently.",
+                  "Three constraints shaped the redesign from the start. Performance: our users operated on a wide range of machines, not just high-spec MacBooks, and the interface had to be fast on all of them. Speed is not a nice-to-have in financial markets. A slow tool feels unreliable before the user has clicked anything.",
+                  "Intuitiveness: the old Funding Matrix required training. That is a product problem, not a user problem. A tool used daily by experienced professionals should not need a manual.",
+                  "Data visibility: dealers need to see as many funding levels as possible simultaneously. The design instinct to simplify by showing less would have made the tool less useful. The goal was to make the density navigable, not to reduce it."
+            ]
+      },
+      {
+            "id": "role",
+            "title": "My role",
+            "paragraphs": [
+                  "I led the redesign end-to-end: research, concept, visual design, and iterative refinement through live testing with real users. I worked closely with engineering throughout, particularly on the performance work, where the grid rebuild was as important to the user experience as anything visual."
+            ]
+      },
+      {
+            "id": "funding-research",
+            "title": "Research",
+            "paragraphs": [
+                  "We started by brainstorming all the feedback we had accumulated and analysing usage data to identify where the real friction was. The most valuable research came from watching users actually use the tool. Usage patterns revealed things that feedback sessions alone would not have surfaced: which features were being worked around, which search parameters were being set and never changed, and where the interface was creating cognitive load that slowed decisions down.",
+                  "We also looked at tools from adjacent contexts. Travel search platforms like Skyscanner handle similarly complex, multi-parameter searches in a way that feels intuitive rather than overwhelming. That reference point shaped how we thought about the search interface."
+            ]
+      },
+      {
+            "id": "solution",
+            "title": "The solution",
+            "paragraphs": []
+      },
+      {
+            "id": "search",
+            "title": "Search interface",
+            "subheading": true,
+            "paragraphs": [
+                  "The search component was the entry point for every user journey, so we started there. We kept the overall page structure familiar, search at the top and recent activity below, to avoid loss of context and muscle memory. We applied Material Design to improve visual clarity and brought saved searches to the foreground.",
+                  "A collapsed search panel that clearly displays the active parameters let users see what they were searching for at a glance without expanding the full form."
             ],
-            "visual": "Search redesign and saved searches",
+            "visual": "Search interface before and after",
+            "image": "origin-funding-matrix-search",
+            "caption": "The old search interface and the redesigned search, with recent activity below."
+      },
+      {
+            "id": "matrix",
+            "title": "Funding matrix grid",
+            "subheading": true,
+            "paragraphs": [
+                  "Next we focused on the Funding Matrix view itself. Travel search websites such as Skyscanner excel at flexible search interfaces for complex requirements: users enter search terms and then easily modify them without starting over. That became the model.",
+                  "The search component sits atop the Funding Matrix view, offering quick access to saved searches. A glance at the collapsed search panel clearly shows the scoped parameters. All actions for managing a saved search are conveniently grouped in a dropdown menu, readily available when needed."
+            ],
+            "visual": "Funding Matrix before and after, with saved searches",
             "images": [
-                  "origin-funding-matrix-search",
+                  "origin-funding-matrix",
                   "origin-funding-matrix-saved_searches"
             ],
-            "caption": "Before-and-after search interfaces, followed by active parameters and saved-search controls."
+            "caption": "The old and redesigned Funding Matrix grids, followed by the saved-search controls."
       },
       {
-            "title": "Performance was part of the experience",
+            "id": "performance",
+            "title": "Performance",
             "paragraphs": [
-                  "The development team rebuilt the grid from scratch using a high-performance architecture. Average loading time fell by over 70%. In financial markets, that mattered as much as anything visual: a slow tool creates doubt, while a fast tool creates confidence.",
-                  "The beta received strongly positive feedback on the experience and performance gains. After deployment to the live platform, testing and incremental improvements continued using ongoing usage data. The redesign became the foundation for the broader platform redesign that followed."
+                  "The development team rebuilt the grid from scratch using a high-performance architecture. Average loading time was reduced by over 70%. That number mattered as much as anything visual. In financial markets, a slow tool creates doubt. A fast tool creates confidence."
             ],
             "visual": "Navigating the data grid",
             "image": "origin-funding-matrix-grid",
             "caption": "Column controls let professionals adapt the dense grid to their work."
       },
       {
+            "id": "results",
+            "title": "Results",
+            "paragraphs": [
+                  "The beta version received strongly positive feedback from users for both the improved experience and the performance gains. After deploying to the live platform, we continued testing and making incremental improvements based on ongoing usage data.",
+                  "The redesign became the foundation for the broader platform redesign that followed."
+            ]
+      },
+      {
+            "id": "documentation",
             "title": "Documentation: tested through real transactions",
             "paragraphs": [
                   "The Documentation product simplified the creation and management of termsheets and legal documents across institutions. Connecting different teams and organisations was difficult, especially when the workflow needed to be both enjoyable and habit-forming in a high-stakes context.",
@@ -338,17 +452,54 @@ export const projects: Project[] = [
             "id": "design-system", "navigationLabel": "Design system",
             "title": "A shared language with Morpho",
             "paragraphs": [
-                  "Morpho provided a design system for consistent components and patterns across the product. A shared visual and interaction language supported the broader platform redesign.",
-                  "Accessibility was a core design-system requirement for a financial platform relied on by professionals with different access needs."
+                  "When I joined as Origin's first in-house designer, there was no centralised design system or established design language. As the platform grew, product experiences were becoming fragmented and harder to keep recognisably Origin.",
+                  "I took ownership of creating Morpho, Origin's first centralised design library: reusable components, visual guidelines and accessibility principles that gave product design a consistent foundation and room to scale."
             ],
             "visual": "Morpho components and product patterns",
             "image": "origin-morpho",
             "caption": "The component library alongside examples of its use across the platform."
+      },
+      {
+            "id": "morpho-challenge",
+            "title": "The challenge",
+            "paragraphs": [
+                  "Without a shared design language, design and development decisions were made in isolation. Products and features lacked a unified visual language, teams repeatedly designed and built similar components, and every new feature made consistency harder to maintain.",
+                  "The challenge was not simply to create a library of UI components. It was to establish a scalable foundation that would improve how the company designed, built and maintained its products."
+            ]
+      },
+      {
+            "id": "morpho-foundation",
+            "title": "Choosing a foundation",
+            "paragraphs": [
+                  "I started by assessing the existing product experience: reviewing customer feedback to find the inconsistencies that mattered most, and studying how other fintech companies approached consistency, accessibility and reusable patterns. In fintech, clarity and trust are particularly important — interfaces need to make complex financial interactions feel straightforward.",
+                  "I involved engineers early, discussing front-end frameworks, component architecture, testing and documentation, so the system would be practical to implement rather than existing solely as a design resource.",
+                  "We chose Google's Material Design as the starting point. It offered an established, accessible foundation of interaction patterns and components that we could adapt to Origin's needs, letting us focus our effort on the brand and product rather than reinventing proven patterns."
+            ]
+      },
+      {
+            "id": "morpho-system",
+            "title": "Building the system",
+            "paragraphs": [
+                  "Morpho became the single source of truth for Origin's product design, focused on four areas.",
+                  "Shared foundations for typography, colour, iconography and spacing established a consistent visual language and strengthened the brand experience. A library of flexible, reusable components — buttons, form elements and common UI patterns — meant teams could reuse established solutions instead of creating new ones.",
+                  "Accessibility was considered from the outset rather than treated as an afterthought, and the library was structured to accommodate new components and product requirements as Origin evolved, so the system could grow alongside the business without losing its consistency."
+            ]
+      },
+      {
+            "id": "morpho-adoption",
+            "title": "Making it part of how we worked",
+            "paragraphs": [
+                  "Creating the library was only the first step. I worked closely with engineering to align design components with their coded counterparts, establishing a shared understanding of component behaviour, visual specifications and implementation requirements.",
+                  "The library gave designers, engineers and stakeholders a common reference point, and integrating it into the product development workflow moved us away from isolated design decisions towards a more consistent, collaborative approach.",
+                  "The result was a recognisable visual language across the platform, less duplicated design work, a common language between design and engineering, and a foundation that could evolve alongside Origin's products."
+            ]
       }
 ],
     evidencePending: false,
-    reflection: {"title": "What I learned", "paragraphs": ["A product’s most-used feature accumulates complexity because each addition makes sense in isolation. Stepping back to assess the whole is as important as delivering the next feature.", "Professional tools have different usability requirements from consumer products. Density is not the enemy. Like a trader using a Bloomberg terminal, dealers need information in view. The goal was to make complexity navigable, not eliminate it.", "The loading-time improvement mattered as much as the visual redesign. In financial markets, speed is trust."]},
+    reflection: {"title": "What I learned", "paragraphs": ["Complexity isn't always the enemy. Professional tools have different usability requirements from consumer products. Dealers need information density and visibility, much like traders working with a Bloomberg terminal. The goal isn't to remove information, but to make it easier to navigate.", "Look at the whole, not just the feature. A product's most-used features often accumulate complexity over time. Each addition might make sense in isolation, but stepping back to assess the entire experience is just as important as delivering the next improvement.", "In financial markets, speed is trust. Visual clarity matters, but so does performance. Improving loading times was as important as redesigning the interface. When people are working with time-sensitive transactions, a responsive product helps build confidence in the platform.", "Ultimately, good fintech design isn't about making everything look simpler. It's about making complex processes feel clear, reliable and under control."]},
     contribution: 'As the first in-house designer, I was directly involved in strategy, customer discovery and design delivery, working with the founding team and customers. The product’s development and achievements belong to the wider team.',
+    outcomesHeading: 'Design that made a difference', outcomesIntro: 'The work helped evolve Origin into a platform supporting real-world bond issuance, connecting market participants and simplifying complex financial workflows.',
+    outcomeStats: [{ value: '70%+', text: 'Reduction in average Funding Matrix loading time, following a rebuild of the grid by the development team.' }, { value: '3 consecutive years', text: 'Voted Best Fintech in the field by GlobalCapital, recognising the wider product.' }, { value: 'First digitally issued bond', text: 'The first fully digitally issued bond, a transaction between Vasakronan and Citi, was executed on the platform.' }, { value: '5 digital transactions', text: 'Four further digitally issued transactions followed across Europe and Asia.' }, { value: 'Nearly 700 professionals', text: 'Using the platform across 70 cities.' }, { value: '100+ borrowers', text: 'And 20 major investment banks relying on Origin as part of their core workflow.' }],
     outcomes: ['Average Funding Matrix loading time reduced by over 70% after the development team rebuilt the grid.', 'Voted Best Fintech in the field for three consecutive years by GlobalCapital, recognising the wider product rather than an individual design award.', 'The first fully digitally issued bond, a transaction between Vasakronan and Citi, was executed on the platform.', 'Four further digitally issued transactions followed across Europe and Asia.', 'The platform served nearly 700 professionals across 70 cities.', 'Over 100 borrowers and 20 major investment banks relied on it as part of their core workflow.'],
   },
   {
