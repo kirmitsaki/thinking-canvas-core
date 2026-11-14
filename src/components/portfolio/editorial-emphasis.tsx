@@ -12,6 +12,7 @@ const phrases = [
   "continuous research and usability testing", "information architecture",
   "visual identity", "WCAG 2.2 AA", "over 70%", "built with engineers",
   "simpler interface reduces the cognitive load",
+  "interviews", "surveys", "consulted with vets", "early prototypes",
 ];
 
 export function editorialEmphasis(text: string): ReactNode {
