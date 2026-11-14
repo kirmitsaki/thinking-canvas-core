@@ -759,6 +759,18 @@
   .origin-research-block > div {
     max-width: 62ch;
   }
+  .brand-voice-cards {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .brand-voice-card {
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+  .brand-voice-card figcaption {
+    font-size: 0.95rem;
+  }
   .origin-editorial .pull-quote {
     max-width: 850px;
     margin: 1rem auto;
