@@ -697,13 +697,13 @@ export const projects: Project[] = [
     ], contribution: '', outcomes: [],
   },
   {
-    slug: 'origin-design-process', name: 'A design process for an fintech team', sector: 'Fintech · Design process', industry: 'Fintech', field: 'Design Process', dates: '2019 – 2022', tags: [],
+    slug: 'origin-design-process', name: 'A design process for an fintech team', sector: 'Fintech · Design process', industry: 'Fintech', field: 'Design Process', dates: '2019 – 2022', tags: ['Product Design'],
     title: 'A design process for an fintech team', summary: 'A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.', role: 'Lead Product Designer',
     intro: '', heroImage: 'origin-design-process-diagram', heroFit: 'contain', linkTo: '/work/origin-markets/design-process', workAreas: ['Product Design'],
     sections: [], contribution: '', outcomes: [],
   },
   {
-    slug: 'origin-design-system', name: 'Morpho - A design system for a Fintech Startup', sector: 'Fintech · Design system', industry: 'Fintech', field: 'Design System', dates: '2021 – 2022', tags: [],
+    slug: 'origin-design-system', name: 'Morpho - A design system for a Fintech Startup', sector: 'Fintech · Design system', industry: 'Fintech', field: 'Design System', dates: '2021 – 2022', tags: ['Design Systems'],
     title: 'Morpho - A design system for a Fintech Startup', summary: 'Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.', role: 'Lead Product Designer',
     intro: '', heroImage: 'origin-morpho', linkTo: '/work/origin-markets/design-system', workAreas: ['Design Systems'],
     sections: [], contribution: '', outcomes: [],
