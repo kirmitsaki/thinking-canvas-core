@@ -11,7 +11,7 @@ import { NdaNotice } from "./nda-notice";
 import { SecondaryCard } from "./secondary-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section, index) =>

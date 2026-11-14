@@ -129,7 +129,7 @@ export default function OriginMarkets() {
         </div>
       </Section>
 
-      <Section id="design-system" title="Design System">
+      <Section id="design-system" title="Design system">
         <div className="origin-system-copy">
         <p className="body-copy text-muted-foreground">{emphasize('Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.')}</p>
         <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
