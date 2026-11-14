@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Outlet, useLocation, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
@@ -17,8 +16,6 @@ const WorkPage = lazy(() => import("@/pages/Work"));
 const OriginMarkets = lazy(() => import("@/pages/OriginMarkets"));
 const OriginStudy = lazy(() => import("@/pages/OriginStudy"));
 const OriginGallery = lazy(() => import("@/pages/OriginGallery"));
-
-const queryClient = new QueryClient();
 
 const PageEnter = () => {
   const { pathname } = useLocation();
@@ -42,7 +39,6 @@ const Layout = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
@@ -71,7 +67,6 @@ const App = () => (
         </Route>
       </Routes>
     </BrowserRouter>
-  </QueryClientProvider>
 );
 
 export default App;
