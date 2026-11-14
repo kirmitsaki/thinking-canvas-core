@@ -8,7 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence" }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section) =>
@@ -28,6 +28,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         id="overview"
         className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12 pt-10 md:pt-14"
       >
+        {notice && <div className="mb-6">{notice}</div>}
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
           trailing={<p className="label-quiet">{project.dates}</p>}
