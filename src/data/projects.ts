@@ -220,7 +220,7 @@ export type Project = {
   industry: string;
   field: string;
   name: string; sector: string; title: string; summary: string; role: string;
-  intro: string; heroImage?: string; heroFit?: 'tile'; outcomeImage?: string; outcomeCaption?: string;
+  intro: string; heroImage?: string; heroFit?: 'tile' | 'contain'; outcomeImage?: string; outcomeCaption?: string;
   presentation?: 'compact';
   sectionNavigation?: { label: string; id: string }[];
   evidencePending?: boolean;
@@ -696,14 +696,27 @@ export const projects: Project[] = [
       { id: 'bottle', title: 'On the bottle', paragraphs: ['The bottle mock-up brings the two labels together, showing how the hand-painted illustration carries through to the finished presentation.'], visual: 'Bottle presentation', image: 'meliniki-bottle', caption: 'A mock-up of the two-label design on a Merlot bottle.' },
     ], contribution: '', outcomes: [],
   },
+  {
+    slug: 'origin-design-process', name: 'A design process for an fintech team', sector: 'Fintech · Design process', industry: 'Fintech', field: 'Design Process', dates: '2019 – 2022', tags: [],
+    title: 'A design process for an fintech team', summary: 'A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.', role: 'Lead Product Designer',
+    intro: '', heroImage: 'origin-design-process-diagram', heroFit: 'contain', linkTo: '/work/origin-markets/design-process', workAreas: ['Product Design'],
+    sections: [], contribution: '', outcomes: [],
+  },
+  {
+    slug: 'origin-design-system', name: 'Morpho - A design system for a Fintech Startup', sector: 'Fintech · Design system', industry: 'Fintech', field: 'Design System', dates: '2021 – 2022', tags: [],
+    title: 'Morpho - A design system for a Fintech Startup', summary: 'Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.', role: 'Lead Product Designer',
+    intro: '', heroImage: 'origin-morpho', linkTo: '/work/origin-markets/design-system', workAreas: ['Design Systems'],
+    sections: [], contribution: '', outcomes: [],
+  },
 ];
-const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
+const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'origin-design-process', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
 export const projectsByYear: Project[] = workOrder.map(getProject);
 export const projectTags = ['Research', 'Product Design', 'Product Identity', 'Brand', 'Accessibility', 'Vision', 'Design Systems', 'Prototyping', 'AI-assisted Prototyping', 'Web Design', 'Front-end Development', 'Logo Design', 'Illustration', 'Label Design'];
 export function projectSectionLabels(project: Project): string[] {
   return ['Overview', ...new Set(project.sections.flatMap(section => section.navigationLabel ? [section.navigationLabel] : [])), ...(project.outcomes.length ? ['Outcomes'] : [])];
 }
 export function projectWorkAreas(project: Project): string[] {
+  if (project.workAreas) return project.workAreas;
   const sectionOnly = ['Overview', 'Outcomes', 'Challenge', 'Structure', 'Brief'];
   return [...new Set([...projectSectionLabels(project)
     .filter(label => !sectionOnly.includes(label))
