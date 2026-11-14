@@ -74,8 +74,9 @@ describe('shared case-study section filters', () => {
     assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Overview', 'Interface']);
     assert.equal(projectMatchesFilter(getProject('mds-quostar'), 'Enquiries'), false);
   });
-  it('uses Brand & Identity for all brand and styleguide anchors', () => {
-    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Brand & Identity')).map(project => project.slug), ['secure-code-warrior', 'aladdin', 'corresilience', 'pawsquad', 'jobme']);
+  it('uses Brand & Identity for brand anchors, with JobMe under STYLEGUIDE', () => {
+    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Brand & Identity')).map(project => project.slug), ['secure-code-warrior', 'aladdin', 'corresilience', 'pawsquad']);
+    assert.ok(projectSectionLabels(getProject('jobme')).includes('STYLEGUIDE'));
   });
   it('keeps Meliniki to Overview, Brief and Label design', () => {
     assert.deepEqual(projectSectionLabels(getProject('meliniki')), ['Overview', 'Brief', 'Label design']);
