@@ -82,7 +82,7 @@ describe('shared case-study section filters', () => {
   });
   it('uses curated work areas for contribution filter options and matches', () => {
     assert.deepEqual(projectFilters, [...new Set(projectsByYear.flatMap(projectWorkAreas))]);
-    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Design system')).map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley']);
+    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Design system')).map(project => project.slug), ['secure-code-warrior', 'mendeley']);
   });
   it('combines Products and Interface into one Interface work area', () => {
     assert.equal(projectFilters.includes('Products'), false);
@@ -131,7 +131,7 @@ describe('case-study destinations', () => {
   const destinations = [
     ['secure-code-warrior', 'Secure Code Warrior'],
     ['origin-markets', 'Origin Markets'],
-    ['mendeley', 'Mendeley'],
+    ['mendeley', 'Mendeley (Elsevier)'],
     ['aladdin', 'Aladdin'],
     ['corresilience', 'CorResilience'],
     ['pawsquad', 'PawSquad'],
