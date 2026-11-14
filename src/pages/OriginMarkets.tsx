@@ -74,7 +74,7 @@ export default function OriginMarkets() {
         </div>
         <div className="p-6 md:p-8">
           <p className="caption">02 / 2021 – 2022</p>
-          <h3 className="mt-3 card-title">Morpho</h3>
+          <h3 className="mt-3 card-title">Morpho - A design system for a Fintech Startup</h3>
           <ProjectContext industry="Fintech" field="Design System" className="mt-4" />
           <ProjectLabels labels={['Design system', 'Product design', 'UI components']} className="mt-3" />
           <p className="mt-4 max-w-lg body-copy text-muted-foreground">Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
