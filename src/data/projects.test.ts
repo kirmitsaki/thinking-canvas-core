@@ -31,7 +31,7 @@ describe('work index ordering', () => {
 describe('work filters', () => {
   const withTag = (tag: string) => projectsByYear.filter(project => project.tags.includes(tag)).map(project => project.slug);
   it('Design Systems shows Secure Code Warrior, Origin and Mendeley', () => {
-    assert.deepEqual(withTag('Design Systems'), ['secure-code-warrior', 'origin-markets', 'mendeley']);
+    assert.deepEqual(withTag('Design Systems'), ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley']);
   });
   it('separates Product Identity from Brand', () => {
     assert.deepEqual(withTag('Product Identity'), ['secure-code-warrior']);
