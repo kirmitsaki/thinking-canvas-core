@@ -68,7 +68,7 @@ describe('industry, field and contribution taxonomy', () => {
 
 describe('shared case-study section filters', () => {
   it('groups Mendeley product areas under Products', () => {
-    assert.deepEqual(projectSectionLabels(getProject('mendeley')), ['Overview', 'Challenge', 'Research', 'Products', 'Design system', 'Outcomes']);
+    assert.deepEqual(projectSectionLabels(getProject('mendeley')), ['Overview', 'Challenge', 'Research', 'Design system', 'Products', 'Outcomes']);
   });
   it('omits Enquiries from MDS navigation and filters', () => {
     assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Overview', 'Structure', 'Interface']);
