@@ -546,10 +546,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'mendeley', name: 'Mendeley', sector: 'Research · Reference management', industry: 'Academic research', field: 'Reference management', dates: 'Jan 2019 – Jan 2020', tags: ['Research', 'Product Design', 'Design Systems', 'Accessibility'],
-    title: 'Making complex research workflows easier to navigate.',
+    title: 'Mendeley (Elsevier)',
     summary: 'Improving research workflows across a large-scale academic reference management product.',
     role: 'Senior UX/UI Designer',
-    intro: 'Hands-on design across Library, Reader and Citation, connecting the details of the interface with the way researchers work.',
+    intro: "Mendeley Reference Manager (MRM) is Elsevier's replacement for Mendeley Desktop, a widely used reference management tool with a large and loyal academic user base. ",
     heroImage: 'mendeley-header', outcomeImage: 'mendeley-outcome', outcomeCaption: 'Researchers sharing their experience of switching to Mendeley.',
     sections: [
       { id: 'context', navigationLabel: 'Challenge', title: 'A product woven into research', paragraphs: ['Mendeley Reference Manager serves an academic research audience. The product context included over 120,000 researchers managing more than one million references.', 'Managing a collection and reading papers happen inside the product, while citing happens in the word processor through Mendeley Cite. The design challenge was to make each of these distinct contexts easier to navigate.'], visual: 'Research workflow · Library, Reader and Citation', caption: 'An overview of the three core areas and how a researcher moves between them.' },
