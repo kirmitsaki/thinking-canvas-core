@@ -16,7 +16,7 @@
 
 - [Secure Code Warrior](/work/secure-code-warrior) (coming soon)
 - [Origin Markets](/work/origin-markets)
-- [Mendeley](/work/mendeley) — with deep dives on the [Library](/work/mendeley/library), [Reader](/work/mendeley/reader) and [Citation](/work/mendeley/citation) interfaces
+- [Mendeley](/work/mendeley) — with [Sample work](/work/mendeley/sample-work) covering the Library, Reader and Citation interfaces
 - [Aladdin](/work/aladdin)
 - [CorResilience](/work/corresilience)
 - [PawSquad](/work/pawsquad)

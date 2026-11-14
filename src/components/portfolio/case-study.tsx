@@ -7,6 +7,7 @@ import { ContactLink } from "./shell";
 import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
+import { ProjectContext } from "./project-context";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean }) {
   const navigation = project.sectionNavigation ?? [
@@ -85,33 +86,6 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                   <ArrowUpRight size={16} />
                 </Link>
               )}
-              {project.slug === "mendeley" && section.id === "library" && (
-                <Link
-                  to="/work/mendeley/library"
-                  className="accent-link mt-6 inline-flex items-center gap-2"
-                >
-                  Explore the Library interface
-                  <ArrowUpRight size={16} />
-                </Link>
-              )}
-              {project.slug === "mendeley" && section.id === "reader" && (
-                <Link
-                  to="/work/mendeley/reader"
-                  className="accent-link mt-6 inline-flex items-center gap-2"
-                >
-                  Explore the Reader interface
-                  <ArrowUpRight size={16} />
-                </Link>
-              )}
-              {project.slug === "mendeley" && section.id === "citation" && (
-                <Link
-                  to="/work/mendeley/citation"
-                  className="accent-link mt-6 inline-flex items-center gap-2"
-                >
-                  Explore the Citation interface
-                  <ArrowUpRight size={16} />
-                </Link>
-              )}
             </div>
             {section.visual && (
               <figure className="mx-auto mt-9 w-full max-w-[720px]">
@@ -178,6 +152,20 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 )}
                 <figcaption className="caption mt-4">{section.caption}</figcaption>
               </figure>
+            )}
+            {project.slug === "mendeley" && section.id === "citation" && (
+              <Link to="/work/mendeley/sample-work" className="editorial-card group mx-auto mt-10 block max-w-[720px] min-w-0 overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden bg-muted">
+                  <img loading="lazy" src={projectImage("mendeley-header").url} alt={projectImage("mendeley-header").alt} className="block h-full w-full object-cover object-top" />
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="caption">{project.dates}</p>
+                  <h3 className="mt-3 card-title">Sample work</h3>
+                  <ProjectContext industry={project.industry} field="Product Design" className="mt-4" />
+                  <p className="mt-4 max-w-lg body-copy text-muted-foreground">Selected screens and flows from the Library, Reader and Citation interfaces.</p>
+                  <p className="accent-link mt-6">View sample work <span className="arrow-nudge">→</span></p>
+                </div>
+              </Link>
             )}
           </section>
         ))}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { pageMeta } from "@/data/projects";
+import { pageMeta, getProject } from "@/data/projects";
 import { librarySections } from "@/data/mendeley-library";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 
@@ -12,7 +12,13 @@ const meta = pageMeta(
   "article"
 );
 
-export default function MendeleyLibrary() {
+export default function MendeleyLibrary({ embedded = false }: { embedded?: boolean }) {
+  const content = <>
+    <h2 className="card-title">The Library</h2>
+    <p className="standfirst mt-6 mb-10">Organising and retrieving references in one place, through collections, tags, keyword search and filtering.</p>
+    <MendeleyLibraryContent />
+  </>;
+  if (embedded) return content;
   return (
     <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo
@@ -37,6 +43,20 @@ export default function MendeleyLibrary() {
         </p>
       </header>
       <article className="mx-auto max-w-[720px]">
+        <MendeleyLibraryContent />
+        <div className="hairline-top pt-8">
+          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
+            <ArrowLeft size={14} />
+            Back to the Mendeley case study
+          </Link>
+        </div>
+      </article>
+    </main>
+  );
+}
+
+function MendeleyLibraryContent() {
+  return <>
         {librarySections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
@@ -64,13 +84,5 @@ export default function MendeleyLibrary() {
             ))}
           </section>
         ))}
-        <div className="hairline-top pt-8">
-          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
-            <ArrowLeft size={14} />
-            Back to the Mendeley case study
-          </Link>
-        </div>
-      </article>
-    </main>
-  );
+  </>;
 }
