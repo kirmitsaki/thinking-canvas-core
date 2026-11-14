@@ -12,12 +12,6 @@ const intro = [
   'I worked across product design, design systems and the wider design process to help shape a more connected and intuitive platform.',
 ];
 const facts = [{ label: 'Role', value: 'Product Design, UX, UI, Design Systems' }, { label: 'Duration', value: '3 years' }, { label: 'Industry', value: 'Financial Technology, Debt Capital Markets' }];
-const audiences = [
-  ['Issuers', 'Accessing funding and connecting with dealers and investors globally.'],
-  ['Dealers', 'Finding opportunities and managing bond transactions.'],
-  ['Lawyers', 'Drafting and collaborating on transaction documentation.'],
-  ['Market infrastructure', 'Capturing issuance data and creating a source of truth for new securities.'],
-];
 const products = [
   { name: 'Origin Marketplace', text: 'Identifying issuance opportunities through a database of 1,000+ issuers, with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. This included a redesign of the Funding Matrix.', image: 'origin-marketplace' },
   { name: 'Origin Documentation', text: 'Simplifying the drafting and collaboration of transaction documents for vanilla and structured notes. Structuring data at execution enabled downstream processes including listing and instant ISIN generation.', image: 'origin-documentation' },
@@ -38,12 +32,7 @@ export default function OriginMarkets() {
   ] };
   const body = <>
     <Section id="challenge" title="Bringing simplicity to a complex industry">
-      <p>Origin connects the different participants involved in bond issuance, providing tools to simplify workflows, improve communication and automate manual processes.</p>
-      <p>The platform serves four main audiences, each with distinct needs and responsibilities.</p>
-      <div className="grid gap-8 md:grid-cols-2 md:items-center">
-        <div className="space-y-5">{audiences.map(([label, text]) => <p key={label}><strong className="font-semibold">{label}</strong> – {text}</p>)}</div>
-        <img loading="lazy" src={projectImage('origin-audience-2').url} alt={projectImage('origin-audience-2').alt} className="h-auto w-full rounded-[10px]" />
-      </div>
+      <img loading="lazy" src={projectImage('origin-audience-2').url} alt={projectImage('origin-audience-2').alt} className="h-auto w-full rounded-[10px]" />
     </Section>
     <Section id="products" title="Four products, one institutional workflow">
       <p>As we learned more about our users, we focused on delivering polished, high-quality designs and interactions across the platform. Each product evolved through continuous iteration and careful evaluation.</p>
