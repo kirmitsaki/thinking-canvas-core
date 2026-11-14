@@ -36,7 +36,10 @@ function emphasize(text: string): ReactNode {
 
 const intro = [
   'The first front-to-back digital platform aiming to simplify the global debt capital markets.',
-  'The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
+  'The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.',
+  'I joined as the first in-house designer.',
+  'No design function, no system, no process.',
+  'An ambitious product that had been growing faster than its foundations.',
 ].map(emphasize);
 const challengeCopy = 'The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and legacy software. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.';
 const roleCopy = 'I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.';
