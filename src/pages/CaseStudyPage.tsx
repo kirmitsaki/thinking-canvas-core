@@ -82,6 +82,12 @@ export default function CaseStudyPage() {
                   { label: "Tasks", value: "Label design, Client handover" },
                   { label: "Industry", value: `${project.industry} · ${project.field}` },
                 ]
+              : project.slug === "jobme"
+              ? [
+                  { label: "Role", value: project.role },
+                  { label: "Tasks", value: "Logo design, Styleguide, Client handover" },
+                  { label: "Industry", value: `${project.industry} · ${project.field}` },
+                ]
               : undefined
         }
       />
