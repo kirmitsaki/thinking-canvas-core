@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { type Project, projectImage } from "@/data/projects";
@@ -71,8 +71,9 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       </div>
       <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
         {body}
-        {project.sections.map((section) => (
-          <section key={section.title} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
+        {project.sections.map((section, index) => (
+          <Fragment key={section.title}>
+          <section id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             <SectionDivider />
             <div className="editorial-study-heading mx-auto max-w-[720px]">
               <h2 className="section-title">{section.title}</h2>
@@ -189,6 +190,16 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </div>
             )}
           </section>
+          {index === 0 && project.contribution && (
+            <section className="origin-section scroll-mt-32">
+              <SectionDivider />
+              <div className="origin-section-heading">
+                <h2 className="section-title">My role</h2>
+                <p className="body-copy text-muted-foreground">{editorialEmphasis(project.contribution)}</p>
+              </div>
+            </section>
+          )}
+          </Fragment>
         ))}
         <div className="editorial-study-closing mx-auto max-w-[720px]">
           {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && <SectionDivider />}
@@ -231,13 +242,6 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 ))}
               </div>
             </section>
-          )}
-          {project.contribution && (
-            <>
-              <SectionDivider />
-              <h2 className="mt-12 section-title">My contribution</h2>
-              <p className="editorial-contribution essay-prose mt-6">{editorialEmphasis(project.contribution)}</p>
-            </>
           )}
         </div>
       </article>
