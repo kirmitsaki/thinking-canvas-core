@@ -13,6 +13,7 @@ const phrases = [
   "visual identity", "WCAG 2.2 AA", "over 70%", "built with engineers",
   "simpler interface reduces the cognitive load",
   "interviews", "surveys", "consulted with vets", "early prototypes",
+  "Reliable information.", "Simplified processes.", "Personalised guidance.", "Community connection.",
 ];
 
 export function editorialEmphasis(text: string): ReactNode {
