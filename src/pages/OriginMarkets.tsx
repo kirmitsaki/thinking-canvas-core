@@ -3,7 +3,6 @@ import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
-import { NdaNotice } from '@/components/portfolio/nda-notice';
 
 const project = getProject('origin-markets');
 
@@ -125,7 +124,7 @@ export default function OriginMarkets() {
   return (
     <>
       <Seo title={meta.title} description={meta.description} path="/work/origin-markets" ogType={meta.ogType} />
-      <CaseStudy project={overview} body={body} introParagraphs={intro} facts={facts} minimalFrame outcomesTitle="Outcomes" notice={<NdaNotice />} />
+      <CaseStudy project={overview} body={body} introParagraphs={intro} facts={facts} minimalFrame outcomesTitle="Outcomes" />
     </>
   );
 }

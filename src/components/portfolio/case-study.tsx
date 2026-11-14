@@ -7,6 +7,7 @@ import { ContactLink } from "./shell";
 import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
+import { NdaNotice } from "./nda-notice";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
@@ -22,13 +23,14 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
   const imageClass = "mx-auto w-full max-w-[720px] rounded-[10px]";
   const heroImageClass =
     compact ? imageClass : "w-full rounded-[10px]";
+  const noticeNode = notice ?? (project.ndaNotice ? <NdaNotice /> : null);
   return (
     <main className="case-study relative z-10">
       <header
         id="overview"
         className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12 pt-10 md:pt-14"
       >
-        {notice && <div className="mb-6">{notice}</div>}
+        {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
           trailing={<p className="label-quiet">{project.dates}</p>}
