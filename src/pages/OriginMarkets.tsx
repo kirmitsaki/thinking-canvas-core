@@ -60,7 +60,7 @@ export default function OriginMarkets() {
       <Sample to="/work/origin-markets/design-process" />
     </Section>
     <Section id="design-system-overview" title="A design system for a Fintech Startup">
-      <p>Morpho, Origin’s UI framework, provided a shared foundation for the product family.</p>
+      <p>A design system for a Fintech Startup</p>
       <p>The work involved evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
       <Img k="origin-morpho" />
       <Sample to="/work/origin-markets/design-system" label="BUILDING A DESIGN LIBRARY FOR A FINTECH STARTUP" />
