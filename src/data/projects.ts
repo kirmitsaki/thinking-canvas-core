@@ -229,7 +229,7 @@ export type Project = {
   comingSoon?: boolean;
   ndaNotice?: boolean;
   reflection?: { title: string; paragraphs: string[] };
-  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right' }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right'; imageSize?: 'small' }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
   outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
   contribution: string; outcomes: string[];
 };
@@ -576,7 +576,7 @@ export const projects: Project[] = [
         { label: 'The brand in a web ad', image: 'pawsquad-web-campaign', imageSide: 'right' },
       ] },
       { id: 'interface', navigationLabel: 'Interface', title: 'Interface', groups: [
-        { label: 'Web services for pet owners', text: 'Pet owners needed to find and book a vet quickly, access advice between appointments via chat or video call, view vet profiles before booking, and manage their pet’s health records in one place.', image: 'pawsquad-pet-owners' },
+        { label: 'Web services for pet owners', text: 'Pet owners needed to find and book a vet quickly, access advice between appointments via chat or video call, view vet profiles before booking, and manage their pet’s health records in one place.', image: 'pawsquad-pet-owners', imageSize: 'small' },
         { label: 'The vet app', text: 'Vets needed to receive and confirm bookings, manage their schedule, navigate to appointments efficiently via built-in GPS, and communicate directly with clients.\nThe booking flow was the core interaction for both sides. Getting it right meant reducing the steps between “I need a vet” and “appointment confirmed” while giving pet owners enough information to feel confident before they committed.', images: ['pawsquad-vetapp', 'pawsquad-new-ui'] },
       ] },
     ],

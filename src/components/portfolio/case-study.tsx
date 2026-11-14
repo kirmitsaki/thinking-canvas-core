@@ -177,7 +177,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       <img
                         src={projectImage(group.image).url}
                         alt={projectImage(group.image).alt}
-                        className="h-auto w-full rounded-[10px]"
+                        className={group.imageSize === 'small' ? "mx-auto h-auto w-full max-w-[720px] rounded-[10px]" : "h-auto w-full rounded-[10px]"}
                         loading="lazy"
                       />
                     ) : null}
