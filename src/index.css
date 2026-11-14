@@ -27,6 +27,7 @@
   --artwork-card-foreground: var(--warm-ivory);
   --artwork-card-muted: color-mix(in srgb, var(--warm-ivory) 75%, var(--artwork-card-background));
   --artwork-card-border: color-mix(in srgb, var(--warm-ivory) 28%, var(--artwork-card-background));
+  --logo-card-background: #ffffff;
 
   /* Semantic mappings */
   --background: var(--ivory);
@@ -187,6 +188,14 @@
     --camel: var(--artwork-card-border);
     color: var(--foreground);
     background-color: var(--card);
+  }
+
+  .logo-card-media {
+    background-color: var(--logo-card-background);
+  }
+
+  .logo-card-media img {
+    object-fit: contain;
   }
 
   .flagship-rule {

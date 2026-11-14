@@ -32,7 +32,7 @@ export function ProjectGrid({ items }: { items: Project[] }) {
             to={`/work/${project.slug}`}
             className={`editorial-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
           >
-            <div className="aspect-[16/10] overflow-hidden bg-muted">
+            <div className={`aspect-[16/10] overflow-hidden ${project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
               {image ? (
                 <img
                   src={image.url}
