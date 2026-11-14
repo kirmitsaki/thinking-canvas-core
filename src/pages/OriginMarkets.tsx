@@ -55,7 +55,19 @@ export default function OriginMarkets() {
       <div className="pt-4"><h3 className="label">Continuous improvements</h3><p className="mt-3">Small changes removed unnecessary steps, reduced visual noise and moved legacy features into Morpho, our new UI framework. I regularly reviewed existing workflows and worked with product managers, business and engineering to identify and prioritise opportunities.</p></div>
       <div className="pt-4"><h3 className="label">Complex features</h3><p className="mt-3">Workshops with business, product and engineering helped define problems and explore solutions. Research and planning led into UX exploration and UI design, with prototypes and customer feedback shaping each iteration before development.</p></div>
       <p className="pt-4">The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
-      <Sample to="/work/origin-markets/design-process" />
+      <Link to="/work/origin-markets/design-process" className="editorial-card group block min-w-0 overflow-hidden">
+        <div className="aspect-[16/10] overflow-hidden bg-muted">
+          <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-cover object-top" />
+        </div>
+        <div className="p-6 md:p-8">
+          <p className="caption">01 / 2019 – 2022</p>
+          <h3 className="mt-3 card-title">Design process</h3>
+          <ProjectContext industry="Fintech" field="Design Process" className="mt-4" />
+          <ProjectLabels labels={['Workshops', 'Research', 'Prototyping']} className="mt-3" />
+          <p className="mt-4 max-w-lg body-copy text-muted-foreground">A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.</p>
+          <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
+        </div>
+      </Link>
     </Section>
     <Section id="design-system-overview" title="A design system for a Fintech Startup">
       <Link to="/work/origin-markets/design-system" className="editorial-card group block min-w-0 overflow-hidden">
@@ -63,7 +75,7 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
         </div>
         <div className="p-6 md:p-8">
-          <p className="caption">01 / 2021 – 2022</p>
+          <p className="caption">02 / 2021 – 2022</p>
           <h3 className="mt-3 card-title">Morpho</h3>
           <ProjectContext industry="Fintech" field="Design System" className="mt-4" />
           <ProjectLabels labels={['Design system', 'Product design', 'UI components']} className="mt-3" />
