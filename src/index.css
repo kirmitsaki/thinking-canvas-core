@@ -599,6 +599,9 @@
     margin-top: 0;
     max-width: 62ch;
   }
+  .case-study-editorial .editorial-study-heading:not(:has(> h2)) {
+    display: block;
+  }
   .case-study-editorial .editorial-study-visual,
   .case-study-editorial .editorial-study-closing {
     max-width: none;
