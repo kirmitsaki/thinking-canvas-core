@@ -28,11 +28,8 @@ export default function MendeleyLibrary() {
             { label: "Mendeley", to: "/work/mendeley" },
             { label: "The Library" },
           ]}
+          trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
         />
-        <div className="hairline-bottom mt-10 flex flex-wrap justify-between gap-4 pb-5">
-          <p className="label">Mendeley · Interface design</p>
-          <p className="label-quiet">Jan 2019 – Jan 2020</p>
-        </div>
         <h1 className="mt-8 page-title">The Library</h1>
         <p className="standfirst mt-6 max-w-[720px]">
           Organising and retrieving references in one place, through collections, tags, keyword
