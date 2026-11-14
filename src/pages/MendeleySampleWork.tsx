@@ -6,6 +6,7 @@ import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { getProject, pageMeta } from "@/data/projects";
+import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 
 const Library = lazy(() => import("./MendeleyLibrary"));
 const Reader = lazy(() => import("./MendeleyReader"));
