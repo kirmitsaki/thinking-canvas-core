@@ -48,7 +48,7 @@ const productsCopy = 'Three products, one institutional workflow, each evolved t
 
 const facts = [
   { label: 'Role', value: 'Lead Product Designer' },
-  { label: 'Tasks', value: 'product design, Design system, Accessibility, Dashboards, Grids' },
+  { label: 'Tasks', value: 'Product design, Design system, Accessibility, Dashboards, Grids' },
   { label: 'Industry', value: 'Financial Technology, Debt Capital Markets' },
 ];
 
