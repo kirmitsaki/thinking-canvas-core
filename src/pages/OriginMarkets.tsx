@@ -12,12 +12,6 @@ const intro = [
   'I worked across product design, design systems and the wider design process to help shape a more connected and intuitive platform.',
 ];
 const facts = [{ label: 'Role', value: 'Product Design, UX, UI, Design Systems' }, { label: 'Duration', value: '3 years' }, { label: 'Industry', value: 'Financial Technology, Debt Capital Markets' }];
-const audiences = [
-  ['Issuers', 'Accessing funding and connecting with dealers and investors globally.'],
-  ['Dealers', 'Finding opportunities and managing bond transactions.'],
-  ['Lawyers', 'Drafting and collaborating on transaction documentation.'],
-  ['Market infrastructure', 'Capturing issuance data and creating a source of truth for new securities.'],
-];
 const products = [
   { name: 'Origin Marketplace', text: 'Identifying issuance opportunities through a database of 1,000+ issuers, with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. This included a redesign of the Funding Matrix.', image: 'origin-marketplace' },
   { name: 'Origin Documentation', text: 'Simplifying the drafting and collaboration of transaction documents for vanilla and structured notes. Structuring data at execution enabled downstream processes including listing and instant ISIN generation.', image: 'origin-documentation' },
