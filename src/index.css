@@ -564,7 +564,120 @@
     background-color: var(--background);
   }
 
-  /* Origin's editorial layout is deliberately scoped to its overview. */
+  /* Shared case-study presentation, kept separate from portfolio cards. */
+  .case-study-editorial .case-study-header-copy {
+    display: grid;
+    align-items: start;
+    gap: 2rem;
+  }
+  .case-study-editorial .case-study-header-copy dl {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .case-study-editorial .case-study-header-copy dt,
+  .case-study-editorial .case-study-header-copy dd {
+    display: block;
+  }
+  .case-study-editorial .case-study-header-copy dt {
+    margin-bottom: 0.375rem;
+    color: var(--accent);
+  }
+  .case-study-editorial strong {
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  .case-study-editorial .editorial-study-section {
+    margin-bottom: 4.5rem;
+  }
+  .case-study-editorial .editorial-study-heading {
+    display: grid;
+    gap: 1.5rem;
+    max-width: none;
+    align-items: start;
+  }
+  .case-study-editorial .editorial-study-heading > .essay-prose {
+    margin-top: 0;
+    max-width: 62ch;
+  }
+  .case-study-editorial .editorial-study-visual,
+  .case-study-editorial .editorial-study-closing {
+    max-width: none;
+  }
+  .case-study-editorial .editorial-study-visual > img,
+  .case-study-editorial .editorial-study-visual > div > img {
+    max-width: 100%;
+  }
+  .case-study-editorial .editorial-study-reflection .essay-prose,
+  .case-study-editorial .editorial-contribution {
+    max-width: 62ch;
+  }
+  .case-study-editorial .editorial-outcomes {
+    display: grid;
+    gap: 1.5rem 3rem;
+  }
+  .case-study-editorial .editorial-outcomes > li {
+    margin-top: 0;
+    border-bottom: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    max-width: 62ch;
+  }
+  .case-study-editorial .pull-quote {
+    margin: 2.5rem auto;
+    max-width: 850px;
+    padding-block: 2rem;
+    border-block: 1px solid var(--border);
+    color: var(--accent);
+  }
+  .case-study-editorial.case-study-compact .editorial-study-visual {
+    max-width: 900px;
+  }
+  .case-study-editorial .editorial-detail-content {
+    max-width: none;
+  }
+  .case-study-editorial .editorial-detail-content > h2,
+  .case-study-editorial .editorial-detail-content > p,
+  .case-study-editorial .editorial-detail-content section > .essay-prose {
+    max-width: 62ch;
+  }
+  .case-study-editorial .editorial-detail-content figure img {
+    max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    .case-study-editorial .case-study-header-copy {
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+      gap: 4rem;
+    }
+    .case-study-editorial .case-study-header-copy dl {
+      margin-top: 1.5rem;
+    }
+    .case-study-editorial .editorial-study-section {
+      margin-bottom: 6rem;
+    }
+    .case-study-editorial .editorial-study-heading {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 3rem;
+    }
+    .case-study-editorial .editorial-outcomes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .case-study-editorial .editorial-study-reflection {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 0 3rem;
+    }
+    .case-study-editorial .editorial-study-reflection > :first-child {
+      grid-column: 1 / -1;
+    }
+    .case-study-editorial .editorial-study-reflection > .essay-prose {
+      margin-top: 0;
+    }
+    .case-study-editorial .pull-quote {
+      font-size: 2.75rem;
+    }
+  }
+
+  /* Origin-specific content arrangements remain scoped to its overview. */
   figcaption.caption {
     text-align: center;
   }
