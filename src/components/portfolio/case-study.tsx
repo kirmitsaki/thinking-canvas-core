@@ -64,8 +64,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           <section key={section.title} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             <SectionDivider />
             <div className="mx-auto max-w-[720px]">
-              <p className="label-quiet">{String(index + 1).padStart(2, "0")}</p>
-              <h2 className="mt-3 card-title">{section.title}</h2>
+              <h2 className="card-title">{section.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
