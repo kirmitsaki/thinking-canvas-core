@@ -59,7 +59,7 @@ export default function OriginMarkets() {
         </div>
         <div className="p-6 md:p-8">
           <p className="caption">01 / 2019 – 2022</p>
-          <h3 className="mt-3 card-title">Design process</h3>
+          <h3 className="mt-3 card-title">A design process for an fintech team</h3>
           <ProjectContext industry="Fintech" field="Design Process" className="mt-4" />
           <ProjectLabels labels={['Workshops', 'Research', 'Prototyping']} className="mt-3" />
           <p className="mt-4 max-w-lg body-copy text-muted-foreground">A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.</p>
