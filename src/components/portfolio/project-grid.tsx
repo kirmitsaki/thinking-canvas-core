@@ -4,7 +4,7 @@ import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
 import { ProjectContext } from "./project-context";
 
-function CardBody({ project, index, link }: { project: Project; index: number; link: boolean }) {
+function CardBody({ project, link }: { project: Project; link: boolean }) {
   return (
     <div className="p-6 md:p-8">
       <p className="caption">{project.dates}</p>
@@ -47,7 +47,7 @@ export function ProjectGrid({ items }: { items: Project[] }) {
                 />
               )}
             </div>
-            <CardBody project={project} index={index} link />
+            <CardBody project={project} link />
           </Link>
         );
       })}
