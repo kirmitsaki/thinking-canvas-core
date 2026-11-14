@@ -10,7 +10,6 @@ function CardBody({ project, link }: { project: Project; link: boolean }) {
       <p className="caption">{project.dates}</p>
       <h2 className="mt-3 card-title">{project.name}</h2>
       <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
-      <p className="mt-4 max-w-lg body-copy text-muted-foreground">{project.summary}</p>
       {link ? <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p> : null}
     </div>
   );
