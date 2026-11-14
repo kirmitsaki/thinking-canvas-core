@@ -535,6 +535,13 @@
     z-index: 20;
     margin-bottom: 2rem;
   }
+
+  .sample-work-tabs {
+    position: sticky;
+    top: var(--portfolio-header-height, 80px);
+    z-index: 20;
+    background-color: var(--background);
+  }
 }
 
 @keyframes fadeIn {
