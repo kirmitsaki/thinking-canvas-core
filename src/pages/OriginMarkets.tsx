@@ -64,7 +64,7 @@ function Section({ id, title, lede, children }: { id: string; title: string; led
       <SectionDivider />
       <div className="origin-section-heading">
         <h2 className="section-title">{title}</h2>
-        {lede && <p className="body-copy text-muted-foreground">{emphasize('{emphasize(lede)}')}</p>}
+        {lede && <p className="body-copy text-muted-foreground">{emphasize(lede)}</p>}
       </div>
       {children && <div className="origin-section-content">{children}</div>}
     </section>
