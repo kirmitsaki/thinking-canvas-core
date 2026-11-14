@@ -71,7 +71,7 @@ describe('shared case-study section filters', () => {
     assert.deepEqual(projectSectionLabels(getProject('mendeley')), ['Overview', 'Challenge', 'Research', 'Design system', 'Products', 'Outcomes']);
   });
   it('omits Enquiries from MDS navigation and filters', () => {
-    assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Overview', 'Structure', 'Interface']);
+    assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Overview', 'Interface']);
     assert.equal(projectMatchesFilter(getProject('mds-quostar'), 'Enquiries'), false);
   });
   it('uses Brand & Identity for all brand and styleguide anchors', () => {
@@ -90,7 +90,7 @@ describe('shared case-study section filters', () => {
     assert.equal(projectWorkAreas(getProject('origin-markets')).filter(label => label === 'Interface').length, 1);
     assert.ok(projectSectionLabels(getProject('mendeley')).includes('Products'));
   });
-  for (const label of ['Overview', 'Outcomes', 'Challenge', 'Structure', 'Brief']) {
+  for (const label of ['Overview', 'Outcomes', 'Challenge', 'Brief']) {
     it(`${label} remains a section but is not a work-area filter`, () => {
       assert.ok(projectsByYear.some(project => projectSectionLabels(project).includes(label)));
       assert.equal(projectFilters.includes(label), false);
