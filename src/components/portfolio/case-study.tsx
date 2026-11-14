@@ -8,6 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
+import { SecondaryCard } from "./secondary-card";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
@@ -156,16 +157,9 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </figure>
             )}
             {project.slug === "mendeley" && section.id === "citation" && (
-              <Link to="/work/mendeley/sample-work" className="editorial-card group mx-auto mt-10 block max-w-[720px] min-w-0 overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  <img loading="lazy" src={projectImage("mendeley-header").url} alt={projectImage("mendeley-header").alt} className="block h-full w-full object-cover object-top" />
-                </div>
-                <div className="p-6 md:p-8">
-                  <h3 className="card-title">Mendeley Reference Manager</h3>
-                  <p className="mt-4 max-w-lg body-copy text-muted-foreground">Selected screens and flows from the Library, Reader and Citation interfaces.</p>
-                  <p className="accent-link mt-6">View sample work <span className="arrow-nudge">→</span></p>
-                </div>
-              </Link>
+              <div className="mx-auto mt-10 max-w-[720px]">
+                <SecondaryCard to="/work/mendeley/sample-work" image="mendeley-header" description="Selected screens and flows from the Library, Reader and Citation interfaces." />
+              </div>
             )}
           </section>
         ))}

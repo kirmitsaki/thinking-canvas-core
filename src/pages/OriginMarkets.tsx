@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { SecondaryCard } from '@/components/portfolio/secondary-card';
 
 const project = getProject('origin-markets');
 
@@ -68,31 +68,11 @@ export default function OriginMarkets() {
       <Section id="research" title="Research" lede={researchCopy} />
 
       <Section id="process" title="Process" lede={processCopy}>
-        <Link to="/work/origin-markets/design-process" className="editorial-card group block min-w-0 overflow-hidden">
-          <div className="aspect-[16/10] overflow-hidden bg-[#FAF6F3]">
-            <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-contain" />
-          </div>
-          <div className="p-6 md:p-8">
-            <p className="caption">2019 – 2022</p>
-            <h3 className="mt-3 card-title">A design process for an fintech team</h3>
-            <p className="mt-4 max-w-lg body-copy text-muted-foreground">{processCopy}</p>
-            <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
-          </div>
-        </Link>
+        <SecondaryCard to="/work/origin-markets/design-process" image="origin-design-process-diagram" fit="contain" description={processCopy} />
       </Section>
 
       <Section id="design-system" title="Design System" lede={designSystemCopy}>
-        <Link to="/work/origin-markets/design-system" className="editorial-card group block min-w-0 overflow-hidden">
-          <div className="aspect-[16/10] overflow-hidden bg-muted">
-            <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
-          </div>
-          <div className="p-6 md:p-8">
-            <p className="caption">2021 – 2022</p>
-            <h3 className="mt-3 card-title">Morpho - A design system for a Fintech Startup</h3>
-            <p className="mt-4 max-w-lg body-copy text-muted-foreground">Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
-            <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
-          </div>
-        </Link>
+        <SecondaryCard to="/work/origin-markets/design-system" image="origin-morpho" description="Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework." />
       </Section>
 
       <Section id="products" title="Products" lede={productsCopy}>
@@ -105,17 +85,7 @@ export default function OriginMarkets() {
             </div>
           </div>
         ))}
-        <Link to="/work/origin-markets/gallery" className="editorial-card group block min-w-0 overflow-hidden">
-          <div className="aspect-[16/10] overflow-hidden bg-muted">
-            <img loading="lazy" src={projectImage('origin-header').url} alt={projectImage('origin-header').alt} className="block h-full w-full object-cover object-top" />
-          </div>
-          <div className="p-6 md:p-8">
-            <p className="caption">2019 – 2022</p>
-            <h3 className="mt-3 card-title">Sample work</h3>
-            <p className="mt-4 max-w-lg body-copy text-muted-foreground">A selection of screens and flows from across the Origin product family.</p>
-            <p className="accent-link mt-6">View gallery <span className="arrow-nudge">→</span></p>
-          </div>
-        </Link>
+        <SecondaryCard to="/work/origin-markets/gallery" image="origin-header" description="A selection of screens and flows from across the Origin product family." />
       </Section>
     </>
   );
