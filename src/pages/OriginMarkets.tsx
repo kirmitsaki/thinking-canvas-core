@@ -99,14 +99,14 @@ export default function OriginMarkets() {
       <Section id="research" title="Research">
         <div className="origin-research-block">
         <h3 className="subsection-title">Audience</h3>
-        <div className="space-y-5">
+        <div className="space-y-6">
         <p className="body-copy text-muted-foreground">{emphasize('We started with the people already using the product and the manual processes it was replacing. Understanding how dealers, borrowers, and investment banks actually worked, not how they described their work in meetings, was the foundation for every design decision that followed. Early customer collaboration gave us direct insight into daily workflows and real pain points. All new features were shared with customers immediately on release to gather feedback.')}</p>
         <p className="body-copy text-muted-foreground">{emphasize('Over two years of platform development we accumulated a significant body of customer insight from over 20 dealers and nearly 90 issuers globally.')}</p>
         </div>
         </div>
         <div className="origin-research-block">
         <h3 className="subsection-title">Defining the problem</h3>
-        <div className="space-y-5">
+        <div className="space-y-6">
         <p className="body-copy text-muted-foreground">{emphasize('The most important research finding was not what we expected.')}</p>
         <p className="body-copy text-muted-foreground">{emphasize('We had assumed the primary problem was efficiency. We spent months trying to remove steps from workflows, cut email chains, reduce manual overhead. When we spent proper time with customers it became clear that many of the steps we were trying to eliminate were doing important work. The phone call before a major transaction was not redundant. It was how both parties confirmed that the person on the other side had seen the document, understood what it meant, and was ready to proceed.')}</p>
         </div>
@@ -118,11 +118,11 @@ export default function OriginMarkets() {
       <Section id="process" title="Process" lede={processCopy}>
         <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="h-auto w-full rounded-[10px]" />
         <div className="origin-process-paths">
-        <div className="space-y-4">
+        <div className="space-y-5">
         <h3 className="subsection-title">Continuous improvements</h3>
         <p className="body-copy text-muted-foreground">{emphasize('Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.')}</p>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-5">
         <h3 className="subsection-title">Exploring complex workflows</h3>
         <p className="body-copy text-muted-foreground">{emphasize('Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.')}</p>
         </div>

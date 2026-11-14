@@ -50,7 +50,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           ];
           return (
             <div className="case-study-header-copy">
-              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
+              <div className="mt-7 max-w-[760px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               <dl className="mt-7 space-y-1">{headerFacts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl>
             </div>
           );
@@ -76,11 +76,11 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {body}
         {project.sections.map((section, index) => (
           <Fragment key={section.title}>
-          <section id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
+          <section id={section.id} className="editorial-study-section mb-20 scroll-mt-32 md:mb-28">
             <SectionDivider />
             <div className="editorial-study-heading mx-auto max-w-[720px]">
               <h2 className="section-title">{section.title}</h2>
-              <div className="essay-prose mt-6 space-y-5">
+              <div className="essay-prose mt-8 space-y-6">
                 {(section.paragraphs ?? []).map((paragraph, paragraphIndex) => (
                   <Fragment key={paragraph}>
                     <p>{editorialEmphasis(paragraph)}</p>
@@ -110,7 +110,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </blockquote>
             )}
             {section.groups && (
-              <div className="mt-10 grid gap-10">
+              <div className="mt-14 grid gap-14">
                 {section.groups.map((group) => (
                   <div key={group.label} className="grid gap-6">
                     {group.cards ? (
@@ -133,7 +133,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     ) : group.imageSide === 'right' && group.image ? (
                       <>
                       <div className="origin-research-block origin-research-block--media-right">
-                        <div className="space-y-5">
+                        <div className="space-y-6">
                           <h3 className="subsection-title">{group.label}</h3>
                           {(group.text ?? "").split("\n").filter(Boolean).map((paragraph) => (
                             <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
@@ -160,7 +160,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     <>
                     <div className="origin-research-block">
                       <h3 className="subsection-title">{group.label}</h3>
-                      <div className="space-y-5">
+                      <div className="space-y-6">
                         {group.numbered ? (
                           <ol className="design-goals-list">
                             {(group.text ?? "").split("\n").filter(Boolean).map((goal, index) => (
@@ -215,7 +215,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </div>
             )}
             {section.visual && (
-              <figure className="editorial-study-visual mx-auto mt-9 w-full max-w-[720px]">
+              <figure className="editorial-study-visual mx-auto mt-12 w-full max-w-[720px]">
                 {section.images ? (
                   section.imageLayout === "side-by-side" ? (
                     <div className="grid grid-cols-3 items-start gap-3 md:gap-6">
@@ -281,11 +281,11 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 ) : (
                   <VisualPlaceholder title={section.visual} />
                 )}
-                <figcaption className="caption mt-4">{section.caption}</figcaption>
+                <figcaption className="caption mt-5">{section.caption}</figcaption>
               </figure>
             )}
             {project.slug === "mendeley" && section.id === "products" && (
-              <div className="mx-auto mt-10 max-w-[720px]">
+              <div className="mx-auto mt-12 max-w-[720px]">
                 <SecondaryCard to="/work/mendeley/sample-work" image="mendeley-header" description="Selected screens and flows from the Library, Reader and Citation interfaces." />
               </div>
             )}
@@ -308,7 +308,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               <h2 id="outcomes" className="section-title scroll-mt-32">
                 {outcomesTitle}
               </h2>
-              <ul className="editorial-outcomes mt-6 space-y-4">
+              <ul className="editorial-outcomes mt-8 space-y-5">
                 {project.outcomes.map((outcome) => (
                   <li key={outcome} className="hairline-bottom pb-4 body-copy">
                     {editorialEmphasis(outcome)}
@@ -333,10 +333,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             </p>
           )}
           {project.reflection && (
-            <section className="editorial-study-reflection mt-12">
+            <section className="editorial-study-reflection mt-16">
               <SectionDivider />
               <h2 className="section-title">{project.reflection.title}</h2>
-              <div className="essay-prose mt-6 space-y-5">
+              <div className="essay-prose mt-8 space-y-6">
                 {project.reflection.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
                 ))}
