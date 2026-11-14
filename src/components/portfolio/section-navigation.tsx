@@ -14,6 +14,7 @@ export function SectionNavigation({
   const { pathname } = useLocation();
   const [reducedMotion, setReducedMotion] = useState(true);
   const [activeId, setActiveId] = useState(items[0]?.id);
+  usePortfolioHeaderHeight();
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => setReducedMotion(media.matches);

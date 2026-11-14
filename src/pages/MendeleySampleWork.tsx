@@ -19,6 +19,7 @@ const views = [
 const meta = pageMeta("Mendeley · Sample work", "Selected Mendeley Library, Reader and Citation interfaces by Rachel Kirmitsaki.", "article");
 
 export default function MendeleySampleWork() {
+  usePortfolioHeaderHeight();
   const [params, setParams] = useSearchParams();
   const requested = params.get("view");
   const active = views.some(view => view.id === requested) ? requested ?? "library" : "library";
