@@ -759,6 +759,18 @@
   .origin-research-block > div {
     max-width: 62ch;
   }
+  .brand-voice-cards {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .brand-voice-card {
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+  .brand-voice-card figcaption {
+    font-size: 0.95rem;
+  }
   .origin-editorial .pull-quote {
     max-width: 850px;
     margin: 1rem auto;
@@ -827,6 +839,13 @@
     .origin-research-block {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
       gap: 3rem;
+    }
+    .origin-research-block--media-right {
+      align-items: start;
+    }
+    .brand-voice-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
     }
     .origin-process-paths,
     .origin-system-copy {
