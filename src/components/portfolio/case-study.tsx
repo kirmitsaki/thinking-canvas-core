@@ -60,7 +60,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       </div>
       <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
         {body}
-        {project.sections.map((section, index) => (
+        {project.sections.map((section) => (
           <section key={section.title} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             <SectionDivider />
             <div className="mx-auto max-w-[720px]">
