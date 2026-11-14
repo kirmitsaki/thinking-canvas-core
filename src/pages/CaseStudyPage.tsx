@@ -49,7 +49,18 @@ export default function CaseStudyPage() {
         path={`/work/${project.slug}`}
         ogType={meta.ogType}
       />
-      <CaseStudy project={project} />
+      <CaseStudy
+        project={project}
+        facts={
+          project.slug === "mendeley"
+            ? [
+                { label: "Role", value: project.role },
+                { label: "Duration", value: "1 year" },
+                { label: "Industry", value: `${project.industry} · ${project.field}` },
+              ]
+            : undefined
+        }
+      />
     </>
   );
 }
