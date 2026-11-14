@@ -335,6 +335,32 @@
     line-height: 1.75;
   }
 
+  .design-goals-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .design-goals-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .design-goals-list li:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .design-goals-list li > span {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--accent);
+  }
+
   .note-article-body {
     font-family: var(--font-serif);
     font-size: 1.1875rem;
