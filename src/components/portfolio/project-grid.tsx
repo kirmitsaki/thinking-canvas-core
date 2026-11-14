@@ -19,7 +19,7 @@ function CardBody({ project, link }: { project: Project; link: boolean }) {
 export function ProjectGrid({ items }: { items: Project[] }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      {items.map((project, index) => {
+      {items.map((project) => {
         if (project.comingSoon) {
           return (
             <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
