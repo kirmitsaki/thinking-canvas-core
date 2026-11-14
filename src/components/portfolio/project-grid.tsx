@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { projectImage, projectWorkAreas, type Project } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
-import { ProjectLabels } from "./project-labels";
 import { ProjectContext } from "./project-context";
 
 function CardBody({ project, index, link }: { project: Project; index: number; link: boolean }) {
@@ -13,7 +12,6 @@ function CardBody({ project, index, link }: { project: Project; index: number; l
       </p>
       <h2 className="mt-3 card-title">{project.name}</h2>
       <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
-      {!project.comingSoon && <ProjectLabels labels={projectWorkAreas(project)} className="mt-3" />}
       <p className="mt-4 max-w-lg body-copy text-muted-foreground">{project.summary}</p>
       {link ? <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p> : null}
     </div>

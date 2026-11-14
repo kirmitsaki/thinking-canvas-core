@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
 import { ComingSoonHint } from "@/components/portfolio/coming-soon-media";
-import { ProjectLabels } from "@/components/portfolio/project-labels";
 import { ProjectContext } from "@/components/portfolio/project-context";
 import { ContactLink } from "@/components/portfolio/shell";
 
@@ -119,7 +118,6 @@ export default function Home() {
                   <p className="mt-4 max-w-[680px] body-copy text-muted-foreground">
                     {project.summary}
                   </p>
-                  <ProjectLabels labels={projectWorkAreas(project)} className="mt-4" />
                   <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
                 </div>
               </Link>
