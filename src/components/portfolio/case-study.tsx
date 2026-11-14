@@ -9,6 +9,7 @@ import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
 import { SecondaryCard } from "./secondary-card";
+import { editorialEmphasis } from "./editorial-emphasis";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
@@ -26,7 +27,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
     compact ? imageClass : "w-full rounded-[10px]";
   const noticeNode = notice ?? (project.ndaNotice ? <NdaNotice /> : null);
   return (
-    <main className="case-study relative z-10">
+    <main className={`case-study relative z-10 ${minimalFrame ? "" : "case-study-editorial"} ${compact ? "case-study-compact" : ""}`}>
       <header
         id="overview"
         className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12 pt-10 md:pt-14"
@@ -46,7 +47,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           ];
           return (
             <div className="case-study-header-copy">
-              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div>
+              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               <dl className="mt-7 space-y-1">{headerFacts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl>
             </div>
           );
@@ -71,13 +72,13 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
         {body}
         {project.sections.map((section) => (
-          <section key={section.title} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
+          <section key={section.title} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             <SectionDivider />
-            <div className="mx-auto max-w-[720px]">
-              <h2 className="card-title">{section.title}</h2>
+            <div className="editorial-study-heading mx-auto max-w-[720px]">
+              <h2 className="section-title">{section.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
                 ))}
               </div>
               {project.slug === "secure-code-warrior" && section.id === "product-design-identity" && (
@@ -91,7 +92,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               )}
             </div>
             {section.visual && (
-              <figure className="mx-auto mt-9 w-full max-w-[720px]">
+              <figure className="editorial-study-visual mx-auto mt-9 w-full max-w-[720px]">
                 {section.images ? (
                   section.imageLayout === "side-by-side" ? (
                     <div className="grid grid-cols-3 items-start gap-3 md:gap-6">
@@ -136,6 +137,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                           src={projectImage(key).url}
                           alt={projectImage(key).alt}
                           className={imageClass}
+                          loading="lazy"
                         />
                       ))}
                     </div>
@@ -149,6 +151,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                         ? "mx-auto h-auto max-w-full rounded-[10px]"
                         : imageClass
                     }
+                    loading="lazy"
                   />
                 ) : (
                   <VisualPlaceholder title={section.visual} />
@@ -163,24 +166,24 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             )}
           </section>
         ))}
-        <div className="mx-auto max-w-[720px]">
+        <div className="editorial-study-closing mx-auto max-w-[720px]">
           {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && <SectionDivider />}
           {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">{outcomesTitle}</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="caption mt-2">{stat.text}</dd></div>)}</dl></div> : project.outcomes.length > 0 && (
             <>
-              <h2 id="outcomes" className="card-title">
+              <h2 id="outcomes" className="section-title scroll-mt-32">
                 {outcomesTitle}
               </h2>
-              <ul className="mt-6 space-y-4">
+              <ul className="editorial-outcomes mt-6 space-y-4">
                 {project.outcomes.map((outcome) => (
                   <li key={outcome} className="hairline-bottom pb-4 body-copy">
-                    {outcome}
+                    {editorialEmphasis(outcome)}
                   </li>
                 ))}
               </ul>
             </>
           )}
           {project.outcomeImage && (
-            <figure className="mx-auto mt-9 w-full max-w-[720px]">
+            <figure className="editorial-study-visual mx-auto mt-9 w-full max-w-[720px]">
               <img
                 src={projectImage(project.outcomeImage).url}
                 alt={projectImage(project.outcomeImage).alt}
@@ -195,12 +198,12 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             </p>
           )}
           {project.reflection && (
-            <section className="mt-12">
+            <section className="editorial-study-reflection mt-12">
               <SectionDivider />
-              <h2 className="card-title">{project.reflection.title}</h2>
+              <h2 className="section-title">{project.reflection.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
                 {project.reflection.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
                 ))}
               </div>
             </section>
@@ -208,8 +211,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           {project.contribution && (
             <>
               <SectionDivider />
-              <h2 className="mt-12 card-title">My contribution</h2>
-              <p className="essay-prose mt-6">{project.contribution}</p>
+              <h2 className="mt-12 section-title">My contribution</h2>
+              <p className="editorial-contribution essay-prose mt-6">{editorialEmphasis(project.contribution)}</p>
             </>
           )}
         </div>
