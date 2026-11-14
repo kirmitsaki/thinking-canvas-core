@@ -9,7 +9,6 @@ const project = getProject('origin-markets');
 const intro = [
   'Origin’s vision was to become the data and communication layer at the centre of global debt capital markets.',
   'The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and legacy software.',
-  'I worked across product design, design systems and the wider design process to help shape a more connected and intuitive platform.',
 ];
 const facts = [{ label: 'Role', value: 'Lead Product Designer' }, { label: 'Duration', value: '3 years' }, { label: 'Industry', value: 'Financial Technology, Debt Capital Markets' }];
 const products = [

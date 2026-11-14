@@ -257,7 +257,7 @@ export const projects: Project[] = [
     title: 'Origin Markets',
     summary: 'Making complex financial workflows work for global banks and borrowers.',
     role: 'First in-house designer · Research · Product design · Design system · Product revamp',
-    intro: 'Origin Markets is a front-to-back digital platform bringing simplicity to the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations. I worked across product design, design systems and the wider design process to help shape a more connected and intuitive platform.',
+    intro: 'Origin Markets is a front-to-back digital platform bringing simplicity to the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
     heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
     sections: [
       {
