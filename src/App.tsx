@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Outlet, useLocation, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Outlet, useLocation, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
 const About = lazy(() => import("@/pages/About"));
@@ -10,9 +10,7 @@ const Contact = lazy(() => import("@/pages/Contact"));
 // const FieldNotePage = lazy(() => import("@/pages/FieldNote"));
 // const FieldNotes = lazy(() => import("@/pages/FieldNotes"));
 import Home from "@/pages/Home";
-const MendeleyCitation = lazy(() => import("@/pages/MendeleyCitation"));
-const MendeleyLibrary = lazy(() => import("@/pages/MendeleyLibrary"));
-const MendeleyReader = lazy(() => import("@/pages/MendeleyReader"));
+const MendeleySampleWork = lazy(() => import("@/pages/MendeleySampleWork"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
 const WorkPage = lazy(() => import("@/pages/Work"));
@@ -59,9 +57,10 @@ const App = () => (
             path="/work/secure-code-warrior/product-design-identity"
             element={<ProductDesignIdentity />}
           />
-          <Route path="/work/mendeley/library" element={<MendeleyLibrary />} />
-          <Route path="/work/mendeley/reader" element={<MendeleyReader />} />
-          <Route path="/work/mendeley/citation" element={<MendeleyCitation />} />
+          <Route path="/work/mendeley/sample-work" element={<MendeleySampleWork />} />
+          <Route path="/work/mendeley/library" element={<Navigate replace to="/work/mendeley/sample-work?view=library" />} />
+          <Route path="/work/mendeley/reader" element={<Navigate replace to="/work/mendeley/sample-work?view=reader" />} />
+          <Route path="/work/mendeley/citation" element={<Navigate replace to="/work/mendeley/sample-work?view=citation" />} />
           {/* Notes section hidden for now — restore by uncommenting these two routes.
           <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/field-notes/:slug" element={<FieldNotePage />} />
