@@ -70,6 +70,12 @@ export default function CaseStudyPage() {
                   { label: "Tasks", value: "Web design, Brand design, Web and Mobile" },
                   { label: "Industry", value: `${project.industry} · ${project.field}` },
                 ]
+              : project.slug === "mds-quostar"
+              ? [
+                  { label: "Role", value: project.role },
+                  { label: "Tasks", value: "Web design, Front end development, Client project" },
+                  { label: "Industry", value: `${project.industry} · ${project.field}` },
+                ]
               : undefined
         }
       />
