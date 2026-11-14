@@ -23,10 +23,6 @@ const products = [
   { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.', image: 'origin-structured_notes' },
 ];
 
-function Img({ k }: { k: string }) {
-  const image = projectImage(k);
-  return <img loading="lazy" src={image.url} alt={image.alt} className="mt-8 h-auto w-full rounded-[10px]" />;
-}
 function Sample({ to, label = 'READ MORE' }: { to: string; label?: string }) {
   return <Link to={to} className="accent-link mt-8 inline-block max-w-full leading-relaxed">{label}</Link>;
 }
@@ -60,8 +56,16 @@ export default function OriginMarkets() {
       <Sample to="/work/origin-markets/design-process" />
     </Section>
     <Section id="design-system-overview" title="A design system for a Fintech Startup">
-      <Img k="origin-morpho" />
-      <Sample to="/work/origin-markets/design-system" label="BUILDING A DESIGN LIBRARY FOR A FINTECH STARTUP" />
+      <Link to="/work/origin-markets/design-system" className="editorial-card group block min-w-0 overflow-hidden">
+        <div className="aspect-[16/10] overflow-hidden bg-muted">
+          <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
+        </div>
+        <div className="p-6 md:p-8">
+          <h3 className="card-title">Morpho</h3>
+          <p className="mt-4 max-w-lg body-copy text-muted-foreground">Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
+          <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
+        </div>
+      </Link>
     </Section>
   </>;
   const meta = caseStudyMeta(project);
