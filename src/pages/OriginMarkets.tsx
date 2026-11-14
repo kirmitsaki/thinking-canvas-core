@@ -14,7 +14,7 @@ const roleCopy = 'I joined as the first in-house designer. No design function, n
 const researchCopy = 'Good design decisions needed a strong understanding of the people using the platform, built over two years through ongoing conversations with more than 20 dealers and nearly 90 issuers globally.';
 const processCopy = 'A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.';
 const designSystemCopy = 'Morpho gave the product family a shared visual language and a library of reusable components, so new features could be designed and built consistently as the platform grew.';
-const productsCopy = 'Four products, one institutional workflow, each evolved through continuous iteration and careful evaluation.';
+const productsCopy = 'Three products, one institutional workflow, each evolved through continuous iteration and careful evaluation.';
 
 const facts = [
   { label: 'Role', value: 'Lead Product Designer' },
