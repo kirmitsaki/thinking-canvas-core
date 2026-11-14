@@ -16,7 +16,7 @@ describe('Origin study organisation', () => {
   });
   it('assigns every detailed section once and keeps the product family in the overview', () => {
     const ids = originStudyGroups.flatMap(group => group.studies.flatMap(study => study.sectionIds));
-    assert.equal(new Set(ids).size, 20);
+    assert.equal(new Set(ids).size, 21);
     assert.deepEqual([...ids].sort(), getProject('origin-markets').sections.filter(section => section.id !== 'products' && section.id !== 'ecosystem').map(section => section.id).sort());
   });
   it('resolves original section objects rather than duplicating or rewriting their content', () => {
