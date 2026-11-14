@@ -544,8 +544,14 @@
   }
 
   /* Origin's editorial layout is deliberately scoped to its overview. */
-  .origin-editorial .case-study > header > div:last-child {
-    max-width: 820px;
+  .origin-editorial .case-study-header-copy {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+  .origin-editorial .body-copy strong {
+    font-weight: 600;
+    color: var(--foreground);
   }
   .origin-editorial .case-study > header dl {
     display: grid;
@@ -642,9 +648,12 @@
     max-width: 40ch;
   }
   @media (min-width: 768px) {
+    .origin-editorial .case-study-header-copy {
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+      gap: 4rem;
+    }
     .origin-editorial .case-study > header dl {
-      grid-template-columns: 1fr 0.65fr 1.5fr;
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
     }
     .origin-section {
       margin-bottom: 6rem;
