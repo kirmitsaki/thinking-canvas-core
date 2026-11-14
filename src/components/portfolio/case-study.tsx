@@ -155,7 +155,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                             ))}
                           </ol>
                         ) : (
-                          group.text.split("\n").filter(Boolean).map((paragraph) => (
+                          (group.text ?? "").split("\n").filter(Boolean).map((paragraph) => (
                             <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
                           ))
                         )}
