@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { getProject, pageMeta } from "@/data/projects";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
+import { ProjectPagination } from "@/components/portfolio/project-pagination";
 
 const Library = lazy(() => import("./MendeleyLibrary"));
 const Reader = lazy(() => import("./MendeleyReader"));
@@ -63,6 +64,7 @@ export default function MendeleySampleWork() {
       <div className="hairline-top mx-auto max-w-[720px] pt-8">
         <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to the Mendeley case study</Link>
       </div>
+      <ProjectPagination slug="mendeley" />
     </main>
   );
 }
