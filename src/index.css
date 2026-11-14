@@ -218,6 +218,14 @@
     object-fit: contain;
   }
 
+  .diagram-card-media {
+    background-color: var(--warm-ivory);
+  }
+
+  .diagram-card-media img {
+    object-fit: contain;
+  }
+
   .flagship-rule {
     border-bottom: 2px solid var(--rust);
   }

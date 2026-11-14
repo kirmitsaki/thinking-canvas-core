@@ -29,10 +29,10 @@ export function ProjectGrid({ items }: { items: Project[] }) {
         return (
           <Link
             key={project.slug}
-            to={`/work/${project.slug}`}
+            to={project.linkTo ?? `/work/${project.slug}`}
             className={`editorial-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
           >
-            <div className={`aspect-[16/10] overflow-hidden ${project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
+            <div className={`aspect-[16/10] overflow-hidden ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
               {image ? (
                 <img
                   src={image.url}
