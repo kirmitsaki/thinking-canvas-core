@@ -610,7 +610,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'mds-quostar', name: 'MDS Quostar', sector: 'Website design & build', industry: 'IT services', field: 'Websites', dates: '2015', tags: ['Web Design', 'Front-end Development'],
-    title: 'A bold website for a managed document solutions brand.',
+    title: 'MDS Quostar',
     summary: 'Freelance design and front-end build for QuoStar’s Managed Document Solutions website.',
     role: 'Freelance web designer · Design & front-end build',
     intro: 'A freelance website project for QuoStar’s Managed Document Solutions offering, designed and built end to end.',
