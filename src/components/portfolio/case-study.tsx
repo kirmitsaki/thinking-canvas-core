@@ -181,6 +181,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                         loading="lazy"
                       />
                     ) : null}
+                    </>
+                    )}
                   </div>
                 ))}
               </div>
