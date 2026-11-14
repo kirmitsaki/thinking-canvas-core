@@ -62,9 +62,7 @@ export default function OriginMarkets() {
 
   const body = (
     <>
-      <Section id="challenge" title="Challenge" lede={challengeCopy}>
-        <img loading="lazy" src={projectImage('origin-audience-map').url} alt={projectImage('origin-audience-map').alt} className="h-auto w-full rounded-[10px]" />
-      </Section>
+      <Section id="challenge" title="Challenge" lede={challengeCopy} />
 
       <Section id="my-role" title="My role" lede={roleCopy} />
 
