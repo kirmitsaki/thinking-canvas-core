@@ -229,7 +229,7 @@ export type Project = {
   comingSoon?: boolean;
   ndaNotice?: boolean;
   reflection?: { title: string; paragraphs: string[] };
-  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; image2?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right'; imageSize?: 'small' | 'quarter'; caption?: string }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; image2?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right'; imageSize?: 'small' | 'quarter'; caption?: string }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; imageSize?: 'small'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
   outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
   contribution: string; outcomes: string[];
 };
@@ -649,7 +649,7 @@ export const projects: Project[] = [
     sections: [
       { id: 'brief', navigationLabel: 'Brief', title: 'A small production, a bigger ambition', paragraphs: ['A family-owned winery wanted a label for a small run of Merlot bottles. The ambition was to enter a wine competition and take a first step towards a wider market.', 'The brief called for something authentic. I began with watercolour on paper, creating an original illustration before taking the design into a digital format.'], visual: 'Original watercolour', image: 'meliniki-watercolour', caption: 'The original artwork, painted in watercolour on paper.' },
       { id: 'labels', navigationLabel: 'Label design', title: 'From paper to two labels', paragraphs: ['I digitised the painting and used it to create two labels for the Merlot bottle. The illustration became the centre of the main label, with a smaller companion label below.', 'The design had to work within specific dimensions. The supplied artwork shows a 1200 × 1200 px main label and a 1200 × 240 px lower label.'], visual: 'The two labels', image: 'meliniki-labels', caption: 'The main label and companion label, shown with their digital artwork dimensions.' },
-      { id: 'bottle', title: 'On the bottle', paragraphs: ['The bottle mock-up brings the two labels together, showing how the hand-painted illustration carries through to the finished presentation.'], visual: 'Bottle presentation', image: 'meliniki-bottle', caption: 'A mock-up of the two-label design on a Merlot bottle.' },
+      { id: 'bottle', title: 'On the bottle', paragraphs: ['The bottle mock-up brings the two labels together, showing how the hand-painted illustration carries through to the finished presentation.'], visual: 'Bottle presentation', image: 'meliniki-bottle', imageSize: 'small', caption: 'A mock-up of the two-label design on a Merlot bottle.' },
     ], contribution: '', outcomes: [],
   },
   {

@@ -270,7 +270,9 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     src={projectImage(section.image).url}
                     alt={projectImage(section.image).alt}
                     className={
-                      section.imageFit === "native"
+                      section.imageSize === "small"
+                        ? "mx-auto max-h-[80vh] w-auto max-w-full rounded-[10px]"
+                        : section.imageFit === "native"
                         ? "mx-auto h-auto max-w-full rounded-[10px]"
                         : imageClass
                     }
