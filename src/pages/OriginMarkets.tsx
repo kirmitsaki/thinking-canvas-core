@@ -36,7 +36,7 @@ export default function OriginMarkets() {
       <p>The platform serves four main audiences, each with distinct needs and responsibilities.</p>
       <div className="grid gap-6 md:grid-cols-2">
         <img loading="lazy" src={projectImage('origin-audience-2').url} alt={projectImage('origin-audience-2').alt} className="h-auto w-full rounded-[10px]" />
-        <img loading="lazy" src={projectImage('origin-ecosystem').url} alt={projectImage('origin-ecosystem').alt} className="h-auto w-full rounded-[10px]" />
+        <img loading="lazy" src={projectImage('origin-audience-map').url} alt={projectImage('origin-audience-map').alt} className="h-auto w-full rounded-[10px]" />
       </div>
     </Section>
     <Section id="products" title="Four products, one institutional workflow">

@@ -1,5 +1,5 @@
 import originAudience2 from '@/assets/origin-audience-2.webp';
-import originEcosystem from '@/assets/origin-ecosystem.webp';
+import originAudienceMap from '@/assets/origin-audience-map.webp';
 import originDealers from '@/assets/origin-dealers.webp';
 import originDesignProcessDiagram from '@/assets/origin-design-process-diagram.webp';
 import originDevelopmentProcessDiagram from '@/assets/origin-development-process-diagram.webp';
@@ -105,7 +105,7 @@ import corBadges from '@/assets/corresilience-work_8-Badges.webp';
 
 const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
-  'origin-ecosystem': { url: originEcosystem, alt: 'Origin ecosystem diagram showing how issuers, dealers, lawyers and market infrastructure connect through the platform' },
+  'origin-audience-map': { url: originAudienceMap, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
   'origin-design-process-diagram': { url: originDesignProcessDiagram, alt: 'Diagram of Origin’s two-track design process: continuous improvements and exploring complex workflows' },
   'origin-development-process-diagram': { url: originDevelopmentProcessDiagram, alt: 'Diagram of Origin’s agile development cycle: plan increments, design, develop, peer review, QA testing, release and gather feedback' },
