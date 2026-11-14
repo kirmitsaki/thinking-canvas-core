@@ -541,7 +541,7 @@ export const projects: Project[] = [
     slug: 'mendeley', name: 'Mendeley', sector: 'Research · Reference management', industry: 'Academic research', field: 'Reference management', dates: 'Jan 2019 – Jan 2020', tags: ['Research', 'Product Design', 'Design Systems', 'Accessibility'],
     title: 'Making complex research workflows easier to navigate.',
     summary: 'Improving research workflows across a large-scale academic reference management product.',
-    role: 'Senior UX/UI Designer · Design lead',
+    role: 'Senior UX/UI Designer',
     intro: 'Hands-on design across Library, Reader and Citation, connecting the details of the interface with the way researchers work.',
     heroImage: 'mendeley-header', outcomeImage: 'mendeley-outcome', outcomeCaption: 'Researchers sharing their experience of switching to Mendeley.',
     sections: [
