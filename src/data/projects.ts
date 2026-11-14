@@ -523,7 +523,7 @@ export const projects: Project[] = [
     title: 'CorResilience',
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
-    intro: 'CorResilience is a personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
+    intro: 'A personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
     heroImage: 'cor-header', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Challenge', title: 'The challenge', paragraphs: ['Habit formation apps have a well-documented problem: most users abandon them within 30 days of download. Forrester Research found that while smartphone users have an average of 24 apps installed, they spend over 80% of their in-app time in just five. Getting into those five is the real design problem.', 'CorResilience needed to be genuinely useful from day one, not just downloaded and forgotten. The people who would benefit most from a personal resilience app are often the ones least motivated to engage with it consistently. That meant the onboarding experience, the daily interactions, and the feedback loops all had to work harder than usual.'] },
