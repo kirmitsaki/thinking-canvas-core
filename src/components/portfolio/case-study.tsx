@@ -160,7 +160,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </div>
                 <div className="p-6 md:p-8">
                   <p className="caption">{project.dates}</p>
-                  <h3 className="mt-3 card-title">Sample work</h3>
+                  <h3 className="mt-3 card-title">Mendeley Reference Manager</h3>
                   <ProjectContext industry={project.industry} field="Product Design" className="mt-4" />
                   <p className="mt-4 max-w-lg body-copy text-muted-foreground">Selected screens and flows from the Library, Reader and Citation interfaces.</p>
                   <p className="accent-link mt-6">View sample work <span className="arrow-nudge">→</span></p>
