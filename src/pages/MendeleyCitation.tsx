@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { pageMeta, getProject } from "@/data/projects";
 import { citationSections } from "@/data/mendeley-citation";
+import { SectionDivider } from "@/components/portfolio/section-divider";
 
 const meta = pageMeta(
   "Mendeley Citation · Interface design",
@@ -41,6 +42,7 @@ export default function MendeleyCitation() {
       <article className="mx-auto max-w-[720px]">
         {citationSections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
+            {index > 0 && <SectionDivider />}
             <p className="label-quiet">{String(index + 1).padStart(2, "0")}</p>
             <h2 className="mt-3 card-title">{section.title}</h2>
             {section.paragraphs.length > 0 && (

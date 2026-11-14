@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { pageMeta } from "@/data/projects";
 import { librarySections } from "@/data/mendeley-library";
+import { SectionDivider } from "@/components/portfolio/section-divider";
 
 const meta = pageMeta(
   "Mendeley Library · Interface design",
@@ -41,6 +42,7 @@ export default function MendeleyLibrary() {
       <article className="mx-auto max-w-[720px]">
         {librarySections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
+            {index > 0 && <SectionDivider />}
             <p className="label-quiet">{String(index + 1).padStart(2, "0")}</p>
             <h2 className="mt-3 card-title">{section.title}</h2>
             <div className="essay-prose mt-6 space-y-5">
@@ -50,6 +52,7 @@ export default function MendeleyLibrary() {
             </div>
             {section.items?.map((item) => (
               <section key={item.title} className="mt-10">
+                <SectionDivider />
                 <h3 className="subsection-title">{item.title}</h3>
                 {item.text && <p className="essay-prose mt-4">{item.text}</p>}
                 <figure className="mt-6">

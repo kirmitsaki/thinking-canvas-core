@@ -7,6 +7,7 @@ import { ContactLink } from "./shell";
 import { SectionNavigation } from "./section-navigation";
 import { ProjectContext } from "./project-context";
 import { PortfolioBreadcrumb } from "./breadcrumb";
+import { SectionDivider } from "./section-divider";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean }) {
   const navigation = project.sectionNavigation ?? [
@@ -61,6 +62,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {body}
         {project.sections.map((section, index) => (
           <section key={section.title} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
+            <SectionDivider />
             <div className="mx-auto max-w-[720px]">
               <p className="label-quiet">{String(index + 1).padStart(2, "0")}</p>
               <h2 className="mt-3 card-title">{section.title}</h2>
@@ -175,9 +177,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           </section>
         ))}
         <div className="mx-auto max-w-[720px]">
-          <p className="mb-9 text-center section-break text-accent" aria-hidden="true">
-            ⁘
-          </p>
+          {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && <SectionDivider />}
           {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">Outcomes & evidence</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="caption mt-2">{stat.text}</dd></div>)}</dl></div> : project.outcomes.length > 0 && (
             <>
               <h2 id="outcomes" className="card-title">
@@ -209,6 +209,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           )}
           {project.reflection && (
             <section className="mt-12">
+              <SectionDivider />
               <h2 className="card-title">{project.reflection.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
                 {project.reflection.paragraphs.map((paragraph) => (
@@ -219,6 +220,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           )}
           {project.contribution && (
             <>
+              <SectionDivider />
               <h2 className="mt-12 card-title">My contribution</h2>
               <p className="essay-prose mt-6">{project.contribution}</p>
             </>
@@ -227,6 +229,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       </article>
       <section className="hairline-top">
         <div className="mx-auto max-w-[1200px] px-6 py-12">
+          <SectionDivider />
           <h2 className="card-title">More work</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {projects
