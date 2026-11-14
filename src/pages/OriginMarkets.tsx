@@ -68,6 +68,7 @@ export default function OriginMarkets() {
       </Link>
     </Section>
     <Section id="design-system-overview" title="The design system">
+      <p>Morpho gave the product family a shared visual language and a library of reusable components, so new features could be designed and built consistently as the platform grew.</p>
       <Link to="/work/origin-markets/design-system" className="editorial-card group block min-w-0 overflow-hidden">
         <div className="aspect-[16/10] overflow-hidden bg-muted">
           <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
