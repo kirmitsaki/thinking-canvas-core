@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { pageMeta, getProject } from "@/data/projects";
 import { readerSections } from "@/data/mendeley-reader";
+import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 
 const meta = pageMeta(
@@ -15,7 +16,7 @@ const meta = pageMeta(
 export default function MendeleyReader({ embedded = false }: { embedded?: boolean }) {
   if (embedded) return <><h2 className="card-title">The Reader</h2><p className="standfirst mt-6 mb-10">Reading, highlighting and annotating PDFs, with notes across multiple documents kept in one place.</p><MendeleyReaderContent /></>;
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo
         title={meta.title}
         description={meta.description}
@@ -53,16 +54,17 @@ export default function MendeleyReader({ embedded = false }: { embedded?: boolea
 function MendeleyReaderContent() {
   return <>
         {readerSections.map((section, index) => (
-          <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
+          <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
-            <h2 className="card-title">{section.title}</h2>
+            <div className="editorial-study-heading"><h2 className="section-title">{section.title}</h2>
             {section.paragraphs.length > 0 && (
               <div className="essay-prose mt-6 space-y-5">
                 {section.paragraphs.map((text) => (
-                  <p key={text}>{text}</p>
+                  <p key={text}>{editorialEmphasis(text)}</p>
                 ))}
               </div>
             )}
+            </div>
             {section.points.length > 0 && (
               <ul className="essay-prose mt-6 space-y-3">
                 {section.points.map((text) => (

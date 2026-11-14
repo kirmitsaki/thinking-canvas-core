@@ -42,7 +42,7 @@ export default function MendeleySampleWork() {
     return () => cancelAnimationFrame(frame);
   }, [active]);
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/mendeley/sample-work" ogType={meta.ogType} />
       <header className="pb-10 pt-10 md:pt-14">
         <PortfolioBreadcrumb
@@ -57,7 +57,7 @@ export default function MendeleySampleWork() {
             <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
           </Tabs.Trigger>)}
         </Tabs.List>
-        {views.map(({ id, Content }) => <Tabs.Content key={id} value={id} className="mx-auto max-w-[720px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        {views.map(({ id, Content }) => <Tabs.Content key={id} value={id} className="editorial-detail-content mx-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
         </Tabs.Content>)}
       </Tabs.Root>
