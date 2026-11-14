@@ -52,9 +52,7 @@ export default function OriginMarkets() {
       <Sample to="/work/origin-markets/gallery" label="SEE SAMPLE WORK" />
     </Section>
     <Section id="design-process-overview" title="A design process for an agile team">
-      <div className="pt-4"><h3 className="label">Continuous improvements</h3><p className="mt-3">Small changes removed unnecessary steps, reduced visual noise and moved legacy features into Morpho, our new UI framework. I regularly reviewed existing workflows and worked with product managers, business and engineering to identify and prioritise opportunities.</p></div>
-      <div className="pt-4"><h3 className="label">Complex features</h3><p className="mt-3">Workshops with business, product and engineering helped define problems and explore solutions. Research and planning led into UX exploration and UI design, with prototypes and customer feedback shaping each iteration before development.</p></div>
-      <p className="pt-4">The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
+      <p>The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
       <Link to="/work/origin-markets/design-process" className="editorial-card group block min-w-0 overflow-hidden">
         <div className="aspect-[16/10] overflow-hidden bg-muted">
           <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-cover object-top" />
