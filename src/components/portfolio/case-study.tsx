@@ -5,7 +5,6 @@ import { type Project, projects, projectImage } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ContactLink } from "./shell";
 import { SectionNavigation } from "./section-navigation";
-import { ProjectContext } from "./project-context";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 
@@ -31,12 +30,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       >
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
-          trailing={
-            <div className="flex flex-wrap items-center justify-end gap-3">
-              {!minimalFrame && <ProjectContext industry={project.industry} field={project.field} />}
-              <p className="label-quiet">{project.dates}</p>
-            </div>
-          }
+          trailing={<p className="label-quiet">{project.dates}</p>}
         />
         <h1 className="mt-8 max-w-[900px] page-title">{project.title}</h1>
         {(() => {
