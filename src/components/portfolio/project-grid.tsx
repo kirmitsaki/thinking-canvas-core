@@ -4,12 +4,10 @@ import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
 import { ProjectContext } from "./project-context";
 
-function CardBody({ project, index, link }: { project: Project; index: number; link: boolean }) {
+function CardBody({ project, link }: { project: Project; link: boolean }) {
   return (
     <div className="p-6 md:p-8">
-      <p className="caption">
-        {String(index + 1).padStart(2, "0")} / {project.dates}
-      </p>
+      <p className="caption">{project.dates}</p>
       <h2 className="mt-3 card-title">{project.name}</h2>
       <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
       <p className="mt-4 max-w-lg body-copy text-muted-foreground">{project.summary}</p>
@@ -21,7 +19,7 @@ function CardBody({ project, index, link }: { project: Project; index: number; l
 export function ProjectGrid({ items }: { items: Project[] }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      {items.map((project, index) => {
+      {items.map((project) => {
         if (project.comingSoon) {
           return (
             <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
@@ -49,7 +47,7 @@ export function ProjectGrid({ items }: { items: Project[] }) {
                 />
               )}
             </div>
-            <CardBody project={project} index={index} link />
+            <CardBody project={project} link />
           </Link>
         );
       })}
