@@ -3,6 +3,8 @@ import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { ProjectContext } from '@/components/portfolio/project-context';
+import { ProjectLabels } from '@/components/portfolio/project-labels';
 
 const project = getProject('origin-markets');
 const intro = [
