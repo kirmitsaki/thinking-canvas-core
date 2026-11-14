@@ -120,7 +120,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                           <ol className="design-goals-list">
                             {group.text.split("\n").filter(Boolean).map((goal, index) => (
                               <li key={goal}>
-                                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                                <span aria-hidden={group.markers ? undefined : "true"}>{group.markers?.[index] ?? String(index + 1).padStart(2, "0")}</span>
                                 <p className="body-copy text-muted-foreground">{editorialEmphasis(goal)}</p>
                               </li>
                             ))}
