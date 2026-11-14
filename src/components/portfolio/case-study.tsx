@@ -271,7 +271,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     alt={projectImage(section.image).alt}
                     className={
                       section.imageSize === "small"
-                        ? "mx-auto h-auto w-full max-w-[420px] rounded-[10px]"
+                        ? "mx-auto max-h-[80vh] w-auto max-w-full rounded-[10px]"
                         : section.imageFit === "native"
                         ? "mx-auto h-auto max-w-full rounded-[10px]"
                         : imageClass
