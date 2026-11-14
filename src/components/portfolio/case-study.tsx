@@ -131,8 +131,14 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                         </div>
                       </div>
                     ) : group.imageSide === 'right' && group.image ? (
+                      <>
                       <div className="origin-research-block origin-research-block--media-right">
-                        <h3 className="subsection-title">{group.label}</h3>
+                        <div className="space-y-5">
+                          <h3 className="subsection-title">{group.label}</h3>
+                          {(group.text ?? "").split("\n").filter(Boolean).map((paragraph) => (
+                            <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
+                          ))}
+                        </div>
                         <img
                           src={projectImage(group.image).url}
                           alt={projectImage(group.image).alt}
@@ -140,6 +146,16 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                           loading="lazy"
                         />
                       </div>
+                      {group.image2 && (
+                        <img
+                          src={projectImage(group.image2).url}
+                          alt={projectImage(group.image2).alt}
+                          className="h-auto w-full rounded-[10px]"
+                          loading="lazy"
+                        />
+                      )}
+                      {group.caption && <figcaption className="caption">{group.caption}</figcaption>}
+                      </>
                     ) : (
                     <>
                     <div className="origin-research-block">
@@ -174,12 +190,23 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                         ))}
                       </div>
                     ) : group.image ? (
+                      <>
                       <img
                         src={projectImage(group.image).url}
                         alt={projectImage(group.image).alt}
                         className={group.imageSize === 'small' ? "mx-auto h-auto w-full max-w-[720px] rounded-[10px]" : "h-auto w-full rounded-[10px]"}
                         loading="lazy"
                       />
+                      {group.image2 && (
+                        <img
+                          src={projectImage(group.image2).url}
+                          alt={projectImage(group.image2).alt}
+                          className="h-auto w-full rounded-[10px]"
+                          loading="lazy"
+                        />
+                      )}
+                      {group.caption && <figcaption className="caption">{group.caption}</figcaption>}
+                      </>
                     ) : null}
                     </>
                     )}
