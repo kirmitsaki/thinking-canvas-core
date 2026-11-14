@@ -2,6 +2,7 @@ import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { SecondaryCard } from '@/components/portfolio/secondary-card';
 
 const project = getProject('origin-markets');
 
@@ -97,6 +98,7 @@ export default function OriginMarkets() {
             </div>
           </div>
         ))}
+        <SecondaryCard to="/work/origin-markets/gallery" image="origin-header" description="A selection of screens and flows from across the Origin product family." />
       </Section>
     </>
   );
