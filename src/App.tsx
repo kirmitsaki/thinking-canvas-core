@@ -16,6 +16,9 @@ const MendeleyReader = lazy(() => import("@/pages/MendeleyReader"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
 const WorkPage = lazy(() => import("@/pages/Work"));
+const OriginMarkets = lazy(() => import("@/pages/OriginMarkets"));
+const OriginStudy = lazy(() => import("@/pages/OriginStudy"));
+const OriginGallery = lazy(() => import("@/pages/OriginGallery"));
 
 const queryClient = new QueryClient();
 
@@ -49,6 +52,9 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/:slug" element={<CaseStudyPage />} />
+          <Route path="/work/origin-markets" element={<OriginMarkets />} />
+          <Route path="/work/origin-markets/gallery" element={<OriginGallery />} />
+          <Route path="/work/origin-markets/:study" element={<OriginStudy />} />
           <Route
             path="/work/secure-code-warrior/product-design-identity"
             element={<ProductDesignIdentity />}
