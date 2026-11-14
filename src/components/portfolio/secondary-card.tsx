@@ -27,7 +27,7 @@ export function SecondaryCard({
       </div>
       <div className="p-6 md:p-8">
         <p className="body-copy text-muted-foreground">{description}</p>
-        <p className="accent-link mt-4">Read more <span className="arrow-nudge">→</span></p>
+        <p className="accent-link mt-4">SEE MORE <span className="arrow-nudge">→</span></p>
       </div>
     </Link>
   );
