@@ -7,6 +7,7 @@ import { VisualPlaceholder } from '@/components/portfolio/visual-placeholder';
 import { getProject, pageMeta, projectImage } from '@/data/projects';
 import { getOriginStudy } from '@/data/origin-studies';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { NdaNotice } from '@/components/portfolio/nda-notice';
 
 export default function OriginStudy() {
   const { study: slug } = useParams();
@@ -15,6 +16,7 @@ export default function OriginStudy() {
   const meta = pageMeta(`Origin Markets · ${study.name}`, study.sections[0]?.paragraphs[0] ?? '', 'article');
   return <><Seo title={meta.title} description={meta.description} path={`/work/origin-markets/${slug}`} ogType={meta.ogType} /><main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12 pt-10 md:pt-14">
+      <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: study.name }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">{study.displayTitle}</h1>
       {study.subtitle && <p className="standfirst mt-6 max-w-[720px]">{study.subtitle}</p>}
