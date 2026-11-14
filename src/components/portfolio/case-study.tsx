@@ -39,8 +39,20 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           }
         />
         <h1 className="mt-8 max-w-[900px] page-title">{project.title}</h1>
-        {introParagraphs ? <div className="mt-6 max-w-[760px] space-y-4">{introParagraphs.map((text, index) => <p key={text} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div> : <p className="standfirst mt-6 max-w-[760px]">{project.intro}</p>}
-        {facts ? <dl className="mt-7 space-y-1">{facts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl> : <p className="caption mt-7">{project.role}</p>}
+        {(() => {
+          const paragraphs = introParagraphs ?? project.intro.split(/(?<=\.)\s+/);
+          const headerFacts = facts ?? [
+            { label: 'Role', value: project.role },
+            { label: 'Duration', value: project.dates },
+            { label: 'Industry', value: `${project.industry} · ${project.field}` },
+          ];
+          return (
+            <>
+              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={text} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div>
+              <dl className="mt-7 space-y-1">{headerFacts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl>
+            </>
+          );
+        })()}
       </header>
       <SectionNavigation items={navigation} to={`/work/${project.slug}`} />
       <div className="mx-auto max-w-[1200px] px-6">
