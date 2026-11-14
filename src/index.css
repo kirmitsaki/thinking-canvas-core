@@ -840,6 +840,13 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
       gap: 3rem;
     }
+    .origin-research-block--media-right {
+      align-items: start;
+    }
+    .brand-voice-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+    }
     .origin-process-paths,
     .origin-system-copy {
       grid-template-columns: repeat(2, minmax(0, 1fr));
