@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { type Project, projects, projectImage } from "@/data/projects";
+import { type Project, projectImage } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
-import { ContactLink } from "./shell";
+import { ProjectPagination } from "./project-pagination";
 import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
@@ -214,32 +214,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           )}
         </div>
       </article>
-      <section className="hairline-top">
-        <div className="mx-auto max-w-[1200px] px-6 py-12">
-          <SectionDivider />
-          <h2 className="card-title">More work</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {projects
-              .filter((item) => item.slug !== project.slug)
-              .slice(0, 2)
-              .map((item) => (
-                <Link key={item.slug} to={`/work/${item.slug}`} className="editorial-card block p-7">
-                  <h3 className="flex items-start justify-between gap-4 card-title">
-                    {item.name}
-                    <ArrowUpRight size={20} className="shrink-0 text-accent" />
-                  </h3>
-                  <p className="mt-4 body-copy text-muted-foreground">{item.summary}</p>
-                </Link>
-              ))}
-          </div>
-          <div className="mt-10 flex flex-wrap items-center gap-8">
-            <Link to="/work" className="accent-link">
-              View all work <span className="arrow-nudge">→</span>
-            </Link>
-            <ContactLink />
-          </div>
-        </div>
-      </section>
+      <ProjectPagination slug={project.slug} />
     </main>
   );
 }

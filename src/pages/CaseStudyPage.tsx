@@ -4,7 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { caseStudyMeta, getProject, pageMeta, projects } from "@/data/projects";
 import { CaseStudy } from "@/components/portfolio/case-study";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { ContactLink } from "@/components/portfolio/shell";
+import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { NdaNotice } from "@/components/portfolio/nda-notice";
 
 function SecureCodeWarriorComingSoon() {
@@ -28,9 +28,7 @@ function SecureCodeWarriorComingSoon() {
         <h1 className="page-title">Secure Code Warrior</h1>
         <p className="standfirst mt-6 max-w-2xl">Coming soon</p>
       </header>
-      <div className="hairline-top pt-8">
-        <ContactLink />
-      </div>
+      <ProjectPagination slug="secure-code-warrior" />
     </main>
   );
 }
