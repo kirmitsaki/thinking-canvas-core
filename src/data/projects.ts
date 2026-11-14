@@ -22,6 +22,7 @@ import originMatrixSaved from '@/assets/origin-funding-matrix-saved_searches.web
 import originMatrixSearch from '@/assets/origin-funding-matrix-search.webp';
 import originMatrix from '@/assets/origin-funding-matrix.webp';
 import originHeader from '@/assets/origin-header.webp';
+import originSampleWork from '@/assets/origin-sample-work.webp';
 import originMorpho from '@/assets/origin-morpho.webp';
 import originOutcome from '@/assets/origin-outcome.webp';
 import mendeleyHeader from '@/assets/mendeley-header.webp';
@@ -175,6 +176,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-funding-matrix-saved_searches': { url: originMatrixSaved, alt: 'Funding Matrix saved-search controls and collapsed search parameters' },
   'origin-funding-matrix-search': { url: originMatrixSearch, alt: 'Old and redesigned Funding Matrix search interfaces' },
   'origin-funding-matrix': { url: originMatrix, alt: 'Old and redesigned Funding Matrix data grids' },
+  'origin-sample-work': { url: originSampleWork, alt: 'Origin product screens: DCM dashboard, curve analysis, pricing levels and trade blotter' },
   'origin-header': { url: originHeader, alt: 'Origin Markets product screens across pricing, deal and document views' },
   'origin-morpho': { url: originMorpho, alt: 'Morpho design system board showing components, colour palette, typography and patterns' },
   'origin-outcome': { url: originOutcome, alt: 'GlobalCapital Bond Awards winner announcements for Origin' },
