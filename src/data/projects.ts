@@ -212,7 +212,9 @@ const projectImages: Record<string, { url: string; alt: string }> = {
 export function projectImage(key: string) { return projectImages[key]; }
 
 export type Project = {
-  slug: 'secure-code-warrior' | 'origin-markets' | 'mendeley' | 'aladdin' | 'corresilience' | 'pawsquad' | 'migreat' | 'mds-quostar' | 'jobme' | 'meliniki';
+  slug: 'secure-code-warrior' | 'origin-markets' | 'origin-design-process' | 'origin-design-system' | 'mendeley' | 'aladdin' | 'corresilience' | 'pawsquad' | 'migreat' | 'mds-quostar' | 'jobme' | 'meliniki';
+  linkTo?: string;
+  workAreas?: string[];
   dates: string;
   tags: string[];
   industry: string;
