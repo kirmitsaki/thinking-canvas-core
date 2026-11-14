@@ -4,7 +4,7 @@ import { Fragment, type ReactNode } from "react";
 
 type BreadcrumbItem = {
   label: string;
-  to?: "/work" | "/field-notes" | "/work/mendeley" | "/work/secure-code-warrior";
+  to?: "/work" | "/field-notes" | "/work/mendeley" | "/work/secure-code-warrior" | "/work/origin-markets";
 };
 
 export function PortfolioBreadcrumb({
