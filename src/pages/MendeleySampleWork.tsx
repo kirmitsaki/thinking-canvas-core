@@ -32,7 +32,7 @@ export default function MendeleySampleWork() {
         <h1 className="mt-8 page-title">Sample work</h1>
       </header>
       <Tabs.Root value={active} onValueChange={view => setParams({ view }, { preventScrollReset: true })}>
-        <Tabs.List aria-label="Mendeley sample work" className="hairline-bottom mb-10 flex gap-2">
+        <Tabs.List aria-label="Mendeley sample work" className="sample-work-tabs hairline-bottom mb-10 flex gap-2">
           {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
             <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
           </Tabs.Trigger>)}

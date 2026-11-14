@@ -21,10 +21,9 @@ export function SectionNavigation({
     return () => media.removeEventListener("change", update);
   }, []);
   useEffect(() => {
-    const header = document.querySelector(".portfolio-header");
     const update = () => {
-      const height = header?.getBoundingClientRect().height ?? 80;
-      document.documentElement.style.setProperty("--portfolio-header-height", `${height}px`);
+      const height =
+        document.querySelector<HTMLElement>(".portfolio-header")?.getBoundingClientRect().height ?? 80;
       let current = items[0]?.id;
       for (const item of items) {
         const target = document.getElementById(item.id);
@@ -32,13 +31,12 @@ export function SectionNavigation({
       }
       setActiveId(current);
     };
-    const observer = new ResizeObserver(update);
-    if (header) observer.observe(header);
     update();
     window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
   }, [items]);
   return (
