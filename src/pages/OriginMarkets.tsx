@@ -54,7 +54,7 @@ export default function OriginMarkets() {
       <p>The approach encouraged continuous feedback, collaboration and iteration, rather than treating design as a one-off stage before development.</p>
       <Link to="/work/origin-markets/design-process" className="editorial-card group block min-w-0 overflow-hidden">
         <div className="aspect-[16/10] overflow-hidden bg-muted">
-          <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-cover object-top" />
+          <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-contain" />
         </div>
         <div className="p-6 md:p-8">
           <p className="caption">01 / 2019 – 2022</p>
