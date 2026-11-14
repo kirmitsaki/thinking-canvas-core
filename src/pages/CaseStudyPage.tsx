@@ -58,7 +58,13 @@ export default function CaseStudyPage() {
                 { label: "Tasks", value: "UX/UI design, Design system, Research, Web & Desktop application, Microsoft plugin" },
                 { label: "Industry", value: `${project.industry} · ${project.field}` },
               ]
-            : undefined
+            : project.slug === "aladdin" || project.slug === "corresilience"
+              ? [
+                  { label: "Role", value: project.role },
+                  { label: "Tasks", value: "UX/UI design, product discovery, user testing, prototyping, MVP, client handover" },
+                  { label: "Industry", value: `${project.industry} · ${project.field}` },
+                ]
+              : undefined
         }
       />
     </>
