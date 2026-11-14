@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { getProject, pageMeta, projectImage } from "@/data/projects";
+import { NdaNotice } from "@/components/portfolio/nda-notice";
 
 const meta = pageMeta(
   "Secure Code Warrior · Product design identity",
@@ -21,6 +22,7 @@ export default function ProductDesignIdentity() {
         ogType={meta.ogType}
       />
       <header className="pb-12 pt-10 md:pt-14">
+        <div className="mb-6"><NdaNotice /></div>
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
