@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { type Project, projects, projectImage } from "@/data/projects";
@@ -7,8 +8,8 @@ import { SectionNavigation } from "./section-navigation";
 import { ProjectContext } from "./project-context";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 
-export function CaseStudy({ project }: { project: Project }) {
-  const navigation = [
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean }) {
+  const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section) =>
       section.id && section.navigationLabel
@@ -31,14 +32,14 @@ export function CaseStudy({ project }: { project: Project }) {
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
           trailing={
             <div className="flex flex-wrap items-center justify-end gap-3">
-              <ProjectContext industry={project.industry} field={project.field} />
+              {!minimalFrame && <ProjectContext industry={project.industry} field={project.field} />}
               <p className="label-quiet">{project.dates}</p>
             </div>
           }
         />
         <h1 className="mt-8 max-w-[900px] page-title">{project.title}</h1>
-        <p className="standfirst mt-6 max-w-[760px]">{project.intro}</p>
-        <p className="caption mt-7">{project.role}</p>
+        {introParagraphs ? <div className="mt-6 max-w-[760px] space-y-4">{introParagraphs.map((text, index) => <p key={text} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div> : <p className="standfirst mt-6 max-w-[760px]">{project.intro}</p>}
+        {facts ? <dl className="mt-7 space-y-1">{facts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl> : <p className="caption mt-7">{project.role}</p>}
       </header>
       <SectionNavigation items={navigation} to={`/work/${project.slug}`} />
       <div className="mx-auto max-w-[1200px] px-6">
@@ -57,6 +58,7 @@ export function CaseStudy({ project }: { project: Project }) {
         )}
       </div>
       <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+        {body}
         {project.sections.map((section, index) => (
           <section key={section.title} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             <div className="mx-auto max-w-[720px]">
@@ -176,7 +178,7 @@ export function CaseStudy({ project }: { project: Project }) {
           <p className="mb-9 text-center section-break text-accent" aria-hidden="true">
             ⁘
           </p>
-          {project.outcomes.length > 0 && (
+          {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">Outcomes & evidence</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="caption mt-2">{stat.text}</dd></div>)}</dl></div> : project.outcomes.length > 0 && (
             <>
               <h2 id="outcomes" className="card-title">
                 Outcomes & evidence
