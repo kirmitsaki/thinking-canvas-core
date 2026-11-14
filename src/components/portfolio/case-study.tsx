@@ -92,20 +92,22 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               )}
             </div>
             {section.groups && (
-              <div className="mx-auto mt-10 max-w-[720px] space-y-12">
+              <div className="mt-10 grid gap-10">
                 {section.groups.map((group) => (
-                  <div key={group.label}>
-                    <h3 className="subsection-title">{group.label}</h3>
-                    <div className="essay-prose mt-4 space-y-5">
-                      {group.text.split("\n").map((paragraph) => (
-                        <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
-                      ))}
+                  <div key={group.label} className="grid gap-6">
+                    <div className="origin-research-block">
+                      <h3 className="subsection-title">{group.label}</h3>
+                      <div className="space-y-5">
+                        {group.text.split("\n").map((paragraph) => (
+                          <p key={paragraph} className="body-copy text-muted-foreground">{editorialEmphasis(paragraph)}</p>
+                        ))}
+                      </div>
                     </div>
                     {group.image && (
                       <img
                         src={projectImage(group.image).url}
                         alt={projectImage(group.image).alt}
-                        className="mt-6 h-auto w-full rounded-[10px]"
+                        className="h-auto w-full rounded-[10px]"
                         loading="lazy"
                       />
                     )}
