@@ -48,7 +48,7 @@ export default function MendeleySampleWork() {
           items={[{ label: "Portfolio", to: "/work" }, { label: "Mendeley", to: "/work/mendeley" }, { label: "Sample work" }]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
         />
-        <h1 className="mt-8 page-title">Sample work</h1>
+        <h1 className="mt-8 page-title">Mendeley Reference Manager</h1>
       </header>
       <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams({ view }, { preventScrollReset: true }); }}>
         <Tabs.List aria-label="Mendeley sample work" className="sample-work-tabs hairline-bottom mb-10 flex gap-2">
