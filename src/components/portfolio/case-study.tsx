@@ -113,12 +113,41 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               <div className="mt-10 grid gap-10">
                 {section.groups.map((group) => (
                   <div key={group.label} className="grid gap-6">
+                    {group.cards ? (
+                      <div className="grid gap-6">
+                        <h3 className="subsection-title">{group.label}</h3>
+                        <div className="brand-voice-cards">
+                          {group.cards.map((card) => (
+                            <figure key={card.image} className="brand-voice-card">
+                              <img
+                                src={projectImage(card.image).url}
+                                alt={projectImage(card.image).alt}
+                                className="h-auto w-full rounded-[10px]"
+                                loading="lazy"
+                              />
+                              <figcaption className="body-copy text-muted-foreground">{editorialEmphasis(card.text)}</figcaption>
+                            </figure>
+                          ))}
+                        </div>
+                      </div>
+                    ) : group.imageSide === 'right' && group.image ? (
+                      <div className="origin-research-block origin-research-block--media-right">
+                        <h3 className="subsection-title">{group.label}</h3>
+                        <img
+                          src={projectImage(group.image).url}
+                          alt={projectImage(group.image).alt}
+                          className="h-auto w-full rounded-[10px]"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                    <>
                     <div className="origin-research-block">
                       <h3 className="subsection-title">{group.label}</h3>
                       <div className="space-y-5">
                         {group.numbered ? (
                           <ol className="design-goals-list">
-                            {group.text.split("\n").filter(Boolean).map((goal, index) => (
+                            {(group.text ?? "").split("\n").filter(Boolean).map((goal, index) => (
                               <li key={goal}>
                                 <span aria-hidden={group.markers ? undefined : "true"}>{group.markers?.[index] ?? String(index + 1).padStart(2, "0")}</span>
                                 <p className="body-copy text-muted-foreground">{editorialEmphasis(goal)}</p>
