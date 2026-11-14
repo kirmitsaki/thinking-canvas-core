@@ -181,7 +181,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 <figcaption className="caption mt-4">{section.caption}</figcaption>
               </figure>
             )}
-            {project.slug === "mendeley" && section.id === "citation" && (
+            {project.slug === "mendeley" && section.id === "products" && (
               <div className="mx-auto mt-10 max-w-[720px]">
                 <SecondaryCard to="/work/mendeley/sample-work" image="mendeley-header" description="Selected screens and flows from the Library, Reader and Citation interfaces." />
               </div>
