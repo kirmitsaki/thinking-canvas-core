@@ -18,9 +18,6 @@ const products = [
   { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.', image: 'origin-structured_notes' },
 ];
 
-function Sample({ to, label = 'READ MORE' }: { to: string; label?: string }) {
-  return <Link to={to} className="accent-link mt-8 inline-block max-w-full leading-relaxed">{label}</Link>;
-}
 function Section({ id, title, subtitle, children }: { id: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return <section id={id} className="mx-auto mb-14 max-w-[720px] scroll-mt-32 md:mb-20"><SectionDivider /><h2 className="card-title">{title}</h2>{subtitle && <p className="subsection-title mt-4">{subtitle}</p>}<div className="essay-prose mt-6 space-y-5">{children}</div></section>;
 }
@@ -59,7 +56,7 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="block h-full w-full object-contain" />
         </div>
         <div className="p-6 md:p-8">
-          <p className="caption">01 / 2019 – 2022</p>
+          <p className="caption">02 / 2019 – 2022</p>
           <h3 className="mt-3 card-title">A design process for an fintech team</h3>
           <ProjectContext industry="Fintech" field="Design Process" className="mt-4" />
           <p className="mt-4 max-w-lg body-copy text-muted-foreground">A two-track design process: continuous improvements alongside deeper exploration of complex workflows, shaped by customer feedback at every step.</p>
@@ -74,7 +71,7 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
         </div>
         <div className="p-6 md:p-8">
-          <p className="caption">02 / 2021 – 2022</p>
+          <p className="caption">03 / 2021 – 2022</p>
           <h3 className="mt-3 card-title">Morpho - A design system for a Fintech Startup</h3>
           <ProjectContext industry="Fintech" field="Design System" className="mt-4" />
           <p className="mt-4 max-w-lg body-copy text-muted-foreground">Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
