@@ -64,7 +64,7 @@ export default function CaseStudyPage() {
                   { label: "Tasks", value: "UX/UI design, product discovery, user testing, prototyping, MVP, client handover" },
                   { label: "Industry", value: `${project.industry} · ${project.field}` },
                 ]
-              : project.slug === "pawsquad"
+              : project.slug === "pawsquad" || project.slug === "migreat"
               ? [
                   { label: "Role", value: project.role },
                   { label: "Tasks", value: "Web design, Brand design, Web and Mobile" },
