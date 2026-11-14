@@ -98,7 +98,7 @@ export default function OriginMarkets() {
             </div>
           </div>
         ))}
-        <SecondaryCard to="/work/origin-markets/gallery" image="origin-header" description="A selection of screens and flows from across the Origin product family." />
+        <SecondaryCard to="/work/origin-markets/gallery" image="origin-funding-matrix" description="A selection of screens and flows from across the Origin product family." />
       </Section>
     </>
   );
