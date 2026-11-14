@@ -23,10 +23,6 @@ const products = [
   { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.', image: 'origin-structured_notes' },
 ];
 
-function Img({ k }: { k: string }) {
-  const image = projectImage(k);
-  return <img loading="lazy" src={image.url} alt={image.alt} className="mt-8 h-auto w-full rounded-[10px]" />;
-}
 function Sample({ to, label = 'READ MORE' }: { to: string; label?: string }) {
   return <Link to={to} className="accent-link mt-8 inline-block max-w-full leading-relaxed">{label}</Link>;
 }
