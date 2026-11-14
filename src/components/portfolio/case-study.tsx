@@ -8,6 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
+import { SecondaryCard } from "./secondary-card";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
