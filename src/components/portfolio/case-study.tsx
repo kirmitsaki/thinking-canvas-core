@@ -10,7 +10,7 @@ import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
 import { SecondaryCard } from "./secondary-card";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section) =>
@@ -45,10 +45,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             { label: 'Industry', value: `${project.industry} · ${project.field}` },
           ];
           return (
-            <>
-              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={text} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div>
+            <div className="case-study-header-copy">
+              <div className="mt-6 max-w-[760px] space-y-4">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{text}</p>)}</div>
               <dl className="mt-7 space-y-1">{headerFacts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl>
-            </>
+            </div>
           );
         })()}
       </header>

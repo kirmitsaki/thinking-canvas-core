@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
@@ -6,10 +7,37 @@ import { SecondaryCard } from '@/components/portfolio/secondary-card';
 
 const project = getProject('origin-markets');
 
+function emphasize(text: string): ReactNode {
+  const phrases = [
+    'over 100 borrowers, 20 major investment banks',
+    'nearly 700 professionals across 70 cities',
+    'first in-house designer',
+    'manual processes, fragmented communication and legacy software',
+    'how dealers, borrowers, and investment banks actually worked',
+    'over 20 dealers and nearly 90 issuers globally',
+    'the primary problem was efficiency',
+    'The phone call before a major transaction was not redundant.',
+    'changed the entire product direction',
+    'quick improvements to existing workflows',
+    'deeper exploration for more complex features',
+    'before committing development resources',
+    'prototypes and customer feedback',
+    'without a shared reference point',
+    'built once, used everywhere',
+    'built with engineers, not for them',
+    'Three products, one institutional workflow',
+    '1,000+ issuers',
+    'drafting and collaboration of transaction documents',
+    'reducing manual processes and operational risk',
+  ];
+  const pattern = new RegExp(`(${phrases.join('|')})`, 'g');
+  return text.split(pattern).map((part, index) => phrases.includes(part) ? <strong key={index}>{part}</strong> : part);
+}
+
 const intro = [
   'The first front-to-back digital platform aiming to simplify the global debt capital markets.',
   'The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
-];
+].map(emphasize);
 const challengeCopy = 'The challenge was bringing simplicity to an industry still reliant on manual processes, fragmented communication and legacy software. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.';
 const roleCopy = 'I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.';
 const processCopy = 'I introduced an agile design process with two paths: quick improvements to existing workflows and deeper exploration for more complex features. Both started with the same question: How can we make the platform more useful to the people using it?';
@@ -27,13 +55,13 @@ const products = [
   { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.', image: 'origin-structured_notes' },
 ];
 
-function Section({ id, title, lede, children }: { id: string; title: string; lede?: string; children?: React.ReactNode }) {
+function Section({ id, title, lede, children }: { id: string; title: string; lede?: string; children?: ReactNode }) {
   return (
     <section id={id} className="origin-section scroll-mt-32">
       <SectionDivider />
       <div className="origin-section-heading">
         <h2 className="section-title">{title}</h2>
-        {lede && <p className="body-copy text-muted-foreground">{lede}</p>}
+        {lede && <p className="body-copy text-muted-foreground">{emphasize('{emphasize(lede)}')}</p>}
       </div>
       {children && <div className="origin-section-content">{children}</div>}
     </section>
@@ -69,19 +97,19 @@ export default function OriginMarkets() {
         <div className="origin-research-block">
         <h3 className="subsection-title">Audience</h3>
         <div className="space-y-5">
-        <p className="body-copy text-muted-foreground">We started with the people already using the product and the manual processes it was replacing. Understanding how dealers, borrowers, and investment banks actually worked, not how they described their work in meetings, was the foundation for every design decision that followed. Early customer collaboration gave us direct insight into daily workflows and real pain points. All new features were shared with customers immediately on release to gather feedback.</p>
-        <p className="body-copy text-muted-foreground">Over two years of platform development we accumulated a significant body of customer insight from over 20 dealers and nearly 90 issuers globally.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('We started with the people already using the product and the manual processes it was replacing. Understanding how dealers, borrowers, and investment banks actually worked, not how they described their work in meetings, was the foundation for every design decision that followed. Early customer collaboration gave us direct insight into daily workflows and real pain points. All new features were shared with customers immediately on release to gather feedback.')}</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Over two years of platform development we accumulated a significant body of customer insight from over 20 dealers and nearly 90 issuers globally.')}</p>
         </div>
         </div>
         <div className="origin-research-block">
         <h3 className="subsection-title">Defining the problem</h3>
         <div className="space-y-5">
-        <p className="body-copy text-muted-foreground">The most important research finding was not what we expected.</p>
-        <p className="body-copy text-muted-foreground">We had assumed the primary problem was efficiency. We spent months trying to remove steps from workflows, cut email chains, reduce manual overhead. When we spent proper time with customers it became clear that many of the steps we were trying to eliminate were doing important work. The phone call before a major transaction was not redundant. It was how both parties confirmed that the person on the other side had seen the document, understood what it meant, and was ready to proceed.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('The most important research finding was not what we expected.')}</p>
+        <p className="body-copy text-muted-foreground">{emphasize('We had assumed the primary problem was efficiency. We spent months trying to remove steps from workflows, cut email chains, reduce manual overhead. When we spent proper time with customers it became clear that many of the steps we were trying to eliminate were doing important work. The phone call before a major transaction was not redundant. It was how both parties confirmed that the person on the other side had seen the document, understood what it meant, and was ready to proceed.')}</p>
         </div>
         </div>
         <blockquote className="pull-quote">Trust between institutions has to be produced. You cannot automate it out of existence without replacing it with something equally credible.</blockquote>
-        <p className="body-copy text-muted-foreground">That insight changed the entire product direction.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('That insight changed the entire product direction.')}</p>
       </Section>
 
       <Section id="process" title="Process" lede={processCopy}>
@@ -89,19 +117,19 @@ export default function OriginMarkets() {
         <div className="origin-process-paths">
         <div className="space-y-4">
         <h3 className="subsection-title">Continuous improvements</h3>
-        <p className="body-copy text-muted-foreground">Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.')}</p>
         </div>
         <div className="space-y-4">
         <h3 className="subsection-title">Exploring complex workflows</h3>
-        <p className="body-copy text-muted-foreground">Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.')}</p>
         </div>
         </div>
       </Section>
 
       <Section id="design-system" title="Design System">
         <div className="origin-system-copy">
-        <p className="body-copy text-muted-foreground">Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.</p>
-        <p className="body-copy text-muted-foreground">Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.')}</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
         </div>
         <p className="origin-system-principle">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
         <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="h-auto w-full rounded-[10px]" />
@@ -113,7 +141,7 @@ export default function OriginMarkets() {
             <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full rounded-[10px]" />
             <div>
               <h3 className="subsection-title">{item.name}</h3>
-              <p className="body-copy mt-3">{item.text}</p>
+              <p className="body-copy mt-3">{emphasize(item.text)}</p>
             </div>
           </div>
         ))}
