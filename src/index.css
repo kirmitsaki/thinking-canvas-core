@@ -607,15 +607,7 @@ button:focus-visible,
   text-decoration-thickness: 2px;
 }
 
-/* Card image soft brighten + arrow nudge */
-.editorial-card img,
-.lead-card img {
-  transition: filter 350ms ease;
-}
-.editorial-card:hover img,
-.lead-card:hover img {
-  filter: brightness(1.04);
-}
+/* Arrow nudge */
 .arrow-nudge {
   display: inline-block;
   transition: transform 240ms ease;
