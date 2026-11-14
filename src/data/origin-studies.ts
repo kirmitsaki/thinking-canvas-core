@@ -3,7 +3,7 @@ import { getProject } from './projects';
 export const originStudyGroups = [
   { title: 'Foundations', studies: [
     { slug: 'design-process', name: 'Design process in Fintech', sectionIds: ['process-purpose', 'audience', 'design-process', 'development-process', 'research', 'challenge'] },
-    { slug: 'design-system', name: 'Design System', sectionIds: ['design-system', 'morpho-challenge', 'morpho-foundation', 'morpho-system', 'morpho-adoption'] },
+    { slug: 'design-system', name: 'Design System', sectionIds: ['design-system', 'morpho-challenge', 'morpho-foundation', 'morpho-system', 'morpho-adoption', 'morpho-result'] },
   ] },
   { title: 'Products', studies: [
     { slug: 'documentation', name: 'Documentation', sectionIds: ['documentation'] },
@@ -21,11 +21,12 @@ const fundingMatrixReflection = {
 };
 
 const designSystemReflection = {
-  title: 'Reflection',
-  paragraphs: [
-    'Being Origin’s first in-house designer meant shaping not only the product experience but also the foundations of how design would operate within the company.',
-    'I approached the design system as an evolving product in its own right rather than a one-off deliverable: something that would need to grow, adapt and improve alongside the business. The project reinforced the importance of establishing strong design foundations early, particularly in a fast-moving fintech environment where clarity, trust and consistency are essential.',
-  ],
+  "title": "A final thought",
+  "paragraphs": [
+    "As Origin's first in-house designer, I had the opportunity to shape not only the product, but also how design worked within the company.",
+    "Morpho was an important part of that. I wanted to make good design easier to deliver, giving the team the tools to work faster without compromising on quality or accessibility.",
+    "It was never meant to be a finished library. It was a foundation designed to evolve with the business."
+  ]
 };
 
 export function getOriginStudy(slug: string) {
@@ -38,5 +39,5 @@ export function getOriginStudy(slug: string) {
     return section;
   });
   const reflection = slug === 'design-process' ? project.reflection : slug === 'funding-matrix-redesign' ? fundingMatrixReflection : slug === 'design-system' ? designSystemReflection : undefined;
-  return { ...study, sections, reflection };
+  return { ...study, sections, reflection, displayTitle: slug === 'design-system' ? 'Morpho' : study.name, subtitle: slug === 'design-system' ? "Building Origin's first design system" : undefined, disciplines: slug === 'design-system' ? 'Design system · Product design · Fintech' : undefined };
 }
