@@ -81,7 +81,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             <div className="editorial-study-heading mx-auto max-w-[720px]">
               <h2 className="section-title">{section.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
-                {section.paragraphs.map((paragraph, paragraphIndex) => (
+                {(section.paragraphs ?? []).map((paragraph, paragraphIndex) => (
                   <Fragment key={paragraph}>
                     <p>{editorialEmphasis(paragraph)}</p>
                     {section.quote && section.quoteAfter === paragraphIndex && (
