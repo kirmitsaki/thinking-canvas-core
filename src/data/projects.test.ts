@@ -22,9 +22,11 @@ describe('work index ordering', () => {
   it('lists the main case studies first with Meliniki and JobMe last', () => {
     assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
   });
-  it('includes every project exactly once', () => {
-    assert.equal(projectsByYear.length, projects.length);
-    assert.deepEqual([...projectsByYear].map(project => project.slug).sort(), projects.map(project => project.slug).sort());
+  it('includes every visible project exactly once and hides the Origin design process card', () => {
+    const visible = projects.filter(project => project.slug !== 'origin-design-process');
+    assert.equal(projectsByYear.length, visible.length);
+    assert.deepEqual([...projectsByYear].map(project => project.slug).sort(), visible.map(project => project.slug).sort());
+    assert.ok(!projectsByYear.some(project => project.slug === 'origin-design-process'));
   });
 });
 
