@@ -73,11 +73,11 @@ export default function OriginMarkets() {
       </Section>
 
       <Section id="process" title="Process" lede={processCopy}>
+        <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="h-auto w-full rounded-[10px]" />
         <h3 className="subsection-title">Continuous improvements</h3>
         <p className="body-copy text-muted-foreground">Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.</p>
         <h3 className="subsection-title">Exploring complex workflows</h3>
         <p className="body-copy text-muted-foreground">Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.</p>
-        <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="h-auto w-full rounded-[10px]" />
       </Section>
 
       <Section id="design-system" title="Design System">
