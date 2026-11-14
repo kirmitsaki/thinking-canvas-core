@@ -247,17 +247,6 @@
     object-fit: contain;
   }
 
-  .flagship-rule {
-    border-bottom: 2px solid var(--rust);
-  }
-
-  .display-serif {
-    font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1.15;
-  }
-
   .standfirst {
     font-family: var(--font-display);
     font-style: italic;
@@ -636,8 +625,7 @@
   .case-study-editorial .editorial-study-visual > div > img {
     max-width: 100%;
   }
-  .case-study-editorial .editorial-study-reflection .essay-prose,
-  .case-study-editorial .editorial-contribution {
+  .case-study-editorial .editorial-study-reflection .essay-prose {
     max-width: 65ch;
   }
   .case-study-editorial .editorial-outcomes {
