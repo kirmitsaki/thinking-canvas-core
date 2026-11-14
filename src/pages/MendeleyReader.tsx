@@ -27,7 +27,7 @@ export default function MendeleyReader({ embedded = false }: { embedded?: boolea
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Mendeley", to: "/work/mendeley" },
+            { label: "Mendeley (Elsevier)", to: "/work/mendeley" },
             { label: "The Reader" },
           ]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}

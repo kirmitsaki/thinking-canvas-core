@@ -32,7 +32,7 @@ export default function MendeleyLibrary({ embedded = false }: { embedded?: boole
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Mendeley", to: "/work/mendeley" },
+            { label: "Mendeley (Elsevier)", to: "/work/mendeley" },
             { label: "The Library" },
           ]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}

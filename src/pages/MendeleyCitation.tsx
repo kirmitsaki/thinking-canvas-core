@@ -27,7 +27,7 @@ export default function MendeleyCitation({ embedded = false }: { embedded?: bool
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Mendeley", to: "/work/mendeley" },
+            { label: "Mendeley (Elsevier)", to: "/work/mendeley" },
             { label: "Citation" },
           ]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
