@@ -14,9 +14,12 @@ import { editorialEmphasis } from "./editorial-emphasis";
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
-    ...project.sections.flatMap((section) =>
+    ...project.sections.flatMap((section, index) =>
       section.id && section.navigationLabel
-        ? [{ id: section.id, label: section.navigationLabel }]
+        ? [
+            { id: section.id, label: section.navigationLabel },
+            ...(index === 0 && project.contribution ? [{ id: "my-role", label: "My role" }] : []),
+          ]
         : []
     ),
     ...(project.outcomes.length ? [{ id: "outcomes", label: "Outcomes" }] : []),
@@ -191,7 +194,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             )}
           </section>
           {index === 0 && project.contribution && (
-            <section className="origin-section scroll-mt-32">
+            <section id="my-role" className="origin-section scroll-mt-32">
               <SectionDivider />
               <div className="origin-section-heading">
                 <h2 className="section-title">My role</h2>
