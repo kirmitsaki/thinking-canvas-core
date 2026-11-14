@@ -8,7 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes & evidence" }: { project: Project; body?: ReactNode; introParagraphs?: string[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section) =>
@@ -168,10 +168,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         ))}
         <div className="mx-auto max-w-[720px]">
           {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && <SectionDivider />}
-          {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">Outcomes & evidence</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="caption mt-2">{stat.text}</dd></div>)}</dl></div> : project.outcomes.length > 0 && (
+          {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">{outcomesTitle}</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="caption mt-2">{stat.text}</dd></div>)}</dl></div> : project.outcomes.length > 0 && (
             <>
               <h2 id="outcomes" className="card-title">
-                Outcomes & evidence
+                {outcomesTitle}
               </h2>
               <ul className="mt-6 space-y-4">
                 {project.outcomes.map((outcome) => (
