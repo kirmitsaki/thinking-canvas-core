@@ -12,7 +12,8 @@ const meta = pageMeta(
   "article"
 );
 
-export default function MendeleyCitation() {
+export default function MendeleyCitation({ embedded = false }: { embedded?: boolean }) {
+  if (embedded) return <><h2 className="card-title">Citation</h2><p className="standfirst mt-6 mb-10">The Microsoft® Word add-in for inserting references, changing citation styles and generating a bibliography, without leaving the document.</p><MendeleyCitationContent /></>;
   return (
     <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo
@@ -37,6 +38,20 @@ export default function MendeleyCitation() {
         </p>
       </header>
       <article className="mx-auto max-w-[720px]">
+        <MendeleyCitationContent />
+        <div className="hairline-top pt-8">
+          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
+            <ArrowLeft size={14} />
+            Back to the Mendeley case study
+          </Link>
+        </div>
+      </article>
+    </main>
+  );
+}
+
+function MendeleyCitationContent() {
+  return <>
         {citationSections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
@@ -68,13 +83,5 @@ export default function MendeleyCitation() {
             ))}
           </section>
         ))}
-        <div className="hairline-top pt-8">
-          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
-            <ArrowLeft size={14} />
-            Back to the Mendeley case study
-          </Link>
-        </div>
-      </article>
-    </main>
-  );
+  </>;
 }

@@ -12,7 +12,8 @@ const meta = pageMeta(
   "article"
 );
 
-export default function MendeleyReader() {
+export default function MendeleyReader({ embedded = false }: { embedded?: boolean }) {
+  if (embedded) return <><h2 className="card-title">The Reader</h2><p className="standfirst mt-6 mb-10">Reading, highlighting and annotating PDFs, with notes across multiple documents kept in one place.</p><MendeleyReaderContent /></>;
   return (
     <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo
@@ -37,6 +38,20 @@ export default function MendeleyReader() {
         </p>
       </header>
       <article className="mx-auto max-w-[720px]">
+        <MendeleyReaderContent />
+        <div className="hairline-top pt-8">
+          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
+            <ArrowLeft size={14} />
+            Back to the Mendeley case study
+          </Link>
+        </div>
+      </article>
+    </main>
+  );
+}
+
+function MendeleyReaderContent() {
+  return <>
         {readerSections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
@@ -68,13 +83,5 @@ export default function MendeleyReader() {
             ))}
           </section>
         ))}
-        <div className="hairline-top pt-8">
-          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
-            <ArrowLeft size={14} />
-            Back to the Mendeley case study
-          </Link>
-        </div>
-      </article>
-    </main>
-  );
+  </>;
 }
