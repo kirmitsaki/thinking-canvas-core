@@ -542,6 +542,139 @@
     z-index: 20;
     background-color: var(--background);
   }
+
+  /* Origin's editorial layout is deliberately scoped to its overview. */
+  .origin-editorial .case-study > header > div:last-child {
+    max-width: 820px;
+  }
+  .origin-editorial .case-study > header dl {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    max-width: 900px;
+  }
+  .origin-editorial .case-study > header dt,
+  .origin-editorial .case-study > header dd {
+    display: block;
+  }
+  .origin-editorial .case-study > header dt {
+    margin-bottom: 0.375rem;
+    color: var(--accent);
+  }
+  .origin-section {
+    margin-bottom: 4.5rem;
+  }
+  .origin-section-heading {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .origin-section-heading .body-copy {
+    max-width: 62ch;
+    color: var(--foreground);
+  }
+  .origin-section-content {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 2.5rem;
+    min-width: 0;
+  }
+  .origin-research-block {
+    display: grid;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+  .origin-research-block > div {
+    max-width: 62ch;
+  }
+  .origin-editorial .pull-quote {
+    max-width: 850px;
+    margin: 1rem auto;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 2rem;
+    color: var(--accent);
+  }
+  .origin-editorial #research .origin-section-content > p {
+    text-align: center;
+  }
+  .origin-process-paths,
+  .origin-system-copy {
+    display: grid;
+    gap: 2rem;
+  }
+  .origin-process-paths > div {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+  .origin-system-principle {
+    max-width: 780px;
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--foreground);
+  }
+  .origin-product {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .origin-product .body-copy {
+    max-width: 54ch;
+  }
+  .origin-editorial .case-study > article > div:last-child {
+    max-width: none;
+  }
+  .origin-editorial #outcomes > dl > div {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .origin-editorial #outcomes > dl dt {
+    font-size: 2rem;
+    color: var(--accent);
+  }
+  .origin-editorial #outcomes > dl dd {
+    max-width: 40ch;
+  }
+  @media (min-width: 768px) {
+    .origin-editorial .case-study > header dl {
+      grid-template-columns: 1fr 0.65fr 1.5fr;
+      margin-top: 2.5rem;
+    }
+    .origin-section {
+      margin-bottom: 6rem;
+    }
+    .origin-section-heading,
+    .origin-research-block {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 3rem;
+    }
+    .origin-process-paths,
+    .origin-system-copy {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+    }
+    .origin-editorial .pull-quote {
+      font-size: 2.75rem;
+      padding-block: 2.5rem;
+    }
+    .origin-system-principle {
+      font-size: 2.125rem;
+    }
+    .origin-product {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: 3rem;
+    }
+    .origin-editorial #outcomes > dl {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2.5rem;
+    }
+  }
 }
 
 @keyframes fadeIn {
