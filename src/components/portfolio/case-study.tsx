@@ -95,6 +95,12 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </Link>
               )}
             </div>
+            {section.quote && (
+              <blockquote className="pull-quote">
+                <p>{editorialEmphasis(section.quote.text)}</p>
+                {section.quote.attribution && <cite>{section.quote.attribution}</cite>}
+              </blockquote>
+            )}
             {section.groups && (
               <div className="mt-10 grid gap-10">
                 {section.groups.map((group) => (
