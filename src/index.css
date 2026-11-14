@@ -544,6 +544,10 @@
   }
 
   /* Origin's editorial layout is deliberately scoped to its overview. */
+  figcaption.caption {
+    text-align: center;
+  }
+
   .origin-editorial .case-study-header-copy {
     display: grid;
     gap: 2rem;
