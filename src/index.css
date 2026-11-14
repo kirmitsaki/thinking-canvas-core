@@ -190,6 +190,26 @@
     background-color: var(--card);
   }
 
+  .artwork-card .text-muted-foreground {
+    color: var(--artwork-card-muted);
+  }
+
+  .artwork-card .text-foreground {
+    color: var(--artwork-card-foreground);
+  }
+
+  .artwork-card .text-accent {
+    color: var(--artwork-card-foreground);
+  }
+
+  .artwork-card .text-forest {
+    color: var(--artwork-card-muted);
+  }
+
+  .artwork-card .border-camel {
+    border-color: var(--artwork-card-border);
+  }
+
   .logo-card-media {
     background-color: var(--logo-card-background);
   }
