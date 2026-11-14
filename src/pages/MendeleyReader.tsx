@@ -43,8 +43,7 @@ export default function MendeleyReader() {
         {readerSections.map((section, index) => (
           <section key={section.id} id={section.id} className="mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
-            <p className="label-quiet">{String(index + 1).padStart(2, "0")}</p>
-            <h2 className="mt-3 card-title">{section.title}</h2>
+            <h2 className="card-title">{section.title}</h2>
             {section.paragraphs.length > 0 && (
               <div className="essay-prose mt-6 space-y-5">
                 {section.paragraphs.map((text) => (
