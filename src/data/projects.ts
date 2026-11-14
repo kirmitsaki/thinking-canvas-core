@@ -222,7 +222,7 @@ export type Project = {
   evidencePending?: boolean;
   comingSoon?: boolean;
   reflection?: { title: string; paragraphs: string[] };
-  sections: { subheading?: boolean; groups?: { label: string; text: string; image?: string; images?: string[] }[]; quote?: { text: string; attribution: string }; id?: string; navigationLabel?: string; title: string; paragraphs: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text: string; image?: string; images?: string[] }[]; quote?: { text: string; attribution: string }; id?: string; navigationLabel?: string; title: string; paragraphs: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
   outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
   contribution: string; outcomes: string[];
 };
@@ -449,51 +449,84 @@ export const projects: Project[] = [
             "caption": "The legal document wizard alongside the transaction timeline and approval activity."
       },
       {
-            "id": "design-system", "navigationLabel": "Design system",
-            "title": "A shared language with Morpho",
-            "paragraphs": [
-                  "When I joined as Origin's first in-house designer, there was no centralised design system or established design language. As the platform grew, product experiences were becoming fragmented and harder to keep recognisably Origin.",
-                  "I took ownership of creating Morpho, Origin's first centralised design library: reusable components, visual guidelines and accessibility principles that gave product design a consistent foundation and room to scale."
-            ],
-            "visual": "Morpho components and product patterns",
-            "image": "origin-morpho",
-            "caption": "The component library alongside examples of its use across the platform."
-      },
+  "id": "design-system",
+  "navigationLabel": "Design system",
+  "title": "",
+  "paragraphs": [
+    "When I joined Origin as its first in-house designer, there was no shared design system. As the product grew, inconsistencies began to appear across the platform. Similar components were being designed and built repeatedly, slowing teams down and making it harder to maintain a consistent experience.",
+    "I took the lead on creating Morpho, Origin's first centralised design system. The aim was to make design and development faster, improve consistency and put accessibility at the heart of the product."
+  ],
+  "visual": "Overview of Morpho, showing components, colours, typography and patterns"
+},
       {
-            "id": "morpho-challenge",
-            "title": "The challenge",
-            "paragraphs": [
-                  "Without a shared design language, design and development decisions were made in isolation. Products and features lacked a unified visual language, teams repeatedly designed and built similar components, and every new feature made consistency harder to maintain.",
-                  "The challenge was not simply to create a library of UI components. It was to establish a scalable foundation that would improve how the company designed, built and maintained its products."
-            ]
-      },
+  "id": "morpho-challenge",
+  "title": "The challenge",
+  "paragraphs": [
+    "Origin's products had a growing range of interface needs, from tables and grids to modals, forms and inputs. We needed a system flexible enough to support different features, but simple enough for teams to reuse without creating unnecessary complexity.",
+    "At the same time, we needed to improve consistency, make accessibility part of everyday design decisions and reduce the time spent rebuilding common elements."
+  ]
+},
       {
-            "id": "morpho-foundation",
-            "title": "Choosing a foundation",
-            "paragraphs": [
-                  "I started by assessing the existing product experience: reviewing customer feedback to find the inconsistencies that mattered most, and studying how other fintech companies approached consistency, accessibility and reusable patterns. In fintech, clarity and trust are particularly important — interfaces need to make complex financial interactions feel straightforward.",
-                  "I involved engineers early, discussing front-end frameworks, component architecture, testing and documentation, so the system would be practical to implement rather than existing solely as a design resource.",
-                  "We chose Google's Material Design as the starting point. It offered an established, accessible foundation of interaction patterns and components that we could adapt to Origin's needs, letting us focus our effort on the brand and product rather than reinventing proven patterns."
-            ]
-      },
+  "id": "morpho-foundation",
+  "title": "Finding a starting point",
+  "paragraphs": [
+    "I reviewed the existing product and customer feedback to understand where the biggest improvements were needed. I also explored how other fintech companies approached reusable components and accessibility.",
+    "After discussing the technical requirements with engineering, we chose Google's Material Design as our starting point. It provided a solid foundation of established components and accessible patterns that we could adapt to Origin's brand and needs."
+  ],
+  "visual": "Material Design references alongside Origin's visual direction"
+},
       {
-            "id": "morpho-system",
-            "title": "Building the system",
-            "paragraphs": [
-                  "Morpho became the single source of truth for Origin's product design, focused on four areas.",
-                  "Shared foundations for typography, colour, iconography and spacing established a consistent visual language and strengthened the brand experience. A library of flexible, reusable components — buttons, form elements and common UI patterns — meant teams could reuse established solutions instead of creating new ones.",
-                  "Accessibility was considered from the outset rather than treated as an afterthought, and the library was structured to accommodate new components and product requirements as Origin evolved, so the system could grow alongside the business without losing its consistency."
-            ]
-      },
+  "id": "morpho-system",
+  "title": "Building Morpho",
+  "paragraphs": [
+    "I organised the system around four areas:"
+  ],
+  "groups": [
+    {
+      "label": "01. Foundations",
+      "text": "Shared rules for colour, typography, spacing and iconography created a consistent visual language across the platform."
+    },
+    {
+      "label": "02. Components",
+      "text": "A library of reusable elements, from buttons and inputs to more complex tables, grids and modals. Components were designed to adapt to different use cases without losing consistency."
+    },
+    {
+      "label": "03. Accessibility",
+      "text": "Accessibility was considered from the start. Colour contrast, readability, interaction states and usability informed how components were designed."
+    },
+    {
+      "label": "04. Documentation",
+      "text": "Clear guidance on component usage and behaviour gave designers and developers a shared reference, making the system easier to use and maintain."
+    }
+  ],
+  "visual": "Morpho component library showing simple and complex components, variants and states"
+},
       {
-            "id": "morpho-adoption",
-            "title": "Making it part of how we worked",
-            "paragraphs": [
-                  "Creating the library was only the first step. I worked closely with engineering to align design components with their coded counterparts, establishing a shared understanding of component behaviour, visual specifications and implementation requirements.",
-                  "The library gave designers, engineers and stakeholders a common reference point, and integrating it into the product development workflow moved us away from isolated design decisions towards a more consistent, collaborative approach.",
-                  "The result was a recognisable visual language across the platform, less duplicated design work, a common language between design and engineering, and a foundation that could evolve alongside Origin's products."
-            ]
-      }
+  "id": "morpho-adoption",
+  "title": "Working with engineering",
+  "paragraphs": [
+    "I worked closely with engineers to make sure the Figma components matched their coded counterparts. We aligned on how components should look, behave and work across the product.",
+    "Having a shared reference reduced guesswork and duplicated work, making it easier to build new features without starting from scratch."
+  ],
+  "visual": "Figma components alongside their implementation in the product"
+},
+      {
+  "id": "morpho-result",
+  "title": "The result",
+  "paragraphs": [
+    "Morpho gave Origin its first shared design language and a more efficient way to design and build products.",
+    "It helped to:"
+  ],
+  "bullets": [
+    "Create a more consistent experience across the platform.",
+    "Make accessibility part of the design process.",
+    "Reduce duplicated design and development work.",
+    "Speed up the creation of new features.",
+    "Improve collaboration between design and engineering."
+  ],
+  "closingParagraph": "Most importantly, it gave the team a foundation that could grow with the product.",
+  "visual": "Examples of Morpho components used across different areas of Origin"
+}
 ],
     evidencePending: false,
     reflection: {"title": "What I learned", "paragraphs": ["Complexity isn't always the enemy. Professional tools have different usability requirements from consumer products. Dealers need information density and visibility, much like traders working with a Bloomberg terminal. The goal isn't to remove information, but to make it easier to navigate.", "Look at the whole, not just the feature. A product's most-used features often accumulate complexity over time. Each addition might make sense in isolation, but stepping back to assess the entire experience is just as important as delivering the next improvement.", "In financial markets, speed is trust. Visual clarity matters, but so does performance. Improving loading times was as important as redesigning the interface. When people are working with time-sensitive transactions, a responsive product helps build confidence in the platform.", "Ultimately, good fintech design isn't about making everything look simpler. It's about making complex processes feel clear, reliable and under control."]},
