@@ -15,7 +15,7 @@ const meta = pageMeta(
 export default function ProductDesignIdentity() {
   const image = projectImage("scw-identity");
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo
         title={meta.title}
         description={meta.description}

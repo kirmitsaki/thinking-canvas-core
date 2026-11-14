@@ -15,7 +15,7 @@ export default function OriginStudy() {
   const study = slug ? getOriginStudy(slug) : undefined;
   if (!study) return <NotFound />;
   const meta = pageMeta(`Origin Markets · ${study.name}`, study.sections[0]?.paragraphs[0] ?? '', 'article');
-  return <><Seo title={meta.title} description={meta.description} path={`/work/origin-markets/${slug}`} ogType={meta.ogType} /><main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+  return <><Seo title={meta.title} description={meta.description} path={`/work/origin-markets/${slug}`} ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12 pt-10 md:pt-14">
       <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: study.name }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
@@ -23,11 +23,12 @@ export default function OriginStudy() {
       {study.subtitle && <p className="standfirst mt-6 max-w-[720px]">{study.subtitle}</p>}
       {study.disciplines && <p className="label mt-6">{study.disciplines}</p>}
     </header>
-    <article className="mx-auto max-w-[720px] pb-12 md:pb-16">
+    <article className="editorial-detail-content mx-auto pb-12 md:pb-16">
       {study.sections.map((section, index) => <section key={section.id} id={section.id} className={`scroll-mt-32 ${section.subheading ? 'mb-10 md:mb-12' : 'mb-14 md:mb-20'}`}>
         {index > 0 && <SectionDivider />}
-        {section.title && <h2 className={section.subheading ? 'subsection-title' : 'card-title'}>{section.title}</h2>}
+        <div className="editorial-study-heading">{section.title && <h2 className={section.subheading ? 'subsection-title' : 'section-title'}>{section.title}</h2>}
         {section.paragraphs.length > 0 && <div className="essay-prose mt-6 space-y-5">{section.paragraphs.map(text => { const lead = ["The challenge wasn't simply to remove friction. It was to preserve the confidence behind existing workflows while making the experience clearer and more efficient.", 'How can we make the platform more useful to the people using it?'].find(item => text.includes(item)); if (!lead) return <p key={text}>{text}</p>; const at = text.indexOf(lead); return <p key={text}>{text.slice(0, at)}<strong className="font-semibold">{lead}</strong>{text.slice(at + lead.length)}</p>; })}</div>}
+        </div>
         {section.groups && <dl className="mt-8 space-y-9">{section.groups.map(group => <div key={group.label} className={group.image ? 'grid grid-cols-[64px_minmax(0,1fr)] gap-x-5 md:grid-cols-[88px_minmax(0,1fr)] md:gap-x-7' : undefined}>
           {group.image && <img loading="lazy" src={projectImage(group.image).url} alt="" className="row-span-2 h-auto w-full max-w-[88px]" />}
           <dt className="label">{group.label}</dt><dd className="essay-prose mt-2">{group.text}{group.images && <div className="mt-6 grid grid-cols-3 items-center gap-2 md:gap-4">{group.images.map(key => <img loading="lazy" key={key} src={projectImage(key).url} alt={projectImage(key).alt} className="h-auto w-full max-w-[220px]" />)}</div>}</dd>
