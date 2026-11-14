@@ -3,6 +3,7 @@ import Seo from '@/components/Seo';
 import { ArrowLeft } from 'lucide-react';
 import { PortfolioBreadcrumb } from '@/components/portfolio/breadcrumb';
 import { getProject, pageMeta, projectImage } from '@/data/projects';
+import { NdaNotice } from '@/components/portfolio/nda-notice';
 
 const screens = [
   'origin-marketplace',
@@ -19,6 +20,7 @@ export default function OriginGallery() {
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12 pt-10 md:pt-14">
+      <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: 'Sample work' }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
       <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
