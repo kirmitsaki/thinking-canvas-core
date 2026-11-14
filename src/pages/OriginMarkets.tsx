@@ -61,7 +61,10 @@ export default function OriginMarkets() {
           <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="block h-full w-full object-cover object-top" />
         </div>
         <div className="p-6 md:p-8">
-          <h3 className="card-title">Morpho</h3>
+          <p className="caption">01 / 2021 – 2022</p>
+          <h3 className="mt-3 card-title">Morpho</h3>
+          <ProjectContext industry="Fintech" field="Design System" className="mt-4" />
+          <ProjectLabels labels={['Design system', 'Product design', 'UI components']} className="mt-3" />
           <p className="mt-4 max-w-lg body-copy text-muted-foreground">Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.</p>
           <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
         </div>
