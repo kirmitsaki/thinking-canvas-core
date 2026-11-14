@@ -335,8 +335,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           {project.reflection && (
             <section className="editorial-study-reflection mt-16">
               <SectionDivider />
-              <h2 className="section-title">{project.reflection.title}</h2>
-              <div className="essay-prose mt-8 space-y-6">
+              <div className="essay-prose mx-auto mt-10 space-y-6 text-center">
                 {project.reflection.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
                 ))}

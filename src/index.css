@@ -701,16 +701,8 @@
     .case-study-editorial .editorial-outcomes {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .case-study-editorial .editorial-study-reflection {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
-      gap: 0 3rem;
-    }
-    .case-study-editorial .editorial-study-reflection > :first-child {
-      grid-column: 1 / -1;
-    }
     .case-study-editorial .editorial-study-reflection > .essay-prose {
-      margin-top: 0;
+      max-width: 65ch;
     }
     .case-study-editorial .pull-quote {
       font-size: 2.75rem;
