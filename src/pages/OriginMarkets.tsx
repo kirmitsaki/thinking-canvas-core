@@ -38,12 +38,7 @@ export default function OriginMarkets() {
   ] };
   const body = <>
     <Section id="challenge" title="Bringing simplicity to a complex industry">
-      <p>Origin connects the different participants involved in bond issuance, providing tools to simplify workflows, improve communication and automate manual processes.</p>
-      <p>The platform serves four main audiences, each with distinct needs and responsibilities.</p>
-      <div className="grid gap-8 md:grid-cols-2 md:items-center">
-        <div className="space-y-5">{audiences.map(([label, text]) => <p key={label}><strong className="font-semibold">{label}</strong> – {text}</p>)}</div>
-        <img loading="lazy" src={projectImage('origin-audience-2').url} alt={projectImage('origin-audience-2').alt} className="h-auto w-full rounded-[10px]" />
-      </div>
+      <img loading="lazy" src={projectImage('origin-audience-2').url} alt={projectImage('origin-audience-2').alt} className="h-auto w-full rounded-[10px]" />
     </Section>
     <Section id="products" title="Four products, one institutional workflow">
       <p>As we learned more about our users, we focused on delivering polished, high-quality designs and interactions across the platform. Each product evolved through continuous iteration and careful evaluation.</p>
