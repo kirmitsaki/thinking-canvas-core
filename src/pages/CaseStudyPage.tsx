@@ -55,7 +55,7 @@ export default function CaseStudyPage() {
           project.slug === "mendeley"
             ? [
                 { label: "Role", value: project.role },
-                { label: "Duration", value: "1 year" },
+                { label: "Tasks", value: "UX/UI design, Design system, Research, Web & Desktop application, Microsoft plugin" },
                 { label: "Industry", value: `${project.industry} · ${project.field}` },
               ]
             : undefined
