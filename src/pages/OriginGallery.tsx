@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { PortfolioBreadcrumb } from '@/components/portfolio/breadcrumb';
 import { getProject, pageMeta, projectImage } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
+import { ProjectPagination } from '@/components/portfolio/project-pagination';
 
 const screens = [
   'origin-marketplace',
@@ -29,5 +30,6 @@ export default function OriginGallery() {
       {screens.map(key => <figure key={key}><img loading="lazy" src={projectImage(key).url} alt={projectImage(key).alt} className="h-auto w-full rounded-[10px]" /><figcaption className="caption mt-3">{projectImage(key).alt}</figcaption></figure>)}
     </div>
     <div className="hairline-top pt-8"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
+    <ProjectPagination slug="origin-markets" />
   </main></>;
 }

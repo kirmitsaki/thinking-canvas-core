@@ -8,6 +8,7 @@ import { getProject, pageMeta, projectImage } from '@/data/projects';
 import { getOriginStudy } from '@/data/origin-studies';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
+import { ProjectPagination } from '@/components/portfolio/project-pagination';
 
 export default function OriginStudy() {
   const { study: slug } = useParams();
@@ -40,5 +41,6 @@ export default function OriginStudy() {
       {study.reflection && <section className="mb-14 md:mb-20"><SectionDivider /><h2 className="card-title">{study.reflection.title}</h2><div className="essay-prose mt-6 space-y-5">{study.reflection.paragraphs.map(text => { const lead = ['Complexity isn\'t always the enemy.', 'Look at the whole, not just the feature.', 'In financial markets, speed is trust.'].find(item => text.startsWith(item)); return <p key={text}>{lead ? <><strong className="font-semibold">{lead}</strong>{text.slice(lead.length)}</> : text}</p>; })}</div></section>}
       <div className="hairline-top pt-8"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     </article>
+    <ProjectPagination slug={slug === 'design-system' ? 'origin-design-system' : 'origin-markets'} />
   </main></>;
 }

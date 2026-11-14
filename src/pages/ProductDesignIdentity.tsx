@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { getProject, pageMeta, projectImage } from "@/data/projects";
 import { NdaNotice } from "@/components/portfolio/nda-notice";
+import { ProjectPagination } from "@/components/portfolio/project-pagination";
 
 const meta = pageMeta(
   "Secure Code Warrior · Product design identity",
@@ -54,6 +55,7 @@ export default function ProductDesignIdentity() {
           Back to the case study
         </Link>
       </div>
+      <ProjectPagination slug="secure-code-warrior" />
     </main>
   );
 }
