@@ -5,7 +5,6 @@ import { type Project, projects, projectImage } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ContactLink } from "./shell";
 import { SectionNavigation } from "./section-navigation";
-import { ProjectContext } from "./project-context";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 
