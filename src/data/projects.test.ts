@@ -20,7 +20,7 @@ describe('portfolio project dates from Rachel’s CV and brief', () => {
 
 describe('work index ordering', () => {
   it('lists the main case studies first with Meliniki and JobMe last', () => {
-    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
+    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
   });
   it('includes every visible project exactly once and hides the Origin design process card', () => {
     const visible = projects.filter(project => project.slug !== 'origin-design-process');
@@ -33,7 +33,7 @@ describe('work index ordering', () => {
 describe('work filters', () => {
   const withTag = (tag: string) => projectsByYear.filter(project => project.tags.includes(tag)).map(project => project.slug);
   it('Design Systems shows Secure Code Warrior, Origin and Mendeley', () => {
-    assert.deepEqual(withTag('Design Systems'), ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley']);
+    assert.deepEqual(withTag('Design Systems'), ['secure-code-warrior', 'origin-markets', 'mendeley']);
   });
   it('separates Product Identity from Brand', () => {
     assert.deepEqual(withTag('Product Identity'), ['secure-code-warrior']);
@@ -82,7 +82,7 @@ describe('shared case-study section filters', () => {
   });
   it('uses curated work areas for contribution filter options and matches', () => {
     assert.deepEqual(projectFilters, [...new Set(projectsByYear.flatMap(projectWorkAreas))]);
-    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Design system')).map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley']);
+    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Design system')).map(project => project.slug), ['secure-code-warrior', 'mendeley']);
   });
   it('combines Products and Interface into one Interface work area', () => {
     assert.equal(projectFilters.includes('Products'), false);
@@ -131,7 +131,7 @@ describe('case-study destinations', () => {
   const destinations = [
     ['secure-code-warrior', 'Secure Code Warrior'],
     ['origin-markets', 'Origin Markets'],
-    ['mendeley', 'Mendeley'],
+    ['mendeley', 'Mendeley (Elsevier)'],
     ['aladdin', 'Aladdin'],
     ['corresilience', 'CorResilience'],
     ['pawsquad', 'PawSquad'],

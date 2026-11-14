@@ -214,7 +214,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
 export function projectImage(key: string) { return projectImages[key]; }
 
 export type Project = {
-  slug: 'secure-code-warrior' | 'origin-markets' | 'origin-design-process' | 'origin-design-system' | 'mendeley' | 'aladdin' | 'corresilience' | 'pawsquad' | 'migreat' | 'mds-quostar' | 'jobme' | 'meliniki';
+  slug: 'secure-code-warrior' | 'origin-markets' | 'origin-design-process' | 'mendeley' | 'aladdin' | 'corresilience' | 'pawsquad' | 'migreat' | 'mds-quostar' | 'jobme' | 'meliniki';
   linkTo?: string;
   workAreas?: string[];
   dates: string;
@@ -457,85 +457,6 @@ export const projects: Project[] = [
             "image": "origin-documentation-1",
             "caption": "The legal document wizard alongside the transaction timeline and approval activity."
       },
-      {
-  "id": "design-system",
-  "navigationLabel": "Design system",
-  "title": "",
-  "paragraphs": [
-    "When I joined Origin as its first in-house designer, there was no shared design system. As the product grew, inconsistencies began to appear across the platform. Similar components were being designed and built repeatedly, slowing teams down and making it harder to maintain a consistent experience.",
-    "I took the lead on creating Morpho, Origin's first centralised design system. The aim was to make design and development faster, improve consistency and put accessibility at the heart of the product."
-  ],
-  "visual": "Overview of Morpho, showing components, colours, typography and patterns"
-},
-      {
-  "id": "morpho-challenge",
-  "title": "The challenge",
-  "paragraphs": [
-    "Origin's products had a growing range of interface needs, from tables and grids to modals, forms and inputs. We needed a system flexible enough to support different features, but simple enough for teams to reuse without creating unnecessary complexity.",
-    "At the same time, we needed to improve consistency, make accessibility part of everyday design decisions and reduce the time spent rebuilding common elements."
-  ]
-},
-      {
-  "id": "morpho-foundation",
-  "title": "Finding a starting point",
-  "paragraphs": [
-    "I reviewed the existing product and customer feedback to understand where the biggest improvements were needed. I also explored how other fintech companies approached reusable components and accessibility.",
-    "After discussing the technical requirements with engineering, we chose Google's Material Design as our starting point. It provided a solid foundation of established components and accessible patterns that we could adapt to Origin's brand and needs."
-  ],
-  "visual": "Material Design references alongside Origin's visual direction"
-},
-      {
-  "id": "morpho-system",
-  "title": "Building Morpho",
-  "paragraphs": [
-    "I organised the system around four areas:"
-  ],
-  "groups": [
-    {
-      "label": "01. Foundations",
-      "text": "Shared rules for colour, typography, spacing and iconography created a consistent visual language across the platform."
-    },
-    {
-      "label": "02. Components",
-      "text": "A library of reusable elements, from buttons and inputs to more complex tables, grids and modals. Components were designed to adapt to different use cases without losing consistency."
-    },
-    {
-      "label": "03. Accessibility",
-      "text": "Accessibility was considered from the start. Colour contrast, readability, interaction states and usability informed how components were designed."
-    },
-    {
-      "label": "04. Documentation",
-      "text": "Clear guidance on component usage and behaviour gave designers and developers a shared reference, making the system easier to use and maintain."
-    }
-  ],
-  "visual": "Morpho component library showing simple and complex components, variants and states"
-},
-      {
-  "id": "morpho-adoption",
-  "title": "Working with engineering",
-  "paragraphs": [
-    "I worked closely with engineers to make sure the Figma components matched their coded counterparts. We aligned on how components should look, behave and work across the product.",
-    "Having a shared reference reduced guesswork and duplicated work, making it easier to build new features without starting from scratch."
-  ],
-  "visual": "Figma components alongside their implementation in the product"
-},
-      {
-  "id": "morpho-result",
-  "title": "The result",
-  "paragraphs": [
-    "Morpho gave Origin its first shared design language and a more efficient way to design and build products.",
-    "It helped to:"
-  ],
-  "bullets": [
-    "Create a more consistent experience across the platform.",
-    "Make accessibility part of the design process.",
-    "Reduce duplicated design and development work.",
-    "Speed up the creation of new features.",
-    "Improve collaboration between design and engineering."
-  ],
-  "closingParagraph": "Most importantly, it gave the team a foundation that could grow with the product.",
-  "visual": "Examples of Morpho components used across different areas of Origin"
-}
 ],
     evidencePending: false,
     reflection: {"title": "What I learned", "paragraphs": ["Complexity isn't always the enemy. Professional tools have different usability requirements from consumer products. Dealers need information density and visibility, much like traders working with a Bloomberg terminal. The goal isn't to remove information, but to make it easier to navigate.", "Look at the whole, not just the feature. A product's most-used features often accumulate complexity over time. Each addition might make sense in isolation, but stepping back to assess the entire experience is just as important as delivering the next improvement.", "In financial markets, speed is trust. Visual clarity matters, but so does performance. Improving loading times was as important as redesigning the interface. When people are working with time-sensitive transactions, a responsive product helps build confidence in the platform.", "Ultimately, good fintech design isn't about making everything look simpler. It's about making complex processes feel clear, reliable and under control."]},
@@ -713,14 +634,8 @@ export const projects: Project[] = [
     intro: '', heroImage: 'origin-design-process-diagram', heroFit: 'contain', linkTo: '/work/origin-markets/design-process', workAreas: ['Product Design'],
     sections: [], contribution: '', outcomes: [],
   },
-  {
-    slug: 'origin-design-system', name: 'Morpho - A design system for a Fintech Startup', sector: 'Fintech · Design system', industry: 'Fintech', field: 'Design System', dates: '2021 – 2022', tags: ['Design Systems'],
-    title: 'Morpho - A design system for a Fintech Startup', summary: 'Evolving the visual language, creating reusable interface components and bringing existing features into a more consistent and scalable framework.', role: 'Lead Product Designer',
-    intro: '', heroImage: 'origin-morpho', linkTo: '/work/origin-markets/design-system', workAreas: ['Design Systems'],
-    sections: [], contribution: '', outcomes: [],
-  },
 ];
-const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
+const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
 export const projectsByYear: Project[] = workOrder.map(getProject);
 export const projectTags = ['Research', 'Product Design', 'Product Identity', 'Brand', 'Accessibility', 'Vision', 'Design Systems', 'Prototyping', 'AI-assisted Prototyping', 'Web Design', 'Front-end Development', 'Logo Design', 'Illustration', 'Label Design'];
 export function projectSectionLabels(project: Project): string[] {

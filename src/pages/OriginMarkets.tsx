@@ -84,7 +84,7 @@ export default function OriginMarkets() {
       { label: 'My role', id: 'my-role' },
       { label: 'Research', id: 'research' },
       { label: 'Process', id: 'process' },
-      { label: 'Design System', id: 'design-system' },
+      { label: 'Design system', id: 'design-system' },
       { label: 'Products', id: 'products' },
       { label: 'Outcomes', id: 'outcomes' },
     ],
