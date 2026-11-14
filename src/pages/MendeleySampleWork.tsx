@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import * as Tabs from "@radix-ui/react-tabs";
 import { ArrowLeft } from "lucide-react";
@@ -23,6 +23,23 @@ export default function MendeleySampleWork() {
   const [params, setParams] = useSearchParams();
   const requested = params.get("view");
   const active = views.some(view => view.id === requested) ? requested ?? "library" : "library";
+  // Switching tabs swaps the panel below, which can collapse the page height and
+  // throw the reader back to the top; put them back where they were.
+  const scrollMemo = useRef(0);
+  useEffect(() => {
+    const target = scrollMemo.current;
+    scrollMemo.current = 0;
+    if (!target) return;
+    let frame = 0;
+    let attempts = 0;
+    const restore = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (target <= max) window.scrollTo(0, target);
+      else if (attempts++ < 90) frame = requestAnimationFrame(restore);
+    };
+    frame = requestAnimationFrame(restore);
+    return () => cancelAnimationFrame(frame);
+  }, [active]);
   return (
     <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/mendeley/sample-work" ogType={meta.ogType} />
@@ -33,7 +50,7 @@ export default function MendeleySampleWork() {
         />
         <h1 className="mt-8 page-title">Sample work</h1>
       </header>
-      <Tabs.Root value={active} onValueChange={view => setParams({ view }, { preventScrollReset: true })}>
+      <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams({ view }, { preventScrollReset: true }); }}>
         <Tabs.List aria-label="Mendeley sample work" className="sample-work-tabs hairline-bottom mb-10 flex gap-2">
           {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
             <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
