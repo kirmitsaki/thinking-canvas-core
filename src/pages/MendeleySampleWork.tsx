@@ -45,7 +45,7 @@ export default function MendeleySampleWork() {
       <Seo title={meta.title} description={meta.description} path="/work/mendeley/sample-work" ogType={meta.ogType} />
       <header className="pb-10 pt-10 md:pt-14">
         <PortfolioBreadcrumb
-          items={[{ label: "Portfolio", to: "/work" }, { label: "Mendeley", to: "/work/mendeley" }, { label: "Sample work" }]}
+          items={[{ label: "Portfolio", to: "/work" }, { label: "Mendeley", to: "/work/mendeley" }, { label: "Mendeley Reference Manager" }]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
         />
         <h1 className="mt-8 page-title">Mendeley Reference Manager</h1>
