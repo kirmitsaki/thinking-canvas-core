@@ -520,7 +520,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'corresilience', name: 'CorResilience', sector: 'Enterprise wellbeing · Android & iOS · via Elemental Concept', industry: 'Wellbeing', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Prototyping'],
-    title: 'Turning a coached programme into a daily resilience habit.',
+    title: 'CorResilience',
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
     intro: 'CorResilience is a personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
