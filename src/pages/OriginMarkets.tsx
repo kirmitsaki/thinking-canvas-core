@@ -50,7 +50,7 @@ export default function OriginMarkets() {
     </Section>
     <Section id="products" title="Four products, one institutional workflow">
       <p>As we learned more about our users, we focused on delivering polished, high-quality designs and interactions across the platform. Each product evolved through continuous iteration and careful evaluation.</p>
-      {products.map(item => <div key={item.name} className={`grid gap-5 pt-4 md:items-start md:gap-7 ${item.image ? 'md:grid-cols-[minmax(0,1fr)_220px]' : ''}`}><div><h3 className="label">{item.name}</h3><p className="mt-3">{item.text}</p></div>{item.image && <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} loading="lazy" className="h-auto w-full max-w-[220px] rounded-[10px]" />}</div>)}
+      {products.map(item => <div key={item.name} className={`grid gap-5 pt-4 md:items-start md:gap-7 ${item.image ? 'md:grid-cols-[minmax(0,1fr)_220px]' : ''}`}><div><h3 className="label">{item.name}</h3><p className="mt-3">{item.text}</p></div>{item.image && <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full max-w-[220px] rounded-[10px]" />}</div>)}
       <Sample to="/work/origin-markets/gallery" label="SEE SAMPLE WORK" />
     </Section>
     <Section id="design-process-overview" title="A design process for an agile team">
