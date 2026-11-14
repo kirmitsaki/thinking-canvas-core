@@ -637,7 +637,7 @@ export const projects: Project[] = [
     sections: [
       { id: 'brief', navigationLabel: 'Brief', title: 'A seasonal brief', paragraphs: ['JobMe was about seasonal jobs in hospitality, typically opening from spring to autumn. The only requirement for the logo was to include swallows, connecting the identity to that seasonal rhythm.'] },
       { id: 'logo', navigationLabel: 'Logo', title: 'The logo', paragraphs: ['The design pairs two swallows with the JobMe name. A separate square version keeps the birds as the focus, without the lettering.'], visual: 'Square logo', image: 'jobme-square', caption: 'The square version of the JobMe logo.' },
-      { id: 'styleguide', navigationLabel: 'STYLEGUIDE', title: 'A small styleguide', paragraphs: ['Alongside the logo, I suggested a small styleguide. The style tile brings together typography, colours, buttons and links, giving the identity a simple foundation beyond the logo.'], visual: 'Supporting styleguide', image: 'jobme-styletile', caption: 'A compact style tile with Avenir typography and supporting colour and interface choices.' },
+      { id: 'styleguide', navigationLabel: 'STYLEGUIDE', title: 'A small styleguide', paragraphs: ['The style tile brings together typography, colours, buttons and links, giving the identity a simple foundation beyond the logo.'], visual: 'Supporting styleguide', image: 'jobme-styletile', caption: 'A compact style tile with Avenir typography and supporting colour and interface choices.' },
     ], contribution: '', outcomes: [],
   },
   {
