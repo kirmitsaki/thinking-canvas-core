@@ -20,7 +20,7 @@ describe('portfolio project dates from Rachel’s CV and brief', () => {
 
 describe('work index ordering', () => {
   it('lists the main case studies first with Meliniki and JobMe last', () => {
-    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'origin-design-process', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
+    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
   });
   it('includes every project exactly once', () => {
     assert.equal(projectsByYear.length, projects.length);

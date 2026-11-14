@@ -709,7 +709,7 @@ export const projects: Project[] = [
     sections: [], contribution: '', outcomes: [],
   },
 ];
-const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'origin-design-process', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
+const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'origin-design-system', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
 export const projectsByYear: Project[] = workOrder.map(getProject);
 export const projectTags = ['Research', 'Product Design', 'Product Identity', 'Brand', 'Accessibility', 'Vision', 'Design Systems', 'Prototyping', 'AI-assisted Prototyping', 'Web Design', 'Front-end Development', 'Logo Design', 'Illustration', 'Label Design'];
 export function projectSectionLabels(project: Project): string[] {
