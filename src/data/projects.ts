@@ -586,7 +586,7 @@ export const projects: Project[] = [
     reflection: { title: 'What I learned', paragraphs: ['People don’t book a vet the way they book a restaurant. Trust has to come first. The booking is the result of trust, not the cause of it. Every design decision on PawSquad was really a decision about whether this interaction increases or decreases confidence in the service.', 'That lesson applied directly to fintech years later. The underlying question is the same: before a user commits to an action, do they believe the product understands their situation and has their interests in mind? The domain changes. The question doesn’t.'] },
   },
   {
-    slug: 'migreat', name: 'Migreat', sector: 'UX engineering · Prototyping', industry: 'Immigration', field: 'Web platforms', dates: 'Jan 2014 – Sep 2015', tags: ['Research', 'Product Design', 'Brand', 'Prototyping', 'Front-end Development'],
+    slug: 'migreat', name: 'Migreat', sector: 'UX engineering · Prototyping', industry: 'Legal Tech', field: 'Web platforms', dates: 'Jan 2014 – Sep 2015', tags: ['Research', 'Product Design', 'Brand', 'Prototyping', 'Front-end Development'],
     title: 'Migreat', summary: 'Clear immigration guidance, personalised visa checklists and community support, designed and built from the ground up.',
     role: 'UX Engineer · Design & front-end development',
     intro: 'An online platform dedicated to simplifying immigration for people moving to or within the UK. It offered legal guidance, personalised advice, and community resources to help migrants navigate a process that is genuinely complex and often hostile to the people going through it.',
