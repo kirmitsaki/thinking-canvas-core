@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { navigationScrollBehavior } from "@/lib/navigation-scroll";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
+import { scrollToSection } from "@/lib/section-scroll";
 import type { Project } from "@/data/projects";
 
 export function SectionNavigation({
@@ -23,6 +24,8 @@ export function SectionNavigation({
     return () => media.removeEventListener("change", update);
   }, []);
   const lockRef = useRef<string | null>(null);
+  const cancelScrollRef = useRef<(() => void) | null>(null);
+  useEffect(() => () => cancelScrollRef.current?.(), []);
   useEffect(() => {
     const update = () => {
       if (lockRef.current) return;
@@ -60,28 +63,14 @@ export function SectionNavigation({
               event.preventDefault();
               const target = document.getElementById(item.id);
               if (target) {
-                document
-                  .querySelectorAll<HTMLImageElement>('main img[loading="lazy"]')
-                  .forEach((img) => (img.loading = "eager"));
+                cancelScrollRef.current?.();
                 lockRef.current = item.id;
                 setActiveId(item.id);
-                target.scrollIntoView({
-                  behavior: navigationScrollBehavior(pathname, to, reducedMotion),
-                  block: "start",
-                });
-                let timer = 0;
-                const settle = () => {
-                  window.clearTimeout(timer);
-                  timer = window.setTimeout(() => {
-                    window.removeEventListener("scroll", settle);
-                    target.scrollIntoView({ behavior: "auto", block: "start" });
-                    window.setTimeout(() => {
-                      lockRef.current = null;
-                    }, 50);
-                  }, 150);
-                };
-                window.addEventListener("scroll", settle, { passive: true });
-                settle();
+                cancelScrollRef.current = scrollToSection(
+                  target,
+                  navigationScrollBehavior(pathname, to, reducedMotion),
+                  () => { lockRef.current = null; }
+                );
                 window.history.replaceState(null, "", `#${item.id}`);
               }
             }}
