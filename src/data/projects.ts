@@ -491,7 +491,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'aladdin', name: 'Aladdin', sector: 'Digital healthcare · Android & iOS · via Elemental Concept', industry: 'Healthcare', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Vision'],
-    title: 'From diabetes prevention to a digital healthcare ecosystem.',
+    title: 'Aladdin',
     summary: 'Bringing health records, appointments and preventative care together, designed through Elemental Concept.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
     intro: 'Aladdin started as an idea to prevent diabetes. By the time we finished the first version it had become a full digital healthcare ecosystem, giving users access to their health records, appointments, medication management, and health tracking in one place.',
