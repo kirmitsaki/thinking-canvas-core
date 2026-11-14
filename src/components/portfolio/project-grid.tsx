@@ -7,9 +7,7 @@ import { ProjectContext } from "./project-context";
 function CardBody({ project, index, link }: { project: Project; index: number; link: boolean }) {
   return (
     <div className="p-6 md:p-8">
-      <p className="caption">
-        {String(index + 1).padStart(2, "0")} / {project.dates}
-      </p>
+      <p className="caption">{project.dates}</p>
       <h2 className="mt-3 card-title">{project.name}</h2>
       <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
       <p className="mt-4 max-w-lg body-copy text-muted-foreground">{project.summary}</p>
