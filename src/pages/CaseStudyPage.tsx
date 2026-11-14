@@ -5,6 +5,7 @@ import { caseStudyMeta, getProject, pageMeta, projects } from "@/data/projects";
 import { CaseStudy } from "@/components/portfolio/case-study";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { ContactLink } from "@/components/portfolio/shell";
+import { NdaNotice } from "@/components/portfolio/nda-notice";
 
 function SecureCodeWarriorComingSoon() {
   const meta = pageMeta(
@@ -19,6 +20,7 @@ function SecureCodeWarriorComingSoon() {
         path="/work/secure-code-warrior"
         ogType={meta.ogType}
       />
+      <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb
         items={[{ label: "Portfolio", to: "/work" }, { label: "Secure Code Warrior" }]}
       />

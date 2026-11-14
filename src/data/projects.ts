@@ -225,6 +225,7 @@ export type Project = {
   sectionNavigation?: { label: string; id: string }[];
   evidencePending?: boolean;
   comingSoon?: boolean;
+  ndaNotice?: boolean;
   reflection?: { title: string; paragraphs: string[] };
   sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text: string; image?: string; images?: string[] }[]; quote?: { text: string; attribution: string }; id?: string; navigationLabel?: string; title: string; paragraphs: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
   outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
@@ -239,6 +240,7 @@ export const projects: Project[] = [
     intro: 'Connecting a broader product direction with the systems, standards and practical design work needed to make it real.',
     heroImage: 'scw-wanda',
     comingSoon: true,
+    ndaNotice: true,
     sections: [
       { title: 'A product at a turning point', paragraphs: ['Secure Code Warrior was moving from a learning-focused proposition towards a broader developer security-risk platform. That shift called for a different way of thinking about the product and its enterprise experience.', 'The challenge was not simply to redesign screens. It was to make a clearer product direction work within an existing platform, with accumulated design decisions and multiple teams.'] },
       { id: 'product-design-identity', title: 'The product design identity', paragraphs: ['The product design identity brings the visual direction together in one artefact: colour, interface examples and character artwork. It provides the context for the design-system work that follows.'] },
@@ -259,6 +261,7 @@ export const projects: Project[] = [
     role: 'First in-house designer · Research · Product design · Design system · Product revamp',
     intro: 'The first front-to-back digital platform aiming to simplify the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
     heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
+    ndaNotice: true,
     sections: [
       {
         id: 'process-purpose', title: 'The challenge',
