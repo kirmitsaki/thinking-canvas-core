@@ -91,6 +91,28 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </Link>
               )}
             </div>
+            {section.groups && (
+              <div className="mx-auto mt-10 max-w-[720px] space-y-12">
+                {section.groups.map((group) => (
+                  <div key={group.label}>
+                    <h3 className="subsection-title">{group.label}</h3>
+                    <div className="essay-prose mt-4 space-y-5">
+                      {group.text.split("\n").map((paragraph) => (
+                        <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
+                      ))}
+                    </div>
+                    {group.image && (
+                      <img
+                        src={projectImage(group.image).url}
+                        alt={projectImage(group.image).alt}
+                        className="mt-6 h-auto w-full rounded-[10px]"
+                        loading="lazy"
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
             {section.visual && (
               <figure className="editorial-study-visual mx-auto mt-9 w-full max-w-[720px]">
                 {section.images ? (
