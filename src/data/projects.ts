@@ -229,7 +229,7 @@ export type Project = {
   comingSoon?: boolean;
   ndaNotice?: boolean;
   reflection?: { title: string; paragraphs: string[] };
-  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; image2?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right'; imageSize?: 'small'; caption?: string }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
+  sections: { bullets?: string[]; closingParagraph?: string; subheading?: boolean; groups?: { label: string; text?: string; image?: string; image2?: string; images?: string[]; numbered?: boolean; markers?: string[]; cards?: { image: string; text: string }[]; imageSide?: 'right'; imageSize?: 'small' | 'quarter'; caption?: string }[]; quote?: { text: string; attribution?: string }; quoteAfter?: number; id?: string; navigationLabel?: string; title: string; paragraphs?: string[]; visual?: string; caption?: string; image?: string; imageFit?: 'native'; images?: string[]; imageLayout?: 'three-column' | 'gallery' | 'desktop-mobile' | 'side-by-side' }[];
   outcomeStats?: { value: string; text: string }[]; outcomesHeading?: string; outcomesIntro?: string;
   contribution: string; outcomes: string[];
 };
