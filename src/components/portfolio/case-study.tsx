@@ -81,8 +81,16 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             <div className="editorial-study-heading mx-auto max-w-[720px]">
               <h2 className="section-title">{section.title}</h2>
               <div className="essay-prose mt-6 space-y-5">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
+                {section.paragraphs.map((paragraph, paragraphIndex) => (
+                  <Fragment key={paragraph}>
+                    <p>{editorialEmphasis(paragraph)}</p>
+                    {section.quote && section.quoteAfter === paragraphIndex && (
+                      <blockquote className="pull-quote">
+                        <p>{editorialEmphasis(section.quote.text)}</p>
+                        {section.quote.attribution && <cite>{section.quote.attribution}</cite>}
+                      </blockquote>
+                    )}
+                  </Fragment>
                 ))}
               </div>
               {project.slug === "secure-code-warrior" && section.id === "product-design-identity" && (
@@ -95,6 +103,12 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </Link>
               )}
             </div>
+            {section.quote && section.quoteAfter === undefined && (
+              <blockquote className="pull-quote">
+                <p>{editorialEmphasis(section.quote.text)}</p>
+                {section.quote.attribution && <cite>{section.quote.attribution}</cite>}
+              </blockquote>
+            )}
             {section.groups && (
               <div className="mt-10 grid gap-10">
                 {section.groups.map((group) => (
