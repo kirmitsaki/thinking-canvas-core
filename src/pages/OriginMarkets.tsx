@@ -48,6 +48,7 @@ export default function OriginMarkets() {
     sections: [],
     outcomesHeading: undefined,
     sectionNavigation: [
+      { label: 'Overview', id: 'overview' },
       { label: 'Challenge', id: 'challenge' },
       { label: 'My role', id: 'my-role' },
       { label: 'Research', id: 'research' },
