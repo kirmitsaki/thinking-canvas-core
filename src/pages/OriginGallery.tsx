@@ -23,6 +23,23 @@ const documentation = [
   { asset: comments, title: 'Comments and collaboration', width: 1920, height: 790 },
 ];
 
+// The CDN handles hosted previews; local copies also support GitHub Pages.
+const localImages = import.meta.glob<string>('../assets/origin-sample-work/*.webp', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
+function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  const filename = decodeURIComponent(image.src.split('/').pop() ?? '').replace(/\.[^.]+$/, '.webp');
+  const fallback = localImages[`../assets/origin-sample-work/${filename}`];
+  if (fallback && image.dataset.localFallback !== 'true') {
+    image.dataset.localFallback = 'true';
+    image.src = fallback;
+  }
+}
+
 const screens = [
   'origin-marketplace',
   'origin-funding-matrix',
@@ -54,16 +71,16 @@ export default function OriginGallery() {
       <h2 id="pricing-funding" className="section-title mb-8 md:mb-12">Pricing and funding</h2>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-12">
         <figure className="mx-auto w-full max-w-[563px]">
-          <img loading="lazy" decoding="async" src={fundingMatrix.url} alt="Funding Matrix search and grid interfaces, before and after." width={563} height={1920} className="h-auto w-full rounded-lg" />
+          <img loading="lazy" decoding="async" onError={useLocalImage} src={fundingMatrix.url} alt="Funding Matrix search and grid interfaces, before and after." width={563} height={1920} className="h-auto w-full rounded-lg" />
           <figcaption className="caption mt-5">Funding Matrix — before and after</figcaption>
         </figure>
         <div className="grid gap-10 md:gap-16">
           <figure>
-            <img loading="lazy" decoding="async" src={syndicatePricer.url} alt="Syndicate Pricer before and after, with curve analysis and pricing controls." width={1920} height={1342} className="h-auto w-full rounded-lg" />
+            <img loading="lazy" decoding="async" onError={useLocalImage} src={syndicatePricer.url} alt="Syndicate Pricer before and after, with curve analysis and pricing controls." width={1920} height={1342} className="h-auto w-full rounded-lg" />
             <figcaption className="caption mt-5">Syndicate Pricer — before and after</figcaption>
           </figure>
           <figure>
-            <img loading="lazy" decoding="async" src={levelsStats.url} alt="Levels input interface and statistics widgets." width={1920} height={693} className="h-auto w-full rounded-lg" />
+            <img loading="lazy" decoding="async" onError={useLocalImage} src={levelsStats.url} alt="Levels input interface and statistics widgets." width={1920} height={693} className="h-auto w-full rounded-lg" />
             <figcaption className="caption mt-5">Levels input and statistics</figcaption>
           </figure>
         </div>
@@ -74,11 +91,11 @@ export default function OriginGallery() {
       <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
         <figure>
-          <img loading="lazy" decoding="async" src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
+          <img loading="lazy" decoding="async" onError={useLocalImage} src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
           <figcaption className="caption mt-5">Dashboard cards</figcaption>
         </figure>
         <figure className="mx-auto w-full max-w-[520px]">
-          <img loading="lazy" decoding="async" src={dataCards.url} alt="Data cards showing curves, pricing levels and trade tables." width={784} height={1920} className="h-auto w-full rounded-lg" />
+          <img loading="lazy" decoding="async" onError={useLocalImage} src={dataCards.url} alt="Data cards showing curves, pricing levels and trade tables." width={784} height={1920} className="h-auto w-full rounded-lg" />
           <figcaption className="caption mt-5">Data cards</figcaption>
         </figure>
       </div>
@@ -89,7 +106,7 @@ export default function OriginGallery() {
       <div className="grid gap-12 md:gap-16">
         {documentation.map(({ asset, title, width, height }) => (
           <figure key={asset.asset_id}>
-            <img loading="lazy" decoding="async" src={asset.url} alt={title} width={width} height={height} className="h-auto w-full rounded-lg" />
+            <img loading="lazy" decoding="async" onError={useLocalImage} src={asset.url} alt={title} width={width} height={height} className="h-auto w-full rounded-lg" />
             <figcaption className="caption mt-5">{title}</figcaption>
           </figure>
         ))}
