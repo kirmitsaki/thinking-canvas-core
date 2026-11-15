@@ -49,6 +49,20 @@ export default function OriginGallery() {
       <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
       <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
     </header>
+    <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
+      <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
+      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
+        <figure>
+          <img loading="lazy" decoding="async" onError={useLocalImage} src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
+          <figcaption className="caption mt-5">Dashboard cards</figcaption>
+        </figure>
+        <figure className="mx-auto w-full max-w-[520px]">
+          <img loading="lazy" decoding="async" onError={useLocalImage} src={dataCards.url} alt="Data cards showing curves, pricing levels and trade tables." width={784} height={1920} className="h-auto w-full rounded-lg" />
+          <figcaption className="caption mt-5">Data cards</figcaption>
+        </figure>
+      </div>
+    </section>
+    <SectionDivider />
     <section aria-labelledby="pricing-funding" className="py-12 md:py-16">
       <h2 id="pricing-funding" className="section-title mb-8 md:mb-12">Pricing and funding</h2>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-12">
@@ -66,20 +80,6 @@ export default function OriginGallery() {
             <figcaption className="caption mt-5">Levels input and statistics</figcaption>
           </figure>
         </div>
-      </div>
-    </section>
-    <SectionDivider />
-    <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
-      <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
-      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
-        <figure>
-          <img loading="lazy" decoding="async" onError={useLocalImage} src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
-          <figcaption className="caption mt-5">Dashboard cards</figcaption>
-        </figure>
-        <figure className="mx-auto w-full max-w-[520px]">
-          <img loading="lazy" decoding="async" onError={useLocalImage} src={dataCards.url} alt="Data cards showing curves, pricing levels and trade tables." width={784} height={1920} className="h-auto w-full rounded-lg" />
-          <figcaption className="caption mt-5">Data cards</figcaption>
-        </figure>
       </div>
     </section>
     <SectionDivider />
