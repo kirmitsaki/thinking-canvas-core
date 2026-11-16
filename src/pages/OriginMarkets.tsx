@@ -150,7 +150,9 @@ export default function OriginMarkets() {
             </article>
           ))}
         </div>
-        <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." notice={<NdaNotice />} />
+        <div className="mx-auto w-full max-w-[720px]">
+          <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." notice={<NdaNotice />} />
+        </div>
       </Section>
     </>
   );
