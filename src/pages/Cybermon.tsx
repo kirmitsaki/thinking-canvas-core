@@ -23,9 +23,6 @@ import mon2025_promptgeist from "@/assets/cybermon/2025_-_cybermon_-_promptgeist
 import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
 import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
-import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
-import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
-import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
 import mon2026_1 from "@/assets/cybermon/2026-cybermon-1.webp.asset.json";
 import mon2026_2 from "@/assets/cybermon/2026-cybermon-2.webp.asset.json";
 import trophy2026 from "@/assets/cybermon/2026-cybermon-trophy.webp.asset.json";
