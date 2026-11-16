@@ -120,14 +120,14 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
-        <div>
+        <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
           <img
             src={projectImage('scw-wanda').url}
             alt={projectImage('scw-wanda').alt}
-            className="w-full rounded-[10px]"
+            className="block h-auto w-full"
             loading="lazy"
           />
-          <ComingSoon />
+          <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
         </div>
       </Section>
 
