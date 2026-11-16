@@ -100,7 +100,7 @@ type DetailRow = {
     height: number;
   };
   /** Infographic treatment for this subsection. */
-  variant?: "cards" | "badges" | "points" | "chips" | "summary";
+  variant?: "cards" | "badges" | "points" | "chips" | "summary" | "outcomes";
   stats?: { value: string; label: string; note?: string }[];
 };
 
@@ -208,6 +208,17 @@ function RowBody({ row }: { row: DetailRow }) {
       return (
         <ul className="flex flex-wrap gap-2">
           {row.list!.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
+        </ul>
+      );
+    case "outcomes":
+      return (
+        <ul className="editorial-outcomes space-y-5">
+          {row.items!.map(item => (
+            <li key={item.name} className="hairline-bottom pb-4 body-copy">
+              <span className="font-semibold text-foreground">{item.name}.</span>{" "}
+              {editorialEmphasis(item.text ?? "")}
+            </li>
+          ))}
         </ul>
       );
     case "summary": {
@@ -741,6 +752,7 @@ export default function Cybermon() {
           row={{
             title: "Overall business value",
             sub: true,
+            variant: "outcomes",
             items: [
               { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
               { name: "Security capability", text: "Improve developers’ practical ability to identify and fix vulnerabilities." },
