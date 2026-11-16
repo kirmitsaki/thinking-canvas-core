@@ -51,7 +51,19 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           return (
             <div className="case-study-header-copy">
               <div className="mt-7 max-w-[760px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
-              <dl className="mt-7 space-y-1">{headerFacts.map(fact => <div key={fact.label} className="caption"><dt className="inline font-semibold">{fact.label}: </dt><dd className="inline">{fact.value}</dd></div>)}</dl>
+              <dl className="case-study-facts mt-7">{headerFacts.map(fact => {
+                const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
+                return (
+                  <div key={fact.label} className="case-study-fact">
+                    <dt className="label-quiet">{fact.label}</dt>
+                    <dd className="case-study-fact-value">
+                      {items ? (
+                        <ul className="case-study-fact-pills">{items.map(item => <li key={item}>{item}</li>)}</ul>
+                      ) : fact.value}
+                    </dd>
+                  </div>
+                );
+              })}</dl>
             </div>
           );
         })()}
