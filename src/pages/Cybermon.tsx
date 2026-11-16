@@ -27,6 +27,8 @@ import mon2026_4 from "@/assets/cybermon/2026-cybermon-4.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
 import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
+import film2025 from "@/assets/cybermon/cybermon-2025-film.mp4.asset.json";
+import poster2025 from "@/assets/cybermon/cybermon-2025-poster.webp.asset.json";
 import film2026 from "@/assets/cybermon/cybermon-2026-film.mp4.asset.json";
 import poster2026 from "@/assets/cybermon/cybermon-2026-poster.webp.asset.json";
 
@@ -511,6 +513,23 @@ export default function Cybermon() {
                 width={800}
                 height={267}
                 className="h-auto w-full rounded-lg"
+              />
+            </figure>
+          )}
+          {year.id === "2025" && (
+            <figure className="mx-auto mb-10 max-w-[720px]">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={poster2025.url}
+                src={film2025.url}
+                onError={useLocalVideo}
+                data-local-poster="cybermon-2025-poster.webp"
+                width={1138}
+                height={640}
+                className="h-auto w-full rounded-lg"
+                aria-label="Cybermon 2025 campaign film."
               />
             </figure>
           )}
