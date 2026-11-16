@@ -5,6 +5,8 @@ import { CaseStudy } from '@/components/portfolio/case-study';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 import { SecondaryCard } from '@/components/portfolio/secondary-card';
+import continuousImprovements from '@/assets/origin-continuous-improvements.webp';
+import complexWorkflows from '@/assets/origin-complex-workflows.webp';
 
 const project = getProject('origin-markets');
 
@@ -117,13 +119,14 @@ export default function OriginMarkets() {
       </Section>
 
       <Section id="process" title="Process" lede={processCopy}>
-        <img loading="lazy" src={projectImage('origin-design-process-diagram').url} alt={projectImage('origin-design-process-diagram').alt} className="h-auto w-full rounded-[10px]" />
         <div className="origin-process-paths">
         <div className="space-y-5">
+        <img loading="lazy" src={continuousImprovements} width={1440} height={1024} alt="Continuous improvements: review workflows, prioritise with PMs, share designs early, then move into Morpho." className="h-auto w-full" />
         <h3 className="subsection-title">Continuous improvements</h3>
         <p className="body-copy text-muted-foreground">{emphasize('Not every problem needed a major redesign. I regularly reviewed existing workflows, identified unnecessary steps and visual noise, and worked with product managers to prioritise improvements. This also included moving legacy features into Morpho, our new UI framework. Ideas came from across the business, product and engineering teams, and I shared proposed designs with stakeholders early, before committing development resources.')}</p>
         </div>
         <div className="space-y-5">
+        <img loading="lazy" src={complexWorkflows} width={1440} height={1024} alt="Exploring complex workflows: workshops, research and planning, UX exploration, UI design, prototypes, then customer feedback." className="h-auto w-full" />
         <h3 className="subsection-title">Exploring complex workflows</h3>
         <p className="body-copy text-muted-foreground">{emphasize('Larger features needed a more considered approach. I brought business, product and engineering together in workshops to understand the problem, challenge assumptions and explore potential solutions. From there, the process moved through research, planning and UX exploration into detailed UI design, with prototypes and customer feedback shaping each iteration before development.')}</p>
         </div>
