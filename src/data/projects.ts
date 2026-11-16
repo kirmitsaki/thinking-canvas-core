@@ -113,9 +113,9 @@ import corVision from '@/assets/corresilience-work_7-Vision.webp';
 import corBadges from '@/assets/corresilience-work_8-Badges.webp';
 
 const projectImages: Record<string, { url: string; alt: string }> = {
-  'mendeley-library-snippet': { url: window.location.hostname.endsWith('github.io') ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
-  'mendeley-reader-snippet': { url: window.location.hostname.endsWith('github.io') ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
-  'mendeley-citation-snippet': { url: window.location.hostname.endsWith('github.io') ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
+  'mendeley-library-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
+  'mendeley-reader-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
+  'mendeley-citation-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
   'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-audience-map': { url: originAudienceMap, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
