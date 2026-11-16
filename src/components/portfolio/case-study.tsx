@@ -148,7 +148,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                                 className="h-auto w-full rounded-[10px]"
                                 loading="lazy"
                               />
-                              <figcaption className="body-copy text-muted-foreground">{editorialEmphasis(card.text)}</figcaption>
+                              <figcaption className={`body-copy text-muted-foreground${project.slug === "pawsquad" ? " text-center" : ""}`}>{editorialEmphasis(card.text)}</figcaption>
                             </figure>
                           ))}
                         </div>
