@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { ArrowLeft } from 'lucide-react';
 import { PortfolioBreadcrumb } from '@/components/portfolio/breadcrumb';
@@ -43,6 +43,8 @@ function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
 
 export default function OriginGallery() {
   usePortfolioHeaderHeight();
+  const [params] = useSearchParams();
+  const snippet = params.has('snippet');
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12">
@@ -96,7 +98,7 @@ export default function OriginGallery() {
         ))}
       </div>
     </section>
-    <div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
-    <ProjectPagination slug="origin-markets" />
+    {!snippet && <><div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
+    <ProjectPagination slug="origin-markets" /></>}
   </main></>;
 }

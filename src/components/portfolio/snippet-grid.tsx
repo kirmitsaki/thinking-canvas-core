@@ -70,6 +70,13 @@ const snippets: Snippet[] = [
     name: "Brand styles",
     description: "Identity, typography and iconography across the app and website.",
   },
+  {
+    to: "/work/origin-markets/gallery",
+    image: "origin-sample-work",
+    project: "Origin Markets",
+    name: "Sample interface",
+    description: "Dashboards, pricing and documentation screens from across the Origin platform.",
+  },
 ];
 
 export function SnippetGrid() {
