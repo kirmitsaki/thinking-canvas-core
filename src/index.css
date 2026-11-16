@@ -1108,3 +1108,14 @@ a:hover .arrow-nudge,
 .origin-product-card.cybermon-card .label-quiet,
 .origin-product-card.cybermon-card .body-copy { color: hsl(var(--cybermon-fg) / 0.82); }
 .origin-product-card.cybermon-card .subsection-title { color: hsl(var(--cybermon-fg)); }
+
+.origin-product-card.cybermon-card { position: relative; overflow: hidden; }
+.cybermon-dragon {
+  position: absolute; top: 1.25rem; right: 1.25rem; width: 3.5rem; height: 2rem;
+  color: hsl(var(--cybermon-fg)); animation: cybermon-fly 3.2s ease-in-out infinite;
+}
+@keyframes cybermon-fly {
+  0%, 100% { transform: translate(0, 0) rotate(-3deg); }
+  50% { transform: translate(-6px, -5px) rotate(3deg); }
+}
+@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; } }
