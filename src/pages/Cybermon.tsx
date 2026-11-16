@@ -168,7 +168,7 @@ function RowBody({ row }: { row: DetailRow }) {
                   <div className="mt-4 flex flex-wrap gap-2">
                     {threat.split(/\s*(?:&|,)\s*/).map(tag => <span key={tag} className="cm-tag">{tag}</span>)}
                   </div>
-                  {detail && <p className="body-copy mt-4 text-muted-foreground">{detail.replace(/^focuses on /, "Focuses on ")}</p>}
+                  {detail && <p className="body-copy mt-4 text-muted-foreground">{detail.charAt(0).toUpperCase() + detail.slice(1)}</p>}
                 </div>
               </li>
             );
