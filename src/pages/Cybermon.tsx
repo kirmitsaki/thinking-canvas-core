@@ -154,8 +154,8 @@ const rows2024: DetailRow[] = [
     title: "Introduction",
     sub: true,
     paragraphs: [
-      "CyberMon 2024 was Secure Code Warrior’s gamified cybersecurity awareness campaign, launched on 7 October 2024 during Cybersecurity Awareness Month.",
-      "The campaign aimed to make secure coding education more engaging by introducing fictional monsters representing software security vulnerabilities. Developers were challenged to defeat the CyberMons by completing practical secure coding activities and earning points.",
+      "Cybermon 2024 was Secure Code Warrior’s gamified cybersecurity awareness campaign, launched on 7 October 2024 during Cybersecurity Awareness Month.",
+      "The campaign aimed to make secure coding education more engaging by introducing fictional monsters representing software security vulnerabilities. Developers were challenged to defeat the Cybermon by completing practical secure coding activities and earning points.",
     ],
   },
   {
@@ -163,17 +163,17 @@ const rows2024: DetailRow[] = [
     sub: true,
     list: [
       "The campaign ran for four weeks.",
-      "A new CyberMon was introduced each week.",
+      "A new Cybermon was introduced each week.",
       "Participants completed learning activities to earn points.",
-      "Developers needed to earn three points each week to defeat that week’s CyberMon.",
-      "Defeating all four CyberMons earned participants Cyberhero status.",
+      "Developers needed to earn three points each week to defeat that week’s Cybermon.",
+      "Defeating all four Cybermon earned participants Cyberhero status.",
     ],
   },
   {
-    title: "Meet the CyberMons",
+    title: "Meet the Cybermon",
     sub: true,
     paragraphs: [
-      "The 2024 campaign featured four weekly CyberMons, each representing a common software security threat.",
+      "The 2024 campaign featured four weekly Cybermon, each representing a common software security threat.",
     ],
     images: [
       { asset: interface2024, alt: "Cybermon 2024 teaser screen counting down to the first monster.", width: 800, height: 531 },
@@ -186,8 +186,8 @@ const rows2024: DetailRow[] = [
     table: {
       head: ["Achievement", "Description"],
       rows: [
-        ["Weekly CyberMon badges", "Limited-edition badges earned by defeating each week’s CyberMon"],
-        ["Cyberhero", "Defeat all four CyberMons"],
+        ["Weekly Cybermon badges", "Limited-edition badges earned by defeating each week’s Cybermon"],
+        ["Cyberhero", "Defeat all four Cybermon"],
         ["Prize draw entry", "Awarded to participants who completed the campaign"],
       ],
     },
@@ -223,7 +223,7 @@ const rows2024: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
+      "Cybermon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
   },
   {
@@ -240,7 +240,7 @@ const rows2025: DetailRow[] = [
     title: "Introduction",
     sub: true,
     paragraphs: [
-      "CyberMon 2025 was Secure Code Warrior’s next annual gamified cybersecurity campaign, launched on 6 October 2025.",
+      "Cybermon 2025 was Secure Code Warrior’s next annual gamified cybersecurity campaign, launched on 6 October 2025.",
       "The campaign shifted its focus towards AI and Large Language Model (LLM) security, introducing four AI-focused Boss Missions. The objective was to help developers understand emerging threats associated with AI-powered applications and learn how to protect them.",
     ],
   },
@@ -259,7 +259,7 @@ const rows2025: DetailRow[] = [
     ],
   },
   {
-    title: "Meet the CyberMons",
+    title: "Meet the Cybermon",
     sub: true,
     items: [
       { name: "Bypassaur", text: "Direct Prompt Injection — exploits malicious instructions supplied directly to AI models." },
@@ -321,7 +321,7 @@ const rows2025: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
+      "Cybermon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
     ],
   },
 ];
@@ -331,7 +331,7 @@ const rows2026: DetailRow[] = [
     title: "Introduction",
     sub: true,
     paragraphs: [
-      "CyberMon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on 5 October 2026.",
+      "Cybermon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on 5 October 2026.",
       "Under the theme Built by AI. Secured by You., the campaign brought together traditional application security and emerging AI-related vulnerabilities. It focused on helping developers understand the risks associated with AI-generated software, automated workflows and modern application development.",
     ],
   },
@@ -340,16 +340,16 @@ const rows2026: DetailRow[] = [
     sub: true,
     list: [
       "The campaign ran for four weeks.",
-      "A new CyberMon was introduced each week.",
+      "A new Cybermon was introduced each week.",
       "Participants completed short coding labs and interactive challenges.",
       "Developers faced four AI-focused Prime Boss missions.",
       "Participants earned digital badges for completing activities.",
-      "Completing all four CyberMons contributed towards Cyberhero status.",
+      "Completing all four Cybermon contributed towards Cyberhero status.",
       "Completing all four Prime Boss missions earned Cyberhero Prime status.",
     ],
   },
   {
-    title: "Meet the CyberMons",
+    title: "Meet the Cybermon",
     sub: true,
     items: [
       { name: "Glitchrusus — The Scrap Bandit", text: "Indirect Prompt Injection & Formula Injection — focuses on malicious instructions in AI workflows and spreadsheet formula injection." },
@@ -359,9 +359,9 @@ const rows2026: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon CyberMon.", width: 500, height: 500 },
-      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow CyberMon guarding a vault.", width: 500, height: 500 },
-      { asset: mon2026_3, alt: "Cybermon 2026 crest with the CyberMons around the shield logo.", width: 500, height: 500 },
+      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon Cybermon.", width: 500, height: 500 },
+      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow Cybermon guarding a vault.", width: 500, height: 500 },
+      { asset: mon2026_3, alt: "Cybermon 2026 crest with the Cybermon around the shield logo.", width: 500, height: 500 },
     ],
   },
   {
@@ -371,8 +371,8 @@ const rows2026: DetailRow[] = [
     table: {
       head: ["Achievement", "Description"],
       rows: [
-        ["Weekly CyberMon badges", "Earned by defeating individual CyberMons"],
-        ["Cyberhero", "Defeat all four CyberMons"],
+        ["Weekly Cybermon badges", "Earned by defeating individual Cybermon"],
+        ["Cyberhero", "Defeat all four Cybermon"],
         ["Cyberhero Prime", "Complete all four Prime Boss missions"],
       ],
     },
@@ -410,7 +410,7 @@ const rows2026: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
+      "Cybermon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
     ],
   },
 ];
@@ -421,7 +421,7 @@ const comparisonTable = {
     ["Theme", "Secure coding", "The Age of AI", "Built by AI. Secured by You."],
     ["Main focus", "Software vulnerabilities", "AI/LLM security", "AI and application security"],
     ["Campaign duration", "4 weeks", "October campaign", "4 weeks"],
-    ["Characters", "4 CyberMons", "4 AI bosses", "4 CyberMons"],
+    ["Characters", "4 Cybermon", "4 AI bosses", "4 Cybermon"],
     ["Learning format", "Labs, walkthroughs, missions", "AI security missions", "Labs, challenges and Prime Boss missions"],
     ["Rewards", "Weekly badges", "Exclusive content and prizes", "Weekly badges and achievements"],
     ["Main achievement", "Cyberhero", "Boss challenges", "Cyberhero / Cyberhero Prime"],
@@ -429,9 +429,9 @@ const comparisonTable = {
 };
 
 const years = [
-  { id: "2024", label: "Cybermon 2024", title: "CyberMon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
-  { id: "2025", label: "Cybermon 2025", title: "CyberMon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
-  { id: "2026", label: "Cybermon 2026", title: "CyberMon 2026", standfirst: "Built by AI. Secured by You. Four CyberMon, four weeks, one global community.", rows: rows2026 },
+  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
+  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
+  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: rows2026 },
 ];
 
 const navItems = [
@@ -528,7 +528,7 @@ export default function Cybermon() {
         />
         <DetailSection
           row={{
-            title: "How CyberMon evolved",
+            title: "How Cybermon evolved",
             sub: true,
             items: [
               { name: "2024 — Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
@@ -541,7 +541,7 @@ export default function Cybermon() {
           row={{
             title: "Overall business value",
             sub: true,
-            paragraphs: ["Across the three campaigns, Secure Code Warrior has used CyberMon to support five broader organisational goals:"],
+            paragraphs: ["Across the three campaigns, Secure Code Warrior has used Cybermon to support five broader organisational goals:"],
             items: [
               { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
               { name: "Security capability", text: "Improve developers’ practical ability to identify and fix vulnerabilities." },
@@ -554,7 +554,7 @@ export default function Cybermon() {
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, CyberMon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
+        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, Cybermon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
