@@ -97,7 +97,7 @@ const rows2024: DetailRow[] = [
   {
     title: "Introduction",
     paragraphs: [
-      "CyberMon 2024 was Secure Code Warrior’s gamified cybersecurity awareness campaign, launched on **7 October 2024** during Cybersecurity Awareness Month.",
+      "CyberMon 2024 was Secure Code Warrior’s gamified cybersecurity awareness campaign, launched on 7 October 2024 during Cybersecurity Awareness Month.",
       "The campaign aimed to make secure coding education more engaging by introducing fictional monsters representing software security vulnerabilities. Developers were challenged to defeat the CyberMons by completing practical secure coding activities and earning points.",
     ],
   },
@@ -160,7 +160,7 @@ const rows2024: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2024 was essentially **Pokémon meets secure coding**. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
+      "CyberMon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
   },
 ];
@@ -169,8 +169,8 @@ const rows2025: DetailRow[] = [
   {
     title: "Introduction",
     paragraphs: [
-      "CyberMon 2025 was Secure Code Warrior’s next annual gamified cybersecurity campaign, launched on **6 October 2025**.",
-      "The campaign shifted its focus towards **AI and Large Language Model (LLM) security**, introducing four AI-focused Boss Missions. The objective was to help developers understand emerging threats associated with AI-powered applications and learn how to protect them.",
+      "CyberMon 2025 was Secure Code Warrior’s next annual gamified cybersecurity campaign, launched on 6 October 2025.",
+      "The campaign shifted its focus towards AI and Large Language Model (LLM) security, introducing four AI-focused Boss Missions. The objective was to help developers understand emerging threats associated with AI-powered applications and learn how to protect them.",
     ],
   },
   {
@@ -233,7 +233,7 @@ const rows2025: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2025 moved beyond traditional secure coding and introduced **AI security challenges**. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
+      "CyberMon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
     ],
   },
 ];
@@ -242,8 +242,8 @@ const rows2026: DetailRow[] = [
   {
     title: "Introduction",
     paragraphs: [
-      "CyberMon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on **5 October 2026**.",
-      "Under the theme **Built by AI. Secured by You.**, the campaign brought together traditional application security and emerging AI-related vulnerabilities. It focused on helping developers understand the risks associated with AI-generated software, automated workflows and modern application development.",
+      "CyberMon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on 5 October 2026.",
+      "Under the theme Built by AI. Secured by You., the campaign brought together traditional application security and emerging AI-related vulnerabilities. It focused on helping developers understand the risks associated with AI-generated software, automated workflows and modern application development.",
     ],
   },
   {
@@ -311,7 +311,7 @@ const rows2026: DetailRow[] = [
     title: "In simple terms",
     sub: true,
     paragraphs: [
-      "CyberMon 2026 combined **traditional cybersecurity with AI security**. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
+      "CyberMon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
     ],
   },
 ];
