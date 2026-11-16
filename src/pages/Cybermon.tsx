@@ -213,12 +213,7 @@ function RowBody({ row }: { row: DetailRow }) {
       return (
         <div className="cm-summary">
           <p className="essay-prose font-semibold text-foreground">{lead}</p>
-          {rest && (
-            <details className="mt-3">
-              <summary className="label-quiet">Read more ↓</summary>
-              <p className="essay-prose mt-3">{editorialEmphasis(rest)}</p>
-            </details>
-          )}
+          {rest && <p className="essay-prose mt-3">{editorialEmphasis(rest)}</p>}
         </div>
       );
     }
