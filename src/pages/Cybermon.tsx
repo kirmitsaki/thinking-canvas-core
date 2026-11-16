@@ -25,7 +25,6 @@ import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
 import mon2026_1 from "@/assets/cybermon/2026_-_cybermon_-_glitchursus.webp.asset.json";
 import mon2026_2 from "@/assets/cybermon/2026_-_cybermon_-_gatecorvus.webp.asset.json";
-import trophy2026 from "@/assets/cybermon/2026-cybermon-trophy.webp.asset.json";
 import mon2026_3 from "@/assets/cybermon/2026_-_cybermon_-_fangserpens.webp.asset.json";
 import mon2026_4 from "@/assets/cybermon/2026_-_cybermon_-_nulltinea.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
@@ -543,7 +542,6 @@ const rows2026: DetailRow[] = [
       ],
     },
     images: [
-      { asset: trophy2026, alt: "Cybermon 2026 trophy crest with the four Cybermon around the shield logo.", width: 300, height: 200 },
       { asset: merch2026_1, alt: "Box of holographic Cybermon 2026 stickers.", width: 800, height: 298 },
       { asset: merch2026_2, alt: "Cybermon 2026 T-shirt and sticker.", width: 500, height: 508 },
     ],
