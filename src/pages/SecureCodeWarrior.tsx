@@ -134,7 +134,7 @@ export default function SecureCodeWarrior() {
 
       <Section id="ai-workflows" title="AI Workflows" lede="AI-enabled prototyping workflows that cut idea-to-validated-concept time to under four weeks.">
         <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
-          <img src={aiWorkflows} alt="How AI changed the workflow: design system moved from Figma and Storybook to designing in code with Claude Code; prototyping moved from Figma to Lovable and Claude Code on the same design system" width={1440} height={889} loading="lazy" className="block h-auto w-full" />
+          <img src={aiWorkflows} alt="How AI changed the workflow: design system moved from Figma and Storybook to designing in code with Claude Code; prototyping moved from Figma to Lovable and Claude Code on the same design system; research and feedback moved from Slack, Google Docs and other tools to Salesforce MCP" width={1440} height={1248} loading="lazy" className="block h-auto w-full" />
           <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
         </div>
       </Section>
