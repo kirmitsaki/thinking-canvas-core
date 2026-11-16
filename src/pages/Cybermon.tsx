@@ -91,7 +91,7 @@ type DetailRow = {
   imagesGrid?: boolean;
   /** Infographic treatment for this subsection. */
   variant?: "steps" | "cards" | "badges" | "points" | "chips" | "summary";
-  stats?: { value: string; label: string }[];
+  stats?: { value: string; label: string; note?: string }[];
 };
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
@@ -246,6 +246,7 @@ function DetailSection({ row }: { row: DetailRow }) {
                 <div key={stat.label} className="cm-card p-5">
                   <p className="cm-stat-value">{stat.value}</p>
                   <p className="body-copy mt-2 text-muted-foreground">{stat.label}</p>
+                  {stat.note && <p className="body-copy mt-3 text-sm text-muted-foreground">{stat.note}</p>}
                 </div>
               ))}
             </div>
@@ -483,6 +484,16 @@ const rows2025: DetailRow[] = [
     variant: "summary",
     paragraphs: [
       "Cybermon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
+    ],
+  },
+  {
+    title: "Results",
+    sub: true,
+    stats: [
+      { value: "50,000", label: "Activities completed", note: "Approximately 67% more than 2024." },
+      { value: "24,000", label: "Badges earned", note: "More than double the previous year’s total." },
+      { value: "355", label: "Customer organisations", note: "Participated in the campaign." },
+      { value: "98%", label: "Activity-to-badge conversion", note: "Of users completing one activity went on to complete all three activities required for a badge." },
     ],
   },
 ];
@@ -755,6 +766,20 @@ export default function Cybermon() {
             ],
           }}
         />
+      </section>
+      <SectionDivider />
+      <section className="mb-20 md:mb-28">
+        <h2 className="card-title">Final notes</h2>
+        <div className="essay-prose mt-8 space-y-5">
+          {[
+            "Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.",
+            "In 2024, the campaign reached more than 5,000 developers across 350 customer organisations, establishing a foundation for a repeatable, character-led learning experience.",
+            "In 2025, engagement grew significantly, with 50,000 activities completed and approximately 24,000 badges earned. This represented a 67% increase in completed activities and more than double the badges earned compared with the previous year.",
+            "By 2026, the campaign had expanded its international reach, with participants from 74 countries completing more than 42,000 activities and earning over 19,000 badges. The introduction of Cyberhero Prime also created an additional progression path for participants seeking more advanced challenges.",
+            "Together, these results highlight the value of combining storytelling, bite-sized learning, visible progress and achievement-based rewards.",
+            "Rather than treating cybersecurity training as a one-off learning exercise, Cybermon created a recurring experience that gave developers a reason to return, participate and challenge themselves each year.",
+          ].map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
+        </div>
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
