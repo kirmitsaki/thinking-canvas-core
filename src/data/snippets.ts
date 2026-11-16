@@ -90,7 +90,7 @@ export const snippets: Snippet[] = [
     to: "/work/corresilience#interface",
     image: "cor-header",
     project: "CorResilience",
-    name: "Sample interface",
+    name: "Android and iOS",
     description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
   },
   {
