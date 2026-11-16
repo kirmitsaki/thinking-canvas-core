@@ -141,15 +141,15 @@ export default function OriginMarkets() {
 
       <Section id="products" title="Products" lede={productsCopy}>
         <NdaNotice />
-        {products.map(item => (
-          <div key={item.name} className="origin-product">
-            <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full rounded-[10px]" />
-            <div>
+        <div className="origin-product-cards">
+          {products.map((item, index) => (
+            <article key={item.name} className="origin-product-card editorial-card">
+              <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
               <h3 className="subsection-title">{item.name}</h3>
-              <p className="body-copy mt-3">{emphasize(item.text)}</p>
-            </div>
-          </div>
-        ))}
+              <p className="body-copy">{emphasize(item.text)}</p>
+            </article>
+          ))}
+        </div>
         <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." />
       </Section>
     </>
