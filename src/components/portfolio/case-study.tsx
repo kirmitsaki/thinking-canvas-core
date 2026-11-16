@@ -9,7 +9,7 @@ import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
 import { ProjectContext } from "./project-context";
-import { SecondaryCard } from "./secondary-card";
+import { CaseStudySnippetCard } from "./snippet-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 import { SnippetLink } from './snippet-context';
 
@@ -309,9 +309,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </figure>
             )}
             {project.slug === "mendeley" && section.id === "products" && (
-              <div className="mx-auto mt-12 max-w-[720px]">
-                <SecondaryCard to="/work/mendeley/sample-work" image="mendeley-header" description="Selected screens and flows from the Library, Reader and Citation interfaces." />
-              </div>
+              <CaseStudySnippetCard to="/work/mendeley/sample-work" />
             )}
           </section>
           {index === 0 && project.contribution && (

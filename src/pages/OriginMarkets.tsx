@@ -5,7 +5,7 @@ import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { SectionDivider } from '@/components/portfolio/section-divider';
-import { SecondaryCard } from '@/components/portfolio/secondary-card';
+import { CaseStudySnippetCard } from '@/components/portfolio/snippet-card';
 import continuousImprovements from '@/assets/origin-continuous-improvements.webp';
 import complexWorkflows from '@/assets/origin-complex-workflows.webp';
 
@@ -156,9 +156,7 @@ export default function OriginMarkets() {
             </article>
           ))}
         </div>
-        <div className="mx-auto w-full max-w-[720px]">
-          <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." />
-        </div>
+        <CaseStudySnippetCard to="/work/origin-markets/gallery" />
       </Section>
     </>
   );
