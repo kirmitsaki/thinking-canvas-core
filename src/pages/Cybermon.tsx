@@ -464,7 +464,6 @@ const rows2025: DetailRow[] = [
     title: "Rewards & achievements",
     sub: true,
     variant: "badges",
-    paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
       rows: [
