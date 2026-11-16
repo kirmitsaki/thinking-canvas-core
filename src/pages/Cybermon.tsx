@@ -672,7 +672,6 @@ export default function Cybermon() {
       <SectionDivider />
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title">Three years of fun</h2>
-        <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
         <section className="editorial-study-section mb-14 md:mb-20">
           <div className="grid gap-6 md:grid-cols-3">
             {years.map((year, index) => (
