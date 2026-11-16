@@ -169,6 +169,9 @@ const rows2024: DetailRow[] = [
     paragraphs: [
       "The 2024 campaign featured four weekly CyberMons, each representing a common software security threat.",
     ],
+    images: [
+      { asset: interface2024, alt: "Cybermon 2024 teaser screen counting down to the first monster.", width: 800, height: 531 },
+    ],
   },
   {
     title: "Rewards & achievements",
@@ -217,6 +220,13 @@ const rows2024: DetailRow[] = [
       "CyberMon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
   },
+  {
+    title: "Results",
+    sub: true,
+    images: [
+      { asset: results2024, alt: "Cybermon 2024 results: 11,000 badges earned, 5,260 users, 350 companies and 95% thumbs up.", width: 500, height: 500 },
+    ],
+  },
 ];
 
 const rows2025: DetailRow[] = [
@@ -238,6 +248,9 @@ const rows2025: DetailRow[] = [
       "Participants completed walkthroughs and high-difficulty Boss Missions.",
       "The campaign encouraged developers to demonstrate their ability to identify and mitigate AI security risks.",
     ],
+    images: [
+      { asset: interface2025_1, alt: "Cybermon 2025 quest hub listing the four AI boss missions.", width: 800, height: 505 },
+    ],
   },
   {
     title: "Meet the CyberMons",
@@ -247,6 +260,13 @@ const rows2025: DetailRow[] = [
       { name: "Keykraken", text: "Indirect Prompt Injection — exploits malicious instructions hidden in external content processed by AI." },
       { name: "Promptgeist", text: "Vector and Embedding Weaknesses — targets weaknesses in AI retrieval systems and vector databases." },
       { name: "Proxysurfa", text: "Excessive Agency — exploits AI agents with excessive permissions or autonomy." },
+    ],
+    imagesGrid: true,
+    images: [
+      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
+      { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
+      { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
+      { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
   {
@@ -261,6 +281,10 @@ const rows2025: DetailRow[] = [
         ["Achievement recognition", "Recognition for completing the AI security challenges"],
       ],
     },
+    images: [
+      { asset: interface2025_6, alt: "Cyberhero completion screen — You beat all Cybermon.", width: 800, height: 450 },
+      { asset: badge2025, alt: "Cyberhero Prime badge awarded in Cybermon 2025.", width: 500, height: 261 },
+    ],
   },
   {
     title: "Learning activities",
@@ -434,6 +458,20 @@ export default function Cybermon() {
         <section key={year.id} id={year.id} className="mb-20 md:mb-28">
           <h2 className="card-title">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
+          {year.id === "2025" && (
+            <figure className="mb-10">
+              <img
+                loading="lazy"
+                decoding="async"
+                onError={useLocalImage}
+                src={banner2025.url}
+                alt="Cybermon 2025 campaign banner — Beat the Boss AI missions, now available on demand."
+                width={500}
+                height={281}
+                className="h-auto w-full rounded-lg"
+              />
+            </figure>
+          )}
           {year.rows.map(row => <DetailSection key={row.title} row={row} />)}
           {year.id === "2026" && (
             <section className="editorial-study-section mb-14 md:mb-20">
