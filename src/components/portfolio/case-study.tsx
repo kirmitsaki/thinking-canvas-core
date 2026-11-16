@@ -201,7 +201,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       </div>
                     </div>
                      {group.images ? (
-                      <div className={project.slug === "mds-quostar" ? `mds-image-row mds-image-row--${group.images.length === 4 ? "four" : group.images.length <= 2 ? "two" : "three"}` : project.slug === "pawsquad" && group.label === "The vet app" ? "grid items-center gap-6 sm:grid-cols-[449414fr_613200fr]" : group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
+                      <div className={project.slug === "mds-quostar" ? `mds-image-row ${group.images.length === 4 ? "mds-image-row--four" : group.images.length <= 2 ? "mds-image-row--two" : "mds-image-row--three"}` : project.slug === "pawsquad" && group.label === "The vet app" ? "grid items-center gap-6 sm:grid-cols-[449414fr_613200fr]" : group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
                         {group.images.map((image) => (
                           <img
                             key={image}
