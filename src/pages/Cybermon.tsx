@@ -582,7 +582,7 @@ const years = [
     theme: "Secure coding", launch: "7 OCTOBER 2024", cover: crest2024 },
   { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission. Beat the boss.", rows: rows2025,
     theme: "The Age of AI", launch: "6 OCTOBER 2025", cover: crest2025 },
-  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
+  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
     theme: "Built by AI. Secured by You.", launch: "5 OCTOBER 2026", cover: crest2026 },
 ];
 
