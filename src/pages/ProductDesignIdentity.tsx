@@ -25,7 +25,6 @@ export default function ProductDesignIdentity() {
         ogType={meta.ogType}
       />
       <header className="pb-12">
-        <div className="mb-6"><NdaNotice /></div>
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
@@ -36,15 +35,7 @@ export default function ProductDesignIdentity() {
         />
         <h1 className="mt-8 page-title">Product design identity</h1>
       </header>
-      <div className="sample-work-tabs hairline-top border-b border-border py-3">
-        <Link
-          to="/work/secure-code-warrior"
-          className="accent-link inline-flex items-center gap-2"
-        >
-          <ArrowLeft size={14} />
-          Back to Secure Code Warrior
-        </Link>
-      </div>
+      <div className="sample-work-tabs py-3"><NdaNotice /></div>
       <figure className="w-full pt-12">
         <img
           src={image.url}
@@ -57,6 +48,12 @@ export default function ProductDesignIdentity() {
           The complete infographic. Higher-resolution export pending.
         </figcaption>
       </figure>
+      <div className="flex justify-center pt-12">
+        <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
+          <ArrowLeft size={14} />
+          Back to Secure Code Warrior
+        </Link>
+      </div>
       <ProjectPagination slug="secure-code-warrior" />
     </main>
   );
