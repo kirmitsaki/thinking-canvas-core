@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { projectImage } from '@/data/projects';
 
@@ -7,11 +8,13 @@ export function SecondaryCard({
   to,
   image,
   description,
+  notice,
   fit = 'cover',
 }: {
   to: string;
   image: string;
   description: string;
+  notice?: ReactNode;
   fit?: 'cover' | 'contain';
 }) {
   const media = projectImage(image);
@@ -27,6 +30,7 @@ export function SecondaryCard({
       </div>
       <div className="p-6 md:p-8">
         <p className="body-copy text-muted-foreground">{description}</p>
+        {notice && <div className="mt-4">{notice}</div>}
         <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>
       </div>
     </Link>
