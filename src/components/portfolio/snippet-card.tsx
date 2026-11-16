@@ -16,9 +16,9 @@ export function SnippetCard({ snippet, onOpen }: { snippet: Snippet; onOpen: () 
   </Button>;
 }
 
-export function CaseStudySnippetCard({ to }: { to: string }) {
+export function CaseStudySnippetCard({ to, inRow = false }: { to: string; inRow?: boolean }) {
   const open = useSnippetModal();
   const snippet = snippets.find(item => item.to === to);
   if (!snippet) return null;
-  return <div className="case-study-snippet mx-auto mt-8 w-full max-w-full md:w-[50vw]"><SnippetCard snippet={snippet} onOpen={() => open(snippet)} /></div>;
+  return <div className={inRow ? "case-study-snippet w-full min-w-0" : "case-study-snippet mx-auto mt-8 w-full max-w-full md:w-[50vw]"}><SnippetCard snippet={snippet} onOpen={() => open(snippet)} /></div>;
 }

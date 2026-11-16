@@ -309,8 +309,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </figure>
             )}
             {project.slug === "mendeley" && section.id === "products" && (
-              <div className="space-y-8">
-                {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} to={`/work/mendeley/sample-work?view=${view}`} />)}
+              <div className="mt-8 grid grid-cols-1 items-start gap-6 md:grid-cols-3">
+                {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
               </div>
             )}
           </section>
