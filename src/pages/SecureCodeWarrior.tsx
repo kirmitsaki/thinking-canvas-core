@@ -101,13 +101,7 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="product-design-identity" title="Product Design Identity" lede="The visual direction that gave the new product vision a face: colour, interface examples and character artwork.">
-        <div>
-          <Link to="/work/secure-code-warrior/product-design-identity" className="accent-link inline-flex items-center gap-2">
-            Explore the product design identity
-            <ArrowUpRight size={16} />
-          </Link>
-          <ComingSoon />
-        </div>
+        <ComingSoon />
       </Section>
 
       <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
