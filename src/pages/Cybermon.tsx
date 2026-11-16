@@ -650,18 +650,19 @@ export default function Cybermon() {
       {years.map((year, yearIndex) => {
         const intro = year.rows.find(row => row.title === "Introduction");
         const rest = year.rows.filter(row => row.title !== "Introduction");
+        const hasFilm = year.id === "2025" || year.id === "2026";
         return (
         <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
           <p className="cm-kicker">{year.launch} · {year.theme}</p>
           <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
           <p className="standfirst mt-6">{year.standfirst}</p>
           {intro?.paragraphs && (
-            <div className="essay-prose mt-6 mb-10 max-w-[65ch] space-y-5">
+            <div className={`essay-prose mt-6 max-w-[65ch] space-y-5 ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
               {intro.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
             </div>
           )}
           {year.id === "2025" && (
-            <figure className="mx-auto mb-10 max-w-[720px]">
+            <figure className="cm-intro-gap mx-auto max-w-[720px]">
               <video
                 controls
                 playsInline
@@ -678,7 +679,7 @@ export default function Cybermon() {
             </figure>
           )}
           {year.id === "2026" && (
-            <figure className="mx-auto mb-10 max-w-[720px]">
+            <figure className="cm-intro-gap mx-auto max-w-[720px]">
               <video
                 controls
                 playsInline
