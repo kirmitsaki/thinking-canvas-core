@@ -405,9 +405,10 @@ export default function Cybermon() {
               </div>
             </section>
           )}
-          {yearIndex < years.length - 1 && <hr className="border-border" />}
+          {yearIndex < years.length - 1 && <SectionDivider />}
         </section>
       ))}
+      <SectionDivider />
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
@@ -441,6 +442,7 @@ export default function Cybermon() {
           divider
         />
       </section>
+      <SectionDivider />
       <section className="mb-20 md:mb-28">
         <h2 className="card-title">Future</h2>
         <div className="essay-prose mt-6 max-w-[720px] space-y-5">
