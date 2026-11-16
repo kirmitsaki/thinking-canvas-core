@@ -11,7 +11,7 @@ import { NdaNotice } from "./nda-notice";
 import { SecondaryCard } from "./secondary-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section, index) =>
@@ -58,6 +58,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       </header>
       <SectionNavigation items={navigation} to={`/work/${project.slug}`} />
       <div className="mx-auto max-w-[1200px] px-6">
+        {heroNotice && <div className="mb-6">{heroNotice}</div>}
         {project.heroImage ? (
           <img
             src={projectImage(project.heroImage).url}

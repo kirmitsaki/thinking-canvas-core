@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
+import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 import { SecondaryCard } from '@/components/portfolio/secondary-card';
 
@@ -139,6 +140,7 @@ export default function OriginMarkets() {
       </Section>
 
       <Section id="products" title="Products" lede={productsCopy}>
+        <NdaNotice />
         {products.map(item => (
           <div key={item.name} className="origin-product">
             <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full rounded-[10px]" />
@@ -158,7 +160,7 @@ export default function OriginMarkets() {
     <>
       <Seo title={meta.title} description={meta.description} path="/work/origin-markets" ogType={meta.ogType} />
       <div className="origin-editorial">
-        <CaseStudy project={overview} body={body} introParagraphs={intro} facts={facts} minimalFrame outcomesTitle="Outcomes" />
+        <CaseStudy project={overview} body={body} introParagraphs={intro} facts={facts} minimalFrame outcomesTitle="Outcomes" heroNotice={<NdaNotice />} />
       </div>
     </>
   );
