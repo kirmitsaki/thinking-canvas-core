@@ -1,6 +1,7 @@
 import { DragonArt } from '@/components/portfolio/dragon';
 import type { ReactNode } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import { SnippetLink } from '@/components/portfolio/snippet-context';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
@@ -57,10 +58,10 @@ function ComingSoon({ to }: { to?: string }) {
   );
   if (to) {
     return (
-      <Link to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] overflow-hidden">
+      <SnippetLink to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] overflow-hidden p-0 text-card-foreground">
         <img src={identityHeader} alt="Secure Code Warrior character artwork annotated with its design meanings" width={1600} height={1333} loading="lazy" className="block h-auto w-full" />
         <p className="accent-link p-6 md:p-8">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>
-      </Link>
+      </SnippetLink>
     );
   }
   return (
@@ -154,7 +155,7 @@ export default function SecureCodeWarrior() {
             );
             const className = `origin-product-card editorial-card${item.name === 'Cybermon' ? ' cybermon-card' : ''}`;
             return item.name === 'Cybermon'
-              ? <Link key={item.name} to="/work/secure-code-warrior/cybermon" className={`${className} group block`}>{card}</Link>
+              ? <SnippetLink key={item.name} to="/work/secure-code-warrior/cybermon" className={`${className} group block`}>{card}</SnippetLink>
               : <article key={item.name} className={className}>{card}</article>;
           })}
         </div>

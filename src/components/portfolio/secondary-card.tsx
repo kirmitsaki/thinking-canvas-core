@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { SnippetLink } from './snippet-context';
 import { projectImage } from '@/data/projects';
 
 /* Quiet card for secondary pages linked from inside a case study:
@@ -19,8 +19,8 @@ export function SecondaryCard({
 }) {
   const media = projectImage(image);
   return (
-    <Link to={to} className="editorial-card group block min-w-0 overflow-hidden">
-      <div className={`aspect-[16/10] overflow-hidden ${fit === 'contain' ? 'bg-[#FAF6F3]' : 'bg-muted'}`}>
+    <SnippetLink to={to} className="editorial-card group block min-w-0 overflow-hidden p-0 text-card-foreground">
+      <div className={`aspect-[16/10] overflow-hidden ${fit === 'contain' ? 'diagram-card-media' : 'bg-muted'}`}>
         <img
           loading="lazy"
           src={media.url}
@@ -33,6 +33,6 @@ export function SecondaryCard({
         {notice && <div className="mt-4">{notice}</div>}
         <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>
       </div>
-    </Link>
+    </SnippetLink>
   );
 }
