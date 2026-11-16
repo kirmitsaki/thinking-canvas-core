@@ -185,7 +185,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       <h3 className="subsection-title">{group.label}</h3>
                       <div className="space-y-6">
                         {group.numbered ? (
-                          <ol className="design-goals-list">
+                          <ol className={`design-goals-list${project.slug === "migreat" && group.label === "User needs" ? " design-goals-list--no-lines" : ""}`}>
                             {(group.text ?? "").split("\n").filter(Boolean).map((goal, index) => (
                               <li key={goal}>
                                 <span aria-hidden={group.markers ? undefined : "true"}>{group.markers?.[index] ?? String(index + 1).padStart(2, "0")}</span>
