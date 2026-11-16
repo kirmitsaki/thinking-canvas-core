@@ -76,7 +76,7 @@ export const snippets: Snippet[] = [
     to: "/work/aladdin#interface",
     image: "aladdin-header",
     project: "Aladdin",
-    name: "Sample interface",
+    name: "Android and iOS",
     description: "Health records, appointment booking and preventative care across the healthcare app.",
   },
   {
