@@ -1145,6 +1145,11 @@ a:hover .arrow-nudge,
 /* The first subsection after a year's intro needs the same breathing room as the ones below it. */
 .cm-page .cm-intro-gap { margin-bottom: 6rem; }
 @media (min-width: 768px) { .cm-page .cm-intro-gap { margin-bottom: 8.5rem; } }
+/* The business-value list reads like the Outcomes blocks on the other case studies: heading above, hairline list below. */
+.cm-page .cm-outcomes-block > .subsection-title,
+.cm-page .cm-outcomes-block > .section-title { margin: 0; }
+.cm-page .cm-outcomes-block .mendeley-detail-body { max-width: none; }
+.cm-page .cm-outcomes-block .editorial-outcomes { margin-top: 2rem; }
 /* The three-year film sits beside the closing copy as a portrait column. */
 .cm-page .cm-video-row { display: grid; gap: 2.5rem; align-items: start; }
 .cm-page .cm-video-figure { margin: 0; }

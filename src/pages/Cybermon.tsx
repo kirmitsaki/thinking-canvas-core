@@ -100,7 +100,7 @@ type DetailRow = {
     height: number;
   };
   /** Infographic treatment for this subsection. */
-  variant?: "cards" | "badges" | "points" | "chips" | "summary";
+  variant?: "cards" | "badges" | "points" | "chips" | "summary" | "outcomes";
   stats?: { value: string; label: string; note?: string }[];
 };
 
@@ -210,6 +210,17 @@ function RowBody({ row }: { row: DetailRow }) {
           {row.list!.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
         </ul>
       );
+    case "outcomes":
+      return (
+        <ul className="editorial-outcomes space-y-5">
+          {row.items!.map(item => (
+            <li key={item.name} className="hairline-bottom pb-4 body-copy">
+              <span className="font-semibold text-foreground">{item.name}.</span>{" "}
+              {editorialEmphasis(item.text ?? "")}
+            </li>
+          ))}
+        </ul>
+      );
     case "summary": {
       const [lead, rest] = splitSentence(row.paragraphs?.[0] ?? "");
       return (
@@ -271,12 +282,21 @@ function DetailSection({ row }: { row: DetailRow }) {
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
       {row.title ? (
+        row.variant === "outcomes" ? (
+          <div className="cm-outcomes-block">
+            {row.sub
+              ? <h3 className="subsection-title">{row.title}</h3>
+              : <h2 className="section-title">{row.title}</h2>}
+            {body}
+          </div>
+        ) : (
         <div className="mendeley-detail-row">
           {row.sub
             ? <h3 className="subsection-title">{row.title}</h3>
             : <h2 className="section-title">{row.title}</h2>}
           {body}
         </div>
+        )
       ) : row.video ? (
         <div className="cm-video-row">
           {body}
@@ -741,6 +761,7 @@ export default function Cybermon() {
           row={{
             title: "Overall business value",
             sub: true,
+            variant: "outcomes",
             items: [
               { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
               { name: "Security capability", text: "Improve developers’ practical ability to identify and fix vulnerabilities." },
