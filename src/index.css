@@ -784,6 +784,8 @@
   }
   .origin-system-principle {
     max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
     font-family: var(--font-serif);
     font-size: 1.75rem;
     font-style: italic;
