@@ -381,7 +381,7 @@ const rows2024: DetailRow[] = [
     },
   },
   {
-    title: "Business objective",
+    title: "Objectives",
     sub: true,
     variant: "chips",
     list: [
@@ -460,7 +460,7 @@ const rows2025: DetailRow[] = [
     ],
   },
   {
-    title: "Business objective",
+    title: "Objectives",
     sub: true,
     variant: "chips",
     list: [
@@ -537,7 +537,7 @@ const rows2026: DetailRow[] = [
     ],
   },
   {
-    title: "Business objective",
+    title: "Objectives",
     sub: true,
     variant: "chips",
     list: [
@@ -623,8 +623,8 @@ export default function Cybermon() {
       />
       {years.map((year, yearIndex) => {
         const intro = year.rows.find(row => row.title === "Introduction");
-        const objective = year.rows.find(row => row.title === "Business objective");
-        const rest = year.rows.filter(row => row.title !== "Introduction" && row.title !== "Business objective");
+        const objective = year.rows.find(row => row.title === "Objectives");
+        const rest = year.rows.filter(row => row.title !== "Introduction" && row.title !== "Objectives");
         const hasFilm = year.id === "2025" || year.id === "2026";
         return (
         <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
@@ -641,7 +641,7 @@ export default function Cybermon() {
             </div>
             {objective?.list && (
               <aside className="editorial-card min-w-0 self-start p-6 md:p-8">
-                <h3 className="label">Business objective</h3>
+                <h3 className="label">Objectives</h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {objective.list.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
                 </ul>
