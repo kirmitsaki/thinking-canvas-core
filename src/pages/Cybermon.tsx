@@ -664,7 +664,7 @@ export default function Cybermon() {
       <SectionDivider />
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title mb-10 md:mb-14">Three years of fun</h2>
-        <section className="editorial-study-section mb-14 md:mb-20">
+        <section className="editorial-study-section cm-cards-block">
           <div className="grid gap-6 md:grid-cols-3">
             {[
               { year: "2024", focus: "Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
