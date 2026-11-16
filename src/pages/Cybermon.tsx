@@ -123,6 +123,19 @@ const rows2024: DetailRow[] = [
     ],
   },
   {
+    title: "Rewards & achievements",
+    sub: true,
+    paragraphs: ["The campaign included a structured achievement system:"],
+    table: {
+      head: ["Achievement", "Description"],
+      rows: [
+        ["Weekly CyberMon badges", "Limited-edition badges earned by defeating each week’s CyberMon"],
+        ["Cyberhero", "Defeat all four CyberMons"],
+        ["Prize draw entry", "Awarded to participants who completed the campaign"],
+      ],
+    },
+  },
+  {
     title: "Learning activities",
     sub: true,
     paragraphs: [
@@ -137,16 +150,6 @@ const rows2024: DetailRow[] = [
         ["Challenges", "1"],
       ],
     },
-  },
-  {
-    title: "Rewards & achievements",
-    sub: true,
-    list: [
-      "Weekly limited-edition CyberMon badges.",
-      "Three points required each week to defeat a CyberMon.",
-      "Cyberhero achievement for defeating all four CyberMons.",
-      "Entry into a prize draw for participants who completed the campaign.",
-    ],
   },
   {
     title: "Business objective",
@@ -199,6 +202,19 @@ const rows2025: DetailRow[] = [
     ],
   },
   {
+    title: "Rewards & achievements",
+    sub: true,
+    paragraphs: ["The campaign included a structured achievement system:"],
+    table: {
+      head: ["Achievement", "Description"],
+      rows: [
+        ["Boss Mission completion", "Four AI security Boss Missions, each with exclusive campaign content"],
+        ["Campaign prizes", "Awarded to participants who completed the challenges"],
+        ["Achievement recognition", "Recognition for completing the AI security challenges"],
+      ],
+    },
+  },
+  {
     title: "Learning activities",
     sub: true,
     paragraphs: ["Participants undertook practical activities focused on AI security, including:"],
@@ -209,16 +225,6 @@ const rows2025: DetailRow[] = [
       "Completing guided security walkthroughs.",
       "Attempting high-difficulty Boss Missions.",
       "Learning how to mitigate vulnerabilities in AI systems.",
-    ],
-  },
-  {
-    title: "Rewards & achievements",
-    sub: true,
-    list: [
-      "Four AI security Boss Missions.",
-      "Exclusive campaign content.",
-      "Campaign prizes.",
-      "Achievement recognition for completing challenges.",
     ],
   },
   {
@@ -275,19 +281,6 @@ const rows2026: DetailRow[] = [
     ],
   },
   {
-    title: "Learning activities",
-    sub: true,
-    paragraphs: ["The 2026 campaign offered:"],
-    list: [
-      "Short coding labs, typically lasting 6–10 minutes.",
-      "Interactive security challenges.",
-      "Four AI-focused Prime Boss missions.",
-      "Practical vulnerability identification.",
-      "Exercises around traditional application security.",
-      "Learning activities covering AI-generated code and automated workflows.",
-    ],
-  },
-  {
     title: "Rewards & achievements",
     sub: true,
     paragraphs: ["The campaign included a structured achievement system:"],
@@ -299,6 +292,19 @@ const rows2026: DetailRow[] = [
         ["Cyberhero Prime", "Complete all four Prime Boss missions"],
       ],
     },
+  },
+  {
+    title: "Learning activities",
+    sub: true,
+    paragraphs: ["The 2026 campaign offered:"],
+    list: [
+      "Short coding labs, typically lasting 6–10 minutes.",
+      "Interactive security challenges.",
+      "Four AI-focused Prime Boss missions.",
+      "Practical vulnerability identification.",
+      "Exercises around traditional application security.",
+      "Learning activities covering AI-generated code and automated workflows.",
+    ],
   },
   {
     title: "Business objective",
@@ -335,9 +341,15 @@ const comparisonTable = {
 };
 
 const years = [
-  { id: "2024", label: "2024", title: "CyberMon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
-  { id: "2025", label: "2025", title: "CyberMon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
-  { id: "2026", label: "2026", title: "CyberMon 2026", standfirst: "Built by AI. Secured by You. Four CyberMon, four weeks, one global community.", rows: rows2026 },
+  { id: "2024", label: "Cybermon 2024", title: "CyberMon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
+  { id: "2025", label: "Cybermon 2025", title: "CyberMon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
+  { id: "2026", label: "Cybermon 2026", title: "CyberMon 2026", standfirst: "Built by AI. Secured by You. Four CyberMon, four weeks, one global community.", rows: rows2026 },
+];
+
+const navItems = [
+  { label: "Overview", id: "overview" },
+  ...years.map(year => ({ label: year.label, id: year.id })),
+  { label: "Three years of fun", id: "three-years" },
 ];
 
 export default function Cybermon() {
@@ -352,7 +364,7 @@ export default function Cybermon() {
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/secure-code-warrior/cybermon" ogType={meta.ogType} />
-      <header className="pb-10">
+      <header className="pb-10" id="overview">
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
@@ -367,7 +379,7 @@ export default function Cybermon() {
         </p>
       </header>
       <SectionNavigation
-        items={years.map(year => ({ label: year.label, id: year.id }))}
+        items={navItems}
         to="/work/secure-code-warrior"
       />
       {years.map((year, yearIndex) => (
@@ -396,8 +408,8 @@ export default function Cybermon() {
           {yearIndex < years.length - 1 && <hr className="border-border" />}
         </section>
       ))}
-      <section className="mb-20 md:mb-28">
-        <h2 className="card-title">Three years of CyberMon</h2>
+      <section id="three-years" className="mb-20 md:mb-28">
+        <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
         <DetailSection
           row={{ title: "Three-year comparison", table: comparisonTable }}
@@ -428,6 +440,12 @@ export default function Cybermon() {
           }}
           divider
         />
+      </section>
+      <section className="mb-20 md:mb-28">
+        <h2 className="card-title">Future</h2>
+        <div className="essay-prose mt-6 max-w-[720px] space-y-5">
+          <p>{editorialEmphasis("After popular demand, CyberMon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
+        </div>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
