@@ -245,6 +245,7 @@ const rows2025: DetailRow[] = [
 const rows2026: DetailRow[] = [
   {
     title: "Introduction",
+    sub: true,
     paragraphs: [
       "CyberMon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on 5 October 2026.",
       "Under the theme Built by AI. Secured by You., the campaign brought together traditional application security and emerging AI-related vulnerabilities. It focused on helping developers understand the risks associated with AI-generated software, automated workflows and modern application development.",
