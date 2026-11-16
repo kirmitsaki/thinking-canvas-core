@@ -48,6 +48,9 @@
 }
 
 .snippet-modal-overlay { background: var(--modal-backdrop); }
+/* The header's company name is a link, so it carries the site's link colour. */
+.snippet-modal-link { color: var(--rust); }
+.snippet-modal-link:hover { color: var(--caramel); }
 .snippet-page { --portfolio-header-height: 0px; }
 .snippet-page .portfolio-header,
 .snippet-page .masthead-bar,
