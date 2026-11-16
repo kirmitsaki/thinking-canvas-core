@@ -28,7 +28,8 @@ type DetailRow = {
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
   return (
-    <table className="body-copy mt-8 w-full border-collapse text-left">
+    <div className="mt-8 overflow-x-auto">
+    <table className="body-copy w-full border-collapse text-left">
       <thead>
         <tr>
           {table.head.map(cell => (
