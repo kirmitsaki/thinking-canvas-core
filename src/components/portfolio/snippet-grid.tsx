@@ -43,18 +43,18 @@ const snippets: Snippet[] = [
     description: "Three years of gamified secure coding tournaments, 2024 to 2026.",
   },
   {
-    to: "/work/mendeley/sample-work",
-    image: "mendeley-library",
-    project: "Mendeley",
-    name: "Sample interface",
-    description: "Library, reader and citation flows designed with researchers.",
-  },
-  {
     to: "/work/origin-markets/gallery",
     image: "origin-sample-work",
     project: "Origin Markets",
     name: "Sample interface",
     description: "Dashboards, pricing and documentation screens from across the Origin platform.",
+  },
+  {
+    to: "/work/mendeley/sample-work",
+    image: "mendeley-library",
+    project: "Mendeley",
+    name: "Sample interface",
+    description: "Library, reader and citation flows designed with researchers.",
   },
   {
     to: "/work/secure-code-warrior/product-design-identity",
