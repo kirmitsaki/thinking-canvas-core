@@ -14,7 +14,15 @@ describe('secondary case studies open only in modals', () => {
       expect(snippetFrameUrl(path)).toBe(`/work/${parts[2]}?snippet=${parts[3]}`);
     });
   }
-  it('preserves Mendeley tab selection in the modal', () => {
+  for (const view of ['library', 'reader', 'citation']) {
+    it(`opens the separate Mendeley ${view} snippet`, () => {
+      const path = `/work/mendeley/sample-work?view=${view}`;
+      expect(secondarySnippetFor(path)?.to).toBe(path);
+      expect(secondarySnippetFor(path)?.name).toBe(view.charAt(0).toUpperCase() + view.slice(1));
+      expect(snippetFrameUrl(path)).toBe(`/work/mendeley?view=${view}&snippet=sample-work`);
+    });
+  }
+  it('preserves Mendeley view selection in the modal', () => {
     expect(snippetFrameUrl('/work/mendeley/sample-work?view=reader')).toBe('/work/mendeley?view=reader&snippet=sample-work');
   });
   it('keeps full case-study destinations outside the secondary registry', () => {

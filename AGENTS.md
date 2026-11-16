@@ -5,7 +5,7 @@
 - Other case studies use `.case-study-editorial` with existing narrative sections and shared typography tokens; this extends the Origin template without altering portfolio cards or requiring research sections on simpler projects.
 - Cross-project image pointers are re-uploaded to this project and paired with local optimised images so the portfolio also works on GitHub Pages.
 - Origin sample-work uploads use CDN pointers with local optimised fallbacks and explicit image dimensions so static hosting and lazy-loaded layouts remain stable.
-- Mendeley detail content is lazy-loaded within the Sample interface modal with URL-backed tabs; previous detail URLs open the matching modal tab to preserve shared links.
+- Mendeley Library, Reader and Citation use separate shared snippet cards and lazy-loaded modal content selected by URL, without a tab menu; legacy detail links retain their selected content.
 - Case-study closing navigation uses shared ProjectPagination and portfolio order, honouring each project's custom destination; this keeps previous/next links consistent with the listing.
 - Define portfolio groups in shared project data and derive the combined navigation order from them so listing sections and case-study pagination stay aligned.
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.

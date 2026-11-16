@@ -52,11 +52,25 @@ export const snippets: Snippet[] = [
     description: "Dashboards, pricing and documentation screens from across the Origin platform.",
   },
   {
-    to: "/work/mendeley/sample-work",
+    to: "/work/mendeley/sample-work?view=library",
     image: "mendeley-library",
     project: "Mendeley",
-    name: "Sample interface",
-    description: "Library, reader and citation flows designed with researchers.",
+    name: "Library",
+    description: "Reference organisation, collections and search designed with researchers.",
+  },
+  {
+    to: "/work/mendeley/sample-work?view=reader",
+    image: "mendeley-reader",
+    project: "Mendeley",
+    name: "Reader",
+    description: "Paper reading, highlighting and annotation flows designed with researchers.",
+  },
+  {
+    to: "/work/mendeley/sample-work?view=citation",
+    image: "mendeley-citation",
+    project: "Mendeley",
+    name: "Citation",
+    description: "Citation selection, formatting and insertion within Word documents.",
   },
   {
     to: "/work/aladdin#interface",

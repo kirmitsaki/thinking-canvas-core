@@ -309,7 +309,9 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </figure>
             )}
             {project.slug === "mendeley" && section.id === "products" && (
-              <CaseStudySnippetCard to="/work/mendeley/sample-work" />
+              <div className="space-y-8">
+                {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} to={`/work/mendeley/sample-work?view=${view}`} />)}
+              </div>
             )}
           </section>
           {index === 0 && project.contribution && (

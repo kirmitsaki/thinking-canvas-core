@@ -1,70 +1,19 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import * as Tabs from "@radix-ui/react-tabs";
-import { ArrowLeft } from "lucide-react";
-import Seo from "@/components/Seo";
-import { Button } from "@/components/ui/button";
-import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { getProject, pageMeta } from "@/data/projects";
-import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
-import { ProjectPagination } from "@/components/portfolio/project-pagination";
+import { lazy, Suspense } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Library = lazy(() => import("./MendeleyLibrary"));
 const Reader = lazy(() => import("./MendeleyReader"));
 const Citation = lazy(() => import("./MendeleyCitation"));
-const views = [
-  { id: "library", label: "Library", Content: Library },
-  { id: "reader", label: "Reader", Content: Reader },
-  { id: "citation", label: "Citation", Content: Citation },
-];
-const meta = pageMeta("Mendeley · Sample work", "Selected Mendeley Library, Reader and Citation interfaces by Rachel Kirmitsaki.", "article");
 
 export default function MendeleySampleWork() {
-  usePortfolioHeaderHeight();
-  const [params, setParams] = useSearchParams();
-  const requested = params.get("view");
-  const active = views.some(view => view.id === requested) ? requested ?? "library" : "library";
-  // Switching tabs swaps the panel below, which can collapse the page height and
-  // throw the reader back to the top; put them back where they were.
-  const scrollMemo = useRef(0);
-  useEffect(() => {
-    const target = scrollMemo.current;
-    scrollMemo.current = 0;
-    if (!target) return;
-    let frame = 0;
-    let attempts = 0;
-    const restore = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (target <= max) window.scrollTo(0, target);
-      else if (attempts++ < 90) frame = requestAnimationFrame(restore);
-    };
-    frame = requestAnimationFrame(restore);
-    return () => cancelAnimationFrame(frame);
-  }, [active]);
+  const [params] = useSearchParams();
+  const view = params.get("view");
+  const Content = view === "reader" ? Reader : view === "citation" ? Citation : Library;
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
-      <Seo title={meta.title} description={meta.description} path="/work/mendeley/sample-work" ogType={meta.ogType} />
-      <header className="pb-10">
-        <PortfolioBreadcrumb
-          items={[{ label: "Portfolio", to: "/work" }, { label: "Mendeley (Elsevier)", to: "/work/mendeley" }, { label: "Mendeley Reference Manager" }]}
-          trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
-        />
-        <h1 className="mt-8 page-title">Mendeley Reference Manager</h1>
-      </header>
-      <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams(previous => { const next = new URLSearchParams(previous); next.set("view", view); return next; }, { preventScrollReset: true }); }}>
-        <div className="sample-work-tabs hairline-top mb-10 border-b border-border py-3">
-          <Tabs.List aria-label="Mendeley sample work" className="flex gap-2">
-            {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
-              <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
-            </Tabs.Trigger>)}
-          </Tabs.List>
-        </div>
-        {views.map(({ id, Content }) => <Tabs.Content key={id} value={id} className="editorial-detail-content mx-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-          <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
-        </Tabs.Content>)}
-      </Tabs.Root>
-      <div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Mendeley</Link></div>
-      <ProjectPagination slug="mendeley" />
+      <div className="editorial-detail-content mx-auto">
+        <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
+      </div>
     </main>
   );
 }
