@@ -39,7 +39,12 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
-          trailing={<p className="label-quiet">{project.dates}</p>}
+          trailing={
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <ProjectContext industry={project.industry} field={project.field} />
+              <p className="label-quiet">{project.dates}</p>
+            </div>
+          }
         />
         <h1 className="mt-8 max-w-[900px] page-title">{project.title}</h1>
         {(() => {
@@ -52,17 +57,14 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           return (
             <div className="case-study-header-copy">
               <div className="mt-7 max-w-[760px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
-              <dl className="case-study-facts">{headerFacts.map(fact => {
+              <dl className="case-study-facts">{headerFacts.filter(fact => fact.label !== "Industry").map(fact => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
-                const context = fact.label === "Industry" ? fact.value.split(/\s*·\s*/) : null;
                 return (
                   <div key={fact.label} className="editorial-card min-w-0 p-6 md:p-8">
                     <dt className="label">{fact.label}</dt>
                     <dd className="case-study-fact-value mt-4">
                       {items ? (
                         <ul className="case-study-fact-pills">{items.map(item => <li key={item}>{item}</li>)}</ul>
-                      ) : context ? (
-                        <ProjectContext industry={context[0]} field={context[1] ?? ""} />
                       ) : fact.value}
                     </dd>
                   </div>
