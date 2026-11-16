@@ -9,3 +9,4 @@
 - Case-study closing navigation uses shared ProjectPagination and portfolio order, honouring each project's custom destination; this keeps previous/next links consistent with the listing.
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.
 - Use React state directly for this static portfolio; no query provider is needed without remote data requests.
+- Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.

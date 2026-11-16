@@ -762,6 +762,28 @@
   .brand-voice-card figcaption {
     font-size: 0.95rem;
   }
+  .mds-image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .mds-image-row > img {
+    min-width: 0;
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    .mds-image-row--two > img {
+      width: calc((100% - 1.5rem) / 2);
+    }
+    .mds-image-row--three > img {
+      width: calc((100% - 3rem) / 3);
+    }
+    .mds-image-row--four > img {
+      width: calc((100% - 4.5rem) / 4);
+    }
+  }
   .origin-editorial .pull-quote {
     max-width: 850px;
     margin: 1rem auto;
