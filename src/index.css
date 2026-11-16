@@ -629,7 +629,8 @@
     margin-top: 0;
     max-width: 65ch;
   }
-  .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual > img {
+  .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual > img,
+  .case-study-editorial #labels:has(img[src*="meliniki-labels"]) > .editorial-study-visual > img {
     max-width: 65ch;
     margin-inline: 0;
     font-family: var(--font-serif);
