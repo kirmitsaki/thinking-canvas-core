@@ -96,9 +96,13 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {project.sections.map((section, index) => (
           <Fragment key={section.title}>
           <section id={section.id} className="editorial-study-section mb-20 scroll-mt-32 md:mb-28">
-            <SectionDivider />
+            {!(project.slug === "aladdin" && section.subheading) && <SectionDivider />}
             <div className="editorial-study-heading mx-auto max-w-[720px]">
-              <h2 className="section-title">{section.title}</h2>
+              {project.slug === "aladdin" && section.subheading ? (
+                <h3 className="subsection-title">{section.title}</h3>
+              ) : (
+                <h2 className="section-title">{section.title}</h2>
+              )}
               <div className="essay-prose mt-8 space-y-6">
                 {(section.paragraphs ?? []).map((paragraph, paragraphIndex) => (
                   <Fragment key={paragraph}>
