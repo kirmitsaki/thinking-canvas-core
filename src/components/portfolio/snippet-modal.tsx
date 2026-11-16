@@ -18,7 +18,11 @@ export function SnippetModal({ snippet, onClose }: {
               <Button variant="ghost" size="icon" title="Close" aria-label="Close snippet" className="shrink-0"><X /></Button>
             </Dialog.Close>
           </div>
-          {snippet && <iframe key={snippet.to} title={`${snippet.project} · ${snippet.name}`} src={`${path}?snippet=${section ?? "page"}`} className="min-h-0 w-full flex-1 border-0" />}
+          {snippet && <iframe key={snippet.to} title={`${snippet.project} · ${snippet.name}`} src={`${path}?snippet=${section ?? "page"}`} onLoad={event => {
+            event.currentTarget.contentDocument?.addEventListener("keydown", key => {
+              if (key.key === "Escape") onClose();
+            });
+          }} className="min-h-0 w-full flex-1 border-0" />}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
