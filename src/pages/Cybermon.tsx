@@ -382,23 +382,6 @@ const rows2024: DetailRow[] = [
     },
   },
   {
-    title: "Learning activities",
-    sub: true,
-    paragraphs: [
-      "Activities were designed to help developers recognise vulnerabilities, understand how they could be exploited and practise writing more secure code.",
-    ],
-    variant: "points",
-    table: {
-      head: ["Activity", "Points"],
-      rows: [
-        ["Coding Labs", "2"],
-        ["Walkthroughs", "1"],
-        ["Missions", "1"],
-        ["Challenges", "1"],
-      ],
-    },
-  },
-  {
     title: "Business objective",
     sub: true,
     variant: "chips",
@@ -478,19 +461,6 @@ const rows2025: DetailRow[] = [
     ],
   },
   {
-    title: "Learning activities",
-    sub: true,
-    paragraphs: ["Participants undertook practical activities focused on AI security, including:"],
-    list: [
-      "Understanding common AI and LLM vulnerabilities.",
-      "Exploring how prompt injection attacks work.",
-      "Identifying risks in AI-powered applications.",
-      "Completing guided security walkthroughs.",
-      "Attempting high-difficulty Boss Missions.",
-      "Learning how to mitigate vulnerabilities in AI systems.",
-    ],
-  },
-  {
     title: "Business objective",
     sub: true,
     variant: "chips",
@@ -565,19 +535,6 @@ const rows2026: DetailRow[] = [
     images: [
       { asset: merch2026_1, alt: "Box of holographic Cybermon 2026 stickers.", width: 800, height: 298 },
       { asset: merch2026_2, alt: "Cybermon 2026 T-shirt and sticker.", width: 500, height: 508 },
-    ],
-  },
-  {
-    title: "Learning activities",
-    sub: true,
-    paragraphs: ["The 2026 campaign offered:"],
-    list: [
-      "Short coding labs, typically lasting 6–10 minutes.",
-      "Interactive security challenges.",
-      "Four AI-focused Prime Boss missions.",
-      "Practical vulnerability identification.",
-      "Exercises around traditional application security.",
-      "Learning activities covering AI-generated code and automated workflows.",
     ],
   },
   {
