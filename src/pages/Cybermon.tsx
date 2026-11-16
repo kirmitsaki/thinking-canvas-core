@@ -689,17 +689,21 @@ export default function Cybermon() {
             ))}
           </div>
         </section>
-        <DetailSection
-          row={{
-            title: "How Cybermon evolved",
-            sub: true,
-            items: [
-              { name: "2024: Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
-              { name: "2025: Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
-              { name: "2026: Secure AI-enabled development", text: "Combine traditional application security with the risks of AI-generated software and automated workflows." },
-            ],
-          }}
-        />
+        <section className="editorial-study-section mb-14 md:mb-20">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { year: "2024", focus: "Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
+              { year: "2025", focus: "Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
+              { year: "2026", focus: "Secure AI-enabled development", text: "Combine traditional application security with the risks of AI-generated software and automated workflows." },
+            ].map(item => (
+              <div key={item.year} className="cm-year cm-card p-6" data-year={item.year}>
+                <p className="card-title cm-year-title">{item.year}</p>
+                <p className="cm-kicker mt-5">{item.focus}</p>
+                <p className="body-copy mt-2 text-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
         <DetailSection
           row={{
             title: "Overall business value",
