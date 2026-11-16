@@ -1097,3 +1097,14 @@ a:hover .arrow-nudge,
     transition: none !important;
   }
 }
+
+.origin-product-card.cybermon-card {
+  --cybermon-bg: 355 62% 24%;
+  --cybermon-fg: 36 40% 94%;
+  background: hsl(var(--cybermon-bg));
+  border-color: hsl(var(--cybermon-bg));
+  color: hsl(var(--cybermon-fg));
+}
+.origin-product-card.cybermon-card .label-quiet,
+.origin-product-card.cybermon-card .body-copy { color: hsl(var(--cybermon-fg) / 0.82); }
+.origin-product-card.cybermon-card .subsection-title { color: hsl(var(--cybermon-fg)); }

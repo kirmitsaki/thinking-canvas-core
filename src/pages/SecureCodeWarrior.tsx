@@ -142,9 +142,9 @@ export default function SecureCodeWarrior() {
       <Section id="products" title="Products">
         <div className="origin-product-cards">
           {products.map((item, index) => (
-            <article key={item.name} className="origin-product-card editorial-card">
+            <article key={item.name} className={`origin-product-card editorial-card${item.name === 'Cybermon' ? ' cybermon-card' : ''}`}>
               <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
-              <h3 className="subsection-title">{item.name}</h3>
+              <h3 className="subsection-title">{item.name}{item.name === 'Cybermon' && <span aria-hidden="true"> 🐉</span>}</h3>
               <p className="body-copy">{emphasize(item.text)}</p>
             </article>
           ))}
