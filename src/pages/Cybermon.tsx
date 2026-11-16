@@ -18,7 +18,6 @@ import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.jso
 import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
 import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
 import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
-import banner2025_2 from "@/assets/cybermon/2025-banner-2.webp.asset.json";
 import mon2026_1 from "@/assets/cybermon/2026-cybermon-1.webp.asset.json";
 import mon2026_2 from "@/assets/cybermon/2026-cybermon-2.webp.asset.json";
 import trophy2026 from "@/assets/cybermon/2026-cybermon-trophy.webp.asset.json";
@@ -502,20 +501,6 @@ export default function Cybermon() {
         <section key={year.id} id={year.id} className="mb-20 md:mb-28">
           <h2 className="card-title">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
-          {year.id === "2025" && (
-            <figure className="mb-10">
-              <img
-                loading="lazy"
-                decoding="async"
-                onError={useLocalImage}
-                src={banner2025_2.url}
-                alt="Cybermon 2025 campaign banner."
-                width={800}
-                height={267}
-                className="h-auto w-full rounded-lg"
-              />
-            </figure>
-          )}
           {year.id === "2025" && (
             <figure className="mx-auto mb-10 max-w-[720px]">
               <video
