@@ -77,6 +77,7 @@ function Section({ id, title, lede, children }: { id: string; title: string; led
 export default function OriginMarkets() {
   const overview = {
     ...project,
+    ndaNotice: false,
     reflection: undefined,
     contribution: '',
     sections: [],
