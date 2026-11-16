@@ -46,7 +46,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             </div>
           }
         />
-        <h1 className="mt-8 max-w-[900px] page-title">{project.title}</h1>
+        <h1 className="mt-8 max-w-[720px] page-title">{project.title}</h1>
         {(() => {
           const paragraphs = introParagraphs ?? project.intro.split(/(?<=\.)\s+/);
           const headerFacts = facts ?? [
@@ -56,7 +56,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           ];
           return (
             <div className="case-study-header-copy">
-              <div className="mt-7 max-w-[760px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
+              <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               <dl className="case-study-facts">{headerFacts.filter(fact => fact.label !== "Industry").map(fact => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
                 return (

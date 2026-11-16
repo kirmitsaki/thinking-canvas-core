@@ -712,8 +712,8 @@
   @media (min-width: 768px) {
     .case-study-editorial .case-study-header-copy,
     .origin-editorial .case-study-header-copy {
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
-      gap: 4rem;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 5rem;
     }
     .case-study-editorial .editorial-study-section {
       margin-bottom: 8.5rem;
