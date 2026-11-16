@@ -9,7 +9,7 @@ export function SnippetModal({ snippet, onClose }: {
 }) {
   const [path, section] = snippet?.to.split("#") ?? [];
   /* Case study root: /work/<slug> regardless of the snippet's deeper path. */
-  const projectRoot = `/${path.split("/").filter(Boolean).slice(0, 2).join("/")}`;
+  const projectRoot = path ? `/${path.split("/").filter(Boolean).slice(0, 2).join("/")}` : "";
   return (
     <Dialog.Root open={Boolean(snippet)} onOpenChange={open => { if (!open) onClose(); }}>
       <Dialog.Portal>
