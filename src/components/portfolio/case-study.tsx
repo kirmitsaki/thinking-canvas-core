@@ -34,7 +34,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
     <main className={`case-study relative z-10 ${minimalFrame ? "" : "case-study-editorial"} ${compact ? "case-study-compact" : ""}`}>
       <header
         id="overview"
-        className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12 pt-10 md:pt-14"
+        className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12"
       >
         {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
