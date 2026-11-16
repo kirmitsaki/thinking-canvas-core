@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
@@ -72,6 +73,18 @@ function Section({ id, title, lede, children }: { id: string; title: string; led
 }
 
 export default function OriginMarkets() {
+  const [params] = useSearchParams();
+  const designSystem = (
+    <Section id="design-system" title="Design system">
+      <div className="origin-system-copy">
+        <p className="body-copy text-muted-foreground">{emphasize('Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.')}</p>
+        <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
+      </div>
+      <p className="origin-system-principle">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
+      <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="h-auto w-full rounded-[10px]" />
+    </Section>
+  );
+  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[1200px] px-6 pb-16">{designSystem}</main>;
   const overview = {
     ...project,
     ndaNotice: false,
@@ -131,14 +144,7 @@ export default function OriginMarkets() {
         </div>
       </Section>
 
-      <Section id="design-system" title="Design system">
-        <div className="origin-system-copy">
-        <p className="body-copy text-muted-foreground">{emphasize('Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.')}</p>
-        <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
-        </div>
-        <p className="origin-system-principle">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
-        <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="h-auto w-full rounded-[10px]" />
-      </Section>
+      {designSystem}
 
       <Section id="products" title="Products" lede={productsCopy}>
         <div className="origin-product-cards">

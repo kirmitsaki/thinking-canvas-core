@@ -1,6 +1,6 @@
 import { DragonArt } from '@/components/portfolio/dragon';
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
@@ -84,6 +84,16 @@ function Section({ id, title, lede, children }: { id: string; title: string; led
 }
 
 export default function SecureCodeWarrior() {
+  const [params] = useSearchParams();
+  const designSystem = (
+    <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
+      <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
+        <img src={projectImage('scw-wanda').url} alt={projectImage('scw-wanda').alt} className="block h-auto w-full" loading="lazy" />
+        <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
+      </div>
+    </Section>
+  );
+  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[1200px] px-6 pb-16">{designSystem}</main>;
   const overview = {
     ...project,
     ndaNotice: false,
@@ -121,17 +131,7 @@ export default function SecureCodeWarrior() {
         <ComingSoon to="/work/secure-code-warrior/product-design-identity" />
       </Section>
 
-      <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
-        <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
-          <img
-            src={projectImage('scw-wanda').url}
-            alt={projectImage('scw-wanda').alt}
-            className="block h-auto w-full"
-            loading="lazy"
-          />
-          <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
-        </div>
-      </Section>
+      {designSystem}
 
       <Section id="ai-workflows" title="AI Workflows" lede="AI-enabled prototyping workflows that cut idea-to-validated-concept time to under four weeks.">
         <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">

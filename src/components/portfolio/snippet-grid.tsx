@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { SnippetModal } from "./snippet-modal";
 import { projectImage } from "@/data/projects";
 
 /* Snippets: small cards pointing at parts of a case study (a design system,
@@ -50,15 +52,19 @@ const snippets: Snippet[] = [
 ];
 
 export function SnippetGrid() {
+  const [selected, setSelected] = useState<Snippet | null>(null);
   return (
+    <>
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {snippets.map((snippet) => {
         const media = projectImage(snippet.image);
         return (
-          <Link
+          <Button
             key={snippet.to}
-            to={snippet.to}
-            className="editorial-card group block min-w-0 overflow-hidden"
+            variant="ghost"
+            onClick={() => setSelected(snippet)}
+            aria-haspopup="dialog"
+            className="editorial-card group block h-auto min-w-0 overflow-hidden whitespace-normal p-0 text-left hover:bg-card"
           >
             <div className="aspect-[16/10] overflow-hidden bg-muted">
               <img
@@ -77,9 +83,11 @@ export function SnippetGrid() {
                 <span className="arrow-nudge">→</span>
               </p>
             </div>
-          </Link>
+          </Button>
         );
       })}
     </div>
+    <SnippetModal snippet={selected} onClose={() => setSelected(null)} />
+    </>
   );
 }
