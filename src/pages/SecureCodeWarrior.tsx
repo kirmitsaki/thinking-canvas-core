@@ -1,14 +1,12 @@
-import { DragonArt } from '@/components/portfolio/dragon';
 import type { ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { SnippetLink } from '@/components/portfolio/snippet-context';
+import { CaseStudySnippetCard } from '@/components/portfolio/snippet-card';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 
 import aiWorkflows from '@/assets/scw-ai-workflows.webp';
-import identityHeader from '@/assets/scw-identity-header.webp';
 
 const project = getProject('secure-code-warrior');
 
@@ -49,26 +47,8 @@ const products = [
   { name: 'Cybermon', text: 'A gamified campaign that build secure coding habits. Ran for 2024, 2025 & 2026.' },
 ];
 
-function ComingSoon({ to }: { to?: string }) {
-  const text = (
-    <>
-      <p className="body-copy text-muted-foreground">Full case study coming soon.</p>
-      {to && <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>}
-    </>
-  );
-  if (to) {
-    return (
-      <SnippetLink to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] overflow-hidden p-0 text-card-foreground">
-        <img src={identityHeader} alt="Secure Code Warrior character artwork annotated with its design meanings" width={1600} height={1333} loading="lazy" className="block h-auto w-full" />
-        <p className="accent-link p-6 md:p-8">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>
-      </SnippetLink>
-    );
-  }
-  return (
-    <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] p-6 md:p-8">
-      {text}
-    </div>
-  );
+function ComingSoon() {
+  return <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] p-6 md:p-8"><p className="body-copy text-muted-foreground">Full case study coming soon.</p></div>;
 }
 
 function Section({ id, title, lede, children }: { id: string; title: string; lede?: string; children?: ReactNode }) {
@@ -88,10 +68,7 @@ export default function SecureCodeWarrior() {
   const [params] = useSearchParams();
   const designSystem = (
     <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
-      <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
-        <img src={projectImage('scw-wanda').url} alt={projectImage('scw-wanda').alt} className="block h-auto w-full" loading="lazy" />
-        <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
-      </div>
+      <CaseStudySnippetCard to="/work/secure-code-warrior#design-system" />
     </Section>
   );
   if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[1200px] px-6 pb-16">{designSystem}</main>;
@@ -129,7 +106,7 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="product-design-identity" title="Product Design Identity" lede="The visual direction that gave the new product vision a face: colour, interface examples and character artwork.">
-        <ComingSoon to="/work/secure-code-warrior/product-design-identity" />
+        <CaseStudySnippetCard to="/work/secure-code-warrior/product-design-identity" />
       </Section>
 
       {designSystem}
@@ -143,22 +120,13 @@ export default function SecureCodeWarrior() {
 
       <Section id="products" title="Products">
         <div className="origin-product-cards">
-          {products.map((item, index) => {
-            const card = (
-              <>
-                {item.name === 'Cybermon' && <span aria-hidden="true" className="cybermon-dragon"><DragonArt /></span>}
-                <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
-                <h3 className="subsection-title">{item.name}</h3>
-                <p className="body-copy">{emphasize(item.text)}</p>
-                {item.name === 'Cybermon' && <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>}
-              </>
-            );
-            const className = `origin-product-card editorial-card${item.name === 'Cybermon' ? ' cybermon-card' : ''}`;
-            return item.name === 'Cybermon'
-              ? <SnippetLink key={item.name} to="/work/secure-code-warrior/cybermon" className={`${className} group block`}>{card}</SnippetLink>
-              : <article key={item.name} className={className}>{card}</article>;
-          })}
+          {products.filter(item => item.name !== 'Cybermon').map((item, index) => <article key={item.name} className="origin-product-card editorial-card">
+            <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
+            <h3 className="subsection-title">{item.name}</h3>
+            <p className="body-copy">{emphasize(item.text)}</p>
+          </article>)}
         </div>
+        <CaseStudySnippetCard to="/work/secure-code-warrior/cybermon" />
       </Section>
 
       <Section id="outcomes" title="Outcomes" lede="What changed across the platform, the team and the company." />
