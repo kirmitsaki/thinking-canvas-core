@@ -29,11 +29,11 @@ const snippets: Snippet[] = [
     description: "Morpho, the UI library behind every screen of the Origin platform.",
   },
   {
-    to: "/work/secure-code-warrior/product-design-identity",
-    image: "scw-identity-header",
-    project: "Secure Code Warrior",
-    name: "Product design identity",
-    description: "Colour, interface examples and character artwork for the new product vision.",
+    to: "/work/mendeley#design-system",
+    image: "mendeley-pattern-library",
+    project: "Mendeley",
+    name: "Design system",
+    description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
   },
   {
     to: "/work/secure-code-warrior/cybermon",
@@ -50,11 +50,18 @@ const snippets: Snippet[] = [
     description: "Library, reader and citation flows designed with researchers.",
   },
   {
-    to: "/work/mendeley#design-system",
-    image: "mendeley-pattern-library",
-    project: "Mendeley",
-    name: "Design system",
-    description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
+    to: "/work/origin-markets/gallery",
+    image: "origin-sample-work",
+    project: "Origin Markets",
+    name: "Sample interface",
+    description: "Dashboards, pricing and documentation screens from across the Origin platform.",
+  },
+  {
+    to: "/work/secure-code-warrior/product-design-identity",
+    image: "scw-identity-header",
+    project: "Secure Code Warrior",
+    name: "Product design identity",
+    description: "Colour, interface examples and character artwork for the new product vision.",
   },
   {
     to: "/work/aladdin#brand",
@@ -69,13 +76,6 @@ const snippets: Snippet[] = [
     project: "CorResilience",
     name: "Brand styles",
     description: "Identity, typography and iconography across the app and website.",
-  },
-  {
-    to: "/work/origin-markets/gallery",
-    image: "origin-sample-work",
-    project: "Origin Markets",
-    name: "Sample interface",
-    description: "Dashboards, pricing and documentation screens from across the Origin platform.",
   },
 ];
 
