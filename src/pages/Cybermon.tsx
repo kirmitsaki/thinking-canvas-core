@@ -543,7 +543,6 @@ const rows2026: DetailRow[] = [
       ],
     },
     images: [
-      { asset: trophy2026, alt: "Cybermon 2026 trophy crest with the four Cybermon around the shield logo.", width: 300, height: 200 },
       { asset: merch2026_1, alt: "Box of holographic Cybermon 2026 stickers.", width: 800, height: 298 },
       { asset: merch2026_2, alt: "Cybermon 2026 T-shirt and sticker.", width: 500, height: 508 },
     ],
