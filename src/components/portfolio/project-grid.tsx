@@ -15,9 +15,9 @@ function CardBody({ project, link }: { project: Project; link: boolean }) {
   );
 }
 
-export function ProjectGrid({ items }: { items: Project[] }) {
+export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?: 2 | 3 }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className={`grid gap-6 md:grid-cols-2${columns === 3 ? " lg:grid-cols-3" : ""}`}>
       {items.map((project) => {
         if (project.comingSoon) {
           return (
