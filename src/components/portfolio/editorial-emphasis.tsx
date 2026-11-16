@@ -35,6 +35,18 @@ const phrases = [
   "Pokémon meets secure coding", "AI and Large Language Model (LLM) security",
   "AI security challenges", "traditional cybersecurity with AI security",
   "Built by AI. Secured by You.",
+  "gamified cybersecurity awareness campaign", "make secure coding education more engaging",
+  "defeat the Cybermon", "practise writing more secure code",
+  "four AI-focused Boss Missions", "emerging threats associated with AI-powered applications",
+  "high-difficulty Boss Missions", "adopt AI more securely",
+  "traditional application security and emerging AI-related vulnerabilities",
+  "AI-generated software, automated workflows and modern application development",
+  "Defeating all four earned Cyberhero status", "Cyberhero status for defeating all four Cybermon",
+  "Cyberhero Prime", "short coding labs", "more engaging and accessible",
+  "more than 5,000 developers across 350 customer organisations",
+  "50,000 activities completed", "24,000 badges earned", "participants from 74 countries",
+  "storytelling, bite-sized learning, visible progress and achievement-based rewards",
+  "a recurring experience", "here to stay",
 ];
 
 export function editorialEmphasis(text: string): ReactNode {

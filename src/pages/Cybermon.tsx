@@ -84,7 +84,7 @@ type DetailRow = {
   title: string;
   sub?: boolean;
   paragraphs?: string[];
-  items?: { name: string; text: string }[];
+  items?: { name: string; text?: string; epithet?: string; threat?: string; detail?: string }[];
   list?: string[];
   table?: { head: string[]; rows: string[][] };
   images?: DetailImage[];
@@ -148,20 +148,19 @@ function RowBody({ row }: { row: DetailRow }) {
       return (
         <ul className="grid gap-6 sm:grid-cols-2">
           {row.items!.map((item, index) => {
-            const [name, title] = item.name.split(" — ");
-            const [threat, detail] = item.text.split(" — ");
+            const threat = item.threat ?? item.name;
             const image = row.images?.[index];
             return (
               <li key={item.name} className="cm-card flex flex-col overflow-hidden">
                 {image && <div className="bg-muted p-4"><DetailImg image={image} /></div>}
                 <div className="flex flex-1 flex-col p-5">
                   <p className="cm-kicker">Cybermon {String(index + 1).padStart(2, "0")}</p>
-                  <h4 className="subsection-title mt-2">{name}</h4>
-                  {title && <p className="body-copy italic text-muted-foreground">{title}</p>}
+                  <h4 className="subsection-title mt-2">{item.name}</h4>
+                  {item.epithet && <p className="body-copy italic text-muted-foreground">{item.epithet}</p>}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {threat.split(/\s*(?:&|,)\s*/).map(tag => <span key={tag} className="cm-tag">{tag}</span>)}
                   </div>
-                  {detail && <p className="body-copy mt-4 text-muted-foreground">{detail.charAt(0).toUpperCase() + detail.slice(1)}</p>}
+                  {item.detail && <p className="body-copy mt-4 text-muted-foreground">{item.detail}</p>}
                 </div>
               </li>
             );
@@ -290,7 +289,7 @@ const rows2024: DetailRow[] = [
     sub: true,
     variant: "summary",
     paragraphs: [
-      "Pokémon meets secure coding: four weeks, four monsters, one Cyberhero. Each week introduced a new Cybermon representing a software vulnerability. Developers completed practical coding activities to earn three points, defeat that week’s monster and collect its badge. Defeating all four earned Cyberhero status — turning security training into a challenge worth coming back for.",
+      "Pokémon meets secure coding: four weeks, four monsters, one Cyberhero. Each week introduced a new Cybermon representing a software vulnerability. Developers completed practical coding activities to earn three points, defeat that week’s monster and collect its badge. Defeating all four earned Cyberhero status, turning security training into a challenge worth coming back for.",
     ],
   },
   {
@@ -301,10 +300,10 @@ const rows2024: DetailRow[] = [
       "The 2024 campaign featured four weekly Cybermon, each representing a common software security threat.",
     ],
     items: [
-      { name: "Accessomorph", text: "Broken Access Control — exploits missing or weak checks on who can access what." },
-      { name: "Injecotpus", text: "Injection — exploits untrusted data sent to interpreters, such as SQL injection." },
-      { name: "Permissite", text: "Excessive Permissions — exploits accounts and services with more access than they need." },
-      { name: "Xssassin", text: "Cross-Site Scripting — exploits unescaped output to run malicious scripts in the browser." },
+      { name: "Accessomorph", threat: "Broken Access Control", detail: "Exploits missing or weak checks on who can access what." },
+      { name: "Injecotpus", threat: "Injection", detail: "Exploits untrusted data sent to interpreters, such as SQL injection." },
+      { name: "Permissite", threat: "Excessive Permissions", detail: "Exploits accounts and services with more access than they need." },
+      { name: "Xssassin", threat: "Cross-Site Scripting", detail: "Exploits unescaped output to run malicious scripts in the browser." },
     ],
     imagesGrid: true,
     images: [
@@ -383,7 +382,7 @@ const rows2025: DetailRow[] = [
     sub: true,
     variant: "summary",
     paragraphs: [
-      "Four AI bosses turned emerging security risks into hands-on challenges. Developers worked through guided walkthroughs and high-difficulty Boss Missions to discover how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. Defeating the bosses meant putting those lessons into practice — learning to recognise and mitigate the risks so organisations could adopt AI more securely.",
+      "Four AI bosses turned emerging security risks into hands-on challenges. Developers worked through guided walkthroughs and high-difficulty Boss Missions to discover how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. Defeating the bosses meant putting those lessons into practice, learning to recognise and mitigate the risks so organisations could adopt AI more securely.",
     ],
     images: [
       { asset: interface2025_1, alt: "Cybermon 2025 quest hub listing the four AI boss missions.", width: 800, height: 505 },
@@ -394,10 +393,10 @@ const rows2025: DetailRow[] = [
     sub: true,
     variant: "cards",
     items: [
-      { name: "Bypassaur", text: "Direct Prompt Injection — exploits malicious instructions supplied directly to AI models." },
-      { name: "Keykraken", text: "Indirect Prompt Injection — exploits malicious instructions hidden in external content processed by AI." },
-      { name: "Promptgeist", text: "Vector and Embedding Weaknesses — targets weaknesses in AI retrieval systems and vector databases." },
-      { name: "Proxysurfa", text: "Excessive Agency — exploits AI agents with excessive permissions or autonomy." },
+      { name: "Bypassaur", threat: "Direct Prompt Injection", detail: "Exploits malicious instructions supplied directly to AI models." },
+      { name: "Keykraken", threat: "Indirect Prompt Injection", detail: "Exploits malicious instructions hidden in external content processed by AI." },
+      { name: "Promptgeist", threat: "Vector and Embedding Weaknesses", detail: "Targets weaknesses in AI retrieval systems and vector databases." },
+      { name: "Proxysurfa", threat: "Excessive Agency", detail: "Exploits AI agents with excessive permissions or autonomy." },
     ],
     imagesGrid: true,
     images: [
@@ -421,7 +420,7 @@ const rows2025: DetailRow[] = [
       ],
     },
     images: [
-      { asset: interface2025_6, alt: "Cyberhero completion screen — You beat all Cybermon.", width: 800, height: 450 },
+      { asset: interface2025_6, alt: "Cyberhero completion screen: You beat all Cybermon.", width: 800, height: 450 },
       { asset: badge2025, alt: "Cyberhero Prime badge awarded in Cybermon 2025.", width: 500, height: 261 },
     ],
   },
@@ -477,7 +476,7 @@ const rows2026: DetailRow[] = [
     sub: true,
     variant: "summary",
     paragraphs: [
-      "AI could build the software; developers still had to secure it. Over four weeks, a new Cybermon each week brought traditional application vulnerabilities and AI security risks into short coding labs and interactive challenges. Developers earned badges as they progressed, with Cyberhero status for defeating all four Cybermon. For those ready to go further, completing all four AI-focused Prime Boss missions unlocked Cyberhero Prime — an extra challenge beyond the main campaign.",
+      "AI could build the software; developers still had to secure it. Over four weeks, a new Cybermon each week brought traditional application vulnerabilities and AI security risks into short coding labs and interactive challenges. Developers earned badges as they progressed, with Cyberhero status for defeating all four Cybermon. For those ready to go further, completing all four AI-focused Prime Boss missions unlocked Cyberhero Prime, an extra challenge beyond the main campaign.",
     ],
   },
   {
@@ -485,17 +484,17 @@ const rows2026: DetailRow[] = [
     sub: true,
     variant: "cards",
     items: [
-      { name: "Glitchrusus — The Scrap Bandit", text: "Indirect Prompt Injection & Formula Injection — focuses on malicious instructions in AI workflows and spreadsheet formula injection." },
-      { name: "Gatecorvus — The Keykeeper", text: "SSRF, Data Exposure & Cryptography — focuses on server-side request forgery, sensitive data exposure, path traversal and weak cryptography." },
-      { name: "Fangserpens — The Commit Devourer", text: "SQL Injection & Error Handling — focuses on SQL injection, error handling and security checks that fail open." },
-      { name: "Nulltinea — The Lure", text: "Credentials, XSS & CSRF — focuses on exposed credentials, stored cross-site scripting and cross-site request forgery." },
+      { name: "Glitchrusus", epithet: "The Scrap Bandit", threat: "Indirect Prompt Injection & Formula Injection", detail: "Focuses on malicious instructions in AI workflows and spreadsheet formula injection." },
+      { name: "Gatecorvus", epithet: "The Keykeeper", threat: "SSRF, Data Exposure & Cryptography", detail: "Focuses on server-side request forgery, sensitive data exposure, path traversal and weak cryptography." },
+      { name: "Fangserpens", epithet: "The Commit Devourer", threat: "SQL Injection & Error Handling", detail: "Focuses on SQL injection, error handling and security checks that fail open." },
+      { name: "Nulltinea", epithet: "The Lure", threat: "Credentials, XSS & CSRF", detail: "Focuses on exposed credentials, stored cross-site scripting and cross-site request forgery." },
     ],
     imagesGrid: true,
     images: [
-      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon Cybermon.", width: 300, height: 200 },
-      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow Cybermon guarding a vault.", width: 300, height: 200 },
-      { asset: mon2026_3, alt: "Fangserpens, the Commit Devourer — a neon serpent Cybermon.", width: 300, height: 200 },
-      { asset: mon2026_4, alt: "Nulltinea, the Lure — a glowing moth Cybermon.", width: 300, height: 200 },
+      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit, a cyberpunk raccoon Cybermon.", width: 300, height: 200 },
+      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper, a hooded crow Cybermon guarding a vault.", width: 300, height: 200 },
+      { asset: mon2026_3, alt: "Fangserpens, the Commit Devourer, a neon serpent Cybermon.", width: 300, height: 200 },
+      { asset: mon2026_4, alt: "Nulltinea, the Lure, a glowing moth Cybermon.", width: 300, height: 200 },
     ],
   },
   {
@@ -560,7 +559,7 @@ const comparisonTable = {
 const years = [
   { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
     theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
-  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
+  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission: beat the boss.", rows: rows2025,
     theme: "The Age of AI", launch: "6 October 2025", cover: crest2025 },
   { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
     theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: crest2026 },
@@ -603,7 +602,7 @@ export default function Cybermon() {
         />
         <h1 className="mt-8 page-title">Cybermon</h1>
         <p className="standfirst mt-6 max-w-[720px]">
-          Three years of gamified secure coding tournaments — from secure coding fundamentals to securing software built with AI.
+          Three years of gamified secure coding tournaments, from secure coding fundamentals to securing software built with AI.
         </p>
         <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
           {years.map(year => (
@@ -696,9 +695,9 @@ export default function Cybermon() {
             title: "How Cybermon evolved",
             sub: true,
             items: [
-              { name: "2024 — Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
-              { name: "2025 — Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
-              { name: "2026 — Secure AI-enabled development", text: "Combine traditional application security with the risks of AI-generated software and automated workflows." },
+              { name: "2024: Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
+              { name: "2025: Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
+              { name: "2026: Secure AI-enabled development", text: "Combine traditional application security with the risks of AI-generated software and automated workflows." },
             ],
           }}
         />
@@ -733,7 +732,7 @@ export default function Cybermon() {
       />
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, Cybermon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
+        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, Cybermon is here to stay. There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
