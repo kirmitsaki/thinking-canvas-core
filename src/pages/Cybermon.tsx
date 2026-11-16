@@ -10,6 +10,35 @@ import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
+import interface2024 from "@/assets/cybermon/2024_-_Interface.webp.asset.json";
+import results2024 from "@/assets/cybermon/2024-results.webp.asset.json";
+import banner2025 from "@/assets/cybermon/2025-banner-1.webp.asset.json";
+import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
+import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
+import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
+import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
+import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
+import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
+import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
+
+// The CDN handles hosted previews; local copies also support GitHub Pages.
+const localImages = import.meta.glob<string>("../assets/cybermon/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  const filename = decodeURIComponent(image.src.split("/").pop() ?? "").replace(/\.[^.]+$/, ".webp");
+  const fallback = localImages[`../assets/cybermon/${filename}`];
+  if (fallback && image.dataset.localFallback !== "true") {
+    image.dataset.localFallback = "true";
+    image.src = fallback;
+  }
+}
+
+type DetailImage = { asset: { url: string; asset_id: string }; alt: string; width: number; height: number };
 
 const meta = pageMeta(
   "Secure Code Warrior · Cybermon",
@@ -24,6 +53,8 @@ type DetailRow = {
   items?: { name: string; text: string }[];
   list?: string[];
   table?: { head: string[]; rows: string[][] };
+  images?: DetailImage[];
+  imagesGrid?: boolean;
 };
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
@@ -80,6 +111,24 @@ function DetailSection({ row }: { row: DetailRow }) {
             </dl>
           )}
           {row.table && <DetailTable table={row.table} />}
+          {row.images && (
+            <div className={row.imagesGrid ? "mt-8 grid items-start gap-6 sm:grid-cols-2" : "mt-8 space-y-8"}>
+              {row.images.map(image => (
+                <figure key={image.asset.asset_id}>
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    onError={useLocalImage}
+                    src={image.asset.url}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="h-auto w-full rounded-lg"
+                  />
+                </figure>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
