@@ -681,6 +681,18 @@ export default function Cybermon() {
         </section>
         <DetailSection
           row={{
+            paragraphs: [
+              "Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.",
+              "In 2024, the campaign reached more than 5,000 developers across 350 customer organisations, establishing a foundation for a repeatable, character-led learning experience.",
+              "In 2025, engagement grew significantly, with 50,000 activities completed and approximately 24,000 badges earned. This represented a 67% increase in completed activities and more than double the badges earned compared with the previous year.",
+              "By 2026, the campaign had expanded its international reach, with participants from 74 countries completing more than 42,000 activities and earning over 19,000 badges. The introduction of Cyberhero Prime also created an additional progression path for participants seeking more advanced challenges.",
+              "Together, these results highlight the value of combining storytelling, bite-sized learning, visible progress and achievement-based rewards.",
+              "Rather than treating cybersecurity training as a one-off learning exercise, Cybermon created a recurring experience that gave developers a reason to return, participate and challenge themselves each year.",
+            ],
+          }}
+        />
+        <DetailSection
+          row={{
             title: "Overall business value",
             sub: true,
             items: [
@@ -693,19 +705,6 @@ export default function Cybermon() {
           }}
         />
       </section>
-      <SectionDivider />
-      <DetailSection
-        row={{
-          paragraphs: [
-            "Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.",
-            "In 2024, the campaign reached more than 5,000 developers across 350 customer organisations, establishing a foundation for a repeatable, character-led learning experience.",
-            "In 2025, engagement grew significantly, with 50,000 activities completed and approximately 24,000 badges earned. This represented a 67% increase in completed activities and more than double the badges earned compared with the previous year.",
-            "By 2026, the campaign had expanded its international reach, with participants from 74 countries completing more than 42,000 activities and earning over 19,000 badges. The introduction of Cyberhero Prime also created an additional progression path for participants seeking more advanced challenges.",
-            "Together, these results highlight the value of combining storytelling, bite-sized learning, visible progress and achievement-based rewards.",
-            "Rather than treating cybersecurity training as a one-off learning exercise, Cybermon created a recurring experience that gave developers a reason to return, participate and challenge themselves each year.",
-          ],
-        }}
-      />
       <SectionDivider />
       <section className="mb-20 md:mb-28">
         <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, Cybermon is here to stay. There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
