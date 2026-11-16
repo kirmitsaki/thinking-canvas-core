@@ -19,6 +19,12 @@ import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.jso
 import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
 import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
 import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
+import banner2025_2 from "@/assets/cybermon/2025-banner-2.webp.asset.json";
+import mon2026_1 from "@/assets/cybermon/2026-cybermon-1.webp.asset.json";
+import mon2026_2 from "@/assets/cybermon/2026-cybermon-2.webp.asset.json";
+import mon2026_3 from "@/assets/cybermon/2026-cybermon-3.webp.asset.json";
+import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
+import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
@@ -112,7 +118,7 @@ function DetailSection({ row }: { row: DetailRow }) {
           )}
           {row.table && <DetailTable table={row.table} />}
           {row.images && (
-            <div className={row.imagesGrid ? "mt-8 grid items-start gap-6 sm:grid-cols-2" : "mt-8 space-y-8"}>
+            <div className={row.imagesGrid ? `mt-8 grid items-start gap-6 ${row.images.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}` : "mt-8 space-y-8"}>
               {row.images.map(image => (
                 <figure key={image.asset.asset_id}>
                   <img
@@ -351,6 +357,12 @@ const rows2026: DetailRow[] = [
       { name: "Fangserpens — The Commit Devourer", text: "SQL Injection & Error Handling — focuses on SQL injection, error handling and security checks that fail open." },
       { name: "Nulltinea — The Lure", text: "Credentials, XSS & CSRF — focuses on exposed credentials, stored cross-site scripting and cross-site request forgery." },
     ],
+    imagesGrid: true,
+    images: [
+      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon CyberMon.", width: 500, height: 500 },
+      { asset: mon2026_2, alt: "Cybermon 2026 monster artwork.", width: 500, height: 500 },
+      { asset: mon2026_3, alt: "Cybermon 2026 monster artwork.", width: 500, height: 500 },
+    ],
   },
   {
     title: "Rewards & achievements",
@@ -364,6 +376,10 @@ const rows2026: DetailRow[] = [
         ["Cyberhero Prime", "Complete all four Prime Boss missions"],
       ],
     },
+    images: [
+      { asset: merch2026_1, alt: "Box of holographic Cybermon 2026 stickers.", width: 800, height: 298 },
+      { asset: merch2026_2, alt: "Cybermon 2026 T-shirt and sticker.", width: 500, height: 508 },
+    ],
   },
   {
     title: "Learning activities",
@@ -469,6 +485,16 @@ export default function Cybermon() {
                 width={500}
                 height={281}
                 className="h-auto w-full rounded-lg"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                onError={useLocalImage}
+                src={banner2025_2.url}
+                alt="Cybermon 2025 campaign banner."
+                width={800}
+                height={267}
+                className="mt-6 h-auto w-full rounded-lg"
               />
             </figure>
           )}
