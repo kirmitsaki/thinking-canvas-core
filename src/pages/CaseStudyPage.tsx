@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import Seo from "@/components/Seo";
 import NotFound from "@/pages/NotFound";
 import { caseStudyMeta, getProject, projects } from "@/data/projects";
@@ -6,10 +6,13 @@ import { CaseStudy } from "@/components/portfolio/case-study";
 
 export default function CaseStudyPage() {
   const { slug } = useParams<{ slug: string }>();
+  const [params] = useSearchParams();
 
   if (!slug || !projects.some((p) => p.slug === slug)) return <NotFound />;
 
   const project = getProject(slug as Parameters<typeof getProject>[0]);
+  const section = project.sections.find(item => item.id === params.get("snippet"));
+  if (section) return <CaseStudy sectionOnly project={{ ...project, sections: [section], contribution: "", outcomes: [], outcomeStats: undefined, outcomeImage: undefined, reflection: undefined, evidencePending: false }} />;
   const meta = caseStudyMeta(project);
   return (
     <>
