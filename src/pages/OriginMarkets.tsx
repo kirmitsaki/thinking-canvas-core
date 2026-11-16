@@ -143,7 +143,6 @@ export default function OriginMarkets() {
       </Section>
 
       <Section id="products" title="Products" lede={productsCopy}>
-        <NdaNotice />
         <div className="origin-product-cards">
           {products.map((item, index) => (
             <article key={item.name} className="origin-product-card editorial-card">
@@ -153,7 +152,7 @@ export default function OriginMarkets() {
             </article>
           ))}
         </div>
-        <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." />
+        <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." notice={<NdaNotice />} />
       </Section>
     </>
   );
