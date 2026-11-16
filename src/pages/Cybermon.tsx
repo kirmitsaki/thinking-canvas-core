@@ -98,6 +98,7 @@ const stats2026 = [
 const rows2024: DetailRow[] = [
   {
     title: "Introduction",
+    sub: true,
     paragraphs: [
       "CyberMon 2024 was Secure Code Warrior’s gamified cybersecurity awareness campaign, launched on 7 October 2024 during Cybersecurity Awareness Month.",
       "The campaign aimed to make secure coding education more engaging by introducing fictional monsters representing software security vulnerabilities. Developers were challenged to defeat the CyberMons by completing practical secure coding activities and earning points.",
@@ -170,6 +171,7 @@ const rows2024: DetailRow[] = [
 const rows2025: DetailRow[] = [
   {
     title: "Introduction",
+    sub: true,
     paragraphs: [
       "CyberMon 2025 was Secure Code Warrior’s next annual gamified cybersecurity campaign, launched on 6 October 2025.",
       "The campaign shifted its focus towards AI and Large Language Model (LLM) security, introducing four AI-focused Boss Missions. The objective was to help developers understand emerging threats associated with AI-powered applications and learn how to protect them.",
@@ -243,6 +245,7 @@ const rows2025: DetailRow[] = [
 const rows2026: DetailRow[] = [
   {
     title: "Introduction",
+    sub: true,
     paragraphs: [
       "CyberMon 2026 continued Secure Code Warrior’s annual cybersecurity awareness campaign, launching on 5 October 2026.",
       "Under the theme Built by AI. Secured by You., the campaign brought together traditional application security and emerging AI-related vulnerabilities. It focused on helping developers understand the risks associated with AI-generated software, automated workflows and modern application development.",
