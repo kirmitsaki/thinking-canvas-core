@@ -207,7 +207,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                             key={image}
                             src={projectImage(image).url}
                             alt={projectImage(image).alt}
-                            className={project.slug === "pawsquad" && group.label === "The vet app" ? "mx-auto h-auto max-h-[320px] w-auto max-w-full rounded-[10px] sm:max-h-none sm:w-full" : "h-auto w-full rounded-[10px]"}
+                            className={project.slug === "mds-quostar" ? "h-auto rounded-[10px]" : project.slug === "pawsquad" && group.label === "The vet app" ? "mx-auto h-auto max-h-[320px] w-auto max-w-full rounded-[10px] sm:max-h-none sm:w-full" : "h-auto w-full rounded-[10px]"}
                             loading="lazy"
                           />
                         ))}
