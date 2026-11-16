@@ -362,6 +362,7 @@
     font-size: 1.625rem;
     font-style: italic;
     line-height: 1.4;
+    text-align: center;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
