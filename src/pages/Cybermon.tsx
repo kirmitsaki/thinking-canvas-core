@@ -47,6 +47,7 @@ function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 
