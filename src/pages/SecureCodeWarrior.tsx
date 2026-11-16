@@ -142,14 +142,21 @@ export default function SecureCodeWarrior() {
 
       <Section id="products" title="Products">
         <div className="origin-product-cards">
-          {products.map((item, index) => (
-            <article key={item.name} className={`origin-product-card editorial-card${item.name === 'Cybermon' ? ' cybermon-card' : ''}`}>
-              {item.name === 'Cybermon' && <span aria-hidden="true" className="cybermon-dragon"><DragonArt /></span>}
-              <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
-              <h3 className="subsection-title">{item.name}</h3>
-              <p className="body-copy">{emphasize(item.text)}</p>
-            </article>
-          ))}
+          {products.map((item, index) => {
+            const card = (
+              <>
+                {item.name === 'Cybermon' && <span aria-hidden="true" className="cybermon-dragon"><DragonArt /></span>}
+                <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
+                <h3 className="subsection-title">{item.name}</h3>
+                <p className="body-copy">{emphasize(item.text)}</p>
+                {item.name === 'Cybermon' && <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>}
+              </>
+            );
+            const className = `origin-product-card editorial-card${item.name === 'Cybermon' ? ' cybermon-card' : ''}`;
+            return item.name === 'Cybermon'
+              ? <Link key={item.name} to="/work/secure-code-warrior/cybermon" className={`${className} group block`}>{card}</Link>
+              : <article key={item.name} className={className}>{card}</article>;
+          })}
         </div>
       </Section>
 
