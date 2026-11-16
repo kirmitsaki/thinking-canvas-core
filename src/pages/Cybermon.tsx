@@ -27,9 +27,9 @@ import mon2026_4 from "@/assets/cybermon/2026-cybermon-4.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
 import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
-import film2025 from "@/assets/cybermon/cybermon-2025-film.mp4.asset.json";
+import film2025 from "@/assets/cybermon/2025-cybermon.mp4.asset.json";
 import poster2025 from "@/assets/cybermon/cybermon-2025-poster.webp.asset.json";
-import film2026 from "@/assets/cybermon/cybermon-2026-film.mp4.asset.json";
+import film2026 from "@/assets/cybermon/2026-cybermon.mp4.asset.json";
 import poster2026 from "@/assets/cybermon/cybermon-2026-poster.webp.asset.json";
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
