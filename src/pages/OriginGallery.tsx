@@ -6,6 +6,7 @@ import { getProject, pageMeta } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 import dashboards from '@/assets/origin-sample-work/Cards_-_Dashboards_Various.webp.asset.json';
 import dataCards from '@/assets/origin-sample-work/Cards_-_Data.webp.asset.json';
 import tradeBlotter from '@/assets/origin-sample-work/Documentation_-_Trade_Blotter.webp.asset.json';
@@ -41,6 +42,7 @@ function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
 }
 
 export default function OriginGallery() {
+  usePortfolioHeaderHeight();
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12">
