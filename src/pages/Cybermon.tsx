@@ -90,7 +90,7 @@ type DetailRow = {
   images?: DetailImage[];
   imagesGrid?: boolean;
   /** Infographic treatment for this subsection. */
-  variant?: "steps" | "cards" | "badges" | "points" | "chips" | "summary";
+  variant?: "cards" | "badges" | "points" | "chips" | "summary";
   stats?: { value: string; label: string; note?: string }[];
 };
 
@@ -144,17 +144,6 @@ function splitSentence(text: string) {
 
 function RowBody({ row }: { row: DetailRow }) {
   switch (row.variant) {
-    case "steps":
-      return (
-        <ol className="grid gap-4 sm:grid-cols-2">
-          {row.list!.map((item, index) => (
-            <li key={item} className="cm-card flex gap-4 p-5">
-              <span className="cm-step-number shrink-0" aria-hidden="true">{index + 1}</span>
-              <span className="body-copy text-foreground">{editorialEmphasis(item)}</span>
-            </li>
-          ))}
-        </ol>
-      );
     case "cards":
       return (
         <ul className="grid gap-6 sm:grid-cols-2">
@@ -213,7 +202,7 @@ function RowBody({ row }: { row: DetailRow }) {
         </ul>
       );
     case "summary": {
-      const [lead, rest] = splitSentence(row.paragraphs![0]);
+      const [lead, rest] = splitSentence(row.paragraphs?.[0] ?? "");
       return (
         <div className="cm-summary">
           <p className="essay-prose font-semibold text-foreground">{lead}</p>
@@ -299,13 +288,9 @@ const rows2024: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
-    variant: "steps",
-    list: [
-      "The campaign ran for four weeks.",
-      "A new Cybermon was introduced each week.",
-      "Participants completed learning activities to earn points.",
-      "Developers needed to earn three points each week to defeat that week’s Cybermon.",
-      "Defeating all four Cybermon earned participants Cyberhero status.",
+    variant: "summary",
+    paragraphs: [
+      "Pokémon meets secure coding: four weeks, four monsters, one Cyberhero. Each week introduced a new Cybermon representing a software vulnerability. Developers completed practical coding activities to earn three points, defeat that week’s monster and collect its badge. Defeating all four earned Cyberhero status — turning security training into a challenge worth coming back for.",
     ],
   },
   {
@@ -373,14 +358,6 @@ const rows2024: DetailRow[] = [
     ],
   },
   {
-    title: "In simple terms",
-    sub: true,
-    variant: "summary",
-    paragraphs: [
-      "Cybermon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
-    ],
-  },
-  {
     title: "Results",
     sub: true,
     stats: [
@@ -404,13 +381,9 @@ const rows2025: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
-    variant: "steps",
-    list: [
-      "The campaign introduced four AI security boss challenges.",
-      "Participants worked through practical AI/LLM security scenarios.",
-      "Developers explored how attackers could exploit weaknesses in AI applications.",
-      "Participants completed walkthroughs and high-difficulty Boss Missions.",
-      "The campaign encouraged developers to demonstrate their ability to identify and mitigate AI security risks.",
+    variant: "summary",
+    paragraphs: [
+      "Four AI bosses turned emerging security risks into hands-on challenges. Developers worked through guided walkthroughs and high-difficulty Boss Missions to discover how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. Defeating the bosses meant putting those lessons into practice — learning to recognise and mitigate the risks so organisations could adopt AI more securely.",
     ],
     images: [
       { asset: interface2025_1, alt: "Cybermon 2025 quest hub listing the four AI boss missions.", width: 800, height: 505 },
@@ -479,14 +452,6 @@ const rows2025: DetailRow[] = [
     ],
   },
   {
-    title: "In simple terms",
-    sub: true,
-    variant: "summary",
-    paragraphs: [
-      "Cybermon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
-    ],
-  },
-  {
     title: "Results",
     sub: true,
     stats: [
@@ -510,15 +475,9 @@ const rows2026: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
-    variant: "steps",
-    list: [
-      "The campaign ran for four weeks.",
-      "A new Cybermon was introduced each week.",
-      "Participants completed short coding labs and interactive challenges.",
-      "Developers faced four AI-focused Prime Boss missions.",
-      "Participants earned digital badges for completing activities.",
-      "Completing all four Cybermon contributed towards Cyberhero status.",
-      "Completing all four Prime Boss missions earned Cyberhero Prime status.",
+    variant: "summary",
+    paragraphs: [
+      "AI could build the software; developers still had to secure it. Over four weeks, a new Cybermon each week brought traditional application vulnerabilities and AI security risks into short coding labs and interactive challenges. Developers earned badges as they progressed, with Cyberhero status for defeating all four Cybermon. For those ready to go further, completing all four AI-focused Prime Boss missions unlocked Cyberhero Prime — an extra challenge beyond the main campaign.",
     ],
   },
   {
@@ -581,14 +540,6 @@ const rows2026: DetailRow[] = [
       "Encourage secure use of AI development tools and workflows.",
       "Measure participation and learning engagement.",
       "Build a global culture of continuous security improvement.",
-    ],
-  },
-  {
-    title: "In simple terms",
-    sub: true,
-    variant: "summary",
-    paragraphs: [
-      "Cybermon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
     ],
   },
 ];
