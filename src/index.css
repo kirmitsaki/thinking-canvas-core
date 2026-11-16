@@ -1118,4 +1118,4 @@ a:hover .arrow-nudge,
   0%, 100% { transform: scaleX(-1) translate(0, 0) rotate(-3deg); }
   50% { transform: scaleX(-1) translate(6px, -5px) rotate(3deg); }
 }
-@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; transform: scaleX(-1); } }
