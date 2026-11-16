@@ -413,12 +413,13 @@ export default function Cybermon() {
         <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
         <DetailSection
-          row={{ title: "Three-year comparison", table: comparisonTable }}
+          row={{ title: "Three-year comparison", sub: true, table: comparisonTable }}
           divider={false}
         />
         <DetailSection
           row={{
             title: "How CyberMon evolved",
+            sub: true,
             items: [
               { name: "2024 — Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
               { name: "2025 — Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
@@ -430,6 +431,7 @@ export default function Cybermon() {
         <DetailSection
           row={{
             title: "Overall business value",
+            sub: true,
             paragraphs: ["Across the three campaigns, Secure Code Warrior has used CyberMon to support five broader organisational goals:"],
             items: [
               { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
