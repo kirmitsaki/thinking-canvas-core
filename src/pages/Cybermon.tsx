@@ -152,7 +152,8 @@ function DetailSection({ row }: { row: DetailRow }) {
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
-                    className="h-auto w-full rounded-lg"
+                    className="mx-auto h-auto w-full rounded-lg"
+                    style={{ maxWidth: image.width }}
                   />
                 </figure>
               ))}
