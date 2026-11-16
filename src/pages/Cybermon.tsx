@@ -34,6 +34,8 @@ import cybermon2025 from "@/assets/cybermon/2025-cybermon.mp4.asset.json";
 import poster2025 from "@/assets/cybermon/cybermon-2025-poster.webp.asset.json";
 import cybermon2026 from "@/assets/cybermon/2026-cybermon.mp4.asset.json";
 import poster2026 from "@/assets/cybermon/cybermon-2026-poster.webp.asset.json";
+import cybermonTrio from "@/assets/cybermon/2024-2025-2026-cybermon.mp4.asset.json";
+import posterTrio from "@/assets/cybermon/cybermon-2024-2025-2026-poster.webp.asset.json";
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
 const localImages = import.meta.glob<string>("../assets/cybermon/*.webp", {
@@ -89,6 +91,14 @@ type DetailRow = {
   table?: { head: string[]; rows: string[][] };
   images?: DetailImage[];
   imagesGrid?: boolean;
+  /** Portrait film shown beside the copy. */
+  video?: {
+    asset: { url: string; asset_id: string };
+    poster: { url: string; asset_id: string };
+    alt: string;
+    width: number;
+    height: number;
+  };
   /** Infographic treatment for this subsection. */
   variant?: "cards" | "badges" | "points" | "chips" | "summary";
   stats?: { value: string; label: string; note?: string }[];
@@ -266,6 +276,25 @@ function DetailSection({ row }: { row: DetailRow }) {
             ? <h3 className="subsection-title">{row.title}</h3>
             : <h2 className="section-title">{row.title}</h2>}
           {body}
+        </div>
+      ) : row.video ? (
+        <div className="cm-video-row">
+          {body}
+          <figure className="cm-video-figure">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster={row.video.poster.url}
+              src={row.video.asset.url}
+              onError={useLocalVideo}
+              data-local-poster={row.video.poster.url.split("/").pop()}
+              width={row.video.width}
+              height={row.video.height}
+              className="h-auto w-full rounded-lg"
+              aria-label={row.video.alt}
+            />
+          </figure>
         </div>
       ) : body}
     </section>
@@ -689,6 +718,13 @@ export default function Cybermon() {
               "Together, these results highlight the value of combining storytelling, bite-sized learning, visible progress and achievement-based rewards.",
               "Rather than treating cybersecurity training as a one-off learning exercise, Cybermon created a recurring experience that gave developers a reason to return, participate and challenge themselves each year.",
             ],
+            video: {
+              asset: cybermonTrio,
+              poster: posterTrio,
+              alt: "Cybermon campaign film covering the 2024, 2025 and 2026 campaigns.",
+              width: 360,
+              height: 640,
+            },
           }}
         />
         <DetailSection

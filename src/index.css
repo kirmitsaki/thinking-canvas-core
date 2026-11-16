@@ -1142,3 +1142,17 @@ a:hover .arrow-nudge,
 /* The three year cards sit the same distance from the heading above and the copy below. */
 .cm-page .cm-cards-block { margin-bottom: 2.5rem; }
 @media (min-width: 768px) { .cm-page .cm-cards-block { margin-bottom: 3.5rem; } }
+/* The three-year film sits beside the closing copy as a portrait column. */
+.cm-page .cm-video-row { display: grid; gap: 2.5rem; align-items: start; }
+.cm-page .cm-video-figure { margin: 0; }
+.cm-page .cm-video-figure video {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin-inline: auto;
+  border: 1px solid var(--hairline);
+}
+@media (min-width: 768px) {
+  .cm-page .cm-video-row { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 3rem; }
+}
