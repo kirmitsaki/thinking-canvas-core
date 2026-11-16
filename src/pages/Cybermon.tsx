@@ -502,21 +502,11 @@ export default function Cybermon() {
                 loading="lazy"
                 decoding="async"
                 onError={useLocalImage}
-                src={banner2025.url}
-                alt="Cybermon 2025 campaign banner — Beat the Boss AI missions, now available on demand."
-                width={500}
-                height={281}
-                className="h-auto w-full rounded-lg"
-              />
-              <img
-                loading="lazy"
-                decoding="async"
-                onError={useLocalImage}
                 src={banner2025_2.url}
                 alt="Cybermon 2025 campaign banner."
                 width={800}
                 height={267}
-                className="mt-6 h-auto w-full rounded-lg"
+                className="h-auto w-full rounded-lg"
               />
             </figure>
           )}
