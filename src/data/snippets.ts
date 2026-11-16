@@ -31,6 +31,13 @@ export const snippets: Snippet[] = [
     description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
   },
   {
+    to: "/work/secure-code-warrior/product-design-identity",
+    image: "scw-identity-header",
+    project: "Secure Code Warrior",
+    name: "Product design identity",
+    description: "Colour, interface examples and character artwork for the new product vision.",
+  },
+  {
     to: "/work/secure-code-warrior/cybermon",
     image: "cybermon-poster",
     project: "Secure Code Warrior",
@@ -64,13 +71,6 @@ export const snippets: Snippet[] = [
     project: "CorResilience",
     name: "Sample interface",
     description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
-  },
-  {
-    to: "/work/secure-code-warrior/product-design-identity",
-    image: "scw-identity-header",
-    project: "Secure Code Warrior",
-    name: "Product design identity",
-    description: "Colour, interface examples and character artwork for the new product vision.",
   },
   {
     to: "/work/aladdin#brand",
