@@ -92,7 +92,7 @@ export function SnippetGrid() {
             variant="ghost"
             onClick={() => setSelected(snippet)}
             aria-haspopup="dialog"
-            className="editorial-card group block h-auto min-w-0 overflow-hidden whitespace-normal p-0 text-left hover:bg-card"
+            className="editorial-card group block h-auto min-w-0 overflow-hidden whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground"
           >
             <div className="aspect-[16/10] overflow-hidden bg-muted">
               <img
