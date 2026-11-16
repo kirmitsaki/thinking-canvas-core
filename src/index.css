@@ -664,6 +664,13 @@
   .case-study-editorial .editorial-study-heading:not(:has(> h2)) {
     display: block;
   }
+  .case-study-editorial .aladdin-trust-section > .editorial-study-heading {
+    display: grid;
+  }
+  .case-study-editorial .aladdin-trust-section > .pull-quote {
+    max-width: none;
+    width: 100%;
+  }
   .case-study-editorial .editorial-study-visual,
   .case-study-editorial .editorial-study-closing {
     max-width: none;

@@ -95,7 +95,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {body}
         {project.sections.map((section, index) => (
           <Fragment key={section.title}>
-          <section id={section.id} className="editorial-study-section mb-20 scroll-mt-32 md:mb-28">
+          <section id={section.id} className={`editorial-study-section mb-20 scroll-mt-32 md:mb-28${project.slug === "aladdin" && section.subheading ? " aladdin-trust-section" : ""}`}>
             {!(project.slug === "aladdin" && section.subheading) && <SectionDivider />}
             <div className="editorial-study-heading mx-auto max-w-[720px]">
               {project.slug === "aladdin" && section.subheading ? (
@@ -107,7 +107,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 {(section.paragraphs ?? []).map((paragraph, paragraphIndex) => (
                   <Fragment key={paragraph}>
                     <p>{editorialEmphasis(paragraph)}</p>
-                    {section.quote && section.quoteAfter === paragraphIndex && (
+                    {section.quote && section.quoteAfter === paragraphIndex && !(project.slug === "aladdin" && section.subheading) && (
                       <blockquote className="pull-quote">
                         <p>{editorialEmphasis(section.quote.text)}</p>
                         {section.quote.attribution && <cite>{section.quote.attribution}</cite>}
@@ -126,7 +126,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </Link>
               )}
             </div>
-            {section.quote && section.quoteAfter === undefined && (
+            {section.quote && (section.quoteAfter === undefined || (project.slug === "aladdin" && section.subheading)) && (
               <blockquote className="pull-quote">
                 <p>{editorialEmphasis(section.quote.text)}</p>
                 {section.quote.attribution && <cite>{section.quote.attribution}</cite>}
