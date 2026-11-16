@@ -31,6 +31,12 @@ import mendeleyHeader from '@/assets/mendeley-header.webp';
 import mendeleyLibrary from '@/assets/mendeley-library.webp';
 import mendeleyReader from '@/assets/mendeley-reader.webp';
 import mendeleyCitation from '@/assets/mendeley-citation.webp';
+import mendeleyLibrarySnippet from '@/assets/mendeley-library-snippet.webp';
+import mendeleyReaderSnippet from '@/assets/mendeley-reader-snippet.webp';
+import mendeleyCitationSnippet from '@/assets/mendeley-citation-snippet.webp';
+import mendeleyLibrarySnippetAsset from '@/assets/mendeley-library-snippet.webp.asset.json';
+import mendeleyReaderSnippetAsset from '@/assets/mendeley-reader-snippet.webp.asset.json';
+import mendeleyCitationSnippetAsset from '@/assets/mendeley-citation-snippet.webp.asset.json';
 import mendeleyOutcome from '@/assets/mendeley-outcome.webp';
 import mendeleyPatternLibrary from '@/assets/mendeley-pattern-library.webp';
 import mendeleySymbolsComponents from '@/assets/mendeley-symbols-components.webp';
@@ -107,6 +113,9 @@ import corVision from '@/assets/corresilience-work_7-Vision.webp';
 import corBadges from '@/assets/corresilience-work_8-Badges.webp';
 
 const projectImages: Record<string, { url: string; alt: string }> = {
+  'mendeley-library-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
+  'mendeley-reader-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
+  'mendeley-citation-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
   'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-audience-map': { url: originAudienceMap, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
