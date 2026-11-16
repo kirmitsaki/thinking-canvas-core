@@ -379,7 +379,7 @@ export default function Cybermon() {
             <section className="editorial-study-section mb-14 md:mb-20">
               <SectionDivider />
               <div className="mendeley-detail-row">
-                <h3 className="subsection-title">Reported results</h3>
+                <h3 className="subsection-title">Results</h3>
                 <div className="mendeley-detail-body">
                   <div className="grid gap-4 sm:grid-cols-2">
                     {stats2026.map(stat => (
