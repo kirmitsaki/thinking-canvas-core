@@ -282,12 +282,21 @@ function DetailSection({ row }: { row: DetailRow }) {
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
       {row.title ? (
+        row.variant === "outcomes" ? (
+          <div className="cm-outcomes-block">
+            {row.sub
+              ? <h3 className="subsection-title">{row.title}</h3>
+              : <h2 className="section-title">{row.title}</h2>}
+            {body}
+          </div>
+        ) : (
         <div className="mendeley-detail-row">
           {row.sub
             ? <h3 className="subsection-title">{row.title}</h3>
             : <h2 className="section-title">{row.title}</h2>}
           {body}
         </div>
+        )
       ) : row.video ? (
         <div className="cm-video-row">
           {body}
