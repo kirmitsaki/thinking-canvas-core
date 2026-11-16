@@ -50,7 +50,10 @@ export default function OriginGallery() {
       <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
       <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
     </header>
-    <div className="sample-work-tabs py-3"><NdaNotice /></div>
+    <div className="sample-work-tabs hairline-top border-b border-border py-3">
+      <Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link>
+      <div className="mt-3"><NdaNotice /></div>
+    </div>
     <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
       <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
@@ -96,7 +99,6 @@ export default function OriginGallery() {
         ))}
       </div>
     </section>
-    <div className="hairline-top pt-8"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     <ProjectPagination slug="origin-markets" />
   </main></>;
 }
