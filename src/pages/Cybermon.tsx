@@ -548,19 +548,6 @@ const rows2026: DetailRow[] = [
   },
 ];
 
-const comparisonTable = {
-  head: ["Category", "2024", "2025", "2026"],
-  rows: [
-    ["Theme", "Secure coding", "The Age of AI", "Built by AI. Secured by You."],
-    ["Main focus", "Software vulnerabilities", "AI/LLM security", "AI and application security"],
-    ["Campaign duration", "4 weeks", "October campaign", "4 weeks"],
-    ["Characters", "4 Cybermon", "4 AI bosses", "4 Cybermon"],
-    ["Learning format", "Labs, walkthroughs, missions", "AI security missions", "Labs, challenges and Prime Boss missions"],
-    ["Rewards", "Weekly badges", "Exclusive content and prizes", "Weekly badges and achievements"],
-    ["Main achievement", "Cyberhero", "Boss challenges", "Cyberhero / Cyberhero Prime"],
-  ],
-};
-
 const years = [
   { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
     theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
