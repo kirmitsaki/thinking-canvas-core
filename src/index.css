@@ -56,7 +56,10 @@
 .snippet-page main > div:has(> a[href="/work/mendeley"]) { display: none; }
 .snippet-page .sample-work-tabs,
 .snippet-page .case-study-navigation { top: 0; }
-.snippet-page main > .origin-section > .section-divider { display: none; }
+/* Inside a snippet frame the leading separator would sit above the section
+   title, so only separators between sections stay. */
+.snippet-page .editorial-study-section > .section-break:first-child,
+.snippet-page .origin-section > .section-break:first-child { display: none; }
 
 @layer base {
   * {
