@@ -12,7 +12,12 @@ export default function CaseStudyPage() {
 
   const project = getProject(slug as Parameters<typeof getProject>[0]);
   const section = project.sections.find(item => item.id === params.get("snippet"));
-  if (section) return <CaseStudy sectionOnly project={{ ...project, sections: [section], contribution: "", outcomes: [], outcomeStats: undefined, outcomeImage: undefined, reflection: undefined, evidencePending: false }} />;
+  if (section) {
+    const snippetSection = project.slug === "corresilience" && section.id === "interface"
+      ? { ...section, groups: section.groups?.filter(group => !["What users told us", "Areas for improvement"].includes(group.label)) }
+      : section;
+    return <CaseStudy sectionOnly project={{ ...project, sections: [snippetSection], contribution: "", outcomes: [], outcomeStats: undefined, outcomeImage: undefined, reflection: undefined, evidencePending: false }} />;
+  }
   const meta = caseStudyMeta(project);
   return (
     <>
