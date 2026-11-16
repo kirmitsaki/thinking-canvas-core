@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { portfolioProjects, freelanceProjects, pageMeta } from "@/data/projects";
 import { ProjectGrid } from "@/components/portfolio/project-grid";
+import { SnippetGrid } from "@/components/portfolio/snippet-grid";
 
 // Filters hidden for now. To restore: re-add useSearchParams, projectFilters,
 // projectMatchesFilter and the filterPill Button group under the heading.
@@ -20,6 +21,10 @@ export default function WorkPage() {
         </header>
         <section>
           <ProjectGrid items={portfolioProjects} />
+        </section>
+        <section className="mt-20 md:mt-28" aria-labelledby="snippets-heading">
+          <h2 id="snippets-heading" className="section-title mb-10 md:mb-14">Snippets</h2>
+          <SnippetGrid />
         </section>
         <section className="mt-20 md:mt-28" aria-labelledby="freelancing-heading">
           <h2 id="freelancing-heading" className="section-title mb-10 md:mb-14">Freelancing</h2>
