@@ -11,7 +11,6 @@ import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
 import interface2024 from "@/assets/cybermon/2024_-_Interface.webp.asset.json";
-import results2024 from "@/assets/cybermon/2024-results.webp.asset.json";
 import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
 import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
@@ -372,9 +371,6 @@ const rows2024: DetailRow[] = [
       { value: "5,260", label: "Users" },
       { value: "350", label: "Companies" },
       { value: "95%", label: "Thumbs up" },
-    ],
-    images: [
-      { asset: results2024, alt: "Cybermon 2024 results: 11,000 badges earned, 5,260 users, 350 companies and 95% thumbs up.", width: 500, height: 500 },
     ],
   },
 ];
