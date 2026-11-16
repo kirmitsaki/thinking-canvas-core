@@ -81,7 +81,7 @@ const meta = pageMeta(
 );
 
 type DetailRow = {
-  title: string;
+  title?: string;
   sub?: boolean;
   paragraphs?: string[];
   items?: { name: string; text?: string; epithet?: string; threat?: string; detail?: string }[];
@@ -216,13 +216,8 @@ function RowBody({ row }: { row: DetailRow }) {
 
 function DetailSection({ row }: { row: DetailRow }) {
   const custom = Boolean(row.variant);
-  return (
-    <section className="editorial-study-section mb-14 md:mb-20">
-      <div className="mendeley-detail-row">
-        {row.sub
-          ? <h3 className="subsection-title">{row.title}</h3>
-          : <h2 className="section-title">{row.title}</h2>}
-        <div className="mendeley-detail-body">
+  const body = (
+    <div className="mendeley-detail-body">
           {row.paragraphs && row.variant !== "summary" && (
             <div className="essay-prose mb-8 space-y-5">
               {row.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
@@ -261,8 +256,18 @@ function DetailSection({ row }: { row: DetailRow }) {
               {row.images.map(image => <figure key={image.asset.asset_id}><DetailImg image={image} /></figure>)}
             </div>
           )}
+    </div>
+  );
+  return (
+    <section className="editorial-study-section mb-14 md:mb-20">
+      {row.title ? (
+        <div className="mendeley-detail-row">
+          {row.sub
+            ? <h3 className="subsection-title">{row.title}</h3>
+            : <h2 className="section-title">{row.title}</h2>}
+          {body}
         </div>
-      </div>
+      ) : body}
     </section>
   );
 }
@@ -721,7 +726,6 @@ export default function Cybermon() {
       <SectionDivider />
       <DetailSection
         row={{
-          title: "Final notes",
           paragraphs: [
             "Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.",
             "In 2024, the campaign reached more than 5,000 developers across 350 customer organisations, establishing a foundation for a repeatable, character-led learning experience.",
