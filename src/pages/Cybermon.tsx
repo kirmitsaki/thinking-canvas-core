@@ -624,18 +624,31 @@ export default function Cybermon() {
       />
       {years.map((year, yearIndex) => {
         const intro = year.rows.find(row => row.title === "Introduction");
-        const rest = year.rows.filter(row => row.title !== "Introduction");
+        const objective = year.rows.find(row => row.title === "Business objective");
+        const rest = year.rows.filter(row => row.title !== "Introduction" && row.title !== "Business objective");
         const hasFilm = year.id === "2025" || year.id === "2026";
         return (
         <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
-          <p className="cm-kicker">{year.launch} · {year.theme}</p>
-          <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
-          <p className="standfirst mt-6">{year.standfirst}</p>
-          {intro?.paragraphs && (
-            <div className={`essay-prose mt-6 max-w-[65ch] space-y-5 ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
-              {intro.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
+          <div className={`cm-year-intro grid gap-10 md:grid-cols-[1.1fr_1fr] md:gap-16 ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
+            <div className="min-w-0">
+              <p className="cm-kicker">{year.launch} · {year.theme}</p>
+              <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
+              <p className="standfirst mt-6">{year.standfirst}</p>
+              {intro?.paragraphs && (
+                <div className="essay-prose mt-6 max-w-[65ch] space-y-5">
+                  {intro.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
+                </div>
+              )}
             </div>
-          )}
+            {objective?.list && (
+              <aside className="editorial-card min-w-0 self-start p-6 md:p-8">
+                <h3 className="label">Business objective</h3>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {objective.list.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
+                </ul>
+              </aside>
+            )}
+          </div>
           {year.id === "2025" && (
             <figure className="cm-intro-gap mx-auto max-w-[720px]">
               <video
