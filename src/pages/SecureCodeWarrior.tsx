@@ -5,6 +5,8 @@ import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 
+import identityHeader from '@/assets/scw-identity-header.webp';
+
 const project = getProject('secure-code-warrior');
 
 function emphasize(text: string): ReactNode {
@@ -53,8 +55,9 @@ function ComingSoon({ to }: { to?: string }) {
   );
   if (to) {
     return (
-      <Link to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] p-6 md:p-8">
-        {text}
+      <Link to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] overflow-hidden">
+        <img src={identityHeader} alt="Secure Code Warrior character artwork annotated with its design meanings" width={1600} height={1333} loading="lazy" className="block h-auto w-full" />
+        <p className="accent-link p-6 md:p-8">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>
       </Link>
     );
   }
