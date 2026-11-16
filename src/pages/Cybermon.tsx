@@ -679,23 +679,6 @@ export default function Cybermon() {
         <h2 className="card-title">Three years of fun</h2>
         <section className="editorial-study-section mb-14 md:mb-20">
           <div className="grid gap-6 md:grid-cols-3">
-            {years.map((year, index) => (
-              <div key={year.id} className="cm-year cm-card p-6" data-year={year.id}>
-                <p className="card-title cm-year-title">{year.id}</p>
-                <dl className="mt-5 space-y-4">
-                  {comparisonTable.rows.map(row => (
-                    <div key={row[0]}>
-                      <dt className="cm-kicker">{row[0]}</dt>
-                      <dd className="body-copy mt-1 text-foreground">{row[index + 1]}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="editorial-study-section mb-14 md:mb-20">
-          <div className="grid gap-6 md:grid-cols-3">
             {[
               { year: "2024", focus: "Build secure coding foundations", text: "Teach developers to identify and prevent common software vulnerabilities." },
               { year: "2025", focus: "Secure AI applications", text: "Introduce developers to emerging AI and LLM security threats." },
