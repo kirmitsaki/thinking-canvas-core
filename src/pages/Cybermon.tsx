@@ -360,8 +360,8 @@ const rows2026: DetailRow[] = [
     imagesGrid: true,
     images: [
       { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon CyberMon.", width: 500, height: 500 },
-      { asset: mon2026_2, alt: "Cybermon 2026 monster artwork.", width: 500, height: 500 },
-      { asset: mon2026_3, alt: "Cybermon 2026 monster artwork.", width: 500, height: 500 },
+      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow CyberMon guarding a vault.", width: 500, height: 500 },
+      { asset: mon2026_3, alt: "Cybermon 2026 crest with the CyberMons around the shield logo.", width: 500, height: 500 },
     ],
   },
   {
