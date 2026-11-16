@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowDown, Award, Crown, Gift, Medal, Star, Trophy } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { SectionNavigation } from "@/components/portfolio/section-navigation";
@@ -85,6 +85,9 @@ type DetailRow = {
   table?: { head: string[]; rows: string[][] };
   images?: DetailImage[];
   imagesGrid?: boolean;
+  /** Infographic treatment for this subsection. */
+  variant?: "steps" | "cards" | "badges" | "points" | "chips" | "summary";
+  stats?: { value: string; label: string }[];
 };
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
@@ -112,7 +115,120 @@ function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
   );
 }
 
+function DetailImg({ image, className = "" }: { image: DetailImage; className?: string }) {
+  return (
+    <img
+      loading="lazy"
+      decoding="async"
+      onError={useLocalImage}
+      src={image.asset.url}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      className={`mx-auto h-auto w-full rounded-lg ${className}`}
+      style={{ maxWidth: image.width }}
+    />
+  );
+}
+
+const medalIcons = [Medal, Trophy, Crown, Gift, Star, Award];
+
+function splitSentence(text: string) {
+  const match = text.match(/^(.+?[.!?])\s+(.*)$/s);
+  return match ? [match[1], match[2]] : [text, ""];
+}
+
+function RowBody({ row }: { row: DetailRow }) {
+  switch (row.variant) {
+    case "steps":
+      return (
+        <ol className="grid gap-4 sm:grid-cols-2">
+          {row.list!.map((item, index) => (
+            <li key={item} className="cm-card flex gap-4 p-5">
+              <span className="cm-step-number shrink-0" aria-hidden="true">{index + 1}</span>
+              <span className="body-copy text-foreground">{editorialEmphasis(item)}</span>
+            </li>
+          ))}
+        </ol>
+      );
+    case "cards":
+      return (
+        <ul className="grid gap-6 sm:grid-cols-2">
+          {row.items!.map((item, index) => {
+            const [name, title] = item.name.split(" — ");
+            const [threat, detail] = item.text.split(" — ");
+            const image = row.images?.[index];
+            return (
+              <li key={item.name} className="cm-card flex flex-col overflow-hidden">
+                {image && <div className="bg-muted p-4"><DetailImg image={image} /></div>}
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="cm-kicker">Cybermon {String(index + 1).padStart(2, "0")}</p>
+                  <h4 className="subsection-title mt-2">{name}</h4>
+                  {title && <p className="body-copy italic text-muted-foreground">{title}</p>}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {threat.split(/\s*(?:&|,)\s*/).map(tag => <span key={tag} className="cm-tag">{tag}</span>)}
+                  </div>
+                  {detail && <p className="body-copy mt-4 text-muted-foreground">{detail.replace(/^focuses on /, "Focuses on ")}</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      );
+    case "badges":
+      return (
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {row.table!.rows.map(([name, text], index) => {
+            const Icon = medalIcons[index % medalIcons.length];
+            return (
+              <li key={name} className="cm-card flex flex-col items-center p-6 text-center">
+                <span className="cm-medal" aria-hidden="true"><Icon size={24} /></span>
+                <p className="body-copy mt-4 font-semibold text-foreground">{name}</p>
+                <p className="body-copy mt-1 text-muted-foreground">{text}</p>
+              </li>
+            );
+          })}
+        </ul>
+      );
+    case "points":
+      return (
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {row.table!.rows.map(([name, points]) => (
+            <li key={name} className="cm-card p-5 text-center">
+              <p className="cm-stat-value">{points}</p>
+              <p className="cm-kicker mt-2">{points === "1" ? "point" : "points"}</p>
+              <p className="body-copy mt-3 text-foreground">{name}</p>
+            </li>
+          ))}
+        </ul>
+      );
+    case "chips":
+      return (
+        <ul className="flex flex-wrap gap-2">
+          {row.list!.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
+        </ul>
+      );
+    case "summary": {
+      const [lead, rest] = splitSentence(row.paragraphs![0]);
+      return (
+        <div className="cm-summary">
+          <p className="essay-prose font-semibold text-foreground">{lead}</p>
+          {rest && (
+            <details className="mt-3">
+              <summary className="label-quiet">Read more ↓</summary>
+              <p className="essay-prose mt-3">{editorialEmphasis(rest)}</p>
+            </details>
+          )}
+        </div>
+      );
+    }
+    default:
+      return null;
+  }
+}
+
 function DetailSection({ row }: { row: DetailRow }) {
+  const custom = Boolean(row.variant);
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
       <div className="mendeley-detail-row">
@@ -120,18 +236,29 @@ function DetailSection({ row }: { row: DetailRow }) {
           ? <h3 className="subsection-title">{row.title}</h3>
           : <h2 className="section-title">{row.title}</h2>}
         <div className="mendeley-detail-body">
-          {row.paragraphs && (
-            <div className="essay-prose space-y-5">
+          {row.paragraphs && row.variant !== "summary" && (
+            <div className="essay-prose mb-8 space-y-5">
               {row.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
             </div>
           )}
-          {row.list && (
-            <ul className="essay-prose mt-5 list-disc space-y-2 pl-5 first:mt-0">
+          {row.stats && (
+            <div className="mb-8 grid grid-cols-2 gap-4">
+              {row.stats.map(stat => (
+                <div key={stat.label} className="cm-card p-5">
+                  <p className="cm-stat-value">{stat.value}</p>
+                  <p className="body-copy mt-2 text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {custom && <RowBody row={row} />}
+          {!custom && row.list && (
+            <ul className="essay-prose list-disc space-y-2 pl-5">
               {row.list.map(item => <li key={item}>{editorialEmphasis(item)}</li>)}
             </ul>
           )}
-          {row.items && (
-            <dl className="mt-8 space-y-6">
+          {!custom && row.items && (
+            <dl className="space-y-6">
               {row.items.map(item => (
                 <div key={item.name}>
                   <dt className="body-copy font-semibold text-foreground">{item.name}</dt>
@@ -140,24 +267,10 @@ function DetailSection({ row }: { row: DetailRow }) {
               ))}
             </dl>
           )}
-          {row.table && <DetailTable table={row.table} />}
-          {row.images && (
+          {!custom && row.table && <DetailTable table={row.table} />}
+          {row.images && row.variant !== "cards" && (
             <div className={row.imagesGrid ? `mt-8 grid items-start gap-6 ${row.images.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}` : "mt-8 space-y-8"}>
-              {row.images.map(image => (
-                <figure key={image.asset.asset_id}>
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    onError={useLocalImage}
-                    src={image.asset.url}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="mx-auto h-auto w-full rounded-lg"
-                    style={{ maxWidth: image.width }}
-                  />
-                </figure>
-              ))}
+              {row.images.map(image => <figure key={image.asset.asset_id}><DetailImg image={image} /></figure>)}
             </div>
           )}
         </div>
@@ -186,6 +299,7 @@ const rows2024: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign ran for four weeks.",
       "A new Cybermon was introduced each week.",
@@ -207,6 +321,7 @@ const rows2024: DetailRow[] = [
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -223,6 +338,7 @@ const rows2024: DetailRow[] = [
     paragraphs: [
       "Activities were designed to help developers recognise vulnerabilities, understand how they could be exploited and practise writing more secure code.",
     ],
+    variant: "points",
     table: {
       head: ["Activity", "Points"],
       rows: [
@@ -236,6 +352,7 @@ const rows2024: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve developer awareness of common software vulnerabilities.",
       "Encourage secure coding practices.",
@@ -247,6 +364,7 @@ const rows2024: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
@@ -254,6 +372,12 @@ const rows2024: DetailRow[] = [
   {
     title: "Results",
     sub: true,
+    stats: [
+      { value: "11,000", label: "Badges earned" },
+      { value: "5,260", label: "Users" },
+      { value: "350", label: "Companies" },
+      { value: "95%", label: "Thumbs up" },
+    ],
     images: [
       { asset: results2024, alt: "Cybermon 2024 results: 11,000 badges earned, 5,260 users, 350 companies and 95% thumbs up.", width: 500, height: 500 },
     ],
@@ -272,6 +396,7 @@ const rows2025: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign introduced four AI security boss challenges.",
       "Participants worked through practical AI/LLM security scenarios.",
@@ -286,6 +411,7 @@ const rows2025: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     items: [
       { name: "Bypassaur", text: "Direct Prompt Injection — exploits malicious instructions supplied directly to AI models." },
       { name: "Keykraken", text: "Indirect Prompt Injection — exploits malicious instructions hidden in external content processed by AI." },
@@ -294,15 +420,16 @@ const rows2025: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
       { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
       { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
+      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
       { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -333,6 +460,7 @@ const rows2025: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve awareness of AI-specific security vulnerabilities.",
       "Develop secure AI application development skills.",
@@ -345,6 +473,7 @@ const rows2025: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
     ],
@@ -363,6 +492,7 @@ const rows2026: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign ran for four weeks.",
       "A new Cybermon was introduced each week.",
@@ -376,6 +506,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     items: [
       { name: "Glitchrusus — The Scrap Bandit", text: "Indirect Prompt Injection & Formula Injection — focuses on malicious instructions in AI workflows and spreadsheet formula injection." },
       { name: "Gatecorvus — The Keykeeper", text: "SSRF, Data Exposure & Cryptography — focuses on server-side request forgery, sensitive data exposure, path traversal and weak cryptography." },
@@ -393,6 +524,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -424,6 +556,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve awareness of vulnerabilities in AI-generated software.",
       "Reinforce traditional secure coding fundamentals.",
@@ -436,6 +569,7 @@ const rows2026: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
     ],
