@@ -19,13 +19,12 @@ export default function OriginStudy() {
   const meta = pageMeta(`Origin Markets · ${study.name}`, study.sections[0]?.paragraphs[0] ?? '', 'article');
   return <><Seo title={meta.title} description={meta.description} path={`/work/origin-markets/${slug}`} ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
     <header className="pb-12">
-      <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: study.name }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">{study.displayTitle}</h1>
       {study.subtitle && <p className="standfirst mt-6 max-w-[720px]">{study.subtitle}</p>}
       {study.disciplines && <p className="label mt-6">{study.disciplines}</p>}
     </header>
-    <div className="sample-work-tabs hairline-top border-b border-border py-3"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
+    <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <article className="editorial-detail-content mx-auto pb-12 pt-12 md:pb-16">
       {study.sections.map((section, index) => <section key={section.id} id={section.id} className={`scroll-mt-32 ${section.subheading ? 'mb-10 md:mb-12' : 'mb-14 md:mb-20'}`}>
         {index > 0 && <SectionDivider />}
@@ -44,6 +43,7 @@ export default function OriginStudy() {
       </section>)}
       {study.reflection && <section className="mb-14 md:mb-20"><SectionDivider /><h2 className="card-title">{study.reflection.title}</h2><div className="essay-prose mt-6 space-y-5">{study.reflection.paragraphs.map(text => { const lead = ['Complexity isn\'t always the enemy.', 'Look at the whole, not just the feature.', 'In financial markets, speed is trust.'].find(item => text.startsWith(item)); return <p key={text}>{lead ? <><strong className="font-semibold">{lead}</strong>{text.slice(lead.length)}</> : text}</p>; })}</div></section>}
     </article>
+    <div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     <ProjectPagination slug="origin-markets" />
   </main></>;
 }

@@ -53,8 +53,7 @@ export default function MendeleySampleWork() {
       </header>
       <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams({ view }, { preventScrollReset: true }); }}>
         <div className="sample-work-tabs hairline-top mb-10 border-b border-border py-3">
-          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Mendeley</Link>
-          <Tabs.List aria-label="Mendeley sample work" className="mt-3 flex gap-2">
+          <Tabs.List aria-label="Mendeley sample work" className="flex gap-2">
             {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
               <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
             </Tabs.Trigger>)}
@@ -64,6 +63,7 @@ export default function MendeleySampleWork() {
           <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
         </Tabs.Content>)}
       </Tabs.Root>
+      <div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Mendeley</Link></div>
       <ProjectPagination slug="mendeley" />
     </main>
   );
