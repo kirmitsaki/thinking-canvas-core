@@ -56,6 +56,7 @@ const App = () => (
             path="/work/secure-code-warrior/product-design-identity"
             element={<ProductDesignIdentity />}
           />
+          <Route path="/work/secure-code-warrior/cybermon" element={<Cybermon />} />
           <Route path="/work/mendeley/sample-work" element={<MendeleySampleWork />} />
           <Route path="/work/mendeley/library" element={<Navigate replace to="/work/mendeley/sample-work?view=library" />} />
           <Route path="/work/mendeley/reader" element={<Navigate replace to="/work/mendeley/sample-work?view=reader" />} />
