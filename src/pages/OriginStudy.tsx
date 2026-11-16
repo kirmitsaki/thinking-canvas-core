@@ -11,9 +11,10 @@ import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 
-export default function OriginStudy() {
+export default function OriginStudy({ studySlug }: { studySlug?: string }) {
   usePortfolioHeaderHeight();
-  const { study: slug } = useParams();
+  const { study: routeSlug } = useParams();
+  const slug = studySlug ?? routeSlug;
   const study = slug ? getOriginStudy(slug) : undefined;
   if (!study) return <NotFound />;
   const meta = pageMeta(`Origin Markets · ${study.name}`, study.sections[0]?.paragraphs[0] ?? '', 'article');

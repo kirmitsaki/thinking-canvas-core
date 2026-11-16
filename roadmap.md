@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Replace all secondary case-study destinations with shared modals and top breadcrumbs; remove standalone destinations and verify tabs and closing.
 - [x] Add the nine supplied Origin sample-work images in grouped editorial layouts; verify images and mobile presentation.
 - [x] Finish removing separate case-study label/date bars; dates belong in breadcrumbs.
 - [x] Add a Mendeley Sample work card after Library, Reader and Citation.
