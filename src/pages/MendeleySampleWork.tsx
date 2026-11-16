@@ -44,7 +44,7 @@ export default function MendeleySampleWork() {
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/mendeley/sample-work" ogType={meta.ogType} />
-      <header className="pb-10 pt-10 md:pt-14">
+      <header className="pb-10">
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: "Mendeley (Elsevier)", to: "/work/mendeley" }, { label: "Mendeley Reference Manager" }]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
@@ -52,18 +52,18 @@ export default function MendeleySampleWork() {
         <h1 className="mt-8 page-title">Mendeley Reference Manager</h1>
       </header>
       <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams({ view }, { preventScrollReset: true }); }}>
-        <Tabs.List aria-label="Mendeley sample work" className="sample-work-tabs hairline-bottom mb-10 flex gap-2">
-          {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
-            <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
-          </Tabs.Trigger>)}
-        </Tabs.List>
+        <div className="sample-work-tabs hairline-top mb-10 border-b border-border py-3">
+          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Mendeley</Link>
+          <Tabs.List aria-label="Mendeley sample work" className="mt-3 flex gap-2">
+            {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>
+              <Button variant="ghost" className="rounded-none border-b-2 border-transparent px-4 text-muted-foreground hover:bg-camel-wash hover:text-foreground data-[state=active]:border-caramel data-[state=active]:text-foreground">{view.label}</Button>
+            </Tabs.Trigger>)}
+          </Tabs.List>
+        </div>
         {views.map(({ id, Content }) => <Tabs.Content key={id} value={id} className="editorial-detail-content mx-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
         </Tabs.Content>)}
       </Tabs.Root>
-      <div className="hairline-top mx-auto max-w-[720px] pt-8">
-        <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to the Mendeley case study</Link>
-      </div>
       <ProjectPagination slug="mendeley" />
     </main>
   );

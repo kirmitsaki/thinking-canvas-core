@@ -9,21 +9,24 @@ import { getOriginStudy } from '@/data/origin-studies';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
+import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 
 export default function OriginStudy() {
+  usePortfolioHeaderHeight();
   const { study: slug } = useParams();
   const study = slug ? getOriginStudy(slug) : undefined;
   if (!study) return <NotFound />;
   const meta = pageMeta(`Origin Markets · ${study.name}`, study.sections[0]?.paragraphs[0] ?? '', 'article');
   return <><Seo title={meta.title} description={meta.description} path={`/work/origin-markets/${slug}`} ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
-    <header className="pb-12 pt-10 md:pt-14">
+    <header className="pb-12">
       <div className="mb-6"><NdaNotice /></div>
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: study.name }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">{study.displayTitle}</h1>
       {study.subtitle && <p className="standfirst mt-6 max-w-[720px]">{study.subtitle}</p>}
       {study.disciplines && <p className="label mt-6">{study.disciplines}</p>}
     </header>
-    <article className="editorial-detail-content mx-auto pb-12 md:pb-16">
+    <div className="sample-work-tabs hairline-top border-b border-border py-3"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
+    <article className="editorial-detail-content mx-auto pb-12 pt-12 md:pb-16">
       {study.sections.map((section, index) => <section key={section.id} id={section.id} className={`scroll-mt-32 ${section.subheading ? 'mb-10 md:mb-12' : 'mb-14 md:mb-20'}`}>
         {index > 0 && <SectionDivider />}
         <div className="editorial-study-heading">{section.title && <h2 className={section.subheading ? 'subsection-title' : 'section-title'}>{section.title}</h2>}
@@ -40,7 +43,6 @@ export default function OriginStudy() {
         {section.visual && !section.image && !section.images && <figure className="mt-9 w-full"><VisualPlaceholder title={section.visual} /><figcaption className="caption mt-4">{section.caption}</figcaption></figure>}
       </section>)}
       {study.reflection && <section className="mb-14 md:mb-20"><SectionDivider /><h2 className="card-title">{study.reflection.title}</h2><div className="essay-prose mt-6 space-y-5">{study.reflection.paragraphs.map(text => { const lead = ['Complexity isn\'t always the enemy.', 'Look at the whole, not just the feature.', 'In financial markets, speed is trust.'].find(item => text.startsWith(item)); return <p key={text}>{lead ? <><strong className="font-semibold">{lead}</strong>{text.slice(lead.length)}</> : text}</p>; })}</div></section>}
-      <div className="hairline-top pt-8"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     </article>
     <ProjectPagination slug="origin-markets" />
   </main></>;
