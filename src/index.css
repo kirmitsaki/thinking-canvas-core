@@ -1130,7 +1130,7 @@ a:hover .arrow-nudge,
 .cm-year-title { color: hsl(var(--year)); }
 .cm-kicker { color: hsl(var(--year)); font-family: var(--font-sans, inherit); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
 .cm-card { background: var(--card); border: 1px solid var(--hairline); border-top: 3px solid hsl(var(--year)); border-radius: 10px; }
-.cm-tag { display: inline-block; border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.8rem; line-height: 1.4; background: hsl(var(--year) / 0.1); color: hsl(var(--year)); border: 1px solid hsl(var(--year) / 0.3); }
+.cm-tag { display: inline-flex; align-items: center; align-self: flex-start; border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.8rem; line-height: 1.4; background: hsl(var(--year) / 0.1); color: hsl(var(--year)); border: 1px solid hsl(var(--year) / 0.3); }
 .cm-step-number { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 999px; background: hsl(var(--year)); color: var(--background); font-weight: 600; font-size: 0.9rem; }
 .cm-medal { display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; border-radius: 999px; background: hsl(var(--year) / 0.12); color: hsl(var(--year)); border: 2px solid hsl(var(--year) / 0.45); }
 .cm-stat-value { color: hsl(var(--year)); font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1; font-weight: 500; }
