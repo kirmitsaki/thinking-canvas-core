@@ -578,7 +578,7 @@ const rows2026: DetailRow[] = [
 ];
 
 const years = [
-  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
+  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024 · Secure Coding", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
     theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
   { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025 · The Age of AI", standfirst: "Four bosses, four AI security threats, one mission: beat the boss.", rows: rows2025,
     theme: "The Age of AI", launch: "6 OCTOBER 2025", cover: crest2025 },
