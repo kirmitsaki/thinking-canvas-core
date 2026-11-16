@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { SnippetLink } from './snippet-context';
 import { projectImage, projectWorkAreas, type Project } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
@@ -26,7 +26,7 @@ export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?
         }
         const image = project.heroImage ? projectImage(project.heroImage) : undefined;
         return (
-          <Link
+          <SnippetLink
             key={project.slug}
             to={project.linkTo ?? `/work/${project.slug}`}
             className={`editorial-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
@@ -47,7 +47,7 @@ export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?
               )}
             </div>
             <CardBody project={project} link />
-          </Link>
+          </SnippetLink>
         );
       })}
     </div>

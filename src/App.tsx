@@ -2,6 +2,8 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Outlet, useLocation, Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
+import { SnippetProvider } from '@/components/portfolio/snippet-context';
+import { SnippetContent } from '@/components/portfolio/snippet-content';
 const About = lazy(() => import("@/pages/About"));
 const CaseStudyPage = lazy(() => import("@/pages/CaseStudyPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -9,15 +11,20 @@ const Contact = lazy(() => import("@/pages/Contact"));
 // const FieldNotePage = lazy(() => import("@/pages/FieldNote"));
 // const FieldNotes = lazy(() => import("@/pages/FieldNotes"));
 import Home from "@/pages/Home";
-const MendeleySampleWork = lazy(() => import("@/pages/MendeleySampleWork"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
-const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
-const Cybermon = lazy(() => import("@/pages/Cybermon"));
 const WorkPage = lazy(() => import("@/pages/Work"));
 const OriginMarkets = lazy(() => import("@/pages/OriginMarkets"));
 const SecureCodeWarrior = lazy(() => import("@/pages/SecureCodeWarrior"));
-const OriginStudy = lazy(() => import("@/pages/OriginStudy"));
-const OriginGallery = lazy(() => import("@/pages/OriginGallery"));
+
+function SecondaryRedirect() {
+  const { pathname, search } = useLocation();
+  const parts = pathname.split('/').filter(Boolean);
+  const params = new URLSearchParams(search);
+  const legacyView = ['library', 'reader', 'citation'].includes(parts[2]);
+  params.set('openSnippet', legacyView ? 'sample-work' : parts[2]);
+  if (legacyView) params.set('view', parts[2]);
+  return <Navigate replace to={`/${parts.slice(0, 2).join('/')}?${params}`} />;
+}
 
 const PageEnter = () => {
   const { pathname } = useLocation();
@@ -30,9 +37,13 @@ const PageEnter = () => {
 
 const Layout = () => {
   const { search } = useLocation();
-  const snippet = new URLSearchParams(search).has("snippet");
-  if (snippet) return <div className="snippet-page"><Suspense fallback={null}><Outlet /></Suspense></div>;
+  const snippet = new URLSearchParams(search).get("snippet");
+  if (snippet) {
+    const secondary = ['gallery', 'design-process', 'documentation', 'funding-matrix-redesign', 'sample-work', 'product-design-identity', 'cybermon'].includes(snippet);
+    return <div className="snippet-page"><Suspense fallback={null}>{secondary ? <SnippetContent /> : <Outlet />}</Suspense></div>;
+  }
   return (
+  <SnippetProvider>
   <div className="paper-grain flex min-h-screen flex-col">
     <PortfolioHeader />
     <div className="flex-1">
@@ -42,6 +53,7 @@ const Layout = () => {
     </div>
     <PortfolioFooter />
   </div>
+  </SnippetProvider>
 );
 };
 
@@ -55,17 +67,9 @@ const App = () => (
           <Route path="/work/:slug" element={<CaseStudyPage />} />
           <Route path="/work/origin-markets" element={<OriginMarkets />} />
           <Route path="/work/secure-code-warrior" element={<SecureCodeWarrior />} />
-          <Route path="/work/origin-markets/gallery" element={<OriginGallery />} />
-          <Route path="/work/origin-markets/:study" element={<OriginStudy />} />
-          <Route
-            path="/work/secure-code-warrior/product-design-identity"
-            element={<ProductDesignIdentity />}
-          />
-          <Route path="/work/secure-code-warrior/cybermon" element={<Cybermon />} />
-          <Route path="/work/mendeley/sample-work" element={<MendeleySampleWork />} />
-          <Route path="/work/mendeley/library" element={<Navigate replace to="/work/mendeley/sample-work?view=library" />} />
-          <Route path="/work/mendeley/reader" element={<Navigate replace to="/work/mendeley/sample-work?view=reader" />} />
-          <Route path="/work/mendeley/citation" element={<Navigate replace to="/work/mendeley/sample-work?view=citation" />} />
+          <Route path="/work/origin-markets/:study" element={<SecondaryRedirect />} />
+          <Route path="/work/secure-code-warrior/:study" element={<SecondaryRedirect />} />
+          <Route path="/work/mendeley/:study" element={<SecondaryRedirect />} />
           {/* Notes section hidden for now — restore by uncommenting these two routes.
           <Route path="/field-notes" element={<FieldNotes />} />
           <Route path="/field-notes/:slug" element={<FieldNotePage />} />

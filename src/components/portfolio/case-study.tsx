@@ -11,6 +11,7 @@ import { NdaNotice } from "./nda-notice";
 import { ProjectContext } from "./project-context";
 import { SecondaryCard } from "./secondary-card";
 import { editorialEmphasis } from "./editorial-emphasis";
+import { SnippetLink } from './snippet-context';
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice, sectionOnly = false }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode; sectionOnly?: boolean }) {
   const navigation = project.sectionNavigation ?? [
@@ -117,13 +118,13 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 ))}
               </div>
               {project.slug === "secure-code-warrior" && section.id === "product-design-identity" && (
-                <Link
+                <SnippetLink
                   to="/work/secure-code-warrior/product-design-identity"
                   className="accent-link mt-6 inline-flex items-center gap-2"
                 >
                   Explore the product design identity
                   <ArrowUpRight size={16} />
-                </Link>
+                </SnippetLink>
               )}
             </div>
             {section.quote && (section.quoteAfter === undefined || (project.slug === "aladdin" && section.subheading)) && (

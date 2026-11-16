@@ -1,15 +1,15 @@
 # Architecture
 
-- Origin Markets uses dedicated lazy-loaded overview, gallery and study pages with shared project data; this preserves its distinct case-study layout without changing other portfolios.
+- Origin Markets keeps a dedicated overview and shared project data, with lazy-loaded secondary content available only inside snippets; this preserves its distinct layout without standalone secondary pages.
 - Scope Origin overview presentation under `.origin-editorial`; its editorial layouts must not change shared case-study or portfolio styling.
 - Other case studies use `.case-study-editorial` with existing narrative sections and shared typography tokens; this extends the Origin template without altering portfolio cards or requiring research sections on simpler projects.
 - Cross-project image pointers are re-uploaded to this project and paired with local optimised images so the portfolio also works on GitHub Pages.
 - Origin sample-work uploads use CDN pointers with local optimised fallbacks and explicit image dimensions so static hosting and lazy-loaded layouts remain stable.
-- Mendeley detail content is lazy-loaded within a single Sample work page with URL-backed tabs; previous detail URLs redirect to the matching tab to preserve shared links.
+- Mendeley detail content is lazy-loaded within the Sample interface modal with URL-backed tabs; previous detail URLs open the matching modal tab to preserve shared links.
 - Case-study closing navigation uses shared ProjectPagination and portfolio order, honouring each project's custom destination; this keeps previous/next links consistent with the listing.
 - Define portfolio groups in shared project data and derive the combined navigation order from them so listing sections and case-study pagination stay aligned.
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.
 - Use React state directly for this static portfolio; no query provider is needed without remote data requests.
-- Snippets open accessible dialogs with same-origin framed pages in `snippet` presentation mode; reuse each original section and page so its content and interactive tabs stay consistent while portfolio scroll is preserved.
+- All secondary case studies use the shared snippet dialog and destination registry, with same-origin frames on parent case-study URLs and top breadcrumbs; legacy secondary URLs redirect to parent pages with their modal open, preserving content, tabs and shared links without standalone pages.
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.
