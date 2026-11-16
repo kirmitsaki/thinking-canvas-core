@@ -6,6 +6,7 @@ import { getProject, pageMeta } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 import dashboards from '@/assets/origin-sample-work/Cards_-_Dashboards_Various.webp.asset.json';
 import dataCards from '@/assets/origin-sample-work/Cards_-_Data.webp.asset.json';
 import tradeBlotter from '@/assets/origin-sample-work/Documentation_-_Trade_Blotter.webp.asset.json';
@@ -41,14 +42,15 @@ function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
 }
 
 export default function OriginGallery() {
+  usePortfolioHeaderHeight();
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
-    <header className="pb-12 pt-10 md:pt-14">
-      <div className="mb-6"><NdaNotice /></div>
+    <header className="pb-12">
       <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: 'Sample work' }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
       <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
     </header>
+    <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
       <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
