@@ -153,9 +153,7 @@ export default function SecureCodeWarrior() {
         </div>
       </Section>
 
-      <Section id="outcomes" title="Outcomes" lede="What changed across the platform, the team and the company.">
-        <ComingSoon />
-      </Section>
+      <Section id="outcomes" title="Outcomes" lede="What changed across the platform, the team and the company." />
     </>
   );
 
