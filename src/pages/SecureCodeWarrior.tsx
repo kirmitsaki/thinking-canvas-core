@@ -5,6 +5,7 @@ import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 
+import aiWorkflows from '@/assets/scw-ai-workflows.webp';
 import identityHeader from '@/assets/scw-identity-header.webp';
 
 const project = getProject('secure-code-warrior');
@@ -132,7 +133,10 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="ai-workflows" title="AI Workflows" lede="AI-enabled prototyping workflows that cut idea-to-validated-concept time to under four weeks.">
-        <ComingSoon />
+        <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
+          <img src={aiWorkflows} alt="AI-enabled prototyping workflow: Figma, Lovable, Claude, Skills, Validate, Ship" width={1440} height={1024} loading="lazy" className="block h-auto w-full" />
+          <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
+        </div>
       </Section>
 
       <Section id="products" title="Products">
