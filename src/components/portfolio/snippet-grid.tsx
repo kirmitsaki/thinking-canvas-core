@@ -11,6 +11,7 @@ type Snippet = {
   project: string;
   name: string;
   description: string;
+  disabled?: boolean;
 };
 
 const snippets: Snippet[] = [
@@ -20,6 +21,7 @@ const snippets: Snippet[] = [
     project: "Secure Code Warrior",
     name: "Design system",
     description: "Wanda, the platform’s first design system, from shared file to living system.",
+    disabled: true,
   },
   {
     to: "/work/origin-markets#design-system",
@@ -90,6 +92,7 @@ export function SnippetGrid() {
           <Button
             key={snippet.to}
             variant="ghost"
+            disabled={snippet.disabled}
             onClick={() => setSelected(snippet)}
             aria-haspopup="dialog"
             className="editorial-card group block h-auto min-w-0 overflow-hidden whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground"
@@ -107,8 +110,7 @@ export function SnippetGrid() {
               <h3 className="subsection-title mt-2">{snippet.name}</h3>
               <p className="caption mt-3">{snippet.description}</p>
               <p className="accent-link mt-4">
-                SEE MORE{"\u00a0"}
-                <span className="arrow-nudge">→</span>
+                {snippet.disabled ? "COMING SOON" : <>SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></>}
               </p>
             </div>
           </Button>
