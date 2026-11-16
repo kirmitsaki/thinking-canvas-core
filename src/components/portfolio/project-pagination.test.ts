@@ -9,6 +9,6 @@ describe('case-study pagination', () => {
   });
   it('does not invent neighbours beyond the portfolio endpoints', () => {
     expect(adjacentProjects('secure-code-warrior').previous).toBeUndefined();
-    expect(adjacentProjects('jobme').next).toBeUndefined();
+    expect(adjacentProjects('mds-quostar').next).toBeUndefined();
   });
 });
