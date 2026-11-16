@@ -10,6 +10,35 @@ import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
+import interface2024 from "@/assets/cybermon/2024_-_Interface.webp.asset.json";
+import results2024 from "@/assets/cybermon/2024-results.webp.asset.json";
+import banner2025 from "@/assets/cybermon/2025-banner-1.webp.asset.json";
+import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
+import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
+import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
+import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
+import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
+import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
+import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
+
+// The CDN handles hosted previews; local copies also support GitHub Pages.
+const localImages = import.meta.glob<string>("../assets/cybermon/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  const filename = decodeURIComponent(image.src.split("/").pop() ?? "").replace(/\.[^.]+$/, ".webp");
+  const fallback = localImages[`../assets/cybermon/${filename}`];
+  if (fallback && image.dataset.localFallback !== "true") {
+    image.dataset.localFallback = "true";
+    image.src = fallback;
+  }
+}
+
+type DetailImage = { asset: { url: string; asset_id: string }; alt: string; width: number; height: number };
 
 const meta = pageMeta(
   "Secure Code Warrior · Cybermon",
@@ -24,6 +53,8 @@ type DetailRow = {
   items?: { name: string; text: string }[];
   list?: string[];
   table?: { head: string[]; rows: string[][] };
+  images?: DetailImage[];
+  imagesGrid?: boolean;
 };
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
@@ -80,6 +111,24 @@ function DetailSection({ row }: { row: DetailRow }) {
             </dl>
           )}
           {row.table && <DetailTable table={row.table} />}
+          {row.images && (
+            <div className={row.imagesGrid ? "mt-8 grid items-start gap-6 sm:grid-cols-2" : "mt-8 space-y-8"}>
+              {row.images.map(image => (
+                <figure key={image.asset.asset_id}>
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    onError={useLocalImage}
+                    src={image.asset.url}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="h-auto w-full rounded-lg"
+                  />
+                </figure>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -119,6 +168,9 @@ const rows2024: DetailRow[] = [
     sub: true,
     paragraphs: [
       "The 2024 campaign featured four weekly CyberMons, each representing a common software security threat.",
+    ],
+    images: [
+      { asset: interface2024, alt: "Cybermon 2024 teaser screen counting down to the first monster.", width: 800, height: 531 },
     ],
   },
   {
@@ -168,6 +220,13 @@ const rows2024: DetailRow[] = [
       "CyberMon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
   },
+  {
+    title: "Results",
+    sub: true,
+    images: [
+      { asset: results2024, alt: "Cybermon 2024 results: 11,000 badges earned, 5,260 users, 350 companies and 95% thumbs up.", width: 500, height: 500 },
+    ],
+  },
 ];
 
 const rows2025: DetailRow[] = [
@@ -189,6 +248,9 @@ const rows2025: DetailRow[] = [
       "Participants completed walkthroughs and high-difficulty Boss Missions.",
       "The campaign encouraged developers to demonstrate their ability to identify and mitigate AI security risks.",
     ],
+    images: [
+      { asset: interface2025_1, alt: "Cybermon 2025 quest hub listing the four AI boss missions.", width: 800, height: 505 },
+    ],
   },
   {
     title: "Meet the CyberMons",
@@ -198,6 +260,13 @@ const rows2025: DetailRow[] = [
       { name: "Keykraken", text: "Indirect Prompt Injection — exploits malicious instructions hidden in external content processed by AI." },
       { name: "Promptgeist", text: "Vector and Embedding Weaknesses — targets weaknesses in AI retrieval systems and vector databases." },
       { name: "Proxysurfa", text: "Excessive Agency — exploits AI agents with excessive permissions or autonomy." },
+    ],
+    imagesGrid: true,
+    images: [
+      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
+      { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
+      { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
+      { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
   {
@@ -212,6 +281,10 @@ const rows2025: DetailRow[] = [
         ["Achievement recognition", "Recognition for completing the AI security challenges"],
       ],
     },
+    images: [
+      { asset: interface2025_6, alt: "Cyberhero completion screen — You beat all Cybermon.", width: 800, height: 450 },
+      { asset: badge2025, alt: "Cyberhero Prime badge awarded in Cybermon 2025.", width: 500, height: 261 },
+    ],
   },
   {
     title: "Learning activities",
@@ -385,6 +458,20 @@ export default function Cybermon() {
         <section key={year.id} id={year.id} className="mb-20 md:mb-28">
           <h2 className="card-title">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
+          {year.id === "2025" && (
+            <figure className="mb-10">
+              <img
+                loading="lazy"
+                decoding="async"
+                onError={useLocalImage}
+                src={banner2025.url}
+                alt="Cybermon 2025 campaign banner — Beat the Boss AI missions, now available on demand."
+                width={500}
+                height={281}
+                className="h-auto w-full rounded-lg"
+              />
+            </figure>
+          )}
           {year.rows.map(row => <DetailSection key={row.title} row={row} />)}
           {year.id === "2026" && (
             <section className="editorial-study-section mb-14 md:mb-20">
