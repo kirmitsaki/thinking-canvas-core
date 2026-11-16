@@ -640,7 +640,7 @@ export default function Cybermon() {
               </div>
             )}
             {objective?.list && (
-              <ul className="flex min-w-0 flex-wrap gap-2 md:col-start-2 md:row-start-2">
+              <ul className="flex min-w-0 flex-wrap content-start self-start gap-2 md:col-start-2 md:row-start-2">
                 {objective.list.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
               </ul>
             )}
