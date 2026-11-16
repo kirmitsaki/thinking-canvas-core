@@ -66,18 +66,18 @@ export const snippets: Snippet[] = [
     description: "Health records, appointment booking and preventative care across the healthcare app.",
   },
   {
-    to: "/work/corresilience#interface",
-    image: "cor-header",
-    project: "CorResilience",
-    name: "Sample interface",
-    description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
-  },
-  {
     to: "/work/aladdin#brand",
     image: "aladdin-brand",
     project: "Aladdin",
     name: "Brand and service guide",
     description: "Logo, typography, colour and imagery for the healthcare platform.",
+  },
+  {
+    to: "/work/corresilience#interface",
+    image: "cor-header",
+    project: "CorResilience",
+    name: "Sample interface",
+    description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
   },
   {
     to: "/work/corresilience#brand",
