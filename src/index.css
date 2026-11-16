@@ -682,6 +682,9 @@
   .case-study-editorial.case-study-compact .editorial-study-visual {
     max-width: 900px;
   }
+  .case-study-editorial #logo > .editorial-study-visual > img[src*="jobme-square"] {
+    max-width: 720px;
+  }
   .case-study-editorial .editorial-detail-content {
     max-width: none;
   }
