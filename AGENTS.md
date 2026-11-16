@@ -10,5 +10,6 @@
 - Define portfolio groups in shared project data and derive the combined navigation order from them so listing sections and case-study pagination stay aligned.
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.
 - Use React state directly for this static portfolio; no query provider is needed without remote data requests.
+- Snippets open accessible dialogs with same-origin framed pages in `snippet` presentation mode; reuse each original section and page so its content and interactive tabs stay consistent while portfolio scroll is preserved.
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.

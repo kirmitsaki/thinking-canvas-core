@@ -51,7 +51,7 @@ export default function MendeleySampleWork() {
         />
         <h1 className="mt-8 page-title">Mendeley Reference Manager</h1>
       </header>
-      <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams({ view }, { preventScrollReset: true }); }}>
+      <Tabs.Root value={active} onValueChange={view => { scrollMemo.current = window.scrollY; setParams(previous => { const next = new URLSearchParams(previous); next.set("view", view); return next; }, { preventScrollReset: true }); }}>
         <div className="sample-work-tabs hairline-top mb-10 border-b border-border py-3">
           <Tabs.List aria-label="Mendeley sample work" className="flex gap-2">
             {views.map(view => <Tabs.Trigger key={view.id} value={view.id} asChild>

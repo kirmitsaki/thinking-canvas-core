@@ -28,7 +28,11 @@ const PageEnter = () => {
   );
 };
 
-const Layout = () => (
+const Layout = () => {
+  const { search } = useLocation();
+  const snippet = new URLSearchParams(search).has("snippet");
+  if (snippet) return <div className="snippet-page"><Suspense fallback={null}><Outlet /></Suspense></div>;
+  return (
   <div className="paper-grain flex min-h-screen flex-col">
     <PortfolioHeader />
     <div className="flex-1">
@@ -39,6 +43,7 @@ const Layout = () => (
     <PortfolioFooter />
   </div>
 );
+};
 
 const App = () => (
     <BrowserRouter>

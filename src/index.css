@@ -28,6 +28,7 @@
   --artwork-card-muted: color-mix(in srgb, var(--warm-ivory) 75%, var(--artwork-card-background));
   --artwork-card-border: color-mix(in srgb, var(--warm-ivory) 28%, var(--artwork-card-background));
   --logo-card-background: #ffffff;
+  --modal-backdrop: color-mix(in srgb, var(--ink) 55%, transparent);
 
   /* Semantic mappings */
   --background: var(--ivory);
@@ -45,6 +46,17 @@
   --font-serif: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
+
+.snippet-modal-overlay { background: var(--modal-backdrop); }
+.snippet-page { --portfolio-header-height: 0px; }
+.snippet-page .portfolio-header,
+.snippet-page .masthead-bar,
+.snippet-page nav[aria-label="Previous and next case studies"],
+.snippet-page main > div:has(> a[href="/work/secure-code-warrior"]),
+.snippet-page main > div:has(> a[href="/work/mendeley"]) { display: none; }
+.snippet-page .sample-work-tabs,
+.snippet-page .case-study-navigation { top: 0; }
+.snippet-page main > .origin-section > .section-divider { display: none; }
 
 @layer base {
   * {
