@@ -41,8 +41,8 @@ const products = [
   { name: 'Learning Platform', text: 'The original hands-on secure coding product the company was built on.' },
   { name: 'Trust Agent', text: 'AI-assisted security guidance inside the developer workflow.' },
   { name: 'Reporting', text: 'Dashboards and insight that make developer risk visible to leadership.' },
-  { name: 'Cybermon', text: 'Gamified tournaments and challenges that build secure coding habits.' },
   { name: 'Content', text: 'The learning content library powering every product in the family.' },
+  { name: 'Cybermon', text: 'Gamified tournaments and challenges that build secure coding habits.' },
 ];
 
 function ComingSoon() {
