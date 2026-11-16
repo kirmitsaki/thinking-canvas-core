@@ -20,14 +20,14 @@ import mon2024_xssassin from "@/assets/cybermon/2024_-_cybermon_-_xssassin.webp.
 import mon2025_bypassaur from "@/assets/cybermon/2025_-_cybermon_-_bypaussaur.webp.asset.json";
 import mon2025_keykraken from "@/assets/cybermon/2025_-_cybermon_-_keykraken.webp.asset.json";
 import mon2025_promptgeist from "@/assets/cybermon/2025_-_cybermon_-_promptgeist.webp.asset.json";
-import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
+import mon2025_proxysurfa from "@/assets/cybermon/2025_-_cybermon_-_proxysurfa.webp.asset.json";
 import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
-import mon2026_1 from "@/assets/cybermon/2026-cybermon-1.webp.asset.json";
-import mon2026_2 from "@/assets/cybermon/2026-cybermon-2.webp.asset.json";
+import mon2026_1 from "@/assets/cybermon/2026_-_cybermon_-_glitchursus.webp.asset.json";
+import mon2026_2 from "@/assets/cybermon/2026_-_cybermon_-_gatecorvus.webp.asset.json";
 import trophy2026 from "@/assets/cybermon/2026-cybermon-trophy.webp.asset.json";
-import mon2026_3 from "@/assets/cybermon/2026-cybermon-3-2.webp.asset.json";
-import mon2026_4 from "@/assets/cybermon/2026-cybermon-4.webp.asset.json";
+import mon2026_3 from "@/assets/cybermon/2026_-_cybermon_-_fangserpens.webp.asset.json";
+import mon2026_4 from "@/assets/cybermon/2026_-_cybermon_-_nulltinea.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
 import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
@@ -431,7 +431,7 @@ const rows2025: DetailRow[] = [
       { asset: mon2025_bypassaur, alt: "Bypassaur, an orange dinosaur Cybermon.", width: 300, height: 200 },
       { asset: mon2025_keykraken, alt: "Keykraken, a green octopus Cybermon.", width: 300, height: 200 },
       { asset: mon2025_promptgeist, alt: "Promptgeist, a purple bat-ghost Cybermon.", width: 300, height: 200 },
-      { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
+      { asset: mon2025_proxysurfa, alt: "Proxysurfa, a surfing Cybermon.", width: 300, height: 200 },
     ],
   },
   {
@@ -523,10 +523,10 @@ const rows2026: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon Cybermon.", width: 500, height: 500 },
-      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow Cybermon guarding a vault.", width: 500, height: 500 },
-      { asset: mon2026_3, alt: "Fangserpens, the Commit Devourer — a neon serpent Cybermon.", width: 500, height: 500 },
-      { asset: mon2026_4, alt: "Nulltinea, the Lure — a glowing moth Cybermon.", width: 500, height: 500 },
+      { asset: mon2026_1, alt: "Glitchrusus, the Scrap Bandit — a cyberpunk raccoon Cybermon.", width: 300, height: 200 },
+      { asset: mon2026_2, alt: "Gatecorvus, the Keykeeper — a hooded crow Cybermon guarding a vault.", width: 300, height: 200 },
+      { asset: mon2026_3, alt: "Fangserpens, the Commit Devourer — a neon serpent Cybermon.", width: 300, height: 200 },
+      { asset: mon2026_4, alt: "Nulltinea, the Lure — a glowing moth Cybermon.", width: 300, height: 200 },
     ],
   },
   {
@@ -543,7 +543,7 @@ const rows2026: DetailRow[] = [
       ],
     },
     images: [
-      { asset: trophy2026, alt: "Cybermon 2026 trophy crest with the four Cybermon around the shield logo.", width: 500, height: 500 },
+      { asset: trophy2026, alt: "Cybermon 2026 trophy crest with the four Cybermon around the shield logo.", width: 300, height: 200 },
       { asset: merch2026_1, alt: "Box of holographic Cybermon 2026 stickers.", width: 800, height: 298 },
       { asset: merch2026_2, alt: "Cybermon 2026 T-shirt and sticker.", width: 500, height: 508 },
     ],
