@@ -10,13 +10,19 @@ import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { SectionDivider } from "@/components/portfolio/section-divider";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
-import interface2024 from "@/assets/cybermon/2024_-_Interface.webp.asset.json";
+import crest2024 from "@/assets/cybermon/2024_-_cybermon.webp.asset.json";
+import crest2025 from "@/assets/cybermon/2024_-_cybermon-2.webp.asset.json";
+import crest2026 from "@/assets/cybermon/2024_-_cybermon-1.webp.asset.json";
+import mon2024_accessomorph from "@/assets/cybermon/2024_-_cybermon_-_accessomorph.webp.asset.json";
+import mon2024_injecotpus from "@/assets/cybermon/2024_-_cybermon_-_injecotpus.webp.asset.json";
+import mon2024_permissite from "@/assets/cybermon/2024_-_cybermon_-_permissite.webp.asset.json";
+import mon2024_xssassin from "@/assets/cybermon/2024_-_cybermon_-_xssassin.webp.asset.json";
+import mon2025_bypassaur from "@/assets/cybermon/2025_-_cybermon_-_bypaussaur.webp.asset.json";
+import mon2025_keykraken from "@/assets/cybermon/2025_-_cybermon_-_keykraken.webp.asset.json";
+import mon2025_promptgeist from "@/assets/cybermon/2025_-_cybermon_-_promptgeist.webp.asset.json";
+import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
 import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
-import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
-import interface2025_3 from "@/assets/cybermon/2025_-_Interface_3.webp.asset.json";
-import interface2025_4 from "@/assets/cybermon/2025_-_Interface_4.webp.asset.json";
-import interface2025_5 from "@/assets/cybermon/2025_-_Interface_5.webp.asset.json";
 import mon2026_1 from "@/assets/cybermon/2026-cybermon-1.webp.asset.json";
 import mon2026_2 from "@/assets/cybermon/2026-cybermon-2.webp.asset.json";
 import trophy2026 from "@/assets/cybermon/2026-cybermon-trophy.webp.asset.json";
@@ -305,11 +311,22 @@ const rows2024: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     paragraphs: [
       "The 2024 campaign featured four weekly Cybermon, each representing a common software security threat.",
     ],
+    items: [
+      { name: "Accessomorph", text: "Broken Access Control — exploits missing or weak checks on who can access what." },
+      { name: "Injecotpus", text: "Injection — exploits untrusted data sent to interpreters, such as SQL injection." },
+      { name: "Permissite", text: "Excessive Permissions — exploits accounts and services with more access than they need." },
+      { name: "Xssassin", text: "Cross-Site Scripting — exploits unescaped output to run malicious scripts in the browser." },
+    ],
+    imagesGrid: true,
     images: [
-      { asset: interface2024, alt: "Cybermon 2024 teaser screen counting down to the first monster.", width: 800, height: 531 },
+      { asset: mon2024_accessomorph, alt: "Accessomorph, a fluffy yellow Cybermon holding a broken access icon.", width: 300, height: 200 },
+      { asset: mon2024_injecotpus, alt: "Injecotpus, a pink ghost Cybermon.", width: 300, height: 200 },
+      { asset: mon2024_permissite, alt: "Permissite, a grey winged mouse Cybermon.", width: 300, height: 200 },
+      { asset: mon2024_xssassin, alt: "Xssassin, a blue dragon Cybermon.", width: 300, height: 200 },
     ],
   },
   {
@@ -411,9 +428,9 @@ const rows2025: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
-      { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
-      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
+      { asset: mon2025_bypassaur, alt: "Bypassaur, an orange dinosaur Cybermon.", width: 300, height: 200 },
+      { asset: mon2025_keykraken, alt: "Keykraken, a green octopus Cybermon.", width: 300, height: 200 },
+      { asset: mon2025_promptgeist, alt: "Promptgeist, a purple bat-ghost Cybermon.", width: 300, height: 200 },
       { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
@@ -582,11 +599,11 @@ const comparisonTable = {
 
 const years = [
   { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
-    theme: "Secure coding", launch: "7 October 2024", cover: interface2024 },
+    theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
   { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
-    theme: "The Age of AI", launch: "6 October 2025", cover: poster2025 },
+    theme: "The Age of AI", launch: "6 October 2025", cover: crest2025 },
   { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
-    theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: trophy2026 },
+    theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: crest2026 },
 ];
 
 function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
