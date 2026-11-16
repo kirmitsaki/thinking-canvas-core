@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Split Mendeley Library, Reader and Citation into separate cards and menu-free modals; verify portfolio, case-study and legacy entries.
 - [x] Replace all secondary case-study destinations with shared modals and top breadcrumbs; remove standalone destinations and verify tabs and closing.
 - [x] Add the nine supplied Origin sample-work images in grouped editorial layouts; verify images and mobile presentation.
 - [x] Finish removing separate case-study label/date bars; dates belong in breadcrumbs.

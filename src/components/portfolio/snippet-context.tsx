@@ -13,9 +13,9 @@ export function SnippetProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const params = new URLSearchParams(location.search);
   const legacy = params.get('openSnippet');
-  const legacySnippet = legacy ? secondarySnippetFor(`${location.pathname}/${legacy}`) : undefined;
   const view = params.get('view');
-  const snippet = selected ?? (legacySnippet ? { ...legacySnippet, to: `${legacySnippet.to}${view ? `?view=${encodeURIComponent(view)}` : ''}` } : null);
+  const legacySnippet = legacy ? secondarySnippetFor(`${location.pathname}/${legacy}${view ? `?view=${encodeURIComponent(view)}` : ''}`) : undefined;
+  const snippet = selected ?? legacySnippet ?? null;
   const close = () => {
     setSelected(null);
     if (legacy) {
