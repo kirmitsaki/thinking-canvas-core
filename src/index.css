@@ -709,7 +709,27 @@
   .case-study-editorial .editorial-detail-content figure img {
     max-width: 100%;
   }
+  .case-study-editorial .mendeley-detail-row {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .case-study-editorial .mendeley-detail-row > .section-title,
+  .case-study-editorial .mendeley-detail-row > .subsection-title {
+    margin: 0;
+  }
+  .case-study-editorial .mendeley-detail-body {
+    min-width: 0;
+    max-width: 65ch;
+  }
+  .case-study-editorial .editorial-detail-content .mendeley-detail-body .essay-prose {
+    max-width: none;
+  }
   @media (min-width: 768px) {
+    .case-study-editorial .mendeley-detail-row {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 3rem;
+    }
     .case-study-editorial .case-study-header-copy,
     .origin-editorial .case-study-header-copy {
       grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);

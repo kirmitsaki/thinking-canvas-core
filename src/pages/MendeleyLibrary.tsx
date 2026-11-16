@@ -61,27 +61,29 @@ function MendeleyLibraryContent() {
         {librarySections.map((section, index) => (
           <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
-            <div className="editorial-study-heading"><h2 className="section-title">{section.title}</h2>
-            <div className="essay-prose mt-6 space-y-5">
-              {section.paragraphs.map((text) => (
-                <p key={text}>{editorialEmphasis(text)}</p>
-              ))}
-            </div>
+            <div className="mendeley-detail-row">
+              <h2 className="section-title">{section.title}</h2>
+              <div className="mendeley-detail-body">
+                <div className="essay-prose space-y-5">
+                  {section.paragraphs.map((text) => (
+                    <p key={text}>{editorialEmphasis(text)}</p>
+                  ))}
+                </div>
+              </div>
             </div>
             {section.items?.map((item) => (
               <section key={item.title} className="mt-10">
                 <SectionDivider />
-                <h3 className="subsection-title">{item.title}</h3>
-                {item.text && <p className="essay-prose mt-4">{item.text}</p>}
-                <figure className="mt-6">
-                  <img
-                    src={item.image.url}
-                    alt={item.alt}
-                    className="h-auto w-full max-w-[720px] rounded-[10px]"
-                    loading="lazy"
-                  />
-                  <figcaption className="caption mt-4">{item.alt}</figcaption>
-                </figure>
+                <div className="mendeley-detail-row">
+                  <h3 className="subsection-title">{item.title}</h3>
+                  <div className="mendeley-detail-body">
+                    {item.text && <p className="essay-prose">{item.text}</p>}
+                    <figure className="mt-6">
+                      <img src={item.image.url} alt={item.alt} className="h-auto w-full rounded-[10px]" loading="lazy" />
+                      <figcaption className="caption mt-4">{item.alt}</figcaption>
+                    </figure>
+                  </div>
+                </div>
               </section>
             ))}
           </section>
