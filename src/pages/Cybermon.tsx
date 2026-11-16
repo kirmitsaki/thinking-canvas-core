@@ -506,7 +506,7 @@ const rows2026: DetailRow[] = [
     table: {
       head: ["Achievement", "Description"],
       rows: [
-        ["Weekly Cybermon badges", "Earned by defeating individual Cybermon"],
+        ["Weekly badges", "Earned by defeating individual Cybermon"],
         ["Cyberhero", "Defeat all four Cybermon"],
         ["Cyberhero Prime", "Complete all four Prime Boss missions"],
       ],
