@@ -14,6 +14,7 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
 const WorkPage = lazy(() => import("@/pages/Work"));
 const OriginMarkets = lazy(() => import("@/pages/OriginMarkets"));
+const SecureCodeWarrior = lazy(() => import("@/pages/SecureCodeWarrior"));
 const OriginStudy = lazy(() => import("@/pages/OriginStudy"));
 const OriginGallery = lazy(() => import("@/pages/OriginGallery"));
 
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/:slug" element={<CaseStudyPage />} />
           <Route path="/work/origin-markets" element={<OriginMarkets />} />
+          <Route path="/work/secure-code-warrior" element={<SecureCodeWarrior />} />
           <Route path="/work/origin-markets/gallery" element={<OriginGallery />} />
           <Route path="/work/origin-markets/:study" element={<OriginStudy />} />
           <Route
