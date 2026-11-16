@@ -69,14 +69,14 @@ const snippets: Snippet[] = [
     to: "/work/aladdin#brand",
     image: "aladdin-brand",
     project: "Aladdin",
-    name: "Brand styles",
+    name: "Brand and service guide",
     description: "Logo, typography, colour and imagery for the healthcare platform.",
   },
   {
     to: "/work/corresilience#brand",
     image: "cor-brand",
     project: "CorResilience",
-    name: "Brand styles",
+    name: "Brand and service guide",
     description: "Identity, typography and iconography across the app and website.",
   },
 ];
