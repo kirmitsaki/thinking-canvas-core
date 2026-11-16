@@ -12,6 +12,7 @@ import Home from "@/pages/Home";
 const MendeleySampleWork = lazy(() => import("@/pages/MendeleySampleWork"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ProductDesignIdentity = lazy(() => import("@/pages/ProductDesignIdentity"));
+const Cybermon = lazy(() => import("@/pages/Cybermon"));
 const WorkPage = lazy(() => import("@/pages/Work"));
 const OriginMarkets = lazy(() => import("@/pages/OriginMarkets"));
 const SecureCodeWarrior = lazy(() => import("@/pages/SecureCodeWarrior"));
