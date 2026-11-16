@@ -201,13 +201,13 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       </div>
                     </div>
                      {group.images ? (
-                      <div className={group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
+                      <div className={project.slug === "pawsquad" && group.label === "The vet app" ? "grid items-center gap-6 sm:grid-cols-[449414fr_613200fr]" : group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
                         {group.images.map((image) => (
                           <img
                             key={image}
                             src={projectImage(image).url}
                             alt={projectImage(image).alt}
-                            className="h-auto w-full rounded-[10px]"
+                            className={project.slug === "pawsquad" && group.label === "The vet app" ? "mx-auto h-auto max-h-[320px] w-auto max-w-full rounded-[10px] sm:max-h-none sm:w-full" : "h-auto w-full rounded-[10px]"}
                             loading="lazy"
                           />
                         ))}
