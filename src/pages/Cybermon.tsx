@@ -708,7 +708,6 @@ export default function Cybermon() {
           row={{
             title: "Overall business value",
             sub: true,
-            paragraphs: ["Across the three campaigns, Secure Code Warrior has used Cybermon to support five broader organisational goals:"],
             items: [
               { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
               { name: "Security capability", text: "Improve developers’ practical ability to identify and fix vulnerabilities." },
