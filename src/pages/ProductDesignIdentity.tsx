@@ -48,7 +48,7 @@ export default function ProductDesignIdentity() {
           The complete infographic. Higher-resolution export pending.
         </figcaption>
       </figure>
-      <div className="flex justify-center pt-12">
+      <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
           <ArrowLeft size={14} />
           Back to Secure Code Warrior
