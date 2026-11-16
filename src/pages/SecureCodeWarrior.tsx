@@ -47,7 +47,9 @@ const products = [
 
 function ComingSoon() {
   return (
-    <p className="label-quiet mt-8">Full case study coming soon — selected artefacts and evidence will be added before publication.</p>
+    <div className="editorial-card mt-8 p-6 md:p-8">
+      <p className="body-copy text-muted-foreground">Full case study coming soon — selected artefacts and evidence will be added before publication.</p>
+    </div>
   );
 }
 
