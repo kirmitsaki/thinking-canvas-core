@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import Seo from '@/components/Seo';
-import { getProject, caseStudyMeta } from '@/data/projects';
+import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 
@@ -68,6 +68,7 @@ export default function SecureCodeWarrior() {
   const overview = {
     ...project,
     ndaNotice: false,
+    heroImage: undefined,
     reflection: undefined,
     contribution: '',
     sections: [],
@@ -108,7 +109,15 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
-        <ComingSoon />
+        <div>
+          <img
+            src={projectImage('scw-wanda').url}
+            alt={projectImage('scw-wanda').alt}
+            className="w-full rounded-[10px]"
+            loading="lazy"
+          />
+          <ComingSoon />
+        </div>
       </Section>
 
       <Section id="ai-workflows" title="AI Workflows" lede="AI-enabled prototyping workflows that cut idea-to-validated-concept time to under four weeks.">
