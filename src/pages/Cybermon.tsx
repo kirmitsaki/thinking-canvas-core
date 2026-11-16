@@ -595,7 +595,7 @@ const years = [
   { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
     theme: "The Age of AI", launch: "6 October 2025", cover: poster2025 },
   { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
-    theme: "Built by AI. Secured by You.", launch: "5 October 2026", headline: { value: "74", label: "countries" }, cover: trophy2026 },
+    theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: trophy2026 },
 ];
 
 function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
@@ -648,12 +648,6 @@ export default function Cybermon() {
                   <p className="cm-kicker">{year.launch}</p>
                   <p className="card-title cm-year-title mt-2">{year.id}</p>
                   <p className="body-copy mt-1 text-foreground">{year.theme}</p>
-                  {year.headline && (
-                    <p className="mt-5 flex items-baseline gap-2">
-                      <span className="cm-stat-value">{year.headline.value}</span>
-                      <span className="body-copy text-muted-foreground">{year.headline.label}</span>
-                    </p>
-                  )}
                   <span className="label-quiet mt-auto inline-flex items-center gap-1 pt-5">Jump to {year.id} <ArrowDown size={12} /></span>
                 </div>
               </a>
