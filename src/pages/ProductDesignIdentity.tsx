@@ -44,9 +44,6 @@ export default function ProductDesignIdentity() {
           height={1920}
           className="block h-auto w-full rounded-[10px]"
         />
-        <figcaption className="caption mt-4">
-          The complete infographic. Higher-resolution export pending.
-        </figcaption>
       </figure>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
