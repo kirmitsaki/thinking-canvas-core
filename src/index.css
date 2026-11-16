@@ -588,14 +588,8 @@
   }
   .case-study-facts {
     display: grid;
-    gap: 1.25rem;
-  }
-  .case-study-fact {
-    display: grid;
     align-content: start;
-    gap: 0.625rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1.125rem;
+    gap: 1.25rem;
   }
   .case-study-fact-value {
     font-size: 0.9375rem;
@@ -693,9 +687,10 @@
     max-width: 100%;
   }
   @media (min-width: 768px) {
-    .case-study-facts {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 2rem;
+    .case-study-editorial .case-study-header-copy,
+    .origin-editorial .case-study-header-copy {
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+      gap: 4rem;
     }
     .case-study-editorial .editorial-study-section {
       margin-bottom: 8.5rem;
