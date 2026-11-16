@@ -618,7 +618,7 @@ export default function Cybermon() {
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <p className="cm-kicker">{year.launch}</p>
-                  <p className="card-title cm-year-title mt-2">{year.id}</p>
+                  <p className="card-title cm-year-title mt-2">Cybermon {year.id}</p>
                   <p className="body-copy mt-1 text-foreground">{year.theme}</p>
                   <span className="label-quiet mt-auto inline-flex items-center gap-1 pt-5">Jump to {year.id} <ArrowDown size={12} /></span>
                 </div>
