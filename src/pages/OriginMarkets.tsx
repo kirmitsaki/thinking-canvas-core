@@ -157,7 +157,7 @@ export default function OriginMarkets() {
           ))}
         </div>
         <div className="mx-auto w-full max-w-[720px]">
-          <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." notice={<NdaNotice />} />
+          <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." />
         </div>
       </Section>
     </>
