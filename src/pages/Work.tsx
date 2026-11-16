@@ -23,7 +23,7 @@ export default function WorkPage() {
         </section>
         <section className="mt-20 md:mt-28" aria-labelledby="freelancing-heading">
           <h2 id="freelancing-heading" className="section-title mb-10 md:mb-14">Freelancing</h2>
-          <ProjectGrid items={freelanceProjects} />
+          <ProjectGrid items={freelanceProjects} columns={3} />
         </section>
       </div>
     </main>
