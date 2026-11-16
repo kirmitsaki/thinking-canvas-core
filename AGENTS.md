@@ -11,3 +11,4 @@
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.
 - Use React state directly for this static portfolio; no query provider is needed without remote data requests.
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
+- Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.

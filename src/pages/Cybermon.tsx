@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowDown, Award, Crown, Gift, Medal, Star, Trophy } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { SectionNavigation } from "@/components/portfolio/section-navigation";
@@ -85,6 +85,9 @@ type DetailRow = {
   table?: { head: string[]; rows: string[][] };
   images?: DetailImage[];
   imagesGrid?: boolean;
+  /** Infographic treatment for this subsection. */
+  variant?: "steps" | "cards" | "badges" | "points" | "chips" | "summary";
+  stats?: { value: string; label: string }[];
 };
 
 function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
@@ -112,7 +115,120 @@ function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
   );
 }
 
+function DetailImg({ image, className = "" }: { image: DetailImage; className?: string }) {
+  return (
+    <img
+      loading="lazy"
+      decoding="async"
+      onError={useLocalImage}
+      src={image.asset.url}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      className={`mx-auto h-auto w-full rounded-lg ${className}`}
+      style={{ maxWidth: image.width }}
+    />
+  );
+}
+
+const medalIcons = [Medal, Trophy, Crown, Gift, Star, Award];
+
+function splitSentence(text: string) {
+  const match = text.match(/^(.+?[.!?])\s+(.*)$/s);
+  return match ? [match[1], match[2]] : [text, ""];
+}
+
+function RowBody({ row }: { row: DetailRow }) {
+  switch (row.variant) {
+    case "steps":
+      return (
+        <ol className="grid gap-4 sm:grid-cols-2">
+          {row.list!.map((item, index) => (
+            <li key={item} className="cm-card flex gap-4 p-5">
+              <span className="cm-step-number shrink-0" aria-hidden="true">{index + 1}</span>
+              <span className="body-copy text-foreground">{editorialEmphasis(item)}</span>
+            </li>
+          ))}
+        </ol>
+      );
+    case "cards":
+      return (
+        <ul className="grid gap-6 sm:grid-cols-2">
+          {row.items!.map((item, index) => {
+            const [name, title] = item.name.split(" — ");
+            const [threat, detail] = item.text.split(" — ");
+            const image = row.images?.[index];
+            return (
+              <li key={item.name} className="cm-card flex flex-col overflow-hidden">
+                {image && <div className="bg-muted p-4"><DetailImg image={image} /></div>}
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="cm-kicker">Cybermon {String(index + 1).padStart(2, "0")}</p>
+                  <h4 className="subsection-title mt-2">{name}</h4>
+                  {title && <p className="body-copy italic text-muted-foreground">{title}</p>}
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {threat.split(/\s*(?:&|,)\s*/).map(tag => <span key={tag} className="cm-tag">{tag}</span>)}
+                  </div>
+                  {detail && <p className="body-copy mt-4 text-muted-foreground">{detail.charAt(0).toUpperCase() + detail.slice(1)}</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      );
+    case "badges":
+      return (
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {row.table!.rows.map(([name, text], index) => {
+            const Icon = medalIcons[index % medalIcons.length];
+            return (
+              <li key={name} className="cm-card flex flex-col items-center p-6 text-center">
+                <span className="cm-medal" aria-hidden="true"><Icon size={24} /></span>
+                <p className="body-copy mt-4 font-semibold text-foreground">{name}</p>
+                <p className="body-copy mt-1 text-muted-foreground">{text}</p>
+              </li>
+            );
+          })}
+        </ul>
+      );
+    case "points":
+      return (
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {row.table!.rows.map(([name, points]) => (
+            <li key={name} className="cm-card p-5 text-center">
+              <p className="cm-stat-value">{points}</p>
+              <p className="cm-kicker mt-2">{points === "1" ? "point" : "points"}</p>
+              <p className="body-copy mt-3 text-foreground">{name}</p>
+            </li>
+          ))}
+        </ul>
+      );
+    case "chips":
+      return (
+        <ul className="flex flex-wrap gap-2">
+          {row.list!.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
+        </ul>
+      );
+    case "summary": {
+      const [lead, rest] = splitSentence(row.paragraphs![0]);
+      return (
+        <div className="cm-summary">
+          <p className="essay-prose font-semibold text-foreground">{lead}</p>
+          {rest && (
+            <details className="mt-3">
+              <summary className="label-quiet">Read more ↓</summary>
+              <p className="essay-prose mt-3">{editorialEmphasis(rest)}</p>
+            </details>
+          )}
+        </div>
+      );
+    }
+    default:
+      return null;
+  }
+}
+
 function DetailSection({ row }: { row: DetailRow }) {
+  const custom = Boolean(row.variant);
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
       <div className="mendeley-detail-row">
@@ -120,18 +236,29 @@ function DetailSection({ row }: { row: DetailRow }) {
           ? <h3 className="subsection-title">{row.title}</h3>
           : <h2 className="section-title">{row.title}</h2>}
         <div className="mendeley-detail-body">
-          {row.paragraphs && (
-            <div className="essay-prose space-y-5">
+          {row.paragraphs && row.variant !== "summary" && (
+            <div className="essay-prose mb-8 space-y-5">
               {row.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
             </div>
           )}
-          {row.list && (
-            <ul className="essay-prose mt-5 list-disc space-y-2 pl-5 first:mt-0">
+          {row.stats && (
+            <div className="mb-8 grid grid-cols-2 gap-4">
+              {row.stats.map(stat => (
+                <div key={stat.label} className="cm-card p-5">
+                  <p className="cm-stat-value">{stat.value}</p>
+                  <p className="body-copy mt-2 text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {custom && <RowBody row={row} />}
+          {!custom && row.list && (
+            <ul className="essay-prose list-disc space-y-2 pl-5">
               {row.list.map(item => <li key={item}>{editorialEmphasis(item)}</li>)}
             </ul>
           )}
-          {row.items && (
-            <dl className="mt-8 space-y-6">
+          {!custom && row.items && (
+            <dl className="space-y-6">
               {row.items.map(item => (
                 <div key={item.name}>
                   <dt className="body-copy font-semibold text-foreground">{item.name}</dt>
@@ -140,24 +267,10 @@ function DetailSection({ row }: { row: DetailRow }) {
               ))}
             </dl>
           )}
-          {row.table && <DetailTable table={row.table} />}
-          {row.images && (
+          {!custom && row.table && <DetailTable table={row.table} />}
+          {row.images && row.variant !== "cards" && (
             <div className={row.imagesGrid ? `mt-8 grid items-start gap-6 ${row.images.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}` : "mt-8 space-y-8"}>
-              {row.images.map(image => (
-                <figure key={image.asset.asset_id}>
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    onError={useLocalImage}
-                    src={image.asset.url}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="mx-auto h-auto w-full rounded-lg"
-                    style={{ maxWidth: image.width }}
-                  />
-                </figure>
-              ))}
+              {row.images.map(image => <figure key={image.asset.asset_id}><DetailImg image={image} /></figure>)}
             </div>
           )}
         </div>
@@ -186,6 +299,7 @@ const rows2024: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign ran for four weeks.",
       "A new Cybermon was introduced each week.",
@@ -207,6 +321,7 @@ const rows2024: DetailRow[] = [
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -223,6 +338,7 @@ const rows2024: DetailRow[] = [
     paragraphs: [
       "Activities were designed to help developers recognise vulnerabilities, understand how they could be exploited and practise writing more secure code.",
     ],
+    variant: "points",
     table: {
       head: ["Activity", "Points"],
       rows: [
@@ -236,6 +352,7 @@ const rows2024: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve developer awareness of common software vulnerabilities.",
       "Encourage secure coding practices.",
@@ -247,6 +364,7 @@ const rows2024: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2024 was essentially Pokémon meets secure coding. Developers completed practical coding exercises to defeat four monsters, earn badges and become Cyberheroes. The aim was to make cybersecurity training more enjoyable while improving developers’ ability to write secure software.",
     ],
@@ -254,6 +372,12 @@ const rows2024: DetailRow[] = [
   {
     title: "Results",
     sub: true,
+    stats: [
+      { value: "11,000", label: "Badges earned" },
+      { value: "5,260", label: "Users" },
+      { value: "350", label: "Companies" },
+      { value: "95%", label: "Thumbs up" },
+    ],
     images: [
       { asset: results2024, alt: "Cybermon 2024 results: 11,000 badges earned, 5,260 users, 350 companies and 95% thumbs up.", width: 500, height: 500 },
     ],
@@ -272,6 +396,7 @@ const rows2025: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign introduced four AI security boss challenges.",
       "Participants worked through practical AI/LLM security scenarios.",
@@ -286,6 +411,7 @@ const rows2025: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     items: [
       { name: "Bypassaur", text: "Direct Prompt Injection — exploits malicious instructions supplied directly to AI models." },
       { name: "Keykraken", text: "Indirect Prompt Injection — exploits malicious instructions hidden in external content processed by AI." },
@@ -294,15 +420,16 @@ const rows2025: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
       { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
       { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
+      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
       { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -333,6 +460,7 @@ const rows2025: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve awareness of AI-specific security vulnerabilities.",
       "Develop secure AI application development skills.",
@@ -345,6 +473,7 @@ const rows2025: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2025 moved beyond traditional secure coding and introduced AI security challenges. Developers had to defeat four AI-focused bosses by learning how attackers could manipulate AI systems, exploit weaknesses in AI applications and misuse AI agents. The main objective was to help organisations adopt AI more securely.",
     ],
@@ -363,6 +492,7 @@ const rows2026: DetailRow[] = [
   {
     title: "How did it work?",
     sub: true,
+    variant: "steps",
     list: [
       "The campaign ran for four weeks.",
       "A new Cybermon was introduced each week.",
@@ -376,6 +506,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     items: [
       { name: "Glitchrusus — The Scrap Bandit", text: "Indirect Prompt Injection & Formula Injection — focuses on malicious instructions in AI workflows and spreadsheet formula injection." },
       { name: "Gatecorvus — The Keykeeper", text: "SSRF, Data Exposure & Cryptography — focuses on server-side request forgery, sensitive data exposure, path traversal and weak cryptography." },
@@ -393,6 +524,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Rewards & achievements",
     sub: true,
+    variant: "badges",
     paragraphs: ["The campaign included a structured achievement system:"],
     table: {
       head: ["Achievement", "Description"],
@@ -424,6 +556,7 @@ const rows2026: DetailRow[] = [
   {
     title: "Business objective",
     sub: true,
+    variant: "chips",
     list: [
       "Improve awareness of vulnerabilities in AI-generated software.",
       "Reinforce traditional secure coding fundamentals.",
@@ -436,6 +569,7 @@ const rows2026: DetailRow[] = [
   {
     title: "In simple terms",
     sub: true,
+    variant: "summary",
     paragraphs: [
       "Cybermon 2026 combined traditional cybersecurity with AI security. Developers had to defeat four monsters representing different vulnerabilities, complete coding exercises and tackle additional Boss missions. The goal was to ensure developers understand that although AI can help build software faster, the responsibility for securing that software still belongs to the people developing it.",
     ],
@@ -456,10 +590,21 @@ const comparisonTable = {
 };
 
 const years = [
-  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
-  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
-  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: rows2026 },
+  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
+    theme: "Secure coding", launch: "7 October 2024", headline: { value: "5,260", label: "users" }, cover: interface2024 },
+  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
+    theme: "The Age of AI", launch: "6 October 2025", headline: { value: "4", label: "AI bosses" }, cover: poster2025 },
+  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
+    theme: "Built by AI. Secured by You.", launch: "5 October 2026", headline: { value: "74", label: "countries" }, cover: trophy2026 },
 ];
+
+function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  event.preventDefault();
+  window.history.replaceState(null, "", `#${id}`);
+  scrollToSection(target, "smooth");
+}
 
 const navItems = [
   { label: "Overview", id: "overview" },
@@ -477,7 +622,7 @@ export default function Cybermon() {
     if (target) return scrollToSection(target, "instant");
   }, []);
   return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial cm-page relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/secure-code-warrior/cybermon" ogType={meta.ogType} />
       <header className="pb-10" id="overview">
         <PortfolioBreadcrumb
@@ -492,14 +637,36 @@ export default function Cybermon() {
         <p className="standfirst mt-6 max-w-[720px]">
           Three years of gamified secure coding tournaments — from secure coding fundamentals to securing software built with AI.
         </p>
+        <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
+          {years.map(year => (
+            <li key={year.id} className="cm-year" data-year={year.id}>
+              <a href={`#${year.id}`} onClick={event => jumpTo(event, year.id)} className="cm-card cm-timeline-card flex h-full flex-col overflow-hidden">
+                <div className="flex aspect-[16/10] items-center justify-center overflow-hidden bg-muted">
+                  <img src={year.cover.url} onError={useLocalImage} alt="" className="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="cm-kicker">{year.launch}</p>
+                  <p className="card-title cm-year-title mt-2">{year.id}</p>
+                  <p className="body-copy mt-1 text-foreground">{year.theme}</p>
+                  <p className="mt-5 flex items-baseline gap-2">
+                    <span className="cm-stat-value">{year.headline.value}</span>
+                    <span className="body-copy text-muted-foreground">{year.headline.label}</span>
+                  </p>
+                  <span className="label-quiet mt-auto inline-flex items-center gap-1 pt-5">Jump to {year.id} <ArrowDown size={12} /></span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ol>
       </header>
       <SectionNavigation
         items={navItems}
         to="/work/secure-code-warrior"
       />
       {years.map((year, yearIndex) => (
-        <section key={year.id} id={year.id} className="mb-20 md:mb-28">
-          <h2 className="card-title">{year.title}</h2>
+        <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
+          <p className="cm-kicker">{year.launch} · {year.theme}</p>
+          <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
           {year.id === "2025" && (
             <figure className="mx-auto mb-10 max-w-[720px]">
@@ -536,23 +703,6 @@ export default function Cybermon() {
             </figure>
           )}
           {year.rows.map(row => <DetailSection key={row.title} row={row} />)}
-          {year.id === "2026" && (
-            <section className="editorial-study-section mb-14 md:mb-20">
-              <div className="mendeley-detail-row">
-                <h3 className="subsection-title">Results</h3>
-                <div className="mendeley-detail-body">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {stats2026.map(stat => (
-                      <div key={stat.label} className="editorial-card p-6">
-                        <p className="page-title">{stat.value}</p>
-                        <p className="body-copy mt-2 text-muted-foreground">{stat.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
           {yearIndex < years.length - 1 && <SectionDivider />}
         </section>
       ))}
@@ -560,9 +710,24 @@ export default function Cybermon() {
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
-        <DetailSection
-          row={{ title: "Three-year comparison", sub: true, table: comparisonTable }}
-        />
+        <section className="editorial-study-section mb-14 md:mb-20">
+          <h3 className="subsection-title mb-8">Three-year comparison</h3>
+          <div className="grid gap-6 md:grid-cols-3">
+            {years.map((year, index) => (
+              <div key={year.id} className="cm-year cm-card p-6" data-year={year.id}>
+                <p className="card-title cm-year-title">{year.id}</p>
+                <dl className="mt-5 space-y-4">
+                  {comparisonTable.rows.map(row => (
+                    <div key={row[0]}>
+                      <dt className="cm-kicker">{row[0]}</dt>
+                      <dd className="body-copy mt-1 text-foreground">{row[index + 1]}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </section>
         <DetailSection
           row={{
             title: "How Cybermon evolved",
