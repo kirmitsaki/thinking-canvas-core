@@ -14,7 +14,7 @@ const meta = pageMeta(
 );
 
 export default function MendeleyCitation({ embedded = false }: { embedded?: boolean }) {
-  if (embedded) return <><h2 className="card-title">Citation</h2><p className="standfirst mt-6 mb-10">The Microsoft® Word add-in for inserting references, changing citation styles and generating a bibliography, without leaving the document.</p><MendeleyCitationContent /></>;
+  if (embedded) return <><h2 className="section-title">Citation</h2><p className="standfirst mt-6 mb-10">The Microsoft® Word add-in for inserting references, changing citation styles and generating a bibliography, without leaving the document.</p><MendeleyCitationContent /></>;
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo

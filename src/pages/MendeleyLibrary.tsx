@@ -15,7 +15,7 @@ const meta = pageMeta(
 
 export default function MendeleyLibrary({ embedded = false }: { embedded?: boolean }) {
   const content = <>
-    <h2 className="card-title">The Library</h2>
+    <h2 className="section-title">Library</h2>
     <p className="standfirst mt-6 mb-10">Organising and retrieving references in one place, through collections, tags, keyword search and filtering.</p>
     <MendeleyLibraryContent />
   </>;
