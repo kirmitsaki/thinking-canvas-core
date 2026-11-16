@@ -699,6 +699,12 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
       gap: 3rem;
     }
+    .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual {
+      max-width: none;
+      width: calc((100% - 3rem) * 2.2 / 3.2);
+      margin-left: auto;
+      margin-right: 0;
+    }
     .case-study-editorial .editorial-outcomes {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
