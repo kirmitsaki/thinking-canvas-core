@@ -675,7 +675,6 @@ export default function Cybermon() {
         <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
         <section className="editorial-study-section mb-14 md:mb-20">
-          <h3 className="subsection-title mb-8">Three-year comparison</h3>
           <div className="grid gap-6 md:grid-cols-3">
             {years.map((year, index) => (
               <div key={year.id} className="cm-year cm-card p-6" data-year={year.id}>
