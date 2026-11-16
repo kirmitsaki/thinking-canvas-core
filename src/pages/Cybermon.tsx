@@ -393,6 +393,7 @@ export default function Cybermon() {
               </div>
             </section>
           )}
+          {yearIndex < years.length - 1 && <hr className="border-border" />}
         </section>
       ))}
       <section className="mb-20 md:mb-28">
