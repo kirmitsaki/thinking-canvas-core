@@ -207,7 +207,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                             key={image}
                             src={projectImage(image).url}
                             alt={projectImage(image).alt}
-                            className="h-auto w-full rounded-[10px]"
+                            className={project.slug === "pawsquad" && group.label === "The vet app" ? "aspect-[4/3] w-full rounded-[10px] object-contain" : "h-auto w-full rounded-[10px]"}
                             loading="lazy"
                           />
                         ))}
