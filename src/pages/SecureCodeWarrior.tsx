@@ -67,7 +67,7 @@ function Section({ id, title, lede, children }: { id: string; title: string; led
 export default function SecureCodeWarrior() {
   const overview = {
     ...project,
-    ndaNotice: true,
+    ndaNotice: false,
     reflection: undefined,
     contribution: '',
     sections: [],
