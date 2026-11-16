@@ -45,7 +45,7 @@ const products = [
   { name: 'Trust Agent', text: 'AI-assisted security guidance inside the developer workflow.' },
   { name: 'Reporting', text: 'Dashboards and insight that make developer risk visible to leadership.' },
   { name: 'Content', text: 'The learning content library powering every product in the family.' },
-  { name: 'Cybermon', text: 'Gamified tournaments and challenges that build secure coding habits.' },
+  { name: 'Cybermon', text: 'A gamified campaign that build secure coding habits. Ran for 2024, 2025 & 2026.' },
 ];
 
 function ComingSoon({ to }: { to?: string }) {
