@@ -52,6 +52,20 @@ export const snippets: Snippet[] = [
     description: "Library, reader and citation flows designed with researchers.",
   },
   {
+    to: "/work/aladdin#interface",
+    image: "aladdin-header",
+    project: "Aladdin",
+    name: "Sample interface",
+    description: "Health records, appointment booking and preventative care across the healthcare app.",
+  },
+  {
+    to: "/work/corresilience#interface",
+    image: "cor-header",
+    project: "CorResilience",
+    name: "Sample interface",
+    description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
+  },
+  {
     to: "/work/secure-code-warrior/product-design-identity",
     image: "scw-identity-header",
     project: "Secure Code Warrior",
