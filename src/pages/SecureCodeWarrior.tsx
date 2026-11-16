@@ -53,13 +53,13 @@ function ComingSoon({ to }: { to?: string }) {
   );
   if (to) {
     return (
-      <Link to={to} className="editorial-card group mt-8 block p-6 md:p-8">
+      <Link to={to} className="editorial-card group mx-auto mt-8 block w-full max-w-[720px] p-6 md:p-8">
         {text}
       </Link>
     );
   }
   return (
-    <div className="editorial-card mt-8 p-6 md:p-8">
+    <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] p-6 md:p-8">
       {text}
     </div>
   );
