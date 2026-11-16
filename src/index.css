@@ -1115,7 +1115,7 @@ a:hover .arrow-nudge,
   color: hsl(var(--cybermon-fg)); animation: cybermon-fly 3.2s ease-in-out infinite;
 }
 @keyframes cybermon-fly {
-  0%, 100% { transform: translate(0, 0) rotate(-3deg); }
-  50% { transform: translate(-6px, -5px) rotate(3deg); }
+  0%, 100% { transform: scaleX(-1) translate(0, 0) rotate(-3deg); }
+  50% { transform: scaleX(-1) translate(6px, -5px) rotate(3deg); }
 }
-@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; transform: scaleX(-1); } }
