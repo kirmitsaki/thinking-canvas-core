@@ -51,10 +51,9 @@ function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
   );
 }
 
-function DetailSection({ row, divider }: { row: DetailRow; divider: boolean }) {
+function DetailSection({ row }: { row: DetailRow }) {
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
-      {divider && <SectionDivider />}
       <div className="mendeley-detail-row">
         {row.sub
           ? <h3 className="subsection-title">{row.title}</h3>
@@ -386,10 +385,9 @@ export default function Cybermon() {
         <section key={year.id} id={year.id} className="mb-20 md:mb-28">
           <h2 className="card-title">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
-          {year.rows.map((row, index) => <DetailSection key={row.title} row={row} divider={index > 0} />)}
+          {year.rows.map(row => <DetailSection key={row.title} row={row} />)}
           {year.id === "2026" && (
             <section className="editorial-study-section mb-14 md:mb-20">
-              <SectionDivider />
               <div className="mendeley-detail-row">
                 <h3 className="subsection-title">Results</h3>
                 <div className="mendeley-detail-body">
@@ -414,7 +412,6 @@ export default function Cybermon() {
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
         <DetailSection
           row={{ title: "Three-year comparison", sub: true, table: comparisonTable }}
-          divider={false}
         />
         <DetailSection
           row={{
@@ -426,7 +423,6 @@ export default function Cybermon() {
               { name: "2026 — Secure AI-enabled development", text: "Combine traditional application security with the risks of AI-generated software and automated workflows." },
             ],
           }}
-          divider
         />
         <DetailSection
           row={{
@@ -441,7 +437,6 @@ export default function Cybermon() {
               { name: "Security culture", text: "Make secure coding a continuous responsibility rather than an annual compliance exercise." },
             ],
           }}
-          divider
         />
       </section>
       <SectionDivider />
