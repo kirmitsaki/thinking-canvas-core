@@ -201,7 +201,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       </div>
                     </div>
                      {group.images ? (
-                      <div className={project.slug === "pawsquad" && group.label === "The vet app" ? "grid items-center gap-6 sm:grid-cols-[449414fr_613200fr]" : group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
+                      <div className={project.slug === "mds-quostar" ? `mds-image-row mds-image-row--${group.images.length === 4 ? "four" : group.images.length <= 2 ? "two" : "three"}` : project.slug === "pawsquad" && group.label === "The vet app" ? "grid items-center gap-6 sm:grid-cols-[449414fr_613200fr]" : group.imageSize === 'quarter' ? "grid gap-6 grid-cols-2 sm:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
                         {group.images.map((image) => (
                           <img
                             key={image}
@@ -217,7 +217,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                       <img
                         src={projectImage(group.image).url}
                         alt={projectImage(group.image).alt}
-                        className={group.imageSize === 'small' ? "mx-auto h-auto w-full max-w-[720px] rounded-[10px]" : group.imageSize === 'quarter' ? "h-auto w-full rounded-[10px] sm:w-1/4" : "h-auto w-full rounded-[10px]"}
+                        className={project.slug === "mds-quostar" || group.imageSize === 'small' ? "mx-auto h-auto w-full max-w-[720px] rounded-[10px]" : group.imageSize === 'quarter' ? "h-auto w-full rounded-[10px] sm:w-1/4" : "h-auto w-full rounded-[10px]"}
                         loading="lazy"
                       />
                       {group.image2 && (
