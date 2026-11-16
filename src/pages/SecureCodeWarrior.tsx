@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
@@ -43,10 +44,23 @@ const products = [
   { name: 'Cybermon', text: 'Gamified tournaments and challenges that build secure coding habits.' },
 ];
 
-function ComingSoon() {
+function ComingSoon({ to }: { to?: string }) {
+  const text = (
+    <>
+      <p className="body-copy text-muted-foreground">Full case study coming soon.</p>
+      {to && <p className="accent-link mt-4">SEE MORE{"\u00a0"}<span className="arrow-nudge">→</span></p>}
+    </>
+  );
+  if (to) {
+    return (
+      <Link to={to} className="editorial-card group mt-8 block p-6 md:p-8">
+        {text}
+      </Link>
+    );
+  }
   return (
     <div className="editorial-card mt-8 p-6 md:p-8">
-      <p className="body-copy text-muted-foreground">Full case study coming soon.</p>
+      {text}
     </div>
   );
 }
@@ -99,7 +113,7 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="product-design-identity" title="Product Design Identity" lede="The visual direction that gave the new product vision a face: colour, interface examples and character artwork.">
-        <ComingSoon />
+        <ComingSoon to="/work/secure-code-warrior/product-design-identity" />
       </Section>
 
       <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
