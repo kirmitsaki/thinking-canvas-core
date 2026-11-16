@@ -370,7 +370,7 @@ export default function Cybermon() {
         items={years.map(year => ({ label: year.label, id: year.id }))}
         to="/work/secure-code-warrior"
       />
-      {years.map(year => (
+      {years.map((year, yearIndex) => (
         <section key={year.id} id={year.id} className="mb-20 md:mb-28">
           <h2 className="card-title">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
@@ -393,6 +393,7 @@ export default function Cybermon() {
               </div>
             </section>
           )}
+          {yearIndex < years.length - 1 && <hr className="border-border" />}
         </section>
       ))}
       <section className="mb-20 md:mb-28">
