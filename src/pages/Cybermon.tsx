@@ -27,9 +27,9 @@ import mon2026_4 from "@/assets/cybermon/2026-cybermon-4.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
 import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
-import film2025 from "@/assets/cybermon/cybermon-2025-film.mp4.asset.json";
+import cybermon2025 from "@/assets/cybermon/2025-cybermon.mp4.asset.json";
 import poster2025 from "@/assets/cybermon/cybermon-2025-poster.webp.asset.json";
-import film2026 from "@/assets/cybermon/cybermon-2026-film.mp4.asset.json";
+import cybermon2026 from "@/assets/cybermon/2026-cybermon.mp4.asset.json";
 import poster2026 from "@/assets/cybermon/cybermon-2026-poster.webp.asset.json";
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
@@ -523,7 +523,7 @@ export default function Cybermon() {
                 playsInline
                 preload="metadata"
                 poster={poster2025.url}
-                src={film2025.url}
+                src={cybermon2025.url}
                 onError={useLocalVideo}
                 data-local-poster="cybermon-2025-poster.webp"
                 width={1138}
@@ -540,7 +540,7 @@ export default function Cybermon() {
                 playsInline
                 preload="metadata"
                 poster={poster2026.url}
-                src={film2026.url}
+                src={cybermon2026.url}
                 onError={useLocalVideo}
                 data-local-poster="cybermon-2026-poster.webp"
                 width={1138}
