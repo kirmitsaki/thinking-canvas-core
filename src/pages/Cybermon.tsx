@@ -590,10 +590,21 @@ const comparisonTable = {
 };
 
 const years = [
-  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024 },
-  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025 },
-  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: rows2026 },
+  { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
+    theme: "Secure coding", launch: "7 October 2024", headline: { value: "5,260", label: "users" }, cover: interface2024 },
+  { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
+    theme: "The Age of AI", launch: "6 October 2025", headline: { value: "4", label: "AI bosses" }, cover: poster2025 },
+  { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
+    theme: "Built by AI. Secured by You.", launch: "5 October 2026", headline: { value: "74", label: "countries" }, cover: trophy2026 },
 ];
+
+function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  event.preventDefault();
+  window.history.replaceState(null, "", `#${id}`);
+  scrollToSection(target);
+}
 
 const navItems = [
   { label: "Overview", id: "overview" },
@@ -611,7 +622,7 @@ export default function Cybermon() {
     if (target) return scrollToSection(target, "instant");
   }, []);
   return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial cm-page relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/secure-code-warrior/cybermon" ogType={meta.ogType} />
       <header className="pb-10" id="overview">
         <PortfolioBreadcrumb
@@ -626,14 +637,36 @@ export default function Cybermon() {
         <p className="standfirst mt-6 max-w-[720px]">
           Three years of gamified secure coding tournaments — from secure coding fundamentals to securing software built with AI.
         </p>
+        <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
+          {years.map(year => (
+            <li key={year.id} className="cm-year" data-year={year.id}>
+              <a href={`#${year.id}`} onClick={event => jumpTo(event, year.id)} className="cm-card cm-timeline-card flex h-full flex-col overflow-hidden">
+                <div className="flex aspect-[16/10] items-center justify-center overflow-hidden bg-muted">
+                  <img src={year.cover.url} onError={useLocalImage} alt="" className="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="cm-kicker">{year.launch}</p>
+                  <p className="card-title cm-year-title mt-2">{year.id}</p>
+                  <p className="body-copy mt-1 text-foreground">{year.theme}</p>
+                  <p className="mt-5 flex items-baseline gap-2">
+                    <span className="cm-stat-value">{year.headline.value}</span>
+                    <span className="body-copy text-muted-foreground">{year.headline.label}</span>
+                  </p>
+                  <span className="label-quiet mt-auto inline-flex items-center gap-1 pt-5">Jump to {year.id} <ArrowDown size={12} /></span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ol>
       </header>
       <SectionNavigation
         items={navItems}
         to="/work/secure-code-warrior"
       />
       {years.map((year, yearIndex) => (
-        <section key={year.id} id={year.id} className="mb-20 md:mb-28">
-          <h2 className="card-title">{year.title}</h2>
+        <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
+          <p className="cm-kicker">{year.launch} · {year.theme}</p>
+          <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
           <p className="standfirst mt-6 mb-10">{year.standfirst}</p>
           {year.id === "2025" && (
             <figure className="mx-auto mb-10 max-w-[720px]">
@@ -670,23 +703,6 @@ export default function Cybermon() {
             </figure>
           )}
           {year.rows.map(row => <DetailSection key={row.title} row={row} />)}
-          {year.id === "2026" && (
-            <section className="editorial-study-section mb-14 md:mb-20">
-              <div className="mendeley-detail-row">
-                <h3 className="subsection-title">Results</h3>
-                <div className="mendeley-detail-body">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {stats2026.map(stat => (
-                      <div key={stat.label} className="editorial-card p-6">
-                        <p className="page-title">{stat.value}</p>
-                        <p className="body-copy mt-2 text-muted-foreground">{stat.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
           {yearIndex < years.length - 1 && <SectionDivider />}
         </section>
       ))}
@@ -694,9 +710,24 @@ export default function Cybermon() {
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title">Three years of fun</h2>
         <p className="standfirst mt-6 mb-10">How the campaign evolved between 2024 and 2026.</p>
-        <DetailSection
-          row={{ title: "Three-year comparison", sub: true, table: comparisonTable }}
-        />
+        <section className="editorial-study-section mb-14 md:mb-20">
+          <h3 className="subsection-title mb-8">Three-year comparison</h3>
+          <div className="grid gap-6 md:grid-cols-3">
+            {years.map((year, index) => (
+              <div key={year.id} className="cm-year cm-card p-6" data-year={year.id}>
+                <p className="card-title cm-year-title">{year.id}</p>
+                <dl className="mt-5 space-y-4">
+                  {comparisonTable.rows.map(row => (
+                    <div key={row[0]}>
+                      <dt className="cm-kicker">{row[0]}</dt>
+                      <dd className="body-copy mt-1 text-foreground">{row[index + 1]}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </section>
         <DetailSection
           row={{
             title: "How Cybermon evolved",
