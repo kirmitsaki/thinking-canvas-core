@@ -441,10 +441,7 @@ export default function Cybermon() {
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <h2 className="card-title">Future</h2>
-        <div className="essay-prose mt-6 max-w-[720px] space-y-5">
-          <p>{editorialEmphasis("After popular demand, CyberMon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
-        </div>
+        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, CyberMon is here to stay. There is also conversation about using the same technology to build more events throughout the year — even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
