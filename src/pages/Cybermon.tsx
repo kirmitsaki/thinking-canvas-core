@@ -603,7 +603,7 @@ function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
   if (!target) return;
   event.preventDefault();
   window.history.replaceState(null, "", `#${id}`);
-  scrollToSection(target);
+  scrollToSection(target, "smooth");
 }
 
 const navItems = [
