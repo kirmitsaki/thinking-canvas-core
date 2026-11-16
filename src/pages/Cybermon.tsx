@@ -314,11 +314,22 @@ const rows2024: DetailRow[] = [
   {
     title: "Meet the Cybermon",
     sub: true,
+    variant: "cards",
     paragraphs: [
       "The 2024 campaign featured four weekly Cybermon, each representing a common software security threat.",
     ],
+    items: [
+      { name: "Accessomorph", text: "Broken Access Control — exploits missing or weak checks on who can access what." },
+      { name: "Injecotpus", text: "Injection — exploits untrusted data sent to interpreters, such as SQL injection." },
+      { name: "Permissite", text: "Excessive Permissions — exploits accounts and services with more access than they need." },
+      { name: "Xssassin", text: "Cross-Site Scripting — exploits unescaped output to run malicious scripts in the browser." },
+    ],
+    imagesGrid: true,
     images: [
-      { asset: interface2024, alt: "Cybermon 2024 teaser screen counting down to the first monster.", width: 800, height: 531 },
+      { asset: mon2024_accessomorph, alt: "Accessomorph, a fluffy yellow Cybermon holding a broken access icon.", width: 300, height: 200 },
+      { asset: mon2024_injecotpus, alt: "Injecotpus, a pink ghost Cybermon.", width: 300, height: 200 },
+      { asset: mon2024_permissite, alt: "Permissite, a grey winged mouse Cybermon.", width: 300, height: 200 },
+      { asset: mon2024_xssassin, alt: "Xssassin, a blue dragon Cybermon.", width: 300, height: 200 },
     ],
   },
   {
@@ -420,9 +431,9 @@ const rows2025: DetailRow[] = [
     ],
     imagesGrid: true,
     images: [
-      { asset: interface2025_3, alt: "Bypassaur Prime boss detail page.", width: 800, height: 578 },
-      { asset: interface2025_4, alt: "Keykraken Prime boss detail page.", width: 800, height: 558 },
-      { asset: interface2025_2, alt: "Promptgeist Prime boss detail page.", width: 800, height: 574 },
+      { asset: mon2025_bypassaur, alt: "Bypassaur, an orange dinosaur Cybermon.", width: 300, height: 200 },
+      { asset: mon2025_keykraken, alt: "Keykraken, a green octopus Cybermon.", width: 300, height: 200 },
+      { asset: mon2025_promptgeist, alt: "Promptgeist, a purple bat-ghost Cybermon.", width: 300, height: 200 },
       { asset: interface2025_5, alt: "Proxysurfa Prime boss detail page.", width: 800, height: 567 },
     ],
   },
@@ -591,11 +602,11 @@ const comparisonTable = {
 
 const years = [
   { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
-    theme: "Secure coding", launch: "7 October 2024", cover: interface2024 },
+    theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
   { id: "2025", label: "Cybermon 2025", title: "Cybermon 2025", standfirst: "The Age of AI: four bosses, four AI security threats, one mission — beat the boss.", rows: rows2025,
-    theme: "The Age of AI", launch: "6 October 2025", cover: poster2025 },
+    theme: "The Age of AI", launch: "6 October 2025", cover: crest2025 },
   { id: "2026", label: "Cybermon 2026", title: "Cybermon 2026", standfirst: "Built by AI. Secured by You. Four Cybermon, four weeks, one global community.", rows: [...rows2026, { title: "Results", sub: true, stats: stats2026 }] as DetailRow[],
-    theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: trophy2026 },
+    theme: "Built by AI. Secured by You.", launch: "5 October 2026", cover: crest2026 },
 ];
 
 function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
