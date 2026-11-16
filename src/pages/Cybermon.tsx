@@ -718,6 +718,13 @@ export default function Cybermon() {
               "Together, these results highlight the value of combining storytelling, bite-sized learning, visible progress and achievement-based rewards.",
               "Rather than treating cybersecurity training as a one-off learning exercise, Cybermon created a recurring experience that gave developers a reason to return, participate and challenge themselves each year.",
             ],
+            video: {
+              asset: cybermonTrio,
+              poster: posterTrio,
+              alt: "Cybermon campaign film covering the 2024, 2025 and 2026 campaigns.",
+              width: 360,
+              height: 640,
+            },
           }}
         />
         <DetailSection
