@@ -548,19 +548,6 @@ const rows2026: DetailRow[] = [
   },
 ];
 
-const comparisonTable = {
-  head: ["Category", "2024", "2025", "2026"],
-  rows: [
-    ["Theme", "Secure coding", "The Age of AI", "Built by AI. Secured by You."],
-    ["Main focus", "Software vulnerabilities", "AI/LLM security", "AI and application security"],
-    ["Campaign duration", "4 weeks", "October campaign", "4 weeks"],
-    ["Characters", "4 Cybermon", "4 AI bosses", "4 Cybermon"],
-    ["Learning format", "Labs, walkthroughs, missions", "AI security missions", "Labs, challenges and Prime Boss missions"],
-    ["Rewards", "Weekly badges", "Exclusive content and prizes", "Weekly badges and achievements"],
-    ["Main achievement", "Cyberhero", "Boss challenges", "Cyberhero / Cyberhero Prime"],
-  ],
-};
-
 const years = [
   { id: "2024", label: "Cybermon 2024", title: "Cybermon 2024", standfirst: "Secure coding fundamentals: four weeks, four monsters, one Cyberhero.", rows: rows2024,
     theme: "Secure coding", launch: "7 October 2024", cover: crest2024 },
@@ -677,23 +664,6 @@ export default function Cybermon() {
       <SectionDivider />
       <section id="three-years" className="mb-20 md:mb-28">
         <h2 className="card-title">Three years of fun</h2>
-        <section className="editorial-study-section mb-14 md:mb-20">
-          <div className="grid gap-6 md:grid-cols-3">
-            {years.map((year, index) => (
-              <div key={year.id} className="cm-year cm-card p-6" data-year={year.id}>
-                <p className="card-title cm-year-title">{year.id}</p>
-                <dl className="mt-5 space-y-4">
-                  {comparisonTable.rows.map(row => (
-                    <div key={row[0]}>
-                      <dt className="cm-kicker">{row[0]}</dt>
-                      <dd className="body-copy mt-1 text-foreground">{row[index + 1]}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            ))}
-          </div>
-        </section>
         <section className="editorial-study-section mb-14 md:mb-20">
           <div className="grid gap-6 md:grid-cols-3">
             {[
