@@ -26,6 +26,8 @@ import mon2026_3 from "@/assets/cybermon/2026-cybermon-3.webp.asset.json";
 import merch2026_1 from "@/assets/cybermon/2026-merch-1.webp.asset.json";
 import merch2026_2 from "@/assets/cybermon/2026-merch-2.webp.asset.json";
 import interface2025_6 from "@/assets/cybermon/2025_-_Interface_6.webp.asset.json";
+import film2026 from "@/assets/cybermon/cybermon-2026-film.mp4.asset.json";
+import poster2026 from "@/assets/cybermon/cybermon-2026-poster.webp.asset.json";
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
 const localImages = import.meta.glob<string>("../assets/cybermon/*.webp", {
@@ -42,6 +44,26 @@ function useLocalImage(event: React.SyntheticEvent<HTMLImageElement>) {
     image.dataset.localFallback = "true";
     image.src = fallback;
   }
+}
+
+const localVideos = import.meta.glob<string>("../assets/cybermon/*.mp4", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+function useLocalVideo(event: React.SyntheticEvent<HTMLVideoElement>) {
+  const video = event.currentTarget;
+  if (video.dataset.localFallback === "true") return;
+  const filename = decodeURIComponent(video.src.split("/").pop() ?? "").replace(/\.[^.]+$/, ".mp4");
+  const fallback = localVideos[`../assets/cybermon/${filename}`];
+  if (!fallback) return;
+  video.dataset.localFallback = "true";
+  video.src = fallback;
+  const poster = video.dataset.localPoster
+    ? localImages[`../assets/cybermon/${video.dataset.localPoster}`]
+    : undefined;
+  if (poster) video.poster = poster;
 }
 
 type DetailImage = { asset: { url: string; asset_id: string }; alt: string; width: number; height: number };
@@ -495,6 +517,23 @@ export default function Cybermon() {
                 width={800}
                 height={267}
                 className="mt-6 h-auto w-full rounded-lg"
+              />
+            </figure>
+          )}
+          {year.id === "2026" && (
+            <figure className="mb-10">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={poster2026.url}
+                src={film2026.url}
+                onError={useLocalVideo}
+                data-local-poster="cybermon-2026-poster.webp"
+                width={1138}
+                height={640}
+                className="h-auto w-full rounded-lg"
+                aria-label="Cybermon 2026 campaign film introducing the four Cybermon."
               />
             </figure>
           )}
