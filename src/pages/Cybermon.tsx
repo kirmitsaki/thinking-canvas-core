@@ -241,7 +241,7 @@ function DetailSection({ row }: { row: DetailRow }) {
             </div>
           )}
           {row.stats && (
-            <div className="mb-8 grid grid-cols-2 gap-4">
+            <div className={`mb-8 grid gap-4 ${row.stats.some(stat => stat.note) ? "sm:grid-cols-2" : "grid-cols-2"}`}>
               {row.stats.map(stat => (
                 <div key={stat.label} className="cm-card p-5">
                   <p className="cm-stat-value">{stat.value}</p>
