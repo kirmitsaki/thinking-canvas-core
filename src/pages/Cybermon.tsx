@@ -679,7 +679,7 @@ export default function Cybermon() {
             </figure>
           )}
           {year.id === "2026" && (
-            <figure className="mx-auto mb-10 max-w-[720px]">
+            <figure className="cm-intro-gap mx-auto max-w-[720px]">
               <video
                 controls
                 playsInline
