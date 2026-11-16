@@ -700,7 +700,8 @@
       gap: 3rem;
     }
     .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual,
-    .case-study-editorial #labels:has(img[src*="meliniki-labels"]) > .editorial-study-visual {
+    .case-study-editorial #labels:has(img[src*="meliniki-labels"]) > .editorial-study-visual,
+    .case-study-editorial #bottle:has(img[src*="meliniki"]) > .editorial-study-visual {
       max-width: none;
       width: calc((100% - 3rem) * 2.2 / 3.2);
       margin-left: auto;
