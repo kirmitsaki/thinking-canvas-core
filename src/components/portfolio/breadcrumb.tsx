@@ -15,7 +15,7 @@ export function PortfolioBreadcrumb({
   trailing?: ReactNode;
 }) {
   return (
-    <div className="masthead-bar flex-wrap gap-y-3">
+    <div className="masthead-bar flex-wrap gap-y-3 border-t-0">
       <nav aria-label="Breadcrumb" className="min-w-0">
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 caption">
           {items.map((item, index) => (
