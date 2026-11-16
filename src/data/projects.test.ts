@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest';
 import { strict as assert } from 'node:assert';
-import { projects, projectsByYear, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject } from './projects';
+import { projects, projectsByYear, portfolioProjects, freelanceProjects, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject } from './projects';
 
 describe('portfolio project dates from Rachel’s CV and brief', () => {
   const dates = [
@@ -19,8 +19,12 @@ describe('portfolio project dates from Rachel’s CV and brief', () => {
 });
 
 describe('work index ordering', () => {
-  it('lists the main case studies first with Meliniki and JobMe last', () => {
-    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme']);
+  it('lists the main case studies newest first', () => {
+    assert.deepEqual(portfolioProjects.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'migreat']);
+  });
+  it('lists the freelance case studies newest first after the main group', () => {
+    assert.deepEqual(freelanceProjects.map(project => project.slug), ['meliniki', 'jobme', 'mds-quostar']);
+    assert.deepEqual(projectsByYear.map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'migreat', 'meliniki', 'jobme', 'mds-quostar']);
   });
   it('includes every visible project exactly once and hides the Origin design process card', () => {
     const visible = projects.filter(project => project.slug !== 'origin-design-process');
@@ -87,7 +91,7 @@ describe('shared case-study section filters', () => {
   });
   it('combines Products and Interface into one Interface work area', () => {
     assert.equal(projectFilters.includes('Products'), false);
-    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Interface')).map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat']);
+    assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Interface')).map(project => project.slug), ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'migreat', 'mds-quostar']);
     assert.equal(projectWorkAreas(getProject('origin-markets')).filter(label => label === 'Interface').length, 1);
     assert.ok(projectSectionLabels(getProject('mendeley')).includes('Products'));
   });

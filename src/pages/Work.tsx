@@ -1,5 +1,5 @@
 import Seo from "@/components/Seo";
-import { projectsByYear, pageMeta } from "@/data/projects";
+import { portfolioProjects, freelanceProjects, pageMeta } from "@/data/projects";
 import { ProjectGrid } from "@/components/portfolio/project-grid";
 
 // Filters hidden for now. To restore: re-add useSearchParams, projectFilters,
@@ -18,7 +18,13 @@ export default function WorkPage() {
         <header className="fade-in pb-10 pt-12 md:pb-14 md:pt-16">
           <h1 className="page-title">Portfolio</h1>
         </header>
-        <ProjectGrid items={projectsByYear} />
+        <section>
+          <ProjectGrid items={portfolioProjects} />
+        </section>
+        <section className="mt-20 md:mt-28" aria-labelledby="freelancing-heading">
+          <h2 id="freelancing-heading" className="section-title mb-10 md:mb-14">Freelancing</h2>
+          <ProjectGrid items={freelanceProjects} />
+        </section>
       </div>
     </main>
   );

@@ -659,8 +659,9 @@ export const projects: Project[] = [
     sections: [], contribution: '', outcomes: [],
   },
 ];
-const workOrder: Project['slug'][] = ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'mds-quostar', 'migreat', 'meliniki', 'jobme'];
-export const projectsByYear: Project[] = workOrder.map(getProject);
+export const portfolioProjects: Project[] = ['secure-code-warrior', 'origin-markets', 'mendeley', 'aladdin', 'corresilience', 'pawsquad', 'migreat'].map(slug => getProject(slug as Project['slug']));
+export const freelanceProjects: Project[] = ['meliniki', 'jobme', 'mds-quostar'].map(slug => getProject(slug as Project['slug']));
+export const projectsByYear: Project[] = [...portfolioProjects, ...freelanceProjects];
 export const projectTags = ['Research', 'Product Design', 'Product Identity', 'Brand', 'Accessibility', 'Vision', 'Design Systems', 'Prototyping', 'AI-assisted Prototyping', 'Web Design', 'Front-end Development', 'Logo Design', 'Illustration', 'Label Design'];
 export function projectSectionLabels(project: Project): string[] {
   return ['Overview', ...new Set(project.sections.flatMap(section => section.navigationLabel ? [section.navigationLabel] : [])), ...(project.outcomes.length ? ['Outcomes'] : [])];
