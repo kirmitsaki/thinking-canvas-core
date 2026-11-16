@@ -8,6 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
+import { ProjectContext } from "./project-context";
 import { SecondaryCard } from "./secondary-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 
@@ -53,12 +54,15 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               <div className="mt-7 max-w-[760px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               <dl className="case-study-facts mt-7">{headerFacts.map(fact => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
+                const context = fact.label === "Industry" ? fact.value.split(/\s*·\s*/) : null;
                 return (
                   <div key={fact.label} className="case-study-fact">
                     <dt className="label-quiet">{fact.label}</dt>
                     <dd className="case-study-fact-value">
                       {items ? (
                         <ul className="case-study-fact-pills">{items.map(item => <li key={item}>{item}</li>)}</ul>
+                      ) : context ? (
+                        <ProjectContext industry={context[0]} field={context[1] ?? ""} />
                       ) : fact.value}
                     </dd>
                   </div>
