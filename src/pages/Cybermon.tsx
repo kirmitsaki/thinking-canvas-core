@@ -12,7 +12,6 @@ import { SectionDivider } from "@/components/portfolio/section-divider";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
 import interface2024 from "@/assets/cybermon/2024_-_Interface.webp.asset.json";
 import results2024 from "@/assets/cybermon/2024-results.webp.asset.json";
-import banner2025 from "@/assets/cybermon/2025-banner-1.webp.asset.json";
 import badge2025 from "@/assets/cybermon/2025-badge.webp.asset.json";
 import interface2025_1 from "@/assets/cybermon/2025_-_Interface_1.webp.asset.json";
 import interface2025_2 from "@/assets/cybermon/2025_-_Interface_2.webp.asset.json";
@@ -502,21 +501,11 @@ export default function Cybermon() {
                 loading="lazy"
                 decoding="async"
                 onError={useLocalImage}
-                src={banner2025.url}
-                alt="Cybermon 2025 campaign banner — Beat the Boss AI missions, now available on demand."
-                width={500}
-                height={281}
-                className="h-auto w-full rounded-lg"
-              />
-              <img
-                loading="lazy"
-                decoding="async"
-                onError={useLocalImage}
                 src={banner2025_2.url}
                 alt="Cybermon 2025 campaign banner."
                 width={800}
                 height={267}
-                className="mt-6 h-auto w-full rounded-lg"
+                className="h-auto w-full rounded-lg"
               />
             </figure>
           )}
