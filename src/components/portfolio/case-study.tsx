@@ -12,7 +12,7 @@ import { ProjectContext } from "./project-context";
 import { SecondaryCard } from "./secondary-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 
-export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode }) {
+export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice, sectionOnly = false }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode; sectionOnly?: boolean }) {
   const navigation = project.sectionNavigation ?? [
     { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section, index) =>
@@ -32,7 +32,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
   const noticeNode = notice ?? (project.ndaNotice ? <NdaNotice /> : null);
   return (
     <main className={`case-study relative z-10 ${minimalFrame ? "" : "case-study-editorial"} ${compact ? "case-study-compact" : ""}`}>
-      <header
+      {!sectionOnly && <><header
         id="overview"
         className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12"
       >
@@ -90,7 +90,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         ) : (
           <VisualPlaceholder title={`${project.name} · ${project.sector}`} />
         )}
-      </div>
+      </div></>}
       <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
         {body}
         {project.sections.map((section, index) => (
@@ -367,7 +367,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           )}
         </div>
       </article>
-      <ProjectPagination slug={project.slug} />
+      {!sectionOnly && <ProjectPagination slug={project.slug} />}
     </main>
   );
 }

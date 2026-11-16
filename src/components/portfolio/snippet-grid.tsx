@@ -49,6 +49,27 @@ const snippets: Snippet[] = [
     name: "Sample interface",
     description: "Library, reader and citation flows designed with researchers.",
   },
+  {
+    to: "/work/mendeley#design-system",
+    image: "mendeley-pattern-library",
+    project: "Mendeley",
+    name: "Design system",
+    description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
+  },
+  {
+    to: "/work/aladdin#brand",
+    image: "aladdin-brand",
+    project: "Aladdin",
+    name: "Brand styles",
+    description: "Logo, typography, colour and imagery for the healthcare platform.",
+  },
+  {
+    to: "/work/corresilience#brand",
+    image: "cor-brand",
+    project: "CorResilience",
+    name: "Brand styles",
+    description: "Identity, typography and iconography across the app and website.",
+  },
 ];
 
 export function SnippetGrid() {
