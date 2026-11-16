@@ -126,7 +126,7 @@ export default function SecureCodeWarrior() {
         <ComingSoon />
       </Section>
 
-      <Section id="products" title="Products" lede="Six product areas, one platform.">
+      <Section id="products" title="Products">
         <div className="origin-product-cards">
           {products.map((item, index) => (
             <article key={item.name} className="origin-product-card editorial-card">
