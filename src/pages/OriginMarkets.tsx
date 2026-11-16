@@ -54,9 +54,9 @@ const facts = [
 ];
 
 const products = [
-  { name: 'Origin Marketplace', text: 'Identifying issuance opportunities through a database of 1,000+ issuers, with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. This included a redesign of the Funding Matrix.', image: 'origin-marketplace' },
-  { name: 'Origin Documentation', text: 'Simplifying the drafting and collaboration of transaction documents for vanilla and structured notes. Structuring data at execution enabled downstream processes including listing and instant ISIN generation.', image: 'origin-documentation' },
-  { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.', image: 'origin-structured_notes' },
+  { name: 'Origin Marketplace', text: 'Identifying issuance opportunities through a database of 1,000+ issuers, with consolidated funding levels, advanced filtering, cross-currency pricing and graphical analysis. This included a redesign of the Funding Matrix.' },
+  { name: 'Origin Documentation', text: 'Simplifying the drafting and collaboration of transaction documents for vanilla and structured notes. Structuring data at execution enabled downstream processes including listing and instant ISIN generation.' },
+  { name: 'Origin Structured Notes', text: 'Automating the workflow from termsheet generation through to post-trade operations with an API-driven platform, reducing manual processes and operational risk.' },
 ];
 
 function Section({ id, title, lede, children }: { id: string; title: string; lede?: string; children?: ReactNode }) {
@@ -141,15 +141,15 @@ export default function OriginMarkets() {
 
       <Section id="products" title="Products" lede={productsCopy}>
         <NdaNotice />
-        {products.map(item => (
-          <div key={item.name} className="origin-product">
-            <img loading="lazy" src={projectImage(item.image).url} alt={projectImage(item.image).alt} className="h-auto w-full rounded-[10px]" />
-            <div>
+        <div className="origin-product-cards">
+          {products.map((item, index) => (
+            <article key={item.name} className="origin-product-card editorial-card">
+              <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
               <h3 className="subsection-title">{item.name}</h3>
-              <p className="body-copy mt-3">{emphasize(item.text)}</p>
-            </div>
-          </div>
-        ))}
+              <p className="body-copy">{emphasize(item.text)}</p>
+            </article>
+          ))}
+        </div>
         <SecondaryCard to="/work/origin-markets/gallery" image="origin-sample-work" description="A selection of screens and flows from across the Origin product family." />
       </Section>
     </>
