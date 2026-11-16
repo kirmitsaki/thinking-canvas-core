@@ -63,10 +63,12 @@ function MendeleyLibraryContent() {
             {index > 0 && <SectionDivider />}
             <div className="mendeley-detail-row">
               <h2 className="section-title">{section.title}</h2>
-              <div className="mendeley-detail-body essay-prose space-y-5">
-                {section.paragraphs.map((text) => (
-                  <p key={text}>{editorialEmphasis(text)}</p>
-                ))}
+              <div className="mendeley-detail-body">
+                <div className="essay-prose space-y-5">
+                  {section.paragraphs.map((text) => (
+                    <p key={text}>{editorialEmphasis(text)}</p>
+                  ))}
+                </div>
               </div>
             </div>
             {section.items?.map((item) => (
