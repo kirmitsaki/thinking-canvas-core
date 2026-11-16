@@ -31,6 +31,10 @@ const phrases = [
   "simpler interface reduces the cognitive load",
   "interviews", "surveys", "consulted with vets", "early prototypes",
   "Reliable information.", "Simplified processes.", "Personalised guidance.", "Community connection.",
+  "7 October 2024", "6 October 2025", "5 October 2026",
+  "Pokémon meets secure coding", "AI and Large Language Model (LLM) security",
+  "AI security challenges", "traditional cybersecurity with AI security",
+  "Built by AI. Secured by You.",
 ];
 
 export function editorialEmphasis(text: string): ReactNode {

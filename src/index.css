@@ -999,7 +999,8 @@
 section[id] {
   scroll-margin-top: 110px;
 }
-.case-study [id] {
+.case-study [id],
+.case-study-editorial [id] {
   scroll-margin-top: calc(var(--portfolio-header-height, 80px) + 85px);
 }
 a:focus-visible,
