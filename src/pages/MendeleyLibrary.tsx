@@ -62,7 +62,7 @@ function MendeleyLibraryContent() {
           <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
             <div className="mendeley-detail-row">
-              <h2 className="section-title">{section.title}</h2>
+              <h2 className="card-title">{section.title}</h2>
               <div className="mendeley-detail-body">
                 <div className="essay-prose space-y-5">
                   {section.paragraphs.map((text) => (

@@ -67,6 +67,38 @@
 .snippet-page .editorial-study-section > .section-break:first-child,
 .snippet-page .origin-section > .section-break:first-child { display: none; }
 
+/* One title treatment for every modal content entry, independent of page layout. */
+.snippet-page {
+  --snippet-title-size: 2.25rem;
+  --snippet-title-gap: 3rem;
+}
+.snippet-page main > header {
+  padding-top: var(--snippet-title-gap);
+}
+.snippet-page main.origin-editorial {
+  padding-top: var(--snippet-title-gap);
+}
+.snippet-page :is(
+  main > header > h1,
+  main > .editorial-detail-content > h2,
+  main > article > .editorial-study-section:first-of-type > .editorial-study-heading > h2,
+  main.origin-editorial > .origin-section:first-child > .origin-section-heading > h2
+) {
+  margin-top: 0;
+  font-family: var(--font-serif);
+  font-size: var(--snippet-title-size);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .snippet-page {
+    --snippet-title-size: 3rem;
+    --snippet-title-gap: 4rem;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--hairline);

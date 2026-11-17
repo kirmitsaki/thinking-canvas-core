@@ -11,6 +11,7 @@
 - Share anchor alignment through `scrollToSection`, loading only preceding images and cancelling pending work on navigation; this keeps saved links and rapid tab clicks stable without eagerly loading entire case studies.
 - Use React state directly for this static portfolio; no query provider is needed without remote data requests.
 - All secondary case studies use the shared snippet dialog and destination registry, with same-origin frames on parent case-study URLs and top breadcrumbs; legacy secondary URLs redirect to parent pages with their modal open, preserving content, tabs and shared links without standalone pages.
+- Scope modal entry-title typography and top spacing under `.snippet-page` across all content layouts; this keeps full-page headers and section-only snippets consistent without changing case-study tabs or portfolio cards.
 - Portfolio and case-study snippet cards share one card component and content registry; this keeps images, titles, descriptions and availability consistent across entry points.
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.
