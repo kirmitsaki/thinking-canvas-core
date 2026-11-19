@@ -335,31 +335,35 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           )}
           </Fragment>
         ))}
-        <div className="editorial-study-closing mx-auto max-w-[720px]">
+        <div className="editorial-study-closing mx-auto w-full">
           {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && <SectionDivider />}
-          {project.outcomeStats ? <div id="outcomes" className="scroll-mt-32"><h2 className="card-title">{outcomesTitle}</h2>{project.outcomesHeading && <p className="subsection-title mt-4">{project.outcomesHeading}</p>}{project.outcomesIntro && <p className="body-copy mt-5 text-muted-foreground">{project.outcomesIntro}</p>}<dl className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl></div> : project.outcomes.length > 0 && (
-            <>
-              <h2 id="outcomes" className="section-title scroll-mt-32">
-                {outcomesTitle}
-              </h2>
-              <ul className="editorial-outcomes mt-8 space-y-5">
-                {project.outcomes.map((outcome) => (
-                  <li key={outcome} className="hairline-bottom pb-4 body-copy">
-                    {editorialEmphasis(outcome)}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-          {project.outcomeImage && (
-            <figure className="editorial-study-visual mx-auto mt-9 w-full max-w-[720px]">
-              <img
-                src={projectImage(project.outcomeImage).url}
-                alt={projectImage(project.outcomeImage).alt}
-                className={imageClass}
-              />
-              <figcaption className="caption mt-4">{project.outcomeCaption}</figcaption>
-            </figure>
+          {(project.outcomes.length > 0 || project.outcomeStats || project.outcomeImage) && (
+            <div id="outcomes" className="origin-section-grid scroll-mt-32">
+              <div className="origin-section-heading">
+                <h2 className="section-title">{outcomesTitle}</h2>
+                {project.outcomeStats && project.outcomesHeading && <p className="subsection-title">{project.outcomesHeading}</p>}
+              </div>
+              {project.outcomeStats && project.outcomesIntro && <p className="body-copy text-muted-foreground">{project.outcomesIntro}</p>}
+              {project.outcomeStats ? <dl className="grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
+                <ul className="editorial-outcomes space-y-5">
+                  {project.outcomes.map((outcome) => (
+                    <li key={outcome} className="hairline-bottom pb-4 body-copy">
+                      {editorialEmphasis(outcome)}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {project.outcomeImage && (
+                <figure className="editorial-study-visual w-full">
+                  <img
+                    src={projectImage(project.outcomeImage).url}
+                    alt={projectImage(project.outcomeImage).alt}
+                    className={imageClass}
+                  />
+                  <figcaption className="caption mt-4">{project.outcomeCaption}</figcaption>
+                </figure>
+              )}
+            </div>
           )}
           {!compact && project.evidencePending !== false && (
             <p className="mt-5 caption">

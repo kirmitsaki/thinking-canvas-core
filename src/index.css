@@ -1315,3 +1315,21 @@ a:hover .arrow-nudge,
 @media (min-width: 768px) {
   .cm-page .cm-video-row { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 3rem; }
 }
+
+/* Case-study columns: only the section title sits in the left rail; subtitles,
+   copy, quotes, visuals and cards all live in the right column. */
+@media (min-width: 768px) {
+  .origin-section-grid > .origin-section-heading { display: contents; }
+  .origin-section-grid > .origin-section-heading > .section-title { grid-column: 1; grid-row: 1; }
+  .origin-section-grid > .origin-section-heading > :not(.section-title) { grid-column: 2; grid-row: 1; margin: 0; }
+  .origin-section-grid > .origin-wide { grid-column: 2; }
+  .origin-section-grid .pull-quote { max-width: none; margin-inline: 0; }
+  .origin-section-grid .origin-system-principle { max-width: none; margin-inline: 0; text-align: left; }
+  .origin-section-grid .origin-process-paths { grid-template-columns: minmax(0, 1fr); }
+  .origin-section-grid > .origin-wide .mx-auto, .origin-section-grid > .origin-wide.mx-auto { margin-inline: 0; max-width: none; }
+  .snippet-page .origin-section-grid > .origin-section-heading { display: grid; }
+  .snippet-page .origin-section-grid > .origin-section-heading > * { grid-column: auto; grid-row: auto; }
+  .snippet-page .origin-section-grid > .origin-wide { grid-column: 1; }
+}
+.editorial-study-reflection .essay-prose,
+.case-study-editorial .editorial-study-reflection > .essay-prose { max-width: 52ch !important; }
