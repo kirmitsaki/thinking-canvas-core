@@ -10,7 +10,7 @@ export function cardYears(dates: string) {
 export function CardBody({ project }: { project: Project }) {
   const logo = project.logo ? projectImage(project.logo) : undefined;
   return (
-    <div className="p-6 md:p-8">
+    <div className="px-6 pb-6 pt-4 md:px-8 md:pb-8 md:pt-5">
       <div className="flex items-center justify-between gap-4">
         <div className="flex min-w-0 items-center gap-2">
           {logo ? (
@@ -20,7 +20,7 @@ export function CardBody({ project }: { project: Project }) {
         </div>
         <span className="card-years">{cardYears(project.dates)}</span>
       </div>
-      {project.cardTitle ? <h2 className="mt-4 card-subtitle">{project.cardTitle}</h2> : null}
+      {project.cardTitle ? <h2 className="mt-6 card-subtitle">{project.cardTitle}</h2> : null}
     </div>
   );
 }
