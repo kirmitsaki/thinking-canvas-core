@@ -23,8 +23,7 @@ export function CardLogo({ project }: { project: Project }) {
 export function CardBody({ project }: { project: Project }) {
   return (
     <div className="px-6 pb-6 pt-4 md:px-8 md:pb-8 md:pt-5">
-      <div className="flex items-center justify-between gap-4">
-        <p className="card-company min-w-0">{project.name}</p>
+      <div className="flex items-center justify-end gap-4">
         <span className="card-years">{cardYears(project.dates)}</span>
       </div>
       {project.cardTitle ? <h2 className="mt-6 card-subtitle">{project.cardTitle}</h2> : null}

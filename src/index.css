@@ -364,12 +364,6 @@
     }
   }
 
-  .card-company {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--foreground);
-  }
-
   .card-years {
     display: inline-flex;
     align-items: center;
