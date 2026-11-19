@@ -305,7 +305,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 1.45;
+    line-height: 1.6;
     color: var(--muted-foreground);
   }
   @media (min-width: 768px) {
@@ -399,14 +399,14 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.6;
   }
 
   .body-copy {
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.6;
   }
 
   .design-goals-list {
@@ -442,7 +442,7 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.6;
   }
 
   .pull-quote {
@@ -644,7 +644,7 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.6;
   }
   .essay-prose a:not(.editorial-card) {
     color: var(--rust);
