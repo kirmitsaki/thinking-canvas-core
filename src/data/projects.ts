@@ -9,7 +9,7 @@ import originLawyers from '@/assets/origin-lawyers.webp';
 import originMarketInfrastructure from '@/assets/origin-market-infrastructure.webp';
 import scwIdentity from '@/assets/scw-product-design-identity.webp';
 import scwIdentityHeader from '@/assets/scw-identity-header.webp';
-import cybermonPoster from '@/assets/cybermon/cybermon-2025-poster.webp';
+import cybermonPoster from '@/assets/cybermon/cybermon-2026-poster.webp';
 import scwWanda from '@/assets/scw-wanda-cover.webp';
 import scwButtons from '@/assets/scw-button-guidelines.webp';
 import scwThemes from '@/assets/scw-button-themes.webp';
@@ -144,7 +144,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-market-infrastructure': { url: originMarketInfrastructure, alt: 'Market infrastructure participants icon' },
   'scw-identity': { url: scwIdentity, alt: 'Secure Code Warrior product design identity infographic, from visual foundations and interface examples to character artwork' },
   'scw-identity-header': { url: scwIdentityHeader, alt: 'Secure Code Warrior character concept with colour and meaning notes: shield, gold, light, wings, robot, cyber, code' },
-  'cybermon-poster': { url: cybermonPoster, alt: 'Cybermon 2025: The Age of AI campaign poster with four Cybermon characters' },
+  'cybermon-poster': { url: cybermonPoster, alt: 'Cybermon 2026 campaign poster with the raccoon Cybermon in a glowing neon portal' },
   'scw-wanda': { url: scwWanda, alt: 'Wanda design library cover in Figma, with foundations, core components and typography styles' },
   'scw-buttons': { url: scwButtons, alt: 'Wanda button components with variants, interaction states, design notes and warning-button guidance' },
   'scw-themes': { url: scwThemes, alt: 'Wanda contained, outlined and text button variants in dark and light themes' },
