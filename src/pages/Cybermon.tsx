@@ -584,7 +584,7 @@ export default function Cybermon() {
     if (target) return scrollToSection(target, "instant");
   }, []);
   return (
-    <main className="case-study-editorial cm-page relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial cm-page relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/secure-code-warrior/cybermon" ogType={meta.ogType} />
       <header className="pb-10" id="overview">
         <PortfolioBreadcrumb

@@ -64,7 +64,7 @@ export function PortfolioHeader() {
   }, []);
   return (
     <header className="portfolio-header sticky top-0 z-30 bg-card" data-scrolled={scrolled}>
-      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-6 py-5">
+      <div className="mx-auto flex max-w-[960px] flex-wrap items-center justify-between gap-4 px-6 py-5">
         <PortfolioNavLink to="/" className="wordmark">
           Rachel Kirmitsaki<span className="ml-2 text-accent">·</span>
         </PortfolioNavLink>
@@ -96,7 +96,7 @@ export function PortfolioHeader() {
 export function PortfolioFooter() {
   return (
     <footer className="relative z-10 hairline-top bg-card">
-      <div className="relative mx-auto flex max-w-[1200px] items-center justify-between gap-4 overflow-hidden px-6 py-8">
+      <div className="relative mx-auto flex max-w-[960px] items-center justify-between gap-4 overflow-hidden px-6 py-8">
         <FooterDragon />
         <p className="label-quiet relative z-10">RK · CRAFTED IN LONDON</p>
         <div className="relative z-10 flex gap-3">

@@ -15,7 +15,7 @@ export default function WorkPage() {
   return (
     <main className="relative z-10">
       <Seo title={meta.title} description={meta.description} path="/work" ogType={meta.ogType} />
-      <div className="mx-auto max-w-[1200px] px-6 pb-20 md:pb-28">
+      <div className="mx-auto max-w-[960px] px-6 pb-20 md:pb-28">
         <header className="fade-in pb-10 pt-12 md:pb-14 md:pt-16">
           <h1 className="page-title">Portfolio</h1>
         </header>

@@ -10,7 +10,7 @@ const meta = pageMeta(
 
 export default function About() {
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+    <main className="relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
       <Seo title={meta.title} description={meta.description} path="/about" ogType={meta.ogType} />
       <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:gap-16">
         <div>

@@ -51,7 +51,7 @@ export function SectionNavigation({
       aria-label="Case study sections"
       className="case-study-navigation hairline-top hairline-bottom bg-background"
     >
-      <div className="mx-auto flex max-w-[1200px] gap-7 overflow-x-auto px-6 py-5">
+      <div className="mx-auto flex max-w-[960px] gap-7 overflow-x-auto px-6 py-5">
         {items.map((item) => (
           <a
             key={item.id}

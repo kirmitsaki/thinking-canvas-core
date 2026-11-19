@@ -56,7 +56,7 @@ const fit: [string, string][] = [
 
 export default function Contact() {
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+    <main className="relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
       <Seo
         title={meta.title}
         description={meta.description}

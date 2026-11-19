@@ -14,7 +14,7 @@ export function ProjectPagination({ slug }: { slug: Project['slug'] }) {
   const { previous, next } = adjacentProjects(slug);
   return (
     <nav aria-label="Previous and next case studies" className="hairline-top">
-      <div className="mx-auto max-w-[1200px] px-6 py-12">
+      <div className="mx-auto max-w-[960px] px-6 py-12">
         <div className="grid grid-cols-2 gap-6 md:gap-12">
           {previous ? (
             <Link to={previous.linkTo ?? `/work/${previous.slug}`} className="group min-w-0 py-4">

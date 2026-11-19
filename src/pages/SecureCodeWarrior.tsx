@@ -71,7 +71,7 @@ export default function SecureCodeWarrior() {
       <CaseStudySnippetCard to="/work/secure-code-warrior#design-system" />
     </Section>
   );
-  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[1200px] px-6 pb-16">{designSystem}</main>;
+  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
   const overview = {
     ...project,
     ndaNotice: false,

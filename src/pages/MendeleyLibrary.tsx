@@ -21,7 +21,7 @@ export default function MendeleyLibrary({ embedded = false }: { embedded?: boole
   </>;
   if (embedded) return content;
   return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo
         title={meta.title}
         description={meta.description}

@@ -10,7 +10,7 @@ export default function MendeleySampleWork() {
   const view = params.get("view");
   const Content = view === "reader" ? Reader : view === "citation" ? Citation : Library;
   return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
       <div className="editorial-detail-content mx-auto">
         <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
       </div>

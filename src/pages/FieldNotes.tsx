@@ -71,7 +71,7 @@ export default function FieldNotes() {
   const secondCluster = rest.slice(3);
 
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6 pb-24">
+    <main className="relative z-10 mx-auto max-w-[960px] px-6 pb-24">
       <Seo
         title={meta.title}
         description={meta.description}

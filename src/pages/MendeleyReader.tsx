@@ -16,7 +16,7 @@ const meta = pageMeta(
 export default function MendeleyReader({ embedded = false }: { embedded?: boolean }) {
   if (embedded) return <><h2 className="section-title">Reader</h2><p className="standfirst mt-6 mb-10">Reading, highlighting and annotating PDFs, with notes across multiple documents kept in one place.</p><MendeleyReaderContent /></>;
   return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[1200px] px-6 pb-16">
+    <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo
         title={meta.title}
         description={meta.description}

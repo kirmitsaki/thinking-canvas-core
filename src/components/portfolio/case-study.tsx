@@ -35,7 +35,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
     <main className={`case-study relative z-10 ${minimalFrame ? "" : "case-study-editorial"} ${compact ? "case-study-compact" : ""}`}>
       {!sectionOnly && <><header
         id="overview"
-        className="mx-auto max-w-[1200px] scroll-mt-32 px-6 pb-12"
+        className="mx-auto max-w-[960px] scroll-mt-32 px-6 pb-12"
       >
         {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
@@ -76,7 +76,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         })()}
       </header>
       <SectionNavigation items={navigation} to={`/work/${project.slug}`} />
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[960px] px-6">
         {heroNotice && <div className="mb-6">{heroNotice}</div>}
         {project.heroImage ? (
           <img
@@ -92,7 +92,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           <VisualPlaceholder title={`${project.name} · ${project.sector}`} />
         )}
       </div></>}
-      <article className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+      <article className="mx-auto max-w-[960px] px-6 py-12 md:py-16">
         {body}
         {project.sections.map((section, index) => (
           <Fragment key={section.title}>

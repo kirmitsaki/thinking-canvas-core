@@ -24,7 +24,7 @@ const expertise = [
 
 export default function Home() {
   return (
-    <main className="relative z-10 mx-auto max-w-[1200px] px-6">
+    <main className="relative z-10 mx-auto max-w-[960px] px-6">
       <Seo title={meta.title} description={meta.description} path="/" ogType={meta.ogType} />
 
       <section className="fade-in pb-12 pt-12 md:pb-14 md:pt-16">

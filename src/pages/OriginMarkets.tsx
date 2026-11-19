@@ -84,7 +84,7 @@ export default function OriginMarkets() {
       <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="h-auto w-full rounded-[10px]" />
     </Section>
   );
-  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[1200px] px-6 pb-16">{designSystem}</main>;
+  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
   const overview = {
     ...project,
     ndaNotice: false,
