@@ -377,6 +377,43 @@
     color: var(--muted-foreground);
   }
 
+  .card-logo-wrap {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    z-index: 10;
+  }
+  @media (min-width: 768px) {
+    .card-logo-wrap {
+      right: 1.25rem;
+    }
+  }
+
+  .card-logo-name {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    padding: 0.35rem 0.9rem;
+    opacity: 0;
+    transform: translateY(-0.25rem);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    pointer-events: none;
+  }
+
+  .card-logo-wrap:hover .card-logo-name,
+  .card-logo-wrap:focus-within .card-logo-name {
+    opacity: 1;
+    transform: none;
+  }
+
   .card-subtitle {
     font-family: var(--font-serif);
     font-style: italic;

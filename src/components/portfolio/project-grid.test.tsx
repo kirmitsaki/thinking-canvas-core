@@ -24,8 +24,21 @@ describe('case-study card body', () => {
     const media = container.querySelector('.case-study-card-media');
     expect(media?.querySelector('img.card-logo')).not.toBeNull();
 
-    expect(container.textContent).not.toContain(project.name);
-    expect(container.textContent).toContain(cardYears(project.dates));
-    expect(container.textContent).toContain(project.cardTitle ?? '');
+    const body = container.querySelector('.card-body');
+    expect(body?.textContent).not.toContain(project.name);
+    expect(body?.textContent).toContain(cardYears(project.dates));
+    expect(body?.textContent).toContain(project.cardTitle ?? '');
+  });
+
+  it('keeps the company name on the logo only, for the hover label', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <ProjectCard project={project} />
+      </MemoryRouter>,
+    );
+
+    const label = container.querySelector('.card-logo-name');
+    expect(label?.textContent).toBe(project.name);
+    expect(container.querySelector('.card-logo-wrap')?.contains(label ?? null)).toBe(true);
   });
 });

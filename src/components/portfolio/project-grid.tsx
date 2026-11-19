@@ -11,18 +11,21 @@ export function CardLogo({ project }: { project: Project }) {
   if (!project.logo) return null;
   const logo = projectImage(project.logo);
   return (
-    <img
-      src={logo.url}
-      alt={logo.alt}
-      loading="lazy"
-      className="card-logo absolute right-3 top-3 z-10 size-12 shrink-0 rounded-full object-cover md:right-5 md:size-16"
-    />
+    <span className="card-logo-wrap">
+      <img
+        src={logo.url}
+        alt={logo.alt}
+        loading="lazy"
+        className="card-logo size-12 shrink-0 rounded-full object-cover md:size-16"
+      />
+      <span className="card-logo-name">{project.name}</span>
+    </span>
   );
 }
 
 export function CardBody({ project }: { project: Project }) {
   return (
-    <div className="px-6 pb-6 pt-4 md:px-8 md:pb-8 md:pt-5">
+    <div className="card-body px-6 pb-6 pt-4 md:px-8 md:pb-8 md:pt-5">
       <div className="flex items-center justify-end gap-4">
         <span className="card-years">{cardYears(project.dates)}</span>
       </div>
