@@ -827,7 +827,7 @@
     }
     .case-study-editorial .case-study-header-copy,
     .origin-editorial .case-study-header-copy {
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
       gap: 5rem;
     }
     .case-study-editorial .editorial-study-section {

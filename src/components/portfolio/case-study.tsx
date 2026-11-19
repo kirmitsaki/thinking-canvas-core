@@ -41,33 +41,39 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
-          trailing={
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              {logo ? (
-                <img src={logo.url} alt={logo.alt} className="size-8 shrink-0 rounded-full object-cover" loading="lazy" />
-              ) : null}
-              <span className="card-years">{cardYears(project.dates)}</span>
-            </div>
-          }
+          trailing={<p className="label-quiet">{cardYears(project.dates)}</p>}
         />
-        <h1 className="mt-8 max-w-[720px] page-title">{project.cardTitle ?? project.title}</h1>
         {(() => {
           const paragraphs = introParagraphs ?? project.intro.split(/(?<=\.)\s+/);
-          const headerFacts = facts ?? [
+          const baseFacts = (facts ?? [
             { label: 'Role', value: project.role },
-            { label: 'Duration', value: project.dates },
-            { label: 'Industry', value: `${project.industry} · ${project.field}` },
+            { label: 'Tasks', value: project.tags.join(', ') },
+          ]).filter(fact => fact.label === "Role" || fact.label === "Tasks");
+          const headerFacts = [
+            ...baseFacts.slice(0, 1),
+            { label: 'Company', value: project.name },
+            ...baseFacts.slice(1),
           ];
           return (
-            <div className="case-study-header-copy">
-              <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
-              <dl className="case-study-facts">{headerFacts.filter(fact => fact.label !== "Industry").map(fact => {
+            <div className="case-study-header-copy mt-8">
+              <div className="min-w-0">
+                <h1 className="max-w-[720px] page-title">{project.cardTitle ?? project.title}</h1>
+                <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
+              </div>
+              <dl className="case-study-facts">{headerFacts.map(fact => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
                 return (
                   <div key={fact.label} className="editorial-card min-w-0 p-6 md:p-8">
                     <dt className="label">{fact.label}</dt>
                     <dd className="case-study-fact-value mt-4">
-                      {items ? (
+                      {fact.label === "Company" ? (
+                        <span className="flex items-center gap-3">
+                          {logo ? (
+                            <img src={logo.url} alt={logo.alt} className="size-8 shrink-0 rounded-full object-cover" loading="lazy" />
+                          ) : null}
+                          {fact.value}
+                        </span>
+                      ) : items ? (
                         <ul className="case-study-fact-pills">{items.map(item => <li key={item}>{item}</li>)}</ul>
                       ) : fact.value}
                     </dd>
