@@ -72,33 +72,34 @@ export const snippets: Snippet[] = [
     name: "Citation",
     description: "Citation selection, formatting and insertion within Word documents.",
   },
-  {
-    to: "/work/aladdin#interface",
-    image: "aladdin-header",
-    project: "Aladdin",
-    name: "Android and iOS",
-    description: "Health records, appointment booking and preventative care across the healthcare app.",
-  },
-  {
-    to: "/work/aladdin#brand",
-    image: "aladdin-brand",
-    project: "Aladdin",
-    name: "Brand and service guide",
-    description: "Logo, typography, colour and imagery for the healthcare platform.",
-  },
-  {
-    to: "/work/corresilience#interface",
-    image: "cor-header",
-    project: "CorResilience",
-    name: "Android and iOS",
-    description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
-  },
-  {
-    to: "/work/corresilience#brand",
-    image: "cor-brand",
-    project: "CorResilience",
-    name: "Brand and service guide",
-    description: "Identity, typography and iconography across the app and website.",
-  },
+  // Hidden Nov 2026 (kept for later): Aladdin and CorResilience snippets.
+  // {
+  //   to: "/work/aladdin#interface",
+  //   image: "aladdin-header",
+  //   project: "Aladdin",
+  //   name: "Android and iOS",
+  //   description: "Health records, appointment booking and preventative care across the healthcare app.",
+  // },
+  // {
+  //   to: "/work/aladdin#brand",
+  //   image: "aladdin-brand",
+  //   project: "Aladdin",
+  //   name: "Brand and service guide",
+  //   description: "Logo, typography, colour and imagery for the healthcare platform.",
+  // },
+  // {
+  //   to: "/work/corresilience#interface",
+  //   image: "cor-header",
+  //   project: "CorResilience",
+  //   name: "Android and iOS",
+  //   description: "Onboarding, health dashboards, goals and learning flows for the wellbeing app.",
+  // },
+  // {
+  //   to: "/work/corresilience#brand",
+  //   image: "cor-brand",
+  //   project: "CorResilience",
+  //   name: "Brand and service guide",
+  //   description: "Identity, typography and iconography across the app and website.",
+  // },
 ];
 
