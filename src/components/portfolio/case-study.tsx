@@ -60,10 +60,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 <h1 className="max-w-[720px] page-title">{project.cardTitle ?? project.title}</h1>
                 <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               </div>
-              <dl className="case-study-facts">{headerFacts.map(fact => {
+              <dl className="case-study-facts editorial-card min-w-0 p-6 md:p-8">{headerFacts.map((fact, factIndex) => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
                 return (
-                  <div key={fact.label} className="editorial-card min-w-0 p-6 md:p-8">
+                  <div key={fact.label} className={factIndex > 0 ? "mt-6 border-t border-border pt-6" : ""}>
                     <dt className="label">{fact.label}</dt>
                     <dd className="case-study-fact-value mt-4">
                       {fact.label === "Company" ? (
