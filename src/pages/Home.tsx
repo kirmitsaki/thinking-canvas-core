@@ -3,7 +3,7 @@ import { ArrowUpRight, MapPin, Laptop, Handshake } from "lucide-react";
 import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
-import { CardBody } from "@/components/portfolio/project-grid";
+import { CardBody, CardLogo } from "@/components/portfolio/project-grid";
 import { DarkCard } from "@/components/portfolio/dark-card";
 import { ContactLink } from "@/components/portfolio/shell";
 
@@ -86,7 +86,8 @@ export default function Home() {
             .map((project) => {
               const cardClass = "editorial-card case-study-card group block overflow-hidden";
               const media = (
-                <div className="case-study-card-media aspect-[16/10] overflow-hidden bg-muted">
+                <div className="case-study-card-media relative aspect-[16/10] overflow-hidden bg-muted">
+                  <CardLogo project={project} />
                   {project.heroImage ? (
                     <img
                       src={projectImage(project.heroImage).url}

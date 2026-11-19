@@ -7,17 +7,24 @@ export function cardYears(dates: string) {
   return dates.replace(/\b[A-Za-z]+\s+(?=\d{4})/g, "");
 }
 
+export function CardLogo({ project }: { project: Project }) {
+  if (!project.logo) return null;
+  const logo = projectImage(project.logo);
+  return (
+    <img
+      src={logo.url}
+      alt={logo.alt}
+      loading="lazy"
+      className="card-logo absolute right-3 top-3 z-10 size-10 shrink-0 rounded-full object-cover md:right-5"
+    />
+  );
+}
+
 export function CardBody({ project }: { project: Project }) {
-  const logo = project.logo ? projectImage(project.logo) : undefined;
   return (
     <div className="px-6 pb-6 pt-4 md:px-8 md:pb-8 md:pt-5">
       <div className="flex items-center justify-between gap-4">
-        <div className="flex min-w-0 items-center gap-2">
-          {logo ? (
-            <img src={logo.url} alt={logo.alt} className="size-10 shrink-0 rounded-full object-cover" loading="lazy" />
-          ) : null}
-          <p className="card-company">{project.name}</p>
-        </div>
+        <p className="card-company min-w-0">{project.name}</p>
         <span className="card-years">{cardYears(project.dates)}</span>
       </div>
       {project.cardTitle ? <h2 className="mt-6 card-subtitle">{project.cardTitle}</h2> : null}
@@ -32,7 +39,8 @@ export function ProjectCard({ project, horizontal = false }: { project: Project;
       to={project.linkTo ?? `/work/${project.slug}`}
       className={`editorial-card case-study-card group min-w-0 overflow-hidden${horizontal ? " case-study-card--horizontal" : " block"}${project.slug === "meliniki" ? " artwork-card" : ""}`}
     >
-      <div className={`case-study-card-media overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
+      <div className={`case-study-card-media relative overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
+        <CardLogo project={project} />
         {image ? (
           <img
             src={image.url}
