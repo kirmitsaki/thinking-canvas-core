@@ -71,6 +71,23 @@ export default function About() {
             <span aria-hidden="true" className="about-dragon">
               <span className="about-dragon__float">
                 <DragonArt />
+                <span className="dragon-bubble">
+                  <span className="dragon-bubble__text">hssss</span>
+                  <svg
+                    className="dragon-bubble__tail"
+                    viewBox="0 0 24 20"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M2 0 L 6 19 L 22 0"
+                      fill="var(--card)"
+                      stroke="var(--ink)"
+                      strokeWidth="2"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </span>
             </span>
           </section>
