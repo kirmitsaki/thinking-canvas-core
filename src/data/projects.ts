@@ -9,7 +9,9 @@ import originLawyers from '@/assets/origin-lawyers.webp';
 import originMarketInfrastructure from '@/assets/origin-market-infrastructure.webp';
 import scwIdentity from '@/assets/scw-product-design-identity.webp';
 import scwIdentityHeader from '@/assets/scw-identity-header.webp';
-import cybermonPoster from '@/assets/cybermon/cybermon-2026-poster.webp';
+import scwIdentityHeaderAsset from '@/assets/scw-identity-header.webp.asset.json';
+import cybermonSnippet from '@/assets/cybermon-snippet.webp';
+import cybermonSnippetAsset from '@/assets/cybermon-snippet.webp.asset.json';
 import scwWanda from '@/assets/scw-wanda-cover.webp';
 import scwButtons from '@/assets/scw-button-guidelines.webp';
 import scwThemes from '@/assets/scw-button-themes.webp';
@@ -25,7 +27,9 @@ import originMatrixSearch from '@/assets/origin-funding-matrix-search.webp';
 import originMatrix from '@/assets/origin-funding-matrix.webp';
 import originHeader from '@/assets/origin-header.webp';
 import originSampleWork from '@/assets/origin-sample-work.webp';
+import originSampleWorkAsset from '@/assets/origin-sample-work.webp.asset.json';
 import originMorpho from '@/assets/origin-morpho.webp';
+import originMorphoAsset from '@/assets/origin-morpho.webp.asset.json';
 import originOutcome from '@/assets/origin-outcome.webp';
 import mendeleyHeader from '@/assets/mendeley-header.webp';
 import mendeleyLibrary from '@/assets/mendeley-library.webp';
@@ -39,6 +43,8 @@ import mendeleyReaderSnippetAsset from '@/assets/mendeley-reader-snippet.webp.as
 import mendeleyCitationSnippetAsset from '@/assets/mendeley-citation-snippet.webp.asset.json';
 import mendeleyOutcome from '@/assets/mendeley-outcome.webp';
 import mendeleyPatternLibrary from '@/assets/mendeley-pattern-library.webp';
+import mendeleyDesignSystemSnippet from '@/assets/mendeley-design-system-snippet.webp';
+import mendeleyDesignSystemSnippetAsset from '@/assets/mendeley-design-system-snippet.webp.asset.json';
 import mendeleySymbolsComponents from '@/assets/mendeley-symbols-components.webp';
 import mendeleyResearch1 from '@/assets/mendeley-research-1.webp';
 import mendeleyResearch2 from '@/assets/mendeley-research-2.webp';
@@ -160,6 +166,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'mendeley-library-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
   'mendeley-reader-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
   'mendeley-citation-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
+  'mendeley-design-system-snippet': { url: isLocalHost() ? mendeleyDesignSystemSnippet : mendeleyDesignSystemSnippetAsset.url, alt: 'Reference Manager 2.0 design system board with type scale, text styles, colours, button variants and model containers' },
   'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-audience-map': { url: originAudienceMap, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
@@ -170,8 +177,8 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-lawyers': { url: originLawyers, alt: 'Lawyers scales icon' },
   'origin-market-infrastructure': { url: originMarketInfrastructure, alt: 'Market infrastructure participants icon' },
   'scw-identity': { url: scwIdentity, alt: 'Secure Code Warrior product design identity infographic, from visual foundations and interface examples to character artwork' },
-  'scw-identity-header': { url: scwIdentityHeader, alt: 'Secure Code Warrior character concept with colour and meaning notes: shield, gold, light, wings, robot, cyber, code' },
-  'cybermon-poster': { url: cybermonPoster, alt: 'Cybermon 2026 campaign poster with the raccoon Cybermon in a glowing neon portal' },
+  'scw-identity-header': { url: isLocalHost() ? scwIdentityHeader : scwIdentityHeaderAsset.url, alt: 'Secure Code Warrior character concept with colour and meaning notes: shield, gold, light, wings, robot, cyber, code' },
+  'cybermon-snippet': { url: isLocalHost() ? cybermonSnippet : cybermonSnippetAsset.url, alt: 'Cybermon 2026 crest with the raccoon, fairy, owl and serpent creatures around the Secure Code Warrior shield' },
   'scw-wanda': { url: scwWanda, alt: 'Wanda design library cover in Figma, with foundations, core components and typography styles' },
   'scw-buttons': { url: scwButtons, alt: 'Wanda button components with variants, interaction states, design notes and warning-button guidance' },
   'scw-themes': { url: scwThemes, alt: 'Wanda contained, outlined and text button variants in dark and light themes' },
@@ -233,9 +240,9 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-funding-matrix-saved_searches': { url: originMatrixSaved, alt: 'Funding Matrix saved-search controls and collapsed search parameters' },
   'origin-funding-matrix-search': { url: originMatrixSearch, alt: 'Old and redesigned Funding Matrix search interfaces' },
   'origin-funding-matrix': { url: originMatrix, alt: 'Old and redesigned Funding Matrix data grids' },
-  'origin-sample-work': { url: originSampleWork, alt: 'Origin product screens: DCM dashboard, curve analysis, pricing levels and trade blotter' },
+  'origin-sample-work': { url: isLocalHost() ? originSampleWork : originSampleWorkAsset.url, alt: 'Origin product screens: DCM dashboard, curve analysis, pricing levels and trade blotter' },
   'origin-header': { url: originHeader, alt: 'Origin Markets product screens across pricing, deal and document views' },
-  'origin-morpho': { url: originMorpho, alt: 'Morpho design system board showing components, colour palette, typography and patterns' },
+  'origin-morpho': { url: isLocalHost() ? originMorpho : originMorphoAsset.url, alt: 'Morpho design system board showing components, colour palette, typography and patterns' },
   'origin-outcome': { url: originOutcome, alt: 'GlobalCapital Bond Awards winner announcements for Origin' },
   'mendeley-header': { url: mendeleyHeader, alt: 'Mendeley Reference Manager across Library, Reader and reference detail views' },
   'mendeley-library': { url: mendeleyLibrary, alt: 'Mendeley Library screens showing reference lists, drag and drop, and the metadata panel' },

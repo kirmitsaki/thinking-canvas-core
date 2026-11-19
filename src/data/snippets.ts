@@ -26,7 +26,7 @@ export const snippets: Snippet[] = [
   },
   {
     to: "/work/secure-code-warrior/cybermon",
-    image: "cybermon-poster",
+    image: "cybermon-snippet",
     project: "Secure Code Warrior",
     name: "Cybermon",
     description: "Three years of gamified secure coding tournaments, 2024 to 2026.",
@@ -47,7 +47,7 @@ export const snippets: Snippet[] = [
   },
   {
     to: "/work/mendeley#design-system",
-    image: "mendeley-pattern-library",
+    image: "mendeley-design-system-snippet",
     project: "Mendeley",
     name: "Design system",
     description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
