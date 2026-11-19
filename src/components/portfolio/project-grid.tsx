@@ -1,16 +1,26 @@
 import { SnippetLink } from './snippet-context';
-import { projectImage, projectWorkAreas, type Project } from "@/data/projects";
+import { projectImage, type Project } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
-import { ProjectContext } from "./project-context";
 
-function CardBody({ project, link }: { project: Project; link: boolean }) {
+function cardYears(dates: string) {
+  return dates.replace(/\b[A-Za-z]+\s+(?=\d{4})/g, "");
+}
+
+function CardBody({ project }: { project: Project }) {
+  const logo = project.logo ? projectImage(project.logo) : undefined;
   return (
     <div className="p-6 md:p-8">
-      <p className="caption">{project.dates}</p>
-      <h2 className="mt-3 card-title">{project.name}</h2>
-      <ProjectContext industry={project.industry} field={project.field} className="mt-4" />
-      {link ? <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p> : null}
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex min-w-0 items-center gap-3">
+          {logo ? (
+            <img src={logo.url} alt={logo.alt} className="size-10 shrink-0 rounded-full object-cover" loading="lazy" />
+          ) : null}
+          <p className="card-company">{project.name}</p>
+        </div>
+        <span className="card-years">{cardYears(project.dates)}</span>
+      </div>
+      <h2 className="mt-4 card-subtitle">{project.cardTitle ?? project.name}</h2>
     </div>
   );
 }
@@ -46,7 +56,7 @@ export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?
                 />
               )}
             </div>
-            <CardBody project={project} link />
+            <CardBody project={project} />
           </SnippetLink>
         );
       })}

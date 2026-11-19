@@ -111,8 +111,25 @@ import corEducation from '@/assets/corresilience-work_5-Education.webp';
 import corAnalysis from '@/assets/corresilience-work_6-Results_Analysis.webp';
 import corVision from '@/assets/corresilience-work_7-Vision.webp';
 import corBadges from '@/assets/corresilience-work_8-Badges.webp';
+import elementalConceptLogo from '@/assets/elemental-concept-logo.webp';
+import mendeleyCardLogo from '@/assets/mendeley-logo.webp';
+import migreatCardLogo from '@/assets/migreat-card-logo.webp';
+import originCardLogo from '@/assets/origin-logo.webp';
+import pawsquadLogo from '@/assets/pawsquad-logo.webp';
+import elementalConceptLogoAsset from '@/assets/elemental-concept-logo.webp.asset.json';
+import mendeleyCardLogoAsset from '@/assets/mendeley-logo.webp.asset.json';
+import migreatCardLogoAsset from '@/assets/migreat-card-logo.webp.asset.json';
+import originCardLogoAsset from '@/assets/origin-logo.webp.asset.json';
+import pawsquadLogoAsset from '@/assets/pawsquad-logo.webp.asset.json';
+
+const isLocalHost = () => ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io');
 
 const projectImages: Record<string, { url: string; alt: string }> = {
+  'logo-elemental-concept': { url: isLocalHost() ? elementalConceptLogo : elementalConceptLogoAsset.url, alt: 'Elemental Concept logo' },
+  'logo-mendeley': { url: isLocalHost() ? mendeleyCardLogo : mendeleyCardLogoAsset.url, alt: 'Mendeley logo' },
+  'logo-migreat': { url: isLocalHost() ? migreatCardLogo : migreatCardLogoAsset.url, alt: 'Migreat logo' },
+  'logo-origin': { url: isLocalHost() ? originCardLogo : originCardLogoAsset.url, alt: 'Origin Markets logo' },
+  'logo-pawsquad': { url: isLocalHost() ? pawsquadLogo : pawsquadLogoAsset.url, alt: 'PawSquad logo' },
   'mendeley-library-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
   'mendeley-reader-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
   'mendeley-citation-snippet': { url: ['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('github.io') ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
@@ -235,6 +252,7 @@ export type Project = {
   industry: string;
   field: string;
   name: string; sector: string; title: string; summary: string; role: string;
+  logo?: string; cardTitle?: string;
   intro: string; heroImage?: string; heroFit?: 'tile' | 'contain'; outcomeImage?: string; outcomeCaption?: string;
   presentation?: 'compact';
   sectionNavigation?: { label: string; id: string }[];
@@ -271,6 +289,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'origin-markets', name: 'Origin Markets', sector: 'Fintech · Debt capital markets', industry: 'Financial Technologies', field: 'Debt capital markets', dates: 'Jan 2020 – Jan 2023', tags: ['Research', 'Product Design', 'Design Systems', 'Vision', 'Accessibility'],
+    logo: 'logo-origin', cardTitle: 'Debt Capital Markets Issuance Platform',
     title: 'Origin Markets',
     summary: 'Making complex financial workflows work for global banks and borrowers.',
     role: 'First in-house designer · Research · Product design · Design system · Product revamp',
@@ -480,6 +499,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'mendeley', name: 'Mendeley (Elsevier)', sector: 'Research · Reference management', industry: 'Academic research', field: 'Reference management', dates: 'Jan 2019 – Jan 2020', tags: ['Research', 'Product Design', 'Design Systems', 'Accessibility'],
+    logo: 'logo-mendeley', cardTitle: 'Mendeley Reference Manager',
     title: 'Mendeley (Elsevier)',
     summary: 'Improving research workflows across a large-scale academic reference management product.',
     role: 'Senior UX/UI Designer',
@@ -504,6 +524,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'aladdin', name: 'Aladdin', sector: 'Digital healthcare · Android & iOS · via Elemental Concept', industry: 'Healthcare', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Vision'],
+    logo: 'logo-elemental-concept', cardTitle: 'Healthcare Management Platform',
     title: 'Aladdin',
     summary: 'Bringing health records, appointments and preventative care together, designed through Elemental Concept.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
@@ -533,6 +554,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'corresilience', name: 'CorResilience', sector: 'Enterprise wellbeing · Android & iOS · via Elemental Concept', industry: 'Wellbeing', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Prototyping'],
+    logo: 'logo-elemental-concept', cardTitle: 'Employee Resilience & Wellbeing App',
     title: 'CorResilience',
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
@@ -568,6 +590,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'pawsquad', name: 'PawSquad', sector: 'Pet healthcare · Web & app', industry: 'Pet healthcare', field: 'Web & mobile apps', dates: 'Nov 2015 – Jun 2017', tags: ['Research', 'Product Design', 'Brand', 'Prototyping'],
+    logo: 'logo-pawsquad', cardTitle: 'UK’s first online veterinary consultation service',
     title: 'PawSquad', summary: 'Bringing veterinary care to pet owners, with trusted booking experiences and tools for vets.',
     role: 'Web & app experience · Research · Brand & visual direction',
     intro: 'The first UK veterinary platform combining digital consultations and home visit services. The idea was simple: bring the vet to the pet owner, digitally or physically, rather than the other way around. The platform served both sides of that relationship, pet owners booking care and vets managing their work.',
@@ -600,6 +623,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'migreat', name: 'Migreat', sector: 'UX engineering · Prototyping', industry: 'Legal Tech', field: 'Web platforms', dates: 'Jan 2014 – Sep 2015', tags: ['Research', 'Product Design', 'Brand', 'Prototyping', 'Front-end Development'],
+    logo: 'logo-migreat', cardTitle: 'Visa & Immigration Services Platform',
     title: 'Migreat', summary: 'Clear immigration guidance, personalised visa checklists and community support, designed and built from the ground up.',
     role: 'UX Engineer · Design & front-end development',
     intro: 'An online platform dedicated to simplifying immigration for people moving to or within the UK. It offered legal guidance, personalised advice, and community resources to help migrants navigate a process that is genuinely complex and often hostile to the people going through it.',

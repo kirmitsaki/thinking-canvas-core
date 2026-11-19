@@ -355,6 +355,37 @@
     }
   }
 
+  .card-company {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--foreground);
+  }
+
+  .card-years {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+  }
+
+  .card-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  @media (min-width: 768px) {
+    .card-subtitle {
+      font-size: 1.5rem;
+    }
+  }
+
   .subsection-title {
     font-family: var(--font-serif);
     font-size: 1.5rem;
