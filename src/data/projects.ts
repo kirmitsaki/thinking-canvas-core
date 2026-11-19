@@ -293,7 +293,7 @@ export const projects: Project[] = [
     title: 'Origin Markets',
     summary: 'Making complex financial workflows work for global banks and borrowers.',
     role: 'First in-house designer · Research · Product design · Design system · Product revamp',
-    intro: 'The first front-to-back digital platform aiming to simplify the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement. I joined as the first in-house designer. No design function, no system, no process. An ambitious product that had been growing faster than its foundations.',
+    intro: 'Origin Markets is a front-to-back digital platform bringing simplicity to the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.',
     heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
     ndaNotice: true,
     sections: [
@@ -558,7 +558,7 @@ export const projects: Project[] = [
     title: 'CorResilience',
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
-    intro: 'A personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
+    intro: 'CorResilience is a personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
     heroImage: 'cor-header', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Challenge', title: 'The challenge', paragraphs: ['Habit formation apps have a well-documented problem: most users abandon them within 30 days of download. Forrester Research found that while smartphone users have an average of 24 apps installed, they spend over 80% of their in-app time in just five. Getting into those five is the real design problem.', 'CorResilience needed to be genuinely useful from day one, not just downloaded and forgotten. The people who would benefit most from a personal resilience app are often the ones least motivated to engage with it consistently. That meant the onboarding experience, the daily interactions, and the feedback loops all had to work harder than usual.'] },
@@ -593,7 +593,7 @@ export const projects: Project[] = [
     logo: 'logo-pawsquad', cardTitle: 'UK’s first online veterinary consultation service',
     title: 'PawSquad', summary: 'Bringing veterinary care to pet owners, with trusted booking experiences and tools for vets.',
     role: 'Web & app experience · Research · Brand & visual direction',
-    intro: 'The first UK veterinary platform combining digital consultations and home visit services. The idea was simple: bring the vet to the pet owner, digitally or physically, rather than the other way around. The platform served both sides of that relationship, pet owners booking care and vets managing their work.',
+    intro: 'PawSquad’s idea was simple: bring the vet to the pet owner, digitally or physically, rather than the other way around. The platform served both sides of that relationship, pet owners booking care and vets managing their work.',
     heroImage: 'pawsquad-header', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Challenge', title: 'The challenge', paragraphs: ['The traditional vet relationship is built around the practice, not the pet owner. Vets manage their own supplier relationships, which takes time away from patient care. Pet owners juggle insurers, specialists, and wellbeing services independently. The data sits in multiple disconnected places.', 'PawSquad’s proposition was to put the pet owner at the centre and give vets the tools to do their job without the administrative overhead. The design challenge was making both sides trust a platform they hadn’t needed before.'] },

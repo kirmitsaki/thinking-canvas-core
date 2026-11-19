@@ -44,7 +44,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           trailing={<p className="label-quiet">{cardYears(project.dates)}</p>}
         />
         {(() => {
-          const paragraphs = introParagraphs ?? project.intro.split(/(?<=\.)\s+/);
+          const paragraphs = introParagraphs ?? [project.intro];
           const baseFacts = (facts ?? [
             { label: 'Role', value: project.role },
             { label: 'Tasks', value: project.tags.join(', ') },
@@ -57,7 +57,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             <div className="case-study-header-copy mt-8">
               <div className="min-w-0">
                 <h1 className="max-w-[720px] page-title">{project.cardTitle ?? project.title}</h1>
-                <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className={index === 0 ? "standfirst" : "body-copy"}>{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
+                <div className="mt-7 max-w-[640px] space-y-5">{paragraphs.map((text, index) => <p key={index} className="body-copy">{typeof text === "string" ? editorialEmphasis(text) : text}</p>)}</div>
               </div>
               <dl className="case-study-facts editorial-card min-w-0 p-6 md:p-8">{headerFacts.map((fact, factIndex) => {
                 const items = fact.label === "Tasks" ? fact.value.split(/,\s*/) : null;
