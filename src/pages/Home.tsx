@@ -3,7 +3,6 @@ import { ArrowUpRight, MapPin, Laptop, Handshake } from "lucide-react";
 import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
-import { ComingSoonHint } from "@/components/portfolio/coming-soon-media";
 import { CardBody } from "@/components/portfolio/project-grid";
 import { ContactLink } from "@/components/portfolio/shell";
 
@@ -80,42 +79,39 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.slice(0, 3).map((project, index) => {
-            const comingSoon = Boolean(project.comingSoon);
-            const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
-            const media = (
-              <div
-                className={
-                  index === 0 ? "aspect-[2/1] md:aspect-[3/1]" : "aspect-[2/1] overflow-hidden bg-muted"
-                }
-              >
-                {project.heroImage ? (
-                  <img
-                    src={projectImage(project.heroImage).url}
-                    alt={projectImage(project.heroImage).alt}
-                    className="block h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <VisualPlaceholder
-                    title={`${project.name} · product screens`}
-                    className="h-full w-full"
-                  />
-                )}
-              </div>
-            );
-            if (comingSoon) {
-              return (
-                <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
+          {projects
+            .filter((project) => !project.comingSoon)
+            .slice(0, 3)
+            .map((project, index) => {
+              const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
+              const media = (
+                <div
+                  className={
+                    index === 0 ? "aspect-[2/1] md:aspect-[3/1]" : "aspect-[2/1] overflow-hidden bg-muted"
+                  }
+                >
+                  {project.heroImage ? (
+                    <img
+                      src={projectImage(project.heroImage).url}
+                      alt={projectImage(project.heroImage).alt}
+                      className="block h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <VisualPlaceholder
+                      title={`${project.name} · product screens`}
+                      className="h-full w-full"
+                    />
+                  )}
+                </div>
               );
-            }
-            return (
-              <Link key={project.slug} to={`/work/${project.slug}`} className={cardClass}>
-                {media}
-                <CardBody project={project} />
-              </Link>
-            );
-          })}
+              return (
+                <Link key={project.slug} to={`/work/${project.slug}`} className={cardClass}>
+                  {media}
+                  <CardBody project={project} />
+                </Link>
+              );
+            })}
         </div>
       </section>
 
