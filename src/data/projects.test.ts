@@ -163,7 +163,7 @@ describe('case-study pagination titles', () => {
   });
   it('shows Mendeley Reference Manager, not Mendeley (Elsevier), next to Origin', () => {
     const { previous, next } = adjacentProjects('origin-markets');
-    assert.equal(caseStudyTitle(previous!), 'From learning platform to enterprise developer risk platform.');
+    assert.equal(caseStudyTitle(previous!), 'An AI-driven developer risk platform serving enterprise teams across EMEA and APAC.');
     assert.equal(caseStudyTitle(next!), 'Mendeley Reference Manager');
     assert.notEqual(caseStudyTitle(next!), 'Mendeley (Elsevier)');
   });

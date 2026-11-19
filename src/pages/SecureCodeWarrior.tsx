@@ -39,7 +39,6 @@ export default function SecureCodeWarrior() {
   const open = useSnippetModal();
   const overview = {
     ...project,
-    title: 'An AI-driven developer risk platform serving enterprise teams across EMEA and APAC.',
     ndaNotice: false,
     heroImage: undefined,
     reflection: undefined,

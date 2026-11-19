@@ -303,7 +303,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'secure-code-warrior', name: 'Secure Code Warrior', sector: 'Cybersecurity · Enterprise', industry: 'Cybersecurity', field: 'Enterprise software', dates: 'Jan 2023 – Oct 2026', tags: ['Product Design', 'Product Identity', 'Vision', 'AI-assisted Prototyping', 'Design Systems', 'Accessibility'],
-    title: 'From learning platform to enterprise developer risk platform.',
+    title: 'An AI-driven developer risk platform serving enterprise teams across EMEA and APAC.',
     summary: 'Transforming an enterprise security platform and introducing better design infrastructure.',
     role: 'Product direction · Design systems · Prototyping',
     intro: 'Connecting a broader product direction with the systems, standards and practical design work needed to make it real.',
