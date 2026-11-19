@@ -27,9 +27,9 @@ export default function WorkPage() {
             const rest = items.slice(2);
             return (
               <>
-                <div className="grid gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                   {featured.map((project) => (
-                    <ProjectCard key={project.slug} project={project} horizontal />
+                    <ProjectCard key={project.slug} project={project} />
                   ))}
                 </div>
                 <div className="mt-6">
