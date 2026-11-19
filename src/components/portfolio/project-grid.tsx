@@ -15,7 +15,7 @@ export function CardLogo({ project }: { project: Project }) {
       src={logo.url}
       alt={logo.alt}
       loading="lazy"
-      className="card-logo absolute right-3 top-3 z-10 size-10 shrink-0 rounded-full object-cover md:right-5"
+      className="card-logo absolute right-3 top-3 z-10 size-12 shrink-0 rounded-full object-cover md:right-5 md:size-16"
     />
   );
 }
