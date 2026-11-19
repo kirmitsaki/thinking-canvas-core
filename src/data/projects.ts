@@ -725,6 +725,10 @@ export function getProject(slug: Project['slug']): Project {
   return project;
 }
 
+export function caseStudyTitle(project: Project) {
+  return project.cardTitle ?? project.title;
+}
+
 export function caseStudyMeta(project: Project) {
   return pageMeta(`${project.name} · Case Study`, project.summary, 'article');
 }

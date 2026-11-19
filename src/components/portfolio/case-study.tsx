@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { type Project, projectImage } from "@/data/projects";
+import { caseStudyTitle, type Project, projectImage } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ProjectPagination } from "./project-pagination";
 import { SectionNavigation } from "./section-navigation";
@@ -40,7 +40,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       >
         {noticeNode && <div className="mb-6">{noticeNode}</div>}
         <PortfolioBreadcrumb
-          items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
+          items={[{ label: "Portfolio", to: "/work" }, { label: caseStudyTitle(project) }]}
           trailing={<p className="label-quiet">{cardYears(project.dates)}</p>}
         />
         {(() => {

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { getProject, pageMeta, projectImage } from "@/data/projects";
+import { caseStudyTitle, getProject, pageMeta, projectImage } from "@/data/projects";
 import { NdaNotice } from "@/components/portfolio/nda-notice";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
@@ -28,7 +28,7 @@ export default function ProductDesignIdentity() {
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Secure Code Warrior", to: "/work/secure-code-warrior" },
+            { label: caseStudyTitle(getProject("secure-code-warrior")), to: "/work/secure-code-warrior" },
             { label: "Product design identity" },
           ]}
           trailing={<p className="label-quiet">{getProject("secure-code-warrior").dates}</p>}

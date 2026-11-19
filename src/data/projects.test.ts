@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest';
 import { strict as assert } from 'node:assert';
-import { projects, projectsByYear, portfolioProjects, freelanceProjects, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject } from './projects';
+import { projects, projectsByYear, portfolioProjects, freelanceProjects, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject, caseStudyTitle } from './projects';
 
 describe('portfolio project dates from Rachel’s CV and brief', () => {
   const dates = [
@@ -129,6 +129,23 @@ describe('coming-soon case studies', () => {
   });
   it('keeps every other case study open', () => {
     assert.deepEqual(projects.filter(project => project.comingSoon).map(project => project.slug), ['secure-code-warrior']);
+  });
+});
+
+describe('case-study breadcrumb titles', () => {
+  it('uses the case-study title, not the company name', () => {
+    assert.equal(caseStudyTitle(getProject('origin-markets')), 'Debt Capital Markets Issuance Platform');
+    assert.equal(caseStudyTitle(getProject('mendeley')), 'Mendeley Reference Manager');
+  });
+  it('never shows the company name where a case-study title exists', () => {
+    for (const project of projects.filter(item => item.cardTitle)) {
+      assert.equal(caseStudyTitle(project), project.cardTitle);
+      assert.notEqual(caseStudyTitle(project), project.name);
+    }
+  });
+  it('falls back to the page title when there is no card title', () => {
+    assert.equal(caseStudyTitle(getProject('mds-quostar')), 'MDS Quostar');
+    assert.equal(caseStudyTitle(getProject('meliniki')), 'Meliniki');
   });
 });
 

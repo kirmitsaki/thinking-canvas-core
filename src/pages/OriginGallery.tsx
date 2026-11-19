@@ -2,7 +2,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { ArrowLeft } from 'lucide-react';
 import { PortfolioBreadcrumb } from '@/components/portfolio/breadcrumb';
-import { getProject, pageMeta } from '@/data/projects';
+import { caseStudyTitle, getProject, pageMeta } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
@@ -48,7 +48,7 @@ export default function OriginGallery() {
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
     <header className="pb-12">
-      <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: 'Origin Markets', to: '/work/origin-markets' }, { label: 'Sample work' }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
+      <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: caseStudyTitle(getProject('origin-markets')), to: '/work/origin-markets' }, { label: 'Sample work' }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
       <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
       <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
     </header>

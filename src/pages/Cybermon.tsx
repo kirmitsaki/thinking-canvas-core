@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowDown, Award, Crown, Gift, Medal, Star, Trophy } from "l
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { SectionNavigation } from "@/components/portfolio/section-navigation";
-import { getProject, pageMeta } from "@/data/projects";
+import { caseStudyTitle, getProject, pageMeta } from "@/data/projects";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
@@ -590,7 +590,7 @@ export default function Cybermon() {
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Secure Code Warrior", to: "/work/secure-code-warrior" },
+            { label: caseStudyTitle(getProject("secure-code-warrior")), to: "/work/secure-code-warrior" },
             { label: "Cybermon" },
           ]}
           trailing={<p className="label-quiet">{getProject("secure-code-warrior").dates}</p>}

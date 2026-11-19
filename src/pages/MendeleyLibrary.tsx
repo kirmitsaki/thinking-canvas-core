@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { pageMeta, getProject } from "@/data/projects";
+import { caseStudyTitle, pageMeta, getProject } from "@/data/projects";
 import { librarySections } from "@/data/mendeley-library";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
 import { SectionDivider } from "@/components/portfolio/section-divider";
@@ -32,7 +32,7 @@ export default function MendeleyLibrary({ embedded = false }: { embedded?: boole
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },
-            { label: "Mendeley (Elsevier)", to: "/work/mendeley" },
+            { label: caseStudyTitle(getProject("mendeley")), to: "/work/mendeley" },
             { label: "The Library" },
           ]}
           trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
