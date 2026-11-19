@@ -81,7 +81,7 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-2">
           {projects
             .filter((project) => !project.comingSoon)
-            .slice(0, 3)
+            .slice(0, 2)
             .map((project, index) => {
               const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
               const media = (
