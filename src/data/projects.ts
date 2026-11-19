@@ -13,6 +13,7 @@ import scwIdentityHeaderAsset from '@/assets/scw-identity-header.webp.asset.json
 import cybermonSnippet from '@/assets/cybermon-snippet.webp';
 import cybermonSnippetAsset from '@/assets/cybermon-snippet.webp.asset.json';
 import scwWanda from '@/assets/scw-wanda-cover.webp';
+import scwAiWorkflows from '@/assets/scw-ai-workflows.webp';
 import scwButtons from '@/assets/scw-button-guidelines.webp';
 import scwThemes from '@/assets/scw-button-themes.webp';
 import scwLibrary from '@/assets/scw-library-themes.webp';
@@ -180,6 +181,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'scw-identity-header': { url: isLocalHost() ? scwIdentityHeader : scwIdentityHeaderAsset.url, alt: 'Secure Code Warrior character concept with colour and meaning notes: shield, gold, light, wings, robot, cyber, code' },
   'cybermon-snippet': { url: isLocalHost() ? cybermonSnippet : cybermonSnippetAsset.url, alt: 'Cybermon 2026 crest with the raccoon, fairy, owl and serpent creatures around the Secure Code Warrior shield' },
   'scw-wanda': { url: scwWanda, alt: 'Wanda design library cover in Figma, with foundations, core components and typography styles' },
+  'scw-ai-workflows': { url: scwAiWorkflows, alt: 'How AI changed the workflow: design system moved from Figma and Storybook to designing in code with Claude Code; prototyping moved from Figma to Lovable and Claude Code on the same design system; research and feedback moved from Slack, Google Docs and other tools to Salesforce MCP' },
   'scw-buttons': { url: scwButtons, alt: 'Wanda button components with variants, interaction states, design notes and warning-button guidance' },
   'scw-themes': { url: scwThemes, alt: 'Wanda contained, outlined and text button variants in dark and light themes' },
   'scw-library': { url: scwLibrary, alt: 'Wanda library in Figma showing dark and light button examples alongside foundations, components and text styles' },

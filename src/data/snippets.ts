@@ -1,6 +1,6 @@
 export type Snippet = {
   to: string;
-  image: string;
+  image?: string;
   project: string;
   name: string;
   description: string;
@@ -8,21 +8,43 @@ export type Snippet = {
 };
 
 export const snippets: Snippet[] = [
-  // Hidden Nov 2026 (kept for later): SCW design system snippet.
-  // {
-  //   to: "/work/secure-code-warrior#design-system",
-  //   image: "scw-wanda",
-  //   project: "Secure Code Warrior",
-  //   name: "Design system",
-  //   description: "Wanda, the platform’s first design system, from shared file to living system.",
-  //   disabled: true,
-  // },
+  // SCW case study shows every card below; only the enabled ones appear in Portfolio snippets.
+  {
+    to: "/work/secure-code-warrior#product-vision",
+    project: "Secure Code Warrior",
+    name: "Product vision",
+    description: "Repositioning the company from a learning platform to a holistic developer risk solution.",
+    disabled: true,
+  },
   {
     to: "/work/secure-code-warrior/product-design-identity",
     image: "scw-identity-header",
     project: "Secure Code Warrior",
     name: "Product design identity",
     description: "Colour, interface examples and character artwork for the new product vision.",
+  },
+  {
+    to: "/work/secure-code-warrior#design-system",
+    image: "scw-wanda",
+    project: "Secure Code Warrior",
+    name: "Design system",
+    description: "Wanda, the platform’s first design system, from shared file to living system.",
+    disabled: true,
+  },
+  {
+    to: "/work/secure-code-warrior#ai-workflows",
+    image: "scw-ai-workflows",
+    project: "Secure Code Warrior",
+    name: "AI workflows",
+    description: "AI-enabled prototyping that cut idea-to-validated-concept time to under four weeks.",
+    disabled: true,
+  },
+  {
+    to: "/work/secure-code-warrior#products",
+    project: "Secure Code Warrior",
+    name: "Products",
+    description: "Developer Risk Management, Learning Platform, Trust Agent, Reporting and Content.",
+    disabled: true,
   },
   {
     to: "/work/secure-code-warrior/cybermon",

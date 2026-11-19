@@ -46,6 +46,7 @@ export function SectionNavigation({
       window.removeEventListener("resize", update);
     };
   }, [items]);
+  if (!items.length) return null;
   return (
     <nav
       aria-label="Case study sections"
