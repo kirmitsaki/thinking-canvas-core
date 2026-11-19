@@ -44,3 +44,13 @@ export function FooterDragon() {
     </span>
   );
 }
+
+export function ReflectionDragon() {
+  return (
+    <span aria-hidden="true" className="reflection-dragon">
+      <span className="reflection-dragon__fly">
+        <DragonArt />
+      </span>
+    </span>
+  );
+}

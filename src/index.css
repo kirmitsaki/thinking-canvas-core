@@ -637,6 +637,34 @@
     }
   }
 
+  /* Reflection card: a small dragon drifting up and down in the top-right corner */
+  .reflection-dragon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 52px;
+    height: 28px;
+    pointer-events: none;
+    color: var(--gold);
+  }
+  .reflection-dragon__fly {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: reflectionDragonFly 4.6s ease-in-out infinite;
+  }
+  .reflection-dragon__fly > svg {
+    transform: scaleX(-1);
+  }
+  @media (min-width: 768px) {
+    .reflection-dragon {
+      top: 3rem;
+      right: 3rem;
+      width: 72px;
+      height: 39px;
+    }
+  }
+
   .portfolio-header {
     border-bottom: 1px solid var(--hairline);
   }
@@ -1144,6 +1172,16 @@
   }
   50% {
     transform: translateY(10px) rotate(1.5deg);
+  }
+}
+
+@keyframes reflectionDragonFly {
+  0%,
+  100% {
+    transform: translateY(-9px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(2deg);
   }
 }
 

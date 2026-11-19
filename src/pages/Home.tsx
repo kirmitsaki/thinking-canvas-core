@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
 import { CardBody } from "@/components/portfolio/project-grid";
+import { DarkCard } from "@/components/portfolio/dark-card";
 import { ContactLink } from "@/components/portfolio/shell";
 
 const meta = pageMeta(
@@ -112,21 +113,24 @@ export default function Home() {
       </section>
 
       <section className="hairline-top py-10 md:py-12">
-        <Link to="/about" className="chocolate-card group relative block p-8 md:p-12">
-          <span
-            className="dark-card-label absolute bottom-8 right-8 text-2xl transition-transform duration-200 ease-out group-hover:translate-x-2 md:bottom-12 md:right-12"
-            aria-hidden="true"
-          >
-            →
-          </span>
-          <p className="label dark-card-label">A little about me</p>
-          <h2 className="mt-4 max-w-[600px] section-title">A designer with a technical foundation.</h2>
-          <p className="mt-6 max-w-[660px] body-copy text-warm-ivory/80">
-            Over a decade in digital product design, with a background in UX engineering and
-            coding. My work spans fintech, cybersecurity and research platforms, alongside product
-            teams, engineers, leadership and customers.
-          </p>
-        </Link>
+        <DarkCard
+          to="/about"
+          label="A little about me"
+          title="A designer with a technical foundation."
+          bodyClassName="max-w-[660px]"
+          trailing={
+            <span
+              className="dark-card-label absolute bottom-8 right-8 text-2xl transition-transform duration-200 ease-out group-hover:translate-x-2 md:bottom-12 md:right-12"
+              aria-hidden="true"
+            >
+              →
+            </span>
+          }
+        >
+          Over a decade in digital product design, with a background in UX engineering and
+          coding. My work spans fintech, cybersecurity and research platforms, alongside product
+          teams, engineers, leadership and customers.
+        </DarkCard>
       </section>
 
       <section className="hairline-top flex flex-wrap items-center justify-between gap-6 py-10 md:py-14">

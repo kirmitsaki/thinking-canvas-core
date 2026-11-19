@@ -11,6 +11,8 @@ import { NdaNotice } from "./nda-notice";
 import { cardYears } from "./project-grid";
 import { CaseStudySnippetCard } from "./snippet-card";
 import { editorialEmphasis } from "./editorial-emphasis";
+import { DarkCard } from "./dark-card";
+import { ReflectionDragon } from "./dragon";
 import { SnippetLink } from './snippet-context';
 import { BackToTop } from "./back-to-top";
 
@@ -373,11 +375,18 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           {project.reflection && (
             <section className="editorial-study-reflection mt-16">
               <SectionDivider />
-              <div className="essay-prose mx-auto mt-10 space-y-6 text-center">
-                {project.reflection.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
-                ))}
-              </div>
+              <DarkCard
+                className="mt-10"
+                label="Looking back"
+                bodyClassName="max-w-[65ch]"
+                trailing={<ReflectionDragon />}
+              >
+                <div className="space-y-5">
+                  {project.reflection.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
+                  ))}
+                </div>
+              </DarkCard>
             </section>
           )}
         </div>
