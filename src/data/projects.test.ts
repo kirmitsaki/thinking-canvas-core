@@ -210,3 +210,17 @@ describe('freelance case-study headers', () => {
     });
   }
 });
+
+describe('case-study headers match their card images', () => {
+  const withCardImages = projects.filter(project => project.cardImage);
+  it('every case study with a card image opens the page with that same image', () => {
+    assert.ok(withCardImages.length >= 9, 'expected the case studies to have card images');
+    for (const project of withCardImages) {
+      assert.equal(
+        project.heroImage,
+        project.cardImage,
+        `${project.slug} page header should be its card image`,
+      );
+    }
+  });
+});

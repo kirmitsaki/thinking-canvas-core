@@ -328,7 +328,7 @@ export const projects: Project[] = [
     summary: 'Making complex financial workflows work for global banks and borrowers.',
     role: 'First in-house designer · Research · Product design · Design system · Product revamp',
     intro: 'Origin Markets is a front-to-back digital platform bringing simplicity to the global debt capital markets. The platform served over 100 borrowers, 20 major investment banks, and nearly 700 professionals across 70 cities, covering the debt issuance lifecycle from pricing to settlement.',
-    heroImage: 'origin-header', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
+    heroImage: 'origin-card', outcomeImage: 'origin-outcome', outcomeCaption: 'GlobalCapital Bond Awards coverage and winner announcements.',
     ndaNotice: true,
     sections: [
       {
@@ -538,7 +538,7 @@ export const projects: Project[] = [
     summary: 'Improving research workflows across a large-scale academic reference management product.',
     role: 'Senior UX/UI Designer',
     intro: "Mendeley Reference Manager (MRM) is Elsevier's replacement for Mendeley Desktop, a widely used reference management tool with a large and loyal academic user base. The platform launched in beta in summer 2019 and reached over 120,000 users while still in beta, with more than a million references and a million annotations created.",
-    heroImage: 'mendeley-header', outcomeImage: 'mendeley-outcome', outcomeCaption: 'Researchers sharing their experience of switching to Mendeley.', evidencePending: false,
+    heroImage: 'mendeley-card', outcomeImage: 'mendeley-outcome', outcomeCaption: 'Researchers sharing their experience of switching to Mendeley.', evidencePending: false,
     sections: [
       { id: 'context', navigationLabel: 'Overview', title: 'Overview', quote: { text: 'Disrupting that without providing something clearly better in return would mean losing them.' }, quoteAfter: 0, paragraphs: ['Migrating an established user base from a product they know well to a new one is one of the hardest design problems there is. Researchers had built their workflows around Mendeley Desktop over years. They had workarounds for its limitations. They had muscle memory for its interactions.', "At the same time, MRM needed to work across platforms, support accessibility requirements, and align with Elsevier's internal product consistency standards. The scope was significant."] },
       { id: 'research', navigationLabel: 'Research', title: 'Research', paragraphs: ['Mendeley had an established research programme with existing usability testing data when I joined. We built on that foundation rather than starting from scratch, maintaining continuous research and testing throughout development rather than treating it as a phase with a start and end date.'], groups: [
@@ -563,7 +563,7 @@ export const projects: Project[] = [
     summary: 'Bringing health records, appointments and preventative care together, designed through Elemental Concept.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
     intro: 'Aladdin started as an idea to prevent diabetes. By the time we finished the first version it had become a full digital healthcare ecosystem, giving users access to their health records, appointments, medication management, and health tracking in one place.',
-    heroImage: 'aladdin-header', evidencePending: false,
+    heroImage: 'aladdin-card', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Overview', title: 'Overview', paragraphs: ['78% of users in our research struggled to manage their medical records across multiple platforms. That number was the brief. Everything else followed from understanding why that number existed.', 'Existing healthcare apps had significant usability problems: complex navigation, poor information architecture, and no central place where a user’s health picture lived in full. The result was that people either gave up on digital health tools entirely or maintained a fragmented collection of apps that didn’t talk to each other.', 'The opportunity was to build something centralised, secure, and genuinely easy to use for people who are not necessarily unwell but want to manage their health proactively.'] },
       { id: 'my-role', navigationLabel: 'My role', title: 'My role', paragraphs: ['While working at Elemental Concept, I was part of the scrum team responsible for strategy, design, and delivery across both Android and iOS. I led the design process, produced all major deliverables, and presented them to the client.', 'Working closely with the Product Owner and developers during sprint cycles meant feedback was immediate and design decisions could be validated quickly before moving forward.'] },
@@ -593,7 +593,7 @@ export const projects: Project[] = [
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
     intro: 'CorResilience is a personal resilience application for enterprise workforces, built on CorPerformance’s decade of experience delivering coached behavioural change programmes across Europe, Asia, and North America. The challenge was translating a proven analogue programme into a digital product that people would actually use consistently.',
-    heroImage: 'cor-header', evidencePending: false,
+    heroImage: 'corresilience-card', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Overview', title: 'Overview', paragraphs: ['Habit formation apps have a well-documented problem: most users abandon them within 30 days of download. Forrester Research found that while smartphone users have an average of 24 apps installed, they spend over 80% of their in-app time in just five. Getting into those five is the real design problem.', 'CorResilience needed to be genuinely useful from day one, not just downloaded and forgotten. The people who would benefit most from a personal resilience app are often the ones least motivated to engage with it consistently. That meant the onboarding experience, the daily interactions, and the feedback loops all had to work harder than usual.'] },
       { id: 'my-role', navigationLabel: 'My role', title: 'My role', paragraphs: ['While working at Elemental Concept, I was part of the scrum team responsible for strategy, design, and delivery across both Android and iOS. I led the design process, produced all major deliverables, and presented them to the client at each sprint.', 'Working closely with the Product Owner and developers throughout gave me immediate feedback and allowed design decisions to be validated before moving forward.'] },
@@ -628,7 +628,7 @@ export const projects: Project[] = [
     title: 'PawSquad', summary: 'Bringing veterinary care to pet owners, with trusted booking experiences and tools for vets.',
     role: 'Web & app experience · Research · Brand & visual direction',
     intro: 'PawSquad’s idea was simple: bring the vet to the pet owner, digitally or physically, rather than the other way around. The platform served both sides of that relationship, pet owners booking care and vets managing their work.',
-    heroImage: 'pawsquad-header', evidencePending: false,
+    heroImage: 'pawsquad-card', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Overview', title: 'Overview', paragraphs: ['The traditional vet relationship is built around the practice, not the pet owner. Vets manage their own supplier relationships, which takes time away from patient care. Pet owners juggle insurers, specialists, and wellbeing services independently. The data sits in multiple disconnected places.', 'PawSquad’s proposition was to put the pet owner at the centre and give vets the tools to do their job without the administrative overhead. The design challenge was making both sides trust a platform they hadn’t needed before.'] },
       { id: 'my-role', navigationLabel: 'My role', title: 'My role', paragraphs: ['Responsible for the web and app experience across both sides of the platform: the pet owner booking and communication flows, and the vet-facing scheduling and client management tools.', 'I worked closely with developers on key features including booking systems, communication tools, and payment processes. User research and usability testing were carried out throughout the product lifecycle, alongside contributions to the brand and visual direction as the product evolved.'] },
@@ -661,7 +661,7 @@ export const projects: Project[] = [
     title: 'Migreat', summary: 'Clear immigration guidance, personalised visa checklists and community support, designed and built from the ground up.',
     role: 'UX Engineer · Design & front-end development',
     intro: 'An online platform dedicated to simplifying immigration for people moving to or within the UK. It offered legal guidance, personalised advice, and community resources to help migrants navigate a process that is genuinely complex and often hostile to the people going through it.',
-    heroImage: 'migreat-header', evidencePending: false,
+    heroImage: 'migreat-card', evidencePending: false,
     sections: [
       { id: 'challenge', navigationLabel: 'Overview', title: 'Overview', paragraphs: ['Immigration affects over a billion people globally. The process is expensive, bureaucratic, and deeply sensitive, especially in countries where political pressure around immigration runs high. Most digital tools at the time were either too generic to be useful or too complex to navigate without prior legal knowledge.', 'The opportunity was to build something that treated migrants as capable adults who needed clear information and practical guidance, not simplified messaging designed for a lowest common denominator.'] },
       { id: 'my-role', navigationLabel: 'My role', title: 'My role', paragraphs: ['I worked as a UX Engineer, which meant acting as both designer and front-end developer. The work moved from whiteboard sketches to wireframes in Balsamiq, and then into coded prototypes using HTML5 and SCSS.', 'User research and usability testing were part of the process throughout, alongside close collaboration with the wider team, culminating in interfaces that were fully functional rather than handed off for later implementation.', 'We also designed the pages in Photoshop, before I built the interfaces in HTML, SCSS and JavaScript.'] },
