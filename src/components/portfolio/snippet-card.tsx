@@ -5,7 +5,7 @@ import { useSnippetModal } from './snippet-context';
 
 export function SnippetCard({ snippet, onOpen }: { snippet: Snippet; onOpen: () => void }) {
   const media = projectImage(snippet.image);
-  return <Button variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card group block h-auto w-full min-w-0 overflow-hidden whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground">
+  return <Button variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card snippet-card group block h-auto w-full min-w-0 overflow-hidden whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground">
     <div className="aspect-[16/10] overflow-hidden bg-muted"><img loading="lazy" src={media.url} alt={media.alt} className="block h-full w-full object-cover object-top" /></div>
     <div className="p-6 md:p-8">
       <h3 className="subsection-title">{snippet.name}</h3>
