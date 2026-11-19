@@ -336,8 +336,8 @@
     line-height: 1.2;
     text-wrap: balance;
     text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.14em;
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.18em;
   }
   @media (min-width: 768px) {
     .section-title {
