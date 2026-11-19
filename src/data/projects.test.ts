@@ -195,3 +195,18 @@ describe('case-study destinations', () => {
     });
   }
 });
+
+describe('freelance case-study headers', () => {
+  const headers = [
+    ['mds-quostar', 'mds-card'],
+    ['jobme', 'jobme-card'],
+    ['meliniki', 'meliniki-card'],
+  ] as const;
+  for (const [slug, image] of headers) {
+    it(`${slug} opens with its uploaded card header image`, () => {
+      const project = projects.find(item => item.slug === slug);
+      assert.equal(project?.heroImage, image);
+      assert.equal(project?.cardImage, image);
+    });
+  }
+});

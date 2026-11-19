@@ -685,7 +685,7 @@ export const projects: Project[] = [
     summary: 'Freelance design and front-end build for QuoStar’s Managed Document Solutions website.',
     role: 'Freelance web designer · Design & front-end build',
     intro: 'A freelance website project for QuoStar’s Managed Document Solutions offering, designed and built end to end.',
-    heroImage: 'mds-header', cardImage: 'mds-card', heroFit: 'tile', presentation: 'compact',
+    heroImage: 'mds-card', cardImage: 'mds-card', heroFit: 'tile', presentation: 'compact',
     sections: [
       { id: 'interface', navigationLabel: 'Interface', title: 'Interface', groups: [
         { label: 'The website structure', text: 'The sitemap brings the website structure into view: document solutions, company information, client stories and contact, alongside dedicated print audit and offer forms.\nIt also distinguishes planned additions from the main structure and identifies campaign landing pages as separate destinations.', image: 'mds-sitemap', imageSize: 'quarter' },
@@ -704,7 +704,7 @@ export const projects: Project[] = [
     title: 'JobMe', summary: 'A swallow-led logo for seasonal hospitality jobs, with a small supporting styleguide.',
     role: 'Logo design · Supporting styleguide',
     intro: 'A straightforward identity for hospitality work that follows the seasons.',
-    heroImage: 'jobme-logo', cardImage: 'jobme-card', presentation: 'compact',
+    heroImage: 'jobme-card', cardImage: 'jobme-card', presentation: 'compact',
     sections: [
       { id: 'brief', navigationLabel: 'Brief', title: 'A seasonal brief', paragraphs: ['JobMe was about seasonal jobs in hospitality, typically opening from spring to autumn. The only requirement for the logo was to include swallows, connecting the identity to that seasonal rhythm.'] },
       { id: 'logo', navigationLabel: 'Logo', title: 'The logo', paragraphs: ['The design pairs two swallows with the JobMe name. A separate square version keeps the birds as the focus, without the lettering.'], visual: 'Square logo', image: 'jobme-square', caption: 'The square version of the JobMe logo.' },
@@ -716,7 +716,7 @@ export const projects: Project[] = [
     title: 'Meliniki', summary: 'An original watercolour, translated into two Merlot labels for a family-owned winery.',
     role: 'Watercolour illustration · Digitisation · Label design',
     intro: 'An authentic, hand-painted identity for a family-owned winery taking its next step.',
-    heroImage: 'meliniki-digitised', cardImage: 'meliniki-card', presentation: 'compact',
+    heroImage: 'meliniki-card', cardImage: 'meliniki-card', presentation: 'compact',
     sections: [
       { id: 'brief', navigationLabel: 'Brief', title: 'A small production, a bigger ambition', paragraphs: ['A family-owned winery wanted a label for a small run of Merlot bottles. The ambition was to enter a wine competition and take a first step towards a wider market.', 'The brief called for something authentic. I began with watercolour on paper, creating an original illustration before taking the design into a digital format.'], visual: 'Original watercolour', image: 'meliniki-watercolour', caption: 'The original artwork, painted in watercolour on paper.' },
       { id: 'labels', navigationLabel: 'Label design', title: 'From paper to two labels', paragraphs: ['I digitised the painting and used it to create two labels for the Merlot bottle. The illustration became the centre of the main label, with a smaller companion label below.', 'The design had to work within specific dimensions. The supplied artwork shows a 1200 × 1200 px main label and a 1200 × 240 px lower label.'], visual: 'The two labels', image: 'meliniki-labels' },
