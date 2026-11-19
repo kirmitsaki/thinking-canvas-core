@@ -184,7 +184,7 @@ export default function OriginMarkets() {
       {designSystem}
 
       <Section id="products" title="Products" heading="Three products, one connected workflow" lede="The platform covered different stages of the debt issuance lifecycle. Each product addressed a different set of challenges, but they all needed to work together as part of a connected experience.">
-        <div className="origin-product-cards origin-wide">
+        <div className="origin-product-cards origin-product-cards-2up origin-wide">
           {products.map((item, index) => (
             <article key={item.name} className="origin-product-card editorial-card">
               <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
