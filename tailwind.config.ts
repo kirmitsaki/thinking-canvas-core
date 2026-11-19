@@ -12,9 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', '"Times New Roman"', "serif"],
-        display: ['"Cormorant Garamond"', '"Times New Roman"', "serif"],
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ['"PT Serif"', "Georgia", '"Times New Roman"', "serif"],
+        display: ["Lato", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Lato", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ['"PT Mono"', "ui-monospace", "monospace"],
       },
       colors: {
         /* Journal palette */
