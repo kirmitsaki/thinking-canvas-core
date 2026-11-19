@@ -3,7 +3,7 @@ import { projectImage, type Project } from "@/data/projects";
 import { VisualPlaceholder } from "./visual-placeholder";
 import { ComingSoonHint } from "./coming-soon-media";
 
-function cardYears(dates: string) {
+export function cardYears(dates: string) {
   return dates.replace(/\b[A-Za-z]+\s+(?=\d{4})/g, "");
 }
 

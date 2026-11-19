@@ -8,7 +8,7 @@ import { SectionNavigation } from "./section-navigation";
 import { PortfolioBreadcrumb } from "./breadcrumb";
 import { SectionDivider } from "./section-divider";
 import { NdaNotice } from "./nda-notice";
-import { ProjectContext } from "./project-context";
+import { cardYears } from "./project-grid";
 import { CaseStudySnippetCard } from "./snippet-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 import { SnippetLink } from './snippet-context';
@@ -31,6 +31,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
   const heroImageClass =
     compact ? imageClass : "w-full rounded-[10px]";
   const noticeNode = notice ?? (project.ndaNotice ? <NdaNotice /> : null);
+  const logo = project.logo ? projectImage(project.logo) : undefined;
   return (
     <main className={`case-study relative z-10 ${minimalFrame ? "" : "case-study-editorial"} ${compact ? "case-study-compact" : ""}`}>
       {!sectionOnly && <><header
@@ -41,13 +42,15 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         <PortfolioBreadcrumb
           items={[{ label: "Portfolio", to: "/work" }, { label: project.name }]}
           trailing={
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <ProjectContext industry={project.industry} field={project.field} />
-              <p className="label-quiet">{project.dates}</p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              {logo ? (
+                <img src={logo.url} alt={logo.alt} className="size-8 shrink-0 rounded-full object-cover" loading="lazy" />
+              ) : null}
+              <span className="card-years">{cardYears(project.dates)}</span>
             </div>
           }
         />
-        <h1 className="mt-8 max-w-[720px] page-title">{project.title}</h1>
+        <h1 className="mt-8 max-w-[720px] page-title">{project.cardTitle ?? project.title}</h1>
         {(() => {
           const paragraphs = introParagraphs ?? project.intro.split(/(?<=\.)\s+/);
           const headerFacts = facts ?? [
