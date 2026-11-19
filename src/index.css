@@ -858,11 +858,6 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
       gap: 3rem;
     }
-    .case-study-editorial .case-study-header-copy,
-    .origin-editorial .case-study-header-copy {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      gap: 5rem;
-    }
     .case-study-editorial .editorial-study-section {
       margin-bottom: 8.5rem;
     }
@@ -904,6 +899,20 @@
     display: grid;
     gap: 2rem;
     align-items: start;
+  }
+  /* Header: the text keeps a narrower measure so the facts card on the right
+     has clear space beside it. Declared after the Origin rule above so the
+     desktop gap is not overridden by its mobile spacing. */
+  @media (min-width: 768px) {
+    .case-study-editorial .case-study-header-copy,
+    .origin-editorial .case-study-header-copy {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+      gap: 4rem;
+    }
+    .case-study-editorial .case-study-header-copy > :first-child,
+    .origin-editorial .case-study-header-copy > :first-child {
+      max-width: 480px;
+    }
   }
   .origin-editorial .body-copy strong {
     font-weight: 600;
