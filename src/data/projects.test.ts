@@ -1,6 +1,7 @@
 import { describe, it } from 'vitest';
 import { strict as assert } from 'node:assert';
 import { projects, projectsByYear, portfolioProjects, freelanceProjects, projectTags, projectFilters, projectMatchesFilter, projectSectionLabels, projectWorkAreas, getProject, caseStudyTitle } from './projects';
+import { adjacentProjects } from '../components/portfolio/project-pagination';
 
 describe('portfolio project dates from Rachel’s CV and brief', () => {
   const dates = [
@@ -146,6 +147,25 @@ describe('case-study breadcrumb titles', () => {
   it('falls back to the page title when there is no card title', () => {
     assert.equal(caseStudyTitle(getProject('mds-quostar')), 'MDS Quostar');
     assert.equal(caseStudyTitle(getProject('meliniki')), 'Meliniki');
+  });
+});
+
+describe('case-study pagination titles', () => {
+  it('labels previous and next links with case-study titles, never company names', () => {
+    for (const project of projectsByYear) {
+      const { previous, next } = adjacentProjects(project.slug);
+      for (const neighbour of [previous, next]) {
+        if (!neighbour) continue;
+        assert.equal(caseStudyTitle(neighbour), neighbour.cardTitle ?? neighbour.title);
+        if (neighbour.cardTitle) assert.notEqual(caseStudyTitle(neighbour), neighbour.name);
+      }
+    }
+  });
+  it('shows Mendeley Reference Manager, not Mendeley (Elsevier), next to Origin', () => {
+    const { previous, next } = adjacentProjects('origin-markets');
+    assert.equal(caseStudyTitle(previous!), 'From learning platform to enterprise developer risk platform.');
+    assert.equal(caseStudyTitle(next!), 'Mendeley Reference Manager');
+    assert.notEqual(caseStudyTitle(next!), 'Mendeley (Elsevier)');
   });
 });
 
