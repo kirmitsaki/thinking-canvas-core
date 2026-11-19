@@ -73,13 +73,12 @@ export default function Contact() {
             <h2 className="subsection-title">Where I can help</h2>
             <ul className="mt-6 space-y-5 body-copy">
               {fit.map(([label, text]) => (
-                <li key={label} className="flex gap-3">
-                  <span className="text-accent" aria-hidden>
+                <li key={label} className="contact-fit">
+                  <span className="contact-fit-mark text-accent" aria-hidden>
                     ⁘
                   </span>
-                  <span>
-                    <strong className="label mb-1 block">{label}</strong> {text}
-                  </span>
+                  <strong className="label contact-fit-label">{label}</strong>
+                  <span>{text}</span>
                 </li>
               ))}
             </ul>

@@ -1469,3 +1469,30 @@ a:hover .arrow-nudge,
 .case-study-snippet:nth-child(2) {
   --tilt: -1.4deg;
 }
+
+/* Contact "Where I can help" list: mark centred against a heavier label */
+.contact-fit {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.75rem;
+  row-gap: 0.25rem;
+  align-items: center;
+}
+
+.contact-fit-mark {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+.contact-fit .label {
+  grid-column: 2;
+  grid-row: 1;
+  font-weight: 700;
+}
+
+.contact-fit > span:last-child {
+  grid-column: 2;
+  grid-row: 2;
+}
