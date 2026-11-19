@@ -83,11 +83,11 @@ export default function Home() {
             .filter((project) => !project.comingSoon)
             .slice(0, 2)
             .map((project, index) => {
-              const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} group block overflow-hidden`;
+              const cardClass = `${index === 0 ? "lead-card md:col-span-2" : "editorial-card"} case-study-card group block overflow-hidden`;
               const media = (
                 <div
                   className={
-                    index === 0 ? "aspect-[2/1] md:aspect-[3/1]" : "aspect-[2/1] overflow-hidden bg-muted"
+                    index === 0 ? "case-study-card-media aspect-[2/1] md:aspect-[3/1]" : "case-study-card-media aspect-[2/1] overflow-hidden bg-muted"
                   }
                 >
                   {project.heroImage ? (

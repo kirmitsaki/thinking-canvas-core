@@ -39,9 +39,9 @@ export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?
           <SnippetLink
             key={project.slug}
             to={project.linkTo ?? `/work/${project.slug}`}
-            className={`editorial-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
+            className={`editorial-card case-study-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
           >
-            <div className={`aspect-[16/10] overflow-hidden ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
+            <div className={`case-study-card-media aspect-[16/10] overflow-hidden ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
               {image ? (
                 <img
                   src={image.url}

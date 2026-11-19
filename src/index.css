@@ -378,16 +378,26 @@
   }
 
   .card-subtitle {
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.2;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.25;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
     .card-subtitle {
-      font-size: 1.25rem;
+      font-size: 2.25rem;
     }
+  }
+
+  .case-study-card {
+    border-radius: 24px;
+  }
+  .case-study-card-media {
+    margin: 0.75rem 0.75rem 0;
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   .subsection-title {
