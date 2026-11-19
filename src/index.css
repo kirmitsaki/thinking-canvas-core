@@ -1460,12 +1460,14 @@ a:hover .arrow-nudge,
   transform: scale(1.04);
 }
 
-.snippet-pin {
+.snippet-card .snippet-pin {
   position: absolute;
   top: 6px;
   z-index: 1;
+  width: 44px;
+  height: 60px;
   pointer-events: none;
-  filter: drop-shadow(0 1px 1px rgb(28 25 23 / 0.25));
+  filter: drop-shadow(0 2px 2px rgb(28 25 23 / 0.25));
 }
 
 .snippet-grid > :nth-child(3n + 2),
