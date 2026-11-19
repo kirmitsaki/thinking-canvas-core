@@ -36,7 +36,7 @@
   --card: var(--warm-white);
   --card-foreground: var(--charcoal);
   --muted: var(--warm-white);
-  --muted-foreground: color-mix(in srgb, var(--charcoal) 75%, var(--background));
+  --muted-foreground: #5c5854;
   --accent: var(--rust);
   --accent-foreground: var(--warm-ivory);
   --border: color-mix(in srgb, var(--camel) 35%, transparent);
@@ -443,6 +443,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
+    color: var(--muted-foreground);
   }
 
   .body-copy {
@@ -450,6 +451,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
+    color: var(--muted-foreground);
   }
 
   .design-goals-list {
@@ -716,6 +718,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
+    color: var(--muted-foreground);
   }
   .essay-prose a:not(.editorial-card) {
     color: var(--rust);
@@ -769,11 +772,11 @@
     padding: 0.25rem 0.75rem;
     font-size: 0.8125rem;
     line-height: 1.4;
-    color: var(--foreground);
+    color: var(--muted-foreground);
   }
   .case-study-editorial strong {
     font-weight: 600;
-    color: var(--foreground);
+    color: inherit;
   }
   .case-study-editorial .editorial-study-section {
     margin-bottom: 6rem;
@@ -954,7 +957,7 @@
   }
   .origin-editorial .body-copy strong {
     font-weight: 600;
-    color: var(--foreground);
+    color: inherit;
   }
   .origin-section {
     margin-bottom: 6rem;
