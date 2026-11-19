@@ -40,7 +40,7 @@ export function ProjectCard({ project, horizontal = false }: { project: Project;
   return (
     <SnippetLink
       to={project.linkTo ?? `/work/${project.slug}`}
-      className={`editorial-card case-study-card group min-w-0 overflow-hidden${horizontal ? " case-study-card--horizontal" : " block"}${project.slug === "meliniki" ? " artwork-card" : ""}`}
+      className={`editorial-card case-study-card group min-w-0 overflow-hidden${horizontal ? " case-study-card--horizontal" : " block"}`}
     >
       <div className={`case-study-card-media relative overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
         <CardLogo project={project} />

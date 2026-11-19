@@ -23,10 +23,6 @@
   --mushroom: #a99c8d;
   --olive: #4f5138;
   --ink: #111111;
-  --artwork-card-background: #000000;
-  --artwork-card-foreground: var(--warm-ivory);
-  --artwork-card-muted: color-mix(in srgb, var(--warm-ivory) 75%, var(--artwork-card-background));
-  --artwork-card-border: color-mix(in srgb, var(--warm-ivory) 28%, var(--artwork-card-background));
   --logo-card-background: #ffffff;
   /* Case-study and snippet card surfaces. */
   --card-surface: #ffffff;
@@ -258,41 +254,6 @@
     background-color: var(--card);
     border: 2px solid var(--caramel);
     border-radius: 10px;
-  }
-
-  .artwork-card {
-    --card: var(--artwork-card-background);
-    --foreground: var(--artwork-card-foreground);
-    --muted: var(--artwork-card-background);
-    --muted-foreground: var(--artwork-card-muted);
-    --border: var(--artwork-card-border);
-    --hairline: var(--artwork-card-border);
-    --rust: var(--artwork-card-foreground);
-    --accent: var(--artwork-card-foreground);
-    --forest: var(--artwork-card-muted);
-    --camel: var(--artwork-card-border);
-    color: var(--foreground);
-    background-color: var(--card);
-  }
-
-  .artwork-card .text-muted-foreground {
-    color: var(--artwork-card-muted);
-  }
-
-  .artwork-card .text-foreground {
-    color: var(--artwork-card-foreground);
-  }
-
-  .artwork-card .text-accent {
-    color: var(--artwork-card-foreground);
-  }
-
-  .artwork-card .text-forest {
-    color: var(--artwork-card-muted);
-  }
-
-  .artwork-card .border-camel {
-    border-color: var(--artwork-card-border);
   }
 
   .logo-card-media {
@@ -1429,7 +1390,7 @@ a:hover .arrow-nudge,
 
 /* Case-study and snippet card surfaces are white. Three classes so the
    hover:bg-card utility on the card button cannot repaint them. */
-.case-study-card.case-study-card:not(.artwork-card),
+.case-study-card.case-study-card,
 .editorial-card.snippet-card.snippet-card {
   background-color: var(--card-surface);
 }
