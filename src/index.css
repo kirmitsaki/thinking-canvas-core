@@ -399,6 +399,20 @@
     border-radius: 16px;
     overflow: hidden;
   }
+  @media (min-width: 768px) {
+    .case-study-card--horizontal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .case-study-card--horizontal .case-study-card-media {
+      margin: 0.75rem 0 0.75rem 0.75rem;
+      min-height: 20rem;
+    }
+    .case-study-card--horizontal > :last-child {
+      align-self: center;
+      width: 100%;
+    }
+  }
 
   .subsection-title {
     font-family: var(--font-display);

@@ -25,6 +25,33 @@ export function CardBody({ project }: { project: Project }) {
   );
 }
 
+export function ProjectCard({ project, horizontal = false }: { project: Project; horizontal?: boolean }) {
+  const image = project.heroImage ? projectImage(project.heroImage) : undefined;
+  return (
+    <SnippetLink
+      to={project.linkTo ?? `/work/${project.slug}`}
+      className={`editorial-card case-study-card group min-w-0 overflow-hidden${horizontal ? " case-study-card--horizontal" : " block"}${project.slug === "meliniki" ? " artwork-card" : ""}`}
+    >
+      <div className={`case-study-card-media overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
+        {image ? (
+          <img
+            src={image.url}
+            alt={image.alt}
+            className="block h-full w-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <VisualPlaceholder
+            title={`${project.name} · ${project.sector}`}
+            className="h-full w-full"
+          />
+        )}
+      </div>
+      <CardBody project={project} />
+    </SnippetLink>
+  );
+}
+
 export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?: 2 | 3 }) {
   return (
     <div className={`grid gap-6 md:grid-cols-2${columns === 3 ? " lg:grid-cols-3" : ""}`}>
@@ -34,31 +61,7 @@ export function ProjectGrid({ items, columns = 2 }: { items: Project[]; columns?
             <ComingSoonHint key={project.slug} name={project.name} industry={project.industry} className="md:col-span-2" />
           );
         }
-        const image = project.heroImage ? projectImage(project.heroImage) : undefined;
-        return (
-          <SnippetLink
-            key={project.slug}
-            to={project.linkTo ?? `/work/${project.slug}`}
-            className={`editorial-card case-study-card group block min-w-0 overflow-hidden${project.slug === "meliniki" ? " artwork-card" : ""}`}
-          >
-            <div className={`case-study-card-media aspect-[16/10] overflow-hidden ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
-              {image ? (
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="block h-full w-full object-cover"
-                  loading="lazy"
-                />
-              ) : (
-                <VisualPlaceholder
-                  title={`${project.name} · ${project.sector}`}
-                  className="h-full w-full"
-                />
-              )}
-            </div>
-            <CardBody project={project} />
-          </SnippetLink>
-        );
+        return <ProjectCard key={project.slug} project={project} />;
       })}
     </div>
   );

@@ -1,6 +1,6 @@
 import Seo from "@/components/Seo";
 import { portfolioProjects, freelanceProjects, pageMeta } from "@/data/projects";
-import { ProjectGrid } from "@/components/portfolio/project-grid";
+import { ProjectCard, ProjectGrid } from "@/components/portfolio/project-grid";
 import { SnippetGrid } from "@/components/portfolio/snippet-grid";
 
 // Filters hidden for now. To restore: re-add useSearchParams, projectFilters,
@@ -21,7 +21,23 @@ export default function WorkPage() {
         </header>
         <section>
           {/* Coming-soon entries (Secure Code Warrior) hidden; restore by passing portfolioProjects directly. */}
-          <ProjectGrid items={portfolioProjects.filter((project) => !project.comingSoon)} />
+          {(() => {
+            const items = portfolioProjects.filter((project) => !project.comingSoon);
+            const featured = items.slice(0, 2);
+            const rest = items.slice(2);
+            return (
+              <>
+                <div className="grid gap-6">
+                  {featured.map((project) => (
+                    <ProjectCard key={project.slug} project={project} horizontal />
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <ProjectGrid items={rest} />
+                </div>
+              </>
+            );
+          })()}
         </section>
         <section className="mt-20 md:mt-28" aria-labelledby="snippets-heading">
           <h2 id="snippets-heading" className="section-title mb-10 md:mb-14">Snippets</h2>
