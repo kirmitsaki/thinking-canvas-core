@@ -325,8 +325,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
           {index === 0 && project.contribution && (
             <section id="my-role" className="origin-section scroll-mt-32">
               <SectionDivider />
-              <div className="origin-section-heading">
-                <h2 className="section-title">My role</h2>
+              <div className="origin-section-grid">
+                <div className="origin-section-heading">
+                  <h2 className="section-title">My role</h2>
+                </div>
                 <p className="body-copy text-muted-foreground">{editorialEmphasis(project.contribution)}</p>
               </div>
             </section>

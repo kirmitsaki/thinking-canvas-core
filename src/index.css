@@ -67,6 +67,12 @@
    title, so only separators between sections stay. */
 .snippet-page .editorial-study-section > .section-break:first-child,
 .snippet-page .origin-section > .section-break:first-child { display: none; }
+/* In a snippet frame the section title is the modal title, so the two-column
+   rail collapses and everything stacks in one column. */
+.snippet-page .origin-section-grid { grid-template-columns: minmax(0, 1fr); }
+.snippet-page .origin-section-grid > .origin-section-heading { grid-column: 1; grid-row: auto; }
+.snippet-page .origin-section-grid > *:not(.origin-section-heading) { grid-column: 1; }
+.snippet-page .origin-section-grid > .origin-wide { grid-column: 1; }
 
 /* One title treatment for every modal content entry, independent of page layout. */
 .snippet-page {
@@ -83,7 +89,7 @@
   main > header > h1,
   main > .editorial-detail-content > h2,
   main > article > .editorial-study-section:first-of-type > .editorial-study-heading > h2,
-  main.origin-editorial > .origin-section:first-child > .origin-section-heading > h2
+  main.origin-editorial > .origin-section:first-child .origin-section-heading > h2
 ) {
   margin-top: 0;
   font-family: var(--font-display);
@@ -864,6 +870,12 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
       gap: 3rem;
     }
+    /* Section titles and subtitles keep the left rail; group headings and body
+       copy belong to the content column on the right. */
+    .case-study-editorial .editorial-study-section .origin-research-block:not(.origin-research-block--media-right),
+    .case-study-editorial .editorial-study-section .grid.gap-6 > .subsection-title {
+      margin-left: calc((100% - 3rem) / 3.2 + 3rem);
+    }
     .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual,
     .case-study-editorial #labels:has(img[src*="meliniki-labels"]) > .editorial-study-visual,
     .case-study-editorial #bottle:has(img[src*="meliniki"]) > .editorial-study-visual {
@@ -902,22 +914,19 @@
   }
   .origin-section-heading {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: start;
   }
-  .origin-section-heading .body-copy {
-    max-width: 65ch;
-    color: var(--foreground);
-  }
-  .origin-section-content {
-    margin-top: 3rem;
+  /* Left rail holds the section title and its subtitle; everything else —
+     headings, body copy, visuals — belongs to the column on the right. */
+  .origin-section-grid {
     display: grid;
-    gap: 3.5rem;
-    min-width: 0;
+    gap: 2rem;
+    align-items: start;
   }
   .origin-research-block {
     display: grid;
-    align-items: baseline;
+    align-items: start;
     gap: 1.5rem;
   }
   .origin-research-block > div {
@@ -965,9 +974,6 @@
     border-bottom: 1px solid var(--border);
     font-size: 2rem;
     color: var(--accent);
-  }
-  .origin-editorial #research .origin-section-content > p {
-    text-align: center;
   }
   .origin-process-paths,
   .origin-system-copy {
@@ -1020,22 +1026,36 @@
     .origin-section {
       margin-bottom: 8.5rem;
     }
-    .origin-section-heading,
-    .origin-research-block {
+    .origin-section-grid {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
-      gap: 3rem;
+      column-gap: 3rem;
+      row-gap: 3.5rem;
+    }
+    .origin-section-grid > .origin-section-heading {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .origin-section-grid > *:not(.origin-section-heading) {
+      grid-column: 2;
+    }
+    .origin-section-grid > .origin-wide {
+      grid-column: 1 / -1;
     }
     .origin-research-block--media-right {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 3rem;
       align-items: start;
     }
     .brand-voice-cards {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2rem;
     }
-    .origin-process-paths,
-    .origin-system-copy {
+    .origin-process-paths {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 3rem;
+    }
+    .origin-system-copy {
+      gap: 1.75rem;
     }
     .origin-editorial .pull-quote {
       font-size: 1.875rem;

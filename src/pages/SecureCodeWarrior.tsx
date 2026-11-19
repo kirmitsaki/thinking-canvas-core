@@ -48,18 +48,20 @@ const products = [
 ];
 
 function ComingSoon() {
-  return <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] p-6 md:p-8"><p className="body-copy text-muted-foreground">Full case study coming soon.</p></div>;
+  return <div className="origin-wide editorial-card mx-auto w-full max-w-[720px] p-6 md:p-8"><p className="body-copy text-muted-foreground">Full case study coming soon.</p></div>;
 }
 
 function Section({ id, title, lede, children }: { id: string; title: string; lede?: string; children?: ReactNode }) {
   return (
     <section id={id} className="origin-section scroll-mt-32">
       <SectionDivider />
-      <div className="origin-section-heading">
-        <h2 className="section-title">{title}</h2>
+      <div className="origin-section-grid">
+        <div className="origin-section-heading">
+          <h2 className="section-title">{title}</h2>
+        </div>
         {lede && <p className="body-copy text-muted-foreground">{emphasize(lede)}</p>}
+        {children}
       </div>
-      {children && <div className="origin-section-content">{children}</div>}
     </section>
   );
 }
@@ -68,7 +70,7 @@ export default function SecureCodeWarrior() {
   const [params] = useSearchParams();
   const designSystem = (
     <Section id="design-system" title="Design system" lede="The platform's first design system, grown from a simple shared file into a living system used by every engineering team across regions. It took about four years and a reasonable amount of stubbornness.">
-      <CaseStudySnippetCard to="/work/secure-code-warrior#design-system" />
+      <div className="origin-wide"><CaseStudySnippetCard to="/work/secure-code-warrior#design-system" /></div>
     </Section>
   );
   if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
@@ -105,27 +107,27 @@ export default function SecureCodeWarrior() {
       </Section>
 
       <Section id="product-design-identity" title="Product Design Identity" lede="The visual direction that gave the new product vision a face: colour, interface examples and character artwork.">
-        <CaseStudySnippetCard to="/work/secure-code-warrior/product-design-identity" />
+        <div className="origin-wide"><CaseStudySnippetCard to="/work/secure-code-warrior/product-design-identity" /></div>
       </Section>
 
       {designSystem}
 
       <Section id="ai-workflows" title="AI Workflows" lede="AI-enabled prototyping workflows that cut idea-to-validated-concept time to under four weeks.">
-        <div className="editorial-card mx-auto mt-8 w-full max-w-[720px] overflow-hidden">
+        <div className="origin-wide editorial-card mx-auto w-full max-w-[720px] overflow-hidden">
           <img src={aiWorkflows} alt="How AI changed the workflow: design system moved from Figma and Storybook to designing in code with Claude Code; prototyping moved from Figma to Lovable and Claude Code on the same design system; research and feedback moved from Slack, Google Docs and other tools to Salesforce MCP" width={1440} height={1248} loading="lazy" className="block h-auto w-full" />
           <p className="body-copy p-6 text-muted-foreground md:p-8">Full case study coming soon.</p>
         </div>
       </Section>
 
       <Section id="products" title="Products">
-        <div className="origin-product-cards">
+        <div className="origin-product-cards origin-wide">
           {products.filter(item => item.name !== 'Cybermon').map((item, index) => <article key={item.name} className="origin-product-card editorial-card">
             <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
             <h3 className="subsection-title">{item.name}</h3>
             <p className="body-copy">{emphasize(item.text)}</p>
           </article>)}
         </div>
-        <CaseStudySnippetCard to="/work/secure-code-warrior/cybermon" />
+        <div className="origin-wide"><CaseStudySnippetCard to="/work/secure-code-warrior/cybermon" /></div>
       </Section>
 
       <Section id="outcomes" title="Outcomes" lede="What changed across the platform, the team and the company." />

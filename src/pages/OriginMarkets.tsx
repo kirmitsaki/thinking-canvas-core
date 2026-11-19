@@ -55,12 +55,14 @@ function Section({ id, title, heading, lede, children }: { id: string; title: st
   return (
     <section id={id} className="origin-section scroll-mt-32">
       <SectionDivider />
-      <div className="origin-section-heading">
-        <h2 className="section-title">{title}</h2>
-        {heading && <p className="subsection-title">{heading}</p>}
+      <div className="origin-section-grid">
+        <div className="origin-section-heading">
+          <h2 className="section-title">{title}</h2>
+          {heading && <p className="subsection-title">{heading}</p>}
+        </div>
         {lede && <p className="body-copy text-muted-foreground">{emphasize(lede)}</p>}
+        {children}
       </div>
-      {children && <div className="origin-section-content">{children}</div>}
     </section>
   );
 }
@@ -73,8 +75,8 @@ export default function OriginMarkets() {
         <p className="body-copy text-muted-foreground">{emphasize('Before Morpho, every part of the platform had its own components, its own patterns, its own logic. Engineering was rebuilding the same things independently. Product was making decisions without a shared reference point.')}</p>
         <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
       </div>
-      <p className="origin-system-principle">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
-      <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="h-auto w-full rounded-[10px]" />
+      <p className="origin-system-principle origin-wide">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
+      <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="origin-wide h-auto w-full rounded-[10px]" />
     </Section>
   );
   if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
@@ -127,7 +129,7 @@ export default function OriginMarkets() {
             <P>A phone call before a major transaction wasn’t simply another step to eliminate. It was how two institutions confirmed that the other party had received the information, understood it and was ready to proceed.</P>
           </div>
         </div>
-        <blockquote className="pull-quote">Trust between institutions has to be produced. You cannot automate it out of existence without replacing it with something equally credible.</blockquote>
+        <blockquote className="pull-quote origin-wide">Trust between institutions has to be produced. You cannot automate it out of existence without replacing it with something equally credible.</blockquote>
         <div className="space-y-6">
           <P>That changed how we thought about the product.</P>
           <P>We weren’t simply trying to make existing workflows faster. We needed to understand which parts could be automated, which needed to remain human, and how technology could make the relationship between them work better.</P>
@@ -163,7 +165,7 @@ export default function OriginMarkets() {
           <h3 className="subsection-title">Two ways of moving the product forward</h3>
           <P>Not every problem needed the same level of exploration. I established two complementary design approaches.</P>
         </div>
-        <div className="origin-process-paths">
+        <div className="origin-process-paths origin-wide">
         <div className="space-y-5">
         <img loading="lazy" src={continuousImprovements} width={1440} height={1024} alt="Continuous improvements: review workflows, prioritise with PMs, share designs early, then move into Morpho." className="h-auto w-full" />
         <h3 className="subsection-title">Continuous improvements</h3>
@@ -182,7 +184,7 @@ export default function OriginMarkets() {
       {designSystem}
 
       <Section id="products" title="Products" heading="Three products, one connected workflow" lede="The platform covered different stages of the debt issuance lifecycle. Each product addressed a different set of challenges, but they all needed to work together as part of a connected experience.">
-        <div className="origin-product-cards">
+        <div className="origin-product-cards origin-wide">
           {products.map((item, index) => (
             <article key={item.name} className="origin-product-card editorial-card">
               <p className="label-quiet">{String(index + 1).padStart(2, '0')}</p>
@@ -192,7 +194,9 @@ export default function OriginMarkets() {
           ))}
         </div>
         <P>Together, the three products helped bring more of the issuance lifecycle into one connected digital platform.</P>
-        <CaseStudySnippetCard to="/work/origin-markets/gallery" />
+        <div className="origin-wide">
+          <CaseStudySnippetCard to="/work/origin-markets/gallery" />
+        </div>
       </Section>
     </>
   );
