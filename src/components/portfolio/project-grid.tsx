@@ -20,7 +20,7 @@ function CardBody({ project }: { project: Project }) {
         </div>
         <span className="card-years">{cardYears(project.dates)}</span>
       </div>
-      <h2 className="mt-4 card-subtitle">{project.cardTitle ?? project.name}</h2>
+      {project.cardTitle ? <h2 className="mt-4 card-subtitle">{project.cardTitle}</h2> : null}
     </div>
   );
 }
