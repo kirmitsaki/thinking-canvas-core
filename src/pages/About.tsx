@@ -8,6 +8,33 @@ const meta = pageMeta(
   "Meet Rachel Kirmitsaki, an independent Product Design Consultant with over a decade of experience across cybersecurity, fintech and research platforms."
 );
 
+const capabilities: [string, string][] = [
+  [
+    "Product design",
+    "10+ years of experience designing complex digital products across fintech, EdTech and SaaS, from early discovery through to delivery.",
+  ],
+  [
+    "Design systems",
+    "Experience building, maintaining and scaling design systems from the ground up, supporting multiple product teams and engineering teams.",
+  ],
+  [
+    "Figma proficiency",
+    "Strong knowledge of component architecture, shared libraries, variables, tokens and documentation.",
+  ],
+  [
+    "Systems mindset",
+    "Ability to look beyond individual screens and understand how components work across different products, user flows and use cases.",
+  ],
+  [
+    "Accessibility",
+    "Experience auditing products, establishing guidelines and embedding WCAG standards into the design process.",
+  ],
+  [
+    "AI prototyping",
+    "Hands-on experience with the latest AI tools to explore ideas, prototype concepts and accelerate product validation.",
+  ],
+];
+
 export default function About() {
   return (
     <main className="relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
@@ -38,10 +65,6 @@ export default function About() {
               to make them better.
             </p>
           </section>
-          <section className="hairline-top mt-10 max-w-[520px] pt-6">
-            <h2 className="subsection-title">Tools I work with</h2>
-            <ToolLogos />
-          </section>
         </div>
         <div className="flex flex-col gap-5 md:pt-10">
           <section className="editorial-card min-w-0 p-6 md:p-8">
@@ -51,8 +74,27 @@ export default function About() {
               </span>
             </span>
           </section>
+          <section className="editorial-card min-w-0 p-6 md:p-8">
+            <h2 className="label">Tools I work with</h2>
+            <ToolLogos />
+          </section>
         </div>
       </div>
+
+      <section className="hairline-top mt-16 pt-10 md:mt-20 md:pt-12">
+        <h2 className="section-title">Here I can help</h2>
+        <ul className="capability-grid mt-10">
+          {capabilities.map(([label, text], index) => (
+            <li key={label} className="capability-card editorial-card">
+              <span className="capability-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="label capability-label">{label}</h3>
+              <p className="body-copy capability-text">{text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }

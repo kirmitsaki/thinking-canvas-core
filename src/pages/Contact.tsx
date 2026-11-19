@@ -27,33 +27,6 @@ const channels = [
   },
 ];
 
-const fit: [string, string][] = [
-  [
-    "Product design",
-    "10+ years of experience designing complex digital products across fintech, EdTech and SaaS, from early discovery through to delivery.",
-  ],
-  [
-    "Design systems",
-    "Experience building, maintaining and scaling design systems from the ground up, supporting multiple product teams and engineering teams.",
-  ],
-  [
-    "Figma proficiency",
-    "Strong knowledge of component architecture, shared libraries, variables, tokens and documentation.",
-  ],
-  [
-    "Systems mindset",
-    "Ability to look beyond individual screens and understand how components work across different products, user flows and use cases.",
-  ],
-  [
-    "Accessibility",
-    "Experience auditing products, establishing guidelines and embedding WCAG standards into the design process.",
-  ],
-  [
-    "AI prototyping",
-    "Hands-on experience with the latest AI tools to explore ideas, prototype concepts and accelerate product validation.",
-  ],
-];
-
 export default function Contact() {
   return (
     <main className="relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
@@ -69,20 +42,6 @@ export default function Contact() {
           <p className="standfirst mt-6 max-w-2xl">
             Available for Product Design contract engagements. London, working remotely.
           </p>
-          <section className="hairline-top mt-10 max-w-[520px] pt-6">
-            <h2 className="subsection-title">Where I can help</h2>
-            <ul className="mt-6 space-y-5 body-copy">
-              {fit.map(([label, text]) => (
-                <li key={label} className="contact-fit">
-                  <span className="contact-fit-mark text-accent" aria-hidden>
-                    ⁘
-                  </span>
-                  <strong className="label contact-fit-label">{label}</strong>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
         </header>
         <div className="flex flex-col gap-5 md:pt-10">
           {channels.map(({ icon: Icon, label, text, href, external, note }) => (
