@@ -17,3 +17,4 @@
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.
 - Case-study cards on every page render the shared `CardBody` from project-grid; style changes then apply everywhere at once.
 - Case-study card artwork uses an optional `cardImage` separate from `heroImage`, with CDN pointers and local optimised fallbacks, so uploaded covers do not alter case-study content or static hosting.
+- GitHub Pages deploy runs scripts/mirror-assets.mjs after build to copy every .asset.json image into dist; static hosting cannot serve Lovable CDN paths.

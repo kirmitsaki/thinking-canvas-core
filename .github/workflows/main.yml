@@ -30,6 +30,9 @@ jobs:
 
       - run: npm run build
 
+      # Copy Lovable CDN images into dist so GitHub Pages can serve them.
+      - run: node scripts/mirror-assets.mjs
+
       # SPA fallback: GitHub Pages serves 404.html for unknown paths,
       # so serving the app shell there makes deep links + refreshes work.
       - run: cp dist/index.html dist/404.html
