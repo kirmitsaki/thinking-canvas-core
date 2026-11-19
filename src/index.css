@@ -325,7 +325,7 @@
   }
   @media (min-width: 768px) {
     .page-title {
-      font-size: 3rem;
+      font-size: 3.157rem;
     }
   }
 
@@ -338,7 +338,7 @@
   }
   @media (min-width: 768px) {
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2.369rem;
     }
   }
 
@@ -351,7 +351,7 @@
   }
   @media (min-width: 768px) {
     .card-title {
-      font-size: 1.625rem;
+      font-size: 1.777rem;
     }
   }
 
@@ -389,24 +389,24 @@
 
   .subsection-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.333rem;
     font-weight: 400;
     line-height: 1.15;
     text-wrap: balance;
   }
 
   .article-body {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.6;
   }
 
   .body-copy {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.6;
   }
 
   .design-goals-list {
@@ -439,10 +439,10 @@
   }
 
   .note-article-body {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.6;
   }
 
   .pull-quote {
@@ -641,10 +641,10 @@
 
   /* Compatibility alias for portfolio narrative blocks. */
   .essay-prose {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.6;
   }
   .essay-prose a:not(.editorial-card) {
     color: var(--rust);
