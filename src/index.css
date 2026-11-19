@@ -1431,11 +1431,30 @@ a:hover .arrow-nudge,
   background-color: var(--card-surface);
 }
 
-/* Snippet cards read as pinned post-its: no border, a pin on top, and one
-   card per grid row slightly lopsided. */
+/* Snippet cards read as pinned post-its: no border, sharp corners, a pin on
+   top, one card per grid row slightly lopsided, and a lift on hover. The lean
+   lives in --tilt so hovering can raise the card without straightening it. */
 .editorial-card.snippet-card.snippet-card {
   border: none;
+  border-radius: 0;
   box-shadow: 0 2px 10px rgb(28 25 23 / 0.08);
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.editorial-card.snippet-card.snippet-card:hover,
+.editorial-card.snippet-card.snippet-card:focus-visible {
+  box-shadow: 0 16px 30px rgb(28 25 23 / 0.16);
+  transform: rotate(var(--tilt, 0deg)) translateY(-6px);
+}
+
+.editorial-card.snippet-card img {
+  transition: transform 420ms ease;
+}
+
+.editorial-card.snippet-card:hover img,
+.editorial-card.snippet-card:focus-visible img {
+  transform: scale(1.04);
 }
 
 .snippet-pin {
@@ -1448,5 +1467,5 @@ a:hover .arrow-nudge,
 
 .snippet-grid > :nth-child(3n + 2),
 .case-study-snippet:nth-child(2) {
-  transform: rotate(-1.4deg);
+  --tilt: -1.4deg;
 }
