@@ -12,7 +12,7 @@ export function CardBody({ project }: { project: Project }) {
   return (
     <div className="p-6 md:p-8">
       <div className="flex items-center justify-between gap-4">
-        <div className="flex min-w-0 items-center gap-3">
+        <div className="flex min-w-0 items-center gap-2">
           {logo ? (
             <img src={logo.url} alt={logo.alt} className="size-10 shrink-0 rounded-full object-cover" loading="lazy" />
           ) : null}

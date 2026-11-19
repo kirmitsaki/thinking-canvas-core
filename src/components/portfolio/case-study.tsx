@@ -66,7 +66,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                     <dt className="label">{fact.label}</dt>
                     <dd className="case-study-fact-value mt-4">
                       {fact.label === "Company" ? (
-                        <span className="flex items-center gap-3">
+                        <span className="flex items-center gap-2">
                           {logo ? (
                             <img src={logo.url} alt={logo.alt} className="size-8 shrink-0 rounded-full object-cover" loading="lazy" />
                           ) : null}
