@@ -1421,6 +1421,18 @@ a:hover .arrow-nudge,
   transform: scale(1.04);
 }
 
+/* Portfolio cards (home, portfolio and freelancing) share the snippet cards'
+   image hover: the cover eases up to 1.04 inside its own clipped media box.
+   Scoped to the media's own image so the company logo overlay stays put. */
+.case-study-card-media > img {
+  transition: transform 420ms ease;
+}
+
+.editorial-card.case-study-card:hover .case-study-card-media > img,
+.editorial-card.case-study-card:focus-visible .case-study-card-media > img {
+  transform: scale(1.04);
+}
+
 .snippet-card .snippet-pin {
   position: absolute;
   top: -11px;
