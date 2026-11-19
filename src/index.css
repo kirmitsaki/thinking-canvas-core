@@ -66,14 +66,9 @@
 .snippet-page main > header nav { display: none; }
 /* Inside a snippet frame the leading separator would sit above the section
    title, so only separators between sections stay. */
-.snippet-page .editorial-study-section > .section-break:first-child,
-.snippet-page .origin-section > .section-break:first-child { display: none; }
-/* In a snippet frame the section title is the modal title, so the two-column
-   rail collapses and everything stacks in one column. */
-.snippet-page .origin-section-grid { grid-template-columns: minmax(0, 1fr); }
-.snippet-page .origin-section-grid > .origin-section-heading { grid-column: 1; grid-row: auto; }
-.snippet-page .origin-section-grid > *:not(.origin-section-heading) { grid-column: 1; }
-.snippet-page .origin-section-grid > .origin-wide { grid-column: 1; }
+.snippet-page .editorial-study-section:first-child > .section-break:first-child,
+.snippet-page .origin-section:first-child > .section-break:first-child { display: none; }
+/* Snippets have their own entry title; their sections keep the case-study rail. */
 
 /* One title treatment for every modal content entry, independent of page layout. */
 .snippet-page {
@@ -83,15 +78,17 @@
 .snippet-page main > header {
   padding-top: var(--snippet-title-gap);
 }
-.snippet-page main.origin-editorial {
+.snippet-page .snippet-entry-header {
+  padding-top: 0;
+}
+.snippet-page main > .snippet-entry-header,
+.snippet-page .editorial-detail-content > .snippet-entry-header {
   padding-top: var(--snippet-title-gap);
 }
-.snippet-page :is(
-  main > header > h1,
-  main > .editorial-detail-content > h2,
-  main > article > .editorial-study-section:first-of-type > .editorial-study-heading > h2,
-  main.origin-editorial > .origin-section:first-child .origin-section-heading > h2
-) {
+.snippet-page main:has(> .editorial-detail-content) {
+  padding-top: 0;
+}
+.snippet-page h1.page-title {
   margin-top: 0;
   font-family: var(--font-display);
   font-size: var(--snippet-title-size);
@@ -99,6 +96,13 @@
   line-height: 1.15;
   letter-spacing: 0;
   text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .snippet-page .mendeley-detail-row:has(> .subsection-title) {
+    margin-left: calc((100% - 3rem) / 3.2 + 3rem);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
 }
 @media (min-width: 768px) {
   .snippet-page {
@@ -1425,9 +1429,7 @@ a:hover .arrow-nudge,
   .origin-section-grid .origin-system-principle { max-width: none; margin-inline: 0; text-align: left; }
   .origin-section-grid .origin-process-paths { grid-template-columns: minmax(0, 1fr); }
   .origin-section-grid > .origin-wide .mx-auto, .origin-section-grid > .origin-wide.mx-auto { margin-inline: 0; max-width: none; }
-  .snippet-page .origin-section-grid > .origin-section-heading { display: grid; }
-  .snippet-page .origin-section-grid > .origin-section-heading > * { grid-column: auto; grid-row: auto; }
-  .snippet-page .origin-section-grid > .origin-wide { grid-column: 1; }
+  .snippet-page .origin-section-grid > .origin-section-heading { display: contents; }
 }
 .editorial-study-reflection .essay-prose,
 .case-study-editorial .editorial-study-reflection > .essay-prose { max-width: 52ch !important; }

@@ -29,5 +29,5 @@ export function getOriginStudy(slug: string) {
     return section;
   });
   const reflection = slug === 'design-process' ? project.reflection : slug === 'funding-matrix-redesign' ? fundingMatrixReflection : undefined;
-  return { ...study, sections, reflection, displayTitle: study.name, subtitle: undefined, disciplines: undefined };
+  return { ...study, sections, reflection, displayTitle: study.name, subtitle: slug === 'design-process' ? 'A two-track design process connecting research, product design and development.' : slug === 'documentation' ? 'Simplifying transaction documents and collaboration across the issuance lifecycle.' : 'Making complex financial data easier to explore and work with.', disciplines: undefined };
 }

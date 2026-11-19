@@ -1,8 +1,8 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { ArrowLeft } from 'lucide-react';
-import { PortfolioBreadcrumb } from '@/components/portfolio/breadcrumb';
-import { caseStudyTitle, getProject, pageMeta } from '@/data/projects';
+import { SnippetHeader } from '@/components/portfolio/snippet-header';
+import { pageMeta } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
@@ -47,14 +47,10 @@ export default function OriginGallery() {
   const snippet = params.has('snippet');
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
-    <header className="pb-12">
-      <PortfolioBreadcrumb items={[{ label: 'Portfolio', to: '/work' }, { label: caseStudyTitle(getProject('origin-markets')), to: '/work/origin-markets' }, { label: 'Sample work' }]} trailing={<p className="label-quiet">{getProject('origin-markets').dates}</p>} />
-      <h1 className="mt-8 max-w-[900px] page-title">Sample work</h1>
-      <p className="standfirst mt-6 max-w-[720px]">A selection of product screens from across the Origin platform.</p>
-    </header>
+    <SnippetHeader title="Sample interface" subtitle="A selection of product screens from across the Origin platform." intro="Dashboards, pricing and documentation screens from across the Origin platform bring activity, financial data and transaction workflows into a connected experience." />
     <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
-      <h2 id="dashboards-data" className="section-title mb-8 md:mb-12">Dashboards and data</h2>
+      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="dashboards-data" className="section-title">Dashboards and data</h2></div><div><h3 className="subsection-title mb-8">Activity, trades and pricing data</h3>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
         <figure>
           <img loading="lazy" decoding="async" onError={useLocalImage} src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
@@ -65,10 +61,10 @@ export default function OriginGallery() {
           <figcaption className="caption mt-5">Data cards</figcaption>
         </figure>
       </div>
-    </section>
+    </div></div></section>
     <SectionDivider />
     <section aria-labelledby="pricing-funding" className="py-12 md:py-16">
-      <h2 id="pricing-funding" className="section-title mb-8 md:mb-12">Pricing and funding</h2>
+      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="pricing-funding" className="section-title">Pricing and funding</h2></div><div><h3 className="subsection-title mb-8">Funding Matrix, Syndicate Pricer and levels input</h3>
       <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-12">
         <figure className="mx-auto w-full max-w-[563px]">
           <img loading="lazy" decoding="async" onError={useLocalImage} src={fundingMatrix.url} alt="Funding Matrix search and grid interfaces, before and after." width={563} height={1920} className="h-auto w-full rounded-lg" />
@@ -85,10 +81,10 @@ export default function OriginGallery() {
           </figure>
         </div>
       </div>
-    </section>
+    </div></div></section>
     <SectionDivider />
     <section aria-labelledby="documentation" className="py-12 md:py-16">
-      <h2 id="documentation" className="section-title mb-8 md:mb-12">Documentation and collaboration</h2>
+      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="documentation" className="section-title">Documentation and collaboration</h2></div><div><h3 className="subsection-title mb-8">Trade workflows, editing and comments</h3>
       <div className="grid gap-12 md:gap-16">
         {documentation.map(({ asset, title, width, height }) => (
           <figure key={asset.asset_id}>
@@ -97,7 +93,7 @@ export default function OriginGallery() {
           </figure>
         ))}
       </div>
-    </section>
+    </div></div></section>
     {!snippet && <><div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     <ProjectPagination slug="origin-markets" /></>}
   </main></>;

@@ -39,7 +39,7 @@ const Layout = () => {
   const { search } = useLocation();
   const snippet = new URLSearchParams(search).get("snippet");
   if (snippet) {
-    const secondary = ['gallery', 'design-process', 'documentation', 'funding-matrix-redesign', 'sample-work', 'product-design-identity', 'cybermon'].includes(snippet);
+    const secondary = ['design-system', 'gallery', 'design-process', 'documentation', 'funding-matrix-redesign', 'sample-work', 'product-design-identity', 'cybermon'].includes(snippet);
     return <div className="snippet-page"><Suspense fallback={null}>{secondary ? <SnippetContent /> : <Outlet />}</Suspense></div>;
   }
   return (

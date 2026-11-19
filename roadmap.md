@@ -1,4 +1,5 @@
 # Tasks
+- [x] Make every snippet self-contained with a title, subtitle, introduction and case-study-style sections; preserve existing content and verify modal entry points.
 - [x] Set the content column to 960px across menu, content and footer; verify every page and modal at desktop and phone.
 - [x] Unify all snippet modal title styles and top gaps; reduce Mendeley section headings and verify every modal on desktop and phone.
 - [x] Split Mendeley Library, Reader and Citation into separate cards and menu-free modals; verify portfolio, case-study and legacy entries.

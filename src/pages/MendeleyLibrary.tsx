@@ -1,3 +1,4 @@
+import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
@@ -14,11 +15,7 @@ const meta = pageMeta(
 );
 
 export default function MendeleyLibrary({ embedded = false }: { embedded?: boolean }) {
-  const content = <>
-    <h2 className="section-title">Library</h2>
-    <p className="standfirst mt-6 mb-10">Organising and retrieving references in one place, through collections, tags, keyword search and filtering.</p>
-    <MendeleyLibraryContent />
-  </>;
+  const content = <><SnippetHeader title="Library" subtitle="Organising and retrieving references in one place, through collections, tags, keyword search and filtering." intro="User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality." /><MendeleyLibraryContent /></>;
   if (embedded) return content;
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
@@ -62,10 +59,10 @@ function MendeleyLibraryContent() {
           <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
             <div className="mendeley-detail-row">
-              <h2 className="card-title">{section.title}</h2>
+              <h2 className="section-title">{section.title}</h2>
               <div className="mendeley-detail-body">
                 <div className="essay-prose space-y-5">
-                  {section.paragraphs.map((text) => (
+                  {(section.id === "goals" ? section.paragraphs.slice(1) : section.paragraphs).map((text) => (
                     <p key={text}>{editorialEmphasis(text)}</p>
                   ))}
                 </div>

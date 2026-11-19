@@ -599,6 +599,7 @@ export default function Cybermon() {
         <p className="standfirst mt-6 max-w-[720px]">
           Three years of gamified secure coding tournaments, from secure coding fundamentals to securing software built with AI.
         </p>
+        <p className="body-copy mt-6 max-w-[65ch]">Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.</p>
         <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
           {years.map(year => (
             <li key={year.id} className="cm-year" data-year={year.id}>
@@ -631,7 +632,7 @@ export default function Cybermon() {
           <div className={`cm-year-intro grid gap-x-10 gap-y-6 md:grid-cols-[1.1fr_1fr] md:gap-x-16 ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
             <div className="min-w-0 md:col-start-1 md:row-start-1">
               <p className="cm-kicker">{year.launch} · {year.theme}</p>
-              <h2 className="card-title cm-year-title mt-3">{year.title}</h2>
+              <h2 className="section-title cm-year-title mt-3">{year.title}</h2>
               <p className="standfirst mt-6">{year.standfirst}</p>
             </div>
             {intro?.paragraphs && (
@@ -686,7 +687,7 @@ export default function Cybermon() {
       })}
       <SectionDivider />
       <section id="three-years" className="mb-20 md:mb-28">
-        <h2 className="card-title mb-10 md:mb-14">Three years of fun</h2>
+        <h2 className="section-title mb-10 md:mb-14">Three years of fun</h2>
         <section className="editorial-study-section cm-cards-block">
           <div className="grid gap-6 md:grid-cols-3">
             {[

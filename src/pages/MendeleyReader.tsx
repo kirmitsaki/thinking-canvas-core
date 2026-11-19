@@ -1,3 +1,4 @@
+import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
@@ -14,7 +15,7 @@ const meta = pageMeta(
 );
 
 export default function MendeleyReader({ embedded = false }: { embedded?: boolean }) {
-  if (embedded) return <><h2 className="section-title">Reader</h2><p className="standfirst mt-6 mb-10">Reading, highlighting and annotating PDFs, with notes across multiple documents kept in one place.</p><MendeleyReaderContent /></>;
+  if (embedded) return <><SnippetHeader title="Reader" subtitle="Reading, highlighting and annotating PDFs, with notes across multiple documents kept in one place." intro="Managing notes across multiple PDFs while doing research can be challenging. Students and researchers often find their notes scattered and disorganised, making it difficult to connect ideas from different sources." /><MendeleyReaderContent /></>;
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo
@@ -57,11 +58,11 @@ function MendeleyReaderContent() {
           <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
             <div className="mendeley-detail-row">
-              <h2 className="card-title">{section.title}</h2>
+              <h2 className="section-title">{section.title}</h2>
               <div className="mendeley-detail-body">
                 {section.paragraphs.length > 0 && (
                   <div className="essay-prose space-y-5">
-                    {section.paragraphs.map((text) => (
+                    {(section.id === "goals" ? section.paragraphs.slice(1) : section.paragraphs).map((text) => (
                       <p key={text}>{editorialEmphasis(text)}</p>
                     ))}
                   </div>

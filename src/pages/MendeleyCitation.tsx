@@ -1,3 +1,4 @@
+import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
@@ -14,7 +15,7 @@ const meta = pageMeta(
 );
 
 export default function MendeleyCitation({ embedded = false }: { embedded?: boolean }) {
-  if (embedded) return <><h2 className="section-title">Citation</h2><p className="standfirst mt-6 mb-10">The Microsoft® Word add-in for inserting references, changing citation styles and generating a bibliography, without leaving the document.</p><MendeleyCitationContent /></>;
+  if (embedded) return <><SnippetHeader title="Citation" subtitle="The Microsoft® Word add-in for inserting references, changing citation styles and generating a bibliography, without leaving the document." intro="Mendeley Cite opens in a separate panel alongside the document, rather than over it. After sign-in, Mendeley Cite downloads the library from the cloud, so researchers can cite without having Mendeley Reference Manager open or installed." /><MendeleyCitationContent /></>;
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo
@@ -57,7 +58,7 @@ function MendeleyCitationContent() {
           <section key={section.id} id={section.id} className="editorial-study-section mb-14 scroll-mt-32 md:mb-20">
             {index > 0 && <SectionDivider />}
             <div className="mendeley-detail-row">
-              <h2 className="card-title">{section.title}</h2>
+              <h2 className="section-title">{section.title}</h2>
               <div className="mendeley-detail-body">
                 {section.paragraphs.length > 0 && (
                   <div className="essay-prose space-y-5">

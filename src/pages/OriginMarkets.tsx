@@ -1,12 +1,10 @@
 import type { ReactNode } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { getProject, caseStudyMeta } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { SectionDivider } from '@/components/portfolio/section-divider';
 import { CaseStudySnippetCard } from '@/components/portfolio/snippet-card';
-import { VisualPlaceholder } from '@/components/portfolio/visual-placeholder';
 import continuousImprovements from '@/assets/origin-continuous-improvements.webp';
 import complexWorkflows from '@/assets/origin-complex-workflows.webp';
 
@@ -69,8 +67,6 @@ function Section({ id, title, heading, lede, children }: { id: string; title: st
 }
 
 export default function OriginMarkets() {
-  const [params] = useSearchParams();
-  const inSnippetView = params.get('snippet') === 'design-system';
   const designSystem = (
     <Section id="design-system" title="Design system">
       <div className="origin-system-copy">
@@ -78,51 +74,9 @@ export default function OriginMarkets() {
         <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
       </div>
       <p className="origin-system-principle origin-wide">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
-      {inSnippetView ? null : <div className="origin-wide"><CaseStudySnippetCard to="/work/origin-markets#design-system" /></div>}
+      <div className="origin-wide"><CaseStudySnippetCard to="/work/origin-markets#design-system" /></div>
     </Section>
   );
-  if (inSnippetView) {
-    const levels = [
-      ['Atoms', 'The smallest building blocks, such as buttons, inputs and icons.'],
-      ['Molecules', 'Simple combinations of components.'],
-      ['Organisms', 'More complex interface sections built from smaller elements.'],
-      ['Templates', 'Reusable page structures and layouts.'],
-      ['Pages', 'Complete product experiences.'],
-    ];
-    return (
-      <main className="origin-editorial case-study-editorial mx-auto max-w-[960px] px-6 pb-16">
-        <Section id="design-system" title="Creating a shared foundation with Morpho">
-          <div className="origin-system-copy">
-            <P>As the platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being created independently, patterns weren't always consistent, and there was no shared foundation between design and development.</P>
-            <P>I saw an opportunity to address this by introducing a proper design system.</P>
-            <P>I raised the idea with the lead frontend engineer, who was equally enthusiastic about the opportunity. We decided to build it together, with the aim of creating an atomic system that would work consistently across Figma and the codebase.</P>
-          </div>
-          <VisualPlaceholder title="Morpho overview" />
-        </Section>
-        <Section id="foundations" title="Starting with the foundations">
-          <div className="origin-system-copy">
-            <P>I began by researching and defining the foundations: typography, colour and design tokens. Working closely with the frontend lead, we gradually expanded these into more complex components and patterns.</P>
-          </div>
-          <VisualPlaceholder title="Foundations: typography, colour and tokens" />
-          <P>We structured Morpho around five levels:</P>
-          <ul className="editorial-outcomes">
-            {levels.map(([name, text]) => <li key={name}><p className="body-copy text-muted-foreground"><strong>{name}</strong> — {text}</p></li>)}
-          </ul>
-          <VisualPlaceholder title="Atoms, molecules, organisms, templates and pages" />
-          <P>We also established an agreed set of design tokens, creating a shared language for properties such as colour, spacing and typography.</P>
-          <VisualPlaceholder title="Design tokens: colour, spacing and typography" />
-        </Section>
-        <Section id="two-environments" title="One system, two environments">
-          <div className="origin-system-copy">
-            <P>A key objective was keeping Figma and the codebase as closely aligned as possible. Rather than maintaining two separate interpretations of the same system, we wanted designers and engineers to work from a common foundation.</P>
-          </div>
-          <VisualPlaceholder title="Figma library alongside the coded components" />
-          <P>Morpho started with the essentials and grew alongside the product. By the time I left, it had become the foundation for everything the team built.</P>
-          <p className="origin-system-principle">A design system isn't a static library of colours and components. It's an evolving system, and its value comes from how consistently people use it.</p>
-        </Section>
-      </main>
-    );
-  }
   const overview = {
     ...project,
     ndaNotice: false,
