@@ -4,7 +4,7 @@ import Seo from "@/components/Seo";
 import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
 import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
 import { ComingSoonHint } from "@/components/portfolio/coming-soon-media";
-import { ProjectContext } from "@/components/portfolio/project-context";
+import { CardBody } from "@/components/portfolio/project-grid";
 import { ContactLink } from "@/components/portfolio/shell";
 
 const meta = pageMeta(
@@ -112,14 +112,7 @@ export default function Home() {
             return (
               <Link key={project.slug} to={`/work/${project.slug}`} className={cardClass}>
                 {media}
-                <div className="p-6 md:p-8">
-                  <ProjectContext industry={project.industry} field={project.field} />
-                  <h3 className="mt-3 card-title">{project.name}</h3>
-                  <p className="mt-4 max-w-[680px] body-copy text-muted-foreground">
-                    {project.summary}
-                  </p>
-                  <p className="accent-link mt-6">Read case study <span className="arrow-nudge">→</span></p>
-                </div>
+                <CardBody project={project} />
               </Link>
             );
           })}

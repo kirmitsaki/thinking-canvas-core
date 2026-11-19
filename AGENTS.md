@@ -15,3 +15,4 @@
 - Portfolio and case-study snippet cards share one card component and content registry; this keeps images, titles, descriptions and availability consistent across entry points.
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.
+- Case-study cards on every page render the shared `CardBody` from project-grid; style changes then apply everywhere at once.

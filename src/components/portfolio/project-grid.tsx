@@ -7,7 +7,7 @@ function cardYears(dates: string) {
   return dates.replace(/\b[A-Za-z]+\s+(?=\d{4})/g, "");
 }
 
-function CardBody({ project }: { project: Project }) {
+export function CardBody({ project }: { project: Project }) {
   const logo = project.logo ? projectImage(project.logo) : undefined;
   return (
     <div className="p-6 md:p-8">
