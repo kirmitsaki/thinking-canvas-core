@@ -252,7 +252,7 @@ export type Project = {
   industry: string;
   field: string;
   name: string; sector: string; title: string; summary: string; role: string;
-  logo?: string; cardTitle?: string;
+  logo?: string; cardTitle?: string; cardCompany?: string;
   intro: string; heroImage?: string; heroFit?: 'tile' | 'contain'; outcomeImage?: string; outcomeCaption?: string;
   presentation?: 'compact';
   sectionNavigation?: { label: string; id: string }[];
@@ -524,7 +524,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'aladdin', name: 'Aladdin', sector: 'Digital healthcare · Android & iOS · via Elemental Concept', industry: 'Healthcare', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Vision'],
-    logo: 'logo-elemental-concept', cardTitle: 'Healthcare Management Platform',
+    logo: 'logo-elemental-concept', cardTitle: 'Healthcare Management Platform', cardCompany: 'Elemental Concept',
     title: 'Aladdin',
     summary: 'Bringing health records, appointments and preventative care together, designed through Elemental Concept.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',
@@ -554,7 +554,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'corresilience', name: 'CorResilience', sector: 'Enterprise wellbeing · Android & iOS · via Elemental Concept', industry: 'Wellbeing', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Prototyping'],
-    logo: 'logo-elemental-concept', cardTitle: 'Employee Resilience & Wellbeing App',
+    logo: 'logo-elemental-concept', cardTitle: 'Employee Resilience & Wellbeing App', cardCompany: 'Elemental Concept',
     title: 'CorResilience',
     summary: 'Translating a proven behavioural change programme into a personal resilience app for enterprise workforces.',
     role: 'Design lead · Strategy & delivery · at Elemental Concept',

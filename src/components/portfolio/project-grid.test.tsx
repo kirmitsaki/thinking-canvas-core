@@ -11,15 +11,18 @@ vi.mock('@/data/projects', async (importOriginal) => {
 
 afterEach(cleanup);
 
+const card = (slug: string) =>
+  render(
+    <MemoryRouter>
+      <ProjectCard project={getProject(slug)} />
+    </MemoryRouter>,
+  );
+
 describe('case-study card body', () => {
   const project = getProject('origin-markets');
 
   it('shows only the years and the title, with the logo on the image', () => {
-    const { container } = render(
-      <MemoryRouter>
-        <ProjectCard project={project} />
-      </MemoryRouter>,
-    );
+    const { container } = card('origin-markets');
 
     const media = container.querySelector('.case-study-card-media');
     expect(media?.querySelector('img.card-logo')).not.toBeNull();
@@ -31,14 +34,19 @@ describe('case-study card body', () => {
   });
 
   it('keeps the company name on the logo only, for the hover label', () => {
-    const { container } = render(
-      <MemoryRouter>
-        <ProjectCard project={project} />
-      </MemoryRouter>,
-    );
+    const { container } = card('origin-markets');
 
     const label = container.querySelector('.card-logo-name');
-    expect(label?.textContent).toBe(project.name);
+    expect(label?.textContent).toBe('Origin Markets');
     expect(container.querySelector('.card-logo-wrap')?.contains(label ?? null)).toBe(true);
+  });
+
+  it('labels the Elemental Concept logos with Elemental Concept', () => {
+    for (const slug of ['aladdin', 'corresilience']) {
+      const { container, unmount } = card(slug);
+      expect(container.querySelector('.card-logo-name')?.textContent).toBe('Elemental Concept');
+      unmount();
+      cleanup();
+    }
   });
 });

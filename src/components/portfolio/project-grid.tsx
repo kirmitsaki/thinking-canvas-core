@@ -18,7 +18,7 @@ export function CardLogo({ project }: { project: Project }) {
         loading="lazy"
         className="card-logo size-12 shrink-0 rounded-full object-cover md:size-16"
       />
-      <span className="card-logo-name">{project.name}</span>
+      <span className="card-logo-name">{project.cardCompany ?? project.name}</span>
     </span>
   );
 }
