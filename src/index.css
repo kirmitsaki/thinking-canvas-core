@@ -88,14 +88,14 @@
   margin-top: 0;
   font-family: var(--font-display);
   font-size: var(--snippet-title-size);
-  font-weight: 300;
+  font-weight: 900;
   line-height: 1.15;
   letter-spacing: 0;
   text-wrap: balance;
 }
 @media (min-width: 768px) {
   .snippet-page {
-    --snippet-title-size: 2.25rem;
+    --snippet-title-size: 3.157rem;
     --snippet-title-gap: 4rem;
   }
 }
@@ -302,15 +302,15 @@
 
   .standfirst {
     font-family: var(--font-serif);
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.45;
     color: var(--muted-foreground);
   }
   @media (min-width: 768px) {
     .standfirst {
-      font-size: 1.25rem;
+      font-size: 1.333rem;
     }
   }
 
@@ -318,9 +318,9 @@
   .page-title {
     font-family: var(--font-display);
     font-size: 2.25rem;
-    font-weight: 300;
+    font-weight: 900;
     letter-spacing: 0;
-    line-height: 1.1;
+    line-height: 1.2;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
@@ -332,8 +332,8 @@
   .section-title {
     font-family: var(--font-display);
     font-size: 1.75rem;
-    font-weight: 300;
-    line-height: 1.15;
+    font-weight: 900;
+    line-height: 1.2;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
@@ -345,8 +345,8 @@
   .card-title {
     font-family: var(--font-display);
     font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 1.15;
+    font-weight: 900;
+    line-height: 1.2;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
@@ -377,8 +377,8 @@
   .card-subtitle {
     font-family: var(--font-display);
     font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1.25;
+    font-weight: 700;
+    line-height: 1.2;
     text-wrap: balance;
   }
   @media (min-width: 768px) {
@@ -390,8 +390,8 @@
   .subsection-title {
     font-family: var(--font-display);
     font-size: 1.333rem;
-    font-weight: 400;
-    line-height: 1.15;
+    font-weight: 700;
+    line-height: 1.2;
     text-wrap: balance;
   }
 
@@ -399,14 +399,14 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.45;
   }
 
   .body-copy {
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.45;
   }
 
   .design-goals-list {
@@ -442,7 +442,7 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.45;
   }
 
   .pull-quote {
@@ -644,7 +644,7 @@
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.45;
   }
   .essay-prose a:not(.editorial-card) {
     color: var(--rust);
