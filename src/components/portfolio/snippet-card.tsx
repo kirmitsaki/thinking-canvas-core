@@ -23,7 +23,7 @@ function SnippetPin({ snippetKey }: { snippetKey: string }) {
 
 export function SnippetCard({ snippet, onOpen }: { snippet: Snippet; onOpen: () => void }) {
   const media = snippet.image ? projectImage(snippet.image) : undefined;
-  return <Button variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card snippet-card group relative flex h-full w-full min-w-0 flex-col justify-start gap-0 overflow-hidden whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground">
+  return <Button variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card snippet-card group relative flex h-full w-full min-w-0 flex-col justify-start gap-0 whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground">
     <SnippetPin snippetKey={snippet.to} />
     <div className="aspect-[16/10] w-full shrink-0 overflow-hidden bg-muted">{media ? <img loading="lazy" src={media.url} alt={media.alt} className="block h-full w-full object-cover object-top" /> : <VisualPlaceholder title={snippet.name} className="aspect-auto h-full" />}</div>
     <div className="min-h-[12rem] w-full flex-1 p-6 md:p-8">
