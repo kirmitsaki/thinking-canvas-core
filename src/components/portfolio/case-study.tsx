@@ -50,9 +50,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             { label: 'Tasks', value: project.tags.join(', ') },
           ]).filter(fact => fact.label === "Role" || fact.label === "Tasks");
           const headerFacts = [
-            ...baseFacts.slice(0, 1),
             { label: 'Company', value: project.name },
-            ...baseFacts.slice(1),
+            ...baseFacts,
           ];
           return (
             <div className="case-study-header-copy mt-8">
