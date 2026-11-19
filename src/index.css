@@ -1446,6 +1446,7 @@ a:hover .arrow-nudge,
   filter: drop-shadow(0 1px 1px rgb(28 25 23 / 0.25));
 }
 
-.snippet-grid > :nth-child(3n + 2) {
+.snippet-grid > :nth-child(3n + 2),
+.case-study-snippet:nth-child(2) {
   transform: rotate(-1.4deg);
 }
