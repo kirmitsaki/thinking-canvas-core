@@ -25,7 +25,6 @@ function emphasize(text: string): ReactNode {
 }
 
 const intro = [
-  'An AI-driven developer risk platform serving enterprise teams across EMEA and APAC.',
   'I joined during an internal restructure to build the design function properly across two regions. The platform had years of accumulated decisions, no coherent product vision, and no design infrastructure. The brief was to change that.',
 ].map(emphasize);
 
@@ -40,6 +39,7 @@ export default function SecureCodeWarrior() {
   const open = useSnippetModal();
   const overview = {
     ...project,
+    title: 'An AI-driven developer risk platform serving enterprise teams across EMEA and APAC.',
     ndaNotice: false,
     heroImage: undefined,
     reflection: undefined,
