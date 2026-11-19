@@ -35,7 +35,8 @@ export function CardBody({ project }: { project: Project }) {
 }
 
 export function ProjectCard({ project, horizontal = false }: { project: Project; horizontal?: boolean }) {
-  const image = project.heroImage ? projectImage(project.heroImage) : undefined;
+  const imageKey = project.cardImage ?? project.heroImage;
+  const image = imageKey ? projectImage(imageKey) : undefined;
   return (
     <SnippetLink
       to={project.linkTo ?? `/work/${project.slug}`}

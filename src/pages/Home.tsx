@@ -84,14 +84,15 @@ export default function Home() {
             .filter((project) => !project.comingSoon)
             .slice(0, 2)
             .map((project) => {
+              const imageKey = project.cardImage ?? project.heroImage;
               const cardClass = "editorial-card case-study-card group block overflow-hidden";
               const media = (
                 <div className="case-study-card-media relative aspect-[16/10] overflow-hidden bg-muted">
                   <CardLogo project={project} />
-                  {project.heroImage ? (
+                  {imageKey ? (
                     <img
-                      src={projectImage(project.heroImage).url}
-                      alt={projectImage(project.heroImage).alt}
+                      src={projectImage(imageKey).url}
+                      alt={projectImage(imageKey).alt}
                       className="block h-full w-full object-cover"
                       loading="lazy"
                     />
