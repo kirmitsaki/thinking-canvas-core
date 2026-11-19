@@ -11,7 +11,7 @@ vi.mock('@/data/projects', async (importOriginal) => {
 
 afterEach(cleanup);
 
-const card = (slug: string) =>
+const card = (slug: Parameters<typeof getProject>[0]) =>
   render(
     <MemoryRouter>
       <ProjectCard project={getProject(slug)} />
@@ -42,7 +42,7 @@ describe('case-study card body', () => {
   });
 
   it('labels the Elemental Concept logos with Elemental Concept', () => {
-    for (const slug of ['aladdin', 'corresilience']) {
+    for (const slug of ['aladdin', 'corresilience'] as const) {
       const { container, unmount } = card(slug);
       expect(container.querySelector('.card-logo-name')?.textContent).toBe('Elemental Concept');
       unmount();
