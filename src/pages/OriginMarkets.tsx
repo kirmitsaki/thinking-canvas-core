@@ -92,8 +92,7 @@ export default function OriginMarkets() {
     sections: [],
     outcomesHeading: undefined,
     sectionNavigation: [
-      { label: 'Overview', id: 'overview' },
-      { label: 'Challenge', id: 'challenge' },
+      { label: 'Overview', id: 'challenge' },
       { label: 'My role', id: 'my-role' },
       { label: 'Research', id: 'research' },
       { label: 'Process', id: 'process' },
@@ -105,7 +104,7 @@ export default function OriginMarkets() {
 
   const body = (
     <>
-      <Section id="challenge" title="Challenge" lede={challengeCopy} />
+      <Section id="challenge" title="Overview" lede={challengeCopy} />
 
       <Section id="my-role" title="My role" lede={roleCopy} />
 

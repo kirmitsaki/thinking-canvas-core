@@ -12,10 +12,10 @@ import { cardYears } from "./project-grid";
 import { CaseStudySnippetCard } from "./snippet-card";
 import { editorialEmphasis } from "./editorial-emphasis";
 import { SnippetLink } from './snippet-context';
+import { BackToTop } from "./back-to-top";
 
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice, sectionOnly = false }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode; sectionOnly?: boolean }) {
   const navigation = project.sectionNavigation ?? [
-    { label: "Overview", id: "overview" },
     ...project.sections.flatMap((section, index) =>
       section.id && section.navigationLabel
         ? [
@@ -377,6 +377,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
         </div>
       </article>
       {!sectionOnly && <ProjectPagination slug={project.slug} />}
+    {!sectionOnly && <BackToTop />}
     </main>
   );
 }

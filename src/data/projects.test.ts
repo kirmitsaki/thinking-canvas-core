@@ -72,18 +72,18 @@ describe('industry, field and contribution taxonomy', () => {
 
 describe('shared case-study section filters', () => {
   it('groups Mendeley product areas under Products', () => {
-    assert.deepEqual(projectSectionLabels(getProject('mendeley')), ['Overview', 'Challenge', 'Research', 'Design system', 'Products', 'Outcomes']);
+    assert.deepEqual(projectSectionLabels(getProject('mendeley')), ['Overview', 'Research', 'Design system', 'Products', 'Outcomes']);
   });
   it('omits Enquiries from MDS navigation and filters', () => {
-    assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Overview', 'Interface']);
+    assert.deepEqual(projectSectionLabels(getProject('mds-quostar')), ['Interface']);
     assert.equal(projectMatchesFilter(getProject('mds-quostar'), 'Enquiries'), false);
   });
   it('uses Brand & Identity for brand anchors, with JobMe under STYLEGUIDE', () => {
     assert.deepEqual(projectsByYear.filter(project => projectMatchesFilter(project, 'Brand & Identity')).map(project => project.slug), ['secure-code-warrior', 'aladdin', 'corresilience', 'pawsquad']);
     assert.ok(projectSectionLabels(getProject('jobme')).includes('STYLEGUIDE'));
   });
-  it('keeps Meliniki to Overview, Brief and Label design', () => {
-    assert.deepEqual(projectSectionLabels(getProject('meliniki')), ['Overview', 'Brief', 'Label design']);
+  it('keeps Meliniki to Brief and Label design', () => {
+    assert.deepEqual(projectSectionLabels(getProject('meliniki')), ['Brief', 'Label design']);
   });
   it('uses curated work areas for contribution filter options and matches', () => {
     assert.deepEqual(projectFilters, [...new Set(projectsByYear.flatMap(projectWorkAreas))]);

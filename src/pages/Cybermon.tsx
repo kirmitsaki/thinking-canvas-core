@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/portfolio/back-to-top";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowDown, Award, Crown, Gift, Medal, Star, Trophy } from "lucide-react";
@@ -569,7 +570,6 @@ function jumpTo(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
 }
 
 const navItems = [
-  { label: "Overview", id: "overview" },
   ...years.map(year => ({ label: year.label, id: year.id })),
   { label: "Three years of fun", id: "three-years" },
 ];
@@ -747,6 +747,7 @@ export default function Cybermon() {
         </Link>
       </div>
       <ProjectPagination slug="secure-code-warrior" />
-    </main>
+    <BackToTop />
+      </main>
   );
 }

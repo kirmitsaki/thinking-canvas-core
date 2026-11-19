@@ -83,8 +83,7 @@ export default function SecureCodeWarrior() {
     outcomesHeading: undefined,
     evidencePending: false,
     sectionNavigation: [
-      { label: 'Overview', id: 'overview' },
-      { label: 'Challenge', id: 'challenge' },
+      { label: 'Overview', id: 'challenge' },
       { label: 'My role', id: 'my-role' },
       { label: 'VISION', id: 'product-vision' },
       { label: 'PRODUCT IDENTITY', id: 'product-design-identity' },
@@ -97,7 +96,7 @@ export default function SecureCodeWarrior() {
 
   const body = (
     <>
-      <Section id="challenge" title="Challenge" lede={challengeCopy} />
+      <Section id="challenge" title="Overview" lede={challengeCopy} />
 
       <Section id="my-role" title="My role" lede={roleCopy} />
 
