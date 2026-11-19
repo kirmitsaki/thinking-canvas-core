@@ -13,10 +13,10 @@ function pinOffset(key: string) {
 function SnippetPin({ snippetKey }: { snippetKey: string }) {
   const { left, rotate } = pinOffset(snippetKey);
   return (
-    <svg aria-hidden="true" className="snippet-pin" style={{ left: `${left}%`, transform: `translateX(-50%) rotate(${rotate}deg)` }} width="44" height="60" viewBox="0 0 22 30" fill="none">
-      <line x1="11" y1="13" x2="11" y2="28" stroke="var(--caramel)" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="11" cy="8" r="7" fill="var(--caramel)" />
-      <circle cx="8.5" cy="5.5" r="2.2" fill="var(--card-surface)" opacity="0.55" />
+    <svg aria-hidden="true" className="snippet-pin" style={{ left: `${left}%`, transform: `translateX(-50%) rotate(${rotate}deg)` }} width="34" height="46" viewBox="0 0 22 30" fill="none">
+      <line x1="11" y1="13" x2="11" y2="28" stroke="var(--burgundy)" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="11" cy="8" r="7" fill="var(--burgundy)" />
+      <circle cx="8.5" cy="5.5" r="2.2" fill="var(--card-surface)" opacity="0.3" />
     </svg>
   );
 }

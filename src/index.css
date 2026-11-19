@@ -1423,10 +1423,10 @@ a:hover .arrow-nudge,
 
 .snippet-card .snippet-pin {
   position: absolute;
-  top: -14px;
+  top: -11px;
   z-index: 1;
-  width: 44px;
-  height: 60px;
+  width: 34px;
+  height: 46px;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgb(28 25 23 / 0.25));
 }
