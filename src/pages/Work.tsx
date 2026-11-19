@@ -20,7 +20,8 @@ export default function WorkPage() {
           <h1 className="page-title">Portfolio</h1>
         </header>
         <section>
-          <ProjectGrid items={portfolioProjects} />
+          {/* Coming-soon entries (Secure Code Warrior) hidden; restore by passing portfolioProjects directly. */}
+          <ProjectGrid items={portfolioProjects.filter((project) => !project.comingSoon)} />
         </section>
         <section className="mt-20 md:mt-28" aria-labelledby="snippets-heading">
           <h2 id="snippets-heading" className="section-title mb-10 md:mb-14">Snippets</h2>
