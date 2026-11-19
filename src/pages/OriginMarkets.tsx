@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
-import { getProject, caseStudyMeta, projectImage } from '@/data/projects';
+import { getProject, caseStudyMeta } from '@/data/projects';
 import { CaseStudy } from '@/components/portfolio/case-study';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { SectionDivider } from '@/components/portfolio/section-divider';
@@ -69,6 +69,7 @@ function Section({ id, title, heading, lede, children }: { id: string; title: st
 
 export default function OriginMarkets() {
   const [params] = useSearchParams();
+  const inSnippetView = params.get('snippet') === 'design-system';
   const designSystem = (
     <Section id="design-system" title="Design system">
       <div className="origin-system-copy">
@@ -76,10 +77,10 @@ export default function OriginMarkets() {
         <p className="body-copy text-muted-foreground">{emphasize('Morpho started small: the components used every day, built once, used everywhere. It grew into a full design system covering tokens, components, patterns, and documentation. By the time I left it was the foundation for everything the team built.')}</p>
       </div>
       <p className="origin-system-principle origin-wide">A design system is only as valuable as its adoption. Morpho worked because it was built with engineers, not for them.</p>
-      <img loading="lazy" src={projectImage('origin-morpho').url} alt={projectImage('origin-morpho').alt} className="origin-wide h-auto w-full rounded-[10px]" />
+      {inSnippetView ? null : <div className="origin-wide"><CaseStudySnippetCard to="/work/origin-markets#design-system" /></div>}
     </Section>
   );
-  if (params.get('snippet') === 'design-system') return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
+  if (inSnippetView) return <main className="origin-editorial mx-auto max-w-[960px] px-6 pb-16">{designSystem}</main>;
   const overview = {
     ...project,
     ndaNotice: false,
