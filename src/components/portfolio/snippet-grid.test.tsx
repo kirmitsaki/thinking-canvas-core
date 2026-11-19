@@ -1,5 +1,6 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { snippets } from '@/data/snippets';
 import { SnippetGrid } from './snippet-grid';
 
 vi.mock('@/data/projects', () => ({
@@ -23,5 +24,18 @@ describe('snippet availability', () => {
     }
     fireEvent.click(cards[0]);
     expect(screen.queryByRole('dialog')).not.toBeNull();
+  });
+});
+
+describe('snippet card content', () => {
+  it('shows no company logo and no company name, only the header image, title and description', () => {
+    render(<SnippetGrid />);
+    const visible = snippets.filter((snippet) => !snippet.disabled);
+    const cards = screen.getAllByRole('button');
+    expect(cards.length).toBe(visible.length);
+    cards.forEach((card, i) => {
+      expect(card.querySelectorAll('img').length).toBe(1);
+      expect(card.textContent).not.toContain(visible[i].project);
+    });
   });
 });
