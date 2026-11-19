@@ -428,6 +428,16 @@
     text-wrap: balance;
   }
 
+  /* Left-rail subtitles take the quote's type: italic serif in the accent colour,
+     sitting where the subtitle sits now — no rules, no centring. */
+  .origin-section-heading > .subsection-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--accent);
+  }
+
   .article-body {
     font-family: var(--font-serif);
     font-size: 1rem;
