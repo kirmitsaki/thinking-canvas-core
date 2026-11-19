@@ -88,7 +88,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
       <SectionNavigation items={navigation} to={`/work/${project.slug}`} />
       <div className="mx-auto max-w-[960px] px-6">
         {heroNotice && <div className="mb-6">{heroNotice}</div>}
-        {project.heroImage ? (
+        {project.heroImage && (
           <img
             src={projectImage(project.heroImage).url}
             alt={projectImage(project.heroImage).alt}
@@ -98,8 +98,6 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 : heroImageClass
             }
           />
-        ) : (
-          <VisualPlaceholder title={`${project.name} · ${project.sector}`} />
         )}
       </div></>}
       <article className="mx-auto max-w-[960px] px-6 py-12 md:py-16">
