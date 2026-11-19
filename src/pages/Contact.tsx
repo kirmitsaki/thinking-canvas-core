@@ -36,32 +36,30 @@ export default function Contact() {
         path="/contact"
         ogType={meta.ogType}
       />
-      <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:gap-16">
-        <header>
-          <h1 className="page-title">Contact</h1>
-          <p className="standfirst mt-6 max-w-2xl">
-            Available for Product Design contract engagements. London, working remotely.
-          </p>
-        </header>
-        <div className="flex flex-col gap-5 md:pt-10">
-          {channels.map(({ icon: Icon, label, text, href, external, note }) => (
-            <section key={label} className="editorial-card min-w-0 p-6 md:p-8">
-              <h2 className="label">
-                <Icon size={18} className="text-accent" />
-                <span className="sr-only">{label}</span>
-              </h2>
-              <a
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className="mt-4 block break-words body-copy text-accent underline decoration-1 underline-offset-4 transition-colors hover:text-caramel"
-              >
-                {text}
-              </a>
-              <p className="mt-3 caption">{note}</p>
-            </section>
-          ))}
-        </div>
+      <header>
+        <h1 className="page-title">Contact</h1>
+        <p className="standfirst mt-6 max-w-2xl">
+          Available for Product Design contract engagements. London, working remotely.
+        </p>
+      </header>
+      <div className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 md:gap-6">
+        {channels.map(({ icon: Icon, label, text, href, external, note }) => (
+          <section key={label} className="editorial-card min-w-0 p-6 md:p-8">
+            <h2 className="label">
+              <Icon size={18} className="text-accent" />
+              <span className="sr-only">{label}</span>
+            </h2>
+            <a
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              className="mt-4 block break-words body-copy text-accent underline decoration-1 underline-offset-4 transition-colors hover:text-caramel"
+            >
+              {text}
+            </a>
+            <p className="mt-3 caption">{note}</p>
+          </section>
+        ))}
       </div>
     </main>
   );
