@@ -8,14 +8,15 @@ export type Snippet = {
 };
 
 export const snippets: Snippet[] = [
-  {
-    to: "/work/secure-code-warrior#design-system",
-    image: "scw-wanda",
-    project: "Secure Code Warrior",
-    name: "Design system",
-    description: "Wanda, the platform’s first design system, from shared file to living system.",
-    disabled: true,
-  },
+  // Hidden Nov 2026 (kept for later): SCW design system snippet.
+  // {
+  //   to: "/work/secure-code-warrior#design-system",
+  //   image: "scw-wanda",
+  //   project: "Secure Code Warrior",
+  //   name: "Design system",
+  //   description: "Wanda, the platform’s first design system, from shared file to living system.",
+  //   disabled: true,
+  // },
   {
     to: "/work/secure-code-warrior/product-design-identity",
     image: "scw-identity-header",

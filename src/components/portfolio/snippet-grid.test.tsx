@@ -4,6 +4,7 @@ import { SnippetGrid } from './snippet-grid';
 
 vi.mock('@/data/projects', () => ({
   projectImage: () => ({ url: '/placeholder.svg', alt: '' }),
+  getProject: () => ({ logo: undefined }),
 }));
 vi.mock('./snippet-modal', () => ({
   SnippetModal: ({ snippet }: { snippet: unknown }) => snippet ? <div role="dialog" /> : null,
@@ -12,17 +13,15 @@ vi.mock('./snippet-modal', () => ({
 afterEach(cleanup);
 
 describe('snippet availability', () => {
-  it('prevents opening the SCW design system without disabling the other snippets', () => {
+  it('hides the SCW design system snippet and keeps every visible snippet openable', () => {
     render(<SnippetGrid />);
+    expect(screen.queryByText('Wanda, the platform’s first design system, from shared file to living system.')).toBeNull();
     const cards = screen.getAllByRole('button');
-    const scwDesignSystem = cards[0];
-    expect(scwDesignSystem instanceof HTMLButtonElement && scwDesignSystem.disabled).toBe(true);
-    fireEvent.click(scwDesignSystem);
-    expect(screen.queryByRole('dialog')).toBeNull();
-    for (const card of cards.slice(1)) {
+    expect(cards.length).toBeGreaterThan(0);
+    for (const card of cards) {
       expect(card instanceof HTMLButtonElement && card.disabled).toBe(false);
     }
-    fireEvent.click(cards[1]);
+    fireEvent.click(cards[0]);
     expect(screen.queryByRole('dialog')).not.toBeNull();
   });
 });
