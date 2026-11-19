@@ -82,7 +82,7 @@ export default function About() {
       </div>
 
       <section className="hairline-top mt-16 pt-10 md:mt-20 md:pt-12">
-        <h2 className="section-title">Here I can help</h2>
+        <h2 className="section-title">What I can help with</h2>
         <ul className="capability-grid mt-10">
           {capabilities.map(([label, text], index) => (
             <li key={label} className="capability-card editorial-card">
