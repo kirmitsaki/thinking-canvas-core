@@ -1,4 +1,5 @@
 # Tasks
+- [x] Set the content column to 960px across menu, content and footer; verify every page and modal at desktop and phone.
 - [x] Unify all snippet modal title styles and top gaps; reduce Mendeley section headings and verify every modal on desktop and phone.
 - [x] Split Mendeley Library, Reader and Citation into separate cards and menu-free modals; verify portfolio, case-study and legacy entries.
 - [x] Replace all secondary case-study destinations with shared modals and top breadcrumbs; remove standalone destinations and verify tabs and closing.
