@@ -353,6 +353,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                   ))}
                 </ul>
               )}
+              {project.outcomesClosing && <p className="body-copy text-muted-foreground">{editorialEmphasis(project.outcomesClosing)}</p>}
               {project.outcomeImage && (
                 <figure className="editorial-study-visual w-full">
                   <img
@@ -380,6 +381,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 trailing={<ReflectionDragon />}
               >
                 <div className="space-y-5">
+                  {project.reflection.subtitle && <h3 className="subsection-title">{project.reflection.subtitle}</h3>}
                   {project.reflection.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{editorialEmphasis(paragraph)}</p>
                   ))}

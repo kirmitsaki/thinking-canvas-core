@@ -1,6 +1,7 @@
 # Architecture
 
 - Origin Markets keeps a dedicated overview and shared project data, with lazy-loaded secondary content available only inside snippets; this preserves its distinct layout without standalone secondary pages.
+- Case-study closing copy uses optional outcome-closing and reflection-subtitle fields in the shared renderer so additional supplied copy does not require duplicate layouts.
 - Scope Origin overview presentation under `.origin-editorial`; its editorial layouts must not change shared case-study or portfolio styling.
 - Other case studies use `.case-study-editorial` with existing narrative sections and shared typography tokens; this extends the Origin template without altering portfolio cards or requiring research sections on simpler projects.
 - Cross-project image pointers are re-uploaded to this project and paired with local optimised images so the portfolio also works on GitHub Pages.
