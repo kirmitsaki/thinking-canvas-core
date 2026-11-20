@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
+import { ContentSkeleton } from '@/components/portfolio/content-skeleton';
 
 const Library = lazy(() => import("./MendeleyLibrary"));
 const Reader = lazy(() => import("./MendeleyReader"));
@@ -12,7 +13,7 @@ export default function MendeleySampleWork() {
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
       <div className="editorial-detail-content mx-auto">
-        <Suspense fallback={<p className="caption">Loading…</p>}><Content /></Suspense>
+        <Suspense fallback={<ContentSkeleton />}><Content /></Suspense>
       </div>
     </main>
   );

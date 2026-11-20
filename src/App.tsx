@@ -4,6 +4,10 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { PortfolioFooter, PortfolioHeader } from "@/components/portfolio/shell";
 import { SnippetProvider } from '@/components/portfolio/snippet-context';
 import { SnippetContent } from '@/components/portfolio/snippet-content';
+import { ReadingProgress } from '@/components/portfolio/reading-progress';
+import { ContentSkeleton } from '@/components/portfolio/content-skeleton';
+import { ImageLoadingStates } from '@/components/portfolio/image-loading-states';
+import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 const About = lazy(() => import("@/pages/About"));
 const CaseStudyPage = lazy(() => import("@/pages/CaseStudyPage"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -36,18 +40,21 @@ const PageEnter = () => {
 };
 
 const Layout = () => {
-  const { search } = useLocation();
+  const { pathname, search } = useLocation();
+  usePortfolioHeaderHeight();
   const snippet = new URLSearchParams(search).get("snippet");
   if (snippet) {
     const secondary = ['design-system', 'gallery', 'design-process', 'documentation', 'funding-matrix-redesign', 'sample-work', 'product-design-identity', 'cybermon'].includes(snippet);
-    return <div className="snippet-page"><Suspense fallback={null}>{secondary ? <SnippetContent /> : <Outlet />}</Suspense></div>;
+    return <div className="snippet-page"><ReadingProgress key={pathname + search} snippet /><ImageLoadingStates /><Suspense fallback={<ContentSkeleton />}>{secondary ? <SnippetContent /> : <Outlet />}</Suspense></div>;
   }
   return (
   <SnippetProvider>
   <div className="paper-grain flex min-h-screen flex-col">
     <PortfolioHeader />
+    {/^\/work\/[^/]+$/.test(pathname) && <ReadingProgress key={pathname} />}
+    <ImageLoadingStates />
     <div className="flex-1">
-      <Suspense fallback={null}>
+      <Suspense fallback={<ContentSkeleton />}>
         <PageEnter />
       </Suspense>
     </div>

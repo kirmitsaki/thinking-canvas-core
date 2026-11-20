@@ -1,4 +1,6 @@
 # Architecture
+- Mount reading progress at the shared layout level so case studies and same-origin snippet frames measure their own document; keep sticky-bar offsets in CSS tokens.
+- Use shared image-loading observation and asset dimensions to reserve existing image ratios without duplicating image renderers or changing loaded artwork.
 
 - Origin Markets keeps a dedicated overview and shared project data, with lazy-loaded secondary content available only inside snippets; this preserves its distinct layout without standalone secondary pages.
 - Case-study closing copy uses optional outcome-closing and reflection-subtitle fields in the shared renderer so additional supplied copy does not require duplicate layouts.

@@ -29,6 +29,9 @@
   --modal-backdrop: color-mix(in srgb, var(--ink) 55%, transparent);
   /* Reading measure for case-study and snippet copy in the content column. */
   --reading-measure: 500px;
+  --reading-progress-height: 4px;
+  --skeleton-base: color-mix(in srgb, var(--camel) 14%, var(--background));
+  --skeleton-highlight: color-mix(in srgb, var(--card-surface) 75%, var(--background));
 
   /* Semantic mappings */
   --background: var(--ivory);
@@ -50,6 +53,35 @@
 }
 
 .snippet-modal-overlay { background: var(--modal-backdrop); }
+.reading-progress {
+  position: sticky;
+  top: var(--portfolio-header-height, 80px);
+  z-index: 25;
+  height: var(--reading-progress-height);
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+.reading-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--reading-progress, 0));
+  transform-origin: left center;
+}
+.skeleton-surface,
+img[data-image-loading] {
+  background-color: var(--skeleton-base);
+  background-image: linear-gradient(100deg, transparent 20%, var(--skeleton-highlight) 50%, transparent 80%);
+  background-size: 250% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+}
+@keyframes skeleton-shimmer {
+  from { background-position: 150% 0; }
+  to { background-position: -150% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-surface, img[data-image-loading] { animation: none; }
+}
 /* The header's company name is a link, so it carries the site's link colour. */
 .snippet-modal-company {
   font-size: 0.9375rem;
@@ -65,7 +97,7 @@
 .snippet-page main > div:has(> a[href="/work/secure-code-warrior"]),
 .snippet-page main > div:has(> a[href="/work/mendeley"]) { display: none; }
 .snippet-page .sample-work-tabs,
-.snippet-page .case-study-navigation { top: 0; }
+.snippet-page .case-study-navigation { top: var(--reading-progress-height); }
 .snippet-page main > header nav { display: none; }
 /* Inside a snippet frame the leading separator would sit above the section
    title, so only separators between sections stay. */
@@ -772,14 +804,14 @@
 
   .case-study-navigation {
     position: sticky;
-    top: var(--portfolio-header-height, 80px);
+    top: calc(var(--portfolio-header-height, 80px) + var(--reading-progress-height));
     z-index: 20;
     margin-bottom: 3rem;
   }
 
   .sample-work-tabs {
     position: sticky;
-    top: var(--portfolio-header-height, 80px);
+    top: calc(var(--portfolio-header-height, 80px) + var(--reading-progress-height));
     z-index: 20;
     background-color: var(--background);
   }

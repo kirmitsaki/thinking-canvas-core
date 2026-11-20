@@ -3,11 +3,15 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { snippetFrameUrl } from '@/data/secondary-snippets';
 import { projectImage, projects } from '@/data/projects';
+import { useEffect, useState } from 'react';
+import { ContentSkeleton } from './content-skeleton';
 
 export function SnippetModal({ snippet, onClose }: {
   snippet: { to: string; project: string; name: string } | null;
   onClose: () => void;
 }) {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => setLoaded(false), [snippet?.to]);
   const [path] = snippet?.to.split("#") ?? [];
   /* Case study root: /work/<slug> regardless of the snippet's deeper path. */
   const projectRoot = path ? `/${path.split("/").filter(Boolean).slice(0, 2).join("/")}` : "";
@@ -31,11 +35,14 @@ export function SnippetModal({ snippet, onClose }: {
             </Dialog.Close>
           </div>
           <Dialog.Title className="sr-only">{snippet?.name}</Dialog.Title>
-          {snippet && <iframe key={snippet.to} title={`${companyName} · ${snippet.name}`} src={snippetFrameUrl(snippet.to)} onLoad={event => {
+          {snippet && <div className="relative min-h-0 flex-1">
+          {!loaded && <div className="absolute inset-0 overflow-hidden bg-background"><ContentSkeleton /></div>}
+          <iframe key={snippet.to} title={`${companyName} · ${snippet.name}`} src={snippetFrameUrl(snippet.to)} onLoad={event => {
+            setLoaded(true);
             event.currentTarget.contentDocument?.addEventListener("keydown", key => {
               if (key.key === "Escape") onClose();
             });
-          }} className="min-h-0 w-full flex-1 border-0" />}
+          }} className="h-full w-full border-0" /></div>}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
