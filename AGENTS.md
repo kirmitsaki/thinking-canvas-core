@@ -16,5 +16,8 @@
 - Scope MDS QuoStar screenshot rows with `mds-image-row`; wrapping flex rows centre incomplete groups without changing other case-study galleries.
 - Cybermon infographic styling is scoped under `.cm-page` with per-year colours via `.cm-year[data-year]`, and subsections pick their layout from a `variant` field in the page data; this keeps the playful treatment off other case studies.
 - Case-study cards on every page render the shared `CardBody` from project-grid; style changes then apply everywhere at once.
+- Home and portfolio cards share `ProjectCardMedia`, retaining their own link destinations and media classes so consolidation cannot change presentation or navigation.
+- Mendeley Reader and Citation share `MendeleySections`; their lazy-loaded pages are snippet-only, with the Reader introduction excluded from its first section to avoid repeating it.
+- Tailwind colour aliases read global CSS tokens, including opacity modifiers, so palette updates have one authority without changing font stacks or rendered colours.
 - Case-study card artwork uses an optional `cardImage` separate from `heroImage`, with CDN pointers and local optimised fallbacks, so uploaded covers do not alter case-study content or static hosting.
 - GitHub Pages deploy runs scripts/mirror-assets.mjs after build to copy every .asset.json image into dist; static hosting cannot serve Lovable CDN paths.

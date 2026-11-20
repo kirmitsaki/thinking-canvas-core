@@ -39,6 +39,7 @@
   --accent-foreground: var(--warm-ivory);
   --border: color-mix(in srgb, var(--camel) 35%, transparent);
   --hairline: color-mix(in srgb, var(--camel) 35%, transparent);
+  --input: color-mix(in srgb, var(--camel) 40%, transparent);
 
   --font-display: "Lato", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
@@ -252,12 +253,6 @@
   }
   .editorial-card:hover {
     border-color: var(--caramel);
-  }
-
-  .lead-card {
-    background-color: var(--card);
-    border: 2px solid var(--caramel);
-    border-radius: 10px;
   }
 
   .logo-card-media {
@@ -1303,8 +1298,7 @@ a:hover .arrow-nudge,
 .group:hover .arrow-nudge {
   transform: translateX(3px);
 }
-.editorial-card:active,
-.lead-card:active {
+.editorial-card:active {
   border-color: var(--rust);
 }
 
@@ -1352,29 +1346,6 @@ a:hover .arrow-nudge,
   }
 }
 
-.origin-product-card.cybermon-card {
-  --cybermon-bg: 355 62% 24%;
-  --cybermon-fg: 36 40% 94%;
-  background: hsl(var(--cybermon-bg));
-  border-color: hsl(var(--cybermon-bg));
-  color: hsl(var(--cybermon-fg));
-}
-.origin-product-card.cybermon-card .label-quiet,
-.origin-product-card.cybermon-card .body-copy { color: hsl(var(--cybermon-fg) / 0.82); }
-.origin-product-card.cybermon-card .subsection-title { color: hsl(var(--cybermon-fg)); }
-.origin-product-card.cybermon-card .accent-link { color: hsl(var(--cybermon-fg)); }
-
-.origin-product-card.cybermon-card { position: relative; overflow: hidden; }
-.cybermon-dragon {
-  position: absolute; top: 1.25rem; right: 1.25rem; width: 3.5rem; height: 2rem;
-  color: hsl(var(--cybermon-fg)); animation: cybermon-fly 3.2s ease-in-out infinite;
-}
-@keyframes cybermon-fly {
-  0%, 100% { transform: scaleX(-1) translate(0, 0) rotate(-3deg); }
-  50% { transform: scaleX(-1) translate(6px, -5px) rotate(3deg); }
-}
-@media (prefers-reduced-motion: reduce) { .cybermon-dragon { animation: none; transform: scaleX(-1); } }
-
 /* Cybermon infographic page — each year carries its own artwork colour. */
 .cm-page { --cm-2024: 222 64% 46%; --cm-2025: 268 58% 50%; --cm-2026: 104 60% 32%; }
 .cm-year { --year: var(--cm-2024); }
@@ -1384,7 +1355,6 @@ a:hover .arrow-nudge,
 .cm-kicker { color: hsl(var(--year)); font-family: var(--font-mono, inherit); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
 .cm-card { background: var(--card); border: 1px solid var(--hairline); border-top: 3px solid hsl(var(--year)); border-radius: 10px; }
 .cm-tag { display: inline-flex; align-items: center; align-self: flex-start; border-radius: 999px; padding: 0.2rem 0.7rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.4; background: hsl(var(--year) / 0.1); color: hsl(var(--year)); border: 1px solid hsl(var(--year) / 0.3); }
-.cm-step-number { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 999px; background: hsl(var(--year)); color: var(--background); font-weight: 600; font-size: 0.9rem; }
 .cm-medal { display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; border-radius: 999px; background: hsl(var(--year) / 0.12); color: hsl(var(--year)); border: 2px solid hsl(var(--year) / 0.45); }
 .cm-stat-value { color: hsl(var(--year)); font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1; font-weight: 500; }
 .cm-timeline-card { transition: transform 300ms ease, border-color 300ms ease; }

@@ -1,4 +1,5 @@
 # Tasks
+- [x] Audit and optimise unused assets and duplicate code without changing appearance, copy, hidden content or routes.
 - [x] Make every snippet self-contained with a title, subtitle, introduction and case-study-style sections; preserve existing content and verify modal entry points.
 - [x] Set the content column to 960px across menu, content and footer; verify every page and modal at desktop and phone.
 - [x] Unify all snippet modal title styles and top gaps; reduce Mendeley section headings and verify every modal on desktop and phone.
@@ -10,6 +11,6 @@
 - [x] Consolidate those detail pages into Sample work with Library, Reader and Citation tabs; verify navigation.
 - [x] Apply the Origin editorial template to other case studies without rewriting their copy or inventing sections.
 - [x] Verify case-study navigation, imagery and desktop/mobile layouts.
-- [ ] Remove confirmed unused components, styles and dependencies, preserving hidden Notes pages.
-- [ ] Verify all live links, section scrolling, sample-work tabs and desktop/mobile layouts.
+- [x] Remove confirmed unused components and styles; retain used dependencies and hidden Notes pages.
+- [x] Verify page and snippet links, section scrolling, sample-work views and desktop/mobile layouts.
 - [x] Run the full test suite and check current error reports.

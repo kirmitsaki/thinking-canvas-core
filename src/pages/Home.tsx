@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, MapPin, Laptop, Handshake } from "lucide-react";
 import Seo from "@/components/Seo";
-import { projects, projectImage, projectWorkAreas, pageMeta } from "@/data/projects";
-import { VisualPlaceholder } from "@/components/portfolio/visual-placeholder";
-import { CardBody, CardLogo } from "@/components/portfolio/project-grid";
+import { projects, pageMeta } from "@/data/projects";
+import { CardBody, ProjectCardMedia } from "@/components/portfolio/project-grid";
 import { DarkCard } from "@/components/portfolio/dark-card";
 import { ContactLink } from "@/components/portfolio/shell";
 
@@ -84,29 +83,10 @@ export default function Home() {
             .filter((project) => !project.comingSoon)
             .slice(0, 2)
             .map((project) => {
-              const imageKey = project.cardImage ?? project.heroImage;
               const cardClass = "editorial-card case-study-card group block overflow-hidden";
-              const media = (
-                <div className="case-study-card-media relative aspect-[16/10] overflow-hidden bg-muted">
-                  <CardLogo project={project} />
-                  {imageKey ? (
-                    <img
-                      src={projectImage(imageKey).url}
-                      alt={projectImage(imageKey).alt}
-                      className="block h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <VisualPlaceholder
-                      title={`${project.name} · product screens`}
-                      className="h-full w-full"
-                    />
-                  )}
-                </div>
-              );
               return (
                 <Link key={project.slug} to={`/work/${project.slug}`} className={cardClass}>
-                  {media}
+                  <ProjectCardMedia project={project} className="case-study-card-media relative aspect-[16/10] overflow-hidden bg-muted" placeholderTitle={`${project.name} · product screens`} />
                   <CardBody project={project} />
                 </Link>
               );

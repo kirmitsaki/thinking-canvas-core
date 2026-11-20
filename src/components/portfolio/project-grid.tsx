@@ -34,30 +34,28 @@ export function CardBody({ project }: { project: Project }) {
   );
 }
 
-export function ProjectCard({ project, horizontal = false }: { project: Project; horizontal?: boolean }) {
+export function ProjectCardMedia({ project, className, placeholderTitle = `${project.name} · ${project.sector}` }: { project: Project; className: string; placeholderTitle?: string }) {
   const imageKey = project.cardImage ?? project.heroImage;
   const image = imageKey ? projectImage(imageKey) : undefined;
+  return (
+    <div className={className}>
+      <CardLogo project={project} />
+      {image ? (
+        <img src={image.url} alt={image.alt} className="block h-full w-full object-cover" loading="lazy" />
+      ) : (
+        <VisualPlaceholder title={placeholderTitle} className="h-full w-full" />
+      )}
+    </div>
+  );
+}
+
+export function ProjectCard({ project, horizontal = false }: { project: Project; horizontal?: boolean }) {
   return (
     <SnippetLink
       to={project.linkTo ?? `/work/${project.slug}`}
       className={`editorial-card case-study-card group min-w-0 overflow-hidden${horizontal ? " case-study-card--horizontal" : " block"}`}
     >
-      <div className={`case-study-card-media relative overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`}>
-        <CardLogo project={project} />
-        {image ? (
-          <img
-            src={image.url}
-            alt={image.alt}
-            className="block h-full w-full object-cover"
-            loading="lazy"
-          />
-        ) : (
-          <VisualPlaceholder
-            title={`${project.name} · ${project.sector}`}
-            className="h-full w-full"
-          />
-        )}
-      </div>
+      <ProjectCardMedia project={project} className={`case-study-card-media relative overflow-hidden ${horizontal ? "aspect-[16/10] md:aspect-auto" : "aspect-[16/10]"} ${project.heroFit === "contain" ? "diagram-card-media" : project.slug === "jobme" ? "logo-card-media" : "bg-muted"}`} />
       <CardBody project={project} />
     </SnippetLink>
   );

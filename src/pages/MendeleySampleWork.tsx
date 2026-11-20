@@ -12,7 +12,7 @@ export default function MendeleySampleWork() {
   return (
     <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 py-12 md:py-16">
       <div className="editorial-detail-content mx-auto">
-        <Suspense fallback={<p className="caption">Loading…</p>}><Content embedded /></Suspense>
+        <Suspense fallback={<p className="caption">Loading…</p>}><Content /></Suspense>
       </div>
     </main>
   );

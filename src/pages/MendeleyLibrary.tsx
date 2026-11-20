@@ -1,56 +1,10 @@
 import { SnippetHeader } from '@/components/portfolio/snippet-header';
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import Seo from "@/components/Seo";
-import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
-import { caseStudyTitle, pageMeta, getProject } from "@/data/projects";
-import { librarySections } from "@/data/mendeley-library";
-import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
-import { SectionDivider } from "@/components/portfolio/section-divider";
+import { librarySections } from '@/data/mendeley-library';
+import { editorialEmphasis } from '@/components/portfolio/editorial-emphasis';
+import { SectionDivider } from '@/components/portfolio/section-divider';
 
-const meta = pageMeta(
-  "Mendeley Library · Interface design",
-  "Rachel Kirmitsaki’s Mendeley Library interface deep dive: adding, organising, finding and syncing academic references.",
-  "article"
-);
-
-export default function MendeleyLibrary({ embedded = false }: { embedded?: boolean }) {
-  const content = <><SnippetHeader title="Library" subtitle="Organising and retrieving references in one place, through collections, tags, keyword search and filtering." intro="User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality." /><MendeleyLibraryContent /></>;
-  if (embedded) return content;
-  return (
-    <main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
-      <Seo
-        title={meta.title}
-        description={meta.description}
-        path="/work/mendeley/library"
-        ogType={meta.ogType}
-      />
-      <header className="pb-12 pt-10 md:pt-14">
-        <PortfolioBreadcrumb
-          items={[
-            { label: "Portfolio", to: "/work" },
-            { label: caseStudyTitle(getProject("mendeley")), to: "/work/mendeley" },
-            { label: "The Library" },
-          ]}
-          trailing={<p className="label-quiet">{getProject("mendeley").dates}</p>}
-        />
-        <h1 className="mt-8 page-title">The Library</h1>
-        <p className="standfirst mt-6 max-w-[720px]">
-          Organising and retrieving references in one place, through collections, tags, keyword
-          search and filtering.
-        </p>
-      </header>
-      <article className="mx-auto max-w-[720px]">
-        <MendeleyLibraryContent />
-        <div className="hairline-top pt-8">
-          <Link to="/work/mendeley" className="accent-link inline-flex items-center gap-2">
-            <ArrowLeft size={14} />
-            Back to the Mendeley case study
-          </Link>
-        </div>
-      </article>
-    </main>
-  );
+export default function MendeleyLibrary() {
+  return <><SnippetHeader title="Library" subtitle="Organising and retrieving references in one place, through collections, tags, keyword search and filtering." intro="User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality." /><MendeleyLibraryContent /></>;
 }
 
 function MendeleyLibraryContent() {
