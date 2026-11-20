@@ -71,7 +71,7 @@ export const snippets: Snippet[] = [
     to: "/work/mendeley#design-system",
     image: "mendeley-design-system-snippet",
     project: "Mendeley",
-    name: "Design system",
+    name: "Reference Manager 2.0",
     description: "The UI Pattern Library and reusable Sketch components for Reference Manager.",
   },
   {
