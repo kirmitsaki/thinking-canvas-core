@@ -7,7 +7,17 @@ type DetailSection = {
   paragraphs: string[];
   points: string[];
   images: { image: { url: string }; alt: string; caption: string }[];
+  pointsAfterImage?: boolean;
 };
+
+function Figure({ item }: { item: DetailSection['images'][number] }) {
+  return (
+    <figure className="mt-9">
+      <img src={item.image.url} alt={item.alt} className="h-auto w-full rounded-[10px]" loading="lazy" />
+      <figcaption className="caption mt-4">{item.caption}</figcaption>
+    </figure>
+  );
+}
 
 export function MendeleySections({ sections, introInHeader = false }: { sections: DetailSection[]; introInHeader?: boolean }) {
   return <>{sections.map((section, index) => (
@@ -23,16 +33,14 @@ export function MendeleySections({ sections, introInHeader = false }: { sections
               ))}
             </div>
           )}
+          {section.pointsAfterImage && section.images[0] && <Figure item={section.images[0]} />}
           {section.points.length > 0 && (
-            <ul className="essay-prose mt-6 space-y-3">
+            <ul className={`essay-prose space-y-3 ${section.pointsAfterImage ? 'mt-9' : 'mt-6'}`}>
               {section.points.map(text => <li key={text}>{text}</li>)}
             </ul>
           )}
-          {section.images.map(item => (
-            <figure key={item.alt} className="mt-9">
-              <img src={item.image.url} alt={item.alt} className="h-auto w-full rounded-[10px]" loading="lazy" />
-              <figcaption className="caption mt-4">{item.caption}</figcaption>
-            </figure>
+          {(section.pointsAfterImage ? section.images.slice(1) : section.images).map(item => (
+            <Figure key={item.alt} item={item} />
           ))}
         </div>
       </div>
