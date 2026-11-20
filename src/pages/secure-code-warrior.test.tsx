@@ -16,7 +16,7 @@ vi.stubGlobal('ResizeObserver', ResizeObserverStub);
 afterEach(cleanup);
 
 describe('Secure Code Warrior case study', () => {
-  it('shows every SCW snippet card, with only Product design identity and Cybermon enabled', () => {
+  it('shows every SCW snippet card, with only Product identity and Cybermon enabled', () => {
     const { container } = render(<MemoryRouter><SecureCodeWarrior /></MemoryRouter>);
     const grid = container.querySelector('.snippet-grid');
     expect(grid).not.toBeNull();
@@ -26,7 +26,7 @@ describe('Secure Code Warrior case study', () => {
     expect(cards.length).toBe(6);
     scwSnippets.forEach((snippet, index) => {
       expect(cards[index].textContent).toContain(snippet.name);
-      const enabled = snippet.name === 'Product design identity' || snippet.name === 'Cybermon';
+      const enabled = snippet.name === 'Product identity' || snippet.name === 'Cybermon';
       expect(cards[index] instanceof HTMLButtonElement && cards[index].disabled).toBe(!enabled);
     });
   });

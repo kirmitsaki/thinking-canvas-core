@@ -22,7 +22,7 @@ describe('Origin sample interface snippet', () => {
   });
 
   it('shows the same title and subtitle on the Portfolio snippet card', () => {
-    expect(sampleInterface?.name).toBe('Across the Origin platform');
+    expect(sampleInterface?.name).toBe('Across the platform');
     expect(sampleInterface?.description).toBe('A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.');
   });
 });

@@ -133,7 +133,6 @@ img[data-image-loading] {
 }
 @media (min-width: 768px) {
   .snippet-page .mendeley-detail-row:has(> .subsection-title) {
-    margin-left: calc((100% - 3rem) / 3.2 + 3rem);
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
   }
@@ -1439,6 +1438,17 @@ a:hover .arrow-nudge,
   }
   .case-study-editorial .editorial-study-section > .section-break { grid-column: 1 / -1; }
   .case-study-editorial .editorial-study-section > :not(.section-break) { grid-column: 2; min-width: 0; }
+  /* Mendeley sections dissolve their row into the section grid so the title
+     takes the left rail and the body the right column, like every other
+     case study. */
+  .case-study-editorial .editorial-study-section > .mendeley-detail-row { display: contents; }
+  .case-study-editorial .editorial-study-section > .mendeley-detail-row > .section-title { grid-column: 1; }
+  .case-study-editorial .editorial-study-section > .mendeley-detail-row > .mendeley-detail-body { grid-column: 2; }
+  /* Subsection rows nested inside a section stay in the right column:
+     the subtitle sits above its body, both at the column's full width. */
+  .case-study-editorial .editorial-study-section > section .mendeley-detail-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .case-study-editorial .editorial-study-section > .editorial-study-heading,
   .case-study-editorial .aladdin-trust-section > .editorial-study-heading { display: contents; }
   .case-study-editorial .editorial-study-heading > .section-title { grid-column: 1; grid-row: 2; }
