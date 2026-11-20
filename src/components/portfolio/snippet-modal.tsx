@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { snippetFrameUrl } from '@/data/secondary-snippets';
 import { projectImage, projects } from '@/data/projects';
+import { snippetBarLabel } from '@/data/snippets';
 import { useEffect, useState } from 'react';
 import { ContentSkeleton } from './content-skeleton';
 
@@ -18,6 +19,7 @@ export function SnippetModal({ snippet, onClose }: {
   const parentProject = projects.find(item => item.slug === projectRoot.split("/")[2]);
   const companyName = parentProject?.name ?? snippet?.project;
   const logo = parentProject?.logo ? projectImage(parentProject.logo) : undefined;
+  const barLabel = snippet ? snippetBarLabel(snippet.to, snippet.name) : '';
   return (
     <Dialog.Root open={Boolean(snippet)} onOpenChange={open => { if (!open) onClose(); }}>
       <Dialog.Portal>
@@ -29,6 +31,12 @@ export function SnippetModal({ snippet, onClose }: {
                 <img src={logo.url} alt={logo.alt} className="size-8 shrink-0 rounded-full object-cover" />
               ) : null}
               <span className="snippet-modal-company truncate">{companyName}</span>
+              {barLabel ? (
+                <>
+                  <span aria-hidden="true" className="snippet-modal-sep">|</span>
+                  <span className="snippet-modal-company truncate">{barLabel}</span>
+                </>
+              ) : null}
             </div>
             <Dialog.Close asChild>
               <Button variant="ghost" size="icon" title="Close" aria-label="Close snippet" className="shrink-0"><X /></Button>

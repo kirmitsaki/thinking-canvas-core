@@ -87,6 +87,11 @@ img[data-image-loading] {
   line-height: 1.6;
   color: var(--muted-foreground);
 }
+/* The hairline pipe between the company name and the snippet title. */
+.snippet-modal-sep {
+  color: var(--muted-foreground);
+  opacity: 0.4;
+}
 .snippet-page { --portfolio-header-height: 0px; }
 .snippet-page .portfolio-header,
 .snippet-page .masthead-bar,
