@@ -51,6 +51,7 @@ export default function OriginMorpho() {
         <P>By the time I left, it had evolved into a shared library of design tokens, components, patterns and documentation, becoming the foundation for everything the team built.</P>
         <P>More than a collection of reusable components, Morpho gave design and engineering a common language and a more consistent way to build the platform.</P>
         <VisualPlaceholder title="Morpho across Origin" caption="Complete Morpho overview or examples of the system applied across Origin" />
+        <blockquote className="pull-quote"><span className="label-quiet block pb-2">Fun fact</span>Morpho was named after the butterfly — its name comes from an epithet meaning “changed” or “modified”, linked to an ancient Greek term, and the blue colours reflected the palette.</blockquote>
       </Section>
     </article>
   </main>;
