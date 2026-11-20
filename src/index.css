@@ -1682,3 +1682,6 @@ a:hover .arrow-nudge,
 .case-study-editorial :is(.mendeley-detail-body, .origin-section-grid > div:not(.origin-section-heading)) > :first-child {
   margin-top: 0 !important;
 }
+/* Grid gap already spaces a subsection title from its content; avoid doubling it. */
+.case-study-editorial .origin-research-block > .subsection-title + * { margin-top: 0; }
+.case-study-editorial .origin-research-block > div:empty { display: none; }
