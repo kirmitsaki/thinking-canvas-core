@@ -128,6 +128,8 @@ import mendeleyCardLogoAsset from '@/assets/mendeley-logo.webp.asset.json';
 import migreatCardLogoAsset from '@/assets/migreat-card-logo.webp.asset.json';
 import originCardLogoAsset from '@/assets/origin-logo.webp.asset.json';
 import pawsquadLogoAsset from '@/assets/pawsquad-logo.webp.asset.json';
+import scwLogo from '@/assets/scw-logo.webp';
+import scwLogoAsset from '@/assets/scw-logo.webp.asset.json';
 import originCard from '@/assets/case-study-cards/origin.webp';
 import originCardAsset from '@/assets/case-study-cards/origin.webp.asset.json';
 import mendeleyCard from '@/assets/case-study-cards/mendeley.webp';
@@ -164,6 +166,7 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'logo-migreat': { url: isLocalHost() ? migreatCardLogo : migreatCardLogoAsset.url, alt: 'Migreat logo' },
   'logo-origin': { url: isLocalHost() ? originCardLogo : originCardLogoAsset.url, alt: 'Origin Markets logo' },
   'logo-pawsquad': { url: isLocalHost() ? pawsquadLogo : pawsquadLogoAsset.url, alt: 'PawSquad logo' },
+  'logo-secure-code-warrior': { url: isLocalHost() ? scwLogo : scwLogoAsset.url, alt: 'Secure Code Warrior logo' },
   'mendeley-library-snippet': { url: isLocalHost() ? mendeleyLibrarySnippet : mendeleyLibrarySnippetAsset.url, alt: 'Mendeley Library with reference collections and the reference information panel' },
   'mendeley-reader-snippet': { url: isLocalHost() ? mendeleyReaderSnippet : mendeleyReaderSnippetAsset.url, alt: 'Mendeley Reader showing a highlighted paper and reference information' },
   'mendeley-citation-snippet': { url: isLocalHost() ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
@@ -307,6 +310,7 @@ export const projects: Project[] = [
     summary: 'Transforming an enterprise security platform and introducing better design infrastructure.',
     role: 'Product direction · Design systems · Prototyping',
     intro: 'Connecting a broader product direction with the systems, standards and practical design work needed to make it real.',
+    logo: 'logo-secure-code-warrior',
     heroImage: 'scw-wanda',
     comingSoon: true,
     ndaNotice: true,

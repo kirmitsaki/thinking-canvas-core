@@ -23,7 +23,7 @@ describe('snippet modal bar', () => {
     expect(bar.textContent).toContain('Library interface');
   });
 
-  it('shows only the company name when the project has no logo', () => {
+  it('shows the company logo, name and snippet title for Secure Code Warrior', () => {
     render(
       <SnippetModal
         snippet={{ to: '/work/secure-code-warrior/cybermon', project: 'Secure Code Warrior', name: 'Cybermon' }}
@@ -32,7 +32,9 @@ describe('snippet modal bar', () => {
     );
     const name = screen.getByText('Secure Code Warrior');
     const bar = name.parentElement as HTMLElement;
-    expect(bar.querySelector('img')).toBeNull();
+    const logo = bar.querySelector('img');
+    expect(logo).not.toBeNull();
+    expect(logo?.getAttribute('alt')).toBe('Secure Code Warrior logo');
     expect(screen.queryByText('Portfolio')).toBeNull();
     expect(bar.textContent).toContain('Cybermon');
   });
