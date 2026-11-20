@@ -27,6 +27,8 @@
   /* Case-study and snippet card surfaces. */
   --card-surface: #ffffff;
   --modal-backdrop: color-mix(in srgb, var(--ink) 55%, transparent);
+  /* Reading measure for case-study and snippet copy in the content column. */
+  --reading-measure: 500px;
 
   /* Semantic mappings */
   --background: var(--ivory);
@@ -829,7 +831,7 @@
   }
   .case-study-editorial .editorial-study-heading > .essay-prose {
     margin-top: 0;
-    max-width: 65ch;
+    max-width: var(--reading-measure);
   }
   .case-study-editorial #brief:has(img[src*="meliniki-watercolour"]) > .editorial-study-visual,
   .case-study-editorial #bottle:has(img[src*="meliniki"]) > .editorial-study-visual {
@@ -881,11 +883,11 @@
     border-bottom: 0;
     border-top: 1px solid var(--border);
     padding-top: 1.75rem;
-    max-width: 65ch;
+    max-width: var(--reading-measure);
   }
   .case-study-editorial .origin-research-block p,
   .case-study-editorial .design-goals-list p {
-    max-width: 65ch;
+    max-width: var(--reading-measure);
   }
   .case-study-editorial .editorial-study-reflection .essay-prose p {
     font-family: var(--font-serif);
@@ -913,7 +915,7 @@
   .case-study-editorial .editorial-detail-content > h2,
   .case-study-editorial .editorial-detail-content > p,
   .case-study-editorial .editorial-detail-content section > .essay-prose {
-    max-width: 65ch;
+    max-width: var(--reading-measure);
   }
   .case-study-editorial .editorial-detail-content figure img {
     max-width: 100%;
@@ -1020,7 +1022,7 @@
     gap: 1.5rem;
   }
   .origin-research-block > div {
-    max-width: 65ch;
+    max-width: var(--reading-measure);
   }
   .brand-voice-cards {
     display: grid;
@@ -1416,6 +1418,20 @@ a:hover .arrow-nudge,
   .origin-section-grid > .origin-wide .mx-auto, .origin-section-grid > .origin-wide.mx-auto { margin-inline: 0; max-width: none; }
   .snippet-page .origin-section-grid > .origin-section-heading { display: contents; }
 }
+/* Right-column copy keeps the shared reading measure so lines stay easy to
+   follow. Section titles, separators, notices, visuals and the reflections
+   card keep their own widths. */
+@media (min-width: 768px) {
+  .case-study-editorial :is(.editorial-study-section, .editorial-detail-content, .mendeley-detail-body)
+    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar),
+  .origin-section-grid
+    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar),
+  .cm-page section
+    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar) {
+    max-width: var(--reading-measure);
+  }
+}
+
 .editorial-study-reflection .essay-prose,
 .case-study-editorial .editorial-study-reflection > .essay-prose { max-width: 52ch !important; }
 
