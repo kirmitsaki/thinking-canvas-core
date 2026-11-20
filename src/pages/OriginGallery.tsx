@@ -2,7 +2,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import Seo from '@/components/Seo';
 import { ArrowLeft } from 'lucide-react';
 import { SnippetHeader } from '@/components/portfolio/snippet-header';
-import { pageMeta } from '@/data/projects';
+import { pageMeta, projectImage } from '@/data/projects';
 import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
@@ -47,7 +47,7 @@ export default function OriginGallery() {
   const snippet = params.has('snippet');
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
-    <SnippetHeader title="Sample interface" subtitle="A selection of product screens from across the Origin platform." intro="Dashboards, pricing and documentation screens from across the Origin platform bring activity, financial data and transaction workflows into a connected experience." />
+    <SnippetHeader title="Sample interface" subtitle="A selection of product screens from across the Origin platform." intro="Dashboards, pricing and documentation screens from across the Origin platform bring activity, financial data and transaction workflows into a connected experience." image={projectImage('origin-sample-work')} />
     <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
       <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="dashboards-data" className="section-title">Dashboards and data</h2></div><div><h3 className="subsection-title mb-8">Activity, trades and pricing data</h3>

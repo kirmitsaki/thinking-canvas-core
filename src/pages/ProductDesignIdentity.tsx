@@ -24,7 +24,7 @@ export default function ProductDesignIdentity() {
         path="/work/secure-code-warrior/product-design-identity"
         ogType={meta.ogType}
       />
-      <SnippetHeader title="Product design identity" subtitle="Colour, interface examples and character artwork for the new product vision." intro="The product design identity brings the visual direction together in one artefact: colour, interface examples and character artwork. It provides the context for the design-system work that follows." />
+      <SnippetHeader title="Product design identity" subtitle="Colour, interface examples and character artwork for the new product vision." intro="The product design identity brings the visual direction together in one artefact: colour, interface examples and character artwork. It provides the context for the design-system work that follows." image={projectImage('scw-identity-header')} />
       <div className="sample-work-tabs py-3"><NdaNotice /></div>
       {/* The identity is one continuous infographic: it runs full width straight
           after the notice, with no section title, subtitle or separator. */}

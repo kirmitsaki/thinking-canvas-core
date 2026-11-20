@@ -2,9 +2,10 @@ import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { librarySections } from '@/data/mendeley-library';
 import { editorialEmphasis } from '@/components/portfolio/editorial-emphasis';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { projectImage } from '@/data/projects';
 
 export default function MendeleyLibrary() {
-  return <><SnippetHeader title="Library" subtitle="Organising and retrieving references in one place, through collections, tags, keyword search and filtering." intro="User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality." /><MendeleyLibraryContent /></>;
+  return <><SnippetHeader title="Library" subtitle="Organising and retrieving references in one place, through collections, tags, keyword search and filtering." intro="User feedback revealed three key challenges: cross-platform workflow disruptions, complex organisation systems and difficult team collaboration. The response was an intuitive interface integrating desktop and web functionality." image={projectImage('mendeley-library-snippet')} /><MendeleyLibraryContent /></>;
 }
 
 function MendeleyLibraryContent() {

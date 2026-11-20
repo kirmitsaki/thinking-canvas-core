@@ -10,7 +10,7 @@ const sections = [
 
 export default function MendeleyDesignSystem() {
   return <main className="case-study-editorial mx-auto max-w-[960px] px-6 pb-16">
-    <SnippetHeader title="The UI Pattern Library" subtitle="Reusable Sketch components for Mendeley Reference Manager." intro="During my time on MRM I was heavily involved in creating and implementing the UI Pattern Library, a living document containing the core components that formed the foundation for the redesign." />
+    <SnippetHeader title="The UI Pattern Library" subtitle="Reusable Sketch components for Mendeley Reference Manager." intro="During my time on MRM I was heavily involved in creating and implementing the UI Pattern Library, a living document containing the core components that formed the foundation for the redesign." image={projectImage('mendeley-design-system-snippet')} />
     <article>{sections.map(section => <section key={section.title} className="origin-section">
       <SectionDivider />
       <div className="origin-section-grid">

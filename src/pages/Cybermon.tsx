@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowDown, Award, Crown, Gift, Medal, Star, Trophy } from "l
 import Seo from "@/components/Seo";
 import { PortfolioBreadcrumb } from "@/components/portfolio/breadcrumb";
 import { SectionNavigation } from "@/components/portfolio/section-navigation";
-import { caseStudyTitle, getProject, pageMeta } from "@/data/projects";
+import { caseStudyTitle, getProject, pageMeta, projectImage } from "@/data/projects";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
@@ -595,11 +595,16 @@ export default function Cybermon() {
           ]}
           trailing={<p className="label-quiet">{getProject("secure-code-warrior").dates}</p>}
         />
-        <h1 className="mt-8 page-title">Cybermon</h1>
-        <p className="standfirst mt-6 max-w-[720px]">
-          Three years of gamified secure coding tournaments, from secure coding fundamentals to securing software built with AI.
-        </p>
-        <p className="body-copy mt-6 max-w-[65ch]">Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.</p>
+        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
+          <div className="min-w-0">
+            <h1 className="page-title">Cybermon</h1>
+            <p className="standfirst mt-6 max-w-[720px]">
+              Three years of gamified secure coding tournaments, from secure coding fundamentals to securing software built with AI.
+            </p>
+            <p className="body-copy mt-6 max-w-[65ch]">Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.</p>
+          </div>
+          <img src={projectImage("cybermon-snippet").url} alt={projectImage("cybermon-snippet").alt} className="w-full max-w-[280px] shrink-0 self-start rounded-lg object-cover md:mt-2" />
+        </div>
         <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
           {years.map(year => (
             <li key={year.id} className="cm-year" data-year={year.id}>
