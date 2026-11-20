@@ -20,7 +20,7 @@ export const snippets: Snippet[] = [
     to: "/work/secure-code-warrior/product-design-identity",
     image: "scw-identity-header",
     project: "Secure Code Warrior",
-    name: "Product design identity",
+    name: "Product identity",
     description: "Colour, interface examples and character artwork for the new product vision.",
   },
   {
