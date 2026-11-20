@@ -595,7 +595,7 @@ export default function Cybermon() {
           ]}
           trailing={<p className="label-quiet">{getProject("secure-code-warrior").dates}</p>}
         />
-        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
+        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
           <div className="min-w-0">
             <h1 className="page-title">Cybermon</h1>
             <p className="standfirst mt-6 max-w-[720px]">
@@ -603,7 +603,7 @@ export default function Cybermon() {
             </p>
             <p className="body-copy mt-6 max-w-[65ch]">Across three campaigns, Cybermon demonstrated how gamification can help make developer security training more engaging and accessible.</p>
           </div>
-          <img src={projectImage("cybermon-snippet").url} alt={projectImage("cybermon-snippet").alt} className="w-full max-w-[280px] shrink-0 self-start rounded-lg object-cover md:mt-2" />
+          <img src={projectImage("cybermon-snippet").url} alt={projectImage("cybermon-snippet").alt} className="w-full max-w-[280px] shrink-0 self-end rounded-lg object-cover" />
         </div>
         <ol className="mt-12 grid gap-6 md:grid-cols-3" aria-label="Cybermon timeline">
           {years.map(year => (
