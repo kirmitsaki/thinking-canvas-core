@@ -25,7 +25,6 @@ function MendeleyLibraryContent() {
             </div>
             {section.items?.map((item) => (
               <section key={item.title} className="mt-10">
-                <SectionDivider />
                 <div className="mendeley-detail-row">
                   <h3 className="subsection-title">{item.title}</h3>
                   <div className="mendeley-detail-body">
