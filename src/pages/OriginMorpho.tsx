@@ -5,10 +5,10 @@ import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { VisualPlaceholder } from '@/components/portfolio/visual-placeholder';
 
 const levels = [
-  ['Atoms', 'The smallest building blocks, such as buttons, inputs and icons.'],
+  ['Atoms', 'Buttons, inputs and icons.'],
   ['Molecules', 'Simple combinations of components.'],
-  ['Organisms', 'More complex interface sections built from smaller elements.'],
-  ['Templates', 'Reusable page structures and layouts.'],
+  ['Organisms', 'More complex interface sections.'],
+  ['Templates', 'Reusable page structures.'],
   ['Pages', 'Complete product experiences.'],
 ];
 const P = ({ children }: { children: ReactNode }) => <p className="body-copy">{children}</p>;
@@ -21,28 +21,35 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
 
 export default function OriginMorpho() {
   return <main className="case-study-editorial origin-editorial mx-auto max-w-[960px] px-6 pb-16">
-    <SnippetHeader title="Creating a shared foundation with Morpho" subtitle="An atomic design system shared by design and development." intro="As the platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being created independently, patterns weren't always consistent, and there was no shared foundation between design and development." />
+    <SnippetHeader title="Morpho — Origin's design system" subtitle="Origin Markets · Lead Product Designer" intro="As Origin's platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being rebuilt independently, patterns differed across products and design and engineering lacked a shared reference point." />
     <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <article className="pt-12 md:pt-16">
-      <Section title="A shared foundation" subtitle="Building the system together">
-        <P>I saw an opportunity to address this by introducing a proper design system.</P>
-        <P>I raised the idea with the lead frontend engineer, who was equally enthusiastic about the opportunity. We decided to build it together, with the aim of creating an atomic system that would work consistently across Figma and the codebase.</P>
-        <VisualPlaceholder title="Morpho overview" />
+      <Section title="Overview" subtitle="Creating a shared foundation for design and development">
+        <P>I saw an opportunity to bring everything together through a unified design system.</P>
+        <P>I initiated the project with the lead frontend engineer, and together we built Morpho: an atomic design system connecting Figma and the codebase.</P>
       </Section>
-      <Section title="Starting with the foundations" subtitle="Typography, colour and design tokens">
-        <P>I began by researching and defining the foundations: typography, colour and design tokens. Working closely with the frontend lead, we gradually expanded these into more complex components and patterns.</P>
-        <VisualPlaceholder title="Foundations: typography, colour and tokens" />
-        <P>We structured Morpho around five levels:</P>
+      <Section title="Foundations" subtitle="Establishing a common language">
+        <P>We started by defining the foundations: typography, colour and spacing. These became a shared set of design tokens, creating consistency across the platform and a common language for design and development.</P>
+        <P>We also adopted the atomic design methodology, organising the system into five levels:</P>
         <ul className="editorial-outcomes">{levels.map(([name, text]) => <li key={name}><P><strong>{name}</strong> — {text}</P></li>)}</ul>
-        <VisualPlaceholder title="Atoms, molecules, organisms, templates and pages" />
-        <P>We also established an agreed set of design tokens, creating a shared language for properties such as colour, spacing and typography.</P>
-        <VisualPlaceholder title="Design tokens: colour, spacing and typography" />
+        <VisualPlaceholder title="Morpho's foundations" caption="Typography, colour palette, design tokens and atomic structure" />
       </Section>
-      <Section title="One system, two environments" subtitle="Keeping Figma and the codebase aligned">
-        <P>A key objective was keeping Figma and the codebase as closely aligned as possible. Rather than maintaining two separate interpretations of the same system, we wanted designers and engineers to work from a common foundation.</P>
-        <VisualPlaceholder title="Figma library alongside the coded components" />
-        <P>Morpho started with the essentials and grew alongside the product. By the time I left, it had become the foundation for everything the team built.</P>
-        <blockquote className="pull-quote">A design system isn't a static library of colours and components. It's an evolving system, and its value comes from how consistently people use it.</blockquote>
+      <Section title="The system" subtitle="Building reusable components and patterns">
+        <P>Working from these foundations, we gradually expanded Morpho into a shared library of components and patterns.</P>
+        <P>The aim was to create flexible, reusable elements that could support different workflows across the platform without introducing unnecessary inconsistencies.</P>
+        <VisualPlaceholder title="Component library" caption="Morpho component library showing buttons, inputs, tables, forms and other interface elements" />
+      </Section>
+      <Section title="Design meets development" subtitle="One system, two environments">
+        <P>A key ambition was to keep Figma and the codebase as closely aligned as possible.</P>
+        <P>Rather than maintaining two separate versions of the same system, I worked directly with the frontend lead to establish shared components and patterns that translated consistently between design and development.</P>
+        <P>This meant both teams could work from the same foundation, making Morpho as useful in code as it was in Figma.</P>
+        <VisualPlaceholder title="Figma and code" caption="Figma library alongside corresponding coded components" />
+      </Section>
+      <Section title="Growing with the product">
+        <P>Morpho started with the essentials and gradually expanded alongside Origin.</P>
+        <P>By the time I left, it had evolved into a shared library of design tokens, components, patterns and documentation, becoming the foundation for everything the team built.</P>
+        <P>More than a collection of reusable components, Morpho gave design and engineering a common language and a more consistent way to build the platform.</P>
+        <VisualPlaceholder title="Morpho across Origin" caption="Complete Morpho overview or examples of the system applied across Origin" />
       </Section>
     </article>
   </main>;
