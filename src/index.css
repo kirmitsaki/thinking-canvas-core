@@ -1667,7 +1667,11 @@ a:hover .arrow-nudge,
   margin-top: var(--rhythm-media) !important;
 }
 .case-study-editorial :not(.origin-section-heading, .visual-placeholder div) > * + .subsection-title,
-.case-study-editorial * + div:has(> .subsection-title:first-child) {
+.case-study-editorial :is(p, ul, ol, figure, .visual-placeholder, .essay-prose, blockquote) + div:has(> .subsection-title:first-child) {
   margin-top: var(--rhythm-subsection) !important;
 }
 .case-study-editorial .subsection-title + * { margin-top: 1.5rem; }
+/* The first item beside a section title always starts level with it. */
+.case-study-editorial :is(.mendeley-detail-body, .origin-section-grid > div:not(.origin-section-heading)) > :first-child {
+  margin-top: 0 !important;
+}
