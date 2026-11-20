@@ -903,6 +903,10 @@
     border-block: 1px solid var(--border);
     color: var(--accent);
   }
+  /* The Morpho fun fact closes the page on its own, with room above it. */
+  .case-study-editorial .pull-quote.morpho-funfact {
+    margin-top: 6rem;
+  }
   .case-study-editorial.case-study-compact .editorial-study-visual {
     max-width: 900px;
   }
@@ -970,6 +974,9 @@
     }
     .case-study-editorial .pull-quote {
       font-size: 1.875rem;
+    }
+    .case-study-editorial .pull-quote.morpho-funfact {
+      margin-top: 8rem;
     }
   }
 
