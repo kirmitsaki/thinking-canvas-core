@@ -965,6 +965,9 @@
     .case-study-editorial .editorial-outcomes {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .case-study-editorial .editorial-outcomes.morpho-levels > li:last-child {
+      grid-column: 1 / -1;
+    }
     .case-study-editorial .editorial-study-reflection > .essay-prose {
       max-width: 65ch;
     }
