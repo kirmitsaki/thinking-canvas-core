@@ -878,19 +878,6 @@
     display: grid;
     gap: 1.5rem 3rem;
   }
-  .case-study-editorial .morpho-levels {
-    display: grid;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .case-study-editorial .morpho-levels > li {
-    padding: 1.5rem 1.75rem;
-  }
-  .case-study-editorial .morpho-levels > li > p {
-    margin: 0;
-  }
   .case-study-editorial .editorial-outcomes > li {
     margin-top: 0;
     border-bottom: 0;
@@ -975,12 +962,8 @@
       margin-left: auto;
       margin-right: 0;
     }
-    .case-study-editorial .editorial-outcomes,
-    .case-study-editorial .morpho-levels {
+    .case-study-editorial .editorial-outcomes {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .case-study-editorial .morpho-levels > li:last-child {
-      grid-column: 1 / -1;
     }
     .case-study-editorial .editorial-study-reflection > .essay-prose {
       max-width: 65ch;
