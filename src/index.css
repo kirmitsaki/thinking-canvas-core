@@ -59,7 +59,6 @@
   z-index: 25;
   height: var(--reading-progress-height);
   flex-shrink: 0;
-  border-bottom: 1px solid var(--border);
   background: var(--background);
 }
 .reading-progress-fill {
