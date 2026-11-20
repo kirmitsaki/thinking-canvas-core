@@ -3,7 +3,7 @@ import { secondarySnippetFor, snippetFrameUrl } from './secondary-snippets';
 
 describe('secondary case studies open only in modals', () => {
   for (const [path, project, name] of [
-    ['/work/origin-markets/gallery', 'Origin Markets', 'Sample interface'],
+    ['/work/origin-markets/gallery', 'Origin Markets', 'Across the Origin platform'],
     ['/work/mendeley/sample-work', 'Mendeley', 'Sample interface'],
     ['/work/secure-code-warrior/product-design-identity', 'Secure Code Warrior', 'Product design identity'],
     ['/work/secure-code-warrior/cybermon', 'Secure Code Warrior', 'Cybermon'],

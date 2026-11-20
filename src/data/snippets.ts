@@ -64,8 +64,8 @@ export const snippets: Snippet[] = [
     to: "/work/origin-markets/gallery",
     image: "origin-sample-work",
     project: "Origin Markets",
-    name: "Sample interface",
-    description: "Across the Origin platform.",
+    name: "Across the Origin platform",
+    description: "A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.",
   },
   {
     to: "/work/mendeley#design-system",

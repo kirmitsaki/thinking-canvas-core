@@ -14,15 +14,15 @@ globalThis.ResizeObserver ??= ResizeObserverStub as unknown as typeof ResizeObse
 const sampleInterface = snippets.find(snippet => snippet.to === '/work/origin-markets/gallery');
 
 describe('Origin sample interface snippet', () => {
-  it('uses the supplied title, subtitle and paragraph in the modal header', () => {
+  it('uses the supplied title and subtitle in the modal header, with no intro paragraph', () => {
     render(<HelmetProvider><MemoryRouter initialEntries={['/work/origin-markets/gallery?snippet=gallery']}><OriginGallery /></MemoryRouter></HelmetProvider>);
-    expect(screen.getByRole('heading', { level: 1, name: 'Sample interface' })).toBeInTheDocument();
-    expect(screen.getByText('Across the Origin platform.')).toBeInTheDocument();
-    expect(screen.getByText("A selection of screens, showcasing dashboards, market data, pricing and documentation workflows across Origin's three products.")).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Across the Origin platform' })).toBeInTheDocument();
+    expect(screen.getByText('A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.')).toBeInTheDocument();
+    expect(screen.queryByText("A selection of screens, showcasing dashboards, market data, pricing and documentation workflows across Origin's three products.")).not.toBeInTheDocument();
   });
 
   it('shows the same title and subtitle on the Portfolio snippet card', () => {
-    expect(sampleInterface?.name).toBe('Sample interface');
-    expect(sampleInterface?.description).toBe('Across the Origin platform.');
+    expect(sampleInterface?.name).toBe('Across the Origin platform');
+    expect(sampleInterface?.description).toBe('A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.');
   });
 });

@@ -3,7 +3,7 @@ import { originStudyGroups } from './origin-studies';
 export type SecondarySnippet = { to: string; project: string; name: string };
 
 export const secondarySnippets: SecondarySnippet[] = [
-  { to: '/work/origin-markets/gallery', project: 'Origin Markets', name: 'Sample interface' },
+  { to: '/work/origin-markets/gallery', project: 'Origin Markets', name: 'Across the Origin platform' },
   { to: '/work/mendeley/sample-work', project: 'Mendeley', name: 'Sample interface' },
   ...['library', 'reader', 'citation'].map(view => ({ to: `/work/mendeley/sample-work?view=${view}`, project: 'Mendeley', name: view.charAt(0).toUpperCase() + view.slice(1) })),
   { to: '/work/secure-code-warrior/product-design-identity', project: 'Secure Code Warrior', name: 'Product design identity' },
