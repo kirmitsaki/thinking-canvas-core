@@ -1528,6 +1528,65 @@ a:hover .arrow-nudge,
   filter: drop-shadow(0 3px 4px rgb(28 25 23 / 0.45));
 }
 
+/* A description longer than the three rows the card shows is cut with an
+   ellipsis; hovering the card reveals the whole line in a note pinned above
+   it, so no card and no row moves. */
+.snippet-card .snippet-note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 14px);
+  z-index: 5;
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--card-surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 28px rgb(28 25 23 / 0.18);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.snippet-card .snippet-note::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -6px;
+  margin-left: -5px;
+  background: var(--card-surface);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transform: rotate(45deg);
+}
+
+.snippet-card:hover .snippet-note,
+.snippet-card:focus-visible .snippet-note,
+.snippet-card:focus .snippet-note {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards that are not openable yet still need to be hoverable so their cut
+   description can be read, but they must not look liftable. */
+.snippet-card:disabled {
+  cursor: default;
+}
+
+.editorial-card.snippet-card.snippet-card:disabled:hover,
+.editorial-card.snippet-card.snippet-card:disabled:focus-visible {
+  box-shadow: 0 2px 10px rgb(28 25 23 / 0.08);
+  transform: rotate(var(--tilt, 0deg));
+}
+
+.editorial-card.snippet-card.snippet-card:disabled:hover img,
+.editorial-card.snippet-card.snippet-card:disabled:focus-visible img {
+  transform: none;
+}
+
 .snippet-grid > :nth-child(3n + 2),
 .case-study-snippet:nth-child(2) {
   --tilt: -1.4deg;
