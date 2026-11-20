@@ -1691,3 +1691,5 @@ a:hover .arrow-nudge,
 .case-study-editorial .case-study-groups > div > :first-child,
 .case-study-editorial .case-study-groups > div > :first-child > :first-child,
 .case-study-editorial .case-study-groups > div > :first-child > :first-child > .subsection-title:first-child { margin-top: 0 !important; }
+/* Same breathing room under the modal header line on every snippet. */
+.snippet-entry-header + section { padding-top: 4rem; }
