@@ -1685,3 +1685,9 @@ a:hover .arrow-nudge,
 /* Grid gap already spaces a subsection title from its content; avoid doubling it. */
 .case-study-editorial .origin-research-block > .subsection-title + * { margin-top: 0; }
 .case-study-editorial .origin-research-block > div:empty { display: none; }
+/* One consistent space above every subsection heading. */
+.case-study-editorial .case-study-groups { gap: var(--rhythm-subsection); }
+.case-study-editorial * + .case-study-groups { margin-top: var(--rhythm-subsection); }
+.case-study-editorial .case-study-groups > div > :first-child,
+.case-study-editorial .case-study-groups > div > :first-child > :first-child,
+.case-study-editorial .case-study-groups > div > :first-child > :first-child > .subsection-title:first-child { margin-top: 0 !important; }

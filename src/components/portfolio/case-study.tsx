@@ -142,7 +142,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </blockquote>
             )}
             {section.groups && (
-              <div className="mt-14 grid gap-14">
+              <div className="case-study-groups grid">
                 {section.groups.map((group) => (
                   <div key={group.label} className="grid gap-6">
                     {group.cards ? (
