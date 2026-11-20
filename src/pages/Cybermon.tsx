@@ -586,7 +586,7 @@ export default function Cybermon() {
   return (
     <main className="case-study-editorial cm-page relative z-10 mx-auto max-w-[960px] px-6 pb-16">
       <Seo title={meta.title} description={meta.description} path="/work/secure-code-warrior/cybermon" ogType={meta.ogType} />
-      <header className="pb-10" id="overview">
+      <header className="snippet-entry-header pb-10" id="overview">
         <PortfolioBreadcrumb
           items={[
             { label: "Portfolio", to: "/work" },

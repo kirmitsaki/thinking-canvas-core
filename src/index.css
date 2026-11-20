@@ -1648,3 +1648,26 @@ a:hover .arrow-nudge,
   padding-top: 0.875rem;
   border-top: 1px solid var(--hairline);
 }
+
+/* Shared content rhythm for every case study and snippet modal:
+   text-to-text 1.5rem, media 3rem from neighbouring text, subsections 4rem apart. */
+.case-study-editorial {
+  --rhythm-media: 3rem;
+  --rhythm-subsection: 4rem;
+}
+/* Hairline separating a snippet's header from its content. */
+.snippet-entry-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3rem !important;
+  margin-bottom: 1rem;
+}
+.case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + :is(figure, .visual-placeholder, .mds-image-row),
+.case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + div:has(> img, > figure),
+.case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div) {
+  margin-top: var(--rhythm-media) !important;
+}
+.case-study-editorial :not(.origin-section-heading, .visual-placeholder div) > * + .subsection-title,
+.case-study-editorial * + div:has(> .subsection-title:first-child) {
+  margin-top: var(--rhythm-subsection) !important;
+}
+.case-study-editorial .subsection-title + * { margin-top: 1.5rem; }

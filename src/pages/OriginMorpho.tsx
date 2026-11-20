@@ -30,7 +30,7 @@ export default function OriginMorpho() {
       <Section title="Foundations" subtitle="Establishing a common language">
         <P>We started by defining the foundations: typography, colour and spacing. These became a shared set of design tokens, creating consistency across the platform and a common language for design and development.</P>
         <VisualPlaceholder title="Morpho's foundations" caption="Typography, colour palette, design tokens and atomic structure" />
-        <div className="morpho-levels pt-12 md:pt-16">
+        <div className="morpho-levels">
           <h3 className="subsection-title">Adopting atomic design</h3>
           <ol className="design-goals-list mt-8">
             {levels.map(([name, text], index) => (
