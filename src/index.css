@@ -1451,8 +1451,9 @@ a:hover .arrow-nudge,
   .case-study-editorial .editorial-study-section > .mendeley-detail-row > .mendeley-detail-body { grid-column: 2; }
   /* Subsection rows nested inside a section stay in the right column:
      the subtitle sits above its body, both at the column's full width. */
-  .case-study-editorial .editorial-study-section > section .mendeley-detail-row {
+  .case-study-editorial .mendeley-detail-body .mendeley-detail-row {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
   }
   .case-study-editorial .editorial-study-section > .editorial-study-heading,
   .case-study-editorial .aladdin-trust-section > .editorial-study-heading { display: contents; }
@@ -1676,6 +1677,7 @@ a:hover .arrow-nudge,
   margin-top: var(--rhythm-subsection) !important;
 }
 .case-study-editorial .subsection-title + * { margin-top: 1.5rem; }
+.case-study-editorial .mendeley-detail-row > .subsection-title + .mendeley-detail-body { margin-top: 0; }
 /* The first item beside a section title always starts level with it. */
 .case-study-editorial :is(.mendeley-detail-body, .origin-section-grid > div:not(.origin-section-heading)) > :first-child {
   margin-top: 0 !important;

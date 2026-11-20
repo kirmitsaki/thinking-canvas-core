@@ -16,15 +16,15 @@ function MendeleyLibraryContent() {
             <div className="mendeley-detail-row">
               <h2 className="section-title">{section.title}</h2>
               <div className="mendeley-detail-body">
+                {section.paragraphs.length > 0 && (
                 <div className="essay-prose space-y-5">
                   {(section.id === "goals" ? section.paragraphs.slice(1) : section.paragraphs).map((text) => (
                     <p key={text}>{editorialEmphasis(text)}</p>
                   ))}
                 </div>
-              </div>
-            </div>
+                )}
             {section.items?.map((item) => (
-              <section key={item.title} className="mt-10">
+              <section key={item.title} className="mt-16">
                 <div className="mendeley-detail-row">
                   <h3 className="subsection-title">{item.title}</h3>
                   <div className="mendeley-detail-body">
@@ -37,6 +37,8 @@ function MendeleyLibraryContent() {
                 </div>
               </section>
             ))}
+              </div>
+            </div>
           </section>
         ))}
   </>;
