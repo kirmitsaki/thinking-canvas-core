@@ -57,8 +57,8 @@ export const snippets: Snippet[] = [
     to: "/work/origin-markets#design-system",
     image: "origin-morpho",
     project: "Origin Markets",
-    name: "Design system",
-    description: "Morpho, the UI library behind every screen of the Origin platform.",
+    name: "Morpho",
+    description: "The design system behind every screen of the Origin platform.",
   },
   {
     to: "/work/origin-markets/gallery",

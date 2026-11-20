@@ -22,7 +22,7 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
 
 export default function OriginMorpho() {
   return <main className="case-study-editorial origin-editorial mx-auto max-w-[960px] px-6 pb-16">
-    <SnippetHeader title="Morpho — Origin's design system" subtitle="Origin Markets · Lead Product Designer" intro="As Origin's platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being rebuilt independently, patterns differed across products and design and engineering lacked a shared reference point." image={projectImage('origin-morpho')} />
+    <SnippetHeader title="Morpho" subtitle="The design system behind every screen of the Origin platform." intro="As Origin's platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being rebuilt independently, patterns differed across products and design and engineering lacked a shared reference point." image={projectImage('origin-morpho')} />
     <div className="sample-work-tabs py-3"><NdaNotice /></div>
     <article className="pt-12 md:pt-16">
       <Section title="Overview" subtitle="Creating a shared foundation for design and development">
