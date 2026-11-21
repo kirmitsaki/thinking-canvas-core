@@ -536,7 +536,7 @@ export const projects: Project[] = [
       ] },
     ],
     contribution: 'I worked as Senior UX/UI Designer and design lead across Library, Reader and Citation. My contribution combined hands-on UX/UI work with research-informed design decisions and participation in the wider Elsevier design system.',
-    outcomes: ['My work helped strengthen a shared, research-led design culture across Library, Reader and Citation, bringing continuous usability testing into team decisions and contributing to Elsevier’s cross-platform design system.', 'At February 2020, Mendeley Reference Manager had over 120,000 users while still in beta.', 'More than 1 million references had been created, and over 1 million annotations made using MRM features.', 'For a product still in beta, those numbers indicated strong adoption among a user group notoriously resistant to switching tools.'],
+    outcomes: ['A shared, research-led design culture across Library, Reader and Citation, and continuous usability testing', 'At February 2020, Mendeley Reference Manager had over 120,000 users while still in beta.', 'More than 1 million references had been created, and over 1 million annotations made using MRM features.', 'For a product still in beta, those numbers indicated strong adoption among a user group notoriously resistant to switching tools.'],
   },
   {
     slug: 'aladdin', name: 'Aladdin', sector: 'Digital healthcare · Android & iOS · via Elemental Concept', industry: 'Healthcare', field: 'Mobile apps', dates: 'Jul 2017 – Dec 2018', tags: ['Research', 'Product Design', 'Brand', 'Vision'],
