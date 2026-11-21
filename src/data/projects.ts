@@ -1,5 +1,4 @@
 import originAudience2 from '@/assets/origin-audience-2.webp';
-import originAudienceMap from '@/assets/origin-audience-map.webp';
 import originDealers from '@/assets/origin-dealers.webp';
 import originDesignProcessDiagram from '@/assets/origin-design-process-diagram.webp';
 import originDevelopmentProcessDiagram from '@/assets/origin-development-process-diagram.webp';
@@ -26,13 +25,11 @@ import originMatrixGrid from '@/assets/origin-funding-matrix-grid.webp';
 import originMatrixSaved from '@/assets/origin-funding-matrix-saved_searches.webp';
 import originMatrixSearch from '@/assets/origin-funding-matrix-search.webp';
 import originMatrix from '@/assets/origin-funding-matrix.webp';
-import originHeader from '@/assets/origin-header.webp';
 import originSampleWork from '@/assets/origin-sample-work.webp';
 import originSampleWorkAsset from '@/assets/origin-sample-work.webp.asset.json';
 import originMorpho from '@/assets/origin-morpho.webp';
 import originMorphoAsset from '@/assets/origin-morpho.webp.asset.json';
 import originOutcome from '@/assets/origin-outcome.webp';
-import mendeleyHeader from '@/assets/mendeley-header.webp';
 import mendeleyLibrary from '@/assets/mendeley-library.webp';
 import mendeleyReader from '@/assets/mendeley-reader.webp';
 import mendeleyCitation from '@/assets/mendeley-citation.webp';
@@ -50,37 +47,28 @@ import mendeleySymbolsComponents from '@/assets/mendeley-symbols-components.webp
 import mendeleyResearch1 from '@/assets/mendeley-research-1.webp';
 import mendeleyResearch2 from '@/assets/mendeley-research-2.webp';
 import mendeleyResearch3 from '@/assets/mendeley-research-3.webp';
-import melinikiDigitised from '@/assets/meliniki-digitised.webp';
 import melinikiWatercolour from '@/assets/meliniki-watercolour.webp';
 import melinikiLabels from '@/assets/meliniki-labels.webp';
 import melinikiBottle from '@/assets/meliniki-bottle.webp';
-import jobmeLogo from '@/assets/jobme-logo.svg';
 import jobmeSquare from '@/assets/jobme-square.svg';
 import jobmeStyletile from '@/assets/jobme-styletile.webp';
-import migreatHeader from '@/assets/migreat-1.webp';
 import migreatBlog from '@/assets/migreat-blog.webp';
 import migreatCommunities2 from '@/assets/migreat-communitie2.webp';
 import migreatCommunities1 from '@/assets/migreat-communities-1.webp';
 import migreatOutcome from '@/assets/migreat-outcome.webp';
 import migreatWizard1 from '@/assets/migreat-wizard-1.webp';
 import migreatWizard2 from '@/assets/migreat-wizard-2.webp';
-import migreatLogo from '@/assets/migreat-logo.webp';
-import pawsquadHeader from '@/assets/pawsquad-header.webp';
 import pawsquadApproachable from '@/assets/pawsquad-brand-voice-approachable.webp';
 import pawsquadReliable from '@/assets/pawsquad-brand-voice-reliable.webp';
 import pawsquadPlayful from '@/assets/pawsquad-brand-voice-playful.webp';
-import pawsquadLookAndFeel from '@/assets/pawsquad-look-and-feel.webp';
 import pawsquadNewUI from '@/assets/pawsquad-new-UI.webp';
 import pawsquadOutcome from '@/assets/pawsquad-outcome.webp';
 import pawsquadPetOwners from '@/assets/pawsquad-pet-owners.webp';
 import pawsquadPrototype from '@/assets/pawsquad-prototype.webp';
 import pawsquadVetApp from '@/assets/pawsquad-vetapp.webp';
 import pawsquadWebCampaign from '@/assets/pawsquad-web-campaign.webp';
-import mdsHome from '@/assets/mds-home.webp';
 import mdsHomeComparison from '@/assets/mds-home-comparison.webp';
-import mdsHeader from '@/assets/mds-header.webp';
 import mdsSitemap from '@/assets/mds-sitemap.webp';
-import mdsHomeMobile from '@/assets/mds-home-mobile.webp';
 import mdsDocumentSolutions from '@/assets/mds-document-solutions.webp';
 import mdsOptimise from '@/assets/mds-optimise.webp';
 import mdsSecurity from '@/assets/mds-security.webp';
@@ -172,7 +160,6 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'mendeley-citation-snippet': { url: isLocalHost() ? mendeleyCitationSnippet : mendeleyCitationSnippetAsset.url, alt: 'Mendeley Cite reference selection panel beside a Word document' },
   'mendeley-design-system-snippet': { url: isLocalHost() ? mendeleyDesignSystemSnippet : mendeleyDesignSystemSnippetAsset.url, alt: 'Reference Manager 2.0 design system board with type scale, text styles, colours, button variants and model containers' },
   'origin-audience-2': { url: originAudience2, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
-  'origin-audience-map': { url: originAudienceMap, alt: 'Origin ecosystem diagram connecting dealers, issuers, lawyers and market infrastructure to clearing houses, listing exchanges, agents and custodians' },
   'origin-dealers': { url: originDealers, alt: 'Dealers handshake icon' },
   'origin-design-process-diagram': { url: originDesignProcessDiagram, alt: 'Diagram of Origin’s two-track design process: continuous improvements and exploring complex workflows' },
   'origin-development-process-diagram': { url: originDevelopmentProcessDiagram, alt: 'Diagram of Origin’s agile development cycle: plan increments, design, develop, peer review, QA testing, release and gather feedback' },
@@ -210,29 +197,23 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'aladdin-health': { url: aladdinHealth, alt: 'Aladdin Health Boost screens with educational content, healthy-habit challenges and personalised guidance' },
   'aladdin-doctor': { url: aladdinDoctor, alt: 'Aladdin doctor interface with upcoming appointments, patient notes and health results' },
   'aladdin-records': { url: aladdinRecords, alt: 'Aladdin mobile health records, medication history, test results and lifestyle product offers' },
-  'pawsquad-header': { url: pawsquadHeader, alt: 'PawSquad homepage introducing the vet practice that comes to you, with a postcode search for local vets' },
   'pawsquad-approachable': { url: pawsquadApproachable, alt: 'Approachable brand moodboard showing pet owners at home with their animals' },
   'pawsquad-reliable': { url: pawsquadReliable, alt: 'Reliable brand moodboard showing qualified vets caring for animals' },
   'pawsquad-playful': { url: pawsquadPlayful, alt: 'Playful brand moodboard with expressive portraits of cats and dogs' },
-  'pawsquad-look-and-feel': { url: pawsquadLookAndFeel, alt: 'PawSquad visual identity guidelines covering logo proportions, colours, typography and icons' },
   'pawsquad-new-ui': { url: pawsquadNewUI, alt: 'Supplied PawSquad video consultation and chat visual across mobile and desktop, with a 2021 date in the interface' },
   'pawsquad-outcome': { url: pawsquadOutcome, alt: 'EU-Startups article from August 2018 featuring PawSquad among ten European pet startups to watch' },
   'pawsquad-pet-owners': { url: pawsquadPetOwners, alt: 'PawSquad local service page with a vet profile, reviews and appointment booking' },
   'pawsquad-prototype': { url: pawsquadPrototype, alt: 'Early PawSquad web and mobile prototypes showing consultation entry, pet details and booking steps' },
   'pawsquad-web-campaign': { url: pawsquadWebCampaign, alt: 'PawSquad web ad with a pet owner on a video call with a vet: “Whether it’s a video call or a house visit, there’s a trusted vet at your fingertips. Any pet. Any problem. Any time.”' },
   'pawsquad-vetapp': { url: pawsquadVetApp, alt: 'Supplied PawSquad app screens showing care services and a consultation report dated September 2021' },
-  'migreat-header': { url: migreatHeader, alt: 'Migreat homepage with visa guidance, communities and partner services' },
   'migreat-blog': { url: migreatBlog, alt: 'Migreat Blog with immigration news, visa guidance and practical information' },
   'migreat-communities-2': { url: migreatCommunities2, alt: 'Migreat Communities activity feed and community article page' },
   'migreat-communities-1': { url: migreatCommunities1, alt: 'Migreat Communities welcome page with local community groups' },
   'migreat-outcome': { url: migreatOutcome, alt: 'Wired article titled Startup of the Week: Migreat, dated 16 January 2014' },
   'migreat-wizard-1': { url: migreatWizard1, alt: 'Migreat Visa Finder Wizard asking a student to choose a destination country' },
   'migreat-wizard-2': { url: migreatWizard2, alt: 'Migreat Visa Finder entry page and account welcome email' },
-  'migreat-logo': { url: migreatLogo, alt: 'Migreat logo with blue bird shapes and the line Migration made easy' },
-  'jobme-logo': { url: jobmeLogo, alt: 'JobMe logo with two swallows beside navy and golden lettering' },
   'jobme-square': { url: jobmeSquare, alt: 'Square JobMe logo showing two swallows within an open circular shape' },
   'jobme-styletile': { url: jobmeStyletile, alt: 'JobMe style tile with Avenir typography, navy and golden colours, buttons and links' },
-  'meliniki-digitised': { url: melinikiDigitised, alt: 'Digitised Meliniki watercolour depicting a vineyard, cypress trees and a farmhouse' },
   'meliniki-watercolour': { url: melinikiWatercolour, alt: 'Original Meliniki vineyard watercolour on textured paper' },
   'meliniki-labels': { url: melinikiLabels, alt: 'Two Meliniki Merlot label designs: a 1200 by 1200 pixel main label and a 1200 by 240 pixel lower label' },
   'meliniki-bottle': { url: melinikiBottle, alt: 'Bottle mock-up showing the Meliniki Merlot main label and smaller lower label' },
@@ -246,10 +227,8 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'origin-funding-matrix-search': { url: originMatrixSearch, alt: 'Old and redesigned Funding Matrix search interfaces' },
   'origin-funding-matrix': { url: originMatrix, alt: 'Old and redesigned Funding Matrix data grids' },
   'origin-sample-work': { url: isLocalHost() ? originSampleWork : originSampleWorkAsset.url, alt: 'Origin product screens: DCM dashboard, curve analysis, pricing levels and trade blotter' },
-  'origin-header': { url: originHeader, alt: 'Origin Markets product screens across pricing, deal and document views' },
   'origin-morpho': { url: isLocalHost() ? originMorpho : originMorphoAsset.url, alt: 'Morpho design system board showing components, colour palette, typography and patterns' },
   'origin-outcome': { url: originOutcome, alt: 'GlobalCapital Bond Awards winner announcements for Origin' },
-  'mendeley-header': { url: mendeleyHeader, alt: 'Mendeley Reference Manager across Library, Reader and reference detail views' },
   'mendeley-library': { url: mendeleyLibrary, alt: 'Mendeley Library screens showing reference lists, drag and drop, and the metadata panel' },
   'mendeley-reader': { url: mendeleyReader, alt: 'Mendeley Reader with annotation tools, Info, Annotations and Notebook panels' },
   'mendeley-citation': { url: mendeleyCitation, alt: 'Mendeley Cite panel inside a Word document, inserting a citation' },
@@ -259,11 +238,8 @@ const projectImages: Record<string, { url: string; alt: string }> = {
   'mendeley-research-1': { url: mendeleyResearch1, alt: 'Recorded usability session with an MRM beta user and their interview quote' },
   'mendeley-research-2': { url: mendeleyResearch2, alt: 'User insights table and research brief for offline management and citation conversion' },
   'mendeley-research-3': { url: mendeleyResearch3, alt: 'Proto personas document and research session board organised by theme' },
-  'mds-home': { url: mdsHome, alt: 'QuoStar Managed Document Solutions homepage with a bold orange header, print statistics carousel and Kyocera partnership' },
   'mds-home-comparison': { url: mdsHomeComparison, alt: 'Complete MDS QuoStar desktop and mobile homepages presented side by side' },
-  'mds-header': { url: mdsHeader, alt: 'QuoStar Managed Document Solutions homepage header with the print statistics carousel and MDS Challenge trial offer' },
   'mds-sitemap': { url: mdsSitemap, alt: 'MDS QuoStar sitemap showing document solution pages, company information, client stories and enquiry forms, with future additions marked separately' },
-  'mds-home-mobile': { url: mdsHomeMobile, alt: 'The Managed Document Solutions homepage adapted for mobile screens' },
   'mds-document-solutions': { url: mdsDocumentSolutions, alt: 'Document Solutions overview page with six colour-coded benefit cards' },
   'mds-optimise': { url: mdsOptimise, alt: 'Optimise Document Processes page in orange, with expandable Capture, Create, Control and Cost-efficient sections' },
   'mds-security': { url: mdsSecurity, alt: 'Improve Your Security page in pink, covering data and document security' },
