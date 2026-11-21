@@ -744,7 +744,7 @@ export default function Cybermon() {
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <blockquote className="pull-quote">
+        <blockquote className="pull-quote cm-closing">
           <span className="block">{editorialEmphasis("After popular demand, Cybermon is here to stay.")}</span>
           <span className="mt-6 block">{editorialEmphasis("There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</span>
         </blockquote>

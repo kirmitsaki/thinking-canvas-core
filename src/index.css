@@ -942,6 +942,10 @@ img[data-image-loading] {
   .case-study-editorial .pull-quote.morpho-funfact {
     margin-top: 9rem;
   }
+  /* The Cybermon closing spans the full content width, like the tab menu. */
+  .case-study-editorial .pull-quote.cm-closing {
+    max-width: none;
+  }
   /* The platform image reads as part of the section above it, so it sits close
      under that text rather than at the next section's distance. */
   .case-study-editorial .origin-section:has(+ .morpho-platform) {
