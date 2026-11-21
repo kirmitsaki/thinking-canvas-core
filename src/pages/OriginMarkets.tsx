@@ -89,6 +89,7 @@ export default function OriginMarkets() {
       { value: '3 years', label: 'Industry recognition', text: 'Best Fintech in the field, GlobalCapital.' },
     ],
     outcomesClosing: '100+ borrowers and 20 major investment banks connected through the platform.',
+    outcomesClosingCard: true,
     sectionNavigation: [
       { label: 'Overview', id: 'challenge' },
       { label: 'Discovery', id: 'discovery' },

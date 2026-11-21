@@ -36,6 +36,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
   ];
   const compact = project.presentation === "compact";
   const outcomesInCards = project.slug === "mendeley" || project.slug === "origin-markets";
+  // Origin presents its closing line as a card; elsewhere it is a plain paragraph.
+  const closingInCard = outcomesInCards && !!project.outcomeStats && !!project.outcomesClosingCard;
   const imageClass = "mx-auto w-full max-w-[720px] rounded-[10px]";
   const heroImageClass =
     compact ? imageClass : "w-full rounded-[10px]";
@@ -349,7 +351,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 {project.outcomeStats && project.outcomesHeading && <p className="subsection-title">{project.outcomesHeading}</p>}
               </div>
               {project.outcomeStats && project.outcomesIntro && <p className="body-copy text-muted-foreground">{project.outcomesIntro}</p>}
-              {project.outcomeStats ? <dl className={`grid gap-x-8 gap-y-8 sm:grid-cols-2${outcomesInCards ? " outcome-stats--cards" : ""}`}>{outcomesInCards && project.outcomesClosing && <div className="editorial-card outcome-stat-card outcome-closing-card"><p className="body-copy">{bigOutcomeNumbers(project.outcomesClosing)}</p></div>}{project.outcomeStats.map((stat, index) => <div key={stat.text} className={outcomesInCards ? `editorial-card outcome-stat-card${project.outcomeStats!.length % 2 === 1 && index === project.outcomeStats!.length - 1 ? " outcome-stat-card--wide" : ""}` : undefined}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
+              {project.outcomeStats ? <dl className={`grid gap-x-8 gap-y-8 sm:grid-cols-2${outcomesInCards ? " outcome-stats--cards" : ""}`}>{closingInCard && <div className="editorial-card outcome-stat-card outcome-closing-card"><p className="body-copy">{bigOutcomeNumbers(project.outcomesClosing)}</p></div>}{project.outcomeStats.map((stat, index) => <div key={stat.text} className={outcomesInCards ? `editorial-card outcome-stat-card${project.outcomeStats!.length % 2 === 1 && index === project.outcomeStats!.length - 1 ? " outcome-stat-card--wide" : ""}` : undefined}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
                 <ul className={outcomesInCards ? "editorial-outcomes editorial-outcomes--cards" : "editorial-outcomes space-y-5"}>
                   {project.outcomes.map((outcome) => (
                     <li key={outcome} className={`body-copy${outcomesInCards ? " editorial-card" : " hairline-bottom pb-4"}`}>
@@ -358,7 +360,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                   ))}
                 </ul>
               )}
-              {project.outcomesClosing && !(outcomesInCards && project.outcomeStats) && <p className="body-copy text-muted-foreground">{editorialEmphasis(project.outcomesClosing)}</p>}
+              {project.outcomesClosing && !closingInCard && <p className="body-copy text-muted-foreground">{editorialEmphasis(project.outcomesClosing)}</p>}
               {project.outcomeImage && (
                 <figure className="editorial-study-visual w-full">
                   <img

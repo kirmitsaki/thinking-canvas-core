@@ -31,15 +31,18 @@ describe('Outcomes presentation', () => {
     const { container } = renderStudy('mendeley');
     const grid = container.querySelector('dl.outcome-stats--cards');
     expect(grid).not.toBeNull();
-    expect(grid?.querySelectorAll('div.editorial-card')).toHaveLength(4);
+    expect(grid?.querySelectorAll('div.editorial-card')).toHaveLength(3);
     expect([...(grid?.querySelectorAll('dt') ?? [])].map((dt) => dt.textContent)).toEqual([
       '+120k',
       '1M+',
       '+1M',
     ]);
-    expect(grid?.querySelector('.outcome-closing-card')?.textContent).toContain(
-      'notoriously resistant to switching tools',
+    expect(grid?.querySelector('.outcome-closing-card')).toBeNull();
+    const closing = container.querySelector('#outcomes > p.body-copy:last-of-type');
+    expect(closing?.textContent).toContain(
+      'For a product still in beta, those numbers indicated strong adoption among a user group that is notoriously resistant to switching tools.',
     );
+    expect(closing?.parentElement?.id).toBe('outcomes');
     expect(grid?.querySelector('.outcome-stat-card--wide')?.textContent).toContain('+1M');
     expect(container.querySelector('ul.editorial-outcomes--cards')).toBeNull();
   });
