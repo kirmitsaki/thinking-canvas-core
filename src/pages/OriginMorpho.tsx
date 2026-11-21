@@ -72,8 +72,8 @@ export default function OriginMorpho() {
         <P>Morpho started with the essentials and gradually expanded alongside Origin.</P>
         <P>By the time I left, it had evolved into a shared library of design tokens, components, patterns and documentation, becoming the foundation for everything the team built.</P>
         <P>More than a collection of reusable components, Morpho gave design and engineering a common language and a more consistent way to build the platform.</P>
-        <figure><img src={platform.url} onError={useLocalImage} alt="Morpho components and foundations applied across the Origin platform" width={1920} height={1582} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       </Section>
+        <figure className="w-full pt-12 md:pt-16"><img src={platform.url} onError={useLocalImage} alt="Morpho components and foundations applied across the Origin platform" width={1920} height={1582} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       <blockquote className="pull-quote morpho-funfact"><span className="label-quiet block pb-2">Fun fact</span>Morpho was named after the butterfly — its name comes from an epithet meaning “changed” or “modified”, linked to an ancient Greek term, and the blue colours reflected the palette.</blockquote>
     </article>
   </main>;
