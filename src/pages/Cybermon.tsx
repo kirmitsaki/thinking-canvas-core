@@ -341,9 +341,6 @@ const rows2024: DetailRow[] = [
     title: "Meet the Cybermon",
     sub: true,
     variant: "cards",
-    paragraphs: [
-      "The 2024 campaign featured four weekly Cybermon, each representing a common software security threat.",
-    ],
     items: [
       { name: "Accessomorph", threat: "Broken Access Control", detail: "Exploits missing or weak checks on who can access what." },
       { name: "Injecotpus", threat: "Injection", detail: "Exploits untrusted data sent to interpreters, such as SQL injection." },
