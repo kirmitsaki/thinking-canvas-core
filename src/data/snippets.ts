@@ -7,6 +7,8 @@ export type Snippet = {
   barLabel?: string;
   description: string;
   disabled?: boolean;
+  /** Hide the full-description note that appears on hover when the text is clamped. */
+  hideHoverNote?: boolean;
 };
 
 export const snippets: Snippet[] = [
@@ -72,6 +74,7 @@ export const snippets: Snippet[] = [
     name: "Across the platform",
     barLabel: "Sample interface",
     description: "A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.",
+    hideHoverNote: true,
   },
   {
     to: "/work/mendeley#design-system",

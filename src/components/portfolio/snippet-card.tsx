@@ -57,7 +57,7 @@ export function SnippetCard({ snippet, onOpen }: { snippet: Snippet; onOpen: () 
       <h3 className="subsection-title">{snippet.name}</h3>
       <p ref={ref} className="snippet-desc caption mt-3 text-[0.8125rem] line-clamp-3">{snippet.description}</p>
     </div>
-    {clamped && <span aria-hidden="true" className="snippet-note caption text-[0.8125rem]">{snippet.description}</span>}
+    {clamped && !snippet.hideHoverNote && <span aria-hidden="true" className="snippet-note caption text-[0.8125rem]">{snippet.description}</span>}
   </Button>;
 }
 
