@@ -10,10 +10,10 @@ import dashboards from '@/assets/origin-sample-work/Cards_-_Dashboards_Various.w
 import dataCards from '@/assets/origin-sample-work/Cards_-_Data.webp.asset.json';
 import tradeBlotter from '@/assets/origin-sample-work/Documentation_-_Trade_Blotter.webp.asset.json';
 import tradeTimeline from '@/assets/origin-sample-work/Documentation_-_Trade_Timeline.webp.asset.json';
-import comments from '@/assets/origin-sample-work/Documentation_-_TSG_-_Click_Comment.png.asset.json';
-import editMode from '@/assets/origin-sample-work/Documentation_-_TSG_-_Edit_Mode.png.asset.json';
+import comments from '@/assets/origin-sample-work/Documentation_-_TSG_-_Click_Comment.webp.asset.json';
+import editMode from '@/assets/origin-sample-work/Documentation_-_TSG_-_Edit_Mode.webp.asset.json';
 import fundingMatrix from '@/assets/origin-sample-work/Funding_Matrix.webp.asset.json';
-import levelsStats from '@/assets/origin-sample-work/Levels_Input_-_Stats.png.asset.json';
+import levelsStats from '@/assets/origin-sample-work/Levels_Input_-_Stats.webp.asset.json';
 import syndicatePricer from '@/assets/origin-sample-work/Syndicate_Pricer_-_before_and_after.webp.asset.json';
 
 type GalleryImage = { asset: { asset_id: string; url: string }; title: string; alt?: string; width: number; height: number };
@@ -25,14 +25,14 @@ const sections: { id: string; title: string; images: GalleryImage[] }[] = [
   ] },
   { id: 'pricing-funding', title: 'Pricing and funding', images: [
     { asset: fundingMatrix, title: 'Funding Matrix', alt: 'Funding Matrix interface.', width: 1920, height: 1886 },
-    { asset: syndicatePricer, title: 'Syndicate Pricer — before and after', alt: 'Syndicate Pricer before and after, with curve analysis and pricing controls.', width: 1920, height: 1342 },
-    { asset: levelsStats, title: 'Levels input and statistics', alt: 'Levels input interface and statistics widgets.', width: 1920, height: 693 },
+    { asset: syndicatePricer, title: 'Syndicate Pricer — before and after', alt: 'Syndicate Pricer before and after, with curve analysis and pricing controls.', width: 1920, height: 1400 },
+    { asset: levelsStats, title: 'Levels input and statistics', alt: 'Levels input interface and statistics widgets.', width: 1920, height: 690 },
   ] },
   { id: 'documentation', title: 'Documentation and collaboration', images: [
-    { asset: tradeBlotter, title: 'Trade blotter', width: 1920, height: 541 },
-    { asset: tradeTimeline, title: 'Trade timeline', width: 1920, height: 1151 },
-    { asset: editMode, title: 'Editing inputs', width: 1920, height: 595 },
-    { asset: comments, title: 'Comments and collaboration', width: 1920, height: 790 },
+    { asset: tradeBlotter, title: 'Trade blotter', width: 1920, height: 538 },
+    { asset: tradeTimeline, title: 'Trade timeline', width: 1920, height: 1150 },
+    { asset: editMode, title: 'Editing inputs', width: 1920, height: 592 },
+    { asset: comments, title: 'Comments and collaboration', width: 1920, height: 787 },
   ] },
 ];
 

@@ -259,42 +259,6 @@
     1050,
     656
   ],
-  "/__l5e/assets-v1/329c760f-4e40-422d-9050-2315f44f7463/Cards_-_Dashboards_Various.webp": [
-    1651,
-    1920
-  ],
-  "/__l5e/assets-v1/8544f153-63bb-4d18-be2e-e386f4a06e1c/Cards_-_Data.webp": [
-    784,
-    1920
-  ],
-  "/__l5e/assets-v1/8351212e-79f0-4641-81ab-3b720c93b094/Documentation_-_TSG_-_Click_Comment.png": [
-    1920,
-    790
-  ],
-  "/__l5e/assets-v1/6cb54793-140c-4d64-a46d-10532a7c63b4/Documentation_-_TSG_-_Edit_Mode.png": [
-    1920,
-    595
-  ],
-  "/__l5e/assets-v1/ec808105-bede-4b8c-bc71-0f600de1f6cf/Documentation_-_Trade_Blotter.webp": [
-    1920,
-    541
-  ],
-  "/__l5e/assets-v1/94afeb67-6dd6-43d0-b493-07ba841a7efb/Documentation_-_Trade_Timeline.webp": [
-    1920,
-    1151
-  ],
-  "/__l5e/assets-v1/e9079a95-78e9-4a20-9231-43dfdcfa531d/Funding_Matrix_-_before_and_after.webp": [
-    563,
-    1920
-  ],
-  "/__l5e/assets-v1/d045b0a6-918c-4a4e-aeab-e5c0281ae93b/Levels_Input_-_Stats.png": [
-    1920,
-    693
-  ],
-  "/__l5e/assets-v1/e1bbc561-3415-4fb0-a1b9-19ef0f02e258/Syndicate_Pricer_-_before_and_after.webp": [
-    1920,
-    1342
-  ],
   "../assets/aladdin-audience.webp": [
     600,
     360
@@ -1008,39 +972,75 @@
     656
   ],
   "../assets/origin-sample-work/Cards_-_Dashboards_Various.webp": [
-    1651,
-    1920
+    1920,
+    1278
   ],
   "../assets/origin-sample-work/Cards_-_Data.webp": [
-    784,
-    1920
+    1920,
+    980
   ],
   "../assets/origin-sample-work/Documentation_-_TSG_-_Click_Comment.webp": [
     1920,
-    790
+    787
   ],
   "../assets/origin-sample-work/Documentation_-_TSG_-_Edit_Mode.webp": [
     1920,
-    595
+    592
   ],
   "../assets/origin-sample-work/Documentation_-_Trade_Blotter.webp": [
     1920,
-    541
+    538
   ],
   "../assets/origin-sample-work/Documentation_-_Trade_Timeline.webp": [
     1920,
-    1151
-  ],
-  "../assets/origin-sample-work/Funding_Matrix_-_before_and_after.webp": [
-    563,
-    1920
+    1150
   ],
   "../assets/origin-sample-work/Levels_Input_-_Stats.webp": [
     1920,
-    693
+    690
   ],
   "../assets/origin-sample-work/Syndicate_Pricer_-_before_and_after.webp": [
     1920,
-    1342
+    1400
+  ],
+  "/__l5e/assets-v1/ec8225b4-62ce-4a3a-a22a-a1803c754af8/Documentation_-_Trade_Blotter.webp": [
+    1920,
+    538
+  ],
+  "/__l5e/assets-v1/2a25ee8f-8069-4228-b944-8b0a961e204e/Documentation_-_Trade_Timeline.webp": [
+    1920,
+    1150
+  ],
+  "/__l5e/assets-v1/072b6676-a943-44c3-b36c-476ebceb2056/Documentation_-_TSG_-_Click_Comment.webp": [
+    1920,
+    787
+  ],
+  "/__l5e/assets-v1/af6cf187-5fb2-45e9-978e-3b704dbb65be/Documentation_-_TSG_-_Edit_Mode.webp": [
+    1920,
+    592
+  ],
+  "/__l5e/assets-v1/2cf25b25-e2a1-4214-8d58-981893e5e248/Levels_Input_-_Stats.webp": [
+    1920,
+    690
+  ],
+  "/__l5e/assets-v1/834a2c44-0bda-483c-a982-af00838c4b3d/Syndicate_Pricer_-_before_and_after.webp": [
+    1920,
+    1400
+  ],
+  "/__l5e/assets-v1/a3de8d38-29b9-4ad7-b7b6-5d29feec98f9/Cards_-_Dashboards_Various.webp": [
+    1920,
+    1278
+  ],
+  "/__l5e/assets-v1/6934fdfa-6991-4eab-a702-9c36e987a27d/Cards_-_Data.webp": [
+    1920,
+    980
+  ],
+  "/__l5e/assets-v1/ea12aba1-4b84-4a4d-9b9b-04f70f35bffd/Funding_Matrix.webp": [
+    1920,
+    1886
+  ],
+  "../assets/origin-sample-work/Funding_Matrix.webp": [
+    1920,
+    1886
   ]
 }

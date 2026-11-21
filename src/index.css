@@ -1695,4 +1695,4 @@ a:hover .arrow-nudge,
 .snippet-entry-header + section { padding-top: 4rem; }
 
 /* NDA: blur artwork while keeping its shape readable */
-.nda-blur { filter: blur(4px); transform: scale(1.02); }
+.nda-blur { filter: blur(3px); transform: scale(1.02); }
