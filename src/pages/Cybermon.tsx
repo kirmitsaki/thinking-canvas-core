@@ -101,7 +101,7 @@ type DetailRow = {
     height: number;
   };
   /** Infographic treatment for this subsection. */
-  variant?: "cards" | "badges" | "points" | "chips" | "outcomes";
+  variant?: "cards" | "badges" | "points" | "chips";
   stats?: { value: string; label: string; note?: string }[];
 };
 
@@ -206,17 +206,6 @@ function RowBody({ row }: { row: DetailRow }) {
           {row.list!.map(item => <li key={item} className="cm-tag">{item.replace(/\.$/, "")}</li>)}
         </ul>
       );
-    case "outcomes":
-      return (
-        <ul className="editorial-outcomes editorial-outcomes--cards">
-          {row.items!.map(item => (
-            <li key={item.name} className="body-copy editorial-card">
-              <span className="font-semibold text-foreground">{item.name}.</span>{" "}
-              {editorialEmphasis(item.text ?? "")}
-            </li>
-          ))}
-        </ul>
-      );
     default:
       return null;
   }
@@ -269,21 +258,12 @@ function DetailSection({ row }: { row: DetailRow }) {
   return (
     <section className="editorial-study-section mb-14 md:mb-20">
       {row.title ? (
-        row.variant === "outcomes" ? (
-          <div className="cm-outcomes-block">
-            {row.sub
-              ? <h3 className="subsection-title">{row.title}</h3>
-              : <h2 className="section-title">{row.title}</h2>}
-            {body}
-          </div>
-        ) : (
         <div className="mendeley-detail-row">
           {row.sub
             ? <h3 className="subsection-title">{row.title}</h3>
             : <h2 className="section-title">{row.title}</h2>}
           {body}
         </div>
-        )
       ) : row.video ? (
         <div className="cm-video-row">
           {body}
@@ -670,20 +650,6 @@ export default function Cybermon() {
               width: 360,
               height: 640,
             },
-          }}
-        />
-        <DetailSection
-          row={{
-            title: "Overall business value",
-            sub: true,
-            variant: "outcomes",
-            items: [
-              { name: "Developer engagement", text: "Make cybersecurity training more enjoyable and encourage participation." },
-              { name: "Security capability", text: "Improve developers’ practical ability to identify and fix vulnerabilities." },
-              { name: "Risk reduction", text: "Help reduce the likelihood of vulnerabilities being introduced into production software." },
-              { name: "AI readiness", text: "Prepare developers for the security implications of AI-assisted development." },
-              { name: "Security culture", text: "Make secure coding a continuous responsibility rather than an annual compliance exercise." },
-            ],
           }}
         />
       </section>
