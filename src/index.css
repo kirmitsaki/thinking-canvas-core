@@ -1493,7 +1493,7 @@ a:hover .arrow-nudge,
   .origin-section-grid
     :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar),
   .cm-page section
-    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar) {
+    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar, .cm-closing) {
     max-width: var(--reading-measure);
   }
 }
