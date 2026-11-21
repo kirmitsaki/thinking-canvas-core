@@ -1426,6 +1426,7 @@ a:hover .arrow-nudge,
 .cm-page .cm-outcomes-block .editorial-outcomes { margin-top: 2rem; }
 /* The three-year film sits beside the closing copy as a portrait column. */
 .cm-page .cm-video-row { display: grid; gap: 2.5rem; align-items: start; }
+.cm-page .cm-video-row .mendeley-detail-body { max-width: none; }
 .cm-page .cm-video-figure { margin: 0; }
 .cm-page .cm-video-figure video {
   display: block;
@@ -1435,9 +1436,7 @@ a:hover .arrow-nudge,
   margin-inline: auto;
   border: 1px solid var(--hairline);
 }
-@media (min-width: 768px) {
-  .cm-page .cm-video-row { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); gap: 3rem; }
-}
+
 
 /* Case-study columns: only the section title sits in the left rail; subtitles,
    copy, quotes, visuals and cards all live in the right column. */
@@ -1450,6 +1449,11 @@ a:hover .arrow-nudge,
   }
   .case-study-editorial .editorial-study-section > .section-break { grid-column: 1 / -1; }
   .case-study-editorial .editorial-study-section > :not(.section-break) { grid-column: 2; min-width: 0; }
+  /* The Cybermon closing copy spans the full section width, no title rail. */
+  .cm-page .editorial-study-section > .cm-video-row,
+  .cm-page .editorial-study-section > .cm-outcomes-block { grid-column: 1 / -1; }
+  /* So do the three year cards above it. */
+  .cm-page .editorial-study-section.cm-cards-block > div { grid-column: 1 / -1; }
   /* Product snippet cards belong under the section, spanning the whole page. */
   .case-study-editorial .editorial-study-section > .case-study-snippet-row { grid-column: 1 / -1; }
   /* Mendeley sections dissolve their row into the section grid so the title
@@ -1716,3 +1720,7 @@ a:hover .arrow-nudge,
 
 /* NDA: blur artwork while keeping its shape readable */
 .nda-blur { filter: blur(3px); transform: scale(1.02); }
+/* The Cybermon closing copy ignores the shared reading measure so the
+   full-width row is truly full width. */
+.cm-page .cm-video-row .mendeley-detail-body .essay-prose,
+.cm-page .cm-video-row .mendeley-detail-body .essay-prose p { max-width: none; }

@@ -214,9 +214,9 @@ function RowBody({ row }: { row: DetailRow }) {
       );
     case "outcomes":
       return (
-        <ul className="editorial-outcomes space-y-5">
+        <ul className="editorial-outcomes editorial-outcomes--cards">
           {row.items!.map(item => (
-            <li key={item.name} className="hairline-bottom pb-4 body-copy">
+            <li key={item.name} className="body-copy editorial-card">
               <span className="font-semibold text-foreground">{item.name}.</span>{" "}
               {editorialEmphasis(item.text ?? "")}
             </li>
@@ -302,7 +302,7 @@ function DetailSection({ row }: { row: DetailRow }) {
       ) : row.video ? (
         <div className="cm-video-row">
           {body}
-          <figure className="cm-video-figure">
+          <figure className="cm-video-figure mx-auto">
             <video
               controls
               playsInline
