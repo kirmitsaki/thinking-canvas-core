@@ -1684,9 +1684,14 @@ a:hover .arrow-nudge,
 .case-study-editorial .pull-quote .case-study-snippet-row { margin-top: 0; }
 /* Blocks under Outcomes (Morpho fun fact, See sample work, Cybermon closing) use the dark Looking back card. */
 .pull-quote.chocolate-card {
-  border-block: 0;
+  /* Keep the 3px border width on all sides so the gold hover border is not
+     clipped to the left and right edges. */
+  border-block: 3px solid transparent;
   padding: 2.5rem;
   color: var(--warm-ivory);
+}
+.pull-quote.chocolate-card:hover {
+  border-block-color: var(--gold);
 }
 .pull-quote.chocolate-card .label-quiet { color: var(--gold); }
 .pull-quote.chocolate-card a { color: var(--gold); }
