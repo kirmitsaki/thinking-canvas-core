@@ -1680,6 +1680,8 @@ a:hover .arrow-nudge,
 }
 .origin-editorial #outcomes > dl.outcome-stats--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .origin-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
+/* Inside the See sample work block the row sits close under its label. */
+.case-study-editorial .pull-quote .case-study-snippet-row { margin-top: 0; }
 
 /* NDA: blur artwork while keeping its shape readable */
 .nda-blur { filter: blur(3px); transform: scale(1.02); }

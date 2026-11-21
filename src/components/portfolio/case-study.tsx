@@ -320,11 +320,6 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 <figcaption className="caption mt-5">{section.caption}</figcaption>
               </figure>
             )}
-            {project.slug === "mendeley" && section.id === "products" && (
-              <div className="case-study-snippet-row grid grid-cols-1 items-start gap-6 md:grid-cols-3">
-                {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
-              </div>
-            )}
           </section>
           {index === 0 && project.contribution && (
             <section id="my-role" className="origin-section scroll-mt-32">
@@ -368,6 +363,14 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                   <figcaption className="caption mt-4">{project.outcomeCaption}</figcaption>
                 </figure>
               )}
+            </div>
+          )}
+          {project.slug === "mendeley" && (
+            <div className="pull-quote morpho-funfact">
+              <span className="label-quiet block pb-2">See sample work</span>
+              <div className="case-study-snippet-row grid grid-cols-1 items-start gap-6 pt-6 not-italic md:grid-cols-3">
+                {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
+              </div>
             </div>
           )}
           {!compact && project.evidencePending !== false && (
