@@ -130,7 +130,7 @@ function DetailTable({ table }: { table: NonNullable<DetailRow["table"]> }) {
   );
 }
 
-function DetailImg({ image, className = "" }: { image: DetailImage; className?: string }) {
+function DetailImg({ image, className = "", fill = false }: { image: DetailImage; className?: string; fill?: boolean }) {
   return (
     <img
       loading="lazy"
@@ -141,7 +141,7 @@ function DetailImg({ image, className = "" }: { image: DetailImage; className?: 
       width={image.width}
       height={image.height}
       className={`mx-auto h-auto w-full rounded-lg ${className}`}
-      style={{ maxWidth: image.width }}
+      style={fill ? undefined : { maxWidth: image.width }}
     />
   );
 }
@@ -250,7 +250,7 @@ function DetailSection({ row }: { row: DetailRow }) {
           {!custom && row.table && <DetailTable table={row.table} />}
           {row.images && row.variant !== "cards" && (
             <div className={row.imagesGrid ? `mt-8 grid items-start gap-6 ${row.images.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}` : "mt-8 space-y-8"}>
-              {row.images.map(image => <figure key={image.asset.asset_id}><DetailImg image={image} /></figure>)}
+              {row.images.map(image => <figure key={image.asset.asset_id}><DetailImg image={image} fill={!row.imagesGrid} /></figure>)}
             </div>
           )}
     </div>
