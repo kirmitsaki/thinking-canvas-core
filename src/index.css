@@ -1674,7 +1674,7 @@ a:hover .arrow-nudge,
 .case-study-editorial .editorial-outcomes--cards { gap: 1.5rem; }
 .case-study-editorial .editorial-outcomes--cards > li {
   margin-top: 0;
-  border-top: 1px solid var(--hairline);
+  border: 1px solid var(--hairline);
   padding: 1.75rem;
   max-width: none;
 }
