@@ -84,9 +84,9 @@ export default function OriginMarkets() {
     outcomesIntro: 'The work helped evolve Origin into a platform supporting real-world digital bond issuance.',
     outcomeStats: [
       { value: '70%+', label: 'Faster loading', text: 'Reduction in Funding Matrix loading time.' },
-      { value: '3 years', label: 'Industry recognition', text: 'Best Fintech in the field, GlobalCapital.' },
       { value: '5', label: 'Digital transactions', text: 'Including the first fully digitally issued bond.' },
       { value: '700', label: 'Global professionals', text: 'Across 70 cities.' },
+      { value: '3 years', label: 'Industry recognition', text: 'Best Fintech in the field, GlobalCapital.' },
     ],
     outcomesClosing: '100+ borrowers and 20 major investment banks connected through the platform.',
     sectionNavigation: [
