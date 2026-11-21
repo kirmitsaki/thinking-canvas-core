@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { SectionDivider } from '@/components/portfolio/section-divider';
-import { VisualPlaceholder } from '@/components/portfolio/visual-placeholder';
 import { projectImage } from '@/data/projects';
 
 function Section({ title, subtitle, children }: { title: string; subtitle?: string; children: ReactNode }) {
@@ -36,7 +35,6 @@ export default function MendeleyDesignSystem() {
       <Section title="Accessibility" subtitle="Designing for different access needs">
         <P>Accessibility was an important consideration across the shared patterns and components.</P>
         <P>We maintained accessibility as part of the design foundation, supporting an academic audience with diverse access needs.</P>
-        <VisualPlaceholder title="Accessible component examples" caption="Typography and colour contrast across the shared components" />
       </Section>
       <Section title="Maintaining the system">
         <P>The UI Pattern Library evolved alongside Reference Manager 2.0, supporting new features while preserving consistency across the application.</P>
