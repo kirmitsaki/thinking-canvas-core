@@ -70,7 +70,7 @@ export default function OriginGallery() {
           <div className="mt-10 grid gap-12 md:gap-16">
             {section.images.map(({ asset, title, alt, width, height }) => (
               <figure key={asset.asset_id} className="w-full">
-                <img loading="lazy" decoding="async" onError={useLocalImage} src={asset.url} alt={alt ?? title} width={width} height={height} className="h-auto w-full rounded-lg" />
+                <div className="overflow-hidden rounded-lg"><img loading="lazy" decoding="async" onError={useLocalImage} src={asset.url} alt={alt ?? title} width={width} height={height} className="nda-blur h-auto w-full" /></div>
                 <figcaption className="caption mt-5">{title}</figcaption>
               </figure>
             ))}

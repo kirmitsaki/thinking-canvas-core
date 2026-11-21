@@ -1693,3 +1693,6 @@ a:hover .arrow-nudge,
 .case-study-editorial .case-study-groups > div > :first-child > :first-child > .subsection-title:first-child { margin-top: 0 !important; }
 /* Same breathing room under the modal header line on every snippet. */
 .snippet-entry-header + section { padding-top: 4rem; }
+
+/* NDA: blur artwork while keeping its shape readable */
+.nda-blur { filter: blur(4px); transform: scale(1.02); }
