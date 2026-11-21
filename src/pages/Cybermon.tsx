@@ -563,10 +563,9 @@ export default function Cybermon() {
       {years.map((year, yearIndex) => {
         const intro = year.rows.find(row => row.title === "Introduction");
         const rest = year.rows.filter(row => row.title !== "Introduction");
-        const hasFilm = year.id === "2025" || year.id === "2026";
         return (
         <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
-          <div className={`cm-year-intro ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
+          <div className="cm-year-intro mb-10">
             <p className="cm-kicker">{year.launch}</p>
             <h2 className="section-title cm-year-title mt-3">{year.title}</h2>
             <p className="standfirst mt-6 max-w-[720px]">{year.standfirst}</p>
