@@ -1683,6 +1683,9 @@ a:hover .arrow-nudge,
 .case-study-editorial #outcomes > dl.outcome-stats--cards > .outcome-stat-card--wide { grid-column: 1 / -1; }
 /* Inside the dark Sample work card the snippet row sits close under its intro. */
 .chocolate-card .case-study-snippet-row { margin-top: 0; }
+/* The Sample work block opens one section gap below the outcomes, so the
+   transition matches every other section break. */
+.case-study-editorial .sample-work-block { margin-top: var(--rhythm-section); }
 /* The butterfly in the Morpho fun-fact card reuses the reflection dragon's
    corner placement; size its image like the dragon artwork. */
 .reflection-dragon__fly > img {

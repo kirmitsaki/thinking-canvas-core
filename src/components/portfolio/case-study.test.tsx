@@ -47,6 +47,15 @@ describe('Outcomes presentation', () => {
     expect(container.querySelector('ul.editorial-outcomes--cards')).toBeNull();
   });
 
+  it('opens the Mendeley sample work block one section gap after the outcomes', () => {
+    const { container } = renderStudy('mendeley');
+    const block = container.querySelector('.sample-work-block');
+    expect(block).not.toBeNull();
+    expect(block?.querySelector('.section-break')?.textContent).toBe('⁘');
+    expect(block?.querySelector('.chocolate-card')).not.toBeNull();
+    expect(block?.previousElementSibling?.id).toBe('outcomes');
+  });
+
   it('shows Origin outcomes as cards', () => {
     const { container } = renderStudy('origin-markets');
     const grid = container.querySelector('dl.outcome-stats--cards');

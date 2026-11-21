@@ -374,7 +374,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             </div>
           )}
           {project.slug === "mendeley" && (
-            <>
+            <div className="sample-work-block">
             <SectionDivider />
             <DarkCard
               className="mt-10"
@@ -387,7 +387,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
               </div>
             </DarkCard>
-            </>
+            </div>
           )}
           {!compact && project.evidencePending !== false && (
             <p className="mt-5 caption">
