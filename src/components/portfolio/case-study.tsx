@@ -380,9 +380,8 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               className="mt-10"
               label="Sample work"
               title="Across the Mendeley Reference Management"
-              bodyClassName="max-w-[65ch]"
             >
-              <p>A selection of product screens showcasing the Library, Reader and Citation flows.</p>
+              <p className="max-w-[65ch]">A selection of product screens showcasing the Library, Reader and Citation flows.</p>
               <div className="case-study-snippet-row grid grid-cols-1 items-start gap-6 pt-6 md:grid-cols-3">
                 {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
               </div>
