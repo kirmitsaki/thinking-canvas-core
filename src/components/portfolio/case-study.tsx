@@ -16,6 +16,12 @@ import { ReflectionDragon } from "./dragon";
 import { SnippetLink } from './snippet-context';
 import { BackToTop } from "./back-to-top";
 
+function bigOutcomeNumbers(text: string): ReactNode {
+  return text.split(/(\d[\d,]*\+?)/g).map((part, index) =>
+    /^\d[\d,]*\+?$/.test(part) ? <span key={index} className="outcome-big">{part}</span> : part
+  );
+}
+
 export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame = false, outcomesTitle = "Outcomes", notice, heroNotice, sectionOnly = false }: { project: Project; body?: ReactNode; introParagraphs?: ReactNode[]; facts?: { label: string; value: string }[]; minimalFrame?: boolean; outcomesTitle?: string; notice?: ReactNode; heroNotice?: ReactNode; sectionOnly?: boolean }) {
   const navigation = project.sectionNavigation ?? [
     ...project.sections.flatMap((section, index) =>
@@ -352,7 +358,13 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                   ))}
                 </ul>
               )}
-              {project.outcomesClosing && <p className="body-copy text-muted-foreground">{editorialEmphasis(project.outcomesClosing)}</p>}
+              {project.outcomesClosing && (outcomesInCards ? (
+                <div className="editorial-card outcome-stat-card outcome-closing-card">
+                  <p className="body-copy">{bigOutcomeNumbers(project.outcomesClosing)}</p>
+                </div>
+              ) : (
+                <p className="body-copy text-muted-foreground">{editorialEmphasis(project.outcomesClosing)}</p>
+              ))}
               {project.outcomeImage && (
                 <figure className="editorial-study-visual w-full">
                   <img

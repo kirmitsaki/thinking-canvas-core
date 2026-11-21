@@ -1682,6 +1682,15 @@ a:hover .arrow-nudge,
 .origin-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
 /* Inside the See sample work block the row sits close under its label. */
 .case-study-editorial .pull-quote .case-study-snippet-row { margin-top: 0; }
+/* The Origin closing line is a card whose numbers match the big stat figures. */
+.origin-editorial .outcome-closing-card { padding: 1.75rem; border-top: 1px solid var(--hairline); margin-top: 1.5rem; }
+.origin-editorial .outcome-closing-card .outcome-big {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent);
+}
 
 /* NDA: blur artwork while keeping its shape readable */
 .nda-blur { filter: blur(3px); transform: scale(1.02); }
