@@ -135,6 +135,9 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 </SnippetLink>
               )}
             </div>
+            {project.slug === "mendeley" && section.id === "design-system" && (
+              <CaseStudySnippetCard to="/work/mendeley#design-system" />
+            )}
             {section.quote && (section.quoteAfter === undefined || (project.slug === "aladdin" && section.subheading)) && (
               <blockquote className="pull-quote">
                 <p>{editorialEmphasis(section.quote.text)}</p>
