@@ -1643,6 +1643,7 @@ a:hover .arrow-nudge,
   padding-bottom: 3rem !important;
   margin-bottom: 1rem;
 }
+.cm-page .snippet-entry-header { border-bottom: 0; }
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + :is(figure, .visual-placeholder, .mds-image-row),
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + div:has(> img, > figure),
 .case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div) {
@@ -1652,6 +1653,7 @@ a:hover .arrow-nudge,
 .case-study-editorial :is(p, ul, ol, figure, .visual-placeholder, .essay-prose, blockquote) + div:has(> .subsection-title:first-child) {
   margin-top: var(--rhythm-subsection) !important;
 }
+.cm-page .cm-card .cm-kicker + .subsection-title { margin-top: 0.5rem !important; }
 .case-study-editorial .subsection-title + * { margin-top: 1.5rem; }
 .case-study-editorial .mendeley-detail-row > .subsection-title + .mendeley-detail-body { margin-top: 0; }
 /* The first item beside a section title always starts level with it. */

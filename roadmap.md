@@ -1,4 +1,5 @@
 # Tasks
+- [x] Remove only Cybermon’s snippet header line and tighten monster-card label/name spacing; verify inside its modal.
 - [x] Review shared behaviour, dependencies and unused files without changing structure, appearance or copy.
 - [x] Remove only confirmed redundant code/assets; preserve intentionally hidden pages and snippets.
 - [x] Verify existing tests and desktop/mobile page and snippet flows after cleanup.
