@@ -1670,6 +1670,16 @@ a:hover .arrow-nudge,
 .case-study-editorial .case-study-groups > div > :first-child > :first-child > .subsection-title:first-child { margin-top: 0 !important; }
 /* Same breathing room under the modal header line on every snippet. */
 .snippet-entry-header + section { padding-top: 4rem; }
+/* Mendeley and Origin present their outcomes as cards rather than hairlines. */
+.case-study-editorial .editorial-outcomes--cards { gap: 1.5rem; }
+.case-study-editorial .editorial-outcomes--cards > li {
+  margin-top: 0;
+  border-top: 1px solid var(--hairline);
+  padding: 1.75rem;
+  max-width: none;
+}
+.origin-editorial #outcomes > dl.outcome-stats--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.origin-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
 
 /* NDA: blur artwork while keeping its shape readable */
 .nda-blur { filter: blur(3px); transform: scale(1.02); }

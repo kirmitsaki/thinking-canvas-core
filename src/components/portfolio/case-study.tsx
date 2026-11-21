@@ -29,6 +29,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
     ...(project.outcomes.length ? [{ id: "outcomes", label: "Outcomes" }] : []),
   ];
   const compact = project.presentation === "compact";
+  const outcomesInCards = project.slug === "mendeley" || project.slug === "origin-markets";
   const imageClass = "mx-auto w-full max-w-[720px] rounded-[10px]";
   const heroImageClass =
     compact ? imageClass : "w-full rounded-[10px]";
@@ -347,10 +348,10 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
                 {project.outcomeStats && project.outcomesHeading && <p className="subsection-title">{project.outcomesHeading}</p>}
               </div>
               {project.outcomeStats && project.outcomesIntro && <p className="body-copy text-muted-foreground">{project.outcomesIntro}</p>}
-              {project.outcomeStats ? <dl className="grid gap-x-8 gap-y-8 sm:grid-cols-2">{project.outcomeStats.map(stat => <div key={stat.text}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
-                <ul className="editorial-outcomes space-y-5">
+              {project.outcomeStats ? <dl className={`grid gap-x-8 gap-y-8 sm:grid-cols-2${outcomesInCards ? " outcome-stats--cards" : ""}`}>{project.outcomeStats.map(stat => <div key={stat.text} className={outcomesInCards ? "editorial-card outcome-stat-card" : undefined}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
+                <ul className={`editorial-outcomes space-y-5${outcomesInCards ? " editorial-outcomes--cards" : ""}`}>
                   {project.outcomes.map((outcome) => (
-                    <li key={outcome} className="hairline-bottom pb-4 body-copy">
+                    <li key={outcome} className={`body-copy${outcomesInCards ? " editorial-card" : " hairline-bottom pb-4"}`}>
                       {editorialEmphasis(outcome)}
                     </li>
                   ))}
