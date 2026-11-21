@@ -21,9 +21,10 @@ function Section({ title, subtitle, children }: { title: string; subtitle?: stri
 
 export default function OriginMorpho() {
   return <main className="case-study-editorial origin-editorial mx-auto max-w-[960px] px-6 pb-16">
-    <SnippetHeader title="Morpho" subtitle="The design system behind every screen of the Origin platform." intro="As Origin's platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being rebuilt independently, patterns differed across products and design and engineering lacked a shared reference point." image={projectImage('origin-morpho')} />
+    <SnippetHeader title="Morpho" subtitle="The design system behind every screen of the Origin platform." image={projectImage('origin-morpho')} />
     <article className="pt-12 md:pt-16">
       <Section title="Overview" subtitle="Creating a shared foundation for design and development">
+        <P>As Origin's platform grew, inconsistencies between different areas became increasingly difficult to manage. Components were being rebuilt independently, patterns differed across products and design and engineering lacked a shared reference point.</P>
         <P>I saw an opportunity to bring everything together through a unified design system.</P>
         <P>I initiated the project with the lead frontend engineer, and together we built Morpho: an atomic design system connecting Figma and the codebase.</P>
       </Section>
