@@ -372,12 +372,15 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
             </div>
           )}
           {project.slug === "mendeley" && (
+            <>
+            <SectionDivider />
             <div className="pull-quote morpho-funfact chocolate-card">
               <span className="label-quiet block pb-2">See sample work</span>
               <div className="case-study-snippet-row grid grid-cols-1 items-start gap-6 pt-6 not-italic md:grid-cols-3">
                 {['library', 'reader', 'citation'].map(view => <CaseStudySnippetCard key={view} inRow to={`/work/mendeley/sample-work?view=${view}`} />)}
               </div>
             </div>
+            </>
           )}
           {!compact && project.evidencePending !== false && (
             <p className="mt-5 caption">

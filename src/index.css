@@ -938,10 +938,8 @@ img[data-image-loading] {
     border-block: 1px solid var(--border);
     color: var(--accent);
   }
-  /* The Morpho fun fact closes the page on its own, with room above it. */
-  .case-study-editorial .pull-quote.morpho-funfact {
-    margin-top: 9rem;
-  }
+  /* The dark closing cards follow a ⁘ separator, so they keep the standard
+     pull-quote spacing rather than a larger gap of their own. */
   /* The Cybermon closing spans the full content width, like the tab menu. */
   .case-study-editorial .pull-quote.cm-closing {
     max-width: none;
@@ -1019,9 +1017,7 @@ img[data-image-loading] {
     .case-study-editorial .pull-quote {
       font-size: 1.875rem;
     }
-    .case-study-editorial .pull-quote.morpho-funfact {
-      margin-top: 12rem;
-    }
+
     .case-study-editorial .origin-section:has(+ .morpho-platform) {
       margin-bottom: 3rem;
     }
