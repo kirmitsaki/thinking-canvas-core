@@ -349,7 +349,7 @@ export function CaseStudy({ project, body, introParagraphs, facts, minimalFrame 
               </div>
               {project.outcomeStats && project.outcomesIntro && <p className="body-copy text-muted-foreground">{project.outcomesIntro}</p>}
               {project.outcomeStats ? <dl className={`grid gap-x-8 gap-y-8 sm:grid-cols-2${outcomesInCards ? " outcome-stats--cards" : ""}`}>{project.outcomeStats.map(stat => <div key={stat.text} className={outcomesInCards ? "editorial-card outcome-stat-card" : undefined}><dt className="subsection-title">{stat.value}</dt><dd className="mt-2">{stat.label && <p className="body-copy">{stat.label}</p>}<p className="caption">{stat.text}</p></dd></div>)}</dl> : project.outcomes.length > 0 && (
-                <ul className={`editorial-outcomes space-y-5${outcomesInCards ? " editorial-outcomes--cards" : ""}`}>
+                <ul className={outcomesInCards ? "editorial-outcomes editorial-outcomes--cards" : "editorial-outcomes space-y-5"}>
                   {project.outcomes.map((outcome) => (
                     <li key={outcome} className={`body-copy${outcomesInCards ? " editorial-card" : " hairline-bottom pb-4"}`}>
                       {editorialEmphasis(outcome)}
