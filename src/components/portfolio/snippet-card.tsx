@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { projectImage } from '@/data/projects';
 import { snippets, type Snippet } from '@/data/snippets';
@@ -22,42 +21,15 @@ function SnippetPin({ snippetKey }: { snippetKey: string }) {
   );
 }
 
-/** True once the description is taller than the three rows the card shows. */
-function useIsClamped() {
-  const cardRef = useRef<HTMLButtonElement>(null);
-  const ref = useRef<HTMLParagraphElement>(null);
-  const [clamped, setClamped] = useState(false);
-  useEffect(() => {
-    const paragraph = ref.current;
-    if (!paragraph) return;
-    const check = () => setClamped(paragraph.scrollHeight > paragraph.clientHeight + 1);
-    check();
-    // The card's own width can change after the covers finish loading, which
-    // re-wraps the text; watching the card keeps the answer honest.
-    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(check) : undefined;
-    observer?.observe(paragraph);
-    if (cardRef.current) observer?.observe(cardRef.current);
-    window.addEventListener('resize', check);
-    document.fonts?.ready?.then(check).catch(() => {});
-    return () => {
-      observer?.disconnect();
-      window.removeEventListener('resize', check);
-    };
-  }, []);
-  return { cardRef, ref, clamped };
-}
-
 export function SnippetCard({ snippet, onOpen }: { snippet: Snippet; onOpen: () => void }) {
   const media = snippet.image ? projectImage(snippet.image) : undefined;
-  const { cardRef, ref, clamped } = useIsClamped();
-  return <Button ref={cardRef} variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card snippet-card group relative flex h-full w-full min-w-0 flex-col justify-start gap-0 whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground disabled:pointer-events-auto">
+  return <Button variant="ghost" disabled={snippet.disabled} onClick={onOpen} aria-haspopup="dialog" className="editorial-card snippet-card group relative flex h-full w-full min-w-0 flex-col justify-start gap-0 whitespace-normal p-0 text-left text-card-foreground hover:bg-card hover:text-card-foreground disabled:pointer-events-auto">
     <SnippetPin snippetKey={snippet.to} />
     <div className="aspect-[16/10] w-full shrink-0 overflow-hidden bg-muted">{media ? <img loading="lazy" src={media.url} alt={media.alt} className="block h-full w-full object-cover object-top" /> : <VisualPlaceholder title={snippet.name} className="aspect-auto h-full" />}</div>
     <div className="min-h-[12rem] w-full flex-1 p-6 md:p-8">
       <h3 className="subsection-title">{snippet.name}</h3>
-      <p ref={ref} className="snippet-desc caption mt-3 text-[0.8125rem] line-clamp-3">{snippet.description}</p>
+      <p className="snippet-desc caption mt-3 text-[0.8125rem] line-clamp-3">{snippet.description}</p>
     </div>
-    {clamped && !snippet.hideHoverNote && <span aria-hidden="true" className="snippet-note caption text-[0.8125rem]">{snippet.description}</span>}
   </Button>;
 }
 
