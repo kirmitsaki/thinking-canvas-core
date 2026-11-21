@@ -1,8 +1,22 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
 import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { SectionDivider } from '@/components/portfolio/section-divider';
-import { VisualPlaceholder } from '@/components/portfolio/visual-placeholder';
 import { projectImage } from '@/data/projects';
+import foundations from '@/assets/origin-morpho/foundations.webp.asset.json';
+import components from '@/assets/origin-morpho/components.webp.asset.json';
+import figmaCode from '@/assets/origin-morpho/figma-code.webp.asset.json';
+import platform from '@/assets/origin-morpho/platform.webp.asset.json';
+
+const localImages = import.meta.glob<string>('../assets/origin-morpho/*.webp', { eager: true, query: '?url', import: 'default' });
+function useLocalImage(event: SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  const filename = image.src.split('/').pop()?.replace('origin-morpho-', '');
+  const fallback = localImages[`../assets/origin-morpho/${filename}`];
+  if (fallback && image.dataset.localFallback !== 'true') {
+    image.dataset.localFallback = 'true';
+    image.src = fallback;
+  }
+}
 
 const levels = [
   ['Atoms', 'Buttons, inputs and icons.'],
@@ -30,7 +44,7 @@ export default function OriginMorpho() {
       </Section>
       <Section title="Foundations" subtitle="Establishing a common language">
         <P>We started by defining the foundations: typography, colour and spacing. These became a shared set of design tokens, creating consistency across the platform and a common language for design and development.</P>
-        <VisualPlaceholder title="Morpho's foundations" caption="Typography, colour palette, design tokens and atomic structure" />
+        <figure><img src={foundations.url} onError={useLocalImage} alt="Morpho's foundations: colour tokens and typography" width={1200} height={1290} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
         <div className="morpho-levels">
           <h3 className="subsection-title">Adopting atomic design</h3>
           <ol className="design-goals-list mt-8">
@@ -46,19 +60,19 @@ export default function OriginMorpho() {
       <Section title="The system" subtitle="Building reusable components and patterns">
         <P>Working from these foundations, we gradually expanded Morpho into a shared library of components and patterns.</P>
         <P>The aim was to create flexible, reusable elements that could support different workflows across the platform without introducing unnecessary inconsistencies.</P>
-        <VisualPlaceholder title="Component library" caption="Morpho component library showing buttons, inputs, tables, forms and other interface elements" />
+        <figure><img src={components.url} onError={useLocalImage} alt="Morpho component library showing buttons, inputs, tables, forms and interface patterns" width={1200} height={1817} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       </Section>
       <Section title="Design meets development" subtitle="One system, two environments">
         <P>A key ambition was to keep Figma and the codebase as closely aligned as possible.</P>
         <P>Rather than maintaining two separate versions of the same system, I worked directly with the frontend lead to establish shared components and patterns that translated consistently between design and development.</P>
         <P>This meant both teams could work from the same foundation, making Morpho as useful in code as it was in Figma.</P>
-        <VisualPlaceholder title="Figma and code" caption="Figma library alongside corresponding coded components" />
+        <figure><img src={figmaCode.url} onError={useLocalImage} alt="Morpho colour tokens in Figma alongside corresponding code and components" width={1200} height={976} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       </Section>
       <Section title="Growing with the product">
         <P>Morpho started with the essentials and gradually expanded alongside Origin.</P>
         <P>By the time I left, it had evolved into a shared library of design tokens, components, patterns and documentation, becoming the foundation for everything the team built.</P>
         <P>More than a collection of reusable components, Morpho gave design and engineering a common language and a more consistent way to build the platform.</P>
-        <VisualPlaceholder title="Morpho across Origin" caption="Complete Morpho overview or examples of the system applied across Origin" />
+        <figure><img src={platform.url} onError={useLocalImage} alt="Morpho components and foundations applied across the Origin platform" width={1920} height={1582} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       </Section>
       <blockquote className="pull-quote morpho-funfact"><span className="label-quiet block pb-2">Fun fact</span>Morpho was named after the butterfly — its name comes from an epithet meaning “changed” or “modified”, linked to an ancient Greek term, and the blue colours reflected the palette.</blockquote>
     </article>
