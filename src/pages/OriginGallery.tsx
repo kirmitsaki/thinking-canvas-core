@@ -5,6 +5,7 @@ import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { pageMeta, projectImage } from '@/data/projects';
 import { ProjectPagination } from '@/components/portfolio/project-pagination';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { NdaNotice } from '@/components/portfolio/nda-notice';
 import { usePortfolioHeaderHeight } from '@/lib/portfolio-header-height';
 import dashboards from '@/assets/origin-sample-work/Cards_-_Dashboards_Various.webp.asset.json';
 import dataCards from '@/assets/origin-sample-work/Cards_-_Data.webp.asset.json';
@@ -60,6 +61,7 @@ export default function OriginGallery() {
   const meta = pageMeta('Origin Markets · Sample work', 'A gallery of Origin Markets product screens designed by Rachel Kirmitsaki.', 'article');
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
     <SnippetHeader title="Across the Origin platform" subtitle="A selection of product screens showcasing dashboards, market data, pricing and documentation workflows." image={projectImage('origin-sample-work')} />
+    <div className="sample-work-tabs py-3"><NdaNotice /></div>
     {sections.map((section, index) => (
       <div key={section.id}>
         {index > 0 && <SectionDivider />}

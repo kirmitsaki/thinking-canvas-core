@@ -25,4 +25,11 @@ describe('Origin sample interface snippet', () => {
     expect(sampleInterface?.name).toBe('Across the platform');
     expect(sampleInterface?.description).toBe('A selection of product screens showcasing dashboards, market data, pricing and documentation workflows.');
   });
+
+  it('shows the sticky blurred-visuals notice under the header, like the product design identity page', () => {
+    render(<HelmetProvider><MemoryRouter initialEntries={['/work/origin-markets/gallery?snippet=gallery']}><OriginGallery /></MemoryRouter></HelmetProvider>);
+    const notice = screen.getByRole('note');
+    expect(notice).toHaveTextContent('All visuals are blurred on purpose');
+    expect(notice.parentElement?.className).toContain('sample-work-tabs');
+  });
 });
