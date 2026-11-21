@@ -940,7 +940,12 @@ img[data-image-loading] {
   }
   /* The Morpho fun fact closes the page on its own, with room above it. */
   .case-study-editorial .pull-quote.morpho-funfact {
-    margin-top: 6rem;
+    margin-top: 9rem;
+  }
+  /* The platform image reads as part of the section above it, so it sits close
+     under that text rather than at the next section's distance. */
+  .case-study-editorial .origin-section:has(+ .morpho-platform) {
+    margin-bottom: 2.5rem;
   }
   .case-study-editorial.case-study-compact .editorial-study-visual {
     max-width: 900px;
@@ -1011,7 +1016,10 @@ img[data-image-loading] {
       font-size: 1.875rem;
     }
     .case-study-editorial .pull-quote.morpho-funfact {
-      margin-top: 8rem;
+      margin-top: 12rem;
+    }
+    .case-study-editorial .origin-section:has(+ .morpho-platform) {
+      margin-bottom: 3rem;
     }
   }
 
@@ -1669,7 +1677,7 @@ a:hover .arrow-nudge,
 }
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + :is(figure, .visual-placeholder, .mds-image-row),
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + div:has(> img, > figure),
-.case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div) {
+.case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div):not(.morpho-funfact) {
   margin-top: var(--rhythm-media) !important;
 }
 .case-study-editorial :not(.origin-section-heading, .visual-placeholder div) > * + .subsection-title,
