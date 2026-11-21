@@ -1410,9 +1410,6 @@ a:hover .arrow-nudge,
 .cm-stat-value { color: hsl(var(--year)); font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1; font-weight: 500; }
 .cm-timeline-card { transition: transform 300ms ease, border-color 300ms ease; }
 .cm-timeline-card:hover { transform: translateY(-3px); }
-.cm-summary { border-left: 3px solid hsl(var(--year)); padding-left: 1.25rem; }
-.cm-summary summary { cursor: pointer; list-style: none; color: hsl(var(--year)); }
-.cm-summary summary::-webkit-details-marker { display: none; }
 /* The three year cards sit the same distance from the heading above and the copy below. */
 .cm-page .cm-cards-block { margin-bottom: 2.5rem; }
 @media (min-width: 768px) { .cm-page .cm-cards-block { margin-bottom: 3.5rem; } }

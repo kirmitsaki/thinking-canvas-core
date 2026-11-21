@@ -43,6 +43,7 @@ const phrases = [
   "AI-generated software, automated workflows and modern application development",
   "Defeating all four earned Cyberhero status", "Cyberhero status for defeating all four Cybermon",
   "Cyberhero Prime", "short coding labs", "more engaging and accessible",
+  "the title of Cyberhero", "unlocked Cyberhero status", "four fictional monsters",
   "more than 5,000 developers across 350 customer organisations",
   "50,000 activities completed", "24,000 badges earned", "participants from 74 countries",
   "storytelling, bite-sized learning, visible progress and achievement-based rewards",
