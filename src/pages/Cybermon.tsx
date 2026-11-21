@@ -567,14 +567,29 @@ export default function Cybermon() {
         return (
         <section key={year.id} id={year.id} data-year={year.id} className="cm-year mb-20 md:mb-28">
           <div className={`cm-year-intro ${hasFilm ? "mb-10" : "cm-intro-gap"}`}>
-            <p className="cm-kicker">{year.launch}</p>
-            <h2 className="section-title cm-year-title mt-3">{year.title}</h2>
-            <p className="standfirst mt-6 max-w-[720px]">{year.standfirst}</p>
-            {intro?.paragraphs && (
-              <div className="essay-prose mt-6 max-w-[65ch] space-y-5">
-                {intro.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
+            <div className="cm-intro-grid">
+              <div className="min-w-0">
+                <p className="cm-kicker">{year.launch}</p>
+                <h2 className="section-title cm-year-title mt-3">{year.title}</h2>
+                <p className="standfirst mt-6 max-w-[720px]">{year.standfirst}</p>
+                {intro?.paragraphs && (
+                  <div className="essay-prose mt-6 max-w-[65ch] space-y-5">
+                    {intro.paragraphs.map(text => <p key={text}>{editorialEmphasis(text)}</p>)}
+                  </div>
+                )}
               </div>
-            )}
+              <figure className="cm-intro-figure">
+                <img
+                  src={year.cover.url}
+                  onError={useLocalImage}
+                  alt={`Cybermon ${year.id} campaign artwork.`}
+                  width={600}
+                  height={350}
+                  loading="lazy"
+                  className="h-auto w-full rounded-lg"
+                />
+              </figure>
+            </div>
           </div>
           {year.id === "2025" && (
             <figure className="cm-intro-gap mx-auto max-w-[720px]">
