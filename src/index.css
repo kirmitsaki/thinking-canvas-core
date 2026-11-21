@@ -1631,7 +1631,13 @@ a:hover .arrow-nudge,
 .case-study-editorial {
   --rhythm-media: 3rem;
   --rhythm-subsection: 4rem;
+  --rhythm-section: 6rem;
 }
+@media (min-width: 768px) {
+  .case-study-editorial { --rhythm-section: 8.5rem; }
+}
+/* Full-width card rows belong under a section, so they open at section distance. */
+.case-study-editorial .case-study-snippet-row { margin-top: var(--rhythm-section); }
 /* Hairline separating a snippet's header from its content. */
 .snippet-entry-header {
   border-bottom: 1px solid var(--border);
