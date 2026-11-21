@@ -1474,7 +1474,7 @@ a:hover .arrow-nudge,
   .case-study-editorial .editorial-study-heading > .section-title { grid-column: 1; grid-row: 2; }
   .case-study-editorial .editorial-study-heading > :not(.section-title) { grid-column: 2; }
   .case-study-editorial .editorial-study-heading > .essay-prose:empty { display: none; }
-  .case-study-editorial .editorial-study-section:has(> .editorial-study-heading > .essay-prose:empty) > .grid { margin-top: 0; }
+  .case-study-editorial .editorial-study-section:has(> .editorial-study-heading > .essay-prose:empty) > .grid:not(.case-study-snippet-row) { margin-top: 0; }
   .case-study-editorial .editorial-study-section > .pull-quote { max-width: none; margin-inline: 0; }
   .origin-section-grid > .origin-section-heading { display: contents; }
   .origin-section-grid > .origin-section-heading > .section-title { grid-column: 1; grid-row: 1 / span 2; }
