@@ -13,15 +13,28 @@ import tradeBlotter from '@/assets/origin-sample-work/Documentation_-_Trade_Blot
 import tradeTimeline from '@/assets/origin-sample-work/Documentation_-_Trade_Timeline.webp.asset.json';
 import comments from '@/assets/origin-sample-work/Documentation_-_TSG_-_Click_Comment.png.asset.json';
 import editMode from '@/assets/origin-sample-work/Documentation_-_TSG_-_Edit_Mode.png.asset.json';
-import fundingMatrix from '@/assets/origin-sample-work/Funding_Matrix_-_before_and_after.webp.asset.json';
+import fundingMatrix from '@/assets/origin-sample-work/Funding_Matrix.webp.asset.json';
 import levelsStats from '@/assets/origin-sample-work/Levels_Input_-_Stats.png.asset.json';
 import syndicatePricer from '@/assets/origin-sample-work/Syndicate_Pricer_-_before_and_after.webp.asset.json';
 
-const documentation = [
-  { asset: tradeBlotter, title: 'Trade blotter', width: 1920, height: 541 },
-  { asset: tradeTimeline, title: 'Trade timeline', width: 1920, height: 1151 },
-  { asset: editMode, title: 'Editing inputs', width: 1920, height: 595 },
-  { asset: comments, title: 'Comments and collaboration', width: 1920, height: 790 },
+type GalleryImage = { asset: { asset_id: string; url: string }; title: string; alt?: string; width: number; height: number };
+
+const sections: { id: string; title: string; images: GalleryImage[] }[] = [
+  { id: 'dashboards-data', title: 'Dashboards and data', images: [
+    { asset: dashboards, title: 'Dashboard cards', alt: 'Dashboard cards for activity, trades, programmes and issuer coverage.', width: 1920, height: 1278 },
+    { asset: dataCards, title: 'Data cards', alt: 'Data cards showing curves, pricing levels and trade tables.', width: 1920, height: 980 },
+  ] },
+  { id: 'pricing-funding', title: 'Pricing and funding', images: [
+    { asset: fundingMatrix, title: 'Funding Matrix', alt: 'Funding Matrix interface.', width: 1920, height: 1886 },
+    { asset: syndicatePricer, title: 'Syndicate Pricer — before and after', alt: 'Syndicate Pricer before and after, with curve analysis and pricing controls.', width: 1920, height: 1342 },
+    { asset: levelsStats, title: 'Levels input and statistics', alt: 'Levels input interface and statistics widgets.', width: 1920, height: 693 },
+  ] },
+  { id: 'documentation', title: 'Documentation and collaboration', images: [
+    { asset: tradeBlotter, title: 'Trade blotter', width: 1920, height: 541 },
+    { asset: tradeTimeline, title: 'Trade timeline', width: 1920, height: 1151 },
+    { asset: editMode, title: 'Editing inputs', width: 1920, height: 595 },
+    { asset: comments, title: 'Comments and collaboration', width: 1920, height: 790 },
+  ] },
 ];
 
 // The CDN handles hosted previews; local copies also support GitHub Pages.
@@ -49,51 +62,22 @@ export default function OriginGallery() {
   return <><Seo title={meta.title} description={meta.description} path="/work/origin-markets/gallery" ogType={meta.ogType} /><main className="case-study-editorial relative z-10 mx-auto max-w-[960px] px-6 pb-16">
     <SnippetHeader title="Across the Origin platform" subtitle="A selection of product screens showcasing dashboards, market data, pricing and documentation workflows." image={projectImage('origin-sample-work')} />
     <div className="sample-work-tabs py-3"><NdaNotice /></div>
-    <section aria-labelledby="dashboards-data" className="py-12 md:py-16">
-      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="dashboards-data" className="section-title">Dashboards and data</h2></div><div><h3 className="subsection-title mb-8">Activity, trades and pricing data</h3>
-      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:gap-12">
-        <figure>
-          <img loading="lazy" decoding="async" onError={useLocalImage} src={dashboards.url} alt="Dashboard cards for activity, trades, programmes and issuer coverage." width={1651} height={1920} className="h-auto w-full rounded-lg" />
-          <figcaption className="caption mt-5">Dashboard cards</figcaption>
-        </figure>
-        <figure className="mx-auto w-full max-w-[520px]">
-          <img loading="lazy" decoding="async" onError={useLocalImage} src={dataCards.url} alt="Data cards showing curves, pricing levels and trade tables." width={784} height={1920} className="h-auto w-full rounded-lg" />
-          <figcaption className="caption mt-5">Data cards</figcaption>
-        </figure>
+    {sections.map((section, index) => (
+      <div key={section.id}>
+        {index > 0 && <SectionDivider />}
+        <section aria-labelledby={section.id} className="py-12 md:py-16">
+          <h2 id={section.id} className="section-title">{section.title}</h2>
+          <div className="mt-10 grid gap-12 md:gap-16">
+            {section.images.map(({ asset, title, alt, width, height }) => (
+              <figure key={asset.asset_id} className="w-full">
+                <img loading="lazy" decoding="async" onError={useLocalImage} src={asset.url} alt={alt ?? title} width={width} height={height} className="h-auto w-full rounded-lg" />
+                <figcaption className="caption mt-5">{title}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
       </div>
-    </div></div></section>
-    <SectionDivider />
-    <section aria-labelledby="pricing-funding" className="py-12 md:py-16">
-      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="pricing-funding" className="section-title">Pricing and funding</h2></div><div><h3 className="subsection-title mb-8">Funding Matrix, Syndicate Pricer and levels input</h3>
-      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-12">
-        <figure className="mx-auto w-full max-w-[563px]">
-          <img loading="lazy" decoding="async" onError={useLocalImage} src={fundingMatrix.url} alt="Funding Matrix search and grid interfaces, before and after." width={563} height={1920} className="h-auto w-full rounded-lg" />
-          <figcaption className="caption mt-5">Funding Matrix — before and after</figcaption>
-        </figure>
-        <div className="grid gap-10 md:gap-16">
-          <figure>
-            <img loading="lazy" decoding="async" onError={useLocalImage} src={syndicatePricer.url} alt="Syndicate Pricer before and after, with curve analysis and pricing controls." width={1920} height={1342} className="h-auto w-full rounded-lg" />
-            <figcaption className="caption mt-5">Syndicate Pricer — before and after</figcaption>
-          </figure>
-          <figure>
-            <img loading="lazy" decoding="async" onError={useLocalImage} src={levelsStats.url} alt="Levels input interface and statistics widgets." width={1920} height={693} className="h-auto w-full rounded-lg" />
-            <figcaption className="caption mt-5">Levels input and statistics</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div></div></section>
-    <SectionDivider />
-    <section aria-labelledby="documentation" className="py-12 md:py-16">
-      <div className="origin-section-grid"><div className="origin-section-heading"><h2 id="documentation" className="section-title">Documentation and collaboration</h2></div><div><h3 className="subsection-title mb-8">Trade workflows, editing and comments</h3>
-      <div className="grid gap-12 md:gap-16">
-        {documentation.map(({ asset, title, width, height }) => (
-          <figure key={asset.asset_id}>
-            <img loading="lazy" decoding="async" onError={useLocalImage} src={asset.url} alt={title} width={width} height={height} className="h-auto w-full rounded-lg" />
-            <figcaption className="caption mt-5">{title}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </div></div></section>
+    ))}
     {!snippet && <><div className="flex justify-center pt-12 pb-12 md:pb-16"><Link to="/work/origin-markets" className="accent-link inline-flex items-center gap-2"><ArrowLeft size={14} />Back to Origin Markets</Link></div>
     <ProjectPagination slug="origin-markets" /></>}
   </main></>;
