@@ -536,6 +536,9 @@ export const projects: Project[] = [
       ] },
     ],
     contribution: 'I worked as Senior UX/UI Designer and design lead across Library, Reader and Citation. My contribution combined hands-on UX/UI work with research-informed design decisions and participation in the wider Elsevier design system.',
+    outcomesHeading: 'Adoption while in beta', outcomesIntro: 'At the point these stats were recorded, February 2020:',
+    outcomeStats: [{ value: '+120k', label: 'Users while in beta', text: 'MRM had over 120,000 users while still in beta.' }, { value: '1M+', label: 'References created', text: 'More than one million references were created in MRM.' }, { value: '+1M', label: 'Annotations created', text: 'Over one million annotations were made using the features in MRM.' }],
+    outcomesClosing: 'For a product still in beta, those numbers indicated strong adoption among a user group that is notoriously resistant to switching tools.',
     outcomes: ['A shared, research-led design culture across Library, Reader and Citation, and continuous usability testing', 'At February 2020, Mendeley Reference Manager had over 120,000 users while still in beta.', 'More than 1 million references had been created, and over 1 million annotations made using MRM features.', 'For a product still in beta, those numbers indicated strong adoption among a user group notoriously resistant to switching tools.'],
   },
   {

@@ -1147,16 +1147,20 @@ img[data-image-loading] {
   .origin-editorial .case-study > article > div:last-child {
     max-width: none;
   }
-  .origin-editorial #outcomes > dl > div {
+  .origin-editorial #outcomes > dl > div,
+  .case-study-editorial #outcomes > dl > div {
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
   }
-  .origin-editorial #outcomes > dl dt {
+  .origin-editorial #outcomes > dl dt,
+  .case-study-editorial #outcomes > dl dt {
     font-size: 2rem;
     color: var(--accent);
   }
-  .origin-editorial #outcomes > dl dd {
+  .origin-editorial #outcomes > dl dd,
+  .case-study-editorial #outcomes > dl dd {
     max-width: 40ch;
+    margin-top: 0.5rem;
   }
   @media (min-width: 768px) {
     .origin-section {
@@ -1210,7 +1214,8 @@ img[data-image-loading] {
     .origin-product-cards-2up .origin-product-card:last-child {
       grid-column: 1 / -1;
     }
-    .origin-editorial #outcomes > dl {
+    .origin-editorial #outcomes > dl,
+    .case-study-editorial #outcomes > dl {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2.5rem;
     }
@@ -1668,8 +1673,14 @@ a:hover .arrow-nudge,
   padding: 1.75rem;
   max-width: none;
 }
-.origin-editorial #outcomes > dl.outcome-stats--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.origin-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
+.origin-editorial #outcomes > dl.outcome-stats--cards,
+.case-study-editorial #outcomes > dl.outcome-stats--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.origin-editorial #outcomes > dl.outcome-stats--cards > div,
+.case-study-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
+/* An odd final figure would otherwise sit alone in a half-width card; let it
+   fill the row so the grid never ends with an empty cell. */
+.origin-editorial #outcomes > dl.outcome-stats--cards > .outcome-stat-card--wide,
+.case-study-editorial #outcomes > dl.outcome-stats--cards > .outcome-stat-card--wide { grid-column: 1 / -1; }
 /* Inside the dark Sample work card the snippet row sits close under its intro. */
 .chocolate-card .case-study-snippet-row { margin-top: 0; }
 /* The butterfly in the Morpho fun-fact card reuses the reflection dragon's
@@ -1680,8 +1691,10 @@ a:hover .arrow-nudge,
   height: auto;
 }
 /* The Origin closing line is a card whose numbers match the big stat figures. */
-.origin-editorial .outcome-closing-card { padding: 2.25rem 1.75rem; border-top: 1px solid var(--hairline); grid-column: 1 / -1; }
-.origin-editorial .outcome-closing-card > p {
+.origin-editorial .outcome-closing-card,
+.case-study-editorial .outcome-closing-card { padding: 2.25rem 1.75rem; border-top: 1px solid var(--hairline); grid-column: 1 / -1; }
+.origin-editorial .outcome-closing-card > p,
+.case-study-editorial .outcome-closing-card > p {
   font-family: var(--font-serif);
   font-size: 1.375rem;
   line-height: 1.4;
@@ -1689,7 +1702,8 @@ a:hover .arrow-nudge,
   text-wrap: balance;
   color: var(--foreground);
 }
-.origin-editorial .outcome-closing-card .outcome-big {
+.origin-editorial .outcome-closing-card .outcome-big,
+.case-study-editorial .outcome-closing-card .outcome-big {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;

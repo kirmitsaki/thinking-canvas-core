@@ -27,11 +27,21 @@ const renderStudy = (slug: string) =>
   );
 
 describe('Outcomes presentation', () => {
-  it('shows Mendeley outcomes as cards', () => {
+  it('shows Mendeley outcomes as stat cards with the beta figures', () => {
     const { container } = renderStudy('mendeley');
-    const list = container.querySelector('ul.editorial-outcomes--cards');
-    expect(list).not.toBeNull();
-    expect(list?.querySelectorAll('li.editorial-card')).toHaveLength(4);
+    const grid = container.querySelector('dl.outcome-stats--cards');
+    expect(grid).not.toBeNull();
+    expect(grid?.querySelectorAll('div.editorial-card')).toHaveLength(4);
+    expect([...(grid?.querySelectorAll('dt') ?? [])].map((dt) => dt.textContent)).toEqual([
+      '+120k',
+      '1M+',
+      '+1M',
+    ]);
+    expect(grid?.querySelector('.outcome-closing-card')?.textContent).toContain(
+      'notoriously resistant to switching tools',
+    );
+    expect(grid?.querySelector('.outcome-stat-card--wide')?.textContent).toContain('+1M');
+    expect(container.querySelector('ul.editorial-outcomes--cards')).toBeNull();
   });
 
   it('shows Origin outcomes as cards', () => {
@@ -39,6 +49,7 @@ describe('Outcomes presentation', () => {
     const grid = container.querySelector('dl.outcome-stats--cards');
     expect(grid).not.toBeNull();
     expect(grid?.querySelectorAll('div.editorial-card')).toHaveLength(6);
+    expect(grid?.querySelector('.outcome-stat-card--wide')).toBeNull();
   });
 
   it('keeps the hairline list on other case studies', () => {
