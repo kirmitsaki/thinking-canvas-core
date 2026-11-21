@@ -25,3 +25,5 @@
 - Tailwind colour aliases read global CSS tokens, including opacity modifiers, so palette updates have one authority without changing font stacks or rendered colours.
 - Case-study card artwork uses an optional `cardImage` separate from `heroImage`, with CDN pointers and local optimised fallbacks, so uploaded covers do not alter case-study content or static hosting.
 - GitHub Pages deploy runs scripts/mirror-assets.mjs after build to copy every .asset.json image into dist; static hosting cannot serve Lovable CDN paths.
+- Share reduced-motion subscriptions and reference-count header measurement per document so links, layout and section navigation do not install duplicate browser listeners or observers.
+- Verify secondary content inside its same-origin snippet frame, not the parent dialog DOM, to avoid false missing-content diagnoses during changes.

@@ -3,6 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Linkedin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navigationScrollBehavior } from "@/lib/navigation-scroll";
+import { useReducedMotion } from "@/lib/reduced-motion";
 import { contactDetails } from "@/data/contact";
 import { FooterDragon } from "@/components/portfolio/dragon";
 
@@ -20,14 +21,7 @@ export function PortfolioNavLink({
   active?: boolean;
 }) {
   const { pathname } = useLocation();
-  const [reducedMotion, setReducedMotion] = useState(true);
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
+  const reducedMotion = useReducedMotion();
   const samePage = pathname === to;
   const behavior = navigationScrollBehavior(pathname, to, reducedMotion);
   return (

@@ -1,4 +1,7 @@
 # Tasks
+- [x] Review shared behaviour, dependencies and unused files without changing structure, appearance or copy.
+- [x] Remove only confirmed redundant code/assets; preserve intentionally hidden pages and snippets.
+- [x] Verify existing tests and desktop/mobile page and snippet flows after cleanup.
 - [x] Add consistent skeleton loading for pages, images and snippet frames without changing loaded content.
 - [x] Add shared reading progress below navigation and modal headers; verify scrolling, sticky tabs and phone layouts.
 - [x] Audit and optimise unused assets and duplicate code without changing appearance, copy, hidden content or routes.

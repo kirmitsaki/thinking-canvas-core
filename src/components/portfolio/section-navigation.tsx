@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { navigationScrollBehavior } from "@/lib/navigation-scroll";
+import { useReducedMotion } from "@/lib/reduced-motion";
 import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 import { scrollToSection } from "@/lib/section-scroll";
 import type { Project } from "@/data/projects";
@@ -13,16 +14,9 @@ export function SectionNavigation({
   to: `/work/${Project["slug"]}`;
 }) {
   const { pathname } = useLocation();
-  const [reducedMotion, setReducedMotion] = useState(true);
+  const reducedMotion = useReducedMotion();
   const [activeId, setActiveId] = useState(items[0]?.id);
   usePortfolioHeaderHeight();
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
   const lockRef = useRef<string | null>(null);
   const cancelScrollRef = useRef<(() => void) | null>(null);
   useEffect(() => () => cancelScrollRef.current?.(), []);
