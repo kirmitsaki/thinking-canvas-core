@@ -10,6 +10,7 @@ import { usePortfolioHeaderHeight } from "@/lib/portfolio-header-height";
 import { scrollToSection } from "@/lib/section-scroll";
 import { ProjectPagination } from "@/components/portfolio/project-pagination";
 import { SectionDivider } from "@/components/portfolio/section-divider";
+import { DarkCard } from "@/components/portfolio/dark-card";
 import { editorialEmphasis } from "@/components/portfolio/editorial-emphasis";
 import crest2024 from "@/assets/cybermon/2024_-_cybermon.webp.asset.json";
 import crest2025 from "@/assets/cybermon/2024_-_cybermon-2.webp.asset.json";
@@ -744,10 +745,13 @@ export default function Cybermon() {
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <blockquote className="pull-quote cm-closing chocolate-card">
-          <span className="block">{editorialEmphasis("After popular demand, Cybermon is here to stay.")}</span>
-          <span className="mt-6 block">{editorialEmphasis("There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</span>
-        </blockquote>
+        <DarkCard
+          label="Future steps"
+          title="After popular demand, Cybermon is here to stay"
+          bodyClassName="max-w-[65ch]"
+        >
+          <p>{editorialEmphasis("A fun experiment opened the door to a proper engagement platform. There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones.")}</p>
+        </DarkCard>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">

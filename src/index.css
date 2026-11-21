@@ -938,12 +938,6 @@ img[data-image-loading] {
     border-block: 1px solid var(--border);
     color: var(--accent);
   }
-  /* The dark closing cards follow a ⁘ separator, so they keep the standard
-     pull-quote spacing rather than a larger gap of their own. */
-  /* The Cybermon closing spans the full content width, like the tab menu. */
-  .case-study-editorial .pull-quote.cm-closing {
-    max-width: none;
-  }
   /* The platform image reads as part of the section above it, so it sits close
      under that text rather than at the next section's distance. */
   .case-study-editorial .origin-section:has(+ .morpho-platform) {
@@ -1491,7 +1485,7 @@ a:hover .arrow-nudge,
   .origin-section-grid
     :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar),
   .cm-page section
-    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar, .cm-closing) {
+    :is(p, li, blockquote, figcaption, .essay-prose, .subsection-title, .pull-quote, .origin-system-principle):not(.section-break, .nda-bar) {
     max-width: var(--reading-measure);
   }
 }
@@ -1642,7 +1636,7 @@ a:hover .arrow-nudge,
 }
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + :is(figure, .visual-placeholder, .mds-image-row),
 .case-study-editorial :is(p, ul, ol, .essay-prose, blockquote) + div:has(> img, > figure),
-.case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div):not(.morpho-funfact) {
+.case-study-editorial :is(figure, .visual-placeholder, .mds-image-row) + :is(p, ul, ol, .essay-prose, blockquote, figure, .visual-placeholder, div) {
   margin-top: var(--rhythm-media) !important;
 }
 .case-study-editorial :not(.origin-section-heading, .visual-placeholder div) > * + .subsection-title,
@@ -1676,21 +1670,15 @@ a:hover .arrow-nudge,
 }
 .origin-editorial #outcomes > dl.outcome-stats--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .origin-editorial #outcomes > dl.outcome-stats--cards > div { padding: 1.75rem; border-top: 1px solid var(--hairline); }
-/* Inside the See sample work block the row sits close under its label. */
-.case-study-editorial .pull-quote .case-study-snippet-row { margin-top: 0; }
-/* Blocks under Outcomes (Morpho fun fact, See sample work, Cybermon closing) use the dark Looking back card. */
-.pull-quote.chocolate-card {
-  /* Keep the 3px border width on all sides so the gold hover border is not
-     clipped to the left and right edges. */
-  border-block: 3px solid transparent;
-  padding: 2.5rem;
-  color: var(--warm-ivory);
+/* Inside the dark Sample work card the snippet row sits close under its intro. */
+.chocolate-card .case-study-snippet-row { margin-top: 0; }
+/* The butterfly in the Morpho fun-fact card reuses the reflection dragon's
+   corner placement; size its image like the dragon artwork. */
+.reflection-dragon__fly > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-.pull-quote.chocolate-card:hover {
-  border-block-color: var(--gold);
-}
-.pull-quote.chocolate-card .label-quiet { color: var(--gold); }
-.pull-quote.chocolate-card a { color: var(--gold); }
 /* The Origin closing line is a card whose numbers match the big stat figures. */
 .origin-editorial .outcome-closing-card { padding: 2.25rem 1.75rem; border-top: 1px solid var(--hairline); grid-column: 1 / -1; }
 .origin-editorial .outcome-closing-card > p {

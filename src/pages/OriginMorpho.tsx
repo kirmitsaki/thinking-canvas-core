@@ -1,6 +1,7 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 import { SnippetHeader } from '@/components/portfolio/snippet-header';
 import { SectionDivider } from '@/components/portfolio/section-divider';
+import { DarkCard } from '@/components/portfolio/dark-card';
 import { projectImage } from '@/data/projects';
 import foundations from '@/assets/origin-morpho/foundations.webp.asset.json';
 import components from '@/assets/origin-morpho/components.webp.asset.json';
@@ -76,7 +77,21 @@ export default function OriginMorpho() {
       </Section>
         <figure className="morpho-platform w-full"><img src={platform.url} onError={useLocalImage} alt="Morpho components and foundations applied across the Origin platform" width={1920} height={1582} loading="lazy" decoding="async" className="h-auto w-full rounded-lg" /></figure>
       <SectionDivider />
-      <blockquote className="pull-quote morpho-funfact chocolate-card"><span className="label-quiet block pb-2">Fun fact</span><span className="block">Morpho was named after the butterfly</span><img src={butterfly.url} onError={useLocalImage} alt="Morpho butterfly" width={740} height={493} loading="lazy" decoding="async" className="mx-auto my-6 h-auto w-32" /><span className="block">The name means “changed” or “modified”, linked to an ancient Greek term, and we felt that the iridescent colours reflected the palette and new interface.</span></blockquote>
+      <DarkCard
+        className="mt-10"
+        label="Fun fact"
+        title="Morpho was named after the butterfly"
+        bodyClassName="max-w-[65ch]"
+        trailing={
+          <span aria-hidden="true" className="reflection-dragon">
+            <span className="reflection-dragon__fly">
+              <img src={butterfly.url} onError={useLocalImage} alt="" width={740} height={493} loading="lazy" decoding="async" className="h-auto w-full" />
+            </span>
+          </span>
+        }
+      >
+        <p>The name means “changed” or “modified”, linked to an ancient Greek term, and we felt that the iridescent colours reflected the palette and new interface.</p>
+      </DarkCard>
     </article>
   </main>;
 }
