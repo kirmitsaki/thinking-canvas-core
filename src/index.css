@@ -1455,6 +1455,8 @@ a:hover .arrow-nudge,
   }
   .case-study-editorial .editorial-study-section > .section-break { grid-column: 1 / -1; }
   .case-study-editorial .editorial-study-section > :not(.section-break) { grid-column: 2; min-width: 0; }
+  /* Product snippet cards belong under the section, spanning the whole page. */
+  .case-study-editorial .editorial-study-section > .case-study-snippet-row { grid-column: 1 / -1; }
   /* Mendeley sections dissolve their row into the section grid so the title
      takes the left rail and the body the right column, like every other
      case study. */
