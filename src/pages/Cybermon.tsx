@@ -744,7 +744,8 @@ export default function Cybermon() {
       </section>
       <SectionDivider />
       <section className="mb-20 md:mb-28">
-        <p className="pull-quote text-accent">{editorialEmphasis("After popular demand, Cybermon is here to stay. There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
+        <p className="body-copy w-full">{editorialEmphasis("After popular demand, Cybermon is here to stay.")}</p>
+        <p className="body-copy mt-6 w-full">{editorialEmphasis("There is also conversation about using the same technology to build more events throughout the year, even customer-specific ones. A fun experiment opened the door to a proper engagement platform.")}</p>
       </section>
       <div className="flex justify-center pt-12 pb-12 md:pb-16">
         <Link to="/work/secure-code-warrior" className="accent-link inline-flex items-center gap-2">
